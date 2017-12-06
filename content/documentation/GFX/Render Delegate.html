@@ -1,0 +1,198 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/GFX/Render Delegate.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4191;
+   parent.leftFrame.expandToItem('tree2', 'doc4191');
+   var element = parent.leftFrame.document.getElementById('doc4191');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueGameEngineAdvanced/1 8 Beta/RenderDelegate - TDN</title>
+<link rel="stylesheet" type="text/css" href="container.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  bgcolor="#FFFFFF" id="body-with-lockmark">
+
+<table width="700" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+        <table width="700" border="0" cellpadding="15" cellspacing="0" xmlns="http://www.w3.org/1999/xhtml">
+          <tbody>
+            <tr>
+              <td width="700"><table id="toc">
+                  <tbody>
+                    <tr>
+                      <td><div id="toctitle">
+                          <h2><a name = "HeaderLink0"></a>Contents</h2>
+                          <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+                        <ul>
+                          <li class="toclevel-1"><a href="#Concept"><span class="tocnumber">1</span> <span class="toctext">Concept</span></a></li>
+                          <li class="toclevel-1"><a href="#Sky_Example"><span class="tocnumber">2</span> <span class="toctext">Sky Example</span></a></li>
+                          <li class="toclevel-1"><a href="#ShapeBase_Example"><span class="tocnumber">3</span> <span class="toctext">ShapeBase Example</span></a></li>
+                          <li class="toclevel-1"><a href="#Conclusion"><span class="tocnumber">4</span> <span class="toctext">Conclusion</span></a></li>
+                        </ul></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>
+                  </p>
+                <a name="Concept" id="Concept"></a>
+                <h2><a name = "HeaderLink1"></a>Concept</h2>
+                <p><b>RenderDelgate</b> is a new component introduced by TGEA 1.8. The
+                  concept and functionality behind RenderDelgate gives you, the
+                  developer, a lot of flexibility when you are creating your own
+                  rendering objects. </p>
+                <p><br />
+                  The concept is based on the system sending a signal, which is caught by
+                  an object's RenderDelegate. The RenderDelgate itself calls an object's
+                  render function. Prior to TGEA 1.8, every object that requires
+                  rendering required a renderObject(...) function. </p>
+                <p><br />
+                  The function had to have that exact name, and identical parameters.
+                  Using a RenderDelgate breaks those requirements. Let's take a look at a
+                  few simple examples. </p>
+                <a name="Sky_Example" id="Sky_Example"></a>
+                <h2><a name = "HeaderLink2"></a>Sky Example</h2>
+                <p>The Sky object is a great example of a custom object that requires
+                  rendering. The class is derived from SceneObject, which does not have a
+                  rendering function. Open <b>engine/source/terrain/sky.h</b>. If you scroll through the Sky class, you will find the declaration of its RenderDelegate: </p>
+                <pre>ObjectRenderInst::RenderDelegate mRenderDelegate;
+</pre>
+                <p><br />
+                  Open Sky.cpp (<i>same directory</i>), then locate the Sky::Sky() function.  At the bottom of the function, Sky's RenderDelegate is bound. </p>
+                <pre>mRenderDelegate.bind(this, &amp;Sky::renderObject);
+</pre>
+                <p><br />
+                  When binding, we are passing in the Sky class (<i>this</i>), and its rendering function. Let's say Sky's rendering function had a different name, such as renderSky. </p>
+                <pre>mRenderDelegate.bind(this, &amp;Sky::renderSky);
+</pre>
+                <p><br />
+                  What we are doing is preparing the Sky class to receive a render signal
+                  and act on it. One of our manager's (which we will discuss in a
+                  minute), will parse through all of its contained objects. When it comes
+                  across Sky, it will send a render signal to the class. It doesn't care
+                  about the name of the rendering function, it just tells the object to
+                  render with certain information: </p>
+                <pre>void Sky::renderObject(ObjectRenderInst *ri, BaseMatInstance* overrideMat)
+{
+   if (overrideMat)
+      return;
+
+   SceneState* state = ri-&gt;state;  
+
+   GFX-&gt;disableShaders();
+   
+   ...
+</pre>
+                <p>As you can see, the SceneState information is passed in via an ObjectRenderInst pointer (*ri).  Nifty, huh? </p>
+                <a name="ShapeBase_Example" id="ShapeBase_Example"></a>
+                <h2><a name = "HeaderLink3"></a>ShapeBase Example</h2>
+                <p>Let's talk about ShapeBase. The Sky class has shown us a great
+                  RenderDelegate example, but 2 is always better than one. The ShapeBase
+                  class contains <b>two</b> RenderDelegates. One is the standard
+                  mRenderDelegate, just like Sky has. The second one is
+                  mShadowRenderDelegate, which (you guessed it) is used for rendering a
+                  shape's shadow: </p>
+                <p><br />
+                  <b>In engine/source/T3D/shapeBase.h:</b> </p>
+                <pre>ObjectRenderInst::RenderDelegate mRenderDelegate;
+ObjectRenderInst::RenderDelegate mShadowRenderDelegate;
+</pre>
+                <p><br />
+                  Remember the earlier discussion about signals and hooks? Well,
+                  GFX can send out signals for multiple functions. For instance, we can
+                  have a signal for rendering our shape and for rendering our shadow. The
+                  following code shows how we bind those signals: </p>
+                <p><br />
+                  <b>In engine/source/T3D/shapeBase.cpp, ShapeBase::ShapeBase():</b> </p>
+                <pre>mRenderDelegate.bind(this, &amp;ShapeBase::renderObject);
+mShadowRenderDelegate.bind(this, &amp;ShapeBase::renderShadow);
+</pre>
+                <p><br />
+                  The above code shows our second RenderDelegate is attached to a
+                  function called renderShadow. Since we already have a basic idea of how
+                  a standard RenderDelegate works, let's skip right to
+                  mShadowRenderDelegate's purpose. Look at the following code chunk, then
+                  we'll break it down: </p>
+                <p><br />
+                  <b>In ShapeBase::prepRenderImage(..):</b> </p>
+                <pre>if( renderSelf &amp;&amp; mDataBlock-&gt;shadowEnable )
+{
+   ObjectRenderInst *ri = gRenderInstManager-&gt;allocInst&lt;ObjectRenderInst&gt;();         
+   ri-&gt;mRenderDelegate = mShadowRenderDelegate;
+   ri-&gt;state = state;
+   ri-&gt;type = RenderPassManager::RIT_Shadow;
+   gRenderInstManager-&gt;addInst(ri);
+}
+</pre>
+                <p><br />
+                  Now, let's break it down. Here is the same chunk of code, but with my comments inserted above each line to detail the purpose: </p>
+                <pre>// Check the shapebase's datablock to see if we render a shadow
+if( renderSelf &amp;&amp; mDataBlock-&gt;shadowEnable )
+{
+   // Datablock said we should render a shadow, so we are here...
+
+   // We must have a render instance before we can proceed. 
+   // We'll use our global RenderPassManager, gRenderInstManager, which is the lead render manager for GFX
+   ObjectRenderInst *ri = gRenderInstManager-&gt;allocInst&lt;ObjectRenderInst&gt;();         
+
+   // Now that we have an object render instance, let's assign the shadow render delegate
+   ri-&gt;mRenderDelegate = mShadowRenderDelegate;
+
+   // Assign the SceneState set up earlier in the function
+   ri-&gt;state = state;
+
+   // Assign the shadow render instance type (RIT_SHADOW)
+   // This will tell our RenderPassManager what kind of render instance we are
+   // working with, shadows as opposed to a mesh or sky
+   ri-&gt;type = RenderPassManager::RIT_Shadow;
+
+   // Add the new render instance to our global manager and move on.
+   gRenderInstManager-&gt;addInst(ri);
+}
+</pre>
+                <p><br />
+                  To reiterate, ShapeBase has two separate RenderDelgates. One
+                  handles the standard object rendering, while the other handles the
+                  rendering of the object's shadow. Setting them up is extremely simple,
+                  which is the glory of using RenderDelegates. </p>
+                <a name="Conclusion" id="Conclusion"></a>
+                <h2><a name = "HeaderLink4"></a>Conclusion</h2>
+                <p>This goal of this document was to provide you with an introduction
+                  and specific examples of the new RenderDelegate system introduced by
+                  TGEA 1.8's GFX2. Should you decide to create your own custom classes
+                  which require rendering of objects, please refer back to this doc.
+                  Making use of RenderDelegates can make your code cleaner and more
+                  modular. </p></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        
+    
+  
+  
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/GFX/Render Delegate.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:15 GMT -->
+</html>

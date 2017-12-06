@@ -1,0 +1,143 @@
+﻿<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Introduction/Basics of Programming.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4251;
+   parent.leftFrame.expandToItem('tree2', 'doc4251');
+   var element = parent.leftFrame.document.getElementById('doc4251');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Scripting Reference - Basics of Programming</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+<link rel="STYLESHEET" type="text/css" href="torque.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+<td width="700">
+
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#Basic_Programming_Principles_in_TorqueScript"><span class="tocnumber">1</span> <span class="toctext">Basic Programming Principles in TorqueScript</span></a>
+<ul>
+<li class='toclevel-2'><a href="#Data_Storage"><span class="tocnumber">1.1</span> <span class="toctext">Data Storage</span></a>
+<ul>
+<li class='toclevel-3'><a href="#Variables"><span class="tocnumber">1.1.1</span> <span class="toctext">Variables</span></a>
+<ul>
+<li class='toclevel-4'><a href="#Variable_Scope"><span class="tocnumber">1.1.1.1</span> <span class="toctext">Variable Scope</span></a></li>
+</ul>
+</li>
+<li class='toclevel-3'><a href="#Object_Data_Storage"><span class="tocnumber">1.1.2</span> <span class="toctext">Object Data Storage</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="#Program_Execution_Flow"><span class="tocnumber">1.2</span> <span class="toctext">Program Execution Flow</span></a>
+<ul>
+<li class='toclevel-3'><a href="#Engine_vs._Script"><span class="tocnumber">1.2.1</span> <span class="toctext">Engine vs. Script</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="#Summary"><span class="tocnumber">1.3</span> <span class="toctext">Summary</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="Basic_Programming_Principles_in_TorqueScript"></a><h1><a name = "HeaderLink1"></a> Basic Programming Principles in TorqueScript </h1>
+<p><br />
+TorqueScript is a very useful language for interacting with Torque engines, allowing you to utilize most basic programming principles to accomplish what you need for your game development. As a C-styled language, the syntax is very similar to many common languages, and if you are familiar with C, C++, or other programming languages, you will quickly come up to speed with the capabilities of TorqueScript.
+</p><p>But what if you don’t have a programming background, and aren’t familiar with basic principles of software implementation? This article will provide an overview of some of the basic programming principles, and give examples of how they are accomplished within TorqueScript.
+</p><p><br />
+</p>
+<a name="Data_Storage"></a><h2><a name = "HeaderLink2"></a> Data Storage </h2>
+<p><br />
+When you think about it, programming is all about data, and manipulating that data by accomplishing tasks. We need to be able to store data for later use, modify data directly, and perform operations based on the values of data—and TorqueScript provides several ways to accomplish these tasks.
+</p><p><br />
+</p>
+<a name="Variables"></a><h3><a name = "HeaderLink3"></a> Variables </h3>
+<p><br />
+Just like what we all learned in secondary school, variables are simply places where we can read and write values, and use those values within other operations. You’ll see a lot of variable use throughout TorqueScript, so we’ll discuss briefly the two different types of variables that exist for our use.
+</p>
+<a name="Variable_Scope"></a><h4><a name = "HeaderLink4"></a> Variable Scope </h4>
+<p>In general programming,  we want to maintain flexibility and allow humans to read our code and understand what’s going on without too much complexity—and sometimes that means being able to use the same name for a variable in different places in our code. The problem is that since our work may be most readable if we use the same variable <b><i>names</i></b> in many different places, yet we do not want the same <i><b>values</b></i> in many different places, we seem to be stuck—either we keep track of large numbers of variable names like index1, index2, index3, index4, or we have to share data when it wouldn’t be appropriate.
+</p><p>This brings up the general concept of scope, which is loosely defined as a way for data to only be available at a specific place in our code.  In the case of variables, we have two different types of scope:
+</p>
+<ul>
+<li><b>Local Scope</b> – data within locally scoped variables (and in fact, the variables themselves) are only available within the current scope. Local variables in TorqueScript always have a <b>%</b> sign as the first character.
+<li><b>Global Scope</b> – data within globally scoped variables (and the variables themselves) are available at any time, within any scope. This means that when you use a globally scoped variable, it always has the latest set of data—and that data can be changed from anywhere in your program. TorqueScript global variables always start with a <b>$</b> sign.
+</ul>
+<p>So, how do we know what a specific scope is? The concept is a bit more complex than this basic description, but in general, a scope is defined as the section of code beginning where you start using the variable, and the next sequential “end” of a statement body. We’ll get to program flow later on and define statement body a bit more accurately, but for now you can consider the end of a statement body as the next <b>}</b> sign within the code.
+</p>
+<a name="Object_Data_Storage"></a><h3><a name = "HeaderLink5"></a> Object Data Storage </h3>
+<p>We have an additional way to store data that is specific to objects within our engine (if you need a quick primer on how Objects work within Torque, you can take a quick look at this short article: INTRO TO OOP). Every object within our engine can store data within a special type of variable called a field that only applies to that specific object—changing the value of a field on one object does not affect any other objects, even when they have the same field defined.
+</p><p>Fields can be considered very similar to locally scoped variables, but instead of being scoped to a specific section of our program’s code, they are scoped instead to the object itself—if a section of code has access to an object, it has access to the object’s fields as well. There are two types of fields for objects:
+</p>
+<ul>
+<li><b>Dynamic fields</b>: these fields are used only within TorqueScript, and are provided so the scripter can store whatever data is available on the object itself for later use. Scripter programmers can create new dynamic fields any time they wish, and adding a dynamic field to a specific object has no effect on other objects. They are commonly used for things like keeping track of a player object’s health, or how many coins have been picked up by a player.
+<li><b>Persistent Fields</b>: These fields are slightly different—they are created by the programmer that created the c++ class the object is instantiated from, and are used for values that not only are important to scripter programmers, but also important to the engine’s c++ code itself. Unlike dynamic fields, the underlying c++ class can also reference the field, and will use it for many purposes depending on how the class was designed—possibly for keeping track of what image to render, or maybe something as simple as the object’s X and Y coordinates in our game world.
+</ul>
+<p><br />
+</p>
+<a name="Program_Execution_Flow"></a><h2><a name = "HeaderLink6"></a> Program Execution Flow </h2>
+<p><br />
+In TorqueScript (just like most other languages), our program execution has a place where it begins, and then proceeds throughout our code based on how we use various types of statements and syntax configurations. Generally speaking, program execution moves from line to line in our code, performing whatever commands we have written.
+</p><p>As part of the TorqueScript language definition and syntax, we use a very common technique for creating logical separation within our code called a <b><i>statement body</i></b>. A statement body is simply one or more TorqueScript statements (valid commands or expressions), optionally surrounded by the <b>{</b> (statement body BEGIN) and <b>}</b> (statement body END) characters if we want to group more than one statement together.
+</p><p>In many cases however, we only want a particular statement body to execute under certain conditions – for example, a particular variable has a certain value. This type of capability is called conditional execution, and the specific example given would be written as an “<b>if</b>” statement within our program, also known as <b><i>conditional branching</i></b>.
+</p>
+<pre>
+If (%value == 5)
+{
+  echo(&quot;The value was 5!&quot;);
+}
+</pre>
+<p>The “if” statement is a part of TorqueScript’s execution flow control capabilities along with several other types of control techniques:
+</p>
+<ul>
+<li><b>Conditional Branch</b>: test the value of an expression (a variable, or the result of a calculation), and select a section of code to execute based on the test. Most commonly implemented with “<b>if</b>” statements, as well as “<b>switch</b>” statements.
+<li><b>Loops</b>: repeat a section of code a certain number of times, or until an expression test is met. Common loop commands include “<b>for</b>” and “<b>while</b>”.
+<li><b>Method Calls</b>: execute a section of code, and then return to the next line in the program for further execution. Note: when you perform a method call, you may be calling other TorqueScript sections of code, known as Script Methods—or, you may be executing C++ code that was written by the Class developer for your object. In this special case, method calls to c++ code are named Console Methods.
+</ul>
+<p><br />
+</p>
+<a name="Engine_vs._Script"></a><h3><a name = "HeaderLink7"></a> Engine vs. Script </h3>
+<p><br />
+While all of the programming we normally do is in TorqueScript (at the introduction level of game development with Torque), scripts are not the only code that gets executed—in fact, one of the major benefits of using any game engine is that there are literally hundreds of thousands of lines of programming already written for us! This code is actually executing “underneath” our TorqueScript program, and is responsible for all the things that our game engine provides—from rendering, to physics/collision, to input management, and dozens of other things going on within our game.
+</p><p>TorqueScript allows us to interact with the engine as it us running in a few different ways—our TorqueScript program itself runs based on direction from the engine, we can execute <b><a href="http://tdn.garagegames.com/wiki/TorqueScript_Console_Functions" title="TorqueScript Console Functions">Console Method</a></b> calls as described above, and finally we can respond to events that occur within the engine itself.
+</p>
+<p>While our game is running, there are thousands of calculations and operations a second occurring beneath or notice—but sometimes it’s important for our TorqueScript program to be notified when something important occurs—such as a collision between two objects, when a level is completed loading, or even simply when an object is removed from the game. These types of occurrences are called “events”, and Torque provides us with the ability to respond to events with the concept of <b>Callbacks</b> and <b>Callback Handlers</b>.
+</p><p><b>Callbacks</b> are simply a notification to TorqueScript that a particular event has occurred, and provides information (designated by the C++ programmer responsible for that portion of the C++ engine code) about the event to TorqueScript. <b>Callback Handlers</b> are simply the section of TorqueScript code that we want to execute when a particular <b>Callback</b> occurs—for example, if one of our objects collides with another object, we may want to increase the score for the player, or possibly cause the player object to “die” and re-spawn. There are hundreds of callbacks provided by the engine, and we are able to implement any TorqueScript commands and statements we wish in response to those events.
+</p>
+<a name="Summary"></a><h2><a name = "HeaderLink8"></a> Summary </h2>
+<p><br />
+This article is a very basic beginning to the principles of programming, from a TorqueScript perspective. There are literally hundreds of additional general programming practices and principles, as well as quite a bit more information regarding the syntax and techniques of TorqueScript itself available here on TDN as well as the Internet.
+</p>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Introduction/Basics of Programming.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:55 GMT -->
+</html>

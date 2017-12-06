@@ -1,0 +1,774 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_4.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4217;
+   parent.leftFrame.expandToItem('tree2', 'doc4217');
+   var element = parent.leftFrame.document.getElementById('doc4217');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueScript Console Functions 4 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <p xmlns="http://www.w3.org/1999/xhtml"><big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <strong> Networking</strong> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table id="toc" class="toc" xmlns="http://www.w3.org/1999/xhtml"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Networking"><span class="tocnumber">1</span> <span class="toctext">Networking</span></a>
+<ul>
+<li class="toclevel-2"><a href="#addTaggedString.28_string_.29"><span class="tocnumber">1.1</span> <span class="toctext">addTaggedString( string )</span></a></li>
+<li class="toclevel-2"><a href="#buildTaggedString.28_format_.2C__.3Carg1.2C_...arg9.3E_.29"><span class="tocnumber">1.2</span> <span class="toctext">buildTaggedString( format ,  &lt;arg1, ...arg9&gt; )</span></a></li>
+<li class="toclevel-2"><a href="#detag.28_tagID_.29"><span class="tocnumber">1.3</span> <span class="toctext">detag( tagID )</span></a></li>
+<li class="toclevel-2"><a href="#dumpNetStringTable.28.29"><span class="tocnumber">1.4</span> <span class="toctext">dumpNetStringTable()</span></a></li>
+<li class="toclevel-2"><a href="#getTag.28_taggedString_.29"><span class="tocnumber">1.5</span> <span class="toctext">getTag( taggedString )</span></a></li>
+<li class="toclevel-2"><a href="#getTaggedString.28_tag_.29"><span class="tocnumber">1.6</span> <span class="toctext">getTaggedString( tag )</span></a></li>
+<li class="toclevel-2"><a href="#removeTaggedString.28_tag_.29"><span class="tocnumber">1.7</span> <span class="toctext">removeTaggedString( tag )</span></a></li>
+<li class="toclevel-2"><a href="#gotoWebPage.28_address_.29"><span class="tocnumber">1.8</span> <span class="toctext">gotoWebPage( address )</span></a></li>
+<li class="toclevel-2"><a href="#setNetPort.28_port_.29"><span class="tocnumber">1.9</span> <span class="toctext">setNetPort( port )</span></a></li>
+<li class="toclevel-2"><a href="#telnetSetParameters.28_port.2C_consolePass.2C_listenPass_.5B_.2C_remoteEcho_.5D_.29"><span class="tocnumber">1.10</span> <span class="toctext">telnetSetParameters( port, consolePass, listenPass [ , remoteEcho ] )</span></a></li>
+<li class="toclevel-2"><a href="#commandToClient.28_client.2C_func_.5B_.2C_arg1.2C_..._.2C_argn_.5D_.29"><span class="tocnumber">1.11</span> <span class="toctext">commandToClient( client, func [ , arg1, ... , argn ] )</span></a></li>
+<li class="toclevel-2"><a href="#commandToServer.28_func_.5B_.2C_arg1.2C_..._.2C_argn_.5D_.29"><span class="tocnumber">1.12</span> <span class="toctext">commandToServer( func [ , arg1, ... , argn ] )</span></a></li>
+<li class="toclevel-2"><a href="#allowConnections.28_enable_.29"><span class="tocnumber">1.13</span> <span class="toctext">allowConnections( enable )</span></a></li>
+<li class="toclevel-2"><a href="#cancelServerQuery.28.29"><span class="tocnumber">1.14</span> <span class="toctext">cancelServerQuery()</span></a></li>
+<li class="toclevel-2"><a href="#getServerCount.28.29"><span class="tocnumber">1.15</span> <span class="toctext">getServerCount()</span></a></li>
+<li class="toclevel-2"><a href="#queryLANServers.28_port_.2C_flags_.2C_gametype_.2C_missiontype_.2C_minplayers_.2C_maxplayers_.2C__maxbots_.2C_regionmask_.2C_maxping_.2C_mincpu_.2C_filterflags_.29"><span class="tocnumber">1.16</span> <span class="toctext">queryLANServers( port , flags , gametype , missiontype , minplayers , maxplayers ,  maxbots , regionmask , maxping , mincpu , filterflags )</span></a></li>
+<li class="toclevel-2"><a href="#queryMasterServer.28_flags_.2C_gametype_.2C_missiontype_.2C_minplayers_.2C_maxplayers_.2C_maxbots_.2C_regionmask_.2C_maxping_.2C_mincpu_.2C_filterflags_.29"><span class="tocnumber">1.17</span> <span class="toctext">queryMasterServer( flags , gametype , missiontype , minplayers , maxplayers , maxbots , regionmask , maxping , mincpu , filterflags )</span></a></li>
+<li class="toclevel-2"><a href="#querySingleServer.28_address_.5B_.2C_flags_.5D_.29"><span class="tocnumber">1.18</span> <span class="toctext">querySingleServer( address [ , flags ] )</span></a></li>
+<li class="toclevel-2"><a href="#setServerInfo.28_index_.29"><span class="tocnumber">1.19</span> <span class="toctext">setServerInfo( index )</span></a></li>
+<li class="toclevel-2"><a href="#startHeartbeat.28.29"><span class="tocnumber">1.20</span> <span class="toctext">startHeartbeat()</span></a></li>
+<li class="toclevel-2"><a href="#stopHeartbeat.28.29"><span class="tocnumber">1.21</span> <span class="toctext">stopHeartbeat()</span></a></li>
+<li class="toclevel-2"><a href="#stopServerQuery.28.29"><span class="tocnumber">1.22</span> <span class="toctext">stopServerQuery()</span></a></li>
+<li class="toclevel-2"><a href="#getMaxFrameAllocation.28.29"><span class="tocnumber">1.23</span> <span class="toctext">getMaxFrameAllocation()</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p xmlns="http://www.w3.org/1999/xhtml"></p>
+<a name="Networking" xmlns="http://www.w3.org/1999/xhtml"></a><h2 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink1"></a> Networking </h2>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="addTaggedString.28_string_.29"></a><h3><a name = "HeaderLink2"></a>addTaggedString( string )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>addTaggedString</b></i> function to tag a new string and add it to the NetStringTable.  <br />
+<br />
+<b>Syntax<br />
+<i>string</i></b> – The string to tagged and placed in the NetStringTable.  Tagging ignores case, so tagging the same string (excluding case differences) will be ignored as a duplicated tag.<br />
+<br />
+<b>Returns</b><br />
+Returns a string (containing a numeric value) equivalent to the string ID for the newly tagged string.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="buildTaggedString.28_format_.2C__.3Carg1.2C_...arg9.3E_.29"></a><h3><a name = "HeaderLink3"></a>buildTaggedString( format ,  &lt;arg1, ...arg9&gt; )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>buildTaggedString</b></i> function to build a tagged string using the specified <i><b>format</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>enable</i></b> – A boolean value.  If set to true, network packet logging is enabled, otherwise it is disabled.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="detag.28_tagID_.29"></a><h3><i></i><a name = "HeaderLink4"></a>detag( tagID )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>detag</b></i> function to convert a tag to a string.  This can only be used in the proper context, i.e. to parse values passed to a client command or to a server command.  See 'Remote Procedure Call Samples' below.<br />
+<br />
+<b>Syntax<br />
+<i>tagID</i></b> – A numeric tag ID corresponding to a previously tagged string.<br />
+<br />
+<br />
+<b>Returns</b><br />
+Returns the string associated witht the tag ID.<br />
+<br />
+<b>See Also</b><br />
+commandToClient(), commandToServer().<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="dumpNetStringTable.28.29"></a><h3><a name = "HeaderLink5"></a>dumpNetStringTable()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>dumpNetStringTable</b></i> function to dump a list of all the currently registered NetStringTable entries, including the times each has been referenced, the total entry count, and the current 'highest' reference string.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+For this to work, the engine must have been compiled with TORQUE_DEBUG defined.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getTag.28_taggedString_.29"></a><h3><a name = "HeaderLink6"></a>getTag( taggedString )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getTag</b></i> function to retrieve the tag ID associated with a previously tagged string.<br />
+<br />
+<b>Syntax<br />
+<i>taggedString</i></b> – A previously tagged string.<br />
+<br />
+<b>Returns</b><br />
+Returns the tag ID of the string.  If the string was not previously tagged, it gets tagged and the new tag ID is returned.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getTaggedString.28_tag_.29"></a><h3><a name = "HeaderLink7"></a>getTaggedString( tag )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getTaggedString</b></i> function to convert a tag to a string.  This is not the same a detag() which can only be used within the context of a function that receives a tag.  This function can be used any time and anywhere to convert a tag to a string.<br />
+<br />
+<b>Syntax<br />
+<i>tag</i></b> – A numeric tag ID.<br />
+<br />
+<b>Returns</b><br />
+Returns the string corresponding to the tag ID.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="removeTaggedString.28_tag_.29"></a><h3><a name = "HeaderLink8"></a>removeTaggedString( tag )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>removeTaggedSTring</b></i> function to remove a previously tagged string from the NetStringTable.<br />
+<br />
+<b>Syntax<br />
+<i>tag</i></b> – A number tag ID.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="gotoWebPage.28_address_.29"></a><h3><a name = "HeaderLink9"></a>gotoWebPage( address )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>gotoWebPage</b></i> function to open a browser and go to the specified URL <i><b>address</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>address</i></b> – A complete and valid URL.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setNetPort.28_port_.29"></a><h3><a name = "HeaderLink10"></a>setNetPort( port )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setNetPort</b></i> function to set the netport that the server will listen on.<br />
+<br />
+<b>Syntax<br />
+<i>port</i></b> – A numeric port ID.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the set worked, false otherwise.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="telnetSetParameters.28_port.2C_consolePass.2C_listenPass_.5B_.2C_remoteEcho_.5D_.29"></a><h3><a name = "HeaderLink11"></a>telnetSetParameters( port, consolePass, listenPass [ , remoteEcho ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>telnetSetParameters</b></i> function to setup and accept telnet requests on a specific <i><b>port</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>port</i></b> – A numeric port ID.<br />
+<i><b>consolePass</b></i> – Password for read/write access to the console.<br />
+<i><b>listenPass</b></i> – Password for read access to the console.<br />
+<i><b>remoteEcho</b></i> – A boolean value to enable echoing to the client, false by default.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="commandToClient.28_client.2C_func_.5B_.2C_arg1.2C_..._.2C_argn_.5D_.29"></a><h3><a name = "HeaderLink12"></a>commandToClient( client, func [ , arg1, ... , argn ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>commandToClient</b></i> function to issue a remote procedure call on a client.<br />
+<br />
+<b>Syntax<br />
+<i>client</i></b> – The numeric ID of a client gameConnection.<br />
+<i><b>func</b></i> – The suffix of the remote procedure name to be executed on the client.<br />
+<i><b>arg1 .. argn</b></i> – Optional arguments to be passed to the remote procedure.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+All arguments (excluding <i><b>client</b></i>) may be in tagged or non-tagged format.  See 'Remote Procedure Call Samples' below.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="commandToServer.28_func_.5B_.2C_arg1.2C_..._.2C_argn_.5D_.29"></a><h3><a name = "HeaderLink13"></a>commandToServer( func [ , arg1, ... , argn ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>commandToServer</b></i> function to issue a remote procedure call the server.<br />
+<br />
+<b>Syntax<br />
+<i>func</i></b> – The suffix of the remote procedure name to be executed on the client.<br />
+<i><b>arg1 .. argn</b></i> – Optional arguments to be passed to the remote procedure.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+All arguments may be in tagged or non-tagged format.  See 'Remote Procedure Call Samples' below.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="allowConnections.28_enable_.29"></a><h3><a name = "HeaderLink14"></a>allowConnections( enable )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>allowConnections</b></i> to enable (or disable) remote connections to the local game server.<br />
+<br />
+<b>Syntax<br />
+<i>enable</i></b> – A boolean value enabling, or disabling connections to the local server.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="cancelServerQuery.28.29"></a><h3><a name = "HeaderLink15"></a>cancelServerQuery()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>cancelServerQuery</b></i> function to cancel a previous query*() call.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>See Also</b></i><br />
+queryLANServers(), queryMasterServer(), querySingleServer()<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getServerCount.28.29"></a><h3><a name = "HeaderLink16"></a>getServerCount()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getServerCount</b></i> function to determine the number of game servers found on the last queryLANServers() or queryMasterServer() call.<br />
+<br />
+<b>Returns</b><br />
+Returns a numeric value equal to the number of game servers found on the last queryLANServers() or queryMasterServer() call.  Returns 0 if the function was not called, or none were found.<br />
+<br />
+<i><b>Notes</b></i><br />
+This value is important because it allows us to properly index when calling setServerInfo().<br />
+<br />
+<b>See Also</b><br />
+queryLANServers, queryMasterServer, setServerInfo()<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="queryLANServers.28_port_.2C_flags_.2C_gametype_.2C_missiontype_.2C_minplayers_.2C_maxplayers_.2C__maxbots_.2C_regionmask_.2C_maxping_.2C_mincpu_.2C_filterflags_.29"></a><h3><a name = "HeaderLink17"></a>queryLANServers( port , flags , gametype , missiontype , minplayers , maxplayers ,  maxbots , regionmask , maxping , mincpu , filterflags )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>queryLANServers</b></i> function to establish whether any game servers of the required specification(s) are available on the local area network (LAN).<br />
+<br />
+<i><b>Syntax<br />
+port</b></i> – Look for any game servers advertising at this port. Set to 0 if you don't care what port the game server is using.<br />
+<i><b>flags</b></i> - Look for any game servers with these special flags set. Set to 0 for no flags.<br />
+<i><b>gametype</b></i> - Look for any game servers playing a game type that matches this string.  Set to the NULL string to look for any game type.<br />
+<i><b>missiontype</b></i> - Look for any game servers playing a mission type that matches this string.  Set to the NULL string to look for any mission type.<br />
+<i><b>minplayers</b></i> - Look for any game servers with this number of players or more. Set to 0 for no lower limit.<br />
+<i><b>maxplayers</b></i> - Look for any game servers with this number of players or fewere. Set to 0 for no upper limit.<br />
+<i><b>maxbots</b></i> - Look for any game servers with this number of AI controlled players or fewer.  Set to 0 for no limit.<br />
+<i><b>regionmask</b></i> - Look for any master servers, on our master server list, in this region. Set to 0 to examine all regions.<br />
+<i><b>maxping</b></i> - Look for any game servers with a PING rate equal to or lower than this.  Set to 0 for no upper PING limit.<br />
+<i><b>mincpu</b></i> - Look for any game servers with a CPU (clock speed) equal or greater than this. Set to 0 for no CPU (clock speed) limit.<br />
+<i><b>filterflags</b></i> - Look for any game servers with this game version number or higher. Set to 0 to find all versions.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+getServerCount, queryMasterServer, setServerInfo, stopServerQuery<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="queryMasterServer.28_flags_.2C_gametype_.2C_missiontype_.2C_minplayers_.2C_maxplayers_.2C_maxbots_.2C_regionmask_.2C_maxping_.2C_mincpu_.2C_filterflags_.29"></a><h3><a name = "HeaderLink18"></a>queryMasterServer( flags , gametype , missiontype , minplayers , maxplayers , maxbots , regionmask , maxping , mincpu , filterflags )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>queryMasterServer</b></i> function to query all master servers in the master server list and to establish if they are aware of any game servers that meet the specified requirements, as established by the arguments passed to this function.<br />
+<br />
+<i><b>Syntax<br />
+flags</b></i> - Look for any game servers with these special flags set. Set to 0 for no flags.<br />
+<i><b>gametype</b></i> - Look for any game servers playing a game type that matches this string. Set to the NULL string to look for any game type.<br />
+<i><b>missiontype</b></i> - Look for any game servers playing a mission type that matches this string. Set to the NULL string to look for any mission type.<br />
+<i><b>minplayers</b></i> - Look for any game servers with this number of players or more. Set to 0 for no lower limit.<br />
+<i><b>maxplayers</b></i> - Look for any game servers with this number of players or fewere. Set to 0 for no upper limit.<br />
+<i><b>maxbots</b></i> - Look for any game servers with this number of AI controlled players or fewer.  Set to 0 for no limit.<br />
+<i><b>regionmask</b></i> - Look for any master servers, on our master server list, in this region. Set to 0 to examine all regions.<br />
+<i><b>maxping</b></i> - Look for any game servers with a PING rate equal to or lower than this.  Set to 0 for no upper PING limit.<br />
+<i><b>mincpu</b></i> - Look for any game servers with a CPU (clock speed) equal or greater than this. Set to 0 for no CPU (clock speed) limit.<br />
+<i><b>filterflags</b></i> - Look for any game servers with this game version number or higher. Set to 0 to find all versions.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+In order for this function to do anything, a list of master servers must have been previously specified. This list may contain one or more server addresses.  A call to this function will search all servers in the list.  To specify a list, simply create a set of array entries like this:<br />
+<br />
+</p>
+<pre>
+$pref::Master[0] = "2:192.168.123.15:28002";
+$pref::Master[1] = "2:192.168.123.2:28002";
+...
+</pre>
+<p><br />
+The format of these values is --&gt; <i>Region Number<b>:</b>IP Address<b>:</b>Port Number</i><br />
+<br />
+These values should be specified in either the client's or the server's preferences file (prefs.cs).  You may specifiy it elsewhere, however be sure that it is specified prior to this function being called and before any other functions that rely on it.<br />
+<br />
+<b>See Also</b><br />
+getServerCount, queryLANServers, setServerInfo, startHeartbeat, stopServerQuery<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="querySingleServer.28_address_.5B_.2C_flags_.5D_.29"></a><h3><a name = "HeaderLink19"></a>querySingleServer( address [ , flags ] ) </h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>querySingleServer</b></i> function to re-query a previously queried lan server, OR a game server found with <i>queryLANServers</i> or with <i>queryMasterServer</i> and selected with <i>setServerInfo</i>.  This will refresh the information stored by TGE about this server.  It will not however modify the values of the $ServerInfo::* global variables.<br />
+<br />
+<i><b>Syntax<br />
+address</b></i> – The IP address and Port to re-query, i.e. "192.168.123.2:28000".<br />
+<i><b>flags</b></i> – <b>No longer used.<br />
+<br />
+Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+getServerCount, queryLANServers, queryMasterServer, setServerInfo, stopServerQuery<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setServerInfo.28_index_.29"></a><h3><a name = "HeaderLink20"></a>setServerInfo( index )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setServerInfo</b></i> function to set the values of the $ServerInfo::* global variables with information for a server found with <i>queryLANServers</i> or with <i>queryMasterServer</i>.<br />
+<br />
+<i><b>Syntax<br />
+index</b></i> – The index of the server to get information about.<br />
+<br />
+<b>Returns</b><br />
+Will return true if the information was successfully set, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+getServerCount, queryLANServers, queryMasterServer, querySingleServer<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="startHeartbeat.28.29"></a><h3><a name = "HeaderLink21"></a>startHeartbeat()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>startHeartbeat</b></i> function to start advertising this game server to any master servers on the master server list.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+In order for this function to do anything, a list of master servers must have been previously specified. This list may contain one or more server addresses.  Once this function is called, the game server will re-advertise itself to all the master servers on its master server list every two minutes.  To specify a list, simply create a set of array entries like this:<br />
+<br />
+</p>
+<pre>
+$pref::Master[0] = "2:192.168.123.15:28002";
+$pref::Master[1] = "2:192.168.123.2:28002";
+...
+</pre>
+<p><br />
+The format of these values is --&gt; <i>Region Number<b>:</b>IP Address<b>:</b>Port Number</i><br />
+<br />
+These values should be specified in either the client's or the server's preferences file (prefs.cs).  You may specifiy it elsewhere, however be sure that it is specified prior to this function being called and before any other functions that rely on it.<br />
+<br />
+<b>See Also</b><br />
+queryMasterServer, stopHeartbeat<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="stopHeartbeat.28.29"></a><h3><a name = "HeaderLink22"></a>stopHeartbeat()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>stopHeartbeat</b></i> function to stop advertising this game server to any master servers on the master server list.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+queryMasterServer, startHeartbeat<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="stopServerQuery.28.29"></a><h3><a name = "HeaderLink23"></a>stopServerQuery()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>stopServerQuery</b></i> function to cancel any outstanding server queries.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+queryLANServers, queryMasterServer, querySingleServer<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getMaxFrameAllocation.28.29"></a><h3><a name = "HeaderLink24"></a>getMaxFrameAllocation()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getMaxFrameAllocation</b></i> function to determine the largest amount of memory that has ever been allocated in the process of rendering a single frame.<br />
+<br />
+<b>Returns</b><br />
+Returns a non-negative integer representing the largest number of bytes temporarily allocated during the rendering of a single frame.<br />
+<br />
+<i><b>Notes</b></i><br />
+For this to work, the engine must have been compiled with TORQUE_DEBUG defined. During frame rendering, the engine will dynamically allocate and deallocate memory for various tasks.  This function allows us to get a peek at the largest ammount of allocation that has occured to date.  If this number is very large, we may have a bug or be facing a serious performance issue of one form or another.  We want this number to be small.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+<big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <strong> Networking</strong> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_4.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:07 GMT -->
+</html>

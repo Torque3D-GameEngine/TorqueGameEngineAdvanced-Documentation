@@ -1,0 +1,779 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_14.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4249;
+   parent.leftFrame.expandToItem('tree2', 'doc4249');
+   var element = parent.leftFrame.document.getElementById('doc4249');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>Torque Console Objects 14 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+ <table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console_Objects_Fields_and_Methods_Quick_Reference_Part_14"><span class="tocnumber">1</span> <span class="toctext">Console Objects Fields and Methods Quick Reference Part 14</span></a>
+<ul>
+<li class="toclevel-2"><a href="#TerrainBlock"><span class="tocnumber">1.1</span> <span class="toctext">TerrainBlock</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields"><span class="tocnumber">1.1.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Globals"><span class="tocnumber">1.1.2</span> <span class="toctext">Globals</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods"><span class="tocnumber">1.1.3</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Trigger"><span class="tocnumber">1.2</span> <span class="toctext">Trigger</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_2"><span class="tocnumber">1.2.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_2"><span class="tocnumber">1.2.2</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#TriggerData"><span class="tocnumber">1.3</span> <span class="toctext">TriggerData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_3"><span class="tocnumber">1.3.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#TSShapeConstructor"><span class="tocnumber">1.4</span> <span class="toctext">TSShapeConstructor</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_4"><span class="tocnumber">1.4.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#TSStatic"><span class="tocnumber">1.5</span> <span class="toctext">TSStatic</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_5"><span class="tocnumber">1.5.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Vehicle"><span class="tocnumber">1.6</span> <span class="toctext">Vehicle</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_6"><span class="tocnumber">1.6.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#VehicleData"><span class="tocnumber">1.7</span> <span class="toctext">VehicleData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_7"><span class="tocnumber">1.7.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Console_Objects_Fields_and_Methods_Quick_Reference_Part_14"></a><h1><a name = "HeaderLink1"></a>Console Objects Fields and Methods Quick Reference Part 14</h1>
+<p><br />
+</p><p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br /><br />
+</p>
+<a name="TerrainBlock"></a><h3><a name = "HeaderLink2"></a>TerrainBlock</h3>
+<hr />
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml">Mission object representing terrain.  Default terrain in Torque measures 2 x 2 km and repeats forever.  See <u>EGTGE Volume I – Mission Objects</u> chapter for usage.  <br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink3"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">bumpOffset</td>	
+<td width="55%" bgcolor="#CCCCCC">Offset between bumpmap textures.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">bumpScale</td>	
+<td width="55%" bgcolor="#CCCCCC">Scale of bumpmap texture.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 1 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">bumpTexture</td>	
+<td width="55%" bgcolor="#CCCCCC">Path to texture to use for bump map textures.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">detailTexture</td>	
+<td width="55%" bgcolor="#CCCCCC">Path to texture to use for terrain detailing.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">emptySquares</td>	
+<td width="55%" bgcolor="#CCCCCC">List of empty squares in terrain.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">squareSize</td>	
+<td width="55%" bgcolor="#CCCCCC">Vertical and horizontal distance between terrain verticies in meters.  Default is 8 meters.  Affects water rendering.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">1 , 2 , 4 , 8 (default) , 16 , 32 , 64 , 128</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">terrainFile</td>	
+<td width="55%" bgcolor="#CCCCCC">Path to file used for terrain.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">zeroBumpScale</td>	
+<td width="55%" bgcolor="#CCCCCC">Value controlling bumpmap rendering distance.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 1 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">tile</td>	
+<td width="55%" bgcolor="#CCCCCC">Enables and disables tiling of terrain.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Globals" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink4"></a>Globals</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Variable Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">$farDistance</td>	
+<td width="55%" bgcolor="#CCCCCC">Distance to far render plane (where rendering stops).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">Modify in sky object.</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">$pref::Terrain::dynamicLights</td>	
+<td width="55%" bgcolor="#CCCCCC"></td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">$pref::Terrain::enableDetails</td>	
+<td width="55%" bgcolor="#CCCCCC">Enable/Disable detailTexture rendering.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">$pref::Terrain::enableEmbossBumps</td>	
+<td width="55%" bgcolor="#CCCCCC">Enable/Disable bump map rendering. NOTE: TGEA does not support terrain bump maps.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">$pref::Terrain::screenError</td>	
+<td width="55%" bgcolor="#CCCCCC">Terrain screen error metrics.  The higher this value is, the smoother terrain slopes will become (within limits).  Lowering this value can increase render speed on old systems.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">$pref::Terrain::texDetail</td>	
+<td width="55%" bgcolor="#CCCCCC">This value modifies the texturing LOD.  Higher numbers equal LOWER LOD.  For best results leave this at 0.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0 , 10 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">$pref::Terrain::textureCacheSize</td>	
+<td width="55%" bgcolor="#CCCCCC"></td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">$screenSize</td>	
+<td width="55%" bgcolor="#CCCCCC"></td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">$T2::dynamicTextureCount</td>	
+<td width="55%" bgcolor="#CCCCCC">Grand total newly rendered textures count for the terrain.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">$T2::staticTextureCount</td>	
+<td width="55%" bgcolor="#CCCCCC">Grand total rendered textures count for the terrain.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink5"></a>Console Methods</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getHeightfieldScript()</td>	
+<td width="33%" align="center" bgcolor="#009900">getTextureScript()</td>	
+<td width="34%" align="center" bgcolor="#009900">save()</td>	
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setHeightfieldScript()</td>	
+<td width="33%" align="center" bgcolor="#009900">setTextureScript()</td>	
+<td width="34%" align="center" bgcolor="#009900"></td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml">These methods are  used by the editors and should not be used for general scripting purposes.  Please see EditorGui.cs if you want to see these methods in use.<br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Trigger" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink6"></a>Trigger</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">Mission object representing a re-active zone in the game.  This object senses the entry, exit, and presence of objects within it's bounds.<br />
+<br />
+</p>
+<a name="Fields_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink7"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">polyhedron</td>	
+<td width="55%" bgcolor="#CCCCCC">List of (relative) coordinates representing bounds of area.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink8"></a>Console Methods</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getNumObjects()</td>	
+<td width="33%" align="center" bgcolor="#009900">getObject()</td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getNumObjects()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getNumObjects</b></i> method to determine how many GameBase objects are within the bounds of this trigger.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer value specifying the number of objects that are currently within the boundaries of this trigger.<br />
+<br />
+<b>See Also</b><br />
+getObject<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getObject( index )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getObject</b></i> method to retrieve the ID of an object, at <i><b>index</b></i>, within this trigger's object list.<br />
+<br />
+<b>Syntax<br />
+<i>index</i></b> – An integer value between 0 and numObjects, where numObjects can be retrieved with <i>getNumObjects</i>.<br />
+<br />
+<b>Returns</b><br />
+Returns an object ID, or 0 if no object is found at the specified index.<br />
+<br />
+<b>See Also</b><br />
+getNumObjects<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="TriggerData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink9"></a>TriggerData</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">Datablock associated with the trigger mission object. <br />
+<br />
+</p>
+<a name="Fields_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink10"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">tickPeriodMS</td>	
+<td width="55%" bgcolor="#CCCCCC">Period in milliseconds describing time to next trigger tick.  Trigger checks for current contents on each tick.  Does not affect sensing of onEnter/onLeave.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="TSShapeConstructor" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink11"></a>TSShapeConstructor</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_4" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink12"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">baseShape</td>	
+<td width="55%" bgcolor="#CCCCCC">The DTS file used by this shape constructor.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">~/path/filename.dts</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">sequence[0:126]</td>	
+<td width="55%" bgcolor="#CCCCCC">Up to 127 sequences that can be associated with this shape construtor.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">~/path/filename.dsq</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="TSStatic" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink13"></a>TSStatic</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_5" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink14"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">position</td>	
+<td width="55%" bgcolor="#CCCCCC">The object's placement position, not neccesarily the current position.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"1.0 2.0 3.0"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">rotation</td>	
+<td width="55%" bgcolor="#CCCCCC">The object's placement rotation, not neccesarily the current rotation.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"1.0 2.0 3.0"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">scale</td>	
+<td width="55%" bgcolor="#CCCCCC">The object's placement scale, not neccesarily the current scale.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"1.0 2.0 3.0"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">shapeName</td>	
+<td width="55%" bgcolor="#CCCCCC">DTS file for this shape</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">~/path/filename.dts</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Vehicle" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink15"></a>Vehicle</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_6" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink16"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">disableMove</td>	
+<td width="55%" bgcolor="#CCCCCC">Used to disable a vehicle's ability to move.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="VehicleData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink17"></a>VehicleData</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_7" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink18"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">bodyFriction</td>	
+<td width="55%" bgcolor="#CCCCCC">The vehicle's rigid body friction coefficient. Used in the physical simulation during contacts and collisions. Higher friction values dampen contact and collision forces.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">bodyRestitution</td>	
+<td width="55%" bgcolor="#CCCCCC">The vehicle's rigid body restitution. Used in the physical simulation during collisions. The scalar restitution value affects the strength of the body's rebound resulting from collisions with objects. Higher restitution values yield more powerful rebound reactions. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">cameraDecay</td>	
+<td width="55%" bgcolor="#CCCCCC">Scalar rate at which the third person camera offset decays, per tick.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">cameraLag</td>	
+<td width="55%" bgcolor="#CCCCCC">Scalar amount by which the third person camera lags the vehicle, relative to the vehicle's linear velocity.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">cameraOffset</td>	
+<td width="55%" bgcolor="#CCCCCC">The vertical offset of the vehicle's camera.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">cameraRoll</td>	
+<td width="55%" bgcolor="#CCCCCC">Specifies whether the camera's rotation matrix, and the render eye transform are multiplied during camera updates.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">collDamageMultiplier</td>	
+<td width="55%" bgcolor="#CCCCCC">Note: this field currently has no tangible effect in the engine's simulation.. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">collDamageThresholdVel</td>	
+<td width="55%" bgcolor="#CCCCCC">Note: this field currently has no tangible effect in the engine's simulation.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">collisionTol</td>	
+<td width="55%" bgcolor="#CCCCCC">The minimum collision velocity required to trigger a full collision. Collisions with velocities less than the collisionTol value will be treated as collision contacts or constraints.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">contactTol</td>	
+<td width="55%" bgcolor="#CCCCCC">The minimum collision velocity required to trigger a collision contact. Collisions with velocities less than the contactTol value will be treated as collision constraints.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>damageEmitter[0]<br />
+damageEmitter[1]<br />
+damageEmitter[2]
+</p>
+</td>	
+<td width="55%" bgcolor="#CCCCCC">Array of pointers to ParticleEmitterData datablocks which will be used to emit particles for damage effects (smoke).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>damageEmitterOffset[0]<br />
+damageEmitterOffset[1]
+</p>
+</td>	
+<td width="55%" bgcolor="#CCCCCC">Offset point at which to display damage effects. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"1.0 2.0 3.0"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>damageLevelTolerance[0]<br />
+damageLevelTolerance[1]
+</p>
+</td>	
+<td width="55%" bgcolor="#CCCCCC">Array of floats specifying damage level thresholds. Each entry is specified as a decimal percentage of maxDamage (defined in ShapeBaseData). Each damage level is used to determine what damage effect to play.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">dustEmitter</td>	
+<td width="55%" bgcolor="#CCCCCC">Array of pointers to ParticleEmitterData datablocks which will be used to emit particles at vehicle/terrain contact point.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">dustHeight</td>	
+<td width="55%" bgcolor="#CCCCCC">Height of dust effects.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">exitingWater</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile will be used to produce sounds when emerging from water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">exitSplashSoundVelocity</td>	
+<td width="55%" bgcolor="#CCCCCC">The minimum velocity at which the exit splash sound will be played when emerging from water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">hardImpactSound</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds for hard impacts.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">hardImpactSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Minimum speed at which the vehicle must be travelling for the hard impact sound to be played.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">hardSplashSoundVelocity</td>	
+<td width="55%" bgcolor="#CCCCCC">The minimum velocity at which the hard splash sound will be played when impacting water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">impactWaterEasy</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile will be used to produce sounds when a soft impact with water occurs.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">impactWaterHard</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile will be used to produce sounds when a hard impact with water occurs.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">impactWaterMedium</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile will be used to produce sounds when a medium impact with water occurs.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">integration</td>	
+<td width="55%" bgcolor="#CCCCCC">The number of discrete steps with which to process physics data per tick.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">jetEnergyDrain</td>	
+<td width="55%" bgcolor="#CCCCCC">Energy drained per tick by use of the vehicle's jet, if it has one.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">jetForce</td>	
+<td width="55%" bgcolor="#CCCCCC">Force generated by the vehicle's jet, if it has one. This field is only used by derived classes.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">massCenter</td>	
+<td width="55%" bgcolor="#CCCCCC">The vehicle's rigid body center of mass.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"1.0 2.0 3.0"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxDrag</td>	
+<td width="55%" bgcolor="#CCCCCC">dIntended to clamp the maximum drag available. Note: this field currently has no tangible effect in the engine's simulation.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxSteeringAngle</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum attainable steering angle, measured in radians. Steering angles are clamped to this maximum value.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">mediumSplashSoundVelocity</td>	
+<td width="55%" bgcolor="#CCCCCC">The minimum velocity at which the medium splash sound will be played when impacting water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minDrag</td>	
+<td width="55%" bgcolor="#CCCCCC">The minimum drag acting on the vehicle at all times. At present, this field is only used by FlyingVehicleData and helps determine it's maxSpeed and movement force.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minImpactSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Minimum speed at which the vehicle must be travelling for the OnImpact script function to be called.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minJetEnergy</td>	
+<td width="55%" bgcolor="#CCCCCC">Minimum energy required in order to use the vehicle's jet, if it has one.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minRollSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Note: this field currently has no tangible effect in the engine's simulation.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">numDmgEmitterAreas</td>	
+<td width="55%" bgcolor="#CCCCCC">The number of areas on the vehicle that can display damage effects.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">softImpactSound</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds for soft impacts.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">softImpactSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Minimum speed at which the vehicle must be travelling for the soft impact sound to be played.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">softSplashSoundVelocity</td>	
+<td width="55%" bgcolor="#CCCCCC">The minimum velocity at which the soft splash sound will be played when impacting water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>splashEmitter[0]<br />
+splashEmitter[1]
+</p>
+</td>	
+<td width="55%" bgcolor="#CCCCCC">Array of pointers to ParticleEmitterData datablocks which will generate splash effects.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">splashFreqMod</td>	
+<td width="55%" bgcolor="#CCCCCC">The simulated frequency modulation of a splash generated by this vehicle. Multiplied along with vehicle speed and time elapsed when determining splash emition rate.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">splashVelEpsilon</td>	
+<td width="55%" bgcolor="#CCCCCC">The threshold speed at which we consider the vehicle's movement to have stopped when updating splash effects.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">triggerDustHeight</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum height from the ground at which the vehicle will generate dust.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">waterWakeSound</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile will be used to produce sounds when a water wake is displayed.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><a href="Console%20Objects.html" title="Torque Console Objects TOC"> Table of Contents</a> || <a href="Torque_Console_Objects_1.html" title="Torque Console Objects"> Part 1</a> || <a href="Torque_Console_Objects_2.html" title="Torque Console Objects 2"> Part 2</a> || <a href="Torque_Console_Objects_3.html" title="Torque Console Objects 3"> Part 3</a> || <a href="Torque_Console_Objects_4.html" title="Torque Console Objects 4"> Part 4</a> || <a href="Torque_Console_Objects_5.html" title="Torque Console Objects 5"> Part 5</a> || <a href="Torque_Console_Objects_6.html" title="Torque Console Objects 6"> Part 6</a> || <a href="Torque_Console_Objects_7.html" title="Torque Console Objects 7"> Part 7</a> || <a href="Torque_Console_Objects_8.html" title="Torque Console Objects 8"> Part 8</a> || <a href="Torque_Console_Objects_9.html" title="Torque Console Objects 9"> Part 9</a> || <a href="Torque_Console_Objects_10.html" title="Torque Console Objects 10"> Part 10</a> || <a href="Torque_Console_Objects_11.html" title="Torque Console Objects 11"> Part 11</a> || <a href="Torque_Console_Objects_12.html" title="Torque Console Objects 12"> Part 12</a> || <a href="Torque_Console_Objects_13.html" title="Torque Console Objects 13"> Part 13</a> || <a href="Torque_Console_Objects_15.html" title="Torque Console Objects 15"> Part 15</a>
+</p>
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_14.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:01 GMT -->
+</html>

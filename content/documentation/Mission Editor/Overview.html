@@ -1,0 +1,826 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Mission Editor/Overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4208;
+   parent.leftFrame.expandToItem('tree2', 'doc4208');
+   var element = parent.leftFrame.document.getElementById('doc4208');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="Overview_files/filelist.html">
+<link rel=Edit-Time-Data href="Overview_files/editdata.html">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Ender</o:Author>
+  <o:LastAuthor>perrym</o:LastAuthor>
+  <o:Revision>33</o:Revision>
+  <o:TotalTime>292</o:TotalTime>
+  <o:Created>2008-03-12T02:29:00Z</o:Created>
+  <o:LastSaved>2008-03-28T17:57:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1245</o:Words>
+  <o:Characters>7099</o:Characters>
+  <o:Lines>59</o:Lines>
+  <o:Paragraphs>16</o:Paragraphs>
+  <o:CharactersWithSpaces>8328</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h3
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h4
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoIndex1, li.MsoIndex1, div.MsoIndex1
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	font-style:italic;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:24.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:48.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:84.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:96.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.NormalBefore5pt, li.NormalBefore5pt, div.NormalBefore5pt
+	{mso-style-name:"Normal + Before\:  5 pt\,After\:  5 pt";
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level2 lfo2;
+	tab-stops:list 1.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p.SectionHeader, li.SectionHeader, div.SectionHeader
+	{mso-style-name:"Section Header";
+	mso-style-update:auto;
+	mso-style-parent:"Heading 2";
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	border:none;
+	mso-border-bottom-alt:solid gray .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 1.0pt 0in;
+	font-size:18.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;}
+p.msonormal1, li.msonormal1, div.msonormal1
+	{mso-style-name:msonormal1;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.StyleHeading2135ptJustified, li.StyleHeading2135ptJustified, div.StyleHeading2135ptJustified
+	{mso-style-name:"Style Heading 2 + 13\.5 pt Justified";
+	mso-style-update:auto;
+	mso-style-parent:"Heading 2";
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	border:none;
+	mso-border-bottom-alt:solid #AAAAAA .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 1.0pt 0in;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.tocnumber
+	{mso-style-name:tocnumber;}
+span.toctext
+	{mso-style-name:toctext;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:917861812;
+	mso-list-template-ids:1244700094;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;
+	color:windowtext;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-style-link:"Normal + Before\:  5 pt";
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";
+	color:windowtext;}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="15362"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<BODY id = "BODYID" onLoad = "initComponent()"  lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=700
+ style='width:525.0pt;mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=700 style='width:525.0pt;padding:0in 0in 0in 0in'>
+  <p align=center style='text-align:center'><b style='mso-bidi-font-weight:
+  normal'><span style='font-size:20.0pt'>Mission Editor Overview <o:p></o:p></span></b></p>
+  <p align=center style='text-align:center'><b style='mso-bidi-font-weight:
+  normal'><span style='font-size:20.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  <table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:
+   1.5pt;background:#E6E6E6;border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;
+   mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td width=320 style='width:240.0pt;border:none;padding:.75pt .75pt .75pt .75pt'>
+    <h2><a name="_Toc194474912"></a><a name="_Toc194472962"></a><a
+    name="_Toc193773442"></a><a name="_Toc193619332"></a><a name="_Toc193616645"><span
+    style='mso-bookmark:_Toc193619332'><span style='mso-bookmark:_Toc193773442'><span
+    style='mso-bookmark:_Toc194472962'><span style='mso-bookmark:_Toc194474912'><span
+    style='font-family:Arial'></span></span></span></span></span></a><span
+    style='font-family:Arial'><o:p></o:p></span><a name = "HeaderLink0"></a>Contents </h2>
+    <p class=MsoToc2 style='tab-stops:right lined 431.5pt'><!--[if supportFields]><span
+    style='font-size:12.0pt;font-weight:normal;mso-no-proof:yes'><span
+    style='mso-element:field-begin'></span><span
+    style='mso-spacerun:yes'> </span>TOC \o &quot;1-4&quot; \n \h \z \u <span
+    style='mso-element:field-separator'></span></span><![endif]--><span
+    class=MsoHyperlink><span style='mso-no-proof:yes'><a href="#_Toc194474913">Overview</a></span></span><span
+    style='font-size:12.0pt;font-weight:normal;mso-no-proof:yes'><o:p></o:p></span></p>
+    <p class=MsoToc2 style='tab-stops:right lined 431.5pt'><span
+    class=MsoHyperlink><span style='mso-no-proof:yes'><a href="#_Toc194474914">The
+    Mission Editor Toolset</a></span></span><span style='font-size:12.0pt;
+    font-weight:normal;mso-no-proof:yes'><o:p></o:p></span></p>
+    <p class=MsoToc2 style='tab-stops:right lined 431.5pt'><span
+    class=MsoHyperlink><span style='mso-no-proof:yes'><a href="#_Toc194474915">The
+    Mission Editor's Windows and Menus</a></span></span><span style='font-size:
+    12.0pt;font-weight:normal;mso-no-proof:yes'><o:p></o:p></span></p>
+    <p class=MsoToc2 style='tab-stops:right lined 431.5pt'><span
+    class=MsoHyperlink><span style='mso-no-proof:yes'><a href="#_Toc194474916">Moving
+    Around in the Mission Editor</a></span></span><span style='font-size:12.0pt;
+    font-weight:normal;mso-no-proof:yes'><o:p></o:p></span></p>
+    <p class=MsoToc2 style='tab-stops:right lined 431.5pt'><span
+    class=MsoHyperlink><span style='mso-no-proof:yes'><a href="#_Toc194474917">Manipulating
+    Objects in the Mission Editor</a></span></span><span style='font-size:12.0pt;
+    font-weight:normal;mso-no-proof:yes'><o:p></o:p></span></p>
+    <p class=MsoToc2 style='tab-stops:right lined 431.5pt'><span
+    class=MsoHyperlink><span style='mso-no-proof:yes'><a href="#_Toc194474918">Conclusion</a></span></span><span
+    style='font-size:12.0pt;font-weight:normal;mso-no-proof:yes'><o:p></o:p></span></p>
+    <p class=MsoToc2 style='tab-stops:right lined 431.5pt'><!--[if supportFields]><span
+    style='mso-no-proof:yes'><span style='mso-element:field-end'></span></span><![endif]--><span
+    style='font-size:12.0pt;font-weight:normal;mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p style='margin:0in;margin-bottom:.0001pt'><a name="_Toc193221745"></a><a
+  name=Introduction></a><b style='mso-bidi-font-weight:normal'><span
+  style='font-size:20.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  <div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+  mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0in 0in 1.0pt 0in'>
+  <p class=StyleHeading2135ptJustified><a name="_Toc194474913"></a><a
+  name="_Toc193790316"><span style='mso-bookmark:_Toc194474913'>Overview</span></a></p>
+  </div>
+  <p class=msonormal1 style='text-align:justify'><span style='font-size:9.0pt;
+  font-family:Verdana;color:#222222'><o:p>&nbsp;</o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><span style='font-size:
+  10.0pt;font-family:Arial'>The Torque Mission Editor is a set of eight tools
+  which allow you to perform a wide variety of tasks, such as place and manipulate
+  objects, create and modify terrain and lighting settings, set up path's and
+  other triggered events. To put it in simplest terms, the mission editor is
+  where you'll be creating the world in which your game takes place in <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><span style='font-size:
+  13.5pt;color:black'><o:p>&nbsp;</o:p></span></p>
+  <div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+  mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0in 0in 1.0pt 0in'>
+  <p class=StyleHeading2135ptJustified><a name="_Toc194474914"></a><a
+  name="_Toc193790317"></a><a name="_Toc193787188"></a><a name="_Toc193221747"><span
+  style='mso-bookmark:_Toc193787188'><span style='mso-bookmark:_Toc193790317'><span
+  style='mso-bookmark:_Toc194474914'>The Mission Editor Toolset</span></span></span></a></p>
+  </div>
+  <p class=msonormal1 style='text-align:justify'><span style='font-size:9.0pt;
+  font-family:Verdana;color:#222222'><o:p>&nbsp;</o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><b><span style='font-size:
+  10.0pt;font-family:Arial'>Push F11 to open the mission editor.</span></b><span
+  style='font-size:10.0pt;font-family:Arial'> Once the mission editor is open,
+  you have access to the following tools. <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><b><span style='font-size:
+  10.0pt;font-family:Arial'>World Editor (F2)</span></b><span style='font-size:
+  10.0pt;font-family:Arial'><br>
+  This tool allows you to translate, rotate, and scale objects that have
+  already been placed in the world. <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><b><span style='font-size:
+  10.0pt;font-family:Arial'>World Editor Inspector (F3)</span></b><span
+  style='font-size:10.0pt;font-family:Arial'><br>
+  In addition to providing all the capabilities of the World Editor, this
+  editor allows you to view and modify properties of individual mission
+  objects. <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><b><span style='font-size:
+  10.0pt;font-family:Arial'>World Editor Creator (F4)</span></b><span
+  style='font-size:10.0pt;font-family:Arial'><br>
+  In addition to providing all the capabilities of the World Editor, this tool
+  allows you to place new objects in the current mission. <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><b><span style='font-size:
+  10.0pt;font-family:Arial'>Mission Area Editor (F5)</span></b><span
+  style='font-size:10.0pt;font-family:Arial'><br>
+  This tool allows you to adjust the boundaries of the current mission as well
+  as provides a means to mirror the current terrain. <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><b><span style='font-size:
+  10.0pt;font-family:Arial'>Terrain Editor (F6)</span></b><span
+  style='font-size:10.0pt;font-family:Arial'><br>
+  This tool allows you to manually sculpt the terrain, as cut faces out of the
+  terrain (useful for making things like tunnels). <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><b><span style='font-size:
+  10.0pt;font-family:Arial'>Terrain Texture Editor (F7)</span></b><span
+  style='font-size:10.0pt;font-family:Arial'><br>
+  In addition to providing all the capabilities of the Terrain Editor, this
+  tool allows you to select any number of textures and apply them using a set
+  of algorithms to determine blending and placement. <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><b><span style='font-size:
+  10.0pt;font-family:Arial'>Terrain Texture Painter (F8)</span></b><span
+  style='font-size:10.0pt;font-family:Arial'><br>
+  In addition to providing all the capabilities of the Terrain Editor, this
+  tool allows you to select and subsequently to apply up to 6 different
+  textures to the terrain. <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><span style='font-size:
+  10.0pt;font-family:Arial'>This list may be succinct, but the true range of
+  possibilities these tools provide will be demonstrated in the following
+  tutorials. Before we get into how to use them, though, it's useful to have some
+  general Mission Editor information under your belt. <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><span style='font-size:
+  10.0pt;font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+  <div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+  mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0in 0in 1.0pt 0in'>
+  <p class=StyleHeading2135ptJustified><a name="_Toc194474915"></a><a
+  name="_Toc193790318"></a><a name="_Toc193787189"></a><a name="_Toc193221748"></a><a
+  name="The_Mission_Editor.27s_Windows_and_Menus"></a><span style='mso-bookmark:
+  _Toc194474915'><span style='mso-bookmark:_Toc193790318'><span
+  style='mso-bookmark:_Toc193787189'><span style='mso-bookmark:_Toc193221748'>The
+  Mission Editor's Windows and Menus</span></span></span></span></p>
+  </div>
+  <p class=msonormal1 style='text-align:justify'><span style='font-size:9.0pt;
+  font-family:Verdana;color:#222222'><o:p>&nbsp;</o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><span style='font-size:
+  10.0pt;font-family:Arial'>The World Editor provides a traditional menu bar
+  along the top edge for selecting the current tool as well as other features.
+  This functions exactly as it would in any other program. <o:p></o:p></span></p>
+  <p style='text-align:justify'><img src="Overview_files/image002.jpg" alt=Image1 name="_x0000_i1025" width=477 height=203 border=0
+  id="_x0000_i1025"></p>
+  <p style='text-align:justify'><o:p>&nbsp;</o:p></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><span style='font-size:
+  10.0pt;font-family:Arial'>In addition to the menu bar, the mission editor
+  utilizes a tool window which is used to display specific options for the
+  active mission editor tool. <o:p></o:p></span></p>
+  <p style='text-align:justify'><img border=0 width=332 height=812
+  id="_x0000_i1026" src="Overview_files/image004.jpg" alt=Image2></p>
+  <p style='text-align:justify'><o:p>&nbsp;</o:p></p>
+  <p style='text-align:justify'><o:p>&nbsp;</o:p></p>
+  <div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+  mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0in 0in 1.0pt 0in'>
+  <p class=StyleHeading2135ptJustified><a name="_Toc194474916"></a><a
+  name="_Toc193790319"></a><a name="_Toc193787190"></a><a name="_Toc193221749"></a><a
+  name="Moving_Around_in_the_Mission_Editor"></a><span style='mso-bookmark:
+  _Toc194474916'><span style='mso-bookmark:_Toc193790319'><span
+  style='mso-bookmark:_Toc193787190'><span style='mso-bookmark:_Toc193221749'>Moving
+  Around in the Mission Editor</span></span></span></span></p>
+  </div>
+  <p class=msonormal1 style='text-align:justify'><span style='font-size:9.0pt;
+  font-family:Verdana;color:#222222'><o:p>&nbsp;</o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><span style='font-size:
+  10.0pt;font-family:Arial'>By default, the camera is attached to the player
+  when you start a mission. While this is useful for playing/testing your game,
+  it's not useful for mission editing. To be able to create your world with the
+  greatest ease, you need to be able to move in all directions, instead of just
+  along the terrain. This brings us to the camera options.<span
+  style='mso-spacerun:yes'>  </span>Following the descriptions of the camera
+  options is a screenshot displaying the menu. <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><b><span style='font-size:
+  10.0pt;font-family:Arial'>Free Look / Player View Toggle (Alt+C)</span></b><span
+  style='font-size:10.0pt;font-family:Arial'><br>
+  Free look is exactly what it sounds like: The camera isn't attached to any
+  character and is free to move in all directions. Use W, A, S, and D to move
+  forward, backward, and sideways, while using the mouse to pitch and turn. If
+  you have the mission editor open, hold down the right mouse button while you
+  are moving the mouse to pitch and turn. <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><span style='font-size:
+  10.0pt;font-family:Arial'>Player view is the standard first person view you
+  have when looking through the eyes of a player model <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><b><span style='font-size:
+  10.0pt;font-family:Arial'>Free Look Camera Speed (Camera Menu &gt; Slowest -
+  Fastest)</span></b><span style='font-size:10.0pt;font-family:Arial'><br>
+  While in free look, go to Camera menu bar item &gt; Slowest - Fastest to
+  adjust the speed of the camera. <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><b><span style='font-size:
+  10.0pt;font-family:Arial'>Drop Character at Camera Position (Shift+F7)</span></b><span
+  style='font-size:10.0pt;font-family:Arial'><br>
+  This places the player character at the position of the free look camera as well
+  as switches views from free look to first person player view. <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><b><span style='font-size:
+  10.0pt;font-family:Arial'>Drop Camera at Character Position (Shift+F8)</span></b><span
+  style='font-size:10.0pt;font-family:Arial'><br>
+  This will place the free look camera at the player character's position,
+  while staying in free look. <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><span style='font-size:
+  10.0pt;font-family:Arial'><img
+  src="Overview_files/image006.jpg" alt=Image3 name="_x0000_i1027" width=459 height=284 border=0 id="_x0000_i1027">
+    <o:p></o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><span style='font-size:
+  10.0pt;font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+  <div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+  mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0in 0in 1.0pt 0in'>
+  <p class=StyleHeading2135ptJustified><a name="_Toc194474917">Manipulating
+  Objects in the Mission Editor</a></p>
+  </div>
+  <p class=msonormal1 style='text-align:justify'><span style='font-size:9.0pt;
+  font-family:Verdana;color:#222222'><o:p>&nbsp;</o:p></span></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><span style='font-size:
+  10.0pt;font-family:Arial'>Once you place an object in your level, you will
+  want to adjust its orientation and position to fit your design. The Mission
+  Editor provides multiple camera angles, grid alignment, a multi-function “gizmo”,
+  and other extensions for your editing needs.<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><b><span
+  style='font-size:10.0pt;font-family:Arial'>Object Selection</span></b><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'>Once you’ve
+  selected your object, you will want to move your camera close enough so that
+  you can see what you are doing.<span style='mso-spacerun:yes'>  </span>In our
+  example, shown below, we have placed a StaticShape object using the Elf
+  model.<span style='mso-spacerun:yes'>  </span>In the following image, the
+  object is not selected.<span style='mso-spacerun:yes'>  </span>However, when
+  you hover your mouse over the object, the bounding box will display letting
+  you know you can select it.<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span><img src="Overview_files/ObjSelection.jpg" width="464" height="503"></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'>&nbsp;</p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><b><span
+  style='font-size:10.0pt;font-family:Arial'>The Gizmo</span></b><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'>Click on
+  your object.<span style='mso-spacerun:yes'>  </span>Your object’s bounding
+  box will now change to a yellow color, signifying your selection.<span
+  style='mso-spacerun:yes'>  </span>Also, the Mission Editor Gizmo has popped
+  up in the center/origin of your object.<span style='mso-spacerun:yes'> 
+  </span>The Gizmo consists of 3 arrows radiating out in the 3 standard
+  coordinate directions/axis: (X,Y,Z).<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span><img src="Overview_files/GizmoShow.jpg" width="397" height="482"></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'>&nbsp;</p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><b><span
+  style='font-size:10.0pt;font-family:Arial'>Translate/Move<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'>If you
+  grab one of the arrows and drag it in a direction, your object’s location
+  will adjust according to which arrow you pick.<span
+  style='mso-spacerun:yes'>  </span>In the image found below, we have selected
+  the (Z) axis, which means our object will move directly up.<span
+  style='mso-spacerun:yes'>  </span>Alternatively, you can select the bounding
+  box of the object and free move it in two of the three axis.<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><img src="Overview_files/GizmoTranslate.jpg" width="397" height="482"></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><b><span
+  style='font-size:10.0pt;font-family:Arial'>Rotation</span></b><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'>You can toggle
+  the rotation Gizmo pressing the [ALT] key before you manipulate your object.<span
+  style='mso-spacerun:yes'>  </span>You’ll notice that the Gizmo arrows have
+  turned into circles.<span style='mso-spacerun:yes'>  </span>Now, when you
+  click and drag an axis (we’ve selected the Y-axis here), your object will
+  rotate along around the axis.<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><img src="Overview_files/GizmoRotate.jpg" width="397" height="482"></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><b><span
+  style='font-size:10.0pt;font-family:Arial'>Scaling</span></b><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'>You can toggle
+  the scale Gizmo pressing the [CTRL] and [ALT] keys at the same time.<span
+  style='mso-spacerun:yes'>  </span>You’ll notice that the Gizmo arrows have
+  turned into boxes.<span style='mso-spacerun:yes'>  </span>Move your mouse
+  over one of the bounding box sides until it is shaded blue, as shown
+  below.<span style='mso-spacerun:yes'>  </span>Click on the side and drag it
+  away from your object.<span style='mso-spacerun:yes'>  </span>In our example,
+  we have grabbed the bounding box that corresponds to the X-axis.<span
+  style='mso-spacerun:yes'>  </span>Once dragged outward, our object becomes much
+  wider.<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><img src="Overview_files/GizmoScale.jpg" width="397" height="482"></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><b><span
+  style='font-size:10.0pt;font-family:Arial'>Snapping and Grid Viewing</span></b><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'>Below, you
+  can see a screen shot showing we have changed the camera from “Perspective”
+  to “Top” by click on the drop down box in the top left corner of the
+  editor.<span style='mso-spacerun:yes'>  </span>We have also clicked and
+  toggled the “Grid” and “Snap” options by clicking their buttons in the middle
+  of the editor bar.<span style='mso-spacerun:yes'>  </span>You can tell they
+  are toggled by their light grey color.<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><img src="Overview_files/GridShow.jpg" width="713" height="356"></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'>What we
+  are manipulating is a large DTS shape representing a base.<span
+  style='mso-spacerun:yes'>  </span>If you wish for your buildings align to
+  specific locations on the map, say a road or designated building zone, using
+  the overhead grid and snapping features.<span style='mso-spacerun:yes'> 
+  </span>When snapping is turned on, the objects origin will immediately move
+  to the nearest grid point.<span style='mso-spacerun:yes'>  </span>You can see
+  the building’s origin by looking for the blue dot (which is actually the Gizmo’s
+  Z-axis arrow shown from above).<span style='mso-spacerun:yes'>  </span>We’ve
+  placed a red square representing the next grid point below the building’s
+  origin.<span style='mso-spacerun:yes'>  </span><b><i style='mso-bidi-font-style:
+  normal'>Note – The red square does not actually show in the Mission
+  Editor.<span style='mso-spacerun:yes'>  </span>It was added during image
+  editing.</i></b><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><span
+  style='font-size:10.0pt;font-family:Arial;mso-bidi-font-weight:bold'>To
+  demonstrate what happens to an object that is moved with the grid and
+  snapping turned on, we’ve provided a screenshot below.<span
+  style='mso-spacerun:yes'>  </span>We clicked on the Y-axis of the Gizmo and
+  dragged the building down.<span style='mso-spacerun:yes'>  </span>Following
+  the origin, the entire base snapped to the next grid point which is found
+  under the red square.<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;text-align:justify'><img src="Overview_files/Snapped.jpg" width="713" height="356"></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><span style='font-size:
+  10.0pt;font-family:Arial'><o:p>&nbsp;</o:p></span></p>
+  <div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+  mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0in 0in 1.0pt 0in'>
+  <p class=StyleHeading2135ptJustified><a name="_Toc194474918"></a><a
+  name="_Toc193790320"></a><a name="_Toc193787191"></a><a name="_Toc193221750"></a><a
+  name=Conclusion></a><span style='mso-bookmark:_Toc194474918'><span
+  style='mso-bookmark:_Toc193790320'><span style='mso-bookmark:_Toc193787191'><span
+  style='mso-bookmark:_Toc193221750'>Conclusion</span></span></span></span></p>
+  </div>
+  <p style='text-align:justify'>That's it! You're ready to start building your
+  own environment. When you're ready, continue on to the next lesson, <a
+  href="Terrain%20Editor.html"
+  title="WorldBuilding/MissionEditor/Making Your Own Terrain">Making Your Own
+  Terrain</a>.</p>
+  <div style='mso-element:para-border-div;border:none;border-bottom:solid gray 1.0pt;
+  mso-border-bottom-alt:solid gray .75pt;padding:0in 0in 1.0pt 0in'>
+  <p class=SectionHeader>&nbsp;</p>
+  </div>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Mission Editor/Overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:17 GMT -->
+</html>

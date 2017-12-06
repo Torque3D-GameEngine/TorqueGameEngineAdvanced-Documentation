@@ -1,0 +1,1197 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_12.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4247;
+   parent.leftFrame.expandToItem('tree2', 'doc4247');
+   var element = parent.leftFrame.document.getElementById('doc4247');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>Torque Console Objects 12 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+ <table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console_Objects_Fields_and_Methods_Quick_Reference_Part_12"><span class="tocnumber">1</span> <span class="toctext">Console Objects Fields and Methods Quick Reference Part 12</span></a>
+<ul>
+<li class="toclevel-2"><a href="#ShapeBaseData"><span class="tocnumber">1.1</span> <span class="toctext">ShapeBaseData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields"><span class="tocnumber">1.1.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries"><span class="tocnumber">1.1.2</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods"><span class="tocnumber">1.1.3</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#ShapeBaseImageData"><span class="tocnumber">1.2</span> <span class="toctext">ShapeBaseImageData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_2"><span class="tocnumber">1.2.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#SimDataBlock"><span class="tocnumber">1.3</span> <span class="toctext">SimDataBlock</span></a></li>
+<li class="toclevel-2"><a href="#SimGroup"><span class="tocnumber">1.4</span> <span class="toctext">SimGroup</span></a></li>
+<li class="toclevel-2"><a href="#SimObject"><span class="tocnumber">1.5</span> <span class="toctext">SimObject</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_2"><span class="tocnumber">1.5.1</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_2"><span class="tocnumber">1.5.2</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Shape_Type_Bitmasks"><span class="tocnumber">1.6</span> <span class="toctext">Shape Type Bitmasks</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Console_Objects_Fields_and_Methods_Quick_Reference_Part_12"></a><h1><a name = "HeaderLink1"></a>Console Objects Fields and Methods Quick Reference Part 12</h1>
+<p><br />
+</p><p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br /><br />
+</p>
+<a name="ShapeBaseData"></a><h3><a name = "HeaderLink2"></a>ShapeBaseData</h3>
+<hr />
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<a name="Fields" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink3"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Rendering</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">cloakTexture</td>	
+<td width="55%" bgcolor="#CCCCCC">Path to texture to be used when shape is cloaked.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">See lesson samples.</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">emap</td>	
+<td width="55%" bgcolor="#CCCCCC">A boolean value specifying whether to render environmental map or not.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">false</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">shapeFile</td>	
+<td width="55%" bgcolor="#CCCCCC">Path to DTS file containing the model for this shape.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">See lesson samples.</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Physics</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">density</td>	
+<td width="55%" bgcolor="#CCCCCC">The density of this shape.  Affects whether this shape will sink or float in water (relative to water density).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">See lesson samples.</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">drag</td>	
+<td width="55%" bgcolor="#CCCCCC">Drag presented by this shape as it moves through the air.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">0</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">mass</td>	
+<td width="55%" bgcolor="#CCCCCC">Mass for this shape.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">100</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Damage</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">debris</td>	
+<td width="55%" bgcolor="#CCCCCC">DebrisData datablock to use for post-destruction debris.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">See lesson samples.</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">debrisShapeName</td>	
+<td width="55%" bgcolor="#CCCCCC">Path to DTS file containing the model for this shape which is to be rendered post destruction.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">See lesson samples.</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">explosion</td>	
+<td width="55%" bgcolor="#CCCCCC">ExplosionData datablock  to use for an explsion when this shape is destroyed</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">See lesson samples.</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC"> isInvincible</td>	
+<td width="55%" bgcolor="#CCCCCC">If this boolean value is true, this shape does not take damage.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">false</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxDamage</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum damage this shape can accrue.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">100</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">renderWhenDestroyed</td>	
+<td width="55%" bgcolor="#CCCCCC">Boolean value specifying whether to render this shape or not once it's damageState is 'Destroyed'.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">false</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">underwaterExplosion</td>	
+<td width="55%" bgcolor="#CCCCCC">ExplosionData datablock to use for an explsion when this shape is destroyed and submerged in water. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">See lesson samples.</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Damage Reference Values</b><br />
+<p>These values do not change engine functions and are meant to be used by scripts.
+</p>
+</td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">destroyedLevel</td>	
+<td width="55%" bgcolor="#CCCCCC">Damage level at which this shape will be considered destroyed.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">100</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">disabledlevel</td>	
+<td width="55%" bgcolor="#CCCCCC">Damage level at which this shape will be considered disabled.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">50</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">repairRate</td>	
+<td width="55%" bgcolor="#CCCCCC">Rate (in points per tick) at which this shape is repaired when current damage &gt; 0.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">
+<p>0.03125<br />
+(is equal to 1 point per second)
+</p>
+</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Energy</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">inheritEnergyFromMount</td>	
+<td width="55%" bgcolor="#CCCCCC">When mounted, use mount's energy.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">false</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxEnergy</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum energy this object can have.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">50</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Energy Reference Values</b><br />
+<p>These values do not change engine functions and are meant to be used by scripts.
+</p>
+</td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">rechargeRate</td>	
+<td width="55%" bgcolor="#CCCCCC">Rate (in points per tick) at which this shape is recharged when current energy &lt; maxEnergy.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">
+<p>0.03125<br />
+(is equal to 1 point per second)
+</p>
+</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Camera Settings</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">cameraDefaultFOV</td>	
+<td width="55%" bgcolor="#CCCCCC">Initial field of view for the camera.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , 180 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">cameraMaxDist</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum distance from camera to observing object.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ cameraMinDist , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">cameraMaxFOV</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum field of view for the camera.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , 180 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">cameraMinDist</td>	
+<td width="55%" bgcolor="#CCCCCC">Minimum distance from camera to observing object.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , cameraMaxDist ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">cameraMinFOV</td>	
+<td width="55%" bgcolor="#CCCCCC">Minimum field of view for the camera.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , 180 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">firstPersonOnly</td>	
+<td width="55%" bgcolor="#CCCCCC">Render shape when in first person (only applies to shapes that are observed through.)</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">observeThroughObject</td>	
+<td width="55%" bgcolor="#CCCCCC">If true, camera will use this shape's camera parameters, when this is the controlled object.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">useEyePoint</td>	
+<td width="55%" bgcolor="#CCCCCC">Use the eye node specified by this shape instead.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Miscellaneous</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">aiAvoidThis</td>	
+<td width="55%" bgcolor="#CCCCCC">A boolean hit to be used by AI scripts to determine if an AI agent should 'avoid' this object.  Scripts are responsible for dealing with this.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">computeCRC</td>	
+<td width="55%" bgcolor="#CCCCCC">Calculate a cyclic-redundancy-code for this shape.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink4"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="50%" align="center" bgcolor="#009900">popFront</td>	
+<td width="50%" align="center" bgcolor="#009900">pushBack</td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink5"></a>Console Methods </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getDeployTransform( <i>position</i> , <i>normal</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <b>getDeployTransform</b> method to retrieve the transform that would result from deploying an unscaled object using this datablock at <i><b>position</b></i> with the specified <b>normail</b>.<br />
+<br />
+<b>Syntax<br />
+<i>position</i></b> – The postion to create the transform for.<br />
+<i><b>normal</b></i> – A vector representing the object's UP vector.  This can be thought of as an object's tilt or leaning vector.  If the object is to be placed at an angle, pass in a unit-vector that has the same orientation as a vector starting at <i><b>postion</b></i> and aligning with the requied angle.<br />
+<br />
+<b>Returns</b><br />
+Returns a deployment (placement) transform for an un-scaled and un-rotated datablock derived shape placed at the required location with an optional tilt.<br />
+<br />
+<b>See Also</b><br />
+checkDeployPos<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>checkDeployPos( <i>transform</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <b>checkDeployPos</b> method to determine if placing an unscaled version of an object using this datablock will cause that shape to be embedded in a staticShape or an InteriorInstance.<br />
+<br />
+<b>Syntax<br />
+<i>transforms</i></b> – A normal transform, or a transform calculated using <i>getDeployTransform</i>.<br />
+<br />
+<b>Returns</b><br />
+Returns false if the placement will result in the new shape being embedded in a staticShape or an InteriorInstance.  Otherwise, it will return true.<br />
+<br />
+<b>Notes</b><br />
+This check doesn't examine the area for all possible object, just staticShapes and Interiors.  To include more objects you will need to edit the engine and add them to the list of 'interesting' objects.<br />
+<br />
+<b>See Also</b><br />
+getDeployTransform<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="ShapeBaseImageData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink6"></a>ShapeBaseImageData</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">ShapeBaseImageData has no associated class as other xyzData classes do.  This special class is used to represent geometry that can only be mounted to an existing ShapeBase object.  ShapeBaseImageData objects cannot otherwise be instantiated like other Shape objects.<br />
+</p>
+<a name="Fields_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink7"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Rendering</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">emap</td>	
+<td width="55%" bgcolor="#CCCCCC">A boolean value specifying whether to render environmental map or not.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">firstPerson</td>	
+<td width="55%" bgcolor="#CCCCCC">If true, render this image in 1st POV.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">shapeFile</td>	
+<td width="55%" bgcolor="#CCCCCC">Path to DTS file containing the model for this shape.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Projectile</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">projectile</td>	
+<td width="55%" bgcolor="#CCCCCC">ProjectileData datablock</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Cloaking</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">cloakable</td>	
+<td width="55%" bgcolor="#CCCCCC">A boolean value specifying whether this image cloaks when the shape it is mounted to is cloaked.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Mounting</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">eyeOffset</td>	
+<td width="55%" bgcolor="#CCCCCC">Rendering position offset (only affects 1st POV).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">eyeRotation</td>	
+<td width="55%" bgcolor="#CCCCCC">Rendering rotation offset (only affects 1st POV).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">mountPoint</td>	
+<td width="55%" bgcolor="#CCCCCC">Named mount node to mount to on the receving shape.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0 , 31 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">offset</td>	
+<td width="55%" bgcolor="#CCCCCC">Position offset from mount point.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">rotation</td>	
+<td width="55%" bgcolor="#CCCCCC">Rotation offset from mount point.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Lighting</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightColor</td>	
+<td width="55%" bgcolor="#CCCCCC">Three-element floating-point vector specifing RGB components of light.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">“r g b a” In range [ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightRadius</td>	
+<td width="55%" bgcolor="#CCCCCC">Floating-point value specifying radius for light emision. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[0.0 , 20.0]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightTime</td>	
+<td width="55%" bgcolor="#CCCCCC">Integer value specifyng time (in milliseconds) for light to pulse on-off-on.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightType</td>	
+<td width="55%" bgcolor="#CCCCCC">String specifying  type of light does this image emits.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">
+<p>“NoLight”<br />
+“ConstantLight”<br />
+”PulsingLight”
+</p>
+</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Physics</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">mass</td>	
+<td width="55%" bgcolor="#CCCCCC">Floating-point value specifying mass for this image.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Weapons</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">accuFire</td>	
+<td width="55%" bgcolor="#CCCCCC">Has no effect.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">casing</td>	
+<td width="55%" bgcolor="#CCCCCC">DebrisData datablock to use for ejected casings.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">correctMuzzleVector</td>	
+<td width="55%" bgcolor="#CCCCCC">Boolean value specifyng that the muzzle vector should be calculated from the players eyeVector, not from the muzzleVector of the image.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minEnergy</td>	
+<td width="55%" bgcolor="#CCCCCC">Floating-point value specifying  minimum energy required to 'fire' this weapon.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">shellExitDir</td>	
+<td width="55%" bgcolor="#CCCCCC">Ejection vector for ejected casings.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">shellExitVariance</td>	
+<td width="55%" bgcolor="#CCCCCC">Floating-point value specifying  variance in ejection vector direction.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , 180.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">shellVelocity</td>	
+<td width="55%" bgcolor="#CCCCCC">Floating-point value specifying  shell ejection velocity.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">usesEnergy</td>	
+<td width="55%" bgcolor="#CCCCCC">Boolean value specifying that this weapon uses energy.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>State Machine</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateAllowImageChange[]</td>	
+<td width="55%" bgcolor="#CCCCCC">If false, will temporarily block other images from mounting while the statemachine is executing the tasks in this state.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateDirection[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Direction of animation. true is foward.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateEjectShell[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Eject shell in this state.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateEmitter[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Play this particle emitter (at muzzle point or specified node).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateEmitterNode[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Integer value specifying node to attach emitter to. Default is to mount to named node 'muzzlepoint'.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateEmitterTime[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Floating-point value specifying time to run emitter.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateEnergyDrain[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Floating-point value specifying  </td>
+<td width="25%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateFire[]</td>	
+<td width="55%" bgcolor="#CCCCCC">First state with this a true is the state entered by the client when it receives the 'fire' event.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateIgnoreLoadedForReady[]</td>	
+<td width="55%" bgcolor="#CCCCCC">If set to true, and both ready and loaded transitions are true, the ready transition will be taken instead of the loaded transition.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateLoadedFlag[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Set loaded state of shape to specified value.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">
+<p>“Ignore”<br />
+“Loaded”<br />
+“Empty”
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateName</td>	
+<td width="55%" bgcolor="#CCCCCC">Name of this state.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateRecoil[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Play specified recoil anmation. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">
+<p>“NoRecoil”<br />
+“LightRecoil”<br />
+“MediumRecoil” “HeavyRecoil”
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateScript[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Method to execute on entering this state.  Scoped to this  image class name, then shapeBaseImageData, ...</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateSequenceRandomFlash[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Play random flash animation.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateSequence[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Play this animation.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateSound[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Play sound specified by this audio file.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateSpinThread[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Play this spin animation (blended).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">
+<p>“Ignore”<br />
+“Stop”<br />
+“SpinUp”<br />
+”SpinDown”<br />
+“FullSpeed”
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateTimeoutValue[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Time in seconds for this state to time out.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateTransitionOnNotLoaded[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Transition to this named state if the state of loaded is 'Empty'.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">someStateName</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateTransitionOnTriggerDown[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Transition to this named state if the fire button is pressed.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">someStateName</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateTransitionOnTriggerUp[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Transition to this named state if the fire button is released.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">someStateName</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateTransitionOnAmmo[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Transition to this named state when the ammo the image has ammo.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">someStateName</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateTransitionOnLoaded[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Transition to this named state when the loaded state of the image is 'Loaded'.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">someStateName</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateTransitionOnNoAmmo[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Transition to this named state when the  the image has no ammo.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">someStateName</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateTransitionOnNoTarget[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Transition to this named state when the image has no target.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">someStateName</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateTransitionOnNotWet[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Transition to this named state when the image is not underwater.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">someStateName</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateTransitionOnWet[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Transition to this named state when image is underwater.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">someStateName</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateTransitionTarget[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Transition to this named state when the image has a target.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">someStateName</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateTransitionTimeout[]</td>	
+<td width="55%" bgcolor="#CCCCCC">Transition to this named state when the current state transition timeout time has elapased.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">someStateName</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stateWaitForTimeout[]</td>	
+<td width="55%" bgcolor="#CCCCCC">If false, this state ignores timeout and transitions immediately if other tests are met.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Miscellanous</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">computeCRC</td>	
+<td width="55%" bgcolor="#CCCCCC">Verify that the CRC of the client's image matches the  server's CRC for the image on load by client.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="SimDataBlock" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink8"></a>SimDataBlock</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This class is the root class for all datablock classes.  It does not define any fields or console methods of it’s own.  <br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="SimGroup" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink9"></a>SimGroup</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">Same fields as SimSet.<br />
+<br />
+</p>
+<a name="SimObject" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink10"></a>SimObject</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<a name="Console_Method_Summaries_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink11"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">delete</td>	
+<td width="33%" align="center" bgcolor="#009900">dump</td>	
+<td width="34%" align="center" bgcolor="#009900">getClassName</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getGroup</td>	
+<td width="33%" align="center" bgcolor="#009900">getId</td>	
+<td width="34%" align="center" bgcolor="#009900">getName</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getType</td>	
+<td width="33%" align="center" bgcolor="#009900">save</td>	
+<td width="34%" align="center" bgcolor="#009900">schedule</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink12"></a>Console Methods </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>delete()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>delete</b></i> method to delete this object.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+When an object is deleted, it automatically:<br />
+</p>
+<ul><li>Unregisters its ID and name (if it has one) with the engine.</li>
+<li>Removes itself from any SimGroup or SimSet it may be a member of.</li>
+<li>(eventually) returns the memory associated with itself and its non-dynamic members.</li>
+<li>Cancels all pending %obj.schedule() events.</li>
+</ul>
+<p><br />
+For objects in the GameBase, ScriptObject, or GUIControl hierarchies, an object will first:<br />
+</p>
+<ul><li>Call the onRemove() method for the object's namespace.</li></ul>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>dump()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>dump</b></i> method to display the following information about this object:<br />
+<br />
+</p>
+<ul><li>All engine registered console methods (including parent methods) for this object.</li>
+   <li>All script registered console methods (including parent methods) for this object.</li>
+   <li>All Non-Dynamic Fields</li>
+   <li>All Dynamic Fields</li>
+</ul>
+<p><br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getClassName()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getClassName</b></i> method to get the ConObject class name of this object.<br />
+<br />
+<b>Returns</b><br />
+Returns a string containing the ConObject registered name of this object's class.<br />
+<br />
+Some Possible Returns:<br />
+</p>
+<ul><li>SimObject</li>
+   <li>WheeledVehicle</li>
+   <li>Player</li>
+   <li>...</li>
+</ul>
+<p><br />
+<b>See Also</b><br />
+getType<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getGroup()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getGroup</b></i> method to determine if this object is contained in a SimGroup and if so, which one.<br />
+<br />
+<b>Returns</b><br />
+Returns the ID of the SimGroup this shape is in or zero if the shape is not contained in a SimGroup.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getId()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getId</b></i> method to get the numeric ID of this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns the unique numeric ID of this shape.<br />
+<br />
+<b>See Also</b><br />
+getName, setName<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getName()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getName</b></i> method to get the name (if any) for this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns a string containing the name of this shape, or the NULL string if this shape  was never given a name (either when created or subsequently).<br />
+<br />
+<b>See Also</b><br />
+getID, setName<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getType()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getType</b></i> method to get the type for this object.  This type is an integer value composed of bitmasks.  For simplicity, these bitmasks are defined in the engine and exposed for our use as global variables.<br />
+<br />
+<b>Returns</b><br />
+Returns a bit mask containing one or more set bits.<br />
+<br />
+<b>Notes</b><br />
+To simplify the writing of scripts, a set of globals has been provided containing the bit setting for each class corresponding to a particular type.  For a complete list of the bit masks, see the 'Shape Type Bitmasks' table.<br />
+<br />
+-$TypeMasks::GameBaseObjectType<br />
+-- $TypeMasks::EnvironmentObjectType<br />
+-- $TypeMasks::ExplosionObjectType<br />
+-- $TypeMasks::ProjectileObjectType<br />
+-- $TypeMasks::ShapeBaseObjectType<br />
+--- $TypeMasks::CameraObjectType<br />
+--- $TypeMasks::ItemObjectType<br />
+--- $TypeMasks::MarkerObjectType<br />
+--- $TypeMasks::PlayerObjectType<br />
+--- $TypeMasks::StaticShapeObjectType<br />
+--- $TypeMasks::VehicleObjectType<br />
+-- $TypeMasks::TriggerObjectType<br />
+- $TypeMasks::InteriorObjectType<br />
+- $TypeMasks::StaticObjectType<br />
+- $TypeMasks::TerrainObjectType<br />
+- $TypeMasks::VehicleBlockerObjectType<br />
+- $TypeMasks::WaterObjectType<br />
+<br />
+Two interesting general masks are:<br />
+</p>
+   <ul>
+      <li>$TypeMasks::EnvironmentObjectType – Matches sky, sun, lightning, particle emitter nodes.</li>
+      <li>$TypeMasks::StaticObjectType – Matches – fxFoliageReplicator, fxLight, fxShapeReplicator, fxSunlight, interiorInstance, lightning, mirrorSubObject, missionMarker, staticShape, terrain, tsStatic</li>
+   </ul>
+<p><br />
+<b>See Also</b><br />
+getClassName<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<div class="center" xmlns="http://www.w3.org/1999/xhtml"><a name="Shape_Type_Bitmasks"></a><h3><a name = "HeaderLink13"></a>Shape Type Bitmasks </h3></div>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::StaticObjectType</td>	
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::EnvironmentObjectType</td>	
+</tr>
+
+<tr>
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::TerrainObjectType</td>	
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::InteriorObjectType</td>	
+</tr>
+
+<tr>
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::WaterObjectType</td>	
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::TriggerObjectType</td>	
+</tr>
+
+<tr>
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::MarkerObjectType</td>	
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::GameBaseObjectType</td>	
+</tr>
+
+<tr>
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::ShapeBaseObjectType</td>	
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::CameraObjectType</td>	
+</tr>
+
+<tr>
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::StaticShapeObjectType</td>	
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::PlayerObjectType</td>	
+</tr>
+
+<tr>
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::ItemObjectType</td>	
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::VehicleObjectType</td>	
+</tr>
+
+<tr>
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::VehicleBlockerObjectType</td>	
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::ProjectileObjectType</td>	
+</tr>
+
+<tr>
+<td width="50%" align="center" bgcolor="#009900">$TypeMasks::ExplosionObjectType</td>	
+<td width="50%" align="center" bgcolor="#009900"></td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>schedule(<i>time</i> , <i>command</i> , &lt;<i>arg1</i> ... <i>argN</i>&gt; )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>schedule</b></i> method to schedule an action to be executed upon this object <i><b>time</b></i> milliseconds in the future.<br />
+<br />
+<b>Syntax<br />
+<i>time</i></b> – Time in milliseconds till action is scheduled to occur.  <br />
+<i><b>command</b></i> – Name of the command to execute.  This command must be scoped to this object (i.e. It must exist in the namespace of the object), otherwise the schedule call will fail.<br />
+<i><b>arg1...argN</b></i> – These are optional arguments which will be passed to <i><b>command</b></i>.  This        version of schedule automatically passes the ID of %obj as arg0 to <i><b>command</b></i>.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer schedule ID.  <br />
+<br />
+<b>Notes</b><br />
+The major difference between this and the schedule console function is that if this object is deleted prior to the scheduled event, the event is automatically cancelled.<br />
+<br />
+<i><b>times</b></i> should not be treated as exact since some 'simulation delay' is to be expected.  The minimum resolution for a scheuled event is ~32 ms, or one tick.  <br />
+<br />
+<i>schedule</i> does not validate the existance of <i><b>command</b></i>.  i.e. If you pass an invalid console method name, the schedule() method will still return a schedule ID, but the <u>subsequent event will fail silently</u>.<br />
+<br />
+<b>See Also</b><br />
+See the schedule console function and its corresponding helper functions.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setName( <i>name</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setName</b></i> method to give this shape a new name.<br />
+<br />
+<b>Syntax<br />
+<i>name</i></b> – A string containing the new name for this shape, or a NULL string to un-name this shape.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Names can be compose of non-alphanumeric symbols, but be careful when doing this.<br />
+<br />
+<b>See Also</b><br />
+getID, getName<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><a href="Console%20Objects.html" title="Torque Console Objects TOC"> Table of Contents</a> || <a href="Torque_Console_Objects_1.html" title="Torque Console Objects"> Part 1</a> || <a href="Torque_Console_Objects_2.html" title="Torque Console Objects 2"> Part 2</a> || <a href="Torque_Console_Objects_3.html" title="Torque Console Objects 3"> Part 3</a> || <a href="Torque_Console_Objects_4.html" title="Torque Console Objects 4"> Part 4</a> || <a href="Torque_Console_Objects_5.html" title="Torque Console Objects 5"> Part 5</a> || <a href="Torque_Console_Objects_6.html" title="Torque Console Objects 6"> Part 6</a> || <a href="Torque_Console_Objects_7.html" title="Torque Console Objects 7"> Part 7</a> || <a href="Torque_Console_Objects_8.html" title="Torque Console Objects 8"> Part 8</a> || <a href="Torque_Console_Objects_9.html" title="Torque Console Objects 9"> Part 9</a> || <a href="Torque_Console_Objects_10.html" title="Torque Console Objects 10"> Part 10</a> || <a href="Torque_Console_Objects_11.html" title="Torque Console Objects 11"> Part 11</a> || <a href="Torque_Console_Objects_13.html" title="Torque Console Objects 13"> Part 13</a> || <a href="Torque_Console_Objects_14.html" title="Torque Console Objects 14"> Part 14</a> || <a href="Torque_Console_Objects_15.html" title="Torque Console Objects 15"> Part 15</a>
+</p>
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_12.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:00 GMT -->
+</html>

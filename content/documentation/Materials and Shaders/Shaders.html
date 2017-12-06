@@ -1,0 +1,170 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Materials and Shaders/Shaders.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4205;
+   parent.leftFrame.expandToItem('tree2', 'doc4205');
+   var element = parent.leftFrame.document.getElementById('doc4205');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Materials and Shaders - Shaders</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+</head>
+
+<BODY id = "BODYID" onLoad = "initComponent()"  id="body-with-lockmark">
+
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+
+<td>
+<a name="Introduction"></a>
+<h2><a name = "HeaderLink0"></a>Introduction</h2>
+<p>Shader support is handled two different ways in the TGEA. The first way is for the engine itself to procedurally generate shaders from base Material properties. The second way is for programmers to specify their own shaders by using CustomMaterials and ShaderData structures. 
+</p>
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink1"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class='toclevel-1'><a href="#Procedural_Shader_Generation"><span class="tocnumber">2</span> <span class="toctext">Procedural Shader Generation</span></a></li>
+<li class='toclevel-1'><a href="#Specifying_Hand_Written_Shaders"><span class="tocnumber">3</span> <span class="toctext">Specifying Hand Written Shaders</span></a>
+<ul>
+<li class='toclevel-2'><a href="#DXVertexShaderFile"><span class="tocnumber">3.1</span> <span class="toctext">DXVertexShaderFile</span></a></li>
+<li class='toclevel-2'><a href="#DXPixelShaderFile"><span class="tocnumber">3.2</span> <span class="toctext">DXPixelShaderFile</span></a></li>
+<li class='toclevel-2'><a href="#pixVersion"><span class="tocnumber">3.3</span> <span class="toctext">pixVersion</span></a></li>
+<li class='toclevel-2'><a href="#Sample_ShaderData"><span class="tocnumber">3.4</span> <span class="toctext">Sample ShaderData</span></a></li>
+<li class='toclevel-2'><a href="#Custom_Materials"><span class="tocnumber">3.4</span> <span class="toctext">CustomMaterials</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p><p><br />
+</p>
+<a name="Procedural_Shader_Generation"></a><h2><a name = "HeaderLink2"></a>Procedural Shader Generation</h2>
+<p>
+   Procedural shaders or <a href="Materials.html">Materials</a> (as they are known in Torque) are output into human readable HLSL form in the example/shaders directory. The vertex and pixel shaders have the respective shaderVxxx.hlsl and shaderPxxx.hlsl filenames where xxx is an incremental number. Each number is the same for matching vertex and pixel shaders, so shaderV010.hlsl and shaderP010.hlsl are the complete shader pair.
+</p>
+<p>
+   The procedurally generated shaders are created and compiled at run time every time the engine starts. This will likely change in the future such that they are cached. The shaders are generated specifically for whatever hardware they are running on. As a result, the number and length of the shader files will vary depending on the video card being used.
+</p>
+<p>
+   The engine can be set so new shaders are not generated. This is useful for debugging and modifying procedural shaders.
+</p>
+<a name="Specifying_Hand_Written_Shaders"></a>
+<h2><a name = "HeaderLink3"></a>Specifying Hand Written Shaders</h2>
+<p>
+   To use hand written shaders, a ShaderData datablock must be used. This datablock refers only to the vertex and pixel shader filenames and a hardware target level. Shaders are API specific, so DirectX and OpenGL shaders must be explicitly identified. At the time of this writing, only Direct3D is implemented so only the following data is relevant:
+</p>
+<a name="DXVertexShaderFile"></a>
+<h3><a name = "HeaderLink4"></a>DXVertexShaderFile</h3>
+<p>
+   Indicates a filename that contains a DirectX vertex shader program. It must contain only one program and no pixel shader, just the vertex shader. It can be either an HLSL or assembly level shader. The former must have a filename extension of .hlsl, otherwise it assumes it is an assembly file.
+</p>
+<a name="DXPixelShaderFile"></a>
+<h3><a name = "HeaderLink5"></a>DXPixelShaderFile</h3>
+<p>
+   Indicates a filename that contains a DirectX pixel shader program. It must contain only one program and no vertex shader, just the pixel shader. It can be either an HLSL or assembly level shader. The former must have a filename extension of .hlsl, otherwise it assumes it is an assembly file.
+</p>
+<a name="pixVersion"></a>
+<h3><a name = "HeaderLink6"></a>pixVersion</h3>
+<p>
+   This indicates what target level of shader should be compiled. Valid numbers at the time of this writing are 1.1, 1.4, 2.0, and 3.0. The shader will not run properly if your hardware does not support the level of shader you have compiled.
+</p>
+<a name="Sample_ShaderData"></a>
+<h3><a name = "HeaderLink7"></a>Sample ShaderData</h3>
+<p>
+   Here is a sample ShaderData datablock. This is used in conjuction with CustomMaterials. Multiple CustomMaterials can reference the same ShaderData structure. See shaders.cs for more examples.
+</p>
+<pre>
+   datablock ShaderData( BumpCubemap )
+   {
+   DXVertexShaderFile 	= &quot;shaders/bumpCubeV.hlsl&quot;;
+   DXPixelShaderFile 	= &quot;shaders/bumpCubeP.hlsl&quot;;
+   pixVersion = 1.1;
+   };
+</pre>
+<a name="Custom_Materials"></a>
+<h2><a name = "HeaderLink8"></a>Custom Materials</h2>
+<p>
+CustomMaterials are what allow the user to <a href="Material%20Mapping.html">map</a> their ShaderData to a specific texture on an art asset in the game (much like <a href="Materials.html">Materials</a>). 
+</p><p><br />
+<b>CustomMaterial Properties</b>
+</p><p><br />
+CustomMaterials are derived from Materials, so they can hold a lot of the same properties, but it is up to the user to code how these properties are used. 
+</p><p><b>texture[x]</b>
+</p><p>Specifies either a texture filename, or a texture coming from the scenegraph. The "x" is a number from 0 to the max number of texture units supported on the hardware the CustomMaterial shader is targeting (see the version property description, below). 
+</p><p>There are several textures that can be grabbed from the scenegraph and used in shaders. Here is a list: 
+</p><p><b>$lightmap</b>
+</p><p>Interior lightmap 
+</p><p><b>$normmap</b>
+</p><p>Interior light-normal map (not a bumpmap, but used for bumpmapping) 
+</p><p><b>$fog</b>
+</p><p>The fog texture generated by the scenegraph 
+</p><p><b>$cubemap</b>
+</p><p>The cubemap specified with the cubemap parameter of the CustomMaterial 
+<b></b>
+$dynamicCubemap<b></b>
+</p><p>Cubemap passed in from scenegraph 
+</p><p><b>$backbuff</b>
+</p><p>A copy of the screenbuffer - useful for refraction effects 
+</p><p><b>shader</b>
+</p><p>The shader parameter indicates the pixel and/or vertex shader to be used with the CustomMaterial. This parameter expects a ShaderData datablock. See Shaders. 
+</p><p><b>version</b>
+</p><p>Each CustomMaterial datablock targets a specific level of pixel shader hardware. The version parameter indicates this level. Ie. nVIDIA's Geforce 2 would be 0.0, Geforce 3 and 4ti's would be 1.1, the Geforce FX cards would be 2.0, and the Geforce 6xxx cards would be 3.0. 
+</p><p><b>fallback</b>
+</p><p>High level CustomMaterials (ones targeting 3.0 or 2.0 pixel shader hardware) can specify fallbacks for lower levels of hardware. This allows complete control over how a material looks on each possible platform. The fallback parameter is simply another CustomMaterial that is targeting a lower level hardware. 
+</p><p>When mapping a CustomMaterial to a texture, the highest level CustomMaterial in the fallback chain should be specified. That way the TGEA can follow the fallback chain down until it reaches a material that can be rendered. 
+</p><p><b>pass</b>
+</p><p>In addition to targeting a specific level of hardware, each CustomMaterial also targets just a single rendering pass. If more passes are desired they can be specified using the pass parameter. It just takes another CustomMaterial definition. 
+</p>
+<a name="Sample_CustomMaterial"></a><h4><a name = "HeaderLink9"></a>Sample CustomMaterial</h4>
+<p><b>Example</b>
+</p>
+<pre>
+    new CustomMaterial( ShinyMetal2_0 )
+    {
+       texture[0] = &quot;test/metalBump&quot;;   // bumpmap texture in texture unit 0
+       texture[3] = &quot;$cubemap&quot;;         // cubemap texture in texture unit 3
+    
+       cubemap    = Lobby;
+       shader     = BumpCubemap;
+       version    = 2.0;
+       fallback   = ShinyMetal1;          // specify fallback for 1.1 hardware
+       pass[0]    = ShinyMetal2_1;        // specify second pass
+    
+       specular = &quot;1.0 1.0 1.0 0.0&quot;;    // can use the specular parameter from Material
+       specularPower = 8.0;
+    };
+        
+</pre>
+<p><br />
+</p>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Materials and Shaders/Shaders.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:36 GMT -->
+</html>

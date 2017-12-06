@@ -1,0 +1,483 @@
+﻿<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Quick Reference/Features, Variables, Constants, Operators.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4258;
+   parent.leftFrame.expandToItem('tree2', 'doc4258');
+   var element = parent.leftFrame.document.getElementById('doc4258');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Scripting Reference - Features, Variables, Constants, and Operators</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+<link rel="STYLESHEET" type="text/css" href="torque.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="15" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+<td width="1645">
+
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#Conventions"><span class="tocnumber">1</span> <span class="toctext">Conventions</span></a></li>
+<li class='toclevel-1'><a href="#Language_Features"><span class="tocnumber">2</span> <span class="toctext">Language Features</span></a></li>
+<li class='toclevel-1'><a href="#Variable_Names"><span class="tocnumber">3</span> <span class="toctext">Variable Names</span></a></li>
+<li class='toclevel-1'><a href="#Constants"><span class="tocnumber">4</span> <span class="toctext">Constants</span></a></li>
+<li class='toclevel-1'><a href="#Operators"><span class="tocnumber">5</span> <span class="toctext">Operators</span></a></li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="Conventions"></a><h2><a name = "HeaderLink1"></a> Conventions </h2>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700">
+<p>Throughout this document, for succinctness, I refer to the Torque Game Engine Scripting language simply as TorqueScript.
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<a name="Language_Features"></a><h2><a name = "HeaderLink2"></a> Language Features </h2>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700">
+<p>TorqueScript is a typeless scripting language, with similarities in syntax to C/C++.  In TorqueScript, you will find that most C/C++ operators work in the familiar way (with important exceptions, as noted here).  Besides a subset of C/C++, TorqueScript provides:
+</p>
+<ul>
+<li>Case-insensitive symbols; keywords <i>false</i> and <i>FALSE</i> are identical.
+<li>Auto creation and destruction of local/global variables and their storage. 
+<li>String concatenation, comparison, and auto-string-constant creation (see <a href="file:///C|/Torque/documentation/SourceDocumentation/TGEA/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_3.html" title="">Literals</a>).
+<li>Function <a href="Keywords%2c%20Datablocks.html#Package" title="Keywords, Datablocks">packaging</a>.
+</ul>
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<a name="Variable_Names"></a><h2><a name = "HeaderLink3"></a> Variable Names </h2>
+<table width="740" cellspacing="0" cellpadding="4" border="1" bgcolor="#CCCCCC">
+<th width="10%" bgcolor="#999999"><b>Type</b></th><th width="10%"><b>Syntax</b></th><th><b>Example</b></th><th><b>Explanation</b></th>
+<tr>
+<td bgcolor="#999999"><b><div class="center">Global</div></b></td>
+<td><div class="center">prefix $</div></td>
+<td><div class="center">$a</div></td>
+<td><div class="center">$a is a global variable</div></td>
+</tr>
+<tr>
+<td bgcolor="#999999"><b><div class="center"> Local</div></b></td>
+<td><div class="center">prefix %</div></td>
+<td><div class="center">%b</div></td>
+<td><div class="center">%b is a local variable</div></td>
+</tr>
+<tr>
+<td rowspan="3" valign="top" bgcolor="#999999"><div class="center"><b>Array</b><br />(Global<br />or Local)</div></td>
+<td rowspan="2" valign="top" bgcolor="#CCCCCC"><div class="center">postfix []</div></td>
+<td><div class="center">$MyArray[n]</div></td>
+<td><div class="center">Array</div></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">$MyMultiArray[n,m]</center><center>$MyMultiArrayn_m</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Multi-dimensional array</div></td>
+</tr>
+<tr>
+<td colspan="3" bgcolor="#D0D0D0">
+<p><b>Note:</b> TorqueScript does not have support for arrays as such. Instead, the bracket notation is a shorthand for creating a variable name. $a[0] is synonymous with $a0, and $M[1,4] with $M1_4. You must not think of $a as the name of the array containing $a[5]. TorqueScript arrays provide the means for creating variable names dynamically: if $i is 5, then $a[$i] is synonymous with $a5.
+</p>
+</td>
+</tr>
+</table>
+<a name="Constants"></a><h2><a name = "HeaderLink4"></a> Constants </h2>
+<table width="740" cellspacing="0" cellpadding="4" border="1" bgcolor="#CCCCCC">
+<th width="10%" bgcolor="#999999"><b>Type</b></th><th width="20%" bgcolor="#CCCCCC"><b>Example</b></th><th bgcolor="#CCCCCC"><b>Explanation</b></th>
+<tr>
+<td rowspan="2" valign="top" bgcolor="#999999"><b><div class="center">Boolean</div></b></td>
+<td><div class="center">TRUE</div></td>
+<td><div class="center">1</div></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">FALSE</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">0</div></td>
+</tr>
+<tr>
+<td rowspan="2" valign="top" bgcolor="#999999"><b><div class="center">Integer</div></b></td>
+<td><div class="center">123</div></td>
+<td><div class="center">decimal</div></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">0xabc</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">hexadecimal</div></td>
+</tr>
+<tr>
+<td rowspan="3" valign="top" bgcolor="#999999"><b><div class="center">Float</div></b></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">1.23</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">floating-point</div></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">1.00E-003</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">scientific notation</div></td>
+</tr>
+<tr>
+<td colspan="2" bgcolor="#D0D0D0"><b>Note</b>: If the float is less than 1, explicitly include the leading "0" before the ".", e.g., "0.2". Entering ".2" will not work in every circumstance.</td>
+</tr>
+<tr>
+<td rowspan="10" valign="top" bgcolor="#999999"><b><div class="center">Character</div></b></td>
+<td><div class="center">\n</div></td>
+<td><div class="center">newline</div></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">\r</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">carriage return</div></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">\t</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">tab</div></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">\c0 .. \c9</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">colorize subsequent console output</div></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">\cr</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">reset to default color</div></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">\cp</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">push color from color stack</div></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">\co</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">pop color from color stack</div></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">\xhh</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">two-digit hex value ASCII code</div></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">\\</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">backslash</div></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">\"</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">double-quotes</div></td>
+</tr>
+<tr>
+<td rowspan="2" valign="top" bgcolor="#999999"><b><div class="center">String</div></b></td>
+<td><div class="center">“Hello world”</div></td>
+<td><div class="center">Normal string</div></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">‘Torque Rocks’</div></td>
+<td align="left" valign="top" bgcolor="#CCCCCC"><div class="center">A tagged string, as used in communication between client and server.  The value of a tagged string is sent only once; subsequently, only the ‘tag’ is sent.  Clients will store the string at an index identified by the ‘tag’ and can look up the value, avoiding the need for it to be sent repeatedly.</div></td>
+</tr>
+<tr>
+<td rowspan="2" valign="top" bgcolor="#999999"><b><div class="center">Vector</div></b></td>
+<td><div class="center">"1.0 2.0 1.0 2.0"</div></td>
+<td><div class="center">4-element vector</div></td>
+</tr>
+<tr>
+<td colspan="2" bgcolor="#D0D0D0">
+<p><b>Note:</b> TorqueScript does not have support for vectors as such. The vector exemplified here is simply a space-separated string. Space-, tab-, and newline-separated strings crop up in the calling sequence of certain functions, notably in the return value, which technically is a scalar, but may be a string that can be interpreted as a vector. See <a href="http://tdn.garagegames.com/wiki/TGB/Reference:_t2dSceneObject_Spatial_Methods#getPosition" title="TGB/Reference: t2dSceneObject Spatial Methods">t2dSceneObject::getPosition()</a>, resp. <a href="http://tdn.garagegames.com/wiki/TGB/Reference:_SimObject#Methods" title="TGB/Reference: SimObject">SimObject::getDynamicField()</a>. 
+</p>
+</td>
+</tr>
+</table>
+<p><br />
+</p>
+<a name="Operators"></a><h2><a name = "HeaderLink5"></a> Operators </h2>
+<table width="740" cellspacing="0" cellpadding="4" border="1" bgcolor="#CCCCCC">
+<th width="15%" bgcolor="#CCCCCC"><b><div class="center">Operator</div></b></th>
+<th width="20%" bgcolor="#CCCCCC"><b><div class="center">Name</div></b></th>
+<th width="20%" bgcolor="#CCCCCC"><b><div class="center">Example</div></b></th>
+<th width="45%" bgcolor="#CCCCCC"><b><div class="center">Explanation</div></b></th>
+<tr>
+<td colspan="4" bgcolor="#999999"><div class="center"><b>Arithmetic Operators</b></div></td>
+</tr>
+<tr>
+<td><div class="center">*</div></td>
+<td><div class="center">multiplication</div></td>
+<td><div class="center">$a * $b</div></td>
+<td><div class="center">Multiply $a and $b.</div></td>
+</tr>
+<tr>
+<td><div class="center">/</div></td>
+<td><div class="center">division</div></td>
+<td><div class="center">$a / $b</div></td>
+<td><div class="center">Divide $a by $b.</div></td>
+</tr>
+<tr>
+<td><div class="center">%</div></td>
+<td><div class="center">modulo</div></td>
+<td><div class="center">$a % $b</div></td>
+<td><div class="center">Remainder of $a divided by $b.</div></td>
+</tr>
+<tr>
+<td><div class="center">+</div></td>
+<td><div class="center">addition</div></td>
+<td><div class="center">$a + $b</div></td>
+<td><div class="center">Add $a and $b.</div></td>
+</tr>
+<tr>
+<td><div class="center">-</div></td>
+<td><div class="center">subtraction</div></td>
+<td><div class="center">$a - $b</div></td>
+<td><div class="center">Subtract $b from $a.</div></td>
+</tr>
+<tr>
+<td><div class="center">++</div></td>
+<td><div class="center">auto-increment<br />(post-fix only)</div></td>
+<td><div class="center">$a++</div></td>
+<td><div class="center">Increment $a. Note: ++$a is illegal.</center><center><b>Note:</b> the value of $a++ is that of the incremented variable: auto-increment is post-fix in syntax, but pre-increment in sematics (the variable is incremented, <i>before</i> the return value is calculated). This behavior is unlike that of C and C++.</div></td>
+</tr>
+<tr>
+<td><div class="center">- -</div></td>
+<td><div class="center">auto-decrement<br />(post-fix only)</div></td>
+<td><div class="center">$b--</div></td>
+<td><div class="center">Decrement $b. Note: --$b is illegal.</center><center><b>Note:</b> the value of $a-- is that of the decremented variable: auto-decrement is post-fix in syntax, but pre-decrement in sematics (the variable is decremented, <i>before</i> the return value is calculated). This behavior is unlike that of C and C++.</div></td>
+</tr>
+<tr>
+<td colspan="4" bgcolor="#999999"><div class="center"><b>Relations (Arithmetic, Logical, and String)</b></div></td>
+</tr>
+<tr>
+<td><div class="center">&lt;</div></td>
+<td><div class="center">Less than</div></td>
+<td><div class="center">$a &lt; $b</div></td>
+<td><div class="center">1 if $a is less than % b (0 otherwise.)</div></td>
+</tr>
+<tr>
+<td><div class="center">&gt;</div></td>
+<td><div class="center">More than</div></td>
+<td><div class="center">$a &gt; $b</div></td>
+<td><div class="center">1 if $a is greater than % b (0 otherwise.)</div></td>
+</tr>
+<tr>
+<td><div class="center">&lt;=</div></td>
+<td><div class="center">Less than or Equal to</div></td>
+<td><div class="center">$a &lt;= $b</div></td>
+<td><div class="center">1 if $a is less than or equal to % b (0 otherwise.)</div></td>
+</tr>
+<tr>
+<td><div class="center">&gt;=</div></td>
+<td><div class="center">More than or Equal to</div></td>
+<td><div class="center">$a &gt;= $b</div></td>
+<td><div class="center">1 if $a is greater than or equal to % b (0 otherwise.)</div></td>
+</tr>
+<tr>
+<td><div class="center">==</div></td>
+<td><div class="center">Equal to</div></td>
+<td><div class="center">$a == $b</div></td>
+<td><div class="center">1 if $a is equal to % b (0 otherwise.)</div></td>
+</tr>
+<tr>
+<td><div class="center">!=</div></td>
+<td><div class="center">Not equal to</div></td>
+<td><div class="center">$a&nbsp;!= $b</div></td>
+<td><div class="center">1 if $a is not equal to % b (0 otherwise.)</div></td>
+</tr>
+<tr>
+<td><div class="center">!</div></td>
+<td><div class="center">Logical NOT</div></td>
+<td><div class="center">!$a</div></td>
+<td><div class="center">1 if $a is 0 (0 otherwise.)</div></td>
+</tr>
+<tr>
+<td><div class="center">&amp;&amp;</div></td>
+<td><div class="center">Logical AND</div></td>
+<td><div class="center">$a &amp;&amp; $b</div></td>
+<td><div class="center">1 if $a and $b are both non-zero (0 otherwise.)</div></td>
+</tr>
+<tr>
+<td><div class="center">||</div></td>
+<td><div class="center">Logical OR</div></td>
+<td><div class="center">$a || $b</div></td>
+<td><center>1 if either $a or $b is non-zero (0 otherwise.)
+</center></td>
+</tr>
+<td><div class="center">$=</div></td>
+<td><div class="center">String equal to</div></td>
+<td><div class="center">$c $= $d</div></td>
+<td><div class="center">1 if $c equal to $d .</div></td>
+</tr>
+<tr>
+<td><div class="center">!$=</div></td>
+<td><div class="center">String not equal to</div></td>
+<td><div class="center">$c&nbsp;!$= $d</div></td>
+<td><div class="center">1 if $c not equal to $d.</div></td>
+</tr>
+<tr>
+<td colspan="4" bgcolor="#999999"><div class="center"><b>Bitwise Operators</b></div></td>
+</tr>
+<tr>
+<td><div class="center">~</div></td>
+<td><div class="center">Bitwise complement</div></td>
+<td><div class="center">~$a</div></td>
+<td><div class="center">flip bits 1 to 0 and 0 to 1. (i.e. ~10b  == 01b)</div></td>
+</tr>
+<tr>
+<td><div class="center">&amp;</div></td>
+<td><div class="center">Bitwise AND</div></td>
+<td><div class="center">$a &amp; $b</div></td>
+<td><div class="center">composite of elements where bits in same position are 1. (i.e. 1b &amp; 1b == 1b)</div></td>
+</tr>
+<tr>
+<td><div class="center">|</div></td>
+<td><div class="center">Bitwise OR</div></td>
+<td><div class="center">$a | $b</div></td>
+<td><div class="center">composite of elements where bits 1 in either of the two elements. (i.e. 100b &amp; 001b == 101b)</div></td>
+</tr>
+<tr>
+<td><div class="center">^</div></td>
+<td><div class="center">Bitwise XOR</div></td>
+<td><div class="center">$a ^ $b</div></td>
+<td><div class="center">composite of elements where bits in same position are opposite.  (i.e. 100b &amp; 101b == 001b)</div></td>
+</tr>
+<tr>
+<td><div class="center">&lt;&lt;</div></td>
+<td><div class="center">Left Shift</div></td>
+<td><div class="center">$a &lt;&lt; 3</div></td>
+<td><div class="center">element shifted left by 3 and padded with zeros. (i.e. 11b &lt;&lt; 3d == 11000b)</div></td>
+</tr>
+<tr>
+<td><div class="center">&gt;&gt;</div></td>
+<td><div class="center">Right Shift</div></td>
+<td><div class="center">$a &gt;&gt; 3</div></td>
+<td><div class="center">element shifted right by 3 and padded with zeros. (i.e. 11010b &gt;&gt; 3d == 00011b)</div></td>
+</tr>
+<tr>
+<td colspan="4" bgcolor="#999999"><div class="center"><b>Assignment and  Assignment Operators</b></div></td>
+</tr>
+<tr>
+<td><div class="center">=</div></td>
+<td><div class="center">Assignment</div></td>
+<td><div class="center">$a = $b;</div></td>
+<td><div class="center">Assign value of $b to $a.</center><center><b>Note</b>:  the value of an assignment is the value being assigned, so $a = $b = $c is legal.</div></td>
+</tr>
+<tr>
+<td><div class="center">op=</div></td>
+<td><div class="center">Assignment Operators</div></td>
+<td><div class="center">$a <i>op</i>= $b;</div></td>
+<td><div class="center">Equivalent to $a = $a <i>op</i> $b, where <i>op</i> can be any of:<br />*  /  %  +  -  &amp;  |  ^  &lt;&lt;  &gt;&gt;</div></td>
+</tr>
+<tr>
+<td colspan="4" bgcolor="#999999"><div class="center"><b>String Operators</b></div></td>
+</tr>
+<tr>
+<td><div class="center">@</div></td>
+<td><div class="center">String concatenation</div></td>
+<td><div class="center">$c @ $d</div></td>
+<td><div class="center">Concatenates strings $c and $d into a single string. Numeric literals/variables convert to strings.</div></td>
+</tr>
+<tr>
+<td><div class="center">NL</div></td>
+<td><div class="center">New Line</div></td>
+<td><div class="center">$c NL $d</div></td>
+<td><div class="center">Concatenates strings $c and $d into a single string separated by new-line.</center><center><b>Note</b>: such a string can be decomposed with getRecord()</div></td>
+</tr>
+<tr>
+<td><div class="center">TAB</div></td>
+<td><div class="center">Tab </div></td>
+<td><div class="center">$c TAB $d</div></td>
+<td><div class="center">Concatenates strings $c and $d into a single string separated by tab.</center><center><b>Note</b>: such a string can be decomposed with getField()</div></td>
+</tr>
+<tr>
+<td><div class="center">SPC</div></td>
+<td><div class="center">Space</div></td>
+<td><div class="center">$c SPC $d</div></td>
+<td><div class="center">Concatenates strings $c and $d into a single string separated by space.</center><center><b>Note</b>: such a string can be decomposed with getWord()</div></td>
+</tr>
+<tr>
+<tr>
+<td colspan="4" bgcolor="#999999"><div class="center"><b>Miscellaneous</b></div></td>
+</tr>
+<tr>
+<td><div class="center">?&nbsp;:</div></td>
+<td><div class="center">Conditional</div></td>
+<td><div class="center">x&nbsp;? y&nbsp;: z</div></td>
+<td><div class="center">Evaluates to y if x equal to 1, else evaluates to z.</div></td>
+</tr>
+<tr>
+<td><div class="center">[]</div></td>
+<td><div class="center">Array element</div></td>
+<td><div class="center">$a[5]</div></td>
+<td><div class="center">Synonymous with $a5.</div></td>
+</tr>
+<tr>
+<td><div class="center">( )</div></td>
+<td><div class="center">Delimiting,<br /><br />Grouping</div></td>
+<td><div class="center">t2dGetMin(%a, %b)<br />if ( $a == $b )<br />($a+$b)*($c-$d)</div></td>
+<td><div class="center">Argument list for function call</center><center>Used with <i>if</i>, <i>for</i>, <i>while</i>, <i>switch</i> keywords</center><center>Control associativity in expressions</div></td>
+</tr>
+<tr>
+<td><div class="center">{}</div></td>
+<td><div class="center">Compound statement<br />(Block)</div></td>
+<td><div class="center">if (1) {$a = 1; $b = 2;}</center><center>function foo() {$a = 1;}</div></td>
+<td><div class="center">Delimit multiple statements</center><center>optional for <i>if</i>, <i>else</i>, <i>for</i>, <i>while</i></center><center>Required for <i>switch</i>, <i>datablock</i>, <i>new</i>, <i>function</i></div></td>
+</tr>
+<tr>
+<td><div class="center">,</div></td>
+<td><div class="center">Listing</div></td>
+<td><div class="center">t2dGetMin(%a, %b)<br />%M[1,2]</div></td>
+<td><div class="center">Delimiter for arguments</center><center><b>Note</b>: there is no "comma operator", as defined in C/C++; $a = 1, $b = 2; is a parse error</div></td>
+</tr>
+<tr>
+<td><div class="center">::</div></td>
+<td><div class="center">Namespace</div></td>
+<td><div class="center">Item::onCollision()</div></td>
+<td><div class="center">This definition of the onCollision() function is in the Item namespace.</div></td>
+</tr>
+<tr>
+<td><div class="center">.</div></td>
+<td><div class="center">Field/Method selection</div></td>
+<td><div class="center">%obj.field <br /> %obj.method()</div></td>
+<td><div class="center">Select a console method or field</div></td>
+</tr>
+<tr>
+<td><div class="center">//</div></td>
+<td><div class="center">Single-line comment</div></td>
+<td><div class="center">// This is a  comment</div></td>
+<td><div class="center">Used to comment out a single line of code.</div></td>
+</tr>
+<tr>
+<td><div class="center">/* */</div></td>
+<td><div class="center">Multi-line comment</div></td>
+<td><div class="center">  /*This is a a<br />multi-line<br />comment*/<br /></div></td>
+<td><div class="center">Used to comment out multiple consecutive lines.<br />/* opens the comment, and */ closes it.</div></td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Quick Reference/Features, Variables, Constants, Operators.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:57 GMT -->
+</html>
+</html>

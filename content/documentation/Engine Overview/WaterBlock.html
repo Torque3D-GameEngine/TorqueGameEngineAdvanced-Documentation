@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Engine Overview/WaterBlock.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 15;
+   parent.leftFrame.expandToItem('tree2', 'doc15');
+   var element = parent.leftFrame.document.getElementById('doc15');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Waterblocks</title>
+<link href="torque.css" rel="stylesheet" type="text/css">
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  bgcolor="#ffffff" text="#000000" link="#333399" alink="#9999ff" vlink="#000066">
+<div align="center">
+
+<table width=700 cellspacing=0 cellpadding=10 border=0 bgcolor="#ffffff" summary="">
+<tr><td>
+<h1><a name = "HeaderLink0"></a><a name = "HeaderLink0"></a><a name = "HeaderLink0"></a>Torque Waterblocks</h1>
+<p>Torque provides a shader driven waterblock system that can be customized for an amazing array of water visual effects.</p> Multiple waterblocks are supported, and both above water and under water rendering support is provided.</p>
+<h2><a class="anchor" name="WaterBlock_Transform"></a><a name = "HeaderLink1"></a><a name = "HeaderLink1"></a><a name = "HeaderLink1"></a>Waterblock Transforms</h2>
+<p>Unlike many of the other water parameters, the position, rotation, scale, and gridSize can all be changed and updated while in the editor without the need for reloading the mission to see the results. Moving and rotating a WaterBlock is done in the same way as any other object. The scale and gridSize control the size. 
+</p>
+<h2><a class="anchor" name="WaterBlock_Grid"></a><a name = "HeaderLink2"></a><a name = "HeaderLink2"></a><a name = "HeaderLink2"></a>Waterblock Grid</h2>
+<p>The water is square in shape because it is set up as a brute-force grid mesh. It will draw all of the vertices in the grid regardless of what your view distance may be set to. 
+</p><p>One of the most important performance parameters for the WaterBlock is gridSize. The gridSize controls how much spacing there is between vertices in the grid - and therefore how many vertices there are in the grid. It should be set as high as possible as suits the needs of the environment. The reason for this is that when the water draws, it will always draw the entire grid. So if you have a 2 kilometer by 2 kilometer size WaterBlock, it will process all of the vertices in the grid, even if you have a viewing distance of a few hundred meters. If your gridSize is set large enough in this case, it's not a big deal. A size of 100 for instance, would process 400 vertices for a 2000x2000 size grid. If your gridSize was 10, however, it would process 40000 vertices which is much slower and wouldn't look a whole lot better. 
+</p><p>There are two reasons for having lower gridSize values. The first is fogging. Fog is calculated per-vertex, so if the fog distance less than or near to the gridSize, there will likely be artifacts in the fog because the grid is not fine enough. If the fog distance is very near, and the WaterBlock is large, it might be best to change the shader such that the fog calculations are done per-pixel instead of per-vertex. Then the WaterBlock could be expanded into one large quad. 
+</p><p>The second reason for small gridSizes would be smaller WaterBlocks. A WaterBlock can only be as small as one grid element and the size of that element is the gridSize parameter. Ie. if you want a 10x10 size WaterBlock, you must have at most a gridSize of 10. 
+</p>
+<h2><a class="anchor" name="WaterBlock_WaveData"></a><a name = "HeaderLink3"></a><a name = "HeaderLink3"></a><a name = "HeaderLink3"></a>Wave Data</h2>
+<p>There are wave settings for the waves that are used in the ps 2.0 water shader. The wave parameters do not affect the 1.0 water movement. The water shader uses the wave parameters to sample the water bumpmap and combine it in different ways to get the final movement effect. It averages the first two waves and adds the third at 1/3 the strength of the first two. The purpose of the third wave is to break up repetitive patterns that the first two can form. It is best, therefore, to use a larger texture scale for the third wave. The parameters for the waves are: 
+</p>
+<ul>
+<li><b>waveDir</b> --irection that the wave travels along the x/y plane. It is a 2D normalized vector</li>
+<li><b>waveSpeed</b> --speed that the wave travels in the specified direction. This is a single floating point value</li>
+<li><b>waveTexScale</b> --scale of the wave - how much the texture is stretched. </li>
+</ul>
+
+<h2><a class="anchor" name="WaterBlock_Reflection"></a><a name = "HeaderLink4"></a><a name = "HeaderLink4"></a><a name = "HeaderLink4"></a>Reflection</h2>
+<p>WaterBlocks are capable of providing full dynamic reflections for pixel shader 2.0+ hardware. They will reflect everything in the scene. To reflect only certain objects, the "objTypeFlag" variable can be changed in the WaterBlock::updateReflection() function. The reflections are updated at roughly 60htz. This can also be changed in the updateReflections() function. 
+</p><p>Full reflections are expensive to render. To kick the reflections down to static cubemap reflections, set the "fullReflect" parameter to false; 
+</p><p>The pixel shader 1.1 water reflects only a cubemap. The bump surface itself is generated by blending two normalmaps in a pixel shader to a render target. The render target is then used for a bump-environment map operation to get the "shiny" bump / cubemap interaction. 
+</p>
+<h2><a class="anchor" name="WaterBlock_Fog"></a><a name = "HeaderLink5"></a><a name = "HeaderLink5"></a><a name = "HeaderLink5"></a>Fog</h2>
+<p>Fog is calculated on a per-vertex basis in the ps 2.0 rendering path. The gridSize can affect how the fog looks if the fog is fairly close in. The Grid section covers this in more detail. The fog uses the fog texture generated by the scenegraph for consistency with the rest of the scene. 
+</p><p>The ps 1.1 path is rendered as a second pass over the bumpEnvMap pass. It uses a stencil operation to avoid z-fighting on the surface over large areas. A special fog mesh is generated for this path. It is a radial mesh (a set of linked concentric rings) that expands as it gets further out to reduce vertices. Rendering of the fog mesh can be turned off by setting the "renderFogMesh" parameter to false. 
+</p>
+<h2><a class="anchor" name="WaterBlock_SurfaceMat"></a><a name = "HeaderLink6"></a><a name = "HeaderLink6"></a><a name = "HeaderLink6"></a>Surface Materials</h2>
+<p>There are several "Surface Material" slots that identify which Materials are to be used for varius passes. The MaterialType enum in WaterBlock.h dictates which slots are used for which passes. At the time of this writing, the first slot is used for the "base" material. The underwater material is in the second slot, followed by the fog material (for the 1.1 fog pass). The fourth material is used for blending the normal map used on the 1.1 base surface. The final material is used when dynamic textures are turned off. 
+</p>
+<h2><a class="anchor" name="WaterBlock_Performance"></a><a name = "HeaderLink7"></a><a name = "HeaderLink7"></a><a name = "HeaderLink7"></a>Performance</h2>
+<p>You can have multiple WaterBlocks in the same level. NOTE - this can cause serious performance loss if full reflections are turned on. 
+</p>
+<p><br />
+<b>baseColor</b>
+</p><p>The actual color of the water
+</p><p><br />
+<b>underwaterColor</b>
+</p><p>Color of the fullscreen filter when the camera is underwater. Note you can make this more opaque with the alpha color. 
+</p><p><br />
+<b>clarity</b>
+</p><p>How clear the water is. This is a linear slider between the refraction buffer and the baseColor of the water. 
+</p><p><br />
+<b>fresnelBias</b>
+</p><p>Water reflects more of the sky as the angle between it and the camera becomes greater (as it goes out into the distance). This is simulated using an approximation of Fresnel's reflection equation. The "fresnelBias" parameter indicates the minimum reflectance that the water will have. If this is set to zero, the water will not be reflective at all close to the camera. 
+</p><p><br />
+<b>fresnelPower</b>
+</p><p>The rate at which the water becomes more reflective as it stretches towards the horizon is exponential. This parameter sets the exponential power by which the rate changes.
+</p><p><br />
+</p>
+
+
+  </td>
+</tr>
+</table>
+
+</div>
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Engine Overview/WaterBlock.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:11 GMT -->
+</html>

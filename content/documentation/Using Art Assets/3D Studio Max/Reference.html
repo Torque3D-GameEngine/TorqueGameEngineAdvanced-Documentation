@@ -1,0 +1,326 @@
+﻿<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/3D Studio Max/Reference.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4270;
+   parent.leftFrame.expandToItem('tree2', 'doc4270');
+   var element = parent.leftFrame.document.getElementById('doc4270');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Using Art Assets - Reference</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+   
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+<td>
+
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#DTS_Exporter_Reference"><span class="tocnumber">1</span> <span class="toctext">DTS Exporter Reference</span></a>
+<ul>
+<li class='toclevel-2'><a href="#Valid_Scenes:"><span class="tocnumber">1.1</span> <span class="toctext">Valid Scenes:</span></a>
+<ul>
+<li class='toclevel-3'><a href="#The_Bounding_Box:"><span class="tocnumber">1.1.1</span> <span class="toctext">The Bounding Box:</span></a></li>
+<li class='toclevel-3'><a href="#Subtrees_and_Level_of_Detail:"><span class="tocnumber">1.1.2</span> <span class="toctext">Subtrees and Level of Detail:</span></a></li>
+<li class='toclevel-3'><a href="#Unlinked_Meshes_and_Level_of_Detail:"><span class="tocnumber">1.1.3</span> <span class="toctext">Unlinked Meshes and Level of Detail:</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="#Configuration.28.CFG.29_Files:"><span class="tocnumber">1.2</span> <span class="toctext">Configuration(.CFG) Files:</span></a>
+<ul>
+<li class='toclevel-3'><a href="#Utility_Sub-Panel_of_the_Exporter_Utility_Panel:"><span class="tocnumber">1.2.1</span> <span class="toctext">Utility Sub-Panel of the Exporter Utility Panel:</span></a></li>
+<li class='toclevel-3'><a href="#Parameters_found_in_the_.27Error_Control.27_sub-panel:"><span class="tocnumber">1.2.2</span> <span class="toctext">Parameters found in the 'Error Control' sub-panel:</span></a></li>
+<li class='toclevel-3'><a href="#Parameters_found_in_the_.27Dump_file_control.27_sub-panel:"><span class="tocnumber">1.2.3</span> <span class="toctext">Parameters found in the 'Dump file control' sub-panel:</span></a></li>
+<li class='toclevel-3'><a href="#Parameters_found_in_the_.27Configuration_control.27_sub-panel:"><span class="tocnumber">1.2.4</span> <span class="toctext">Parameters found in the 'Configuration control' sub-panel:</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="#Unlinked_Meshes_and_Level_of_Detail:_2"><span class="tocnumber">1.3</span> <span class="toctext">Unlinked Meshes and Level of Detail:</span></a></li>
+<li class='toclevel-2'><a href="#MultiRes_and_Detail_Levels:"><span class="tocnumber">1.4</span> <span class="toctext">MultiRes and Detail Levels:</span></a></li>
+<li class='toclevel-2'><a href="#MultiRes_and_T2Autodetail:"><span class="tocnumber">1.5</span> <span class="toctext">MultiRes and T2Autodetail:</span></a></li>
+<li class='toclevel-2'><a href="#Sequences:"><span class="tocnumber">1.6</span> <span class="toctext">Sequences:</span></a>
+<ul>
+<li class='toclevel-3'><a href="#Sequence_Object_Parameters:"><span class="tocnumber">1.6.1</span> <span class="toctext">Sequence Object Parameters:</span></a></li>
+<li class='toclevel-3'><a href="#Types_of_animation_supported:"><span class="tocnumber">1.6.2</span> <span class="toctext">Types of animation supported:</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="#Miscellaneous:"><span class="tocnumber">1.7</span> <span class="toctext">Miscellaneous:</span></a>
+<ul>
+<li class='toclevel-3'><a href="#Translucency_and_Sort_Objects:"><span class="tocnumber">1.7.1</span> <span class="toctext">Translucency and Sort Objects:</span></a></li>
+<li class='toclevel-3'><a href="#Mip-Map_Control:"><span class="tocnumber">1.7.2</span> <span class="toctext">Mip-Map Control:</span></a></li>
+<li class='toclevel-3'><a href="#Billboard_Objects:"><span class="tocnumber">1.7.3</span> <span class="toctext">Billboard Objects:</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="DTS_Exporter_Reference"></a><h2><a name = "HeaderLink1"></a>DTS Exporter Reference</h2>
+<p>This section covers in great detail how everything works and has some extra goodies to help you solve some of the more complex problems you may encounter with the engine and DTS export tools.</p>
+<hr />
+<a name="Valid_Scenes:"></a><h3><a name = "HeaderLink2"></a>Valid Scenes:</h3>
+<p>The following describes how the exporter interprets the scene in 3DStudioMax.  </p>
+<ul>
+
+<a name="The_Bounding_Box:"></a><h4><a name = "HeaderLink3"></a>The Bounding Box:</h4>
+<p>Each scene must contain a bounding box, if you fail to create a bounding box within your scene, the scene will not export. You must also name the bounding box "bounds".</p>
+<p>The bounding box should be a box that completely encloses the shape at all points in the animation. When you export your scene, the pivot point of the bounding box from 3DSMax will become the pivot point of your shape in the exported scene.  Likewise, ground animation (ground transform) is based on the animation of the bounding box.  So if you want to export a running person, you would place the bounding box around the person at time 0, with the origin of the box at the persons feet.  As the person runs, you would animate the bounding box to keep pace with the person. </p>
+<p>The easiest way to do this would be to link the bounding box to the hips, and set it to only inherit y-position.  Notice that in this case the bounding box is not at the scene root level (which is fine). </p>
+<p>Based on this example, if you wanted to export a building have part of the building submerged under the ground, you would create the bounding box that surrounds the building (as always) but place the bounding box pivot where you wish the ground to come up to on the building.</p>
+<p>It is important to note that the orientation of the bounding box defines the orientation of the object. When you create the bounds, you are creating a mini world that defines how the object will orient itself in the game. Positive Y is forward, and Z is up.  The easiest way to deal with this and not confuse yourself is to create the box in world space so that the local orientation of the box is identical to world space.  This is done by creating the bounding box is either Perspective, User, of Top view.</p>
+<p><br />
+</p>
+<hr />
+<a name="Subtrees_and_Level_of_Detail:"></a><h4><a name = "HeaderLink4"></a>Subtrees and Level of Detail:</h4>
+<p>A subtree is a dummy object at the scene root level with the following types of children:  at least one detail level marker (an object whose name ends in a number), and at least one branch (a dummy object with children that have geometry somewhere in the sub-hierarchy). </p>
+<p>The detail level markers indicate to the exporter what detail is to be drawn at a given distance.  The number corresponds to the pixel size in the game engine at which the shape will draw with these meshes.</p>
+<p>E.g., if you have markers named 'detail2' and 'detail36', then when the size is 36 or greater the shape would be drawn with the highest detail level. When the size is between 2 and 36 it would be drawn with the lower detail level ending with the number 2, and when the size was less than 2 nothing would draw. </p>
+<p>The name of the marker is unimportant (except the number, of course) but it does get exported and can be used to look up a detail level by the programmer.  What lies under the "branch" corresponds to the actual shape.  The whole subtree can be under one branch or there can be multiple branches.  If you have a shape at the root level and want to export it, the following arrangement should suffice:</p>
+<p><img src="Simpleschematic.jpg">
+</p>
+<p>An object on the root level will normally be interpreted as a mesh (a detail level) or a subtree (unless it's the bounds node or a sequence object).  </p>
+<p>If the object has geometry, then it will be interpreted as a mesh.  If this mesh does not correspond to any mesh on the shape, it will be flagged as an error unless 'Allow Unused Meshes' is turned on in the Error Control sub-panel of the exporter utility. If "unused meshes" are allowed, then the mesh will be ignored.  </p>
+<p>If an object on the root level has no geometry (if it's a dummy object, for example) it will be interpreted as a subtree.  If it has no detail markers or branches, then it will be flagged as an error unless 'Allow Empty Subtrees' is turned on (in the Error Control sub-panel of the exporter utility panel).  If empty subtrees are allowed, then the object will be ignored.</p>
+<hr />
+<a name="Unlinked_Meshes_and_Level_of_Detail:"></a><h4><a name = "HeaderLink5"></a>Unlinked Meshes and Level of Detail:</h4>
+<p>In the exporter there is generally only one subtree (although it supports more if desired) and the artist must supply a different set of meshes to be drawn for each detail level. </p>
+<p>This is done by naming different detail levels of the same mesh with the same base name but a different trailing number.  E.g., 'head64' and 'head32'.  The numbers in the detail level should correspond to the number on the 'detail marker' (see section 'Subtrees'). </p>
+<p>One detail level of the mesh needs to be linked to the shape in the appropriate place; the other detail levels of the mesh should be unlinked. During export, these unlinked meshes are collected and added to the shape at the appropriate location.</p>
+<p>In a 3DSMAX scene we only have one set of meshes linked to the shape at a time, so we need some convention for including in the file other meshes that correspond to lower detail levels. </p>
+<p>This is done by leaving meshes that belong to other detail levels unlinked.  Furthermore, they must be named just like the meshes that are attached to the shape, except they should end in a different detail number (if in the shape you have a mesh named 'head' or 'head64', then the unlinked version of that mesh that will be drawn for detail level 32 must be called head32). </p>
+<p>During export, these loose meshes are collected and added to the shape at the appropriate location. </p>
+</ul>
+<hr />
+<a name="Configuration.28.CFG.29_Files:"></a><h3><a name = "HeaderLink6"></a>Configuration(.CFG) Files:</h3>
+<p>There are a number of parameters used by the exporter that can be saved in configuration files.  When the exporter first loads in 3DSMAX it looks for a file called 'DTSGlobal.CFG' in the 3DSMAX Plugins directory.</p>
+<p>An example <i>dtsGlobal.cfg</i> is located in the documentation file pack.</p>
+<p>When you export a shape the exporter looks for a file called &lt;somename&gt;.CFG' (usually named DTSScene.CFG) in the same directory as the .max file being exported.  On each line of the configuration file there should be either one of the keywords 'AlwaysExport:', 'NeverExport:', or 'NeverAnimate:', a name, or a parameter expression (a line starting with +, -, or =). </p>
+<p>An example of a scene .CFG script for the player shape (<i>player.cfg</i>) can be found in the documentation file pack.</p>
+<p>Names are put into one of 3 lists (the always export list, the never export list, or the never animate list).  Which list depends on which of the 3 keywords occurred most recently in the file (if none of them have, the name is put on the always export list).  Names can include wildcards (*).  The following discussion depends on understanding the distinction in 3DSMAX between nodes and objects.  If you don't understand that distinction, you are probably ok skipping to the next section.</p>
+<p>If a node's name matches a name on the never export list, the node won't be exported and any meshes hanging off it will be put on its parent (or its parent's parent if its parent is on the never export list too).  If a node is on the always export list it will be exported even if there are no meshes on the node and even if the name matches a name on the never export list (i.e., the always export list takes priority over the never export list).  A node matching a name on the never animate list will not be animated even if it animates in 3DSMAX.</p>
+<p>For example, the lines:</p>
+<ul><pre>
+AlwaysExport:
+bip*
+
+NeverExport:
+submesh*
+</pre></ul>
+<p>would export nodes beginning with 'bip' but not nodes beginning with 'submesh'.  Or if 'submesh*' was replaced by '*' exactly those nodes beginning with 'bip' would be exported.</p>
+<p>Lines with + or - turn on or off boolean parameters.  Lines with = set the value of valued parameters (note: the '=' occurs at the beginning of a line).  You can save the current configuration as the default configuration or to a separate file via the exporter utility panel under the 'Configuration Control' sub-panel.  Note:  node names are only relevant in the DTSScene.CFG file.  They are ignored in the 'DTSGlobal.CFG' file.</p>
+<ul>
+
+<hr />
+<a name="Utility_Sub-Panel_of_the_Exporter_Utility_Panel:"></a><h4><a name = "HeaderLink7"></a>Utility Sub-Panel of the Exporter Utility Panel:</h4>
+<p>Three types of files can be exported. </p>
+<p><b>A *.DTS file</b>: This contains node structure, meshes, and (optionally) sequences. </p>
+<p><b>A *.DSQ file</b>: This contains only sequence information.  Sequence information is useless without the nodes.  The *.DSQ files are meant to be imported into a *.DTS file at run time.  That way one can store the basic shape separate from any animation of the shape, and can edit the animation separately from the shape.</p>
+<p><b>A *.txt file</b>:  This export type exports all the nodes and objects in the scene into a text file.  No nodes will be removed (even if the collapse transform parameter is set to true).</p>
+<p><img src="Utility.jpg">
+</p>
+<p>You can select which of the file types you are exporting by pressing the appropriate button in the exporter utility panel.</p>
+<p>The utility sub-panel includes three buttons corresponding to special utility functions. They are:</p>
+<p><b>Renumber selection</b>:  this utility operates on the names of all the objects you have selected.  It replaces the number at the end of the name with the number you specify.  A name without a trailing number will have the specified number added to the end of the name.</p>
+<p><b>Embed shape</b>:  the purpose of this utility is to simplify the set up of the 3DSMAX scene for the exporter.  If you have shape you want to export, but it does not abide by the conventions laid out above in the subtree section, then you can select the shape and run the 'Embed shape' utility and everything should be set up for you (except the bounding box).  NOTE:: you only have to select the objects of your shape that are at the scene root level (do not select the unlinked lower detail meshes).  See the schematic under the section titled 'Subtrees' as a guide.</p>
+<p><b>Register details</b>:  this utility will add all the detail markers to your shape.  It searches the scene for all the detail levels of all the meshes it finds on the selected subtrees.  NOTE::  to use this utility, you need to select the root level objects of your shape.</p>
+<p><br />
+</p>
+<hr />
+<a name="Parameters_found_in_the_.27Error_Control.27_sub-panel:"></a><h4><a name = "HeaderLink8"></a>Parameters found in the 'Error Control' sub-panel:</h4>
+<p><b>Allow empty subtrees</b>:  when set, subtrees can be empty.</p>
+<p><b>Allow crossed details</b>:  when set two subtrees can have sets of detail levels that overlap each other (e.g., one has details 2 &amp; 10 while the other has details 5 &amp; 15).  When cleared, the above case would be an error (but 2 &amp; 5 and 10 &amp; 15 wouldn't be).</p>
+<p><b>Allow unused meshes</b>:  when set, allow unused detached meshes.</p>
+<p><b>Allow old-style sequences</b>: Should be ignored. This was included for backward compatibility with Tribes/Starsiege.</p>
+<p><b>Require VICON/BIP node</b>: Should be ignored. This was included for backward compatibility with Tribes/Starsiege.</p>
+<p><br />
+</p>
+<hr />
+<a name="Parameters_found_in_the_.27Dump_file_control.27_sub-panel:"></a><h4><a name = "HeaderLink9"></a>Parameters found in the 'Dump file control' sub-panel:</h4>
+<p>This panel contains various toggles for configuring what gets put in the dump file.</p>
+<p>To save time one might turn all or most of these off though it would probably be best to have 'Dump Shape Hierarchy' turned on. </p>
+<p>Dump  file is written to 'dump.dmp' in the target directory. By giving the file the extension .dmp, you can associate default
+application (say, WordPad) to the dump file.</p>
+<p><br />
+</p>
+<hr />
+<a name="Parameters_found_in_the_.27Configuration_control.27_sub-panel:"></a><h4><a name = "HeaderLink10"></a>Parameters found in the 'Configuration control' sub-panel:</h4>
+<p>The following parameters are not found in the 3DSMAX user-interface. They can be changed by editing the globalScene.CFG file:</p>
+<p><b>sequence defaults</b>:  Default values for all the parameters of the sequence objects can be modified in the globalScene.CFG file.  See the section on sequence object parameters for what each of these parameters does.</p>
+<p><b>Param::maxFrameRate</b>:  this parameter controls how long it takes to go from the last frame in a sequence to the first.  In 3DSMAX this is 1/30th of a second by default, and will probably never change.  If you change it in 3DSMAX, you should change the value here too...otherwise, you'll probably never touch this.</p>
+</ul>
+<p><br />
+</p>
+<hr />
+<a name="Unlinked_Meshes_and_Level_of_Detail:_2"></a><h3><a name = "HeaderLink11"></a>Unlinked Meshes and Level of Detail:</h3>
+<p>In the exporter there is generally only one subtree (although it supports more if desired) and the artist must supply a different set of meshes to be drawn for each detail level. </p>
+<p>This is done by naming different detail levels of the same mesh with the same base name but a different trailing number.  E.g., 'head64' and 'head32'.  The numbers in the detail level should correspond to the number on the 'detail marker' (see section 'Subtrees'). </p>
+<p>One detail level of the mesh needs to be linked to the shape in the appropriate place; the other detail levels of the mesh should be unlinked. During export, these unlinked meshes are collected and added to the shape at the appropriate location.</p>
+<p>In a 3DSMAX scene we only have one set of meshes linked to the shape at a time, so we need some convention for including in the file other meshes that correspond to lower detail levels. </p>
+<p>This is done by leaving meshes that belong to other detail levels unlinked.  Furthermore, they must be named just like the meshes that are attached to the shape, except they should end in a different detail number (if in the shape you have a mesh named 'head' or 'head64', then the unlinked version of that mesh that will be drawn for detail level 32 must be called head32). </p>
+<p>During export, these loose meshes are collected and added to the shape at the appropriate location. The transform of these unlinked meshes is discarded and the transform of the corresponding shape in the subtree is used. </p>
+<p><br />
+</p>
+<hr />
+<a name="MultiRes_and_Detail_Levels:"></a><h3><a name = "HeaderLink12"></a>MultiRes and Detail Levels:</h3>
+<p>To use add the following fields to the user defined properties of the mesh.</p>
+<p><ol>
+</p>
+    <li>MULTIRES::SIZES,
+    <li>MULTIRES::DETAILS, 
+</ol>
+
+<p>
+Each of these fields should have a list
+of entries separated by commas (no spaces, won't work with 
+spaces).  The first list should be the detail sizes you want to generate.  This should correspond to the detail markers you have
+in the scene (the objects named detail150, detail100, etc).  The
+second list is the percent of vertices to keep from the original
+mesh for the corresponding detail.  So if the first field is
+100,50,20 and the second is 1.0,0.5,0.2, then you will generate
+3 detail levels with all the vertices, half the vertices, and
+a fifth of the vertices, respectively.
+</p>
+<hr />
+<a name="MultiRes_and_T2Autodetail:"></a><h3><a name = "HeaderLink13"></a>MultiRes and T2Autodetail:</h3>
+<p>A parameter can be added to your configuration file to automatically generate detail levels if you have MultiRes applied to the shape.</p>
+<p>The syntax is:</p>
+<pre>=Params::T2AutoDetail &lt;some_number&gt;</pre>
+<p>The number of detail levels and decimation level is automatically calculated based on polygon count.</p>
+<p>Take the number of polygons in your shape, and divide it by the number in you T2AutoDetail parameter.  If the shape has 1000 polygons and the number is 200, five detail levels will be generated.</p>
+<p>The Autodetail mechanism uses deviation from the base mesh (measured in pixels) as a metric for error.  The maxError is the largest deviation in meters of the corresponding detail level, so at any given distance the pixel error can be computed.  The detail mechanism makes sure that the pixel error stays below a fixed number that is set in code.</p>
+<p>The following variables are relevant and should be added to your .CFG files:</p>
+<pre>=Params::T2AutoDetail &lt;some_number&gt;</pre>
+<p>This parameter was set at 250 for Tribes 2.</p>
+<hr />
+<a name="Sequences:"></a><h3><a name = "HeaderLink14"></a>Sequences:</h3>
+<ul>
+
+<a name="Sequence_Object_Parameters:"></a><h4><a name = "HeaderLink15"></a>Sequence Object Parameters:</h4>
+<p>The following are the parameters that can be modified on sequence objects:</p>
+<p><b>Cyclic</b>: If checked, the sequence will loop (for walks or runs), if unchecked, the sequence will play once and then stop (death animations, etc�)</p>
+<p><b>Complete cycle</b>:  only relevant if cyclic set.  If set, the exporter assumes that the state of the scene at the end of the sequence exactly matches the state of the scene at the start of the sequence.  This is not actually how 3DSMAX works, so one will normally have this turned off (3DSMAX adds a pad of 1/30th of a second to the end of the sequence ... turning the complete cycle feature on is like setting Param::maxFrameRate to zero).</p>
+<p><b>Blend sequence</b>: Makes the sequence an additive blend. Using blend animations will be covered later in this document.</p>
+<p><b>Use Frame Rate</b>:  if checked, uses the frame rate supplied in the frame rate edit box for the exporter frame rate.  If not, export N frames where N is the number supplied in the other edit box.</p>
+<p><b>Override Duration</b>:  If you override the sequence duration, it will change the duration of the sequence when it plays in the game at time scale 1, but it won't otherwise change the animation data (same keyframes will be used, they'll just play at different times). This is useful for altering the speed of the ground transform of an object without scaling the animation.</p>
+<p><b>Default sequence priority</b>:  controls what sequence controls a node when two sequences (running on different threads) want to control the same node.</p>
+<p><b>Ignore ground transform</b>:  if checked, won't export a ground transform for this sequence.  Normally not checked.</p>
+<p><b>Use Frame Rate (ground transform)</b>:  if checked uses the supplied frame rate for exporting the ground transform.  Otherwise, export N frames, where N is the number supplied in the other edit box. This is usually set to 2, and is normally good enough for getting the distance traveled.</p>
+<p><b>Export control parameters</b>:  enable and force various types of animation.</p>
+<p><img src="ExportControl.jpg">
+</p>
+<p>The parameters are classified under two categories, Enable and Force.  In order for a certain type of animation to be exported, they must be enabled. Transform animation is on by default, the rest should be disabled (default settings). Force animation should only be used for debugging purposes or if you cannot get the animation to export any other way.</p>
+<hr />
+<a name="Types_of_animation_supported:"></a><h4><a name = "HeaderLink16"></a>Types of animation supported:</h4>
+<p><b>Morph Animation</b>: This will force the exporter to export all mesh animation as a series of mesh snapshots. This is useful for certain types of animations (flags) but produces huge files and doesn't contain animated nodes (bones)</p>
+<p><b>Visibility Animation</b>: Enables the use of animated visibility tracks in the engine. More information on the use of visibility tracks is covered in your 3DSMAX documentation.</p>
+<p><b>Transform Animation</b>: Enables the export of transform animation. This is on by default.</p>
+<p><b>Uniform Scale Animation</b>: This enables the animation of Uniform scale. Don't turn this on unless you need it, as it adds additional strain on the animation system.</p>
+<p><b>Arbitrary Scale Animation</b>: As above, but allows export of Non-Uniform scaling. As above, it adds strain to the system, but even more so than uniform scaling. Use it sparingly.</p>
+<p><b>Texture animation</b>: Enables animation of Texture Coordinates. This is useful for things where the texture itself must animate. Scrolling computer monitors, waterfalls, and tank treads are just a few of the applications for animated texture coordinates.</p>
+<p><b>IFL animation</b>: Allows you to export IFLs, or Image File Lists. These are a sequence of image files, and are useful for things like explosions. For more information on how to use IFLs, consult your 3DSMAX documentation. Note that the IFL file should be included in the texture path.</p>
+<p><b>Decal Animation</b>: These are being removed and are no longer supported. Don't use them.</p>
+<p><b>Decal Frame Animation</b>: As above, don't use.</p>
+</ul>
+<p><br />
+</p>
+<hr />
+<a name="Miscellaneous:"></a><h3><a name = "HeaderLink17"></a>Miscellaneous:</h3>
+<ul>
+
+<a name="Translucency_and_Sort_Objects:"></a><h4><a name = "HeaderLink18"></a>Translucency and Sort Objects:</h4>
+<p>Objects with translucent textures often times appear to sort improperly in the engine. On modern graphics hardware, drawing on the screen amounts to storing values on the graphics card for the red, green, and blue channel, and also storing values for the distance of the fragment from the camera. The later value is often referred to as the "depth-value" or "z-value".  The depth value is important for determining what should be drawn in front of what.</p>
+<p>To understand how this works, you have to understand one basic point: polygons are always drawn in an order.  One is drawn first, another second, etc.  So when the second is being drawn, the value of the first polygon is sitting in the frame buffer (the place on the graphics card that holds what you are drawing on the screen).  This means that the graphics hardware can simply compare the depth value of the incoming pixel against the depth value of the stored pixel, and only update the frame buffer if the incoming pixel is in front of the stored pixel.  That is exactly what happens.</p>
+<p>Drawing translucent fragments also requires a combination of what is in the frame buffer already and the incoming fragment. With translucency, the incoming fragment has an "alpha-value" in addition to red, green, and blue, and the alpha value is used to blend the fragment with the framebuffer.  An alpha of 1 means to over-write what's in the buffer, an alpha of 0 means not to touch the frame buffer, and an alpha of 0.5 means to mix them equally.</p>
+<p>Translucent drawing with depth tests gets very tricky.  If polygons are drawn back to front, depth tests and translucency behave well together.  But when some polygons in the front are drawn first, things start to get very messy. Imagine what would happen if you had a fully translucent texture (alpha of 0) drawn first, and that it fully covered the camera and was in front of everything else.  Since the alpha value is zero everywhere, it would not draw to the RGB channels.  But the depth value would still be updated for the entire screen.  Now everything that was drawn would fail the depth test.  The result is that you would see a blank screen no matter what you draw behind our phantom polygon.</p>
+<p>Because of this issue, translucent polygons are normally drawn with special care: the depth value is not saved but the depth test is still used.  Translucent polygons are drawn after non-translucent polygons, and translucent polygons are drawn from back to front.  The result is that translucent polygons behave when they overlap each other because they are drawn back to front.  Translucent polygons behave when overlapping non-translucent polygons because they only drawn when they are in front of the non-translucent polygons (remember, the depth test is still carried out, the depth value just isn't stored).  The phantom polygon issue is avoided because the depth value isn't stored.</p>
+<p>One consequence of all this is that any object that draws translucent polygons must do so with special care.  Furthermore, the game itself must take special care to draw everything in the right order.  In particular, the most accurate way for the game to draw the scene is to first draw the non-translucent polygons of all objects, then draw the translucent polygons of each object from furthest to closest to the camera.  Each object, then, is only responsible for drawing it's own polygons so that they can sort amongst themselves.</p>
+<p>Three space has several mechanisms built in to handle the sorting of polygons. First, parts with only non-translucent polygons are drawn first, then parts with a mixture of translucent and non-translucent polygons, and then translucent parts. Note that if you have several parts with mixed polygon types, you will likely get some inappropriate sorting, so don't do this.  This is all the measures 3space takes by default.  However, there are special objects that do a little more sorting on their own.  These are the sort objects described below.  What these guys do is order the polygons so that they will always draw back to front. Believe it or not, it is often possible to do this for all camera angles. This is however, it is not always possible.  In those cases, the object has different orderings for different angles (usually only a few are needed) and in real bad cases, polygons have to be split.  The later can sometimes lead to large file size.  If you see this
+happening, you should redesign the shape.
+
+</p>
+<p>The faces of these objects are presorted so that faces are drawn from back to front. This is used to force the sorting order of translucent objects (which are not z-buffered)  This sometimes involves splitting faces and sometimes involves different orders depending on where the camera is. </p>
+<p>To make an object a sort object, begin its name with "SORT::".  Other detail levels of this object do not have to be sort objects, so "SORT::Head128" and "Head64" would be considered detail levels of "Head", the first being a sort object but the second not.  You can also give the exporter some hints on how to create the sort objects. </p>
+<p>You supply these hints by entering fields into the "user defined" properties of an object. The fields are:</p>
+<ul><pre>
+SORT::MAX_DEPTH
+SORT::NUM_BIG_FACES
+SORT::WRITE_Z
+</pre></ul>
+<p>Default values for these are 2, 4, and false respectively.</p>
+<ul><pre>
+SORT::Z_LAYER_UP
+SORT::Z_LAYER_DOWN
+</pre></ul>
+<p>Used to sort objects with "leaves" that are layered from top to bottom either facing slightly up or down.  Will usually be used with </p>
+<ul><pre>
+SORT::MAX_DEPTH=0.
+</pre></ul>
+<p><br />
+</p>
+<hr />
+<a name="Mip-Map_Control:"></a><h4><a name = "HeaderLink19"></a>Mip-Map Control:</h4>
+<p>By default, textures are mipmapped.  If you don't want to mipmap any textures, you can set "MIPMAP::NO_MIPMAP" to true.  You do this by selecting the bounds object and choosing edit properties (user defined tab).</p>
+<p>Then enter the line:</p>
+<ul><pre>
+MIPMAP::NO_MIPMAP=true
+</pre></ul>
+<p>into the window.</p>
+<p>If you want most textures to mipmap, but no translucent textures,</p>
+<p>Set:</p>
+<ul><pre>
+MIPMAP::NO_MIPMAP_TRANSLUCENT = true
+</pre></ul>
+<p>Translucent textures that do not tile are now, by default, considered "zeroborder" textures -- that is, we assume that there is a blackborder around the texture and we enforce this in the mipmap.</p>
+<p>
+This is normally what one wants, because otherwise streaks occur 
+when off-tile parts of the face are draw (this can happen even 
+when the highest mipmap level has a zero-border if we don't force
+a zero-border on other mipmap levels).  If you don't want to do 
+this to your non-tiling translucent textures, then you can set:
+</p>
+<ul><pre>
+MIPMAP::BLACK_BORDER = false 
+</pre></ul>
+<p>(as mentioned above, it is true by default).</p>
+<p>This will only affect non-tiling translucent textures.  </p>
+<p>NOTE: You need to make sure that if a texture is used as a tiling texture in one place that it is used as tiling in other places too.  If you don't, then the "black border" feature will not be applied consistently.  Another note:  by "tiling" I mean a texture that wraps -- in 3DSMAX this means you've selected the "Tile" check boxes in the material editor, even if you've left at 1 the number under the "tiling" heading right next to the checkbox.</p>
+<p><br />
+</p>
+<hr />
+<a name="Billboard_Objects:"></a><h4><a name = "HeaderLink20"></a>Billboard Objects:</h4>
+<p>Parts of a shape can be billboard objects (i.e., they always face camera).  So, for example, you could have an explosion in which shrapnel flies out from the center and also have little explosion balls fly out that are just flat polygons that always face you.</p>
+<p>You make an object a billboard object by prefixing the"BB::" to the name (without the quotes, of course).Note that not all detail levels of the object need to be billboard objects, so the highest detail level of a shape could be a complicated 3d shape, whereas the lowest detail could just be a billboard.  If the highest detail level of an object is called "Obj256" say, then"BB::Obj64" would be a lower detail level of that shape.Similarly, if the highest detail level is "BB::Obj256" then"Obj64" would be a lower detail level version of this.</p>
+<p>NOTE:  These objects tend to have strange sorting properties if translucent materials are used.</p>
+</ul>
+    
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/3D Studio Max/Reference.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:47 GMT -->
+</html>

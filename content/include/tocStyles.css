@@ -1,0 +1,23 @@
+.parent {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+.tocLabel {
+   display: block;
+	/*background-color: #55882C;*/
+	background-image: url('docTheme/toc_label.jpg');
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffffff;
+	padding: 6px 6px 6px 12px;
+	overflow: hidden;
+}
+.tocLabel img {
+	vertical-align: top;
+}
+.tocMainCat {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}

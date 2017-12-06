@@ -1,0 +1,328 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_10.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4223;
+   parent.leftFrame.expandToItem('tree2', 'doc4223');
+   var element = parent.leftFrame.document.getElementById('doc4223');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueScript Console Functions 10 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <p xmlns="http://www.w3.org/1999/xhtml"><big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <strong> Event Scheduling</strong> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Event_Scheduling"><span class="tocnumber">1</span> <span class="toctext">Event Scheduling</span></a>
+<ul>
+<li class="toclevel-2"><a href="#cancel.28_eventID_.29"><span class="tocnumber">1.1</span> <span class="toctext">cancel( eventID )</span></a></li>
+<li class="toclevel-2"><a href="#getEventTimeLeft.28_eventID_.29"><span class="tocnumber">1.2</span> <span class="toctext">getEventTimeLeft( eventID )</span></a></li>
+<li class="toclevel-2"><a href="#getScheduleDuration_.28_eventID_.29"><span class="tocnumber">1.3</span> <span class="toctext">getScheduleDuration ( eventID )</span></a></li>
+<li class="toclevel-2"><a href="#getTimeSinceStart.28_eventID_.29"><span class="tocnumber">1.4</span> <span class="toctext">getTimeSinceStart( eventID )</span></a></li>
+<li class="toclevel-2"><a href="#isEventPending.28_eventID_.29"><span class="tocnumber">1.5</span> <span class="toctext">isEventPending( eventID )</span></a></li>
+<li class="toclevel-2"><a href="#schedule.28_t_.2C_objID_or_0.2C__functionName.2C_arg0.2C_..._.2C_argN_.29"><span class="tocnumber">1.6</span> <span class="toctext">schedule( t , objID or 0,  functionName, arg0, ... , argN )</span></a></li>
+<li class="toclevel-2"><a href="#objID.schedule.28_t_.2C_methodName.2C_arg0.2C_..._.2C_argN_.29"><span class="tocnumber">1.7</span> <span class="toctext">objID.schedule( t , methodName, arg0, ... , argN )</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Event_Scheduling"></a><h2><a name = "HeaderLink1"></a>Event Scheduling</h2>
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="cancel.28_eventID_.29"></a><h3><a name = "HeaderLink2"></a>cancel( eventID )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>cancel</b></i> function to cancel a previously scheduled event as specified by <i><b>eventID</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+eventID</b></i> – The numeric ID of a previously scheduled event.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+getEventTimeLeft, getScheduleDuration, getTimeSinceStart, isEventPending, schedule, obj.schedule<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getEventTimeLeft.28_eventID_.29"></a><h3><a name = "HeaderLink3"></a>getEventTimeLeft( eventID )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getEventTimeLeft</b></i> function to determine how much time remains until the event specified by <i><b>eventID</b></i> occurs.<br />
+<br />
+<i><b>Syntax<br />
+eventID</b></i> – The numeric ID of a previously scheduled event.<br />
+<br />
+<b>Returns</b><br />
+Returns a non-zero integer value equal to the milliseconds until the event specified by eventID will occur.  However, if eventID is invalid, or the event has passed, this function will return zero.<br />
+<br />
+<b>See Also</b><br />
+cancel, getScheduleDuration, getTimeSinceStart, isEventPending, schedule, obj.schedule<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getScheduleDuration_.28_eventID_.29"></a><h3><a name = "HeaderLink4"></a>getScheduleDuration ( eventID )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getScheduleDuration</b></i> function to determine how long the event associated with eventID was scheduled for.<br />
+<br />
+<i><b>Syntax<br />
+eventID</b></i> – The numeric ID of a previously scheduled event.<br />
+<br />
+<b>Returns</b><br />
+Returns a non-zero integer value equal to the milliseconds used in the schedule call that created this event.  However, if eventID is invalid, this function will return zero.<br />
+<br />
+<b>See Also</b><br />
+cancel, getEventTimeLeft, getTimeSinceStart, isEventPending, schedule, obj.schedule<br />
+<br />
+Returns the time in millseconds of the event denoted by <i><b>eventID</b></i> as it was originally scheduled.<br />
+<br />
+Returns 0 if eventID is past or invalid.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getTimeSinceStart.28_eventID_.29"></a><h3><a name = "HeaderLink5"></a>getTimeSinceStart( eventID )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getTimeSinceStart</b></i> function to determine how much time has passed since the event specified by <i><b>eventID</b></i> was scheduled.<br />
+<br />
+<i><b>Syntax<br />
+eventID</b></i> – The numeric ID of a previously scheduled event.<br />
+<br />
+<b>Returns</b><br />
+Returns a non-zero integer value equal to the milliseconds that have passed since this event was scheduled.  However, if eventID is invalid, or the event has passed, this function will return zero.<br />
+<br />
+<b>See Also</b><br />
+cancel, getEventTimeLeft, getScheduleDuration, isEventPending, schedule, obj.schedule<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="isEventPending.28_eventID_.29"></a><h3><a name = "HeaderLink6"></a>isEventPending( eventID )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isEventPending</b></i> function to see if the event associated with <i><b>eventID</b></i> is still pending.<br />
+<br />
+<i><b>Syntax<br />
+eventID</b></i> – The numeric ID of a previously scheduled event.<br />
+<br />
+<b>Returns</b><br />
+Returns true if this event is still oustanding and false if it has passed or eventID is invalid.<br />
+<br />
+<i><b>Notes</b></i><br />
+When an event passes, the <i><b>eventID</b></i> is removed from the event queue, becoming invalid, so there is no discnerable difference between a completed event and a bad event ID. <br />
+<br />
+<b>See Also</b><br />
+cancel, getEventTimeLeft, getScheduleDuration, getTimeSinceStart, schedule, obj.schedule<br />
+</p>
+<pre>
+$Game::Schedule = schedule($Game::EndGamePause * 1000, 0, "onCyclePauseEnd");
+
+if( isEventPending($Game::Schedule) )  echo(“got a pending event);
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="schedule.28_t_.2C_objID_or_0.2C__functionName.2C_arg0.2C_..._.2C_argN_.29"></a><h3><i></i><a name = "HeaderLink7"></a>schedule( t , objID or 0,  functionName, arg0, ... , argN )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>schedule</b></i> function to schedule <i><b>functionName</b></i> to be executed with optional arguments at time <i><b>t</b></i> (specified in milliseconds) in the future.  This function may be associated with an object ID or not.  If it is associated with an object ID and the object is deleted prior to this event occuring, the event is automatically cancelled.<br />
+<br />
+<i><b>Syntax<br />
+t</b></i> – The time to wait (in milliseconds) before executing <i><b>functionName</b></i>.<br />
+<i><b>objID</b></i> – An optional ID to associate this event with.<br />
+<i><b>functionName</b></i> – An unadorned (flat) function name.<br />
+<i><b>arg0, ... , argN</b></i> – Any number of optional arguments to be passed to <i><b>functionName</b></i>.<br />
+<br />
+<b>Returns</b><br />
+Returns a non-zero integer representing the event ID for the scheduled event.<br />
+<br />
+<b>See Also</b><br />
+cancel, getEventTimeLeft, getScheduleDuration, getTimeSinceStart, isEventPending, obj.schedule<br />
+<br />
+</p>
+<pre>
+$Game::Schedule = schedule($Game::EndGamePause * 1000, 0, "onCyclePauseEnd");
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="objID.schedule.28_t_.2C_methodName.2C_arg0.2C_..._.2C_argN_.29"></a><h3><a name = "HeaderLink8"></a>objID.schedule( t , methodName, arg0, ... , argN )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>objID.schedule</b></i> <u>method</u> to schedule <i><b>methodName</b></i> to be executed with optional arguments at time <i><b>t</b></i> (specified in milliseconds) in the future on the object <i><b>objID</b></i>.  This event is automatically associated with the object <i><b>objID</b></i>, and if that object is deleted prior to this event occuring, the event is automatically cancelled.<br />
+<br />
+<i><b>Syntax<br />
+t</b></i> – The time to wait (in milliseconds) before executing <i><b>methodName</b></i>.<br />
+<i><b>objID</b></i> – An ID to associate this event with.<br />
+<i><b>methodName</b></i> – An unadorned (flat) function name.<br />
+<i><b>arg0, ... , argN</b></i> – Any number of optional arguments to be passed to <i><b>methodName</b></i>.<br />
+<br />
+<b>Returns</b><br />
+Returns a non-zero integer representing the event ID for the scheduled event.<br />
+<br />
+<b>Note</b><br />
+This is one of those rare cases where a method is described in the function appendix, but it really needed to be defined here for clarity.<br />
+<br />
+<b>See Also</b><br />
+cancel, getEventTimeLeft, getScheduleDuration, getTimeSinceStart, isEventPending, schedule<br />
+<br />
+</p>
+<pre>
+$Game::Schedule = schedule($Game::EndGamePause * 1000, 0, "onCyclePauseEnd");
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+<big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <strong> Event Scheduling</strong> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_10.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:10 GMT -->
+</html>

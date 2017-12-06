@@ -1,0 +1,739 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/Console Functions.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4213;
+   parent.leftFrame.expandToItem('tree2', 'doc4213');
+   var element = parent.leftFrame.document.getElementById('doc4213');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueScript Console Functions - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p><img src="../../../../../../../file/C_/Torque/documentation/SourceDocumentation/TGEA/images/Disclaimer_banner.jpg" width="445" height="67" /></p>
+<p>TorqueScript Console Functions constitutes documentation for the console functions of Torque Game Engine.
+  It was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource—a must for anyone wanting to get serious about programming in Torque.
+</p>
+<p>This page, not taken from that book, is a <a href="TorqueScript_Console_Functions.html#Contents" title="TorqueScript Console Functions">Table of contents</a> and a list of <a href="TorqueScript_Console_Functions.html#Functions_by_Name" title="TorqueScript Console Functions">Functions By Name</a>
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<a name="Contents" xmlns="http://www.w3.org/1999/xhtml"></a><h2 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink0"></a> Contents </h2>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p>Full Table of contents for the TorqueScript Console Functions.
+</p>
+<ul>
+<li> 1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions 1"> OpenAL</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetChannelVolume.28_channelID_.29" title="TorqueScript Console Functions 1">1.1 alxGetChannelVolume( channelID )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetListenerf.28_ALEnum_.29" title="TorqueScript Console Functions 1">1.2 alxGetListenerf( ALEnum )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alGetListener3f.28_ALEnum_.29" title="TorqueScript Console Functions 1">1.3 alGetListener3f( ALEnum )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alGetListeneri.28_ALEnum_.29" title="TorqueScript Console Functions 1">1.4 alGetListeneri( ALEnum )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetSourcef.28_handle_.2C_ALEnum_.29" title="TorqueScript Console Functions 1">1.5 alxGetSourcef( handle , ALEnum )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetSourcei.28_handle_.2C_ALEnum_.29" title="TorqueScript Console Functions 1">1.6 alxGetSourcei( handle , ALEnum )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetSource3f.28_handle_.2C_ALEnum_.29" title="TorqueScript Console Functions 1">1.7 alxGetSource3f( handle , ALEnum )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetStreamDuration.28_handle_.29" title="TorqueScript Console Functions 1">1.8 alxGetStreamDuration( handle )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetStreamPosition.28_handle_.29" title="TorqueScript Console Functions 1">1.9 alxGetStreamPosition( handle )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alGetString.28_ALEnum_.29" title="TorqueScript Console Functions 1">1.10 alGetString( ALEnum )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetWaveLen.28_fileName_.29" title="TorqueScript Console Functions 1">1.11 alxGetWaveLen( fileName )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alListener3f.28_ALEnum_.2C_x_.2C_y_.2C_z.29" title="TorqueScript Console Functions 1">1.12 alListener3f( ALEnum , x , y , z)</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxListenerf.28_AlEnum_.2C_value_.29" title="TorqueScript Console Functions 1">1.13 alxListenerf( AlEnum , value )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxIsPlaying.28_handle_.29" title="TorqueScript Console Functions 1">1.14 alxIsPlaying( handle )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxPlay.28_handle_.29" title="TorqueScript Console Functions 1">1.15 alxPlay( handle )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxPlay.28_profile_.29" title="TorqueScript Console Functions 1">1.16 alxPlay( profile )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxPlay.28_profile_.2C_x_.2C_y_.2C_z_.29" title="TorqueScript Console Functions 1">1.17 alxPlay( profile , x , y , z )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxSetChannelVolume.28_channelD_.2C_volume_.29" title="TorqueScript Console Functions 1">1.18 alxSetChannelVolume( channelD , volume )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxSourcef.28_handle_.2C_ALEnum_.2C_value_.29" title="TorqueScript Console Functions 1">1.19 alxSourcef( handle , ALEnum , value )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxSourcei.28_handle_.2C_ALEenum_.2C_value_.29" title="TorqueScript Console Functions 1">1.20 alxSourcei( handle , ALEenum , value )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxSource3f.28_handle_.2C_ALEnum_.2C_x_.2C_y_.2C_z_.29" title="TorqueScript Console Functions 1">1.21 alxSource3f( handle , ALEnum , x , y , z )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxStop.28_handle_.29" title="TorqueScript Console Functions 1">1.22 alxStop( handle )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxStopAll.28.29" title="TorqueScript Console Functions 1">1.23 alxStopAll()</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#OpenALInitDriver.28.29" title="TorqueScript Console Functions 1">1.24 OpenALInitDriver()</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#OpenALShutdownDriver.28.29" title="TorqueScript Console Functions 1">1.25 OpenALShutdownDriver()</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxCreateSource.28_profile_.29" title="TorqueScript Console Functions 1">1.26 alxCreateSource()</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#OpenALRegisterExtensions.28.29" title="TorqueScript Console Functions 1">1.30 OpenALRegisterExtensions()</a></li>
+</ul>
+<li> 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_2.html#debug.28.29" title="TorqueScript Console Functions 2">2.2 debug()</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#dumpConsoleClasses.28.29" title="TorqueScript Console Functions 2">2.3 dumpConsoleClasses()</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#dumpConsoleFunctions.28.29" title="TorqueScript Console Functions 2">2.4 dumpConsoleFunctions()</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#setEchoFileLoads.28_enable_.29" title="TorqueScript Console Functions 2">2.5 setEchoFileLoads( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#setInteriorRenderMode.28_mode_.29" title="TorqueScript Console Functions 2">2.6 setInteriorRenderMode( mode )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#setLogMode.28_mode_.29" title="TorqueScript Console Functions 2">2.7 setLogMode( mode )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#dumpUnflaggedAllocs.28_fileName_.29" title="TorqueScript Console Functions 2">2.8 dumpUnflaggedAllocs( fileName )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#flagCurrentAllocs.28.29" title="TorqueScript Console Functions 2">2.9 flagCurrentAllocs()</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#freeMemoryDump.28.29" title="TorqueScript Console Functions 2">2.10 freeMemoryDump()</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#GLEnableLogging.28_enable_.29" title="TorqueScript Console Functions 2">2.11 GLEnableLogging( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#GLEnableMetrics.28_enable_.29" title="TorqueScript Console Functions 2">2.12 GLEnableMetrics( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#metrics.28_metric_.29" title="TorqueScript Console Functions 2">2.13 metrics( metric )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#dbgSetParameters_.28_port_.2C_password_.29" title="TorqueScript Console Functions 2">2.14 dbgSetParameters ( port , password )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#dNetSetLogging.28_enable_.29" title="TorqueScript Console Functions 2">2.15 dNetSetLogging( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#profilerDump.28.29" title="TorqueScript Console Functions 2">2.16 profilerDump()</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#profilerDumpToFile.28_filename_.29" title="TorqueScript Console Functions 2">2.17 profilerDumpToFile( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#profilerEnable.28_enable_.29" title="TorqueScript Console Functions 2">2.18 profilerEnable( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#profilerMarkerEnable.28_markerName_.2C_enable_.29" title="TorqueScript Console Functions 2">2.19 profilerMarkerEnable( markerName , enable  )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#profilerReset.28_.29" title="TorqueScript Console Functions 2">2.20 profilerReset( )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#backtrace.28.29" title="TorqueScript Console Functions 2">2.21 backtrace()</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#trace.28_enable_.29" title="TorqueScript Console Functions 2">2.22 trace( enable )</a></li>
+</ul>
+<li> 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_3.html#String_Manipulation" title="TorqueScript Console Functions 3">3.1 String Manipulation</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#addBadWord.28_aBadWord_.29" title="TorqueScript Console Functions 3">3.2 addBadWord( aBadWord )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#containsBadWords.28_string_.29" title="TorqueScript Console Functions 3">3.3 containsBadWords( string )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#string_filterString.28_baseString_.5B_.2C_replacementChars_.5D_.29" title="TorqueScript Console Functions 3">3.4 string filterString( baseString [ , replacementChars ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strcmp.28_string1_.2C_string2_.29" title="TorqueScript Console Functions 3">3.5 strcmp( string1 , string2 )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#stricmp.28_string1_.2C_string2_.29" title="TorqueScript Console Functions 3">3.6 stricmp( string1 , string2 )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strlwr.28_sourceString_.29" title="TorqueScript Console Functions 3">3.7 strlwr( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strupr.28_sourceString_.29" title="TorqueScript Console Functions 3">3.8 strupr( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getField.28_sourceString_.2C_index_.29" title="TorqueScript Console Functions 3">3.9 getField( sourceString , index )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getFieldCount.28_sourceString_.29" title="TorqueScript Console Functions 3">3.10 getFieldCount( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getFields.28_sourceString_.2C_index_.5B_.2C_endindex_.5D_.29" title="TorqueScript Console Functions 3">3.11 getFields( sourceString , index [ , endindex ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#removeField.28_sourceString_.2C_index_.29" title="TorqueScript Console Functions 3">3.12 removeField( sourceString , index )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#setField.28_sourceString_.2C_index_.2C_replace_.29" title="TorqueScript Console Functions 3">3.13 setField( sourceString , index , replace )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strlen.28_string" title="TorqueScript Console Functions 3">3.14 strlen( string</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getRecord.28_sourceString_.2C_index_.29" title="TorqueScript Console Functions 3">3.15 getRecord( sourceString , index )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getRecordCount.28_sourceString_.29" title="TorqueScript Console Functions 3">3.16 getRecordCount( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getRecords.28_sourceString_.2C_index_.5B_.2C_endindex_.5D_.29" title="TorqueScript Console Functions 3">3.17 getRecords( sourceString , index [ , endindex ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#removeRecord.28_sourceString_.2C_index_.29" title="TorqueScript Console Functions 3">3.18 removeRecord( sourceString , index )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#setRecord.28_sourceString_.2C_index_.2C_replace_.29" title="TorqueScript Console Functions 3">3.19 setRecord( sourceString , index , replace )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strreplace.28_sourceString_.2C_from_.2C_to_.29" title="TorqueScript Console Functions 3">3.20 strreplace( sourceString , from , to )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getSubStr.28_sourceString_.2C_start_.2C_count_.29" title="TorqueScript Console Functions 3">3.21 getSubStr( sourceString , start  , count  )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strchr.28_sourceString_.2C_char_.29" title="TorqueScript Console Functions 3">3.22 strchr( sourceString , char )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strpos.28_sourceString_.2C_searchString_.5B_.2C_offset_.5D_.29" title="TorqueScript Console Functions 3">3.23 strpos( sourceString , searchString [ , offset ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strstr.28_sourceString_.2C_searchString_.29" title="TorqueScript Console Functions 3">3.24 strstr( sourceString , searchString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#stripChars.28_sourceString_.2C_chars_.29" title="TorqueScript Console Functions 3">3.25 stripChars( sourceString , chars )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#stripColorCodes.28_stringtoStrip_.29" title="TorqueScript Console Functions 3">3.26 stripColorCodes( stringtoStrip )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#stripMLControlChars.28_sourceString_.29" title="TorqueScript Console Functions 3">3.26 stripMLControlChars( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#stripTrailingSpaces.28_sourceString_.29" title="TorqueScript Console Functions 3">3.27 stripTrailingSpaces( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#ltrim.28_sourceString_.29" title="TorqueScript Console Functions 3">3.28 ltrim( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#rtrim.28_sourceString_.29" title="TorqueScript Console Functions 3">3.29 rtrim( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#trim.28_sourceString_.29" title="TorqueScript Console Functions 3">3.30 trim( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#nextToken.28_tokenList_.2C_tokenVar_.2C_delimeter_.29" title="TorqueScript Console Functions 3">3.31 nextToken( tokenList , tokenVar , delimeter )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#firstWord.28_sourceString_.29" title="TorqueScript Console Functions 3">3.32 firstWord( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getWord.28_sourceString_.2Cindex_.29" title="TorqueScript Console Functions 3">3.33 getWord( sourceString ,index )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getWordCount.28_sourceString_.29" title="TorqueScript Console Functions 3">3.34 getWordCount( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getWords.28_sourceString_.2Cindex_.5B.2Cendindex.5D.29" title="TorqueScript Console Functions 3">3.35 getWords( sourceString ,index [,endindex])</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#removeWord.28_sourceString_.2Cindex.29" title="TorqueScript Console Functions 3">3.36 removeWord( sourceString ,index)</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#restWords.28_sourceString_.29" title="TorqueScript Console Functions 3">3.37 restWords( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#setWord.28_sourceString_.2Cindex.2Creplace.29" title="TorqueScript Console Functions 3">3.38 setWord( sourceString ,index,replace)</a></li>
+</ul>
+<li> 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_4.html#addTaggedString.28_string_.29" title="TorqueScript Console Functions 4">4.1 addTaggedString( string )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#buildTaggedString.28_format_.2C_.3Carg1.2C_...arg9.3E_.29" title="TorqueScript Console Functions 4">4.2 buildTaggedString( format ,  &lt;arg1, ...arg9&gt; )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#detag.28_tagID_.29" title="TorqueScript Console Functions 4">4.3 detag( tagID )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#dumpNetStringTable.28.29" title="TorqueScript Console Functions 4">4.4 dumpNetStringTable()</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#getTag.28_taggedString_.29" title="TorqueScript Console Functions 4">4.5 getTag( taggedString )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#getTaggedString.28_tag_.29" title="TorqueScript Console Functions 4">4.6 getTaggedString( tag )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#removeTaggedString.28_tag_.29" title="TorqueScript Console Functions 4">4.7 removeTaggedString( tag )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#gotoWebPage.28_address_.29" title="TorqueScript Console Functions 4">4.8 gotoWebPage( address )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#setNetPort.28_port_.29" title="TorqueScript Console Functions 4">4.9 setNetPort( port )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#telnetSetParameters.28_port.2C_consolePass.2C_listenPass_.5B_.2C_remoteEcho_.5D_.29" title="TorqueScript Console Functions 4">4.10 telnetSetParameters( port, consolePass, listenPass [ , remoteEcho ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#commandToClient.28_client.2C_func_.5B_.2C_arg1.2C_..._.2C_argn_.5D_.29" title="TorqueScript Console Functions 4">4.11 commandToClient( client, func [ , arg1, ... , argn ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#commandToServer.28_func_.5B_.2C_arg1.2C_..._.2C_argn_.5D_.29" title="TorqueScript Console Functions 4">4.12 commandToServer( func [ , arg1, ... , argn ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#allowConnections.28_enable_.29" title="TorqueScript Console Functions 4">4.13 allowConnections( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#cancelServerQuery.28.29" title="TorqueScript Console Functions 4">4.14 cancelServerQuery()</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#getServerCount.28.29" title="TorqueScript Console Functions 4">4.15 getServerCount()</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#queryLANServers.28_port_.2C_flags_.2C_gametype_.2C_missiontype_.2C_minplayers_.2C_maxplayers_.2C_maxbots_.2C_regionmask_.2C_maxping_.2C_mincpu_.2C_filterflags_.29" title="TorqueScript Console Functions 4">4.16 queryLANServers( port , flags , gametype , missiontype , minplayers , maxplayers ,  maxbots , regionmask , maxping , mincpu , filterflags )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#queryMasterServer.28_flags_.2C_gametype_.2C_missiontype_.2C_minplayers_.2C_maxplayers_.2C_maxbots_.2C_regionmask_.2C_maxping_.2C_mincpu_.2C_filterflags_.29" title="TorqueScript Console Functions 4">4.17 queryMasterServer( flags , gametype , missiontype , minplayers , maxplayers , maxbots , regionmask , maxping , mincpu , filterflags )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#querySingleServer.28_address_.5B_.2C_flags_.5D_.29" title="TorqueScript Console Functions 4">4.18 querySingleServer( address [ , flags ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#setServerInfo.28_index_.29" title="TorqueScript Console Functions 4">4.19 setServerInfo( index )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#startHeartbeat.28.29" title="TorqueScript Console Functions 4">4.20 startHeartbeat()</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#stopHeartbeat.28.29" title="TorqueScript Console Functions 4">4.21 stopHeartbeat()</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#stopServerQuery.28.29" title="TorqueScript Console Functions 4">4.22 stopServerQuery()</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#getMaxFrameAllocation.28.29" title="TorqueScript Console Functions 4">4.23 getMaxFrameAllocation()</a></li>
+</ul>
+<li> 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_5.html#call.28_funcName_.5B_.2C_args_..._.5D_.29" title="TorqueScript Console Functions 5">5.1 call( funcName [ , args ... ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#cls.28_.29" title="TorqueScript Console Functions 5">5.2 cls( )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#collapseEscape.28_text_.29" title="TorqueScript Console Functions 5">5.3 collapseEscape( text )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#compile.28_fileName_.29" title="TorqueScript Console Functions 5">5.4 compile( fileName )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#deleteVariables.28_wildCard_.29" title="TorqueScript Console Functions 5">5.5 deleteVariables( wildCard )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#echo.28_text_.5B_.2C_..._.5D_.29" title="TorqueScript Console Functions 5">5.6 echo( text [ , ... ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#enableWinConsole.28_enable_.29" title="TorqueScript Console Functions 5">5.7 enableWinConsole( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#error.28_text_.5B_.2C_..._.5D_.29" title="TorqueScript Console Functions 5">5.8 error( text [ , ... ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#eval.28_script_.29" title="TorqueScript Console Functions 5">5.9 eval( script )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#exec.28_fileName_.5B_.2C_nocalls_.5B_.2C_journalScript_.5D_.5D_.29" title="TorqueScript Console Functions 5">5.10 exec( fileName [ , nocalls [ , journalScript ] ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#expandEscape.28_text_.29" title="TorqueScript Console Functions 5">5.11 expandEscape( text )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#export.28_wildCard_.5B_.2C_fileName_.5B_.2C_append_.5D_.5D_.29" title="TorqueScript Console Functions 5">5.12 export( wildCard [ , fileName [ , append ] ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#quit.28.29" title="TorqueScript Console Functions 5">5.13 quit()</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#warn.28_text_.5B_.2C_..._.5D_.29" title="TorqueScript Console Functions 5">5.14 warn( text [ , ... ] )</a></li>
+</ul>
+<li> 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_6.html#activateDirectInput.28.29" title="TorqueScript Console Functions 6">6.1 activateDirectInput()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#activateKeyboard.28.29" title="TorqueScript Console Functions 6">6.2 activateKeyboard()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#deactivateDirectInput.28.29" title="TorqueScript Console Functions 6">6.3 deactivateDirectInput()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#deactivateKeyboard.28.29" title="TorqueScript Console Functions 6">6.4 deactivateKeyboard()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#disableJoystick.28.29" title="TorqueScript Console Functions 6">6.5 disableJoystick()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#disableMouse.28.29" title="TorqueScript Console Functions 6">6.6 disableMouse()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#echoInputState.28.29" title="TorqueScript Console Functions 6">6.7 echoInputState()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#enableJoystick.28.29" title="TorqueScript Console Functions 6">6.8 enableJoystick()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#enableMouse.28.29" title="TorqueScript Console Functions 6">6.9 enableMouse()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#getJoystickAxes.28_instance_.29" title="TorqueScript Console Functions 6">6.10 getJoystickAxes( instance )</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#isJoystickDetected.28.29" title="TorqueScript Console Functions 6">6.11 isJoystickDetected()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#lockMouse.28_isLocked_.29" title="TorqueScript Console Functions 6">6.12 lockMouse( isLocked )</a></li>
+</ul>
+<li> 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_7.html#expandFilename.28_filename_.29" title="TorqueScript Console Functions 7">7.1 expandFilename( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#fileBase.28_filename_.29" title="TorqueScript Console Functions 7">7.2 fileBase( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#fileExt.28_filename_.29" title="TorqueScript Console Functions 7">7.3 fileExt( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#fileName.28_filename_.29" title="TorqueScript Console Functions 7">7.4 fileName( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#filePath.28_filename_.29" title="TorqueScript Console Functions 7">7.5 filePath( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#findFirstFile_.28_pattern_.29" title="TorqueScript Console Functions 7">7.6 findFirstFile ( pattern )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#findNextFile_.28_pattern_.29" title="TorqueScript Console Functions 7">7.7 findNextFile ( pattern )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#getFileCount_.28_pattern_.29" title="TorqueScript Console Functions 7">7.8 getFileCount ( pattern )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#getFileCRC.28_filename_.29" title="TorqueScript Console Functions 7">7.9 getFileCRC( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#isFile.28_filename_.29" title="TorqueScript Console Functions 7">7.10 isFile( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#isWriteableFileName.28_filename_.29" title="TorqueScript Console Functions 7">7.11 isWriteableFileName( filename )</a></li>
+</ul>
+<li> 8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_8.html#activatePackage.28_packageName_.29" title="TorqueScript Console Functions 8">8.1 activatePackage( packageName )</a></li>
+<li><a href="TorqueScript_Console_Functions_8.html#deactivatePackage.28_packageName_.29" title="TorqueScript Console Functions 8">8.2 deactivatePackage( packageName )</a></li>
+<li><a href="TorqueScript_Console_Functions_8.html#isPackage.28_packageName_.29" title="TorqueScript Console Functions 8">8.3 isPackage( packageName )</a></li>
+</ul>
+<li> 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_9.html#isObject.28_handle_.29" title="TorqueScript Console Functions 9">9.1 isObject( handle )</a></li>
+<li><a href="TorqueScript_Console_Functions_9.html#nameToID.28_objectName_.29" title="TorqueScript Console Functions 9">9.2 nameToID( objectName )</a></li>
+<li><a href="TorqueScript_Console_Functions_9.html#strToPlayerName.28_playerName_.29.3B" title="TorqueScript Console Functions 9">9.3 strToPlayerName( playerName );</a></li>
+</ul>
+<li>10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_10.html#cancel.28_eventID_.29" title="TorqueScript Console Functions 10">10.1 cancel( eventID )</a></li>
+<li><a href="TorqueScript_Console_Functions_10.html#getEventTimeLeft.28_eventID_.29" title="TorqueScript Console Functions 10">10.2 getEventTimeLeft( eventID )</a></li>
+<li><a href="TorqueScript_Console_Functions_10.html#getScheduleDuration_.28_eventID_.29" title="TorqueScript Console Functions 10">10.3 getScheduleDuration ( eventID )</a></li>
+<li><a href="TorqueScript_Console_Functions_10.html#getTimeSinceStart.28_eventID_.29" title="TorqueScript Console Functions 10">10.4 getTimeSinceStart( eventID )</a></li>
+<li><a href="TorqueScript_Console_Functions_10.html#isEventPending.28_eventID_.29" title="TorqueScript Console Functions 10">10.5 isEventPending( eventID )</a></li>
+<li><a href="TorqueScript_Console_Functions_10.html#schedule.28_t_.2C_objID_or_0.2C_functionName.2C_arg0.2C_..._.2C_argN_.29" title="TorqueScript Console Functions 10">10.6 schedule( t , objID or 0,  functionName, arg0, ... , argN )</a></li>
+<li><a href="TorqueScript_Console_Functions_10.html#objID.schedule.28_t_.2C_methodName.2C_arg0.2C_..._.2C_argN_.29" title="TorqueScript Console Functions 10">10.7 objID.schedule( t , methodName, arg0, ... , argN )</a></li>
+</ul>
+<li>11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_11.html#deleteDataBlocks.28.29" title="TorqueScript Console Functions 11">11.1 deleteDataBlocks()</a></li>
+</ul>
+<li>12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_12.html#addMaterialMapping.28_materialName.2C_map0_.5B_.2C_..._.2C_map97_.5D.29" title="TorqueScript Console Functions 12">12.1 addMaterialMapping( materialName, map0 [ , ... , map97 ])</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#clearTextureHolds.28.29" title="TorqueScript Console Functions 12">12.2 clearTextureHolds()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#dumpTextureStats.28.29" title="TorqueScript Console Functions 12">12.3 dumpTextureStats()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#flushTextureCache.28.29" title="TorqueScript Console Functions 12">12.4 flushTextureCache()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#getDesktopResolution.28.29" title="TorqueScript Console Functions 12">12.5 getDesktopResolution()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#getDisplayDeviceList.28.29" title="TorqueScript Console Functions 12">12.6 getDisplayDeviceList()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#getResolutionList.28_devicename_.29" title="TorqueScript Console Functions 12">12.7 getResolutionList( devicename )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#getVideoDriverInfo.28.29" title="TorqueScript Console Functions 12">12.8 getVideoDriverInfo()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#isDeviceFullScreenOnly.28_devicename_.29" title="TorqueScript Console Functions 12">12.9 isDeviceFullScreenOnly( devicename )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#isFullScreen.28.29" title="TorqueScript Console Functions 12">12.10 isFullScreen()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#nextResolution.28.29" title="TorqueScript Console Functions 12">12.11 nextResolution()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#png2jpg.28_pngFilename_.5B_.2C_quality_.5D_.29" title="TorqueScript Console Functions 12">12.12 png2jpg( pngFilename [ , quality ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#prevResolution.28.29" title="TorqueScript Console Functions 12">12.13 prevResolution()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#screenShot.28_filename_.2C_format_.29" title="TorqueScript Console Functions 12">12.14 screenShot( filename , format )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setDefaultFov.28_defaultFOV_.29" title="TorqueScript Console Functions 12">12.15 setDefaultFov( defaultFOV )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setDisplayDevice.28_deviceName_.5B.2C_width_.5B_.2C_height_.5B.2C_bpp_.5B.2C_fullScreen.5D_.5D_.5D_.5D_.29" title="TorqueScript Console Functions 12">12.16 setDisplayDevice( deviceName [, width [ , height [, bpp [, fullScreen] ] ] ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setFov.28_FOV_.29" title="TorqueScript Console Functions 12">12.17 setFov( FOV )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setOpenGLAnisotropy.28_0.0_.._max.f_.29" title="TorqueScript Console Functions 12">12.18 setOpenGLAnisotropy( 0.0 .. max.f )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setOpenGLInteriorMipReduction.28_reductionVal_.29" title="TorqueScript Console Functions 12">12.19 setOpenGLInteriorMipReduction( reductionVal )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setOpenGLMipReduction.28_reductionVal_.29" title="TorqueScript Console Functions 12">12.20 setOpenGLMipReduction( reductionVal )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setOpenGLSkyMipReduction.28_reductionVal_.29" title="TorqueScript Console Functions 12">12.21 setOpenGLSkyMipReduction( reductionVal )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setOpenGLTextureCompressionHint_.28_hint_.29" title="TorqueScript Console Functions 12">12.22 setOpenGLTextureCompressionHint ( hint )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setRes.28_width_.2C_height_.2C_bpp_.29" title="TorqueScript Console Functions 12">12.23 setRes( width , height , bpp )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setScreenMode.28_width_.2C_height_.2C_bpp_.2C_fullScreen_.29" title="TorqueScript Console Functions 12">12.24 setScreenMode( width , height , bpp , fullScreen )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setVerticalSync.28_enable_.29" title="TorqueScript Console Functions 12">12.25 setVerticalSync( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#switchBitDepth.28.29" title="TorqueScript Console Functions 12">12.26 switchBitDepth()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#toggleFullScreen.28.29" title="TorqueScript Console Functions 12">12.27 toggleFullScreen()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#videoSetGammaCorrection.28_gamma_.29" title="TorqueScript Console Functions 12">12.28 videoSetGammaCorrection( gamma )</a></li>
+</ul>
+<li>13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_13.html#calcExplosionCoverage.28_source.2C_targetObject_.2C_coverageMask_.29" title="TorqueScript Console Functions 13">13.1 calcExplosionCoverage( source, targetObject , coverageMask )</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#getControlObjectAltitude.28.29" title="TorqueScript Console Functions 13">13.2 getControlObjectAltitude()</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#getControlObjectSpeed.28.29" title="TorqueScript Console Functions 13">13.3 getControlObjectSpeed()</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#getClipboard.28.29" title="TorqueScript Console Functions 13">13.4 getClipboard()</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#getModPaths.28.29" title="TorqueScript Console Functions 13">13.5 getModPaths()</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#getTerrainHeight.28_position_.29" title="TorqueScript Console Functions 13">13.6 getTerrainHeight( position )</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#isPointInside.28_position_.29" title="TorqueScript Console Functions 13">13.7 isPointInside( position )</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#pathOnMissionLoadDone.28.29" title="TorqueScript Console Functions 13">13.8 pathOnMissionLoadDone()</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#setModPaths.28_path_.29" title="TorqueScript Console Functions 13">13.9 setModPaths( path )</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#setClipboard.28_string_.29" title="TorqueScript Console Functions 13">13.10 setClipboard( string )</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#setZoomSpeed.28_delay_.29" title="TorqueScript Console Functions 13">13.11 setZoomSpeed( delay )</a></li>
+</ul>
+<li>14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_14.html#dumpResourceStats.28.29" title="TorqueScript Console Functions 14">14.1 dumpResourceStats()</a></li>
+<li><a href="TorqueScript_Console_Functions_14.html#purgeResources.28.29" title="TorqueScript Console Functions 14">14.2 purgeResources()</a></li>
+</ul>
+<li>15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_15.html#lightScene.28_.5B_completeCallback_.5B_.2C_force_.5D_.29" title="TorqueScript Console Functions 15">15.1 lightScene( [ completeCallback [ , force ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_15.html#resetLighting.28.29" title="TorqueScript Console Functions 15">14.2 resetLighting()</a></li>
+</ul>
+<li>16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_16.html#ContainerBoxEmpty.28_mask_.2C_location_.2C_xRadius_.5B_.2C_yRadius_.2C_zRadius_.5D_.29" title="TorqueScript Console Functions 16">16.1 ContainerBoxEmpty( mask , location , xRadius [ , yRadius , zRadius ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_16.html#containerFindFirst.28_mask_.2C_location.2C_.2C_xRadius_.2C_yRadius_.2C_zRadius_.29" title="TorqueScript Console Functions 16">16.2 containerFindFirst( mask , location, , xRadius , yRadius , zRadius  )</a></li>
+<li><a href="TorqueScript_Console_Functions_16.html#containerFindNext.28.29" title="TorqueScript Console Functions 16">16.3 containerFindNext()</a></li>
+<li><a href="TorqueScript_Console_Functions_16.html#ContainerRayCast_.28_startPos_.2C_endPos_.2C_mask_.5B_.2C_exempt_.5D_.29" title="TorqueScript Console Functions 16">16.4 ContainerRayCast ( startPos , endPos , mask [ , exempt ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_16.html#ContainerSearchCurrDist.28.29" title="TorqueScript Console Functions 16">16.5 ContainerSearchCurrDist()</a></li>
+<li><a href="TorqueScript_Console_Functions_16.html#ContainerSearchCurrRadiusDist.28.29" title="TorqueScript Console Functions 16">16.6 ContainerSearchCurrRadiusDist()</a></li>
+<li><a href="TorqueScript_Console_Functions_16.html#ContainerSearchNext.28.29" title="TorqueScript Console Functions 16">16.7 ContainerSearchNext()</a></li>
+<li><a href="TorqueScript_Console_Functions_16.html#InitContainerRadiusSearch_.28_centerPos_.2C_radius_.2C_mask_.29" title="TorqueScript Console Functions 16">16.8 InitContainerRadiusSearch ( centerPos , radius , mask )</a></li>
+</ul>
+<li>17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_17.html#snapToggle.28.29" title="TorqueScript Console Functions 17">17.1 snapToggle()</a></li>
+</ul>
+<li>18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_18.html#getBuildString.28.29" title="TorqueScript Console Functions 18">18.1 getBuildString()</a></li>
+<li><a href="TorqueScript_Console_Functions_18.html#getCompileTimeString.28.29" title="TorqueScript Console Functions 18">18.2 getCompileTimeString()</a></li>
+<li><a href="TorqueScript_Console_Functions_18.html#getVersionNumber.28.29" title="TorqueScript Console Functions 18">18.3 getVersionNumber()</a></li>
+<li><a href="TorqueScript_Console_Functions_18.html#getVersionString.28.29" title="TorqueScript Console Functions 18">18.4 getVersionString()</a></li>
+<li><a href="TorqueScript_Console_Functions_18.html#isDebugBuild.28.29" title="TorqueScript Console Functions 18">18.5 isDebugBuild()</a></li>
+</ul>
+<li>19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a></li>                   
+<ul>
+<li><a href="TorqueScript_Console_Functions_19.html#getRealTime.28.29" title="TorqueScript Console Functions 19">19.1 getRealTime()</a></li>
+<li><a href="TorqueScript_Console_Functions_19.html#getSimTime.28.29" title="TorqueScript Console Functions 19">19.2 getSimTime()</a></li>
+</ul>
+<li>20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a></li>                   
+<ul>
+<li><a href="TorqueScript_Console_Functions_20.html#createCanvas.28_WindowTitle_.29" title="TorqueScript Console Functions 20">20.1 createCanvas( WindowTitle )</a></li>
+<li><a href="TorqueScript_Console_Functions_20.html#createEffectCanvas.28_WindowTitle_.29" title="TorqueScript Console Functions 20">20.2 createEffectCanvas( WindowTitle )</a></li>
+</ul>
+<li>21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a></li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_21.html#getBoxCenter.28_box_.29" title="TorqueScript Console Functions 21">21.1 getBoxCenter( box )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#getRandomSeed.28.29" title="TorqueScript Console Functions 21">21.2 getRandomSeed()</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mAbs.28_val_.29" title="TorqueScript Console Functions 21">21.3 mAbs( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mAcos.28_val_.29" title="TorqueScript Console Functions 21">21.4 mAcos( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mAsin.28_val_.29" title="TorqueScript Console Functions 21">21.5 mAsin( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mAtan.28_val_.29" title="TorqueScript Console Functions 21">21.6 mAtan( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mathInit.28_extention_.29" title="TorqueScript Console Functions 21">21.7 mathInit( extention )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#matrixCreate.28_posVec_.2C_rotVec_.29" title="TorqueScript Console Functions 21">21.8 matrixCreate( posVec , rotVec )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#MatrixCreateFromEuler_.28_rotVec_.29" title="TorqueScript Console Functions 21">21.9 MatrixCreateFromEuler ( rotVec )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#MatrixMulPoint.28_transform_.2C_point_.29" title="TorqueScript Console Functions 21">21.10 MatrixMulPoint( transform , point )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#MatrixMultiply.28_transformA_.2C_transformB_.29" title="TorqueScript Console Functions 21">21.11 MatrixMultiply( transformA , transformB )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#MatrixMulVector.28_transform_.2C_vector_.29" title="TorqueScript Console Functions 21">21.12 MatrixMulVector( transform , vector )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mCeil.28_val_.29" title="TorqueScript Console Functions 21">21.13 mCeil( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mCos.28_val_.29" title="TorqueScript Console Functions 21">21.14 mCos( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mDegToRad.28_val_.29" title="TorqueScript Console Functions 21">21.15 mDegToRad( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mFloatLength.28_val_.2C_numDecimals_.29" title="TorqueScript Console Functions 21">21.16 mFloatLength( val , numDecimals )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mFloor.28_val_.29" title="TorqueScript Console Functions 21">21.17 mFloor( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mLog.28_val_.29" title="TorqueScript Console Functions 21">21.18 mLog( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mPow.28_val_.2C_power_.29" title="TorqueScript Console Functions 21">21.19 mPow( val , power )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mRadToDeg.28_val_.29" title="TorqueScript Console Functions 21">21.20 mRadToDeg( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mSin.28_val_.29" title="TorqueScript Console Functions 21">21.21 mSin( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mSolveCubic.28_a_.2C_b_.2C_c_.2C_d_.29" title="TorqueScript Console Functions 21">21.22 mSolveCubic( a , b , c , d )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mSolveQuadratic.28_a_.2C_b_.2C_c_.29" title="TorqueScript Console Functions 21">21.23 mSolveQuadratic( a , b , c )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mSolveQuartic.28a.2Cb.2Cc.2Cd.2Ce.29" title="TorqueScript Console Functions 21">21.24 mSolveQuartic(a,b,c,d,e)</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mSqrt.28_val_.29" title="TorqueScript Console Functions 21">21.25 mSqrt( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mTan.28_val_.29" title="TorqueScript Console Functions 21">21.26 mTan( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#setRandomSeed.28_startSeed_.29" title="TorqueScript Console Functions 21">21.27 setRandomSeed( startSeed )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorAdd.28_vecA_.2C_vecB_.29" title="TorqueScript Console Functions 21">21.28 VectorAdd( vecA , vecB )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorCross.28_vecA_.2C_vecB_.29" title="TorqueScript Console Functions 21">21.29 VectorCross( vecA , vecB )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorDist.28_vecA_.2C_vecB_.29" title="TorqueScript Console Functions 21">21.30 VectorDist( vecA , vecB )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorDot.28_vecA_.2C_vecB_.29" title="TorqueScript Console Functions 21">21.31 VectorDot( vecA , vecB )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorLen.28_vec_.29" title="TorqueScript Console Functions 21">21.32 VectorLen( vec )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorNormalize.28_vec_.29" title="TorqueScript Console Functions 21">21.33 VectorNormalize( vec )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorOrthoBasis.28_vec_.29" title="TorqueScript Console Functions 21">21.34 VectorOrthoBasis( vec )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorScale.28_vec_.2C_scale_.29" title="TorqueScript Console Functions 21">21.35 VectorScale( vec , scale )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorSub.28_vecA_.2C_vecB_.29" title="TorqueScript Console Functions 21">21.36 VectorSub( vecA , vecB )</a></li>
+</ul>
+</ul>
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<a name="Functions_by_Name" xmlns="http://www.w3.org/1999/xhtml"></a><h2 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink1"></a> Functions by Name </h2>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<ul>
+<li>A</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_6.html#activateDirectInput.28.29" title="TorqueScript Console Functions 6">6.1 activateDirectInput()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#activateKeyboard.28.29" title="TorqueScript Console Functions 6">6.2 activateKeyboard()</a></li>
+<li><a href="TorqueScript_Console_Functions_8.html#activatePackage.28_packageName_.29" title="TorqueScript Console Functions 8">8.1 activatePackage( packageName )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#addBadWord.28_aBadWord_.29" title="TorqueScript Console Functions 3">3.2 addBadWord( aBadWord )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#addMaterialMapping.28_materialName.2C_map0_.5B_.2C_..._.2C_map97_.5D.29" title="TorqueScript Console Functions 12">12.1 addMaterialMapping( materialName, map0 [ , ... , map97 ])</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#addTaggedString.28_string_.29" title="TorqueScript Console Functions 4">4.1 addTaggedString( string )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alGetListener3f.28_ALEnum_.29" title="TorqueScript Console Functions 1">1.3 alGetListener3f( ALEnum )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alGetListeneri.28_ALEnum_.29" title="TorqueScript Console Functions 1">1.4 alGetListeneri( ALEnum )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alGetString.28_ALEnum_.29" title="TorqueScript Console Functions 1">1.10 alGetString( ALEnum )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alListener3f.28_ALEnum_.2C_x_.2C_y_.2C_z.29" title="TorqueScript Console Functions 1">1.12 alListener3f( ALEnum , x , y , z)</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#allowConnections.28_enable_.29" title="TorqueScript Console Functions 4">4.13 allowConnections( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxCreateSource.28_profile_.29" title="TorqueScript Console Functions 1">1.26 alxCreateSource()</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetChannelVolume.28_channelID_.29" title="TorqueScript Console Functions 1">1.1 alxGetChannelVolume( channelID )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetListenerf.28_ALEnum_.29" title="TorqueScript Console Functions 1">1.2 alxGetListenerf( ALEnum )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetSource3f.28_handle_.2C_ALEnum_.29" title="TorqueScript Console Functions 1">1.7 alxGetSource3f( handle , ALEnum )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetSourcef.28_handle_.2C_ALEnum_.29" title="TorqueScript Console Functions 1">1.5 alxGetSourcef( handle , ALEnum )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetSourcei.28_handle_.2C_ALEnum_.29" title="TorqueScript Console Functions 1">1.6 alxGetSourcei( handle , ALEnum )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetStreamDuration.28_handle_.29" title="TorqueScript Console Functions 1">1.8 alxGetStreamDuration( handle )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetStreamPosition.28_handle_.29" title="TorqueScript Console Functions 1">1.9 alxGetStreamPosition( handle )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxGetWaveLen.28_fileName_.29" title="TorqueScript Console Functions 1">1.11 alxGetWaveLen( fileName )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxIsPlaying.28_handle_.29" title="TorqueScript Console Functions 1">1.14 alxIsPlaying( handle )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxListenerf.28_AlEnum_.2C_value_.29" title="TorqueScript Console Functions 1">1.13 alxListenerf( AlEnum , value )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxPlay.28_handle_.29" title="TorqueScript Console Functions 1">1.15 alxPlay( handle )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxPlay.28_profile_.2C_x_.2C_y_.2C_z_.29" title="TorqueScript Console Functions 1">1.17 alxPlay( profile , x , y , z )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxPlay.28_profile_.29" title="TorqueScript Console Functions 1">1.16 alxPlay( profile )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxSetChannelVolume.28_channelD_.2C_volume_.29" title="TorqueScript Console Functions 1">1.18 alxSetChannelVolume( channelD , volume )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxSource3f.28_handle_.2C_ALEnum_.2C_x_.2C_y_.2C_z_.29" title="TorqueScript Console Functions 1">1.21 alxSource3f( handle , ALEnum , x , y , z )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxSourcef.28_handle_.2C_ALEnum_.2C_value_.29" title="TorqueScript Console Functions 1">1.19 alxSourcef( handle , ALEnum , value )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxSourcei.28_handle_.2C_ALEenum_.2C_value_.29" title="TorqueScript Console Functions 1">1.20 alxSourcei( handle , ALEenum , value )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxStop.28_handle_.29" title="TorqueScript Console Functions 1">1.22 alxStop( handle )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#alxStopAll.28.29" title="TorqueScript Console Functions 1">1.23 alxStopAll()</a></li>
+</ul>
+<li>B</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_2.html#backtrace.28.29" title="TorqueScript Console Functions 2">2.21 backtrace()</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#buildTaggedString.28_format_.2C_.3Carg1.2C_...arg9.3E_.29" title="TorqueScript Console Functions 4">4.2 buildTaggedString( format ,  &lt;arg1, ...arg9&gt; )</a></li>
+</ul>
+<li>C</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_13.html#calcExplosionCoverage.28_source.2C_targetObject_.2C_coverageMask_.29" title="TorqueScript Console Functions 13">13.1 calcExplosionCoverage( source, targetObject , coverageMask )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#call.28_funcName_.5B_.2C_args_..._.5D_.29" title="TorqueScript Console Functions 5">5.1 call( funcName [ , args ... ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_10.html#cancel.28_eventID_.29" title="TorqueScript Console Functions 10">10.1 cancel( eventID )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#cancelServerQuery.28.29" title="TorqueScript Console Functions 4">4.14 cancelServerQuery()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#clearTextureHolds.28.29" title="TorqueScript Console Functions 12">12.2 clearTextureHolds()</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#cls.28_.29" title="TorqueScript Console Functions 5">5.2 cls( )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#collapseEscape.28_text_.29" title="TorqueScript Console Functions 5">5.3 collapseEscape( text )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#commandToClient.28_client.2C_func_.5B_.2C_arg1.2C_..._.2C_argn_.5D_.29" title="TorqueScript Console Functions 4">4.11 commandToClient( client, func [ , arg1, ... , argn ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#commandToServer.28_func_.5B_.2C_arg1.2C_..._.2C_argn_.5D_.29" title="TorqueScript Console Functions 4">4.12 commandToServer( func [ , arg1, ... , argn ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#compile.28_fileName_.29" title="TorqueScript Console Functions 5">5.4 compile( fileName )</a></li>
+<li><a href="TorqueScript_Console_Functions_16.html#ContainerBoxEmpty.28_mask_.2C_location_.2C_xRadius_.5B_.2C_yRadius_.2C_zRadius_.5D_.29" title="TorqueScript Console Functions 16">16.1 ContainerBoxEmpty( mask , location , xRadius [ , yRadius , zRadius ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_16.html#containerFindFirst.28_mask_.2C_location.2C_.2C_xRadius_.2C_yRadius_.2C_zRadius_.29" title="TorqueScript Console Functions 16">16.2 containerFindFirst( mask , location, , xRadius , yRadius , zRadius  )</a></li>
+<li><a href="TorqueScript_Console_Functions_16.html#containerFindNext.28.29" title="TorqueScript Console Functions 16">16.3 containerFindNext()</a></li>
+<li><a href="TorqueScript_Console_Functions_16.html#ContainerRayCast_.28_startPos_.2C_endPos_.2C_mask_.5B_.2C_exempt_.5D_.29" title="TorqueScript Console Functions 16">16.4 ContainerRayCast ( startPos , endPos , mask [ , exempt ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_16.html#ContainerSearchCurrDist.28.29" title="TorqueScript Console Functions 16">16.5 ContainerSearchCurrDist()</a></li>
+<li><a href="TorqueScript_Console_Functions_16.html#ContainerSearchCurrRadiusDist.28.29" title="TorqueScript Console Functions 16">16.6 ContainerSearchCurrRadiusDist()</a></li>
+<li><a href="TorqueScript_Console_Functions_16.html#ContainerSearchNext.28.29" title="TorqueScript Console Functions 16">16.7 ContainerSearchNext()</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#containsBadWords.28_string_.29" title="TorqueScript Console Functions 3">3.3 containsBadWords( string )</a></li>
+<li><a href="TorqueScript_Console_Functions_20.html#createCanvas.28_WindowTitle_.29" title="TorqueScript Console Functions 20">20.1 createCanvas( WindowTitle )</a></li>
+<li><a href="TorqueScript_Console_Functions_20.html#createEffectCanvas.28_WindowTitle_.29" title="TorqueScript Console Functions 20">20.2 createEffectCanvas( WindowTitle )</a></li>
+</ul>
+<li>D</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_2.html#dbgSetParameters_.28_port_.2C_password_.29" title="TorqueScript Console Functions 2">2.14 dbgSetParameters ( port , password )</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#deactivateDirectInput.28.29" title="TorqueScript Console Functions 6">6.3 deactivateDirectInput()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#deactivateKeyboard.28.29" title="TorqueScript Console Functions 6">6.4 deactivateKeyboard()</a></li>
+<li><a href="TorqueScript_Console_Functions_8.html#deactivatePackage.28_packageName_.29" title="TorqueScript Console Functions 8">8.2 deactivatePackage( packageName )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#debug.28.29" title="TorqueScript Console Functions 2">2.2 debug()</a></li>
+<li><a href="TorqueScript_Console_Functions_11.html#deleteDataBlocks.28.29" title="TorqueScript Console Functions 11">11.1 deleteDataBlocks()</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#deleteVariables.28_wildCard_.29" title="TorqueScript Console Functions 5">5.5 deleteVariables( wildCard )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#detag.28_tagID_.29" title="TorqueScript Console Functions 4">4.3 detag( tagID )</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#disableJoystick.28.29" title="TorqueScript Console Functions 6">6.5 disableJoystick()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#disableMouse.28.29" title="TorqueScript Console Functions 6">6.6 disableMouse()</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#dNetSetLogging.28_enable_.29" title="TorqueScript Console Functions 2">2.15 dNetSetLogging( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#dumpConsoleClasses.28.29" title="TorqueScript Console Functions 2">2.3 dumpConsoleClasses()</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#dumpConsoleFunctions.28.29" title="TorqueScript Console Functions 2">2.4 dumpConsoleFunctions()</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#dumpNetStringTable.28.29" title="TorqueScript Console Functions 4">4.4 dumpNetStringTable()</a></li>
+<li><a href="TorqueScript_Console_Functions_14.html#dumpResourceStats.28.29" title="TorqueScript Console Functions 14">14.1 dumpResourceStats()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#dumpTextureStats.28.29" title="TorqueScript Console Functions 12">12.3 dumpTextureStats()</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#dumpUnflaggedAllocs.28_fileName_.29" title="TorqueScript Console Functions 2">2.8 dumpUnflaggedAllocs( fileName )</a></li>
+</ul>
+<li>E</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_5.html#echo.28_text_.5B_.2C_..._.5D_.29" title="TorqueScript Console Functions 5">5.6 echo( text [ , ... ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#echoInputState.28.29" title="TorqueScript Console Functions 6">6.7 echoInputState()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#enableJoystick.28.29" title="TorqueScript Console Functions 6">6.8 enableJoystick()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#enableMouse.28.29" title="TorqueScript Console Functions 6">6.9 enableMouse()</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#enableWinConsole.28_enable_.29" title="TorqueScript Console Functions 5">5.7 enableWinConsole( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#error.28_text_.5B_.2C_..._.5D_.29" title="TorqueScript Console Functions 5">5.8 error( text [ , ... ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#eval.28_script_.29" title="TorqueScript Console Functions 5">5.9 eval( script )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#exec.28_fileName_.5B_.2C_nocalls_.5B_.2C_journalScript_.5D_.5D_.29" title="TorqueScript Console Functions 5">5.10 exec( fileName [ , nocalls [ , journalScript ] ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#expandEscape.28_text_.29" title="TorqueScript Console Functions 5">5.11 expandEscape( text )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#expandFilename.28_filename_.29" title="TorqueScript Console Functions 7">7.1 expandFilename( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#export.28_wildCard_.5B_.2C_fileName_.5B_.2C_append_.5D_.5D_.29" title="TorqueScript Console Functions 5">5.12 export( wildCard [ , fileName [ , append ] ] )</a></li>
+</ul>
+<li>F</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_7.html#fileBase.28_filename_.29" title="TorqueScript Console Functions 7">7.2 fileBase( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#fileExt.28_filename_.29" title="TorqueScript Console Functions 7">7.3 fileExt( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#fileName.28_filename_.29" title="TorqueScript Console Functions 7">7.4 fileName( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#filePath.28_filename_.29" title="TorqueScript Console Functions 7">7.5 filePath( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#findFirstFile_.28_pattern_.29" title="TorqueScript Console Functions 7">7.6 findFirstFile ( pattern )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#findNextFile_.28_pattern_.29" title="TorqueScript Console Functions 7">7.7 findNextFile ( pattern )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#firstWord.28_sourceString_.29" title="TorqueScript Console Functions 3">3.32 firstWord( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#flagCurrentAllocs.28.29" title="TorqueScript Console Functions 2">2.9 flagCurrentAllocs()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#flushTextureCache.28.29" title="TorqueScript Console Functions 12">12.4 flushTextureCache()</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#freeMemoryDump.28.29" title="TorqueScript Console Functions 2">2.10 freeMemoryDump()</a></li>
+</ul>
+<li>G</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_21.html#getBoxCenter.28_box_.29" title="TorqueScript Console Functions 21">21.1 getBoxCenter( box )</a></li>
+<li><a href="TorqueScript_Console_Functions_18.html#getBuildString.28.29" title="TorqueScript Console Functions 18">18.1 getBuildString()</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#getClipboard.28.29" title="TorqueScript Console Functions 13">13.4 getClipboard()</a></li>
+<li><a href="TorqueScript_Console_Functions_18.html#getCompileTimeString.28.29" title="TorqueScript Console Functions 18">18.2 getCompileTimeString()</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#getControlObjectAltitude.28.29" title="TorqueScript Console Functions 13">13.2 getControlObjectAltitude()</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#getControlObjectSpeed.28.29" title="TorqueScript Console Functions 13">13.3 getControlObjectSpeed()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#getDesktopResolution.28.29" title="TorqueScript Console Functions 12">12.5 getDesktopResolution()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#getDisplayDeviceList.28.29" title="TorqueScript Console Functions 12">12.6 getDisplayDeviceList()</a></li>
+<li><a href="TorqueScript_Console_Functions_10.html#getEventTimeLeft.28_eventID_.29" title="TorqueScript Console Functions 10">10.2 getEventTimeLeft( eventID )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getField.28_sourceString_.2C_index_.29" title="TorqueScript Console Functions 3">3.9 getField( sourceString , index )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getFieldCount.28_sourceString_.29" title="TorqueScript Console Functions 3">3.10 getFieldCount( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getFields.28_sourceString_.2C_index_.5B_.2C_endindex_.5D_.29" title="TorqueScript Console Functions 3">3.11 getFields( sourceString , index [ , endindex ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#getFileCount_.28_pattern_.29" title="TorqueScript Console Functions 7">7.8 getFileCount ( pattern )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#getFileCRC.28_filename_.29" title="TorqueScript Console Functions 7">7.9 getFileCRC( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#getJoystickAxes.28_instance_.29" title="TorqueScript Console Functions 6">6.10 getJoystickAxes( instance )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#getMaxFrameAllocation.28.29" title="TorqueScript Console Functions 4">4.23 getMaxFrameAllocation()</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#getModPaths.28.29" title="TorqueScript Console Functions 13">13.5 getModPaths()</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#getRandomSeed.28.29" title="TorqueScript Console Functions 21">21.2 getRandomSeed()</a></li>
+<li><a href="TorqueScript_Console_Functions_19.html#getRealTime.28.29" title="TorqueScript Console Functions 19">19.1 getRealTime()</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getRecord.28_sourceString_.2C_index_.29" title="TorqueScript Console Functions 3">3.15 getRecord( sourceString , index )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getRecordCount.28_sourceString_.29" title="TorqueScript Console Functions 3">3.16 getRecordCount( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getRecords.28_sourceString_.2C_index_.5B_.2C_endindex_.5D_.29" title="TorqueScript Console Functions 3">3.17 getRecords( sourceString , index [ , endindex ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#getResolutionList.28_devicename_.29" title="TorqueScript Console Functions 12">12.7 getResolutionList( devicename )</a></li>
+<li><a href="TorqueScript_Console_Functions_10.html#getScheduleDuration_.28_eventID_.29" title="TorqueScript Console Functions 10">10.3 getScheduleDuration ( eventID )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#getServerCount.28.29" title="TorqueScript Console Functions 4">4.15 getServerCount()</a></li>
+<li><a href="TorqueScript_Console_Functions_19.html#getSimTime.28.29" title="TorqueScript Console Functions 19">19.2 getSimTime()</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getSubStr.28_sourceString_.2C_start_.2C_count_.29" title="TorqueScript Console Functions 3">3.21 getSubStr( sourceString , start  , count  )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#getTag.28_taggedString_.29" title="TorqueScript Console Functions 4">4.5 getTag( taggedString )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#getTaggedString.28_tag_.29" title="TorqueScript Console Functions 4">4.6 getTaggedString( tag )</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#getTerrainHeight.28_position_.29" title="TorqueScript Console Functions 13">13.6 getTerrainHeight( position )</a></li>
+<li><a href="TorqueScript_Console_Functions_10.html#getTimeSinceStart.28_eventID_.29" title="TorqueScript Console Functions 10">10.4 getTimeSinceStart( eventID )</a></li>
+<li><a href="TorqueScript_Console_Functions_18.html#getVersionNumber.28.29" title="TorqueScript Console Functions 18">18.3 getVersionNumber()</a></li>
+<li><a href="TorqueScript_Console_Functions_18.html#getVersionString.28.29" title="TorqueScript Console Functions 18">18.4 getVersionString()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#getVideoDriverInfo.28.29" title="TorqueScript Console Functions 12">12.8 getVideoDriverInfo()</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getWord.28_sourceString_.2Cindex_.29" title="TorqueScript Console Functions 3">3.33 getWord( sourceString ,index )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getWordCount.28_sourceString_.29" title="TorqueScript Console Functions 3">3.34 getWordCount( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#getWords.28_sourceString_.2Cindex_.5B.2Cendindex.5D.29" title="TorqueScript Console Functions 3">3.35 getWords( sourceString ,index [,endindex])</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#GLEnableLogging.28_enable_.29" title="TorqueScript Console Functions 2">2.11 GLEnableLogging( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#GLEnableMetrics.28_enable_.29" title="TorqueScript Console Functions 2">2.12 GLEnableMetrics( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#gotoWebPage.28_address_.29" title="TorqueScript Console Functions 4">4.8 gotoWebPage( address )</a></li>
+</ul>
+<li>I</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_16.html#InitContainerRadiusSearch_.28_centerPos_.2C_radius_.2C_mask_.29" title="TorqueScript Console Functions 16">16.8 InitContainerRadiusSearch ( centerPos , radius , mask )</a></li>
+<li><a href="TorqueScript_Console_Functions_18.html#isDebugBuild.28.29" title="TorqueScript Console Functions 18">18.5 isDebugBuild()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#isDeviceFullScreenOnly.28_devicename_.29" title="TorqueScript Console Functions 12">12.9 isDeviceFullScreenOnly( devicename )</a></li>
+<li><a href="TorqueScript_Console_Functions_10.html#isEventPending.28_eventID_.29" title="TorqueScript Console Functions 10">10.5 isEventPending( eventID )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#isFile.28_filename_.29" title="TorqueScript Console Functions 7">7.10 isFile( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#isFullScreen.28.29" title="TorqueScript Console Functions 12">12.10 isFullScreen()</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#isJoystickDetected.28.29" title="TorqueScript Console Functions 6">6.11 isJoystickDetected()</a></li>
+<li><a href="TorqueScript_Console_Functions_9.html#isObject.28_handle_.29" title="TorqueScript Console Functions 9">9.1 isObject( handle )</a></li>
+<li><a href="TorqueScript_Console_Functions_8.html#isPackage.28_packageName_.29" title="TorqueScript Console Functions 8">8.3 isPackage( packageName )</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#isPointInside.28_position_.29" title="TorqueScript Console Functions 13">13.7 isPointInside( position )</a></li>
+<li><a href="TorqueScript_Console_Functions_7.html#isWriteableFileName.28_filename_.29" title="TorqueScript Console Functions 7">7.11 isWriteableFileName( filename )</a></li>
+</ul>
+<li>L</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_15.html#lightScene.28_.5B_completeCallback_.5B_.2C_force_.5D_.29" title="TorqueScript Console Functions 15">15.1 lightScene( [ completeCallback [ , force ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_6.html#lockMouse.28_isLocked_.29" title="TorqueScript Console Functions 6">6.12 lockMouse( isLocked )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#ltrim.28_sourceString_.29" title="TorqueScript Console Functions 3">3.28 ltrim( sourceString )</a></li>
+</ul>
+<li>M</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_21.html#mAbs.28_val_.29" title="TorqueScript Console Functions 21">21.3 mAbs( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mAcos.28_val_.29" title="TorqueScript Console Functions 21">21.4 mAcos( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mAsin.28_val_.29" title="TorqueScript Console Functions 21">21.5 mAsin( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mAtan.28_val_.29" title="TorqueScript Console Functions 21">21.6 mAtan( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mathInit.28_extention_.29" title="TorqueScript Console Functions 21">21.7 mathInit( extention )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#matrixCreate.28_posVec_.2C_rotVec_.29" title="TorqueScript Console Functions 21">21.8 matrixCreate( posVec , rotVec )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#MatrixCreateFromEuler_.28_rotVec_.29" title="TorqueScript Console Functions 21">21.9 MatrixCreateFromEuler ( rotVec )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#MatrixMulPoint.28_transform_.2C_point_.29" title="TorqueScript Console Functions 21">21.10 MatrixMulPoint( transform , point )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#MatrixMultiply.28_transformA_.2C_transformB_.29" title="TorqueScript Console Functions 21">21.11 MatrixMultiply( transformA , transformB )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#MatrixMulVector.28_transform_.2C_vector_.29" title="TorqueScript Console Functions 21">21.12 MatrixMulVector( transform , vector )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mCeil.28_val_.29" title="TorqueScript Console Functions 21">21.13 mCeil( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mCos.28_val_.29" title="TorqueScript Console Functions 21">21.14 mCos( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mDegToRad.28_val_.29" title="TorqueScript Console Functions 21">21.15 mDegToRad( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#metrics.28_metric_.29" title="TorqueScript Console Functions 2">2.13 metrics( metric )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mFloatLength.28_val_.2C_numDecimals_.29" title="TorqueScript Console Functions 21">21.16 mFloatLength( val , numDecimals )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mFloor.28_val_.29" title="TorqueScript Console Functions 21">21.17 mFloor( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mLog.28_val_.29" title="TorqueScript Console Functions 21">21.18 mLog( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mPow.28_val_.2C_power_.29" title="TorqueScript Console Functions 21">21.19 mPow( val , power )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mRadToDeg.28_val_.29" title="TorqueScript Console Functions 21">21.20 mRadToDeg( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mSin.28_val_.29" title="TorqueScript Console Functions 21">21.21 mSin( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mSolveCubic.28_a_.2C_b_.2C_c_.2C_d_.29" title="TorqueScript Console Functions 21">21.22 mSolveCubic( a , b , c , d )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mSolveQuadratic.28_a_.2C_b_.2C_c_.29" title="TorqueScript Console Functions 21">21.23 mSolveQuadratic( a , b , c )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mSolveQuartic.28a.2Cb.2Cc.2Cd.2Ce.29" title="TorqueScript Console Functions 21">21.24 mSolveQuartic(a,b,c,d,e)</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mSqrt.28_val_.29" title="TorqueScript Console Functions 21">21.25 mSqrt( val )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#mTan.28_val_.29" title="TorqueScript Console Functions 21">21.26 mTan( val )</a></li>
+</ul>
+<li>N</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_9.html#nameToID.28_objectName_.29" title="TorqueScript Console Functions 9">9.2 nameToID( objectName )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#nextResolution.28.29" title="TorqueScript Console Functions 12">12.11 nextResolution()</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#nextToken.28_tokenList_.2C_tokenVar_.2C_delimeter_.29" title="TorqueScript Console Functions 3">3.31 nextToken( tokenList , tokenVar , delimeter )</a></li>
+</ul>
+<li>O</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_10.html#objID.schedule.28_t_.2C_methodName.2C_arg0.2C_..._.2C_argN_.29" title="TorqueScript Console Functions 10">10.7 objID.schedule( t , methodName, arg0, ... , argN )</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#OpenALInitDriver.28.29" title="TorqueScript Console Functions 1">1.24 OpenALInitDriver()</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#OpenALRegisterExtensions.28.29" title="TorqueScript Console Functions 1">1.30 OpenALRegisterExtensions()</a></li>
+<li><a href="TorqueScript_Console_Functions_1.html#OpenALShutdownDriver.28.29" title="TorqueScript Console Functions 1">1.25 OpenALShutdownDriver()</a></li>
+</ul>
+<li>P</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_13.html#pathOnMissionLoadDone.28.29" title="TorqueScript Console Functions 13">13.8 pathOnMissionLoadDone()</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#png2jpg.28_pngFilename_.5B_.2C_quality_.5D_.29" title="TorqueScript Console Functions 12">12.12 png2jpg( pngFilename [ , quality ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#prevResolution.28.29" title="TorqueScript Console Functions 12">12.13 prevResolution()</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#profilerDump.28.29" title="TorqueScript Console Functions 2">2.16 profilerDump()</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#profilerDumpToFile.28_filename_.29" title="TorqueScript Console Functions 2">2.17 profilerDumpToFile( filename )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#profilerEnable.28_enable_.29" title="TorqueScript Console Functions 2">2.18 profilerEnable( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#profilerMarkerEnable.28_markerName_.2C_enable_.29" title="TorqueScript Console Functions 2">2.19 profilerMarkerEnable( markerName , enable  )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#profilerReset.28_.29" title="TorqueScript Console Functions 2">2.20 profilerReset( )</a></li>
+<li><a href="TorqueScript_Console_Functions_14.html#purgeResources.28.29" title="TorqueScript Console Functions 14">14.2 purgeResources()</a></li>
+</ul>
+<li>Q</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_4.html#queryLANServers.28_port_.2C_flags_.2C_gametype_.2C_missiontype_.2C_minplayers_.2C_maxplayers_.2C_maxbots_.2C_regionmask_.2C_maxping_.2C_mincpu_.2C_filterflags_.29" title="TorqueScript Console Functions 4">4.16 queryLANServers( port , flags , gametype , missiontype , minplayers , maxplayers ,  maxbots , regionmask , maxping , mincpu , filterflags )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#queryMasterServer.28_flags_.2C_gametype_.2C_missiontype_.2C_minplayers_.2C_maxplayers_.2C_maxbots_.2C_regionmask_.2C_maxping_.2C_mincpu_.2C_filterflags_.29" title="TorqueScript Console Functions 4">4.17 queryMasterServer( flags , gametype , missiontype , minplayers , maxplayers , maxbots , regionmask , maxping , mincpu , filterflags )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#querySingleServer.28_address_.5B_.2C_flags_.5D_.29" title="TorqueScript Console Functions 4">4.18 querySingleServer( address [ , flags ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_5.html#quit.28.29" title="TorqueScript Console Functions 5">5.13 quit()</a></li>
+</ul>
+<li>R</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_3.html#removeField.28_sourceString_.2C_index_.29" title="TorqueScript Console Functions 3">3.12 removeField( sourceString , index )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#removeRecord.28_sourceString_.2C_index_.29" title="TorqueScript Console Functions 3">3.18 removeRecord( sourceString , index )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#removeTaggedString.28_tag_.29" title="TorqueScript Console Functions 4">4.7 removeTaggedString( tag )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#removeWord.28_sourceString_.2Cindex.29" title="TorqueScript Console Functions 3">3.36 removeWord( sourceString ,index)</a></li>
+<li><a href="TorqueScript_Console_Functions_15.html#resetLighting.28.29" title="TorqueScript Console Functions 15">14.2 resetLighting()</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#restWords.28_sourceString_.29" title="TorqueScript Console Functions 3">3.37 restWords( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#rtrim.28_sourceString_.29" title="TorqueScript Console Functions 3">3.29 rtrim( sourceString )</a></li>
+</ul>
+<li>S</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_10.html#schedule.28_t_.2C_objID_or_0.2C_functionName.2C_arg0.2C_..._.2C_argN_.29" title="TorqueScript Console Functions 10">10.6 schedule( t , objID or 0,  functionName, arg0, ... , argN )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#screenShot.28_filename_.2C_format_.29" title="TorqueScript Console Functions 12">12.14 screenShot( filename , format )</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#setClipboard.28_string_.29" title="TorqueScript Console Functions 13">13.10 setClipboard( string )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setDefaultFov.28_defaultFOV_.29" title="TorqueScript Console Functions 12">12.15 setDefaultFov( defaultFOV )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setDisplayDevice.28_deviceName_.5B.2C_width_.5B_.2C_height_.5B.2C_bpp_.5B.2C_fullScreen.5D_.5D_.5D_.5D_.29" title="TorqueScript Console Functions 12">12.16 setDisplayDevice( deviceName [, width [ , height [, bpp [, fullScreen] ] ] ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#setEchoFileLoads.28_enable_.29" title="TorqueScript Console Functions 2">2.5 setEchoFileLoads( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#setField.28_sourceString_.2C_index_.2C_replace_.29" title="TorqueScript Console Functions 3">3.13 setField( sourceString , index , replace )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setFov.28_FOV_.29" title="TorqueScript Console Functions 12">12.17 setFov( FOV )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#setInteriorRenderMode.28_mode_.29" title="TorqueScript Console Functions 2">2.6 setInteriorRenderMode( mode )</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#setLogMode.28_mode_.29" title="TorqueScript Console Functions 2">2.7 setLogMode( mode )</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#setModPaths.28_path_.29" title="TorqueScript Console Functions 13">13.9 setModPaths( path )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#setNetPort.28_port_.29" title="TorqueScript Console Functions 4">4.9 setNetPort( port )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setOpenGLAnisotropy.28_0.0_.._max.f_.29" title="TorqueScript Console Functions 12">12.18 setOpenGLAnisotropy( 0.0 .. max.f )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setOpenGLInteriorMipReduction.28_reductionVal_.29" title="TorqueScript Console Functions 12">12.19 setOpenGLInteriorMipReduction( reductionVal )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setOpenGLMipReduction.28_reductionVal_.29" title="TorqueScript Console Functions 12">12.20 setOpenGLMipReduction( reductionVal )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setOpenGLSkyMipReduction.28_reductionVal_.29" title="TorqueScript Console Functions 12">12.21 setOpenGLSkyMipReduction( reductionVal )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setOpenGLTextureCompressionHint_.28_hint_.29" title="TorqueScript Console Functions 12">12.22 setOpenGLTextureCompressionHint ( hint )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#setRandomSeed.28_startSeed_.29" title="TorqueScript Console Functions 21">21.27 setRandomSeed( startSeed )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#setRecord.28_sourceString_.2C_index_.2C_replace_.29" title="TorqueScript Console Functions 3">3.19 setRecord( sourceString , index , replace )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setRes.28_width_.2C_height_.2C_bpp_.29" title="TorqueScript Console Functions 12">12.23 setRes( width , height , bpp )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setScreenMode.28_width_.2C_height_.2C_bpp_.2C_fullScreen_.29" title="TorqueScript Console Functions 12">12.24 setScreenMode( width , height , bpp , fullScreen )</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#setServerInfo.28_index_.29" title="TorqueScript Console Functions 4">4.19 setServerInfo( index )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#setVerticalSync.28_enable_.29" title="TorqueScript Console Functions 12">12.25 setVerticalSync( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#setWord.28_sourceString_.2Cindex.2Creplace.29" title="TorqueScript Console Functions 3">3.38 setWord( sourceString ,index,replace)</a></li>
+<li><a href="TorqueScript_Console_Functions_13.html#setZoomSpeed.28_delay_.29" title="TorqueScript Console Functions 13">13.11 setZoomSpeed( delay )</a></li>
+<li><a href="TorqueScript_Console_Functions_17.html#snapToggle.28.29" title="TorqueScript Console Functions 17">17.1 snapToggle()</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#startHeartbeat.28.29" title="TorqueScript Console Functions 4">4.20 startHeartbeat()</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#stopHeartbeat.28.29" title="TorqueScript Console Functions 4">4.21 stopHeartbeat()</a></li>
+<li><a href="TorqueScript_Console_Functions_4.html#stopServerQuery.28.29" title="TorqueScript Console Functions 4">4.22 stopServerQuery()</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strchr.28_sourceString_.2C_char_.29" title="TorqueScript Console Functions 3">3.22 strchr( sourceString , char )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strcmp.28_string1_.2C_string2_.29" title="TorqueScript Console Functions 3">3.5 strcmp( string1 , string2 )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#stricmp.28_string1_.2C_string2_.29" title="TorqueScript Console Functions 3">3.6 stricmp( string1 , string2 )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#string_filterString.28_baseString_.5B_.2C_replacementChars_.5D_.29" title="TorqueScript Console Functions 3">3.4 string filterString( baseString [ , replacementChars ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#stripChars.28_sourceString_.2C_chars_.29" title="TorqueScript Console Functions 3">3.25 stripChars( sourceString , chars )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#stripColorCodes.28_stringtoStrip_.29" title="TorqueScript Console Functions 3">3.26 stripColorCodes( stringtoStrip )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#stripMLControlChars.28_sourceString_.29" title="TorqueScript Console Functions 3">3.26 stripMLControlChars( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#stripTrailingSpaces.28_sourceString_.29" title="TorqueScript Console Functions 3">3.27 stripTrailingSpaces( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strlen.28_string" title="TorqueScript Console Functions 3">3.14 strlen( string</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strlwr.28_sourceString_.29" title="TorqueScript Console Functions 3">3.7 strlwr( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strpos.28_sourceString_.2C_searchString_.5B_.2C_offset_.5D_.29" title="TorqueScript Console Functions 3">3.23 strpos( sourceString , searchString [ , offset ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strreplace.28_sourceString_.2C_from_.2C_to_.29" title="TorqueScript Console Functions 3">3.20 strreplace( sourceString , from , to )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strstr.28_sourceString_.2C_searchString_.29" title="TorqueScript Console Functions 3">3.24 strstr( sourceString , searchString )</a></li>
+<li><a href="TorqueScript_Console_Functions_9.html#strToPlayerName.28_playerName_.29.3B" title="TorqueScript Console Functions 9">9.3 strToPlayerName( playerName );</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#strupr.28_sourceString_.29" title="TorqueScript Console Functions 3">3.8 strupr( sourceString )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#switchBitDepth.28.29" title="TorqueScript Console Functions 12">12.26 switchBitDepth()</a></li>
+</ul>
+<li>T</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_4.html#telnetSetParameters.28_port.2C_consolePass.2C_listenPass_.5B_.2C_remoteEcho_.5D_.29" title="TorqueScript Console Functions 4">4.10 telnetSetParameters( port, consolePass, listenPass [ , remoteEcho ] )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#toggleFullScreen.28.29" title="TorqueScript Console Functions 12">12.27 toggleFullScreen()</a></li>
+<li><a href="TorqueScript_Console_Functions_2.html#trace.28_enable_.29" title="TorqueScript Console Functions 2">2.22 trace( enable )</a></li>
+<li><a href="TorqueScript_Console_Functions_3.html#trim.28_sourceString_.29" title="TorqueScript Console Functions 3">3.30 trim( sourceString )</a></li>
+</ul>
+<li>V</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorAdd.28_vecA_.2C_vecB_.29" title="TorqueScript Console Functions 21">21.28 VectorAdd( vecA , vecB )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorCross.28_vecA_.2C_vecB_.29" title="TorqueScript Console Functions 21">21.29 VectorCross( vecA , vecB )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorDist.28_vecA_.2C_vecB_.29" title="TorqueScript Console Functions 21">21.30 VectorDist( vecA , vecB )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorDot.28_vecA_.2C_vecB_.29" title="TorqueScript Console Functions 21">21.31 VectorDot( vecA , vecB )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorLen.28_vec_.29" title="TorqueScript Console Functions 21">21.32 VectorLen( vec )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorNormalize.28_vec_.29" title="TorqueScript Console Functions 21">21.33 VectorNormalize( vec )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorOrthoBasis.28_vec_.29" title="TorqueScript Console Functions 21">21.34 VectorOrthoBasis( vec )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorScale.28_vec_.2C_scale_.29" title="TorqueScript Console Functions 21">21.35 VectorScale( vec , scale )</a></li>
+<li><a href="TorqueScript_Console_Functions_21.html#VectorSub.28_vecA_.2C_vecB_.29" title="TorqueScript Console Functions 21">21.36 VectorSub( vecA , vecB )</a></li>
+<li><a href="TorqueScript_Console_Functions_12.html#videoSetGammaCorrection.28_gamma_.29" title="TorqueScript Console Functions 12">12.28 videoSetGammaCorrection( gamma )</a></li>
+</ul>
+<li>W</li>
+<ul>
+<li><a href="TorqueScript_Console_Functions_5.html#warn.28_text_.5B_.2C_..._.5D_.29" title="TorqueScript Console Functions 5">5.14 warn( text [ , ... ] )</a></li>
+</ul>
+</ul>
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<div id="catlinks" xmlns="http://www.w3.org/1999/xhtml"><p class="catlinks"><a href="index75b6.html?title=Special:Categories&amp;article=TorqueScript_Console_Functions" title="Special:Categories">Categories</a>: <a href="Category:TGE" title="Category:TGE">TGE</a> | <a href="Category:TorqueScript" title="Category:TorqueScript">TorqueScript</a></p></div>            
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/Console Functions.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:06 GMT -->
+</html>

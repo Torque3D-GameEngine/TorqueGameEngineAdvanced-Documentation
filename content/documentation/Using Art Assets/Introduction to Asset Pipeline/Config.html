@@ -1,0 +1,154 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Introduction to Asset Pipeline/Config.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4278;
+   parent.leftFrame.expandToItem('tree2', 'doc4278');
+   var element = parent.leftFrame.document.getElementById('doc4278');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Using Art Assets - Config Files</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+<td width="700">
+
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class='toclevel-1'><a href="#Overview"><span class="tocnumber">2</span> <span class="toctext">Overview</span></a></li>
+<li class='toclevel-1'><a href="#Setup"><span class="tocnumber">3</span> <span class="toctext">Setup</span></a></li>
+<li class='toclevel-1'><a href="#Setup_Notes_for_Windows_Maya_Users"><span class="tocnumber">4</span> <span class="toctext">Setup Notes for Windows Maya Users</span></a></li>
+<li class='toclevel-1'><a href="#The_Dump_File"><span class="tocnumber">5</span> <span class="toctext">The Dump File</span></a></li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="Introduction"></a><h2><a name = "HeaderLink1"></a>Introduction</h2><br />
+<p>This guide will explain all the ins and outs of the CFG file setup and configuration.
+</p><p><br />
+</p>
+
+<a name="Overview"></a><h2><a name = "HeaderLink2"></a>Overview</h2><br />
+<p>Cfg files are an important part to the dts pipeline, as they allow you to directly control what's going into the dts and what's being left out. If you're making simple shapes like crates, barrels, trees, etc, then you can get away without knowing about cfg files.  The exporter will be able to handle those shapes without be told how to operate.  The usefulness of cfg files is made apparent once you start getting into things with animation and characters.<br /><br />
+</p><p>The standard cfg looks like this:<br />
+</p>
+<pre>
+AlwaysExport:
+eye
+cam
+mount0
+//mount1
+//jetnozzle0
+
+NeverExport:
+Bip01
+Bip01 L Finger*
+Bip01 R Finger*
+Dummy*
+Bip01 L Toe*
+Bip01 R Toe*
+start01
+mountpoint
+DELETE*
+//Ski0
+//Ski1
+Light0
+Light1
+//Mount1
+//Mount2
+
++Error::AllowEmptySubtrees
++Error::AllowCrossedDetails
++Error::AllowUnusedMeshes
+-Error::AllowOldSequences
+-Error::RequireViconNode
+-Param::CollapseTransforms
+
+//=Params::T2AutoDetail -1
+</pre><br />
+<p>You can comment out lines of the .CFG by using "//". In this example, I am culling out nodes that are not animated in the DSQ files, and are not necessary for the shape to function. The more nodes that you can cull out, the smaller and more efficient the shape will be. <br /><br />
+</p><p>Allow me to break down for you how this works.  You have two main headings; AlwaysExport and NeverExport.  Under these headings you have everything in your scene listed.  The heading names whould make their purpose rather obvious.  under AlwaysExport, you have things that you want included in the DTS.  Under NeverExport, you have things that you want omitted.<br /><br />
+</p><p>You can also achieve the same results in the DTS shape file by exporting it with 'collapse transforms' option disabled. This is not considered to be a good practice, as you should be using the .CFG files to control your node structure, but it works as it ensures that ALL the nodes in the shape are included in the DTS file. <br /><br />
+</p><p>Now that you have a .CFG file, and it is set up properly with all the relevant nodes on the list, and all extraneous shapes and nodes (Lights, reference shapes, etc...) culled out by putting them on the 'Never Export" list, you are ready for exporting the finished model. Export it as above.<br /><br />
+</p><p>For some additional light reading until the information has been moved over, use <a href="Reference.html">Additional DTS Exporter Features Reference</a>
+</p><p><br />
+</p>
+
+<a name="Setup"></a><h2><a name = "HeaderLink3"></a>Setup</h2><br />
+<p>Only one CFG file is allowed per directory and it should be placed in the same directory as your source file (.max). If you are working with multiple models or instances of a unique model, you will need to create a new directory with a CFG file (typically copied over with small tweaks).<br /><br />
+</p><p>If you are using 3DS Max but you are not using a .max file you may have to save as a .max and open it up again in order for the CFG file to work.<br /><br />
+</p><p><br />
+</p>
+
+<a name="Setup_Notes_for_Windows_Maya_Users"></a><h2><a name = "HeaderLink4"></a>Setup Notes for Windows Maya Users</h2><br />
+<p>If you are trying to export from windows and the .cfg file doesn't seem to be working, it may be due to Maya looking for Unix-based line feeds instead of Windows-based carraige returns.
+</p><p>To confirm this problem, export, then open the dump.dmp file in a text editor and look at the first few lines.
+</p><p>First you should see a line that starts with "Begin reading config file..." followed by the path to the file. If this is there, then it isn't a problem with Maya not finding the file.
+</p><p>The next few lines should read similar to this:
+Always export node: "Eye"
+Always export node: "Mass"
+Always export node: "Mount0"
+Always export node: "Mount10"
+Always export node: "Cam"
+</p><p>To determine if you have the above problem, look very carefully at each item that is between quotes. There should be nothing between the last letter of the node you are trying to export and the closing quote. If there is that "square" character that denotes an unknown character before the closing quote, then this is your problem. (I can't demonstrate it here, but it's the one you get when doing something like opening a japanese web page without the language installed.)
+</p><p>Likewise, if you see the name of the node, and the closing quote is on the next line, like this:
+Always export node: "Eye
+"
+Always export node: "Mass
+"
+Always export node: "Cam"
+</p><p>then, once again, it is a Unix line feed problem. <i>(Note: if you saved your .cfg with a carraige return after the last entry, then the last quote will also be on the next line and none of the nodes will export. If you did not put a carraige return after the last entry, then the last node in the list will export properly while the proceeding ones will not.)</i>
+</p><p>Here's one way to fix it:
+1- Download and install Ultra Edit or similar programming-oriented text editor. (The full name is UltraEdit 32. Just do a web search. It's free for 30 days and something you should have if you have no other dedicated script editor.)
+</p><p>2- Open up your .cfg file, then do a "save as".
+</p><p>3- Enter the name of the file as usual if necessary. (Make sure the extension in the name says ".cfg")
+</p><p>4- In the "Save as type:" field, make sure it's saved as a text file, as normal.
+</p><p>5- In the "Line Terminator:" field, change this to "Unix Terminators - LF".
+</p><p>6- In the "Format:" field, leave as "default".
+</p><p>7- Save.
+</p><p>8- Export again.
+</p><p>9- Open up the dump.dmp file to confirm that it is working correctly now.
+</p><p>The "Line Terminator:" field is the important one. Any text editor that allows you to change this option to Unix line feeds will work. Ultra Edit is just the one I use.
+</p><p>Happy Exporting,
+-Captain Guy Smiley
+</p><p><br />
+</p>
+
+<a name="The_Dump_File"></a><h2><a name = "HeaderLink5"></a>The Dump File</h2><br />
+<p>You will be able to check if the cfg file has been loaded and works correctly through the dump file.<br /><br />
+</p><p><br />
+</p>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Introduction to Asset Pipeline/Config.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:42 GMT -->
+</html>

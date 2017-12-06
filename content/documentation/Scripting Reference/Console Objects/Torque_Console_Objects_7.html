@@ -1,0 +1,1102 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_7.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4242;
+   parent.leftFrame.expandToItem('tree2', 'doc4242');
+   var element = parent.leftFrame.document.getElementById('doc4242');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>Torque Console Objects 7 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+ <table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console_Objects_Fields_and_Methods_Quick_Reference_Part_7"><span class="tocnumber">1</span> <span class="toctext">Console Objects Fields and Methods Quick Reference Part 7</span></a>
+<ul>
+<li class="toclevel-2"><a href="#LightningData"><span class="tocnumber">1.1</span> <span class="toctext">LightningData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields"><span class="tocnumber">1.1.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Marker"><span class="tocnumber">1.2</span> <span class="toctext">Marker</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_2"><span class="tocnumber">1.2.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#MissionArea"><span class="tocnumber">1.3</span> <span class="toctext">MissionArea</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_3"><span class="tocnumber">1.3.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#MissionMarker"><span class="tocnumber">1.4</span> <span class="toctext">MissionMarker</span></a></li>
+<li class="toclevel-2"><a href="#NetConnection"><span class="tocnumber">1.5</span> <span class="toctext">NetConnection</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Globals"><span class="tocnumber">1.5.1</span> <span class="toctext">Globals</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries"><span class="tocnumber">1.5.2</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods"><span class="tocnumber">1.5.3</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#NetObject"><span class="tocnumber">1.6</span> <span class="toctext">NetObject</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_2"><span class="tocnumber">1.6.1</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_2"><span class="tocnumber">1.6.2</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#ParticleData_.28PD.29"><span class="tocnumber">1.7</span> <span class="toctext">ParticleData (PD)</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_4"><span class="tocnumber">1.7.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#ParticleEmitterData"><span class="tocnumber">1.8</span> <span class="toctext">ParticleEmitterData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_5"><span class="tocnumber">1.8.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#ParticleEmitterNode"><span class="tocnumber">1.9</span> <span class="toctext">ParticleEmitterNode</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_6"><span class="tocnumber">1.9.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#ParticleEmitterNodeData"><span class="tocnumber">1.10</span> <span class="toctext">ParticleEmitterNodeData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_7"><span class="tocnumber">1.10.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Path"><span class="tocnumber">1.11</span> <span class="toctext">Path</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_8"><span class="tocnumber">1.11.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_3"><span class="tocnumber">1.11.2</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method"><span class="tocnumber">1.11.3</span> <span class="toctext">Console Method</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Console_Objects_Fields_and_Methods_Quick_Reference_Part_7"></a><h1><a name = "HeaderLink1"></a>Console Objects Fields and Methods Quick Reference Part 7</h1>
+<p><br />
+</p><p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br /><br />
+</p>
+<a name="LightningData"></a><h3><a name = "HeaderLink2"></a>LightningData</h3>
+<hr />
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml">This is the datablock associated with the lightning object, it is used to specify the bitmap textures and the sounds use with the lightning object.<br />
+<br />
+</p>
+<a name="Fields" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink3"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">strikeSound</td>	
+<td width="55%" bgcolor="#CCCCCC">Audio profile to play on strike.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">AudioProfile datablock</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>strikeTexture[0]<br />
+...<br />
+strikeTexture[7]
+</p>
+</td>	
+<td width="55%" bgcolor="#CCCCCC">Texture data to use when using textured lightning.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">~/path/filename.png</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>thunderSounds[0]<br />
+...<br />
+thunderSounds[7]
+</p>
+</td>	
+<td width="55%" bgcolor="#CCCCCC">Audio profiles for thunder sounds.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">AudioProfile datablock</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Marker" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink4"></a>Marker</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This marker is used for building paths used by the PathCamera and other path following objects.<br />
+<br />
+</p>
+<a name="Fields_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink5"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">msToNext</td>	
+<td width="55%" bgcolor="#CCCCCC">Milliseconds to next marker in sequence.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">seqNum</td>	
+<td width="55%" bgcolor="#CCCCCC">Marker position in sequence of markers on this path.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0 , 40 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">smoothingType</td>	
+<td width="55%" bgcolor="#CCCCCC">Path smoothing at this marker/knot. “Linear” means no smoothing, while “Spline” means to smooth.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">
+<p>“Linear”<br />
+“Spline”
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">type</td>	
+<td width="55%" bgcolor="#CCCCCC">Type of this marker/knot. A “normal” knot will have a smooth camera translation/rotation effect.  “Position Only” will do the same for translations, leaving rotation un-touched.  Lastly, a “Kink” means the rotation will take effect immediately for an abrupt rotation change.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">
+<p>“Normal”<br />
+“Position Only” <br />
+“Kink”
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="MissionArea" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink6"></a>MissionArea</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This object is used represent the outer bounds of the mission area. This is a reactive region in that, a callback will be entered each time an object enters or leaves the mission area. Please see the callbacks quick reference for information on these callbacks.<br />
+<br />
+</p>
+<a name="Fields_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink7"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Area</td>	
+<td width="55%" bgcolor="#CCCCCC">
+<p>Four floating point values &lt;Xl Yl Xw Yw&gt; representing: <br />
+- Bottom left corner of mission area &lt;Xl Yl&gt; (in world). <br />
+- Size of mission area &lt;Xw Yw&gt;
+</p>
+</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">“ 0.0 0.0 1024.0 512.0”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">flightCeiling</td>	
+<td width="55%" bgcolor="#CCCCCC">This value is used to specify the elevation at which a flying vehicles power. That is, when a flying vehicle reaches this elevation it will not be able to thrust vertically any longer.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">flightCeilingRange</td>	
+<td width="55%" bgcolor="#CCCCCC">This value is used to specify a range below the flight ceiling at which a flying vehicle's to thrust begins to taper off.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , flightCeiling ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="MissionMarker" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink8"></a>MissionMarker</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This class is used to represent generic marker in the game world.<br />
+<br />
+</p>
+<a name="NetConnection" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink9"></a>NetConnection</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This is the parent object to GameConnection.  We do not create instances of net connection, but it is important to note that this class exists and provides several features which are available through the GameConnection class.<br />
+<br />
+</p>
+<a name="Globals" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink10"></a>Globals</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Variable Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">pref::Net::PacketRateToClient</td>	
+<td width="55%" bgcolor="#CCCCCC">Limits the packet rate from server to client.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 1 , 32 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC"> pref::Net::PacketRateToServer</td>	
+<td width="55%" bgcolor="#CCCCCC">Limits the packet rate from client to server.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 8 , 32 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">pref::Net::PacketSize </td>	
+<td width="55%" bgcolor="#CCCCCC">Limits the size of any one packet.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 100 , 450 ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink11"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">checkMaxRate</td>	
+<td width="33%" align="center" bgcolor="#009900">clearPaths</td>
+<td width="34%" align="center" bgcolor="#009900">connect</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">connectLocal</td>	
+<td width="33%" align="center" bgcolor="#009900">getAddress</td>
+<td width="34%" align="center" bgcolor="#009900">getGhostID</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getGhostsActive</td>	
+<td width="33%" align="center" bgcolor="#009900">getPacketLoss</td>
+<td width="34%" align="center" bgcolor="#009900">getPing</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">resolveGhostID</td>	
+<td width="33%" align="center" bgcolor="#009900">resolveObjectFromGhostIndex</td>
+<td width="34%" align="center" bgcolor="#009900">setSimulatedNetParams</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink12"></a> Console Methods </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>checkMaxRate()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>checkMaxRate</b></i> method to retrieve the current maximum packet rate for this connection.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer value representing the maximum number of packets that can be transmitted by this connection per transmission period.<br />
+<br />
+<b>Notes</b><br />
+The period may not neccesarily be one second.  <br />
+To adjust packet rates, see the preference variables above.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>clearPaths()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>clearPaths</b></i> method to mark this connection as NOT having received any paths.  <br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+transmitPaths<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>connect( remoteAddress )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>connect</b></i> method to request a connection to a remote server at the address <i><b>remoteAddress</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>remoteAddress</i></b> – A string containing an address of the form: “A.B.C.D:Port”, where A .. B are standard IP numbers between 0 and 255 and Port can be between 1000 and 65536.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+connectLocal, getAddress<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>connectLocal()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>connectLocal</b></i> method to connect the current client-side connection to a local NetConnection, that is to create an internal connection from this client to the internal server.  This is accomplished through the use of a back door mechanism and has an extremely high bandwidth.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+connect, getAddress<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getAddress()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getAddress</b></i> method to get the address and port that this NetConnection is currently attached to.<br />
+<br />
+<b>Returns</b><br />
+Returns the address and port that this NetConnection is currently attached to, where the addres will be of the form: “A.B.C.D:Port”.  A .. B are standard IP numbers between 0 and 255 and Port can be between 1000 and 65536.<br />
+<br />
+If the connection is local, the string “local” will be returned.<br />
+<br />
+If a this NetConnection is not currently connected the method will return a NULL string.<br />
+<br />
+<b>See Also</b><br />
+connect, connectLocal<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getGhostsActive()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getGhostsActive</b></i> method to determine how many ghosts are active on a particular connection.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer value between 0 and inf, specifying how many objects are being ghosted to a client on the other side of a specific connection.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getPacketLoss()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getPacketLoss</b></i> method to determine the current packetLoss count for this connection.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer value between 0 and inf, indicating the number of packets that have been lost to date on this net connection.<br />
+<br />
+<b>See Also</b><br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getPing()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getPing</b></i> method to determine the round-trip travel time from this connection to the agent on the other end and back again.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer value representing the total time in milliseconds it takes for a ping request to travel to the agent on the other end of a connection and back to this agent.<br />
+<br />
+<b>See Also</b><br />
+getPacketLoss<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setSimulatedNetParams( packetLoss , delay )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setSimulatedNetParams</b></i> method to force a connection to experience a certain degree of packet-loss and/or latency.  This is a debug feature to allow us to see how a distributed game will behave in the face of poor connection quality.<br />
+<br />
+<b>Syntax<br />
+<i>packetLoss</i></b> – A floating-point value between 0.0 (0%) and 1.0 (100%) dictating the percentage of packets to be artificially lost.<br />
+<i><b>delay</b></i> – An integer value specifying the number of milliseconds to insert into transmission latencies.             <br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+getPacketLoss, getPing<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>transmitPaths()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>transmitPaths</b></i> method to send Interior path information to a client on this connection.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Only called on client connections from the server.<br />
+<br />
+<b>See Also</b><br />
+clearPaths<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="NetObject" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink13"></a>NetObject</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink14"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">clearScopeToClient</td>	
+<td width="33%" align="center" bgcolor="#009900">getGhostID</td>
+<td width="34%" align="center" bgcolor="#009900">scopeToClient</td>
+</tr>
+
+</table>
+<a name="Console_Methods_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink15"></a> Console Methods </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>clearScopeToClient( client )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>clearScopeToClient</b></i> method to undo the effects of a previous call to <i>scopeToClient</i>.<br />
+<br />
+<b>Syntax<br />
+<i>client</i></b> – The ID of the client to stop forcing scoping this object for.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+scopeToClient<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>scopeToClient( client )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>scopeToClient</b></i> method to force this object to be SCOPE_ALWAYS on <i><b>client</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>client</i></b> – The ID of the client to force this object to be SCOPE_ALWAYS for.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+When an object is SCOPE_ALWAYS it is always ghosted.  Therefore, if you have an object that should always be ghosted to a client, use this method.<br />
+<br />
+<b>See Also</b><br />
+clearScopeToClient, setScopeAlways<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setScopeAlways()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setScopeAlways</b></i> method to force an object to be SCOPE_ALWAYS for all clients.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+When an object is SCOPE_ALWAYS it is always ghosted.  Therefore, if you have an object that should always be ghosted to all clients, use this method.<br />
+<br />
+<b>See Also</b><br />
+scopeToClient<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="ParticleData_.28PD.29" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink16"></a>ParticleData (PD)</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This is the datablock used to represent individual particles. This datablock is subsequently used by particle emitter data to produce particle effects. Torque provides a variety of particle effects. Particles may be animated sequences of textures, a single fixed texture, a colorized or non-colorized texture. <br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_4" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink17"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">animateTexture</td>	
+<td width="55%" bgcolor="#CCCCCC">Use textures beyond </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>animTexName[0]<br />
+...<br />
+animTexName[49]
+</p>
+</td>	
+<td width="55%" bgcolor="#CCCCCC">Textures used when animating textures.<br />
+<p>Note: animTexName[0] == textureName
+</p>
+</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">~/path/filename.png</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>colors[0]<br />
+colors[1]<br />
+colors[2]<br />
+colors[3]
+</p>
+</td>	
+<td width="55%" bgcolor="#CCCCCC">Key-framing color controls for particles.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"1.0 0.5 0.5 1.0"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">constantAcceleration</td>	
+<td width="55%" bgcolor="#CCCCCC">Acceleration applied to particle per second over particle lifetime.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">dragCoefficient</td>	
+<td width="55%" bgcolor="#CCCCCC">Drag multiplier (total drag == particle velocity * dragCoefficient).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">framesPerSec</td>	
+<td width="55%" bgcolor="#CCCCCC">Texture animation frames per second.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">gravityCoefficient</td>	
+<td width="55%" bgcolor="#CCCCCC">Gravity multiplier.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">inheritedVelFactor</td>	
+<td width="55%" bgcolor="#CCCCCC">Velocity multiplier (inherited velocity == emitter velocity * inheritedVelFactor).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lifetimeMS</td>	
+<td width="55%" bgcolor="#CCCCCC">Time this particle lives in milliseconds. ( Total lifetime == lifetimeMS +/- rand( lifetimeVarianceMS ) ).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lifetimeVarianceMS</td>	
+<td width="55%" bgcolor="#CCCCCC">Random amount by which lifetime varies.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>sizes[0]<br />
+sizes[1]<br />
+sizes[2]<br />
+sizes[3]
+</p>
+</td>	
+<td width="55%" bgcolor="#CCCCCC">Key-framing size controls for particles.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">spinRandomMax</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum degrees for randomized angular spin about billboard's normal.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">spinRandomMin</td>	
+<td width="55%" bgcolor="#CCCCCC">Minimum degrees for randomized angular spin about billboard's normal.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">spinSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Degrees-per-second spin rate about billboard's normal.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">textureName</td>	
+<td width="55%" bgcolor="#CCCCCC">Texture to use for non-animated particles.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">~/path/filename.png</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>times[0]<br />
+times[1]<br />
+times[2]<br />
+times[3]
+</p>
+</td>	
+<td width="55%" bgcolor="#CCCCCC">Key-framing time controls for particles.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">
+<p>[        0.0, times[1] ]<br />
+[ times[0], times[2] ]<br />
+[ times[1], times[3] ]<br />
+[ times[2], 1.0        ]
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">useInvAlpha</td>	
+<td width="55%" bgcolor="#CCCCCC">Invert alpha components in texture(s).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">windCoefficient</td>	
+<td width="55%" bgcolor="#CCCCCC">Amount by which wind effects particle velocity.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="ParticleEmitterData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink18"></a>ParticleEmitterData</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_5" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink19"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ejectionOffset</td>	
+<td width="55%" bgcolor="#CCCCCC">Each particle is given an ejection direction at which to be emitted, and ejectionOffset specifies the distance in this direction from the particle emitter a particle will be emitted at. This field's value must be non-negative, otherwise a console warning is generated and the value is forced to 0.0. The actual ejectionOffset value used is only guaranteed to be within 0.01 of the value used, and values greater than 655 are not possible.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ejectionPeriodMS</td>	
+<td width="55%" bgcolor="#CCCCCC">Used along with periodVarianceMS to determine the frequency with which to emit particles. See the periodVarianceMS field for more details. Stored with only 10 bits of precision, so values above 1023 are not possible. If value is less than 1, a console warning is generated and the value is forced to 1.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ejectionVelocity</td>	
+<td width="55%" bgcolor="#CCCCCC">Used along with velocityVariance to determine the initial velocity at which a particle is emitted. See the velocityVariance field documentation for more details. This field's value must be non-negative, otherwise a console warning is generated and the value is forced to 0.0. The actual value used is only guaranteed to be within 0.01 of the value specified, and values larger than 655 are not valid.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lifetimeMS</td>	
+<td width="55%" bgcolor="#CCCCCC">Used with lifetimeVarianceMS to determine the total life-time of each emitted particle. Measured in milliseconds. This field's value must be greater than zero, otherwise a console warning is generated and the value is forced to one. To save network transmission bandwidth, the value of lifetimeMS is shifted-right 5 bits, implying a loss of precision. Thus, the lifetime value used may be up to 31 milliseconds less than the value specified. After being shifted, the value is clamped to 10-bits of precision as well; thus, values of more than about 32000 milliseconds will not behave as expected.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lifetimeVarianceMS</td>	
+<td width="55%" bgcolor="#CCCCCC">Used with lifetimeMS to determine the total life-time of each emitted particle. Measured in milliseconds. Each time a particle is created, a random number between -1*lifetimeVarianceMS and lifetimeVarianceMS is generated and added to lifetimeMS to determine the particle's total lifetime. This field's value must be no greater than that of lifetimeMS, otherwise a console warning is generated and the value is clamped. The lifetimeVarianceMS value is shifted and stored with 10-bit precision in the exact manner that lifetimeMS's value is.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">orientOnVelocity</td>	
+<td width="55%" bgcolor="#CCCCCC">Only applicable when orientParticles is True. Specifies whether emitted particles will be checked for velocity. If True, and the particle has no velocity, it will not be rendered. If True, and the particle has a velocity, the velocity magnitude will affect the particle's rendered size. False means that the particle's velocity will not affect the rendered size.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">orientParticles</td>	
+<td width="55%" bgcolor="#CCCCCC">Specifies whether emitted particles should be oriented as billboards (always face directly towards the camera), or if they should face the emission direction (see the field documentation for thetaMin, thetaMax, phiReferenceVel, and phiVariance for more information on emission direction). True means the particles should be oriented toward the emission direction, False means particles should be oriented as billboards.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">overrideAdvance</td>	
+<td width="55%" bgcolor="#CCCCCC">Specifies whether a newly created particle's acceleration, color, and other settings should begin being updated immediately after it is created. If false, the new particle is updated immediately. If true, the particle's time advancement system is initially deferred.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">particles</td>	
+<td width="55%" bgcolor="#CCCCCC">String containing a tab-delimited list of ParticleData datablock names. When a particle is emitted from the emitter, its datablock is randomly selected from the list of valid datablocks supplied in the particles field string. The string must be non-empty and at least one token must evaluate to a valid ParticleData datablock name. String must also be less than 256 characters long. If either of these conditions is not met, a console warning will be produced and the datablock's onAdd() method will fail.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">periodVarianceMS</td>	
+<td width="55%" bgcolor="#CCCCCC">Used along with ejectionPeriodMS to determine the frequency with which to emit particles. Each time a particle is emitted, a random value between -1*periodVarianceMS and periodVarianceMS is generated and added to ejectionPeriodMS to determine the time at which to emit the next particle. So, with the default values ejectionPeriodMS = 100 and periodVarianceMS = 0, particles would be emitted exactly 10 times per second. This field's value is stored with only 10 bits of precision, so values above 1023 are not possible. Value must be less than the value of ejectionPeriodMS, otherwise a console warning is generated and the value is set to ejectionPeriodMS - 1.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">phiReferenceVel</td>	
+<td width="55%" bgcolor="#CCCCCC">Each time a particle is emitted, it is given an ejection direction, see the thetaMin field documentation for more information. phiReferenceVel and phiVariance determine the particle's ejection angle about the z-axis. Particles are emitted starting at 0 degrees, and the emission angle is rotated over time, according to the velocity specified in phiReferenceVel, as well as random numbers generated from phiVariance. See the phiVariance field documentation. This field's value is measured in degrees per second and may range from 0.0 to 360.0; if it lies outside this range, a console warning is generated and the value is clamped.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">phiVariance</td>	
+<td width="55%" bgcolor="#CCCCCC">Used along with phiReferenceVel to determine the angle relative to the z-axis at which to eject a particle. Each time a particle is generated, a new ejection direction is determined for it. The ejection angle about the z-axis is defined by adding a random variable between 0.0 and phiVariance to the angle determined by phiRefVelocity. See the phiRefVelocity field documentation for more information. This field's value is measured in degrees and must lie in the range of 0.0 to 360.0; if it does not, a console warning is generated and the value is clamped.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">thetaMax</td>	
+<td width="55%" bgcolor="#CCCCCC">Each time a particle is emitted, it is given an ejection direction. See the thetaMin field documentation for more information. thetaMax defines the maximum ejection direction angle relative to the x-axis. This field's value is measured in degrees. The value may range from 0.0 to 180.0; if it lies outside this range, a console warning is generated and the value is clamped.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">thetaMin</td>	
+<td width="55%" bgcolor="#CCCCCC">Each time a particle is emitted, it is given an ejection direction. This direction is defined by the thetaMin, thetaMax, phiReferenceVel, and phiVariance fields. A random angle between thetaMin and thetaMax is generated and provides the ejection direction angle relative to the x-axis. This field's value is measured in degrees. The value may range from 0.0 to 180.0, and must be less than thetaMax. If one of these conditions is not met, a console warning is generated and the value is clamped accordingly.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">useEmitterColors</td>	
+<td width="55%" bgcolor="#CCCCCC">Specifies whether the particle's datablock colors array field should be over-ridden by the colors array provided by the ParticleEmitter object. True implies that the particle's datablock should be over-ridden.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">useEmitterSizes</td>	
+<td width="55%" bgcolor="#CCCCCC">Specifies whether the particle's datablock sizes array field should be over-ridden by the sizes array provided by the ParticleEmitter object. True implies that the particle's datablock should be over-ridden.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">velocityVariance</td>	
+<td width="55%" bgcolor="#CCCCCC">Used along with ejectionVelocity to determine the speed at which a particle will be emitted. Each particle gets a new velocity, which is calculated by adding a random number between -1*velocityVariance and velocityVariance to ejectionVelocity. This field's value must be non-negative and must not be greater than ejectionVelocity, otherwise a console warning is generated and the value is clamped appropriately. The actual value used is only guaranteed to be within 0.01 of the value specified, and values larger than 163 are not valid.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="ParticleEmitterNode" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink20"></a>ParticleEmitterNode</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_6" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink21"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">emitter</td>	
+<td width="55%" bgcolor="#CCCCCC">ParticleEmitterData datablock used by this emitter node</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">ParticleEmitterData datablock</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">velocity</td>	
+<td width="55%" bgcolor="#CCCCCC">Velocity at which to emit particles.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="ParticleEmitterNodeData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink22"></a>ParticleEmitterNodeData</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_7" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink23"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">timeMultiple</td>	
+<td width="55%" bgcolor="#CCCCCC">A multiplier that will affect the behavior or the emitter node and the particles it emits.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Path" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink24"></a>Path</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_8" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink25"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">isLooping</td>	
+<td width="55%" bgcolor="#CCCCCC">If this is true, the loop is closed, otherwise it is open.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink26"></a>Console Method Summaries </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#009900">getPathID</td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink27"></a> Console Method </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getPathID()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getPathID</b></i> method to get the path ID (not the object ID) of this path.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer value representing the path index for this path as stored by the path manager.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><a href="Console%20Objects.html" title="Torque Console Objects TOC"> Table of Contents</a> || <a href="Torque_Console_Objects_1.html" title="Torque Console Objects"> Part 1</a> || <a href="Torque_Console_Objects_2.html" title="Torque Console Objects 2"> Part 2</a> || <a href="Torque_Console_Objects_3.html" title="Torque Console Objects 3"> Part 3</a> || <a href="Torque_Console_Objects_4.html" title="Torque Console Objects 4"> Part 4</a> || <a href="Torque_Console_Objects_5.html" title="Torque Console Objects 5"> Part 5</a> || <a href="Torque_Console_Objects_6.html" title="Torque Console Objects 6"> Part 6</a> || <a href="Torque_Console_Objects_8.html" title="Torque Console Objects 8"> Part 8</a> || <a href="Torque_Console_Objects_9.html" title="Torque Console Objects 9"> Part 9</a> || <a href="Torque_Console_Objects_10.html" title="Torque Console Objects 10"> Part 10</a> || <a href="Torque_Console_Objects_11.html" title="Torque Console Objects 11"> Part 11</a> || <a href="Torque_Console_Objects_12.html" title="Torque Console Objects 12"> Part 12</a> || <a href="Torque_Console_Objects_13.html" title="Torque Console Objects 13"> Part 13</a> || <a href="Torque_Console_Objects_14.html" title="Torque Console Objects 14"> Part 14</a> || <a href="Torque_Console_Objects_15.html" title="Torque Console Objects 15"> Part 15</a>
+</p>
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_7.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:03 GMT -->
+</html>

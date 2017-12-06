@@ -1,0 +1,1151 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4215;
+   parent.leftFrame.expandToItem('tree2', 'doc4215');
+   var element = parent.leftFrame.document.getElementById('doc4215');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueScript Console Functions 2 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <p xmlns="http://www.w3.org/1999/xhtml"><big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <strong> Debugging</strong> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Debugging"><span class="tocnumber">1</span> <span class="toctext">Debugging</span></a></li>
+<li class="toclevel-1"><a href="#debug.28.29"><span class="tocnumber">2</span> <span class="toctext">debug()</span></a></li>
+<li class="toclevel-1"><a href="#dumpConsoleClasses.28.29"><span class="tocnumber">3</span> <span class="toctext">dumpConsoleClasses()</span></a></li>
+<li class="toclevel-1"><a href="#dumpConsoleFunctions.28.29"><span class="tocnumber">4</span> <span class="toctext">dumpConsoleFunctions()</span></a></li>
+<li class="toclevel-1"><a href="#setEchoFileLoads.28_enable_.29"><span class="tocnumber">5</span> <span class="toctext">setEchoFileLoads( enable )</span></a></li>
+<li class="toclevel-1"><a href="#setInteriorRenderMode.28_mode_.29"><span class="tocnumber">6</span> <span class="toctext">setInteriorRenderMode( mode )</span></a></li>
+<li class="toclevel-1"><a href="#setLogMode.28_mode_.29"><span class="tocnumber">7</span> <span class="toctext">setLogMode( mode )</span></a></li>
+<li class="toclevel-1"><a href="#dumpUnflaggedAllocs.28_fileName_.29"><span class="tocnumber">8</span> <span class="toctext">dumpUnflaggedAllocs( fileName )</span></a></li>
+<li class="toclevel-1"><a href="#flagCurrentAllocs.28.29"><span class="tocnumber">9</span> <span class="toctext">flagCurrentAllocs()</span></a></li>
+<li class="toclevel-1"><a href="#freeMemoryDump.28.29"><span class="tocnumber">10</span> <span class="toctext">freeMemoryDump()</span></a></li>
+<li class="toclevel-1"><a href="#GLEnableLogging.28_enable_.29"><span class="tocnumber">11</span> <span class="toctext">GLEnableLogging( enable )</span></a></li>
+<li class="toclevel-1"><a href="#GLEnableMetrics.28_enable_.29"><span class="tocnumber">12</span> <span class="toctext">GLEnableMetrics( enable )</span></a></li>
+<li class="toclevel-1"><a href="#metrics.28_metric_.29"><span class="tocnumber">13</span> <span class="toctext">metrics( metric )</span></a></li>
+<li class="toclevel-1"><a href="#dbgSetParameters_.28_port_.2C_password_.29"><span class="tocnumber">14</span> <span class="toctext">dbgSetParameters ( port , password )</span></a></li>
+<li class="toclevel-1"><a href="#dNetSetLogging.28_enable_.29"><span class="tocnumber">15</span> <span class="toctext">dNetSetLogging( enable )</span></a></li>
+<li class="toclevel-1"><a href="#profilerDump.28.29"><span class="tocnumber">16</span> <span class="toctext">profilerDump()</span></a></li>
+<li class="toclevel-1"><a href="#profilerDumpToFile.28_filename_.29"><span class="tocnumber">17</span> <span class="toctext">profilerDumpToFile( filename )</span></a></li>
+<li class="toclevel-1"><a href="#profilerEnable.28_enable_.29"><span class="tocnumber">18</span> <span class="toctext">profilerEnable( enable )</span></a></li>
+<li class="toclevel-1"><a href="#profilerMarkerEnable.28_markerName_.2C_enable__.29"><span class="tocnumber">19</span> <span class="toctext">profilerMarkerEnable( markerName , enable  )</span></a></li>
+<li class="toclevel-1"><a href="#profilerReset.28_.29"><span class="tocnumber">20</span> <span class="toctext">profilerReset( )</span></a></li>
+<li class="toclevel-1"><a href="#backtrace.28.29"><span class="tocnumber">21</span> <span class="toctext">backtrace()</span></a></li>
+<li class="toclevel-1"><a href="#trace.28_enable_.29"><span class="tocnumber">22</span> <span class="toctext">trace( enable )</span></a></li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Debugging"></a><h3><a name = "HeaderLink1"></a>Debugging </h3>
+<p>This category of console functions includes functions used to debug or to otherwise examine the scripting environment, the 3D world, engine performance, et cetera.
+</p>
+<i><b><hr /></b></i> 
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="debug.28.29"></a><h3><a name = "HeaderLink2"></a>debug()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>debug</b></i> function to cause the engine to issue a debug break and to break into an active debugger. <br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+For this to work, the engine must have been compiled with either TORQUE_DEBUG, or INTERNAL_RELEASE defined.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="dumpConsoleClasses.28.29"></a><h3><a name = "HeaderLink3"></a>dumpConsoleClasses()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>dumpConsoleClasses</b></i> function to prints all registered classes and the console methods associated with them to the console. <br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+This will dump all classes and methods that were registered from within the engine, <u>AND</u> from the console via scripts.<br />
+<br />
+<b>See Also</b><br />
+dumpConsoleFunctions<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="dumpConsoleFunctions.28.29"></a><h3><a name = "HeaderLink4"></a>dumpConsoleFunctions()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>dumpConsoleFunctions</b></i> function to prints all registered functions to the console. <br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+This will dump all funtions that were registered from within the engine, <u>AND</u> from the console via scripts.<br />
+<br />
+<b>See Also</b><br />
+dumpConsoleMethods<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setEchoFileLoads.28_enable_.29"></a><h3><a name = "HeaderLink5"></a>setEchoFileLoads( enable )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setEchoFileLoads</b></i> function to enable/disable echoing of file loads (to console).<br />
+<br />
+<i><b>Syntax<br />
+enable</b></i> – A boolean value. If ths value is true, extra information will be dumped to the console when files are loaded.<br />
+<br />
+<i><b>Notes</b></i><br />
+This does not completely disable messages, but rather adds additional methods when echoing is set to true.  File loads will always echo a compile statement if compiling is required, and an exec statement at all times.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setInteriorRenderMode.28_mode_.29"></a><h3><i></i><a name = "HeaderLink6"></a>setInteriorRenderMode( mode )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setInteriorRenderMode</b></i> function to enable various interior rendering modes used for mesh debugging.<br />
+<br />
+<i><b>Syntax<br />
+mode</b></i> – A numeric value between 0 and 16.  Please see the 'Interior Render Modes' table below.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+For this to work, the engine must have been compiled with TORQUE_DEBUG defined.<br />
+<br />
+<b>See Also</b><br />
+GLEnableOutline<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="10%" bgcolor="#999999"><b><div class="center">Render Mode</div></b></td>
+<td width="20%" bgcolor="#999999"><b><div class="center">Mode Name</div></b></td>
+<td width="70%" bgcolor="#999999"><b><div class="center">Meaning</div></b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">0</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Normal</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Normal.</td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">1</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Render Lines</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Render interior brush outlines only.</td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">2</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Detail</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Render interior brushes with flat coloration. White colored blocks indicate  brushes that do not change with LOD changes. Red colored blocks will change.</td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">3</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Ambiguous</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Shows ambiguous polygons. (Good models have none.)</td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">4</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Orphan</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Shows orphaned polygons. (Good models have none.)</td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">5</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Light Map</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Shows lightmaps on flat (white) shaded model.</td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">6</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Textures Only</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Shows textures without lightmaps.</td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">7</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Portal Zones</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Colorizes portalized zones to make them distinct and easily identifiable.</td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">8</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Outside Visible</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Marks insides of interiors as white and outsides as red.<br />  <b>Tip:</b> An interior with no portals is marked as all RED</td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">9</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Collison Fans</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Displays calculated (by exporter) collision fans with axes showing face  directions.</td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">10</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Strips</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Shows surfaces divided into colorized triangle strips. Each strip has a distinct  color from adjacent strips.<br />  <b>Tip:</b> Large triangles generally give best performance, but strips can be too large  in some instances.</td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">11</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">NULL Surfaces</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Renders all faces with a NULL texture applied as RED. <br />  <b>Tip:</b> Excluding portals, no red surfaces should be visible without taking the  camera into walls, or you will have a hole/gap in your surface.</td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">12</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Large Textures</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> All large textures will be rendered with a colorized shading: <br /><br /> Blue - Width or height equal to 256 pixels. <br />  Green - Width or height equal to 512 pixels. <br /> Red - Width or height greater than or equal to pixels.<br /></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">13</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Hull Surfaces</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Renders HULL surfaces with distinct flat colors.</td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">14</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Vehicle Hull Surfaces</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Renders specialized Vehicle HULL surfaces with distinct flat colors.</td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">15</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Vertex Colors</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">---Currently Unavailable---</div></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">16</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Detail Levels</div></td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"> Renders entire interior at current LOD coloration. (See LOD colors below.)</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="50%" bgcolor="#999999"><b><div class="center">Level of Detail (LOD)</div></b></td>
+<td width="50%" bgcolor="#999999"><b><div class="center">Debug Color</div></b></td>
+</tr>
+
+<tr>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">0</div></td>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">White</div></td>
+</tr>
+
+<tr>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">1</div></td>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Blue</div></td>
+</tr>
+
+<tr>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">2</div></td>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Green</div></td>
+</tr>
+
+<tr>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">3</div></td>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Red</div></td>
+</tr>
+
+<tr>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">4</div></td>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Yellow</div></td>
+</tr>
+
+<tr>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">...</div></td>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Please see source code.</div></td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+<br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b> 
+<p>playJournal( <i>namedFile</i> , doBreak )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>playJournal</b></i> function to play back a journal from <i><b>namedFile</b></i> and to optionally break (into an active debugger) after loading the Journal.  This allow us to debug engine bugs by reproducing them consistently repeatedly.<br />
+<br />
+<i><b>Syntax<br />
+namedFile</b></i> – A full path to a valid journal file.  Usually, journal names end with the extension .jrn.<br />
+<i><b>doBreak</b></i> – A boolean value.  If true, the engine will load the journal and then assert a break (to break into an active debugger).  If not true, the engine will play back the journal with no break.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+The journaling system is a vital tool for debugging complex or hard to reproduce engine and script bugs.<br />
+<br />
+<b>See Also</b><br />
+saveJournal<br />
+<br />
+</p>
+<pre>
+playJournal(  "~/myJournal.jrn"  , true );  // Break after loading journal.
+playJournal(  "~/myJournal.jrn"  ); // Just play journal 
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b> 
+<p>saveJournal( namedFile )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>saveJournal</b></i> function to save a new journal of the current game.  <br />
+<br />
+<i><b>Syntax<br />
+namedFile</b></i> – A full path specifying the file to save this journal to. Usually, journal names end with the extension .jrn.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+playJournal<br />
+<br />
+</p>
+<pre>saveJournal( "~/myJournal.jrn" );</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b> 
+<p>inputLog( fileName )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>inputLog</b></i> function to enables/disable logging of DirectInput events to a log file specified by <i><b>fileName</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+fileName</b></i> – A valid path to a file in which to store a log of DirectInput events.<br />
+<br />
+<b>Returns</b><br />
+For this to work, the engine must have been compiled with LOG_INPUT defined.<br />
+<br />
+<i><b>Notes</b></i><br />
+Once started, input logging cannot be stopped, so only apply this in debug scenarios.<br />
+<br />
+<b>See Also</b><br />
+setLogMode<br />
+<br />
+</p>
+<pre>inputLog( "DirectInput.log");</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setLogMode.28_mode_.29"></a><h3><a name = "HeaderLink7"></a>setLogMode( mode )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setLogMode</b></i> function to set the logging level based on bits that are set in the <i><b>mode</b></i> argument.<br />
+<br />
+<i><b>Syntax<br />
+mode</b></i> – A bitmask enabling various types of logging.  See 'Logging Modes' table below.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+This is a general debug method and should be used in all but release cases and perhaps even then.<br />
+<br />
+<b>See Also</b><br />
+intputLog<br />
+<br />
+</p>
+<pre>SetLogMode( 6 ); // Dump console output before this to file and leave file open.</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" bgcolor="#999999"><b><div class="center">Mode Bitmask</div></b></td>
+<td width="80%" bgcolor="#999999"><b><div class="center">Description</div></b></td>
+</tr>
+
+<tr>
+<td width="20%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">1</div></td>
+<td width="80%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Open file and append.  Close file on each log write. This allows us to edit the file in a separate editor without having to quit and without getting a file lock conflict.</div></td>
+</tr>
+
+<tr>
+<td width="20%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">2</div></td>
+<td width="80%" align="left" valign="top" bgcolor="#CCCCCC">Open file and leave it open.  This is more efficient for lots of logging, but we may not be able to view the file till we exit the game.
+(Note: *NIX users can just tail the file: 'tail -fn 100 filename')</td>
+</tr>
+
+<tr>
+<td width="20%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">4</div></td>
+<td width="80%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">Dump anything that has been printed to the console so far.  This is needed because the console doesn't get turned on right away, and some output would otherwise be missed.</div></td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="dumpUnflaggedAllocs.28_fileName_.29"></a><h3><a name = "HeaderLink8"></a>dumpUnflaggedAllocs( fileName )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>dumpUnflaggedAllocs</b></i> function to dump all allocations that were made subsequent to a call to <i>flagCurrentAllocs</i>.  This function, in association with <i>flagCurrentAllocs</i>, is used for detecting memory leaks and analyzing memory usage in general.<br />
+<br />
+<i><b>Syntax<br />
+filename</b></i> – A valid path and filename in which to dump the current memory allocation information.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+For this to work, the engine must have been compiled with DEBUG_GUARD defined.<br />
+<br />
+<b>See Also</b><br />
+flagCurrentAllocs<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="flagCurrentAllocs.28.29"></a><h3><a name = "HeaderLink9"></a>flagCurrentAllocs()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>flagCurrentAllocs</b></i> function to mark all current memory allocations in preparation for a subsequent call or calls to <i>dumpUnflaggedAllocs</i>.  This function, in association with <i>dumpUnflaggedAllocs</i>, is used for detecting memory leaks and analyzing memory usage in general.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+For this to work, the engine must have been compiled with DEBUG_GUARD defined.<br />
+<br />
+<b>See Also</b><br />
+dumpUnflaggedAllocs<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="freeMemoryDump.28.29"></a><h3><a name = "HeaderLink10"></a>freeMemoryDump()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>freeMemoryDump</b></i> function to dump the current 'memory free' statistics to the console.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+This does not print how much memory is free, but rather an analysis of 'free chunks' of memory.  <br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="GLEnableLogging.28_enable_.29"></a><h3><a name = "HeaderLink11"></a>GLEnableLogging( enable )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>GLEnableLogging</b></i> function to enable/disable the gathering of OpenGL metrics.<br />
+<br />
+<i><b>Syntax<br />
+enable</b></i> – A boolean value.  If set to true, the engine will gather various OpenGL metrics and dump them to a file named gl_log.txt.  If set to false, logging is stopped, the last writes to the log are flushed, and the file is closed.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+For this to work, the engine must have been compiled with either TORQUE_DEBUG or INTERNAL_RELEASE defined. Always be sure to do a disable after an enable to flush the last log data to the log file.<br />
+<br />
+<b>See Also</b><br />
+GLEnableMetrics, metrics<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="GLEnableMetrics.28_enable_.29"></a><h3><a name = "HeaderLink12"></a>GLEnableMetrics( enable )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>GLEnableMetrics</b></i> function to enable or disable logging of OpenGL texture and video metrics.<br />
+<br />
+<i><b>Syntax<br />
+enable</b></i> – A boolean value.  When this is set to true, texture and video (triangles and primitives) logging is enabled and dumped as part of calls to certain <i>metrics</i>.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+For this to work, the engine must have been compiled with either TORQUE_DEBUG or INTERNAL_RELEASE defined. Use the <i>metrics</i> function to get at this information.  Also, once this feature is enabled, the following globals will be available for inspection/examination: <br />
+<br />
+OpenGL::triCount0 – Terrain triangles<br />
+OpenGL::triCount1 – DIF triangles<br />
+OpenGL::triCount2 – DTS triangles<br />
+OpenGL::triCount3 – Uncategorized triangles<br />
+<br />
+OpenGL::primCount0 - Terrain primitives<br />
+OpenGL::primCount1 – DIF primitives<br />
+OpenGL::primCount2 – DTS primitives<br />
+OpenGL::primCount3 – Uncategorized primitives<br />
+<br />
+<b>See Also</b><br />
+GLEnableLogging, metrics<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="metrics.28_metric_.29"></a><h3><a name = "HeaderLink13"></a>metrics( metric )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>metrics</b></i> function to enable a display of specified metric information in upper left corner of screen.<br />
+<br />
+<i><b>Syntax<br />
+metric</b></i> – The class of metrics to display. Please see the 'metric' table below for specific metrics.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+For this to work, the engine must have been compiled with TORQUE_DEBUG defined. <br />
+<br />
+<b>See Also</b><br />
+GLEnableMetrics<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="25%" bgcolor="#999999"><b><div class="center">Metric</div></b></td>
+<td width="75%" bgcolor="#999999"><b><div class="center">Measures</div></b></td>
+</tr>
+
+<tr>
+<td width="25%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">audio</div></td>
+<td width="75%" align="left" valign="top" bgcolor="#CCCCCC">
+<p> <b>fps metrics</b>  +<br />
+ OH:  Open Handles<br />
+ OLH: Open Looping Handles<br />
+ AS:  Active Streams<br />
+ NAS: Null Active Streams<br />
+ LAS: Active Looping Streams<br />
+ LS: Total Looping Streams<br />
+ ILS: Inactive Looping Streams<br />
+ CLS: Culled Looping Streams<br />
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="25%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">debug</div></td>
+<td width="75%" align="left" valign="top" bgcolor="#CCCCCC">
+<p> <b>fps metrics</b>  +<br />
+ NTL: Texels Loaded.<br />
+ TRP: Percentage of resident memory (on card) used by textures.<br />
+ NP: Number of primitves being rendered.<br />
+ NT: Number of textures in use.<br />
+ NO: Number of objects being rendered.<br />
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="25%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">interior</div></td>
+<td width="75%" align="left" valign="top" bgcolor="#CCCCCC">
+<p> <b>fps metrics</b>  +<br />
+ NTL: Texels Loaded.<br />
+ TRP: Percentage of resident memory (on card) used by textures.<br />
+ INP: Number of primitves being rendered, for interiors only.<br />
+ INT: Number of textures in use, for interiors only.<br />
+ INO: Number of objects being rendered, for interiors only.<br />
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="25%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">fps</div></td>
+<td width="75%" align="left" valign="top" bgcolor="#CCCCCC">
+<p> FPS: Frames Per Second <br />
+ MSPF: Milliseconds per frame<br />
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td width="25%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">time</div></td>
+<td width="75%" align="left" valign="top" bgcolor="#CCCCCC">
+<p> <b>fps metrics</b>  +<br />
+ Sim Time: Sim time to date. Time since engine started.<br />
+ Mod: Ticks since engine started.<br />
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td width="25%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">terrain</div></td>
+<td width="75%" align="left" valign="top" bgcolor="#CCCCCC">
+<p> <b>fps metrics</b>  +<br />
+ L0: Numer of terrain blocks rendering at level zero. <br />
+ FMC: Full mipmap count.<br />
+ DTC:  Dynamic texture count.<br />
+ UNU: Unused texture count.<br />
+ STC: Static texture count.<br />
+ DTSU: Dynamic texture space used.<br />
+ STSU: Static texture space used.<br />
+ FRB: Terrain blocks not rendered due to full fogging.<br />
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td width="25%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">texture <br /><br /></div>
+<b>Requires:</b> GLEnableMetrics(true); </td>
+<td width="75%" align="left" valign="top" bgcolor="#CCCCCC">
+<p> <b>fps metrics</b>  +<br />
+ NTL: Number of texels loaded.<br />
+ TRP: Percentage of resident memory (on card) used by textures.<br />
+ TCM: Texture cache misses.<br />
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td width="25%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">video <br /><br /></div>
+<b>Requires:</b> GLEnableMetrics(true); </td>
+<td width="75%" align="left" valign="top" bgcolor="#CCCCCC">
+<p> <b>fps metrics</b>  +<br />
+ TC: Total triangle count.<br />
+ PC: Total primitive count.<br />
+ T_T: Terrain triangle count.<br />
+ T_P: Terrain primitive count.<br />
+ I_T: Interiors triangle count.<br />
+ I_P: Interiors primitive count.<br />
+ TS_T: Shape (DTS) triangle count.<br />
+ TS_P: Shape (DTS) primitive count.<br />
+ ?_T: Uncategorized triangle count.<br />
+ ?_P: Uncategorized primitive count.<br />
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td width="25%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">vehicle</div></td>
+<td width="75%" align="left" valign="top" bgcolor="#CCCCCC">
+<p> <b>fps metrics</b>  +<br />
+ R: Integration retry count.<br />
+ C: Search count.<br />
+ P: Polygon count for vehicles.<br />
+ V: Vertex count for vehicles.<br />
+</p>
+</td>
+</tr>
+
+
+<tr>
+<td width="25%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">water</div></td>
+<td width="75%" align="left" valign="top" bgcolor="#CCCCCC">
+<p> <b>fps metrics</b>  +<br />
+ Tri#: Water triangle count.<br />
+ Pnt#: Water point (vertex) count.<br />
+ Hz#:  Water haze point count.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="dbgSetParameters_.28_port_.2C_password_.29"></a><h3><i></i><i></i><a name = "HeaderLink14"></a>dbgSetParameters ( port , password )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>dbgSetParameters</b></i> function to set the debug connection <i><b>password</b></i> for a specific <i><b>port</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>port</i></b> – The IP port to set the password on.<br />
+<i><b>password</b></i> – The password for this port.  Set this to a NULL string to clear the password for the port.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+</p>
+<pre>dbgSetParameters( 1130 , “edochi” );</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="dNetSetLogging.28_enable_.29"></a><h3><a name = "HeaderLink15"></a>dNetSetLogging( enable )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>dNetSetLogging</b></i> function to enable (or disable) network packet logging to the console.<br />
+<br />
+<b>Syntax<br />
+<i>enable</i></b> – A boolean value.  If set to true, network packet logging is enabled, otherwise it is disabled.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+</p>
+<pre>dnetSetLogging(1);</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="profilerDump.28.29"></a><h3><a name = "HeaderLink16"></a>profilerDump()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>profilerDump</b></i> function to dump engine profile statistics to the console.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+Used to dump NetStringTable statistics to the console<br />
+<br />
+</p>
+<pre>profilerDump();</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="profilerDumpToFile.28_filename_.29"></a><h3><a name = "HeaderLink17"></a>profilerDumpToFile( filename )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>profilerDumpToFile</b></i> function to dump engine profile statistics to a file.<br />
+<br />
+<b>Syntax<br />
+<i>filename</i></b> – A string value specifying a full or partial path to a file for writing the profiler statistics to.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="profilerEnable.28_enable_.29"></a><h3><a name = "HeaderLink18"></a>profilerEnable( enable )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>profileEnable</b></i> function to enable (or disable) engine profiling.  <br />
+<br />
+<b>Syntax<br />
+<i>enable</i></b> – A boolean value.  If set to true and the engine was compiled with DEBUG specified, engine profiling is enabled, otherwise it is disabled.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Note</b><br />
+TGE has predefined profiling areas surrounded by markers, but you may need to define additional markers (in C++) around areas you wish to profile, by using the PROFILE_START( markerName ); and PROFILE_END(); MACROS.  <br />
+<br />
+Please read GPGTGE Volume 2 to learn more about this.<br />
+<br />
+</p>
+<pre>profilerEnable(false);</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="profilerMarkerEnable.28_markerName_.2C_enable__.29"></a><h3><a name = "HeaderLink19"></a>profilerMarkerEnable( markerName , enable  )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>profilerMarkerEnable</b></i> function to enable (or disable) specific profiling markers.<br />
+<br />
+<b>Syntax<br />
+<i>markerName</i></b> – The name of a marker (as specified using the C++ MACRO PROFILER_START) to be enabled/disabled.<br />
+<i><b>enable</b></i> – A boolean value. If set to true, the specified marker will be enabled for profiling, otherwise it will be disabled.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+</p>
+<pre>profilerMarkerEnable( mark , true );</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="profilerReset.28_.29"></a><h3><a name = "HeaderLink20"></a>profilerReset( )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>profilerReset</b></i> function to reset the profile gathering mechanism.  This clears the current counters, but all markers retain their current enable/disable status.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="backtrace.28.29"></a><h3><a name = "HeaderLink21"></a>backtrace()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>backtrace</b></i> function to print the current callstack to the console.  This is used to trace functions called from within functions and can help discover what functions were called (and not yet exited) before the current point in your scripts.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="trace.28_enable_.29"></a><h3><a name = "HeaderLink22"></a>trace( enable )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>trace</b></i> function to enable (or disable) function call tracing.  If enabled, tracing will print a message every time a function is entered, showing what arguments it received, and it will print a message every time a function is exited, showing the return value (or last value of last statement) for that function.<br />
+<br />
+<b>Syntax<br />
+<i>enable</i></b> – A boolean value.  If set to true, tracing is enabled, otherwise it is disabled.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <strong> Debugging</strong> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:06 GMT -->
+</html>

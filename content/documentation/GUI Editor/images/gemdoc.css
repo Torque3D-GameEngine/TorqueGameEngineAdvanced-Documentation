@@ -1,0 +1,198 @@
+BODY {
+
+  FONT-FAMILY: Verdana,arial,helvetica,sans-serif; FONT-SIZE: 10pt
+
+
+
+}
+
+TD {
+
+  FONT-FAMILY: Verdana,arial,helvetica,sans-serif; FONT-SIZE: 10pt
+
+}
+
+TH {
+
+  FONT-FAMILY: Verdana,arial,helvetica,sans-serif; FONT-SIZE: 10pt
+
+}
+
+P {
+
+  MARGIN-BOTTOM: 2pt; MARGIN-TOP: 10pt
+
+}
+
+EM {
+
+  FONT-STYLE: italic; FONT-WEIGHT: bold
+
+}
+
+UL {
+
+  MARGIN-TOP: 10pt
+
+}
+
+OL {
+
+  MARGIN-TOP: 10pt
+
+}
+
+PRE {
+
+  FONT-FAMILY: "andale mono", "monotype.com", "courier new", monospace; FONT-SIZE: 10pt
+
+}
+
+A.NAV {
+
+  COLOR: #000066; TEXT-DECORATION: none; FONT-WEIGHT: bold
+
+}
+
+
+
+a:HOVER {
+
+color: red;
+
+}
+
+H1 {
+
+  COLOR: #000066; FONT-FAMILY: tahoma,arial,helvetica,sans-serif; FONT-SIZE: 18pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 5pt
+
+}
+
+H2 {
+
+  COLOR: #000066; FONT-FAMILY: tahoma,arial,helvetica,sans-serif; FONT-SIZE: 14pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 5pt
+
+}
+
+H3 {
+
+  COLOR: #000066; FONT-FAMILY: tahoma,arial,helvetica,sans-serif; FONT-SIZE: 12pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 5pt
+
+}
+
+SMALL {
+
+  FONT-FAMILY: arial,helvetica,sans-serif; FONT-SIZE: 8.5pt
+
+}
+
+.TABLETITLE {
+
+  FONT-FAMILY: arial,helvetica,sans-serif; FONT-SIZE: 12pt; FONT-WEIGHT: bold
+
+}
+
+.TABLEEXTRAS {
+
+  COLOR: #ffffff; FONT-FAMILY: arial,helvetica,sans-serif; FONT-SIZE: 8.5pt
+
+}
+
+
+
+TABLE.CAUTION, TABLE.WARNING, TABLE.TIP, TABLE.NOTE, TABLE.IMPORTANT {
+
+ 
+
+  background-color : #EEE8AA;
+
+  font : bold normal Arial, Helvetica, sans-serif;
+
+   border-spacing : 0px;
+
+    margin : 10px;
+
+ border: 1px inset black;
+
+  padding-left: 10%;
+
+  padding-right: 10%;
+
+}
+
+ 
+
+ TABLE.FOOTNOTES {
+
+  font : bold normal Arial, Helvetica, sans-serif;
+
+  margin : 10px;
+
+  border-spacing : 0px;   
+
+  border: 2px groove black; 
+
+  background-color : #66ccff;
+
+  padding-left: 10%;
+
+  padding-right: 10%;
+
+ 
+
+}
+
+
+
+ .MEDIAOBJECT {
+
+ text-align: center;
+
+ }
+
+ .MEDIAOBJECT IMG {
+
+ text-align: center;
+
+ border: 1px groove black;
+
+ }
+
+ .GUIBUTTON, .GUILABEL {
+
+   background-color : #999999;
+
+    border: 1px inset black;
+
+    
+
+ }
+
+ 
+
+ 
+
+ .INFORMALEXAMPLE{
+
+ 
+
+  .text-align: left;
+
+  border: 2px groove black; 
+
+  background-color : #66ccff;
+
+  margin: 10px;
+
+  padding: 10px;
+
+  
+
+ }
+
+ 
+
+
+
+ 
+

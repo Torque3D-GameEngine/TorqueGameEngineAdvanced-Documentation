@@ -1,0 +1,141 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Materials and Shaders/Translucent Materials.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4206;
+   parent.leftFrame.expandToItem('tree2', 'doc4206');
+   var element = parent.leftFrame.document.getElementById('doc4206');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Materials and Shaders - Using Translucent Materials</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  id="body-with-lockmark">
+
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+<td>
+   <a name="Title"></a>
+   <h2><a name = "HeaderLink0"></a>Using Translucent Materials</h2>
+   <p></p>
+   
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink1"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#Material_Translucency"><span class="tocnumber">1</span> <span class="toctext">Material Translucency</span></a>
+<ul>
+<li class='toclevel-2'><a href="#The_Alpha_Channel"><span class="tocnumber">1.1</span> <span class="toctext">The Alpha Channel</span></a></li>
+<li class='toclevel-2'><a href="#Activation"><span class="tocnumber">1.2</span> <span class="toctext">Activation</span></a></li>
+<li class='toclevel-2'><a href="#Blend_Operations"><span class="tocnumber">1.3</span> <span class="toctext">Blend Operations</span></a></li>
+<li class='toclevel-2'><a href="#Using_cubemaps_with_translucency"><span class="tocnumber">1.4</span> <span class="toctext">Using cubemaps with translucency</span></a></li>
+<li class='toclevel-2'><a href="#Alpha_test"><span class="tocnumber">1.5</span> <span class="toctext">Alpha test</span></a></li>
+<li class='toclevel-2'><a href="#Translucent_Z_writes"><span class="tocnumber">1.6</span> <span class="toctext">Translucent Z writes</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="Material_Translucency"></a><h1><a name = "HeaderLink2"></a> Material Translucency </h1>
+<p>This section covers how to use translucent Materials.
+<b>NOTE: Translucent materials work on DTS, but they don't currently work on DIF.</b>
+<br /><br />
+</p>
+<a name="The_Alpha_Channel"></a><h2><a name = "HeaderLink3"></a> The Alpha Channel </h2>
+<p>Translucency and other effects such as specular make use of the alpha channel of the textures in the Material.  In order to use this channel you must use .png or some other supported 32 bit file format for the texture.
+</p><p>Unfortunately, Adobe Photoshop support for alpha channels in .png files does not work properly after version 5.0.  To get around this, an old version of the free SuperPNG plugin can be used.  You can get download it <a href="http://docs.garagegames.com/wiki/Editing_Beginner/Tools/SuperPNG" title="Editing Beginner/Tools/SuperPNG">here</a>:
+</p>
+<a name="Activation"></a><h2><a name = "HeaderLink4"></a>Activation</h2>
+<p>To turn on Material translucency, set the translucency parameter to be true:
+</p>
+<pre>
+new Material( TransFoo )
+{
+   baseTex[0] = &quot;foo&quot;;
+   translucent = true;
+};
+</pre>
+<a name="Blend_Operations"></a><h2><a name = "HeaderLink5"></a> Blend Operations </h2>
+<p>There are several possible blend operations that can be used with translucency.  The default is "LerpAlpha".  Here's a brief summary of blend modes:
+</p>
+<ul>
+<li><b>Add</b> - adds the color of the material to the frame buffer with full alpha for each pixel
+<li><b>AddAlpha</b> - same as add, but the color is modulated by the alpha channel before being added to the frame buffer
+<li><b>Mul</b> - modulates the Material with the frame buffer contents
+<li><b>LerpAlpha</b> - Linearly interpolates between Material color and frame buffer color based on alpha
+</ul>
+<p><br />
+Use "translucentBlendOp to set the blend operation. Example:
+</p>
+<pre>
+new Material( TransFoo )
+{
+   baseTex[0] = &quot;foo&quot;;
+   translucent = true;
+   BlendOp = AddAlpha;
+};
+</pre>
+<p>To add more blend modes and see how they are implemented with the GFX interface, take a look at Material::setBlendState() in material.cpp.
+</p>
+<a name="Using_cubemaps_with_translucency"></a><h2><a name = "HeaderLink6"></a>Using cubemaps with translucency</h2>
+<p>Cubemaps are tricky to use with translucency because the intensity of the cubemap is modulated by the alpha channel of the baseTex.  This means that as a Material gets more translucent, the cubemap reflection will be more faded.  If this is not the desired effect, it is recommended to switch to a CustomMaterial and write a shader to support the custom translucent / cubemap interaction.
+</p>
+<a name="Alpha_test"></a><h2><a name = "HeaderLink7"></a>Alpha test</h2>
+<p>Alpha test is on by default in rendering translucent Materials.  It can be toggled with the "alphaTest" parameter.  Alpha testing can improve performance by discarding pixels that are under a certain intensity threshold.  By discarding the pixels, the fillrate is improved because the GPU doesn't need to perform an expensive blend operation.  The intensity threshold can be set via the "alphaRef" parameter.  If the alpha value coming out of the shader is below this value, the pixel will not be rendered.  AlphaRef is set to 1 by default, so only pixels that have an alpha value of 0 (and therefore will be invisible anyway) will be discarded.  For more information on alpha testing, read DirectX SDK or OpenGL docs.
+<br /><br />
+example:
+</p>
+<pre>
+new Material( AlphaFoo )
+{
+   baseTex[0] = &quot;foo&quot;;
+   translucent = true;
+   translucentBlendOp = LerpAlpha;
+   alphaTest = true;  // default value
+   alphaRef = 128;   // alpha less than 128 in brightness (255 is max) will not be rendered
+};
+</pre>
+<a name="Translucent_Z_writes"></a><h2><a name = "HeaderLink8"></a>Translucent Z writes</h2>
+<p>There are circumstances such as rendering fences, grating, or foliage, in which writing to the zbuffer is desired for a translucent Material.  Usually this is done in combination with alphaTest and a LerpAlpha blendOp.  The parts of the Material that look opaque have a high alpha value (255) and will write to the zbuffer, and the parts that are not opaque are usually invisible with an alpha of 0 and do not write to the zbuffer.   To turn on z buffer writes for translucent Materials, set the parameter "translucentZWrite" to be true.
+<br /><br />
+example:
+</p>
+<pre>
+new Material( FoliageFoo )
+{
+   baseTex[0] = &quot;leaves&quot;;
+   translucent = true;
+   translucentBlendOp = LerpAlpha;
+   translucentZWrite = true;
+   alphaRef = 20;  // anything below this number is not visible and is not written to zbuffer
+};
+</pre>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Materials and Shaders/Translucent Materials.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:36 GMT -->
+</html>

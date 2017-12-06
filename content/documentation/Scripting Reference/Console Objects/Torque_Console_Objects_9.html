@@ -1,0 +1,1321 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_9.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4244;
+   parent.leftFrame.expandToItem('tree2', 'doc4244');
+   var element = parent.leftFrame.document.getElementById('doc4244');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>Torque Console Objects 9 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+ <table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console_Objects_Fields_and_Methods_Quick_Reference_Part_9"><span class="tocnumber">1</span> <span class="toctext">Console Objects Fields and Methods Quick Reference Part 9</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Precipitation"><span class="tocnumber">1.1</span> <span class="toctext">Precipitation</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields"><span class="tocnumber">1.1.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries"><span class="tocnumber">1.1.2</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods"><span class="tocnumber">1.1.3</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#PrecipitationData"><span class="tocnumber">1.2</span> <span class="toctext">PrecipitationData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_2"><span class="tocnumber">1.2.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Projectile"><span class="tocnumber">1.3</span> <span class="toctext">Projectile</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_3"><span class="tocnumber">1.3.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#ProjectileData"><span class="tocnumber">1.4</span> <span class="toctext">ProjectileData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_4"><span class="tocnumber">1.4.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#SceneObject"><span class="tocnumber">1.5</span> <span class="toctext">SceneObject</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_2"><span class="tocnumber">1.5.1</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_2"><span class="tocnumber">1.5.2</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#ScriptGroup"><span class="tocnumber">1.6</span> <span class="toctext">ScriptGroup</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_5"><span class="tocnumber">1.6.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#ScriptObject"><span class="tocnumber">1.7</span> <span class="toctext">ScriptObject</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_6"><span class="tocnumber">1.7.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#ScriptBase"><span class="tocnumber">1.8</span> <span class="toctext">ScriptBase</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Globals"><span class="tocnumber">1.8.1</span> <span class="toctext">Globals</span></a></li>
+<li class="toclevel-3"><a href="#Console_Functions"><span class="tocnumber">1.8.2</span> <span class="toctext">Console Functions</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_3"><span class="tocnumber">1.8.3</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_3"><span class="tocnumber">1.8.4</span> <span class="toctext">Console Methods</span></a>
+<ul>
+<li class="toclevel-4"><a href="#Cloaking"><span class="tocnumber">1.8.4.1</span> <span class="toctext">Cloaking</span></a></li>
+<li class="toclevel-4"><a href="#Hiding_and_Fading"><span class="tocnumber">1.8.4.2</span> <span class="toctext">Hiding and Fading</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Console_Objects_Fields_and_Methods_Quick_Reference_Part_9"></a><h1><a name = "HeaderLink1"></a>Console Objects Fields and Methods Quick Reference Part 9</h1>
+<p><br />
+</p><p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br /><br />
+</p>
+<a name="Precipitation"></a><h3><a name = "HeaderLink2"></a>Precipitation</h3>
+<hr />
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink3"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">boxHeight</td>	
+<td width="55%" bgcolor="#CCCCCC">Height of box (around camera) where precipitation occurs.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( 0.0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">boxWidth</td>	
+<td width="55%" bgcolor="#CCCCCC">Width  of box (around camera) where precipitation occurs.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( 0.0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">doCollision</td>	
+<td width="55%" bgcolor="#CCCCCC">Allow precipitation to collide with objects vs. fall through.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxMass</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum mass per drop.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ minMass , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum speed per drop.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ minSpeed , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxTurbulence</td>	
+<td width="55%" bgcolor="#CCCCCC">Max turbulence to apply per drop.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minMass</td>	
+<td width="55%" bgcolor="#CCCCCC">Minimum mass per drop.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , maxMass ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Minimum speed per drop.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , maxSpeed ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">numDrops</td>	
+<td width="55%" bgcolor="#CCCCCC">Approximate number of drops allowed to exist at any one time.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">rotateWithCamVel</td>	
+<td width="55%" bgcolor="#CCCCCC">Drops rotate to face camera.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">turbulenceSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Velocity (of drops) at which turbulence kicks in.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">useTurbulence</td>	
+<td width="55%" bgcolor="#CCCCCC">Enable turbulence effect.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink4"></a>Console Method Summaries </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#009900">modifyStorm</td>	
+<td width="20%" align="center" bgcolor="#009900">setPercentage</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink5"></a>Console Methods</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>modifyStorm( <i>percentage</i> , <i>time</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>modifyStorm</b></i> method to adjust the <i><b>percentage</b></i> of raindrops falling over <i><b>time</b></i> period.<br />
+<br />
+<b>Syntax<br />
+<i>percentage</i></b> – Percent of raindrops to render. [ 0.0 , 1.0 ]<br />
+<i><b>time</b></i> – Period of transition in <u>seconds</u>.( 0.0 , inf )<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+setPercentage<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setPercentage( <i>percentage</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setPercentage</b></i> method to imediately adjust the <i><b>percentage</b></i> of raindrops falling.<br />
+<br />
+<b>Syntax<br />
+<i>percentage</i></b> – Percent of raindrops to render. [ 0.0 , 1.0 ]<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+modifyStorm<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="PrecipitationData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink6"></a>PrecipitationData</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink7"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">dropSize</td>	
+<td width="55%" bgcolor="#CCCCCC">Render size for drops.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( 0.0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">dropTexture</td>	
+<td width="55%" bgcolor="#CCCCCC">Texture file (4 x 4 bitmap array) to use for drops.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">texture Path</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">soundProfile</td>	
+<td width="55%" bgcolor="#CCCCCC">Looping 2D audio profile to play with precipitation.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">Audio Profile Name</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">splashMS</td>	
+<td width="55%" bgcolor="#CCCCCC">Life of splashes in milliseconds.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">splashSize</td>	
+<td width="55%" bgcolor="#CCCCCC">Size of splashes.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( 0.0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">splashTexture</td>	
+<td width="55%" bgcolor="#CCCCCC">Texture to use for splashes (4 x 4 bitmap array).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">texture path</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">useTrueBillboards</td>	
+<td width="55%" bgcolor="#CCCCCC">Drops behave like true (non axis-aligned) billboards.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Projectile" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink8"></a>Projectile</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink9"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">initialPosition</td>	
+<td width="55%" bgcolor="#CCCCCC">Position that projectile starts at.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"1.0 2.0 3.0"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">initialVelocity</td>	
+<td width="55%" bgcolor="#CCCCCC">Starting velocity of projectile.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"1.0 2.0 3.0"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">sourceObject</td>	
+<td width="55%" bgcolor="#CCCCCC">description</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">sourceSlot</td>	
+<td width="55%" bgcolor="#CCCCCC">description</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="ProjectileData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink10"></a>ProjectileData</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_4" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink11"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">armingDelay</td>	
+<td width="55%" bgcolor="#CCCCCC">The number of ticks that must pass after the Projectile is created before it can explode. Valid range is 0 to Projectile::MaxLivingTicks (4095 by default).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">bounceElasticity</td>	
+<td width="55%" bgcolor="#CCCCCC">Used to simulate the Projectile's bounce elasticity, if it collides with something but does not explode. The bounce elasticity scales the velocity from a bounce, after friction is taken into account.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.999 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">bounceFriction</td>	
+<td width="55%" bgcolor="#CCCCCC">On bounce, reduce projectile velocity by this factor and a multiple of the tangent to impact.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>decals[0] <br />
+... <br />
+decals[5]
+</p>
+</td>	
+<td width="55%" bgcolor="#CCCCCC">Array of pointers to DecalData datablocks. A non-NULL decal object will be randomly chosen from the array when the Projectile collides with the terrain or an interior.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">DecalData datablock</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">explosion</td>	
+<td width="55%" bgcolor="#CCCCCC">ExplosionData datablock used when the Projectile object blows up out of water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">fadeDelay</td>	
+<td width="55%" bgcolor="#CCCCCC">The number of ticks that must pass after the Projectile is created before it will begin becoming transparent. Projectile's opacity will follow a linear degression starting fadeDelay number of ticks after it is creating and ending at lifetime number of ticks. Valid range is 0 to Projectile::MaxLivingTicks (4095 by default).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">gravityMod</td>	
+<td width="55%" bgcolor="#CCCCCC">If isBallistic is true, scales the effect of gravity on the Projectile. Valid range is 0.0 to 1.0.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">hasLight</td>	
+<td width="55%" bgcolor="#CCCCCC">Specifies whether the Projectile object sheds light when not in water. If so, a point light object is used with the radius and color specified in the lightRadius and lightColor fields.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">hasWaterLight</td>	
+<td width="55%" bgcolor="#CCCCCC">Specifies whether the Projectile object sheds light when in water. If so, a point light object is used with the radius and color specified in the lightRadius and waterLightColor fields.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">isBallistic</td>	
+<td width="55%" bgcolor="#CCCCCC">Specifies whether the Projectile will be affected by gravity, and whether it can bounce before exploding.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lifetime</td>	
+<td width="55%" bgcolor="#CCCCCC">The number of ticks the Projectile should survive for. Also used along with fadeDelay to determine the transparency of the Projectile object at a given time. See the fadeDelay field documentation for more information. The valid range for lifetime values is 0 to Projectile::MaxLivingTicks (4095 by default).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightColor</td>	
+<td width="55%" bgcolor="#CCCCCC">The projectile's point light color for use when not in water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"1.0 0.5 0.5"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightRadius</td>	
+<td width="55%" bgcolor="#CCCCCC">The projectile's point light radius. Valid range is 1.0 to 20.0</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">muzzleVelocity</td>	
+<td width="55%" bgcolor="#CCCCCC">Note: this field currently has no tangible effect in the engine simulation itself, but it is useful in script, and its valid range is checked by the engine. Valid range is from 0.0 to 10,000.0</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">particleEmitter</td>	
+<td width="55%" bgcolor="#CCCCCC">ParticleEmitter datablock used to generate particles for the projectile when it is out of water, and when entering or leaving water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">particleWaterEmitter</td>	
+<td width="55%" bgcolor="#CCCCCC">ParticleEmitter datablock used to generate particles for the projectile when it is under water, and when it is entering or leaving water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">projectileShapeName</td>	
+<td width="55%" bgcolor="#CCCCCC">The name of the shape file for the Projectile object. Must adhere to the semantics associated with the Filename datatype as defined in the engine.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">~/path/filename.dts</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">sound</td>	
+<td width="55%" bgcolor="#CCCCCC">AudioProfile used to generate the Projectile object's sound.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Splash</td>	
+<td width="55%" bgcolor="#CCCCCC">SplashData datablock used in the generation of splash effects when the Projectile is entering or leaving water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">velInheritFactor</td>	
+<td width="55%" bgcolor="#CCCCCC">Note: this field currently has no tangible effect in the engine simulation itself, but it is useful in script, and its valid range is checked by the engine. Valid range is from 0.0 to 1.0.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">waterExplosion</td>	
+<td width="55%" bgcolor="#CCCCCC">ExplosionData datablock used when the Projectile object blows up in the water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">waterLightColor</td>	
+<td width="55%" bgcolor="#CCCCCC">The projectile's point light color for use when in water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"1.0 0.5 0.5"</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="SceneObject" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink12"></a>SceneObject</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink13"></a>Console Method Summaries </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getForwardVector</td>	
+<td width="33%" align="center" bgcolor="#009900">getObjectBox</td>
+<td width="34%" align="center" bgcolor="#009900">getPosition</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getScale</td>	
+<td width="33%" align="center" bgcolor="#009900">getTransform</td>
+<td width="34%" align="center" bgcolor="#009900">getWorldBox</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getWorldBoxCenter</td>	
+<td width="33%" align="center" bgcolor="#009900">setScale</td>
+<td width="34%" align="center" bgcolor="#009900">setTransform</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink14"></a> Console Methods</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getForwardVector()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getForwardVector</b></i> method to get the three-element floating-point vector representing the direction the object is facing. <br />
+<br />
+<b>Returns</b><br />
+Returns a three-element floating-point vector representing the direction the object is facing.  <br />
+<br />
+<b>Notes</b><br />
+Forward for all SceneObjects is positive-Y.  So, this vector represents the direction the SceneObject's positive-Y axis is pointing.  <br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getObjectBox()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getObjectBox</b></i> method to get the six-element floating-point vector containing two three-space points representing the unscaled and unrotated bounding box for this object.<br />
+<br />
+<b>Returns</b><br />
+Returns a six-element floating-point vector containing two three-space points representing the bounds of this box:<br />
+<br />
+"minX minY minZ maxX maxY maxZ"<br />
+<br />
+<b>Notes</b><br />
+This box is unscaled and represents the bounding box of the exported, pre-scaled object.<br />
+<br />
+<b>See Also</b><br />
+getWorldBox<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getPosition()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getPosition</b></i> method to get the current position of this object.<br />
+<br />
+<b>Returns</b><br />
+A three-element vector containing the XYZ world position of this SceneObject.<br />
+<br />
+<b>See Also</b><br />
+getTransform, setTransform<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getScale()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getScale</b></i> method to get the scale of this SceneObject.<br />
+<br />
+<b>Returns</b><br />
+Returns a three-element vector containing the XYZ scale of this SceneObject.<br />
+<br />
+<b>See Also</b><br />
+setScale<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getTransform()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getTransform</b></i> method to get the transform matrix for this SceneObject.<br />
+<br />
+<b>Returns</b><br />
+Returns a seven-element matrix/vector containing the following information:<br />
+<br />
+“ PosX PosY PoxZ RotX RotY RotZ theta “, where theta is a rotation about the axis formed by “ RotX RotY RotZ “.<br />
+<br />
+<b>Notes</b><br />
+Use the <b>getWord()</b>, <b>getWords()</b>, and <b>setWord()</b> string functions for parsing the transform vector.<br />
+<br />
+<b>See Also</b><br />
+setTransform<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getWorldBox()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getWorldBox</b></i> method to get the six-element floating-point vector containing two three-space points representing the scaled and unrotated bounding box for this object.<br />
+<br />
+<b>Returns</b><br />
+Returns a six-element floating-point vector containing two three-space points representing the bounds of this box:<br />
+<br />
+"minX minY minZ maxX maxY maxZ"<br />
+<br />
+<b>Notes</b><br />
+This box is scaled such that it will contain all points on the current object, regardless of scaling and rotation.  Thus, as an irregularly shaped object rotates, its world box will change. <br />
+<br />
+<b>See Also</b><br />
+getObjectBox<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getWorldBoxCenter()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getWorldBoxCenter</b></i> method to get the centroid of this objects world box.<br />
+<br />
+<b>Returns</b><br />
+Returns a three-element position vector representing the centroid of this objects's world box.<br />
+<br />
+<b>See Also</b><br />
+getWorldBox<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setScale( <i>scale</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setScale</b></i> method to set the XYZ scaling factor for this object.<br />
+<br />
+<b>Syntax<br />
+<i>scale</i></b> – An XYZ vector containing the new scaling factor for this object.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+getScale<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setTransform( <i>transform</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setTransform</b></i> method to apply a new transform to this object.<br />
+<br />
+<b>Syntax<br />
+<i>transform</i></b> – A seven-element matrix/vector containing the following information:<br />
+<br />
+“ PosX PosY PoxZ RotX RotY RotZ theta “, where theta is a rotation about the axis formed by “ RotX RotY RotZ “.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+This will both translate and rotate the object.<br />
+<br />
+<b>See Also</b><br />
+getTransform<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<a name="ScriptGroup" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink15"></a>ScriptGroup</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_5" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink16"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">class</td>	
+<td width="55%" bgcolor="#CCCCCC">A new namespace to place after the object's name and before ScriptObject in the namespace chain.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">“Rectangle”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">superClass</td>	
+<td width="55%" bgcolor="#CCCCCC">A new namespace to place after class and before ScriptObject in the namespace chain.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">“Polyhedron”</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="ScriptObject" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink17"></a>ScriptObject</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_6" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink18"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">class</td>	
+<td width="55%" bgcolor="#CCCCCC">A new namespace to place after the object's name and before ScriptObject in the namespace chain.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">“Rectangle”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">superClass</td>	
+<td width="55%" bgcolor="#CCCCCC">A new namespace to place after class and before ScriptObject in the namespace chain.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">“Polyhedron”</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="ScriptBase" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink19"></a>ScriptBase</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Globals" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink20"></a>Globals</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Variable Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">SB::DFDec</td>	
+<td width="55%" bgcolor="#CCCCCC">Damage flash reduced by this amount per tick.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( 0.0, 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">SB::WODec</td>	
+<td width="55%" bgcolor="#CCCCCC">Whiteout  reduced by this amount per tick.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( 0.0, 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">pref::environmentMaps</td>	
+<td width="55%" bgcolor="#CCCCCC">Enables environmental mapping for all shapes.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Functions" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink21"></a>Console Functions </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getShadowDetailLevel()</td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setShadowDetailLevel( level )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setShadowDetailLevel</b></i> function to modify the detail level of dynamically cast shadows.<br />
+<br />
+<i><b>Syntax<br />
+level</b></i> – A floating-point value bewteen 0.0 and 1.0, where 0.0 is low-quality and 1.0 is high quality.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink22"></a>Console Method Summaries </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">applyDamage</td>	
+<td width="33%" align="center" bgcolor="#009900">applyImpulse</td>
+<td width="34%" align="center" bgcolor="#009900">applyRepair</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">canCloak</td>	
+<td width="33%" align="center" bgcolor="#009900">getAIRepairPoint</td>
+<td width="34%" align="center" bgcolor="#009900">getCameraFov</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getControllingClient</td>	
+<td width="33%" align="center" bgcolor="#009900">getControllingObject</td>
+<td width="34%" align="center" bgcolor="#009900">getDamageFlash</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getDamageLevel</td>	
+<td width="33%" align="center" bgcolor="#009900">getDamagePercent</td>
+<td width="34%" align="center" bgcolor="#009900">getDamageState</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getEnergyLevel</td>	
+<td width="33%" align="center" bgcolor="#009900">getEnergyPercent</td>
+<td width="34%" align="center" bgcolor="#009900">getEyePoint</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getEyeTransform</td>	
+<td width="33%" align="center" bgcolor="#009900">getEyeVector</td>
+<td width="34%" align="center" bgcolor="#009900">getImageAmmo</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getImageLoaded</td>	
+<td width="33%" align="center" bgcolor="#009900">getImageSkinTag</td>
+<td width="34%" align="center" bgcolor="#009900">getImageState</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getImageTrigger</td>	
+<td width="33%" align="center" bgcolor="#009900">getMountedImage</td>
+<td width="34%" align="center" bgcolor="#009900">getMountedObject</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getMountedObjectCount</td>	
+<td width="33%" align="center" bgcolor="#009900">getMountedObjectNode</td>
+<td width="34%" align="center" bgcolor="#009900">getMountNodeObject</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getMountSlot</td>	
+<td width="33%" align="center" bgcolor="#009900">getMuzzlePoint</td>
+<td width="34%" align="center" bgcolor="#009900">getMuzzleVector</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getObjectMount</td>	
+<td width="33%" align="center" bgcolor="#009900">getPendingImage</td>
+<td width="34%" align="center" bgcolor="#009900">getRechargeRate</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getRepairRate</td>	
+<td width="33%" align="center" bgcolor="#009900">getShapeName</td>
+<td width="34%" align="center" bgcolor="#009900">getSkinName</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getSlotTransform</td>	
+<td width="33%" align="center" bgcolor="#009900">getVelocity</td>
+<td width="34%" align="center" bgcolor="#009900">getWhiteOut</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">isCloaked</td>	
+<td width="33%" align="center" bgcolor="#009900">isDestroyed</td>
+<td width="34%" align="center" bgcolor="#009900">isDisabled</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">isEnabled</td>	
+<td width="33%" align="center" bgcolor="#009900">isHidden</td>
+<td width="34%" align="center" bgcolor="#009900">isImageFiring</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">isImageMounted</td>	
+<td width="33%" align="center" bgcolor="#009900">isMounted</td>
+<td width="34%" align="center" bgcolor="#009900">mountImage</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">mountObject</td>	
+<td width="33%" align="center" bgcolor="#009900">pauseThread</td>
+<td width="34%" align="center" bgcolor="#009900">playAudio</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">playThread</td>	
+<td width="33%" align="center" bgcolor="#009900">setCameraFov</td>
+<td width="34%" align="center" bgcolor="#009900">setCloaked</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setDamageFlash</td>	
+<td width="33%" align="center" bgcolor="#009900">setDamageLevel</td>
+<td width="34%" align="center" bgcolor="#009900">setDamageState</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setDamageVector</td>	
+<td width="33%" align="center" bgcolor="#009900">setEnergyLevel</td>
+<td width="34%" align="center" bgcolor="#009900">setHidden</td>
+</tr>
+  
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setImageAmmo</td>	
+<td width="33%" align="center" bgcolor="#009900">setImageLoaded</td>
+<td width="34%" align="center" bgcolor="#009900">setImageTrigger</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setInvincibleMode</td>	
+<td width="33%" align="center" bgcolor="#009900">setRechargeRate</td>
+<td width="34%" align="center" bgcolor="#009900">setRepairRate</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setShapeName</td>	
+<td width="33%" align="center" bgcolor="#009900">setSkinName</td>
+<td width="34%" align="center" bgcolor="#009900">setThreadDir</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setVelocity</td>	
+<td width="33%" align="center" bgcolor="#009900">setWhiteOut</td>
+<td width="34%" align="center" bgcolor="#009900">startFade</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">stopAudio</td>	
+<td width="33%" align="center" bgcolor="#009900">stopThread</td>
+<td width="34%" align="center" bgcolor="#009900">unmount</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink23"></a>Console Methods</h4>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Cloaking" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink24"></a>Cloaking</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">canCloak</td>	
+<td width="33%" align="center" bgcolor="#009900">isCloaked</td>
+<td width="34%" align="center" bgcolor="#009900">setCloaked</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>canCloak()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>canCloak</b></i> method to determine if this shape is able to cloak.<br />
+<br />
+<b>Returns</b><br />
+Returns true if this shape is allowed to cloak, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+isCloaked, setCloaked<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isCloaked()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isCloaked</b></i> method to determine if this shape is currently cloaked.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the shape is currently cloaked.<br />
+<br />
+<b>See Also</b><br />
+canCloak, setCloaked<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setCloaked( isCloaked )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setCloaked</b></i> method to cloak or uncloak the current shape.<br />
+<br />
+<b>Syntax<br />
+isCloaked</b> – A boolean value.  If set to true, this shape will be cloaked, otherwise it will be uncloaked.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+canCloak, isCloaked<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Hiding_and_Fading" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink25"></a>Hiding and Fading</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">isHidden</td>	
+<td width="33%" align="center" bgcolor="#009900">setHidden</td>
+<td width="34%" align="center" bgcolor="#009900">startFade</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isHidden()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isHidden</b></i> method to see if this shape is currently hidden.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the object is hidden, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+setHidden<br />
+<br />
+Returns ID of this object's datablock.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setHidden( <i>isHidden</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setHidden</b></i> method to hide or unhide this shape.<br />
+<br />
+<b>Syntax<br />
+<i>isHidden</i></b> –  A boolean value.  If set to true, this shape will be hidden, otherwise it will be un-hidden.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+When an object is hidden it is temporarily removed from the scene and therefore will not render or be collided with.<br />
+<br />
+<b>See Also</b><br />
+isHidden<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>startFade( <i>time</i> , <i>delay</i> , <i>fadeOut</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>startFade</b></i> method to fade this shape in and out of view without removing it from the scene.<br />
+<br />
+<b>Syntax<br />
+<i>time</i></b> – specifies the timeit takes (in milliseconds) for the fade to complete. <br />
+<i><b>delay</b></i> – specifes the time to wait (in milliseconds) before starting to fade.<br />
+<i><b>fadeOut</b></i> – If true, shape fades out, else shape fades in.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Items have the ability to light their surroundings.  When an Item with an active light is fading out, the light it emits is correspondingly reduced until it goes out.  Likewise, when the item fades in, the light is turned-up till it reaches it's normal brightntess.<br />
+A faded out object is still in the scene and can still be collided with, so if you want to disable collisions for this shape after it fades out use <i>setHidden</i> to temporarily remove this shape from the scene.<br />
+<br />
+<b>See Also</b><br />
+setHidden<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><a href="Console%20Objects.html" title="Torque Console Objects TOC"> Table of Contents</a> || <a href="Torque_Console_Objects_1.html" title="Torque Console Objects"> Part 1</a> || <a href="Torque_Console_Objects_2.html" title="Torque Console Objects 2"> Part 2</a> || <a href="Torque_Console_Objects_3.html" title="Torque Console Objects 3"> Part 3</a> || <a href="Torque_Console_Objects_4.html" title="Torque Console Objects 4"> Part 4</a> || <a href="Torque_Console_Objects_5.html" title="Torque Console Objects 5"> Part 5</a> || <a href="Torque_Console_Objects_6.html" title="Torque Console Objects 6"> Part 6</a> || <a href="Torque_Console_Objects_7.html" title="Torque Console Objects 7"> Part 7</a> || <a href="Torque_Console_Objects_8.html" title="Torque Console Objects 8"> Part 8</a> || <a href="Torque_Console_Objects_10.html" title="Torque Console Objects 10"> Part 10</a> || <a href="Torque_Console_Objects_11.html" title="Torque Console Objects 11"> Part 11</a> || <a href="Torque_Console_Objects_12.html" title="Torque Console Objects 12"> Part 12</a> || <a href="Torque_Console_Objects_13.html" title="Torque Console Objects 13"> Part 13</a> || <a href="Torque_Console_Objects_14.html" title="Torque Console Objects 14"> Part 14</a> || <a href="Torque_Console_Objects_15.html" title="Torque Console Objects 15"> Part 15</a>
+</p>
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_9.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:04 GMT -->
+</html>

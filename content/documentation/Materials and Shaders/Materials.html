@@ -1,0 +1,315 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Materials and Shaders/Materials.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4204;
+   parent.leftFrame.expandToItem('tree2', 'doc4204');
+   var element = parent.leftFrame.document.getElementById('doc4204');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Materials and Shaders - Materials</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+</head>
+
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="0" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+
+<td>
+<blockquote>
+  <p name="Introduction"><a name="Introduction"></a></p>
+  <h2><a name = "HeaderLink0"></a>Introduction</h2>
+  <p>A material in TGEA is a data structure that describes a surface. It contains many different types of information such as sound, physics, and rendering properties. At this early release of the TGEA, most of the information in materials focuses on rendering.  </p>
+  <p>The TGEA generates shaders from Material definitions. The shaders are compiled at runtime and output into the example/shaders directory. Any errors or warnings generated from compiling the procedurally generated shaders are output to the console as well as the output window in the Visual C IDE.  </p>
+  <p>&nbsp;</p>
+  <table width="292" cellspacing="20" class='toc' id='toc'>
+    <tr>
+      <td><div id='toctitle'>
+        <h2><a name = "HeaderLink1"></a>Contents</h2>
+      </div>
+          <ul>
+            <li class='toclevel-1'><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+            <li class='toclevel-1'><a href="#Stages"><span class="tocnumber">2</span> <span class="toctext">Stages</span></a></li>
+            <li class='toclevel-1'><a href="#Rendering_Properties"><span class="tocnumber">3</span> <span class="toctext">Rendering Properties</span></a>
+                <ul>
+                  <li class='toclevel-2'><a href="#Base_Texture"><span class="tocnumber">3.1</span> <span class="toctext">Base Texture</span></a></li>
+                  <li class='toclevel-2'><a href="#Detail_Texture"><span class="tocnumber">3.2</span> <span class="toctext">Detail Texture</span></a></li>
+                  <li class='toclevel-2'><a href="#Bumpmap_Texture"><span class="tocnumber">3.3</span> <span class="toctext">Bumpmap Texture</span></a></li>
+                  <li class='toclevel-2'><a href="#Environment_Map_Texture"><span class="tocnumber">3.4</span> <span class="toctext">Environment Map Texture</span></a></li>
+                  <li class='toclevel-2'><a href="#Specular"><span class="tocnumber">3.5</span> <span class="toctext">Specular</span></a></li>
+                  <li class='toclevel-2'><a href="#Specular_Power"><span class="tocnumber">3.6</span> <span class="toctext">Specular Power</span></a></li>
+                  <li class='toclevel-2'><a href="#Pixel_and_Vertex_Specular"><span class="tocnumber">3.7</span> <span class="toctext">Pixel and Vertex Specular</span></a></li>
+                  <li class='toclevel-2'><a href="#Glow"><span class="tocnumber">3.8</span> <span class="toctext">Glow</span></a></li>
+                  <li class='toclevel-2'><a href="#Emissive"><span class="tocnumber">3.9</span> <span class="toctext">Emissive</span></a></li>
+                  <li class='toclevel-2'><a href="#Translucent"><span class="tocnumber">3.10</span> <span class="toctext">Translucent</span></a></li>
+                  <li class='toclevel-2'><a href="#TranslucentBlendOp"><span class="tocnumber">3.11</span> <span class="toctext">TranslucentBlendOp</span></a></li>
+                  <li class='toclevel-2'><a href="#TranslucentZWrite"><span class="tocnumber">3.12</span> <span class="toctext">TranslucentZWrite</span></a></li>
+                  <li class='toclevel-2'><a href="#Cubemap"><span class="tocnumber">3.13</span> <span class="toctext">Cubemap</span></a></li>
+                  <li class='toclevel-2'><a href="#DynamicCubemap"><span class="tocnumber">3.14</span> <span class="toctext">DynamicCubemap</span></a></li>
+                  <li class='toclevel-2'><a href="#Planar_Reflections"><span class="tocnumber">3.15</span> <span class="toctext">Planar Reflections</span></a></li>
+                  <li class='toclevel-2'><a href="#Animation_Flags"><span class="tocnumber">3.16</span> <span class="toctext">Animation Flags</span></a></li>
+                  <li class='toclevel-2'><a href="#Scroll"><span class="tocnumber">3.17</span> <span class="toctext">Scroll</span></a></li>
+                  <li class='toclevel-2'><a href="#Rotate"><span class="tocnumber">3.18</span> <span class="toctext">Rotate</span></a></li>
+                  <li class='toclevel-2'><a href="#Wave"><span class="tocnumber">3.19</span> <span class="toctext">Wave</span></a></li>
+                  <li class='toclevel-2'><a href="#Scale"><span class="tocnumber">3.20</span> <span class="toctext">Scale</span></a></li>
+                  <li class='toclevel-2'><a href="#Sequence"><span class="tocnumber">3.21</span> <span class="toctext">Sequence</span></a></li>
+                </ul>
+            </li>
+            <li class='toclevel-1'><a href="#Sample_Materials"><span class="tocnumber">5</span> <span class="toctext">Sample Materials</span></a></li>
+            <li class='toclevel-1'><a href="#Material_Instances"><span class="tocnumber">7</span> <span class="toctext">Material Instances</span></a></li>
+          </ul></td>
+    </tr>
+  </table>
+</blockquote>
+<blockquote>
+  <p><br />
+  </p>
+  <p name="Stages"><a name="Stages"></a></p>
+  <h2><a name = "HeaderLink2"></a>Stages</h2>
+  <p>There are many different rendering properties that can be defined in materials and most of them are specific to a particular material stage. Each stage is essentially a different pass that is rendered on a surface. Stages are indicated by the array index of the material parameter. See the <a href="#Sample_Materials" title="Materials">example</a> Materials at the end of this chaper. Stages are useful for multi-layer effects.  </p>
+  <p>For instance, if you wanted a special effect where one layer would scroll in one direction and another would scroll on top of it in another direction and they are blended together, stages would be the way to do it.  </p>
+  <p>Another example would be if you wanted the specular component of a material to glow, but not the rest of the material, then you could specify a second stage that had specular and glow on it. The second stage would then be additively blended on top of the first.  </p>
+  <p name="Rendering_Properties"><a name="Rendering_Properties"></a></p>
+  <h2><a name = "HeaderLink3"></a>Rendering Properties</h2>
+  <p name="Base_Texture"><a name="Base_Texture"></a></p>
+  <h3><a name = "HeaderLink4"></a>Base Texture</h3>
+  <p>This is the base diffuse texture.  </p>
+  <pre>
+Script reference: baseTex = filename
+</pre>
+  <p name="Detail_Texture"><a name="Detail_Texture"></a></p>
+  <h3><a name = "HeaderLink5"></a>Detail Texture</h3>
+  <p>Detail textures are repeating, high frequency textures that are tiled and modulated over a material. They can give the impression that the material is of a higher resolution than it actually is.  </p>
+  <pre>
+Script reference: detailTex = filename
+</pre>
+  <p name="Bumpmap_Texture"><a name="Bumpmap_Texture"></a></p>
+  <h3><a name = "HeaderLink6"></a>Bumpmap Texture</h3>
+  <p>Bumpmaps give a material a more 3D appearance. The TGEA supports bumpmaps through the use of normalmaps. There are many free utilities available to create normalmaps. nVIDIA has a nice PhotoShop plugin for this purpose available at <a href="http://developer.nvidia.com/" class='external text' title="http://developer.nvidia.com" rel="nofollow">developer.nvidia.com</a>.  </p>
+  <pre>
+Script reference: bumpTex = filename
+</pre>
+  <p name="Environment_Map_Texture"><a name="Environment_Map_Texture"></a></p>
+  <h3><a name = "HeaderLink7"></a>Environment Map Texture</h3>
+  <p>Not currently supported. See cubemap.  </p>
+  <p name="Specular"><a name="Specular"></a></p>
+  <h3><a name = "HeaderLink8"></a>Specular</h3>
+  <p>This value indicates what color the specular highlights on a material should be. Usually this is the same color as the light source that is lighting the material. Specular is additively applied to materials, so this value can also be used to control the intensity of the specular highlight. The darker the color, the less intense the highlight.  </p>
+  <pre>
+Script reference: specular = color
+</pre>
+  <p name="Specular_Power"><a name="Specular_Power"></a></p>
+  <h3><a name = "HeaderLink9"></a>Specular Power</h3>
+  <p>This is the "shininess" factor of specular highlights. The higher the number, the smaller the specular highlight and the shinier the material appears. </p>
+  <pre>
+Script reference: specularPower = float
+</pre>
+  <p name="Pixel_and_Vertex_Specular"><a name="Pixel_and_Vertex_Specular"></a></p>
+  <h3><a name = "HeaderLink10"></a>Pixel and Vertex Specular</h3>
+  <p>These are flags indicating which type of specular, if any, is applied to the material.  </p>
+  <p>Pixel specular is not supported for cards that do not have pixel shader 2.0 compatibility. It is more accurate than vertex specular as it is calculated every pixel, but it is also more expensive.  </p>
+  <pre>
+Script reference: pixelSpecular = bool
+</pre>
+  <p>Vertex Specular is not yet supported.  </p>
+  <p name="Glow"><a name="Glow"></a></p>
+  <h3><a name = "HeaderLink11"></a>Glow</h3>
+  <p>Flag indicating if material should glow. Glow amount is dictated by how "bright" a material is in color space. White will glow brightest, black will not glow at all. </p>
+  <pre>
+Script reference: glow = bool
+</pre>
+  <p name="Emissive"><a name="Emissive"></a></p>
+  <h3><a name = "HeaderLink12"></a>Emissive</h3>
+  <p>This flag removes any shading calculations performed on a material. It is useful for glowing objects that appear to emit light.  </p>
+  <pre>
+Script reference: emissive = bool
+</pre>
+  <p name="Translucent"><a name="Translucent"></a></p>
+  <h3><a name = "HeaderLink13"></a>Translucent</h3>
+  <p>Indicates that the material is translucent.  </p>
+  <pre>
+Script reference: translucent = bool
+</pre>
+  <p name="TranslucentBlendOp"><a name="TranslucentBlendOp"></a></p>
+  <h3><a name = "HeaderLink14"></a>TranslucentBlendOp</h3>
+  <p>Indicates the blend operation to perform for a translucent stage. Options include additive, subtractive, multiplicative, and others. See material.h and the BlendOp enum for a complete list.  </p>
+  <pre>
+Script reference: translucentBlendOp = blendOp
+</pre>
+  <p name="TranslucentZWrite"><a name="TranslucentZWrite"></a></p>
+  <h3><a name = "HeaderLink15"></a>TranslucentZWrite</h3>
+  <p>Translucent materials do not write to the zbuffer by default. This parameter allows this to occur.  </p>
+  <pre>
+Script reference: translucentZWrite = bool
+</pre>
+  <p name="Cubemap"><a name="Cubemap"></a></p>
+  <h3><a name = "HeaderLink16"></a>Cubemap</h3>
+  <p>Useful for simulating reflective surface properties. Cubemaps are six sided "sky box" structures. See the CubemapData and GFXCubemap classes as well as the sample materials.cs file for more info. Also see Direct3D and OpenGL documentation. </p>
+  <pre>
+Script reference: cubemap = filename
+</pre>
+  <p name="DynamicCubemap"><a name="DynamicCubemap"></a></p>
+  <h3><a name = "HeaderLink17"></a>DynamicCubemap</h3>
+  <p>This is a flag indicating that the material is going to use a cubemap created by the scenegraph. Dynamic cubemaps are updated frequently for very realistic reflections. They are very expensive as a result.  </p>
+  <p>Dynamic cubemaps only currently work for ShapeBase objects. To enable dynamic cubemapping on those objects, the flag dynamicReflection must be set to true for in an object's datablock. The dynamic cubemap is then rendered from that object's center every frame.  </p>
+  <pre>
+Script reference: dynamicCubemap = bool
+</pre>
+  <p name="Planar_Reflections"><a name="Planar_Reflections"></a></p>
+  <h3><a name = "HeaderLink18"></a>Planar Reflections</h3>
+  <p>Marks a material for dynamic planar reflections. For more info see <a href="http://www.garagegames.com/docs/tse/general/ch07.php#id2515078" class='external text' title="http://www.garagegames.com/docs/tse/general/ch07.php#id2515078" rel="nofollow">Planar Reflections</a>.  </p>
+  <pre>
+Script reference: planarReflection = bool
+</pre>
+  <p name="Animation_Flags"><a name="Animation_Flags"></a></p>
+  <h3><a name = "HeaderLink19"></a>Animation Flags</h3>
+  <p>The <i>animFlags</i> property determins the combination of animations to perform on that stage.  You can combine more than one of the animations like so:  </p>
+  <pre>animFlags[0] = $scroll | $rotate | $sequence;</pre>
+  <p>The flags themselves and their individual special parameters are described here below.  </p>
+  <p name="Scroll"><a name="Scroll"></a></p>
+  <h3><a name = "HeaderLink20"></a>Scroll</h3>
+  <p>Scrolls the material in the direction and speed defined by <i>scrollDir</i> and <i>scrollSpeed</i> parameters in script.  </p>
+  <pre>
+new Material(ScrollMat)
+{
+   baseTex[0] = &quot;demo/data/shapes/spaceOrc/orc_ID1_skin&quot;;
+   animFlags[0] = $scroll;
+   scrollDir[0] = &quot;1 0&quot;; // scroll the texture in the U direction.
+   scrollSpeed[0] = 2.0; // that's two texture lengths per second.
+};</pre>
+  <p name="Rotate"><a name="Rotate"></a></p>
+  <h3><a name = "HeaderLink21"></a>Rotate</h3>
+  <p>Rotates the material with the <i>rotPivotOffset</i> and <i>rotSpeed</i> parameters indicating the pivot point in texture space and the rotation speed respectively.  </p>
+  <pre>new Material(RotMat)
+{
+   baseTex[0] = &quot;demo/data/shapes/spaceOrc/orc_ID1_skin&quot;;
+   animFlags[0] = $rotate;
+   rotPivotOffset[0] = &quot;-0.5 -0.5&quot;; // this is the center point UV offset for the rotation.
+   rotSpeed[0] = 2.0; // that's two full rotations per second.
+};</pre>
+  <p name="Wave"><a name="Wave"></a></p>
+  <h3><a name = "HeaderLink22"></a>Wave</h3>
+  <p>
+    <div class="thumb tright">
+  </p>
+</blockquote>
+<div style="width:102px;">
+  <blockquote>
+    <p><img src="100px-Wavycube.jpg"></p>
+  </blockquote>
+</div> 
+<blockquote>
+  <p>This is a modifier flag for the <i>$scroll</i>, <i>$rotate</i>, and <i>$scale</i> properties. It can be controlled with the <i>waveType</i>, <i>waveFreq</i>, and <i>waveAmp</i> parameters indicating the type, frequencey and amplitude of the wave. An example of it's use is:  </p>
+  <pre>
+new Material(WaveMat)
+{
+   baseTex[0] = &quot;demo/data/shapes/spaceOrc/orc_ID1_skin&quot;;
+   animFlags[0] = $rotate | $wave;
+   rotPivotOffset[0] = &quot;-0.5 -0.5&quot;;
+   rotSpeed[0] = 1.0;
+   waveType[0] = $sinWave; // This could also be $triangleWave or $squareWave.
+   waveFreq[0] = 0.25; // the time in seconds for the wave to complete one full cycle.
+   waveAmp[0] = 1.0; // the 
+};
+</pre>
+  <p>  \<a name="Scale"></a></p>
+  <h3><a name = "HeaderLink23"></a>Scale</h3>
+  <p>Scales the material over time and only works with the Wave modifier set. An example of it's use is:  </p>
+  <pre>
+new Material(ScaleMat)
+{
+   baseTex[0] = &quot;demo/data/shapes/spaceOrc/orc_ID1_skin&quot;;
+   animFlags[0] = $scale | $wave;
+   waveType[0] = $sinWave;
+   waveFreq[0] = 0.25;
+   waveAmp[0] = 1.0;
+};
+</pre>
+  <p name="Sequence"><a name="Sequence"></a></p>
+  <h3><a name = "HeaderLink24"></a>Sequence</h3>
+  <p>Sequences are a series of images that reside in a single texture. They are arranged in the horizontal of a texture and offset at regular intervals. The sequence texture doesn't need to be square, but it does need to be a power of two to work.<br />
+      <br />
+  </p>
+  <p>The sequenceFramePerSec parameter indicates how many sequence segments are displayed in a second. The parameter sequenceSegmentSize indicates the size of each segment in a sequence in texture space.<br />
+      <br />
+  </p>
+  <p>For example for a sequence of 4 32x32 images, create a 128x32 size texture. Then create the images side by side in the image. To show all four images in one second as a looping animation, set sequenceFramePerSec to be 4.0. The sequenceSegmentSize parameter should be set to 0.25 because there are 4 segments (1/4 equals 0.25).<br />
+      <br />
+  </p>
+  <p>An example of it's use is:  </p>
+  <pre>
+new Material(AnimatedMat)
+{
+   baseTex[0] = &quot;demo/data/shapes/spaceOrc/orc_ID1_skin&quot;;
+   animFlags[0] = $sequence;
+   sequenceFramePerSec[0] = 4;
+   sequenceSegmentSize[0] = 0.25;
+};
+</pre>
+  <p>  \<a name="Sample_Materials"></a></p>
+  <h2><a name = "HeaderLink25"></a>Sample Materials</h2>
+  <p><b>Example</b>  </p>
+  <pre>
+new Material(OrcSkin)
+{
+    baseTex[0]       = &quot;demo/data/shapes/spaceOrc/orc_ID1_skin&quot;;
+    bumpTex[0]       = &quot;demo/data/shapes/spaceOrc/orc_ID1_skin_bump&quot;;
+    pixelSpecular[0] = true;
+    specular[0]      = &quot;1.0 1.0 1.0 1.0&quot;;
+    specularPower[0] = 4.0;
+};
+           
+new Material(GunBlade)
+{
+    // STAGE 0
+    //----------------------------
+    baseTex[0]       = &quot;demo/data/shapes/spaceOrc/gun_ID4_blades&quot;;
+    bumpTex[0]       = &quot;demo/data/shapes/spaceOrc/gun_ID4_blades_bump&quot;;
+    
+    // STAGE 1 (second rendering pass)
+    //----------------------------
+    glow[1]          = true;
+    emissive[1]      = true;
+    pixelSpecular[1] = true;
+    specular[1]      = &quot;0.5 0.5 0.5 0.5&quot;;
+    specularPower[1] = 32.0;
+ 
+    cubemap          = WChrome;
+};
+</pre>
+  <p name="Material_Instances"><a name="Material_Instances"></a></p>
+  <h2><a name = "HeaderLink26"></a>Material Instances</h2>
+  <p>Materials can be placed on any type of surface in the TGEA. Since different types of surfaces have different underlying geometry and lighting data, they need to generate different types of shaders even though the Material may be the same. The mapping of a material to different types of geometry is handled through a material instance (MatInstance).  </p>
+  <p>MatInstances take information from the Material, the scenegraph, the surface, and the target hardware and filter it down into shader passes before sending it off to the shader generation module. They also store pointers to the shaders created and use them later when the TGEA sets up render states for the material.  </p>
+  <p><br />
+  </p>
+</blockquote></td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Materials and Shaders/Materials.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:35 GMT -->
+</html>

@@ -1,0 +1,242 @@
+﻿<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/3D Studio Max/Normal Mapping.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4269;
+   parent.leftFrame.expandToItem('tree2', 'doc4269');
+   var element = parent.leftFrame.document.getElementById('doc4269');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Using Art Assets - Normal Mapping</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+<td>
+
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#An_Introduction_to_this_Lesson"><span class="tocnumber">1</span> <span class="toctext">An Introduction to this Lesson</span></a></li>
+<li class='toclevel-1'><a href="#Normal_Mapping_in_a_Nut_Shell"><span class="tocnumber">2</span> <span class="toctext">Normal Mapping in a Nut Shell</span></a></li>
+<li class='toclevel-1'><a href="#Let.27s_get_Started"><span class="tocnumber">3</span> <span class="toctext">Let's get Started</span></a></li>
+<li class='toclevel-1'><a href="#So_what_you.27re_trying_to_say_is..."><span class="tocnumber">4</span> <span class="toctext">So what you're trying to say is...</span></a></li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="An_Introduction_to_this_Lesson"></a><h3><a name = "HeaderLink1"></a>An Introduction to this Lesson</h3>
+<p>If you’ve paid any attention to increasing technology in video games as of 2005, odds are you’ve heard the term ‘normal mapping’ thrown around like nobodies business.  Games like Doom 3, Half-Life 2, and F.E.A.R. all snatched up this great technique in order to shove as much detail down our throats possible without causing our computers to burst into flames from overload.  In this lesson you will learn all about the basics of normal mapping and its upcoming debut in the Torque Shader Engine.  So before we get started, it’s important for us to know and understand:  What is normal mapping?
+</p>
+</td>
+
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="1500" cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td height="1" width="1500" bgcolor="#000000"></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+
+<td>
+<p><a name="Normal_Mapping_in_a_Nut_Shell"></a></p>
+<h3><a name = "HeaderLink2"></a>Normal Mapping in a Nut Shell</h3>
+<p>Assuming you have completed all of the previous tutorials here on the TDN, you should be quite familiar with the feel for 3D space by now.  Vertices in this 3D space are each given a specific coordinate along an X,Y, and a Z axis.  When you apply a 2D texture to your 3D model, you've given it a UVW coordinate.  UVW coordinates are based per polygon, where U and V are the most important as they represent X and Y, while W represents how the texture will wrap around multiple polygons on the model in 3D space.
+</p><p>With normal mapping, an RGB bitmap image is encoded to have both XYZ and UVW coordinates.  It will hold the placement of the textures where you've unwrapped them in UVW, but each pixel represents XYZ cooridinates by its color.  Any red pixels will translate into an X coordiante, green a Y, and blue a Z.  The result will be come out to be a trippy blend of these three colors, so take some time to stare at this example of a normal map to get a feel of how it will translate.  
+</p><p><br />
+<img src="NormalMap.html">
+</p><p><br />
+With this, you can take a very high polygon model and actually apply it's XYZ coordinates onto a lower polygon model.  Both lighting and depth of the high polygon model will remain intact, so as you reach the end of this tutorial, be sure to create a simple light and rotate it around your low geometry mesh with the normal map applied.  Alright, enough theory, let's get this tutorial started!
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="1500" cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td height="1" width="1500" bgcolor="#000000"></td>
+</tr>
+</table>
+<p><br />
+</p>
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+
+<td>
+<a name="Let.27s_get_Started"></a>
+<h3><a name = "HeaderLink3"></a>Let's get Started</h3>
+<p>Since this is not a modeling tutorial, it will be assumed that you already have your high  and low polygon mesh and be ready to normal map it up.  Once again, this tutorial is geared towards 3D Studio Max, but can be easily applied to most all other modeling applications.  For this lesson, I've built a very simple wall panel for tiling and importing to TGEA.  You want to make sure you keep your models centered from the start for the least amount of pain when creating your normal maps.  Also, one thing you need to remember is NAME YOUR OBJECTS!  I can't stress enough how much easier all the sorting will be if you have everything properly named.  So here I have a basic layout of the the high polygon model right next to the low polygon one (this is just to show you both of these, in reality they are to be stacked ontop of eachother, which you will see in later shots).  
+</p>
+</td>
+</tr>
+</table>
+
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+
+<td>
+<p><img src="NM1.jpg"></p>
+<p>&nbsp;</p>
+<p>You first task upon completing the models is to unwrap your low poygon model.  There are other tutorials that cover that here on the TDN, so I will skip right over that part.  Ok, so you have both models and the lower polygon one unwrapped: Now what?  With the low polygon model selected, press 0 or click Rendering-&gt; Render to Texture.  The next few screens are much better shown that described, so try to follow the screenshots as accuratly as possible or your results may not come out the same.</p>
+</td>
+</tr>
+</table>
+
+<table width="1737" border="0" cellpadding="15" cellspacing="0" style="text-align: justify;">
+  <tr>
+    <td width="1707"><p><img src="NM2.jpg"></p>
+        <p>Click 'Setup' in 'Render Settings'</p>
+      </td>
+  </tr>
+</table>
+<table width="1737" border="0" cellpadding="15" cellspacing="0" style="text-align: justify;">
+<tr>
+
+<td>
+<p><img src="NM3.jpg"></p>
+<p>In the 'Renderer' tab, 'Enable Global Supersampler'<br />
+</p>
+</td>
+</tr>
+</table>
+<table width="1737" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700"><p><img src="NM4.jpg"></p>
+<p>Close out the 'Render Settings' and pan down to the 'Projection Mapping' section.  Click to enable Projection Mapping and then click 'Pick' to pick the high polygon model.</p>
+</td>
+</tr>
+</table>
+<table width="1737" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700">
+<p><img src="NM5.jpg"></p>
+<p>Pick the high polygon model and click 'Add'.<br />
+</p>
+</td>
+</tr>
+</table>
+<table width="1737" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700"><p><img src="NM6.jpg"></p>
+<p>Pan farther down the 'Render to Texture' windo and click 'Add' in the 'Output' section.  Then, click 'NormalsMap' and 'Add Elements'.<br />
+</p>
+</td>
+</tr>
+</table>
+<table width="1737" cellspacing="0" cellpadding="12" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700">
+<p><img src="NM7.jpg"></p>
+<p>Pan even farther and you will see that you can name and chose your output settings of your normal map.  Also, choose a size you want the normal map to render to (keep in mind that larger maps create a larger hit on performance, and never go above 1024).</p>
+</td>
+</tr>
+</table>
+<table width="1737" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700">
+<p><img src="NM8.jpg"></p>
+<p>Clicking out of the 'Render to Texture' tab, go back over to the 'Modify' tab and drop the 'Projection' stack to select the cage.  What you will be doing is using the vertex selection to grab the cage surounding your low polygon object and scale it so that it consumes both the high polygon model and itself.<br />
+</p>
+</td>
+</tr>
+</table>
+<table width="1737" cellspacing="0" cellpadding="12" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700"><p><img src="NM9.jpg"></p>
+  <p>Here is what the cage should look like when finished; completely boxing in both meshes.</p>
+  <p><br />
+  </p></td>
+</tr>
+</table>
+<table width="1737" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700"><p><img src="NM10.jpg"></p>
+<p>Finally, open back up the 'Render to Texture' tab and pan all the way to the bottom.  Make sure you're in the proper viewport to render out the front of the mesh. Hit 'Render' to render your normal map.<br />
+</p>
+</td>
+</tr>
+</table>
+<table width="1737" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700">
+<p><img src="NM11.jpg"></p>
+<p>A dialog window will come up like so; Continue anyways.<br />
+</p>
+</td>
+</tr>
+</table>
+<table width="1737" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700">
+<p><img src="NM12.jpg"></p>
+<p>WTF Kovac?!  It's only a render of your stupid mesh!  That doesn't look anything like the normal map you showed earlier!  Well that's because it isn't the normal map.  Hop into your '3dsmax' folder and jump into the 'Images' folder.  And ah, there it is in all its glory.  A perfectly normal mapped...thing.<br />
+</p>
+</td>
+</tr>
+</table>
+<table width="1737" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700">
+<p><img src="NM13.jpg"></p>
+<p>Hide your high resolution mesh.  In the material editor create a new Standard material and apply it to the low resolution mesh.  Click on the Bumpmap field in the Maps section and select Normal Bump.  Under the Normal field select Bitmap and pick the texture that you just rendered out.</p>
+<p>Place an Omni light in the scene and you should see results something along the lines of this:<br />
+</p></td>
+</tr>
+</table>
+<table width="1737" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700"><p><img src="NM14.jpg"></p>
+<p><br />
+</p>
+<a name="So_what_you.27re_trying_to_say_is..."></a><h3><a name = "HeaderLink4"></a>So what you're trying to say is...</h3>
+<p>Well that's about it.  You now have a normal mapped texture that you can apply along with a texture to anything your little hearts desire.  In later tutorials, you will find out how to import the normal maps onto .DIF objects via a CS file, which you can then drop it into TGEA's Mission Editor.  Also, another later tutorial will show how to export a model in .DTS format and apply it to get those working with normal maps in TGEA as well.  Good luck!</p><p><br />
+</p></td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/3D Studio Max/Normal Mapping.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:47 GMT -->
+</html>

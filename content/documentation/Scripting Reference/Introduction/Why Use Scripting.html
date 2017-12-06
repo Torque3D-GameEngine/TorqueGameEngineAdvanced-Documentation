@@ -1,0 +1,117 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Introduction/Why Use Scripting.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4257;
+   parent.leftFrame.expandToItem('tree2', 'doc4257');
+   var element = parent.leftFrame.document.getElementById('doc4257');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Scripting Reference - Why Use Scripting?</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+<link rel="STYLESHEET" type="text/css" href="torque.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+<td width="700">
+
+<p>As you probably know, all modern, complete game engines offer a method of programming game behavior via some sort of scripting language. But what exactly is a scripting language? What can you do with scripts? And why are they used so much in modern game development? 
+</p><p><br />
+</p>
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#Definition"><span class="tocnumber">1</span> <span class="toctext">Definition</span></a></li>
+<li class='toclevel-1'><a href="#Benifits_of_Using_a_Scripting_Language"><span class="tocnumber">2</span> <span class="toctext">Benifits of Using a Scripting Language</span></a></li>
+<li class='toclevel-1'><a href="#Drawbacks_of_Using_a_Scripting_Language"><span class="tocnumber">3</span> <span class="toctext">Drawbacks of Using a Scripting Language</span></a></li>
+<li class='toclevel-1'><a href="#Scripting_in_Game_Development.2FEngines"><span class="tocnumber">4</span> <span class="toctext">Scripting in Game Development/Engines</span></a></li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="Definition"></a><h4><a name = "HeaderLink1"></a> Definition </h4>
+<p>In general, a scripting language is an interpreted language (which usually is compiled into some form of bytecode before being interpreted) that either controls or is controlled by an external assembly codebase. The latter part requires some explanation.
+</p><p>Some scripting languages are "embedded". This means that the application has a built-in compiler and interpreter. When one runs such an application, the app will, at some point, load and run one or more scripts. An embedded scripting langauge is controlled by the application. The initial part of the execution is hardwired into the executable and cannot be changed by script. Each application that embeds the scripting language can expose functions to that language, and one executable cannot run code in another executable.
+</p><p>Other scripting languages are not embedded. For such languages, there is still an application that is run to execute any script. However, this is not the application that a user might write to expose something to script. That application is just a simple stub whose goal is simply to run some script. The way a user exposes functionality to the script is to write a module that the script can call into. This has the effect of allowing the script to tie code together from seperate modules in some meaningful way.
+</p><p>Examples of the latter are Perl and Python (though Python can be used as an embedded language as well). Games, by and large, prefer to embed their scripting, rather than the alternative. Examples of embedded languages include Lua, JavaScript, and TorqueScript. TorqueScript, unlike many scripting languages, is bound to the various Torque engines and cannot be used outside of these systems. That is, unless one were to buy the engine just to rip the TScript portion out.
+</p>
+<a name="Benifits_of_Using_a_Scripting_Language"></a><h4><a name = "HeaderLink2"></a> Benifits of Using a Scripting Language </h4>
+<p>Because scripting languages are not a single, monolithic entity, not all scripting languages are made equal. They do not all provide these features. When judging a scripting language, one should look at the list of benefits for that particular language and weigh them against the list of drawbacks.
+</p><p>Every scripting language is a fully-formed programming language. They have conditional branches, variables, functions, and the other basic necessities of a useful programming language. A number of scripting languages provide object-oriented features. However, they also have other features that other, non-scripting languages lack:
+</p>
+<ul><li> <b>Untyped</b>- C/C++ are strongly typed languages. When you create a variable of type "int", that is exactly what you have. You cannot store a string in that variable. Virtually all scripting languages allow any variable to hold any type of data. Now, this does not mean that data types do not exist. Testing equality between different types usually results in the equality test returning unequal in most scripting languages. It becomes more important for the user to remember what is stored in a variable; it is generally not a wise idea to use the same variable to store multiple different types of data unless one is very sure of oneself.
+</li></ul>
+<ul><li> <b>Easy definition of variables</b>- C/C++ require that a variable be defined before it gets used. Virtually all scripting languages allow you to define variables simply by storing a value into an unused identifier. As such, a bit of the explicit verbosity of C/C++ goes away.
+</li></ul>
+<ul><li> <b>Functions as first-class objects</b>- A function in C/C++ represents a block of assembly code. The same is true of scripting languages. However, in a scripting language, that block of code is treated exactly as any other type of data. The only difference is that it can be executed, where other data cannot. You can pass functions around, replace function variables (the name of a function in such languages is simply the variable that stores the function object) with other functions, and so forth.
+</li></ul>
+<ul><li> <b>Self-modifying code</b>- Because scripting languages are interpreted (they are almost always compiled into a bytecode that is interpreted to prevent needing to reparse the text data), many scripting languages can modify themselves. The simplest modification is to take a string, whether a direct literal or something you build up at runtime, and compile and execute it as though it were a function. This feature allows the code to, when asked for a function parameter, simply pass in a string. When combined with Functions as First-Class Objects, this feature becomes even more powerful, as these compiled blocks can actually be used as regular functions.
+</li></ul>
+<ul><li> <b>Memory management</b>- Or lack thereof. Scripting languages, by and large, are garbage collected. Explicit memory management, particularly deleting memory, is not required. This, alone, makes scripting languages useful for rapidly doing any programming. Not having to clean up old data is a boon to programming efficiency.
+</li></ul>
+<ul><li> <b>More legible syntax</b>- Typically, scripting languages have more immediately legible syntax than C/C++. Many of them forgo the use of {} for blocks and use words instead. This makes the files more verbose, but it makes picking up the language much easier for people not well versed in C/C++.
+</li></ul>
+<ul><li> <b>Specific tailoring</b>- Some scripting languages are specifically designed to solve a particular region of problems. These languages have specific language features that makes using them for certain problems easier than using a general solution or even another scripting language.
+</li></ul>
+<ul><li> <b>Other Super-C/C++ Features</b>- Some scripting languages provide other enhanced features over C/C++. For example, some scripting langauges have the ability to run coroutines as a native language feature, which is a paradigm that is not a language feature of C/C++.
+</li></ul>
+<p>In general, scripting languages are easier for someone who has no programming experience to use than C/C++. Additionally, because the C/C++ code is hidden from the scripter, it provides a safer environment for creating mod-type functionality.
+</p>
+<a name="Drawbacks_of_Using_a_Scripting_Language"></a><h4><a name = "HeaderLink3"></a> Drawbacks of Using a Scripting Language </h4>
+<p>Scripting, like anything else, is not without its drawbacks. Here they are:
+</p>
+<ul><li> <b>Performance</b>- All of the above typically comes at the price of performance. Most scripting languages are interpreted, which means that the performance of the language is lower than an assembly-compiled language like C/C++. Also, the above features have performance costs.
+</li></ul>
+<ul><li> <b>Memory management</b>- Or lack thereof. There are drawbacks to not being able to explicitly remove memory. Most garbage collecting systems aren't terribly meticulous about collecting memory. As such, explicitly controlling the amount of memory used by the system is difficult, which makes console development a bit problematic. Plus, GC causes performance issues.
+</li></ul>
+<ul><li> <b>Debugging</b>- Debugging a script is typically more difficult than debugging C/C++ code. Modern IDEs and debuggers give C/C++ programmers many tools for debugging. Few scripting languages provide similar tools to script programmers, so finding bugs in script code is typically more difficult than in equivalent C/C++ code.
+</li></ul>
+<ul><li> <b>Untyped</b>- The sword cuts both ways. When it comes time to make sure that the code works, C/C++ will never run into problems where you pass a string instead of an int, or an int instead of an object. C/C++ would catch these mistakes at compile time. The scripting language would only catch them when the function that gets passed the wrong data executes an incorrect statement on that data.
+</li></ul>
+<p><br />
+</p>
+<a name="Scripting_in_Game_Development.2FEngines"></a><h4><a name = "HeaderLink4"></a> Scripting in Game Development/Engines </h4>
+<p>There are two schools of thought in terms of scripting in modern game engines. One school comes from ease of development. That is, use the tool that does the fastest, most effective job in the right place. For writing a rendering system, that is clearly C/C++ code, as the performance problems with script code would quickly add up. However, in higher level code such as placement and spawning of finished entities that have predetermined attack patterns, C/C++ is far inferior to script. Such scripts don't do very much inside the script code itself. For the most part, they spend much of their time simply directing execution to various C/C++ functions, so their performance impact is negligable.
+</p><p>In this school of thought, no thought is given to modability; the question is merely one of implementing the game designer's vision efficiently. This is typical of console games and a small number of PC games.
+</p><p>Modability through script depends on where the scripting language is exposed. If the only tasks that a script can do is spawn or destroy entities in levels, then there is relatively little modability. However, this is a design choice; there is no right or wrong answer. The question is simply how much control the game designer wants to give the modders.
+</p><p>So, the other school of thought is to expose scripting at the lowest level possible that doesn't impose much of a performance penalty. This technique is popular for adversarial games like Unreal, where the mods don't require AI at all (multiplayer mods). Doing complicated AI in a script is difficult, not just because of the performance problems, but because debugging AI is hard even when you have a modern IDE and debugger. Doing so from a script debugging context can be very painful. As such, most mods are either multiplayer type games or games with limitted AI like RPGs.
+</p><p>Do note that both the Quake and Half-Life 2 engines do not use a script-based approach to modding. Their mods are compiled directly into assembly as .dll files. As such, it is more reasonable to use more complex AI in those environments than in the Unreal engine, which is a script-based engine. Professional developers who use Unreal engines are given source code, and they typically code their AI directly using that source code.
+</p><p>That being said, a scriptable engine has a number of times when it is advantageous:
+</p>
+<ul><li> <b>Prototyping</b>- In a script-based environment, quickly bashing something out is typically much easier than through C/C++. If you want to tell if a game idea is going to be fun, it's probably easier to do so from script than from code. After doing so, the script can be, as necessary, ported back into C/C++.
+</li></ul>
+<ul><li> <b>Customizing scripts</b>- As pointed out above, simple scripts for customizing various features, from what gets spawned into a level to tweaking the AI, are very useful to do in a script. Code-based attempts tend to be clunky and require frequent recompiles, whereas scripts tend to compile quickly.
+</li></ul>
+<ul><li> <b>GUI script</b>- A GUI is also a great place that benifits from scripting. While the underlying GUI architecture is built on C/C++, actually creating a functioning GUI is not the simplest thing to be done from code. Creating a GUI in script, due to the syntax of the various scripting languages, tends to be much easier than doing it in C/C++.
+</li></ul>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Introduction/Why Use Scripting.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:55 GMT -->
+</html>

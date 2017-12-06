@@ -1,0 +1,100 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Maya/Animation.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4281;
+   parent.leftFrame.expandToItem('tree2', 'doc4281');
+   var element = parent.leftFrame.document.getElementById('doc4281');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Using Art Assets - Maya - Animation</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+<link rel="STYLESHEET" type="text/css" href="torque.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+<td>
+   
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#General_Information"><span class="tocnumber">1</span> <span class="toctext">General Information</span></a></li>
+<li class='toclevel-1'><a href="#simpleShape_with_Animation"><span class="tocnumber">2</span> <span class="toctext">simpleShape with Animation</span></a></li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+
+<a name="General_Information"></a><h2><a name = "HeaderLink1"></a>General Information</h2><br />
+<p>Sequence nodes tell the exporter how to export animation
+  data over a given range of frames in Maya. They are required if animation is
+  to be exported. The sequence node contains a variety of information such
+  as the name of the animation sequence, start and end frames, cycling and blend
+  information, and frame rate. See the section on <strong>Sequence
+  Node Parameters</strong> (coming soon) for more details
+  about sequence objects.</p>
+<p>Sequence Nodes are actually just empty group objects with
+  custom attributes added to them. The naming convention for sequence nodes is
+  <strong class="red_text">Sequence_<em>name</em></strong>. Sequence nodes
+  must always be prefixed with <strong class="red_text">Sequence_</strong>,
+  otherwise they will not be exported. Sequence nodes can be created and edited
+  manually, but it is far easier to create them from the dtsUtility window.</p>
+
+<a name="simpleShape_with_Animation"></a><h2><a name = "HeaderLink2"></a>simpleShape with Animation</h2><br />
+<p>1. Open <strong class="red_text">simpleShapeAnimation.mb</strong> from the <strong>File
+Pack</strong>.</p>
+<p>The shape has been animated from frames 0 to 30. Note that only the highest
+  level of detail is animated, and the lower detail levels are not.</p>
+<p>2. Open the dtsUtility window.</p>
+<p>3. Click the <strong>Create Sequence
+    Node
+</strong> button to create a sequence node.</p>
+<p>4. In the channel box, rename the sequence to <strong class="red_text">Sequence_simpleAnimation</strong>.</p>
+<p>Note: Make sure to leave <strong class="red_text">Sequence_</strong> at
+  the beginning of the name. The exporter identifies sequence objects using that
+  prefix.</p>
+<p>5. Leave the <strong class="red_text">Start Frame</strong> attribute
+  at <strong class="red_text">0</strong>,
+  and set <strong class="red_text">End
+  Frame</strong> to <strong class="red_text">30</strong>.</p>
+<blockquote>
+  <p> <img src="07_01_channelbox.jpg" alt="channel box" width="186" height="325" border="0" /></p>
+</blockquote>
+<p>6. Export the shape as <strong class="red_text">simpleShapeAnimation.dts</strong> and
+  load it in the ShowTool.</p>
+<p>The shape will be animating when you load it. Use the detail slider to go
+  through the detail levels and notice that all of the details are using the
+  animation from the main detail level. This is because the engine discards the
+  transform data of the lower detail levels and uses the transform data from
+  the highest detail level.</p>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Maya/Animation.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:49 GMT -->
+</html>

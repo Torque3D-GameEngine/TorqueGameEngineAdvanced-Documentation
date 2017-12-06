@@ -1,0 +1,199 @@
+<html>
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Terrain/UsingTerragen.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4264;
+   parent.leftFrame.expandToItem('tree2', 'doc4264');
+   var element = parent.leftFrame.document.getElementById('doc4264');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script><meta http-equiv="Content-Type" content="text/html; charset=ANSI_X3.4-1968"><title>Using Terragen with Atlas</title><link rel="stylesheet" href="style.html" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.62.4"><link rel="home" href="index.html" title="Torque Shader Engine 0.2.x Documentation"><link rel="up" href="ch05.html" title="Chapter&#160;5.&#160;Terrain"><link rel="previous" href="ch05s04.html" title="Atlas Engine Runtime Reference"><link rel="next" href="ch05s06.html" title="Getting Higher Resolution Terrain Data">
+<title>TGEA - Atlas - Generate Chunks</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+<style type="text/css">
+<!--
+.style6 {
+	font-size: 14pt;
+	font-weight: bold;
+}
+-->
+</style>
+</head><BODY id = "BODYID" onLoad = "initComponent()"  bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="section" lang="en"><div class="titlepage"><div><div><h2 align="left" class="title" style="clear: both"><u></u><a name = "HeaderLink0"></a>Using Terragen with Atlas</h2>
+			</div>
+			</div><div></div></div><p align="left">
+		One of the more frequently asked for features in the legacy terrain
+		engine was support for importing data from landscape creation programs
+		like Terragen. This section provides a brief walkthrough of how to 
+		import both heightmap and texture data from a terrain from Terragen.
+		</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+		  <pre><h3 align="left" class="title"><a name = "HeaderLink1"></a>Note:</h3><div align="left">Unfortunately, Terragen can only render a maximum 8129x8129 images without crashing. 
+This means that it is a bit difficult to get high res terrain textures from it. Other programs may be better suited to this task.</div>		</pre>
+		</div>
+        <div class="section" lang="en"><div class="titlepage"><div><div><h3 align="left" class="title"><a name = "HeaderLink2"></a>Exporting A Heightfield</h3>
+		</div></div><div></div></div><p align="left">
+			Exporting heightfield data from Terragen is a relatively 
+			straightforward affair. First, create a terrain of the desired size
+			in Terragen. This is covered in the Terragen documentation, and
+			won't be discussed here. Try googling for "Terragen Tutorial" or
+			reading the manual that ships with the tool. :)
+			</p><p align="left">
+			</p><div class="screenshot"><div class="mediaobject">
+			  <div align="left"><img src="exportRaw.png"></div>
+			</div>
+			</div>
+			<p align="left">
+            
+            After creating the terrain, hit the Export... button and choose 
+            Raw 16-bits Intel Byte-Order. You will be prompted for a place
+            to save the file. Choose the terrains directory in the demo
+            (<tt class="filename">C:\torque\tgea\GameExamples\AtlasDemo\game\scriptsAndAssets\data\terrains</tt> if you
+            used the default settings in the getting started guide) and save it.			</p>
+		  <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+			<h3 align="left" class="title"><a name = "HeaderLink3"></a>Note:</h3>
+			<div align="left">It's useful to have a naming convention so that you can keep all
+			your heightfields separate. One useful technique is to have the name,
+			an underscore, the bit depth, another underscore, and the size of the
+			heightfield. So you might have <tt class="filename">hill_16_4097.raw</tt>.
+			This makes it easy to keep track of different files once you've
+			collected a library of terrains.
+			</div>
+		  </div><p align="left">
+			Now that you've created a raw 16-bit heightfield, you need to
+			generate a <tt class="filename">.chu</tt> chunk file for Atlas to load.
+			</p><p align="left">
+			To do this, bring up TGEA. You will need to type a command into the
+			console to generate the chunk file. Since this can take a while,
+			and the command needs no setup or initialization to run, it might be
+			convenient to simply place it as the last command in the root 
+			<tt class="filename">example/main.cs</tt>, followed by a call to quit();.
+			</p><p align="left">
+			Here is an example call to 
+			<tt class="function">generateChunkFileFromRaw16</tt>, which is what
+			generates the chunk file:
+			</p>
+			<div align="left">
+			  <pre class="programlisting">generateChunkFileFromRaw16(
+    "/game/scriptsAndAssets/data/terrains/data/terrains/test_16_4097.raw", 
+    4096, 2.0, 1.0 / ( 2.0 * 2.0 * 2.0 * 2.0 * 2.0 * 2.0 * 2.0 * 1.5), 
+    "demo/data/terrains/large.chu", 2.0, 6);</pre>
+		    </div>
+		  <p align="left">
+			See the <a href="GeneratingChunks.html" title="Generating a chunk geometry (.chu) file">chunk
+			file generation section</a> for more information on the exact
+			parameters. In short, though, this command will take 
+			<tt class="filename">demo/data/terrains/test_16_4097.raw</tt> and
+			produce <tt class="filename">demo/data/terrains/large.chu</tt> from it.			</p>
+		</div><div class="section" lang="en"><div class="titlepage"><div><div><h3 align="left" class="title"><a name="section.terrain.terragen.texture"></a><a name = "HeaderLink4"></a>Exporting A Texture</h3></div></div><div></div></div><p align="left">
+			Terragen has a powerful rendering engine built into it. Although
+			the results in detail can be a bit rough, it's still much easier
+			to generate a texture than to hand-paint it!
+			</p><div class="screenshot"><div class="mediaobject">
+			  <div align="left"><img src="orthoProj.png"></div>
+			</div>
+			</div><p align="left">
+            Once you've prepared your surface parameters within Terragen, you
+            can render a surface texture for use in Atlas. The first step,
+            shown above, is to set up an orthographic projection by bringing up
+            the render window, selecting camera settings, then hitting the
+            Auto Setup button. This will automagically frame the terrain
+            properly so that you will get pixels in all the right places.
+            </p><div class="screenshot"><div class="mediaobject">
+              <div align="left"><img src="textureSize.png"></div>
+            </div>
+            </div><p align="left">
+            The next step is to determine what size texture you want to generate.
+            The shot above shows how to set this parameter. Hit the "Image Size"
+            button and enter the size of texture you want for your terrain.
+            Remember that the texture size must be a power of two and square.
+            </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <pre><h3 align="left" class="title"><a name = "HeaderLink5"></a>Note:</h3><div align="left">By turning off features in the "Render Settings" window, you can speed up render times. 
+Given that it takes about 12 hours to render an 8192 by 8192 texture on a 2Ghz+ machine, every little bit helps! </div></div>
+            </div><p align="left">
+            Ok! Now that you've gotten a good night's sleep and the render is
+            done (remember, for testing you can always make a smaller 1024x1024
+            texture - it'll just be a lot blurrier looking), let's create a TQT
+            from the texture.
+            </p><p align="left">
+            You'll need to convert the <tt class="filename">.BMP</tt> generated by
+            Terragen into a <tt class="filename">.JPEG</tt>. This is best done by
+            using a tool like Photoshop - many image editors will choke on large
+            images such as we'll be manipulating here. Also, the image produced
+            by Terragen is probably going to be off by 90 degrees CCW. You'll
+            want to correct that or the texture may look a bit odd in-engine.
+            </p><p align="left">
+            Ok, so you have the texture in the <tt class="filename">textures</tt>
+            subdirectory, just like you did with the .RAW in the previous
+            section. Similarly to the previous section, you have to run a
+            command to produce the <tt class="filename">.TQT</tt> file. This command
+            is:
+            </p>
+            <div align="left">
+              <pre class="programlisting">// Example of generating a TQT.
+generateTQT("demo/data/terrains/TGEASurf.jpg", "demo/data/terrains/large.tqt", 5, 512);</pre>
+            </div>
+          <p align="left">
+			This converts <tt class="filename">demo/data/terrains/TGEASurf.jpg</tt>
+			into <tt class="filename">demo/data/terrains/large.tqt</tt>. The other
+			two parameters control the way the texture is converted to a TQT.			</p><p align="left">
+			The first parameter, 5, indicates the depth of the quadtree. This
+			controls how many chunks the texture will be cut into for streaming.
+			If it's more than the depth of the chunk file's quadtree, the lower
+			levels of texture data won't get loaded!
+			</p><p align="left">
+			The second parameter controls the size of the texture chunks in 
+			pixels. There's more info 
+			<a href="GeneratingChunks.html" title="Generating a texture quad tree (.tqt) file">here</a>, but
+			the important thing is that 2<sup>depth</sup> times
+			the chunk size needs to equal the size of the input image.
+			</p>
+		</div><div class="section" lang="en"><div class="titlepage"><div><div><h3 align="left" class="title"><a name="section.terrain.terragen.integration"></a><a name = "HeaderLink6"></a>Putting Things In Game</h3></div></div><div></div></div><p align="left">
+			Ok, you probably want to put these assets in game. Well, that's the
+			simplest part of the whole process...
+			</p><p align="left">
+			First, get your favorite text editor and open the mission 
+			(<tt class="filename">.mis</tt>) file.
+			</p><p align="left">
+			Next, inside the MissionGroup SimGroup, add the following block:
+			</p>
+			<div align="left">
+			  <pre class="programlisting">
+   new AtlasInstance(BigChunk) {
+      position = "0 0 0";
+      rotation = "1 0 0 0";
+      scale = "1 1 1";
+      chunkFile = "~/data/terrains/large.chu"; // Don't forget to tweak these if
+      tqtFile = "~/data/terrains/large.tqt";   // you named your files differently.
+   };
+            </pre>
+		  </div>
+		  <div class="note" style="margin-left: 0.5in; margin-right: 0.5in; border: 1;">
+  		  <pre><h3 align="left" class="title"><a name = "HeaderLink7"></a>Note:</h3><div align="left">Currently, Atlas does not deal well with changing the chunk or TQT file settings in-engine. The best way to get things to work is to exit the game, edit the <tt class="filename">.mis</tt>, and reenter. 
+A future milestone will resolve this issue.</div>
+  		  </pre>
+			</div><p align="left">
+			Save the mission file, and you're all ready to go. Launch the mission
+			and enjoy your new terrain!
+			</p></div>
+</div>
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Terrain/UsingTerragen.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:24 GMT -->
+</html>

@@ -1,0 +1,188 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Maya/Setup.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4285;
+   parent.leftFrame.expandToItem('tree2', 'doc4285');
+   var element = parent.leftFrame.document.getElementById('doc4285');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Using Art Assets - Setup</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+<td><div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+  mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0in 0in 2.0pt 0in'>
+  <h2 style='text-align:justify'><a name="Downloading_the_File_Pack"></a><span
+  style='font-size:13.5pt'><o:p></o:p></span><a name = "HeaderLink0"></a>Downloading the File Pack            </h2>
+</div>
+  <p style='margin-bottom:12.0pt;text-align:justify'>The file pack includes the
+    exporter plugin, the dtsUtility script to make the setup and export process
+    easier (written by Danny Ngan), as well as the necessary .mb files and
+    textures used in the &quot;Getting Started&quot; tutorials. Note that there
+    are several versions of the plugin in the file pack. The exporter will only
+    work for the versions of Maya it was compiled for, so make sure you use the
+    proper file.</p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><a
+  href="Dts_maya_allversions.zip">CLICK HERE TO DOWNLOAD THE FILE PACK FOR Maya
+    (Windows 4.5-7.0 - Macintosh 6.0-7.0)</a><br>
+    <a href="Maya2DTS_Maya_2k8x64.zip">Maya 2k8 x64</a><br>
+    <a href="Maya2DTS_Maya_2k8x32.zip">Maya 2k8 x32</a><br>
+    <a href="Maya2DTS_Maya_8_5x64.zip">Maya 8.5 x64</a><br>
+    <a href="Maya2DTS_Maya_8_5x32.zip">Maya 8.5 x32</a><br>
+    <a href="Maya2DTS_Maya_8_0x64.zip">Maya 8.0 x64</a><br>
+    <a href="Maya2DTS_Maya_8_0x32.zip">Maya 8.0 x32</a><br>
+    <a href="Maya2DTS_Maya_7_0.zip">Maya 7.0 x32</a><br>
+    <a href="Maya2DTS_Maya_6_5.zip">Maya 6.5 x32</a><br style='mso-special-character:
+  line-break'>
+    <![if !supportLineBreakNewLine]>
+    <br style='mso-special-character:line-break'>
+    <![endif]>
+  </p>
+  <p style='margin-bottom:12.0pt;text-align:justify'>The directory you choose
+    to save the file pack to is unimportant, so save it to wherever it's easiest
+    for you to find</p>
+  </td>
+
+</tr>
+
+</table>
+<div align="left">
+  <table width="1500" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td height="1" width="1500" bgcolor="#000000"></td>
+    </tr>
+  </table>
+  <br />
+</div>
+<table width="1649" border="0" cellpadding="15" cellspacing="0" style="text-align: justify;">
+<tr>
+
+<td>
+  <div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+  mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0in 0in 2.0pt 0in'>
+    <h2 style='text-align:justify'><a name="Installing_the_Exporter"></a><span
+  style='font-size:13.5pt'><o:p></o:p></span><a name = "HeaderLink1"></a>Installing the Exporter                </h2>
+  </div>
+  <p style='margin-bottom:12.0pt;text-align:justify'>To install the exporter,
+    simply place the plugin file (&quot;maya2dtsExporter.mll&quot; for Windows
+    and &quot;Maya2DTSExporter.lib&quot; for OS X) in the user plugins directory: </p>
+  <p style='margin-bottom:12.0pt;text-align:justify'>Windows: My
+    Documents\maya\7.0\plug-ins<br>
+    OS X: Home folder, Library/Preference/AliasWavefront/maya/7.0/plug-ins</p>
+  <p style='margin-bottom:12.0pt;text-align:justify'>To install the dtsUtility
+    MEL script, place the script file (&quot;dtsUtility.mel&quot;) in the user
+    scripts directory:</p>
+  <p style='margin-bottom:12.0pt;text-align:justify'>Windows: My
+    Documents\maya\7.0\scripts <br>
+    OS X: Home folder, Library/Preferences/AliasWavefront/maya/7.0/scripts </p>
+  <p style='margin-bottom:12.0pt;text-align:justify'>Make sure that Maya isn't
+    running, as it loads plugins on start up. After you place the file in the
+    plugins directory, start up Maya.</p>
+  <p style='margin-bottom:12.0pt;text-align:justify'>Once Maya has started, we
+    need to make sure the plugin is loaded, and make it auto-load from now on. To
+    do this, go to &quot;Window menu &gt; Settings/Preferences &gt; Plugin
+    Manager...&quot; </p>
+  <p style='margin-bottom:12.0pt;text-align:justify'>
+    <!--[if gte vml 1]><v:shapetype
+   id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+   path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+   <v:stroke joinstyle="miter"/>
+   <v:formulas>
+    <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+    <v:f eqn="sum @0 1 0"/>
+    <v:f eqn="sum 0 0 @1"/>
+    <v:f eqn="prod @2 1 2"/>
+    <v:f eqn="prod @3 21600 pixelWidth"/>
+    <v:f eqn="prod @3 21600 pixelHeight"/>
+    <v:f eqn="sum @0 0 1"/>
+    <v:f eqn="prod @6 1 2"/>
+    <v:f eqn="prod @7 21600 pixelWidth"/>
+    <v:f eqn="sum @8 21600 0"/>
+    <v:f eqn="prod @7 21600 pixelHeight"/>
+    <v:f eqn="sum @10 21600 0"/>
+   </v:formulas>
+   <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" aspectratio="t"/>
+  </v:shapetype><v:shape id="_x0000_i1030" type="#_x0000_t75" style='width:213.75pt;
+   height:278.25pt'>
+   <v:imagedata src="Setup_files/image001.jpg" o:title="MayaDts_1"/>
+  </v:shape><![endif]-->
+    <![if !vml]>
+    <img src="Setup_files/image003.jpg" alt="003" width="285" height="371">
+    <![endif]>
+  </p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><img src=MayaPluginManager.jpg alt="PluginManager" width=384
+  height=411 border=0 id="_x0000_i1025"></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'>Make sure the boxes for
+    &quot;loaded&quot; and &quot;auto-load&quot; are checked. Now the exporter
+    will load up when you load Maya.</p>
+  <p style='margin-bottom:12.0pt;text-align:justify'>But we still need to
+    access the dtsUtility script. Open the script editor by clicking the button
+    in the bottom right of the main Maya window.</p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><img src=MayaScriptEditorButton.jpg alt="EditorButton" width=372
+  height=400 border=0 id="_x0000_i1026"></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'>This will bring up the
+    script editor. You can run the script by typing:</p>
+  <div style='mso-element:para-border-div;border:dashed #2F6FAB 1.0pt;
+  mso-border-alt:dashed #2F6FAB .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;
+  background:#F9F9F9'>
+    <pre style='text-align:justify;background:#F9F9F9'><span style='mso-spacerun:yes'>&nbsp; </span>dtsUtility;</pre>
+  </div>
+  <p style='margin-bottom:12.0pt;text-align:justify'>into the script editor and
+    pressing enter on the numpad. If all is well you will see the DTS Utility
+    window come up. </p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><img src=MayaDtsUtility.jpg alt="DTSUtility" width=168
+  height=415 border=0 id="_x0000_i1027"></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'>Now we need to make a
+    button so it is easier to get to the utility. First go to the script editor
+    (or re-open it if you closed it). Highlight the command you just typed in....</p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><img src=MayaScriptEditor.jpg alt="ScriptEditor" width=648
+  height=425 border=0 id="_x0000_i1028"></p>
+  <p style='margin-bottom:12.0pt;text-align:justify'>and then click and drag
+    the words up to your shelf. It will look like this:</p>
+  <p style='margin-bottom:12.0pt;text-align:justify'><img src=MayaShelfButton.jpg alt="ShelfButton" width=769
+  height=209 border=0 id="_x0000_i1029"></p>
+  <p style='text-align:justify'>Now you can click this button to open the DTS
+    Utility window. </p>
+  <p style='margin-bottom:12.0pt;text-align:justify'>That's it, the exporter is
+    installed! Lets move on to <a href="Simple%20Shape.html">Exporting a
+      Simple Shape</a>.<br style='mso-special-character:line-break'>
+    <![if !supportLineBreakNewLine]>
+    <br style='mso-special-character:line-break'>
+    <![endif]>
+  </p>
+  <p>&nbsp;</p>
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Maya/Setup.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:48 GMT -->
+</html>

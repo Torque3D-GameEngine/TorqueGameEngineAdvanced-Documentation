@@ -1,0 +1,1052 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_12.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4225;
+   parent.leftFrame.expandToItem('tree2', 'doc4225');
+   var element = parent.leftFrame.document.getElementById('doc4225');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueScript Console Functions 12 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <p xmlns="http://www.w3.org/1999/xhtml"><big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <strong> Video / Texturing</strong> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br />
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table id="toc" class="toc" xmlns="http://www.w3.org/1999/xhtml"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Video_.2F_Texturing"><span class="tocnumber">1</span> <span class="toctext">Video / Texturing</span></a>
+<ul>
+<li class="toclevel-2"><a href="#addMaterialMapping.28_materialName.2C_map0_.5B_.2C_..._.2C_map97_.5D.29"><span class="tocnumber">1.1</span> <span class="toctext">addMaterialMapping( materialName, map0 [ , ... , map97 ])</span></a></li>
+<li class="toclevel-2"><a href="#clearTextureHolds.28.29"><span class="tocnumber">1.2</span> <span class="toctext">clearTextureHolds()</span></a></li>
+<li class="toclevel-2"><a href="#dumpTextureStats.28.29"><span class="tocnumber">1.3</span> <span class="toctext">dumpTextureStats()</span></a></li>
+<li class="toclevel-2"><a href="#flushTextureCache.28.29"><span class="tocnumber">1.4</span> <span class="toctext">flushTextureCache()</span></a></li>
+<li class="toclevel-2"><a href="#getDesktopResolution.28.29"><span class="tocnumber">1.5</span> <span class="toctext">getDesktopResolution()</span></a></li>
+<li class="toclevel-2"><a href="#getDisplayDeviceList.28.29"><span class="tocnumber">1.6</span> <span class="toctext">getDisplayDeviceList()</span></a></li>
+<li class="toclevel-2"><a href="#getResolutionList.28_devicename_.29"><span class="tocnumber">1.7</span> <span class="toctext">getResolutionList( devicename )</span></a></li>
+<li class="toclevel-2"><a href="#getVideoDriverInfo.28.29"><span class="tocnumber">1.8</span> <span class="toctext">getVideoDriverInfo()</span></a></li>
+<li class="toclevel-2"><a href="#isDeviceFullScreenOnly.28_devicename_.29"><span class="tocnumber">1.9</span> <span class="toctext">isDeviceFullScreenOnly( devicename )</span></a></li>
+<li class="toclevel-2"><a href="#isFullScreen.28.29"><span class="tocnumber">1.10</span> <span class="toctext">isFullScreen()</span></a></li>
+<li class="toclevel-2"><a href="#nextResolution.28.29"><span class="tocnumber">1.11</span> <span class="toctext">nextResolution()</span></a></li>
+<li class="toclevel-2"><a href="#png2jpg.28_pngFilename_.5B_.2C_quality_.5D_.29"><span class="tocnumber">1.12</span> <span class="toctext">png2jpg( pngFilename [ , quality ] )</span></a></li>
+<li class="toclevel-2"><a href="#prevResolution.28.29"><span class="tocnumber">1.13</span> <span class="toctext">prevResolution()</span></a></li>
+<li class="toclevel-2"><a href="#screenShot.28_filename_.2C_format_.29"><span class="tocnumber">1.14</span> <span class="toctext">screenShot( filename , format )</span></a></li>
+<li class="toclevel-2"><a href="#setDefaultFov.28_defaultFOV_.29"><span class="tocnumber">1.15</span> <span class="toctext">setDefaultFov( defaultFOV )</span></a></li>
+<li class="toclevel-2"><a href="#setDisplayDevice.28_deviceName_.5B.2C_width_.5B_.2C_height_.5B.2C_bpp_.5B.2C_fullScreen.5D_.5D_.5D_.5D_.29"><span class="tocnumber">1.16</span> <span class="toctext">setDisplayDevice( deviceName [, width [ , height [, bpp [, fullScreen] ] ] ] )</span></a></li>
+<li class="toclevel-2"><a href="#setFov.28_FOV_.29"><span class="tocnumber">1.17</span> <span class="toctext">setFov( FOV )</span></a></li>
+<li class="toclevel-2"><a href="#setOpenGLAnisotropy.28_0.0_.._max.f_.29"><span class="tocnumber">1.18</span> <span class="toctext">setOpenGLAnisotropy( 0.0 .. max.f )</span></a></li>
+<li class="toclevel-2"><a href="#setOpenGLInteriorMipReduction.28_reductionVal_.29"><span class="tocnumber">1.19</span> <span class="toctext">setOpenGLInteriorMipReduction( reductionVal )</span></a></li>
+<li class="toclevel-2"><a href="#setOpenGLMipReduction.28_reductionVal_.29"><span class="tocnumber">1.20</span> <span class="toctext">setOpenGLMipReduction( reductionVal )</span></a></li>
+<li class="toclevel-2"><a href="#setOpenGLSkyMipReduction.28_reductionVal_.29"><span class="tocnumber">1.21</span> <span class="toctext">setOpenGLSkyMipReduction( reductionVal )</span></a></li>
+<li class="toclevel-2"><a href="#setOpenGLTextureCompressionHint_.28_hint_.29"><span class="tocnumber">1.22</span> <span class="toctext">setOpenGLTextureCompressionHint ( hint )</span></a></li>
+<li class="toclevel-2"><a href="#setRes.28_width_.2C_height_.2C_bpp_.29"><span class="tocnumber">1.23</span> <span class="toctext">setRes( width , height , bpp )</span></a></li>
+<li class="toclevel-2"><a href="#setScreenMode.28_width_.2C_height_.2C_bpp_.2C_fullScreen_.29"><span class="tocnumber">1.24</span> <span class="toctext">setScreenMode( width , height , bpp , fullScreen )</span></a></li>
+<li class="toclevel-2"><a href="#setVerticalSync.28_enable_.29"><span class="tocnumber">1.25</span> <span class="toctext">setVerticalSync( enable )</span></a></li>
+<li class="toclevel-2"><a href="#switchBitDepth.28.29"><span class="tocnumber">1.26</span> <span class="toctext">switchBitDepth()</span></a></li>
+<li class="toclevel-2"><a href="#toggleFullScreen.28.29"><span class="tocnumber">1.27</span> <span class="toctext">toggleFullScreen()</span></a></li>
+<li class="toclevel-2"><a href="#videoSetGammaCorrection.28_gamma_.29"><span class="tocnumber">1.28</span> <span class="toctext">videoSetGammaCorrection( gamma )</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p xmlns="http://www.w3.org/1999/xhtml"></p>
+<a name="Video_.2F_Texturing" xmlns="http://www.w3.org/1999/xhtml"></a><h2 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink1"></a>Video / Texturing</h2>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="addMaterialMapping.28_materialName.2C_map0_.5B_.2C_..._.2C_map97_.5D.29"></a><h3><a name = "HeaderLink2"></a>addMaterialMapping( materialName, map0 [ , ... , map97 ])</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>addMaterialMapping</b></i> function to create a new material map instance.  These maps are used by terrain and interiors for creating proper footstep sounds and dust puffs when an avatar treads upon a terrain block or interior surface using the associated texture.<br />
+<br />
+<i><b>Syntax<br />
+materialName</b></i> – The unadorned texture name this map is associated with. For example, "sand.jpg" would have a <i><b>materialName</b></i> of "sand".<br />
+<i><b>map0</b></i> – At least one (required) map.  See map chart below for format of these maps.<br />
+<b>... , map97</b> – Up to 96 additional maps.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+There are fewer mapping types than the maximum number of maps this function will accept.<br />
+<br />
+</p>
+<pre>
+addMaterialMapping( "sand" , "sound: 0" , "color: 0.46 0.36 0.26 0.4 0.0" );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" bgcolor="#999999"><b><div class="center">Map Type</div></b></td>
+<td width="30%" bgcolor="#999999"><b><div class="center">Format</div></b></td>
+<td width="50%" bgcolor="#999999"><b><div class="center">Purpose</div></b></td>
+</tr>
+
+<tr>
+<td width="20%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">SoundType</div></td>
+<td width="30%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">"sound:#"</div></td>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"> Map this surface to the numeric sound type #: 0 – Soft, 1  – Hard, 2 – Metal, 3 – Snow.</td>
+</tr>
+
+<tr>
+<td width="20%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">DetailTexture</div></td>
+<td width="30%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">"detail:texture"</div></td>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"> A texture name to be used for a detail texture on  surfaces using this material map.</td>
+</tr>
+
+<tr>
+<td width="20%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">EnvironmentMap</div></td>
+<td width="30%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">"environment:texturereflect"</div></td>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"> This material map has an environment map and it should  use texture for the mapping and give it a reflective factor  of reflect, where reflect is in the range [0.25, 1.0].</td>
+</tr>
+
+<tr>
+<td width="20%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">SmokePuffColor</div></td>
+<td width="30%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">"color: R G B StartA EndA"</div></td>
+<td width="50%" align="left" valign="top" bgcolor="#CCCCCC"> When a player treads on this surface and has smoke  puffs enabled, the smoke will have the color specified in  R, G, and B, where these values are floating point values  in the range [0.0, 1.0].  StartA is a floating point value in  the range [0.0, 1.0] specifying the puff's starting alpha.  EndA is of the same format and specifies the puff's  ending Alpha.</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="clearTextureHolds.28.29"></a><h3><a name = "HeaderLink3"></a>clearTextureHolds()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>clearTextureHolds</b></i> function to free and release any held textures, returning the size of the held textures free. <br />
+<br />
+<b>Returns</b><br />
+Returns the space freed.<br />
+<br />
+<i><b>Notes</b></i><br />
+As long as a texture is not currently in use, it will be released.<br />
+<br />
+<b>See Also</b><br />
+dumpTextureStats, flushTextureCache, purgeResources<br />
+<br />
+</p>
+<pre>
+clearTextureHolds();
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="dumpTextureStats.28.29"></a><h3><a name = "HeaderLink4"></a>dumpTextureStats()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>dumpTextureStats</b></i> function to dump information about each texture currently in use to the console.  This information will be printed in this format:<br />
+<br />
+aaa type: (refCount, holding) textureSpace (filename)<br />
+<br />
+<i><b>Output Syntax<br />
+type:</b></i> - Type of this texture. See 'Texture Types' list below.<br />
+<i><b>refCount</b></i> – Number of references to this texture.<br />
+<i><b>holding</b></i> – Is this texture being held? "yes" or "no"<br />
+<i><b>textureSpace</b></i> – Bytes used by this texture.<br />
+<i><b>filename</b></i> – Full path to this texture.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+For this to work, the engine must have been compiled with TORQUE_DEBUG defined.<br />
+<br />
+<b>See Also</b><br />
+clearTextureHolds, flushTextureCache<br />
+<br />
+</p>
+<pre>
+dumpTextureStats();
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="flushTextureCache.28.29"></a><h3><a name = "HeaderLink5"></a>flushTextureCache()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>flushTextureCache</b></i> function to flush the texture cache.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+clearTextureHolds, dumpTextureStats, purgeResources<br />
+<br />
+</p>
+<pre>
+flushTextureCache();
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getDesktopResolution.28.29"></a><h3><a name = "HeaderLink6"></a>getDesktopResolution()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getDesktopResolution</b></i> function to determine the current resolution of the desktop (not the application).<br />
+<br />
+<b>Returns</b><br />
+Returns a string containing the current desktop resolution, including the width height and the current bits per pixel.<br />
+<br />
+<i><b>Notes</b></i><br />
+To get the current resolution of a windowed display of the torque game engine, simply examine the global variable '$pref::Video::resolution'.<br />
+<br />
+<b>See Also</b><br />
+getDisplayDeviceList, getResolutionList, nextResolution, prevResolution, setDisplayDevice, setRes, setScreenMode, switchBitDepth<br />
+<br />
+</p>
+<pre>
+%res = getDesktopResolution();
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getDisplayDeviceList.28.29"></a><h3><a name = "HeaderLink7"></a>getDisplayDeviceList()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getDisplayDeviceList</b></i> function to get a list of valid display devices.<br />
+<br />
+<b>Returns</b><br />
+Returns a tab separated list of valid display devices.<br />
+<br />
+<b>See Also</b><br />
+getDesktopResolution, getResolutionList, setRes, setScreenMode, switchBitDepth<br />
+<br />
+</p>
+<pre>
+echo(“Display Device(s) :” @ getDisplayDeviceList() );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getResolutionList.28_devicename_.29"></a><h3><a name = "HeaderLink8"></a>getResolutionList( devicename )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getResolutionList</b></i> function to get a semicolon separated list of legal resolutions for a specified device.<br />
+<br />
+<i><b>Syntax<br />
+deviceName</b></i> – A string containing a supported display device.<br />
+<br />
+<b>Returns</b><br />
+Returns a tab separated list of valid display resolutions for <i><b>devicename</b></i>.<br />
+<br />
+<i><b>Notes</b></i><br />
+Resolutions are always in the form: <i>width height bpp</i>, where <i>width</i> and <i>height</i> are in pixels and <i>bpp</i> is bits-per-pixel.<br />
+<br />
+<b>See Also</b><br />
+getDesktopResolution, getDisplayDeviceList, setRes, setScreenMode, switchBitDepth<br />
+<br />
+</p>
+<pre>
+echo("Possible resolutions :” @ getResolutionList( "OpenGL" ) );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getVideoDriverInfo.28.29"></a><h3><a name = "HeaderLink9"></a>getVideoDriverInfo()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getVideoDriverInfo</b></i> function to dump information on the video driver to the console.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+</p>
+<pre>
+echo(“Device driver info :” @ getVideoDriverInfo() );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="isDeviceFullScreenOnly.28_devicename_.29"></a><h3><a name = "HeaderLink10"></a>isDeviceFullScreenOnly( devicename )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isDeviceFullScreenOnly</b></i> function to determine if the device specified in devicename is for full screen display only, or whether it supports windowed mode too.<br />
+<br />
+<i><b>Syntax<br />
+deviceName</b></i> – A string containing a supported display device.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the device can only display full scree, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+getResolutionList<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="isFullScreen.28.29"></a><h3><a name = "HeaderLink11"></a>isFullScreen()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isFullScreen</b></i> function to determine if the current application is displayed in full-screen mode.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the engine is currently displaying full-screen, otherwise returns false.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="nextResolution.28.29"></a><h3><a name = "HeaderLink12"></a>nextResolution()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>nextResolution</b></i> function to switch to the next valid (higher) resolution for the current display device.<br />
+<br />
+<b>Returns</b><br />
+Returns true if switch was successful, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+getDesktopResolution, prevResolution, getResolutionList, setRes, setScreenMode, switchBitDepth<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="png2jpg.28_pngFilename_.5B_.2C_quality_.5D_.29"></a><h3><a name = "HeaderLink13"></a>png2jpg( pngFilename [ , quality ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>png2jpg</b></i> function to save a PNG file specified by <i><b>pngFilename</b></i> as a similarly named JPEG file with the optionally specified <i><b>qualitiy</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+pngFilename</b></i> – The path and file name of the PNG file to convert.<br />
+<i><b>quality</b></i> – An optional quality between 0 and 100.  The default quality is 90.<br />
+<br />
+<br />
+<b>Returns</b><br />
+Returns -1 if the file could not be openned, 0 on other failures, and 1 if the conversion worked.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="prevResolution.28.29"></a><h3><a name = "HeaderLink14"></a>prevResolution()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>prevResolution</b></i> function to switch to the previous valid (lower) resolution for the current display device.<br />
+<br />
+<b>Returns</b><br />
+Returns true if switch was successful, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+getDesktopResolution, nextResolution, getResolutionList, setRes, setScreenMode, switchBitDepth<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="screenShot.28_filename_.2C_format_.29"></a><h3><a name = "HeaderLink15"></a>screenShot( filename , format )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>screenShot</b></i> function to capture a screenshot and store it in the file specified by filename.<br />
+<br />
+<i><b>Syntax<br />
+filename</b></i> – Path to file in which to save screenshot.<br />
+<i><b>format</b></i>   – The format to save the file in, PNG or JPG.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+panoramaScreenShot<br />
+<br />
+</p>
+<pre>
+screenshot("capture0.png", "PNG" );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setDefaultFov.28_defaultFOV_.29"></a><h3><a name = "HeaderLink16"></a>setDefaultFov( defaultFOV )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setDefaultFov</b></i> function to set the default field-of-view (FOV).<br />
+<br />
+<i><b>Syntax<br />
+defaultFOV</b></i> – A FOV value between 0.0 and 180.0.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+SetFOV<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setDisplayDevice.28_deviceName_.5B.2C_width_.5B_.2C_height_.5B.2C_bpp_.5B.2C_fullScreen.5D_.5D_.5D_.5D_.29"></a><h3><a name = "HeaderLink17"></a>setDisplayDevice( deviceName [, width [ , height [, bpp [, fullScreen] ] ] ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setDisplayDevice</b></i> function to select a display device and to set the initial <i><b>width</b></i>, <i><b>height</b></i> and bits-per-pixel (<i><b>bpp</b></i>) setting, as well as whether the application is windowed or in <i><b>fullScreen</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+deviceName</b></i> – A supported display device name.<br />
+<i><b>width</b></i> – Resolution width in pixels.<br />
+<i><b>height</b></i> - Resolution height in pixels.<br />
+<i><b>bpp</b></i> – Pixel resolution in bits-per-pixel (16 or 32).<br />
+<i><b>fullScreen</b></i> – A boolean value.  If set to true, the application displays in full-screen mode, otherwise it will attempt to display in windowed mode.<br />
+<br />
+<b>Returns</b><br />
+Returns true on success, false otherwise.<br />
+<br />
+<i><b>Notes</b></i><br />
+If no resolution information is specified, the first legal resolution on this device's resolution list will be used.  Furthermore, for each optional argument if the subsequent arguments are not specified, the first matching case will be used.  Lastly, if the application is not told to display in full screen, but the device only supports windowed, the application will be forced into windowed mode.<br />
+<br />
+<b>See Also</b><br />
+getDesktopResolution, getDisplayDeviceList, getResolutionList, nextResolution, prevResolution, setRes, setScreenMode, switchBitDepth<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setFov.28_FOV_.29"></a><h3><a name = "HeaderLink18"></a>setFov( FOV )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setFov</b></i> function to set the current field-of-view (FOV).<br />
+<br />
+<i><b>Syntax<br />
+FOV</b></i> – A FOV value between 0.0 and 180.0.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+setDefaultFov<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setOpenGLAnisotropy.28_0.0_.._max.f_.29"></a><h3><a name = "HeaderLink19"></a>setOpenGLAnisotropy( 0.0 .. max.f )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setOpenGLAnisotropy</b></i> function to enable or disable anisotropic filtering.<br />
+<br />
+<i><b>Syntax<br />
+0.0 .. max.f</b></i>  - A value between 0.0 and the maximum anisotropic level supported by the current machine.  Selecting a value higher than <i><b>max.f</b></i> results in <i><b>max.f</b></i>.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+Anisotropic filtering is somewhat 'expensive' filtering technique that uses more texels than your average filtering technique (bilinear or trilinear) for determining the color of a pixel for cases where more than one texel may be responsible for that pixels color.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setOpenGLInteriorMipReduction.28_reductionVal_.29"></a><h3><a name = "HeaderLink20"></a>setOpenGLInteriorMipReduction( reductionVal )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setOpenGLInteriorMipReduction</b></i> function to set the texture quality for interiors.<br />
+<br />
+<i><b>Syntax<br />
+reductionVal</b></i> – An integer value between 0 and 5, with 0 being the lowest quality and 5 being the highest quality.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+setOpenGLMipReduction ,setOpenGLSkyMipReduction<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setOpenGLMipReduction.28_reductionVal_.29"></a><h3><a name = "HeaderLink21"></a>setOpenGLMipReduction( reductionVal )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setOpenGLMipReduction</b></i> function to control shape texture detail<br />
+<br />
+<i><b>Syntax<br />
+reductionVal</b></i> – An integer value between 0 and 5, with 0 being the lowest quality and 5 being the highest quality.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+setOpenGLInteriorMipReduction, setOpenGLSkyMipReduction<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setOpenGLSkyMipReduction.28_reductionVal_.29"></a><h3><a name = "HeaderLink22"></a>setOpenGLSkyMipReduction( reductionVal )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setOpenGLSkyMipReduction</b></i> function to control texture detail for the skybox and clouds.<br />
+<br />
+<i><b>Syntax<br />
+reductionVal</b></i> – An integer value between 0 and 5, with 0 being the lowest quality and 5 being the highest quality.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+setOpenGLInteriorMipReduction, setOpenGLMipReduction<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setOpenGLTextureCompressionHint_.28_hint_.29"></a><h3><a name = "HeaderLink23"></a>setOpenGLTextureCompressionHint ( hint )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setOpenGLTextureCompressionHint</b></i> function to select the OpenGL texture compression method.<br />
+<br />
+<i><b>Syntax<br />
+hint</b></i> -  "GL_DONT_CARE", "GL_FASTEST", or "GL_NICEST".  (Please refer to an OpenGL text for information on what these mean.)<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+</p>
+<pre>
+setOpenGLTextureCompressionHint(GL_NICEST);
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setRes.28_width_.2C_height_.2C_bpp_.29"></a><h3><a name = "HeaderLink24"></a>setRes( width , height , bpp )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setRes</b></i> function to set the screen to the specified <i><b>width</b></i>, <i><b>height</b></i>, and bits-per-pixel (<i><b>bpp</b></i>).<br />
+<br />
+<i><b>Syntax<br />
+width</b></i> – Resolution width in pixels.<br />
+<i><b>height</b></i> - Resolution height in pixels.<br />
+<i><b>bpp</b></i> – Pixel resolution in bits-per-pixel (16 or 32).<br />
+<br />
+<b>Returns</b><br />
+Returns true if successful, otherwise false.<br />
+<br />
+<b>See Also</b><br />
+getDesktopResolution, getDisplayDeviceList, getResolutionList, nextResolution, prevResolution, setDisplayDevice, setScreenMode, switchBitDepth<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setScreenMode.28_width_.2C_height_.2C_bpp_.2C_fullScreen_.29"></a><h3><a name = "HeaderLink25"></a>setScreenMode( width , height , bpp , fullScreen )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setScreenMode</b></i> function to set the screen to the specified <i><b>width</b></i>, <i><b>height</b></i>, and bits-per-pixel (<i><b>bpp</b></i>).  Additionally, if <i><b>fullScreen</b></i> is set to true the engine will attempt to display the application in full-screen mode, otherwise it will attempt to used windowed mode.<br />
+<br />
+<i><b>Syntax<br />
+width</b></i> – Resolution width in pixels.<br />
+<i><b>height</b></i> - Resolution height in pixels.<br />
+<i><b>bpp</b></i> – Pixel resolution in bits-per-pixel (16 or 32).<br />
+<i><b>fullScreen</b></i> – A boolean value.  If set to true, the application displays in full-screen mode, otherwise it will attempt to display in windowed mode.<br />
+<br />
+<b>Returns</b><br />
+Returns true if successful, otherwise false.<br />
+<br />
+<b>See Also</b><br />
+getDesktopResolution, getDisplayDeviceList, getResolutionList, nextResolution, prevResolution, setDisplayDevice, setRes, switchBitDepth<br />
+<br />
+</p>
+<pre>
+setScreenMode( 1024 , 768 , 32 , false ); // 1024x768 32bpp windowed mode
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setVerticalSync.28_enable_.29"></a><h3><a name = "HeaderLink26"></a>setVerticalSync( enable )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setVerticalSync</b></i> function to force the framerate to sync up with the vertical refresh rate.<br />
+<br />
+<i><b>Syntax<br />
+enable</b></i> – A boolean value.  If set to true, the engine will only swap front and back buffers on or before a vertical refresh pass.<br />
+<br />
+<b>Returns</b><br />
+Returns true on success, false otherwise.<br />
+<br />
+<i><b>Notes</b></i><br />
+This is used to reduce excessive swapping/rendering.  There is generally no purpose in rendering any faster than the monitor will support.  Those extra 'ergs' can be used for something else.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="switchBitDepth.28.29"></a><h3><a name = "HeaderLink27"></a>switchBitDepth()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>switchBitDepth</b></i> function to toggle the bits-per-pixel (bpp) pixel resolutoin between 16 and 32.<br />
+<br />
+<b>Returns</b><br />
+Returns true on success, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+getDesktopResolution, getDisplayDeviceList, getResolutionList, nextResolution, prevResolution, setDisplayDevice, setRes, <br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="toggleFullScreen.28.29"></a><h3><a name = "HeaderLink28"></a>toggleFullScreen()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>toggleFullScreen</b></i> function to swith from full-screen mode to windowed, or vice versa.<br />
+<br />
+<b>Returns</b><br />
+Returns true on success, false otherwise.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="videoSetGammaCorrection.28_gamma_.29"></a><h3><a name = "HeaderLink29"></a>videoSetGammaCorrection( gamma )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>videoSetGammaCorrection</b></i> function to adjust the gamma for the video card.<br />
+<br />
+<i><b>Syntax<br />
+gamma</b></i> – A floating-point value between 0.0 and 1.0.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+The card will revert to it's default gamma setting as long as the application closes normally.<br />
+<br />
+</p>
+<pre>
+videoSetGammaCorrection($pref::OpenGL::gammaCorrection);
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="10%" bgcolor="#999999"><b><div class="center">Type</div></b></td>
+<td width="90%" bgcolor="#999999"><b><div class="center">Description</div></b></td>
+</tr>
+
+<tr>
+<td width="10%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">0</div></td>
+<td width="90%" align="left" valign="top" bgcolor="#CCCCCC">Regular bitmap</td>
+</tr>
+
+<tr>
+<td width="10%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">1</div></td>
+<td width="90%" align="left" valign="top" bgcolor="#CCCCCC">Same as 1, but the data will be kept after creation</td>
+</tr>
+
+<tr>
+<td width="10%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">2</div></td>
+<td width="90%" align="left" valign="top" bgcolor="#CCCCCC">Same as 1 except data will not be loaded to OpenGL and cannot be "bound"</td>
+</tr>
+
+<tr>
+<td width="10%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">3</div></td>
+<td width="90%" align="left" valign="top" bgcolor="#CCCCCC">Internal ONLY.</td>
+</tr>
+
+<tr>
+<td width="10%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">4</div></td>
+<td width="90%" align="left" valign="top" bgcolor="#CCCCCC">Same as 1, but has "small textures"</td>
+</tr>
+
+<tr>
+<td width="10%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">5</div></td>
+<td width="90%" align="left" valign="top" bgcolor="#CCCCCC">Terrain texture.</td>
+</tr>
+
+<tr>
+<td width="10%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">6</div></td>
+<td width="90%" align="left" valign="top" bgcolor="#CCCCCC">Sky Texture</td>
+</tr>
+
+<tr>
+<td width="10%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">7</div></td>
+<td width="90%" align="left" valign="top" bgcolor="#CCCCCC">Interior Texture</td>
+</tr>
+
+<tr>
+<td width="10%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">8</div></td>
+<td width="90%" align="left" valign="top" bgcolor="#CCCCCC">Bump Texture</td>
+</tr>
+
+<tr>
+<td width="10%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">9</div></td>
+<td width="90%" align="left" valign="top" bgcolor="#CCCCCC">Inverted Bump Texture</td>
+</tr>
+
+<tr>
+<td width="10%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">10</div></td>
+<td width="90%" align="left" valign="top" bgcolor="#CCCCCC">Detail Texture</td>
+</tr>
+
+<tr>
+<td width="10%" align="left" valign="top" bgcolor="#CCCCCC"><div class="center">11</div></td>
+<td width="90%" align="left" valign="top" bgcolor="#CCCCCC">Zero Border Texture</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+<big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <strong> Video / Texturing</strong> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_12.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:11 GMT -->
+</html>

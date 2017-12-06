@@ -1,0 +1,1374 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4236;
+   parent.leftFrame.expandToItem('tree2', 'doc4236');
+   var element = parent.leftFrame.document.getElementById('doc4236');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>Torque Console Objects - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+ <table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console_Objects_Fields_and_Methods_Quick_Reference"><span class="tocnumber">1</span> <span class="toctext">Console Objects Fields and Methods Quick Reference</span></a>
+<ul>
+<li class="toclevel-2"><a href="#ActionMap"><span class="tocnumber">1.1</span> <span class="toctext">ActionMap</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Method_Summaries"><span class="tocnumber">1.1.1</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods"><span class="tocnumber">1.1.2</span> <span class="toctext">Console Methods</span></a></li>
+<li class="toclevel-3"><a href="#Device_Table"><span class="tocnumber">1.1.3</span> <span class="toctext">Device Table</span></a></li>
+<li class="toclevel-3"><a href="#Action_Table"><span class="tocnumber">1.1.4</span> <span class="toctext">Action Table</span></a></li>
+<li class="toclevel-3"><a href="#Mouse_Modifiers"><span class="tocnumber">1.1.5</span> <span class="toctext">Mouse Modifiers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#AIConnection"><span class="tocnumber">1.2</span> <span class="toctext">AIConnection</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_2"><span class="tocnumber">1.2.1</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_2"><span class="tocnumber">1.2.2</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#AIPlayer"><span class="tocnumber">1.3</span> <span class="toctext">AIPlayer</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_3"><span class="tocnumber">1.3.1</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_3"><span class="tocnumber">1.3.2</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#AIWheeledVehicle"><span class="tocnumber">1.4</span> <span class="toctext">AIWheeledVehicle</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields"><span class="tocnumber">1.4.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_4"><span class="tocnumber">1.4.2</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_4"><span class="tocnumber">1.4.3</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Audio_Description"><span class="tocnumber">1.5</span> <span class="toctext">Audio Description</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_2"><span class="tocnumber">1.5.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Console_Objects_Fields_and_Methods_Quick_Reference"></a><h1><a name = "HeaderLink1"></a>Console Objects Fields and Methods Quick Reference</h1>
+<p><br />
+</p><p><br />
+This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br /><br />
+</p>
+<a name="ActionMap"></a><h3><a name = "HeaderLink2"></a> ActionMap </h3>
+<hr />
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<a name="Console_Method_Summaries" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink3"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" bgcolor="#009900"><div class="center">bind</div></td>
+<td width="33%" bgcolor="#009900"><div class="center">bindCmd</div></td>
+<td width="34%" bgcolor="#009900"><div class="center">getBinding</div></td>
+</tr>
+
+<tr>
+<td width="33%" bgcolor="#009900"><div class="center">getCommand</div></td>
+<td width="33%" bgcolor="#009900"><div class="center">getDeadZone</div></td>
+<td width="34%" bgcolor="#009900"><div class="center">getScale</div></td>
+</tr>
+
+<tr>
+<td width="33%" bgcolor="#009900"><div class="center">isInverted</div></td>
+<td width="33%" bgcolor="#009900"><div class="center">pop</div></td>
+<td width="34%" bgcolor="#009900"><div class="center">push</div></td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<a name="Console_Methods" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink4"></a>Console Methods </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>bind( device , action , [ modifier , mod... ] , command )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>bind</b></i> method to associate a function to a keystroke or other device input.<br />
+<br />
+<b>Syntax<br />
+<i>device</i></b> - Name of the device to bind the command to (see 'Device Table' below).<br />
+<i><b>action</b></i> - Name of the action to watch for(see 'Action Table' below).<br />
+<i><b>modifier</b></i> – Special modifiers (mouse only), such as dead spot, etc.<br />
+<i><b>command</b></i>  - The function to be called on make and break.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+The <i><b>command</b></i> bound via the bind function must be specified as a flat name with no elipses or semi-colon termination and will be called on make and break events (i.e. key press and release for a mapped key).<br />
+<br />
+Args:<br />
+<br />
+Warning: When a function is bound to a keystroke or other device input, and no other versions of the binding are provided, the function will be called even if a modifier key like CTRL, ALT, or SHIFT is also pressed.  For clarification, see 'Bind Sample'  example below.<br />
+<br />
+<b>See Also</b><br />
+bindCmd, getBinding, unbind<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>bindCmd( device , action , makeCmd , breakCmd )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>bindCmd</b></i> method to associate up to two functions to a keystroke or other device input.  <br />
+<br />
+<b>Syntax<br />
+<i>device</i></b> - Name of the device to bind the command to (see 'Device Table' below).<br />
+<i><b>action</b></i> - Name of the action to watch for(see 'Action Table' below).<br />
+<i><b>makeCmd</b></i> - The function to be called on make event. <br />
+<i><b>breakCmd</b></i> - The function to be called on break event.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+The <i><b>makeCmd</b></i> is bound to the make event and the <i><b>breakCmd</b></i> is bound to the break event and in both cases, the commands are specified as complete scripts, with all arguments, elipses, and the terminating semi-colon. Either of these commands may be non-specified (NULL strings).  For clarification, see 'Bind Sample' example below. <br />
+<br />
+<b>See Also</b><br />
+bind, getBinding, unbind<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getBinding( command )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getBinding</b></i> method to get the binding for a specified <i><b>command</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>command</i></b> – The function to seek a binding for.<br />
+<br />
+<b>Returns</b><br />
+Returns a string containing the binding as a field (TAB separated string), or a NULL string meaning 'no binding found'.<br />
+<br />
+<b>See Also</b><br />
+bind, bindCmd<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getCommand( device , action )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getCommand</b></i> method to get the function associated with a specific <i><b>device</b></i> + <i><b>action</b></i> pair.<br />
+<br />
+<b>Syntax<br />
+<i>device</i></b> - Name of the device to bound to a command (see 'Device Table' below).<br />
+<i><b>action</b></i> - Name of the action to watch for (see 'Action Table' below).<br />
+<br />
+<b>Returns</b><br />
+Returns the function name or specification associated with the specified <i><b>device</b></i> + <i><b>action</b></i> pair, or a NULL-string meaning 'no binding found'.<br />
+<br />
+<br />
+<b>See Also</b><br />
+bind, bindCmd, getBinding<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getDeadZone( device , action )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getDeadZone</b></i> method to get the dead-zone associated with a specific <i><b>device</b></i> + <i><b>action</b></i> pair.<br />
+<br />
+<b>Syntax<br />
+<i>device</i></b> - Name of the device to bound to a command (see 'Device Table' below).<br />
+<i><b>action</b></i> - Name of the action to watch for (see 'Action Table' below).<br />
+<br />
+<b>Returns</b><br />
+Returns a dead-zone specification, or "0 0" meaning that there is no dead-zone, or a NULL string meaning the mapping was not found.<br />
+<br />
+<b>See Also</b><br />
+bind, bindCmd<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getScale( device , action )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getScale</b></i> method to get the scale associated with a specific <i><b>device</b></i> + <i><b>action</b></i> pair.<br />
+<br />
+<b>Syntax<br />
+<i>device</i></b> - Name of the device to bound to a command (see 'Device Table' below).<br />
+<i><b>action</b></i> - Name of the action to watch for (see 'Action Table' below).<br />
+<br />
+<b>Returns</b><br />
+Returns 1 if no scale is associated with the specified <i><b>device</b></i> + <i><b>action</b></i> pair, or the mapping was not found.<br />
+<br />
+<b>See Also</b><br />
+bind, bindCmd<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isInverted( device , action )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isInverted</b></i> method to determine if a specific <i><b>device</b></i> + <i><b>action</b></i> pair in inverted. <br />
+<br />
+<b>Syntax<br />
+<i>device</i></b> - Name of the device to bound to a command (see 'Device Table' below).<br />
+<i><b>action</b></i> - Name of the action to watch for (see 'Action Table' below).<br />
+<br />
+<b>Returns</b><br />
+Returns 1 if the mouse (or other scrolling device) is inverted, 0 otherwise.<br />
+<br />
+<b>Notes</b><br />
+This only applies to scrolling devices.<br />
+<br />
+<b>See Also</b><br />
+bind, bindCmd<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>pop()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>pop</b></i> method to de-activate an ActionMap and remove it from non-global ActionMap stack.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+push<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>push()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>push</b></i> method to activate an ActionMap and place it at the top of the non-global ActionMap stack.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+pop<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>save( [ fileName ] [ ,  append ] )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>save</b></i> method to save an entire action map specification to a file.  If <i><b>append</b></i> is not specified, or specified as false, <i><b>fileName</b></i> will be overwritten, otherwise the action map will be appended to the file.<br />
+<br />
+<br />
+<b>Syntax<br />
+<i>fileName</i></b> – Full path to file in which to store action map definition.<br />
+<i><b>append</b></i> - If true, do not overwrite the file, else start from scratch.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>unbind( device , action )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>unbind</b></i> method to remove a previosly specified <i><b>device</b></i> + <i><b>action</b></i> pair from the action map.<br />
+<br />
+<b>Syntax<br />
+<i>device</i></b> - Name of the device to bound to a command (see 'Device Table' below).<br />
+<i><b>action</b></i> - Name of the action to watch for (see 'Action Table' below).<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+bind, bindCmd<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<a name="Device_Table" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink5"></a>Device Table </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#999999"><b>Device</b></td>	
+<td width="67%" align="center" bgcolor="#999999"><b>Description</b></td>
+</tr>
+
+<tr>
+<td align="center" bgcolor="#CCCCCC">keyboardN</td>
+<td bgcolor="#CCCCCC">This is the Nth keyboard hooked up to the system.  For the first keyboard, either  "keyboard" or "keyboard0" is acceptable.</td>
+</tr>
+
+<tr>
+<td align="center" bgcolor="#CCCCCC">mouseN</td>
+<td bgcolor="#CCCCCC">This is the Nth mouse hooked up to the system.  For the first mouse, either  "mouse" or "mouse 0" is acceptable.</td>
+</tr>
+
+<tr>
+<td align="center" bgcolor="#CCCCCC">joystickN</td>
+<td bgcolor="#CCCCCC">This is the Nth joystick or gamepad  hooked up to the system. </td>
+</tr>
+
+<tr>
+<td align="center" bgcolor="#CCCCCC">unknownN</td>
+<td bgcolor="#CCCCCC">This is the Nth unknown device up to the system.   In other words, some devices has been sampled, but TGE doesn't know what it is. </td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Action_Table" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink6"></a>Action Table</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#999999"><b>Action</b></td>	
+<td width="67%" align="center" bgcolor="#999999"><b>Description</b></td>
+</tr>
+
+<tr>
+<td align="center" bgcolor="#CCCCCC">button0, buton1, ..., button31</td>
+<td bgcolor="#CCCCCC">This is a mouse, joystick, or gamepad button press. For the  mouse, buttons 0,1, and 2 are left, right, and middle buttons repspectively.  See the appendix for other button mappings.</td>
+</tr>
+
+<tr>
+<td align="center" bgcolor="#CCCCCC">a .. z, A .. Z, 0..9, F1..F12</td>
+<td bgcolor="#CCCCCC">These are keyboard inputs.  Because this list is so long and in order to accomodate possible variances for special keyboards and other devices a same GUI has been provided with the kit that displays the current action, be it keyboard, mouse, joystick/gamepad, or other device.  Simple start the kit and click SampleGUIs -&gt; Input.  Follow the instructions provided in the sample.</td>
+</tr>
+
+<tr>
+<td align="center" bgcolor="#CCCCCC">shift, ctrl, alt</td>
+<td bgcolor="#CCCCCC">These are modifiers and are not used standalone, but they are included in the action string, for example: "shift p" is the shift key and the p key pressed at the same time. </td>
+</tr>
+
+<tr>
+<td align="center" bgcolor="#CCCCCC">lshift, rshift, lctrl, rctrl, lalt, ralt</td>
+<td bgcolor="#CCCCCC">These are special modifier actions.  Theye only register as 'break' events when one of these keys: left shift, right shift, left ctrl, right ctrl, left alth, or right alt is released. </td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Mouse_Modifiers" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink7"></a>Mouse Modifiers </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#999999"><b>Action Modifiers</b></td>	
+<td width="67%" align="center" bgcolor="#999999"><b>Description</b></td>
+</tr>
+
+<tr>
+<td align="center" bgcolor="#CCCCCC">D %x %y</td>
+<td bgcolor="#CCCCCC">Has dead zone.  This is used to add a dead zone for the mouse.  Motions in this zone will not be recorded.  This can be used to remove the jitter caused by a ‘nervous hand’.</td>
+</tr>
+
+<tr>
+<td align="center" bgcolor="#CCCCCC">S %s</td>
+<td bgcolor="#CCCCCC">Has Scale.  This is used to scale the mouse motion (by a multiple).</td>
+</tr>
+
+<tr>
+<td align="center" bgcolor="#CCCCCC">I</td>
+<td bgcolor="#CCCCCC">Inverted.  This is used to invert the mouse.</td>
+</tr>
+
+<tr>
+<td align="center" bgcolor="#CCCCCC">R %s</td>
+<td bgcolor="#CCCCCC">Has Scale.  Same as S.</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="AIConnection" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink8"></a> AIConnection </h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink9"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" bgcolor="#009900"><div class="center">getAddress</div></td>
+<td width="33%" bgcolor="#009900"><div class="center">getFreeLook</div></td>
+<td width="34%" bgcolor="#009900"><div class="center">getMove</div></td>
+</tr>
+
+<tr>
+<td width="33%" bgcolor="#009900"><div class="center">getTrigger</div></td>
+<td width="33%" bgcolor="#009900"><div class="center">setFreeLook</div></td>
+<td width="34%" bgcolor="#009900"><div class="center">setMove</div></td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<a name="Console_Methods_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink10"></a>Console Methods </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getAddress()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getAddress</b></i> method to get the address an AIConnection is currently connected to.<br />
+<br />
+<b>Returns</b><br />
+Returns the address of the current connection in the format: " A.B.C.D:Port ", where A .. B are standard IP numbers between 0 and 255 and Port can be between 1000 and 65536.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getFreeLook()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getFreeLook</b></i> method to check if the current connection is in free look mode.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the current connection is free look mode.<br />
+<br />
+<b>See Also</b><br />
+setFreeLook<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getMove( field )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getMove</b></i> method to get the move setting for <b>field.<br />
+<br />
+Syntax<br />
+<i>field</i></b> – Move setting to check.<br />
+<br />
+<b>Returns</b><br />
+Returns a value between 0.0 and 1.0.<br />
+<br />
+<b>See Also</b><br />
+getTrigger, setMove, setTrigger<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getTrigger( trigger )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getTrigger</b></i> method to get the current value for a trigger specified by the numeric value trigger.<br />
+<br />
+<b>Syntax<br />
+<i>trigger</i></b> – An integer value between 0 and 6 representing on of the seven triggers.<br />
+<br />
+<b>Returns</b><br />
+Returns 1 if the trigger is active/depressed, and 0 if it is not.<br />
+<br />
+<b>See Also</b><br />
+getMove, setMove, setTrigger<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setFreeLook( isFreeLook )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setFreeLook</b></i> method to set the current connection to a free look mode.<br />
+<br />
+<b>Syntax<br />
+<i>isFreeLook</i></b> – A boolean value.  If true, freelook will be enable, otherwise it will be disabled.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+getFreeLook<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setMove( field , value )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setMove</b></i> method to set a move type for the control-object connected to this AIConnection.<br />
+<br />
+<b>Syntax<br />
+<i>field</i></b> – A string containing a move type.  See 'move types' table below.<br />
+<i><b>value</b></i> – A value between 0.0 and 1.0.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+getMove, getTrigger, setTrigger<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setTrigger( trigger , set )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setTrigger</b></i> method to set or un-set a trigger on the control-object connected to this AIConnection.<br />
+<br />
+<b>Syntax<br />
+<i>trigger</i></b> – An integer value between 0 and 6 representing on of the seven triggers.<br />
+<i><b>set</b></i> – A boolean value.  If true, this trigger is enabled/set/depressed, otherwise, it is disabled/un-set/released.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+getMove, getTrigger, setMove<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<a name="AIPlayer" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink11"></a> AIPlayer </h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink12"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" bgcolor="#009900"><div class="center">clearAim</div></td>
+<td width="33%" bgcolor="#009900"><div class="center">getAimLocation</div></td>
+<td width="34%" bgcolor="#009900"><div class="center">getAimObject</div></td>
+</tr>
+
+<tr>
+<td width="33%" bgcolor="#009900"><div class="center">getMoveDestination</div></td>
+<td width="33%" bgcolor="#009900"><div class="center">setAimLocation</div></td>
+<td width="34%" bgcolor="#009900"><div class="center">setAimObject</div></td>
+</tr>
+
+<tr>
+<td width="33%" bgcolor="#009900"><div class="center">setMoveDestination</div></td>
+<td width="33%" bgcolor="#009900"><div class="center">setMoveSpeed</div></td>
+<td width="34%" bgcolor="#009900"><div class="center">stop</div></td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<a name="Console_Methods_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink13"></a>Console Methods</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>clearAim()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>clearAim</b></i> method to stop aiming at an object or a point.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+setAimObject, setAimLocation<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getAimLocation()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getAimLocation</b></i> method to get the point the bot is currently aiming at.  This will reflect the position set by setAimLocation(), or the position of the object that the bot is now aiming at, or if the bot is not aiming at anything, this value will change to whatever point the bot's current line-of-sight intercepts.<br />
+<br />
+<b>Returns</b><br />
+Returns an XYZ vector containing the location of the bot's current aim.<br />
+<br />
+<b>See Also</b><br />
+setAimObject, setAimLocation<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getAimObject()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getAimObject</b></i> method to get the ID of the object the bot is currently aiming at.<br />
+<br />
+<b>Returns</b><br />
+Returns -1 if no object is being aimed at, or a non-zero positive integer ID of the object the bot is aiming at.<br />
+<br />
+<b>See Also</b><br />
+getAimLocation, setAimObject, setAimLocation<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getMoveDestination()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getMoveDestination</b></i> method to get the last set move destination.<br />
+<br />
+<b>Returns</b><br />
+Returns a vector containing the &lt;x y z&gt; position of the bot's current move destination.  If no move destination has yet been set, this returns "0 0 0".<br />
+<br />
+<b>Notes</b><br />
+The bot will not look at its destination unless it is told to, which means it can aim at one object or location while walking in another direction.<br />
+<br />
+<b>See Also</b><br />
+setMoveDestination<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setAimLocation( target )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setAimLocation</b></i> method to set the bot's aim location to <i><b>target</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>target</i></b> – An XYZ vector representing a position in the game world.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+getAimLocation, getAimObject, setAimObject<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setAimObject( obj [ , offset ] )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setAimObject</b></i> method to set the current object for the bot to aim at, using an optional <i><b>offset</b></i> to modify that aim.<br />
+<br />
+<b>Syntax<br />
+<i>obj</i></b> – A valid GameBase object ID or name.<br />
+<i><b>offset</b></i> – A three-element offset vector which will be added to the position of the aim object.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<br />
+<b>See Also</b><br />
+getAimLocation, getAimObject, setAimLocation<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setMoveDestination( goal [ , slowDown ] )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setMoveDestination</b></i> method to set the bot's current move destination top <i><b>goal</b></i>.  This will cause the bot to start moving immediately towards that destination.  <br />
+<br />
+<b>Syntax<br />
+<i>goal</i></b> – An XYZ vector containing the position for the bot to move to.<br />
+<i><b>slowDown</b></i> – A boolean value.  If set to true, the bot will slow down when it gets within 5-meters of its move destination.  If false, the bot will stop abruptly when it reaches the move destination. By default, this is true.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Upon reaching a move destination, the bot will clear its move destination and calls to getMoveDestination will return a NULL string. <br />
+<br />
+<b>See Also</b><br />
+getMoveDestination, setMoveSpeed, stop<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setMoveSpeed( speed )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setMoveSpeed</b></i> method to modify the bot's movement rates between 0.0 (0%) and 1.0 (100%). <br />
+<br />
+<b>Syntax<br />
+<i>speed</i></b> – A speed multiplier between 0.0 and 1.0. This is multiplied by the bot's base movement rates (from its datablock).<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+setMoveDestination, stop<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>stop()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>stop</b></i> method to stop the bot from moving.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+This does not clear the bot's move destination, so a call to <i>getMoveDestination</i> will be able to get it. <br />
+<br />
+<b>See Also</b><br />
+setMoveDestination, setMoveSpeed<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="AIWheeledVehicle" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink14"></a>AIWheeledVehicle</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink15"></a>Fields </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td align="center" bgcolor="#CCCCCC">disableMove</td>
+<td bgcolor="#CCCCCC">If this value is set to true, the vehicle will not respond to any movement commands.</td>
+<td align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries_4" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink16"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" bgcolor="#009900"><div class="center">getMoveDestination</div></td>
+<td width="33%" bgcolor="#009900"><div class="center">setMoveDestination</div></td>
+<td width="34%" bgcolor="#009900"><div class="center">setMoveSpeed</div></td>
+</tr>
+
+<tr>
+<td width="33%" bgcolor="#009900"><div class="center">setMoveTolerance</div></td>
+<td width="33%" bgcolor="#009900"><div class="center">stop</div></td>
+<td width="34%" bgcolor="#009900"><div class="center"></div></td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods_4" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink17"></a>Console Methods</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getMoveDestination()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getMoveDestination</b></i> method to get the last set move destination.<br />
+<br />
+<b>Returns</b><br />
+Returns a vector containing the &lt;x y z&gt; position of the vechicle's current move destination.  If no move destination has yet been set, this returns "0 0 0".<br />
+<br />
+<b>Notes</b><br />
+The vechicle will not look at its destination unless it is told to, which means it can aim at one object or location while walking in another direction.<br />
+<br />
+<b>See Also</b><br />
+setMoveDestination<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setMoveDestination( goal [ , slowDown ] )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setMoveDestination</b></i> method to set the vehicle's current move destination top <i><b>goal</b></i>.  This will cause the vehicle to start moving immediately towards that destination.  <br />
+<br />
+<b>Syntax<br />
+<i>goal</i></b> – An XYZ vector containing the position for the vehicle to move to.<br />
+<i><b>slowDown</b></i> – A boolean value.  If set to true, the vehicle will slow down when it gets within 5-meters of its move destination.  If false, the vehicle will stop abruptly when it reaches the move destination. By default, this is true.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Upon reaching a move destination, the vehicle will clear its move destination and calls to getMoveDestination will return a NULL string. <br />
+<br />
+<b>See Also</b><br />
+getMoveDestination, setMoveSpeed, setMoveTolerance, stop<br />
+<br />
+Args:<br />
+<i><b>goal</b></i>     - A vector containing  the &lt;x y z&gt; position for the vehicle to move to.<br />
+<i><b>slowDown</b></i> – Slow down near destination?<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setMoveSpeed( speed )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setMoveSpeed</b></i> method to modify the vechicle's movement rates between 0.0 (0%) and 1.0 (100%). <br />
+<br />
+<b>Syntax<br />
+<i>speed</i></b> – A speed multiplier between 0.0 and 1.0. This is multiplied by the vechicle's base movement rates (from its datablock).<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+setMoveDestination, setMoveTolerance, stop<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setMoveTolerance( tolerance )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setMoveTolerance</b></i> method to set the tolerance radius for an AIWheeled vehicle's target position.  In other words, how close to the target does the vehicle have to get before it is considered 'on target'?<br />
+<br />
+<b>Syntax<br />
+<i>tolerance</i></b> – The maximum distance away from a move target the vehicle can be and still be considered 'on target'.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Because vehicles can have major variances in size, and because of the way 'on target' is measured, this method is provided to make it easier for a wheeled vehicle to hit it's movement destination.<br />
+<br />
+<b>See Also</b> <br />
+getMoveSpeed, setMoveSpeed<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>stop()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>stop</b></i> method to stop the vechicle from moving.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+This does not clear the vechicle's move destination, so a call to <i>getMoveDestination</i> will be able to get it. <br />
+<br />
+<b>See Also</b><br />
+setMoveDestination, setMoveSpeed<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<a name="Audio_Description" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink18"></a>Audio Description</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink19"></a>Fields </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="80%" align="center" bgcolor="#999999"><b>Description</b></td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">coneInsideAngle</td>	
+<td width="80%" bgcolor="#CCCCCC">Sweep angle of inner cone.</td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">coneOutsideAngle</td>	
+<td width="80%" bgcolor="#CCCCCC">Sweep angle of Outside cone.</td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">coneOutsideVolume</td>	
+<td width="80%" bgcolor="#CCCCCC">Maximum gain in Zone C (see above).</td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">coneVector</td>	
+<td width="80%" bgcolor="#CCCCCC">Audio emitter’s eye (pointing) vector.</td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">environmentLevel</td>	
+<td width="80%" bgcolor="#CCCCCC">Amount by which the audioEnvironment datablock used with this datablock will affect sound.</td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">is3D</td>	
+<td width="80%" bgcolor="#CCCCCC">Is this a 2D or a 3D sound?</td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">isLooping</td>	
+<td width="80%" bgcolor="#CCCCCC">If true, sound loops, othewise sound plays only once.</td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">isStreaming</td>	
+<td width="80%" bgcolor="#CCCCCC">If true, sound source is streaming, otherwise sound is from file.</td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">loopCount</td>	
+<td width="80%" bgcolor="#CCCCCC"> Number of times to loop this sound <br />
+<p>   -1 – Loop infinitely.<br />
+   0 – Loop once and only once.<br />
+   1 – Loop once, possibly twice. <br />
+   (N &gt; 1) – Loop N times.
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">maxDistance</td>	
+<td width="80%" bgcolor="#CCCCCC">Outer boundary for 3D sound sphere. Sound turns on-off here at this distance from 3D emitter.</td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">maxLoopGap</td>	
+<td width="80%" bgcolor="#CCCCCC">Maximum delay between subsequent loop.</td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">minLoopGap</td>	
+<td width="80%" bgcolor="#CCCCCC">Minimum delay between subsequent loop.</td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">ReferenceDistance</td>	
+<td width="80%" bgcolor="#CCCCCC">Distance at which sound turns on to 100% of current maximum gain.</td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">type</td>	
+<td width="80%" bgcolor="#CCCCCC">Audio type.  There can be multiple numeric audio types, each with its own globally controlled max gain.</td>
+</tr>
+
+<tr>
+<td width="20%" bgcolor="#CCCCCC">volume</td>	
+<td width="80%" bgcolor="#CCCCCC">Maximum gain for this source.</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><a href="Console%20Objects.html" title="Torque Console Objects TOC"> Table of Contents</a> || <a href="Torque_Console_Objects_2.html" title="Torque Console Objects 2"> Part 2</a> || <a href="Torque_Console_Objects_3.html" title="Torque Console Objects 3"> Part 3</a> || <a href="Torque_Console_Objects_4.html" title="Torque Console Objects 4"> Part 4</a> || <a href="Torque_Console_Objects_5.html" title="Torque Console Objects 5"> Part 5</a> || <a href="Torque_Console_Objects_6.html" title="Torque Console Objects 6"> Part 6</a> || <a href="Torque_Console_Objects_7.html" title="Torque Console Objects 7"> Part 7</a> || <a href="Torque_Console_Objects_8.html" title="Torque Console Objects 8"> Part 8</a> || <a href="Torque_Console_Objects_9.html" title="Torque Console Objects 9"> Part 9</a> || <a href="Torque_Console_Objects_10.html" title="Torque Console Objects 10"> Part 10</a> || <a href="Torque_Console_Objects_11.html" title="Torque Console Objects 11"> Part 11</a> || <a href="Torque_Console_Objects_12.html" title="Torque Console Objects 12"> Part 12</a> || <a href="Torque_Console_Objects_13.html" title="Torque Console Objects 13"> Part 13</a> || <a href="Torque_Console_Objects_14.html" title="Torque Console Objects 14"> Part 14</a> || <a href="Torque_Console_Objects_15.html" title="Torque Console Objects 15"> Part 15</a>
+</p>
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:59 GMT -->
+</html>

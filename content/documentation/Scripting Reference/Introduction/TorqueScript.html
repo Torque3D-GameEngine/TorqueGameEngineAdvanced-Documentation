@@ -1,0 +1,1015 @@
+﻿<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Introduction/TorqueScript.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4256;
+   parent.leftFrame.expandToItem('tree2', 'doc4256');
+   var element = parent.leftFrame.document.getElementById('doc4256');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Scripting Reference - TorqueScript</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+<link rel="STYLESHEET" type="text/css" href="torque.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="15" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+<td>
+
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#TorqueScript"><span class="tocnumber">1</span> <span class="toctext">TorqueScript</span></a>
+<ul>
+<li class='toclevel-2'><a href="#About_TorqueScript.3F"><span class="tocnumber">1.1</span> <span class="toctext">About TorqueScript?</span></a></li>
+<li class='toclevel-2'><a href="#The_Console_and_Simple_Scripts"><span class="tocnumber">1.2</span> <span class="toctext">The Console and Simple Scripts</span></a></li>
+<li class='toclevel-2'><a href="#The_TorqueScript_Language"><span class="tocnumber">1.3</span> <span class="toctext">The TorqueScript Language</span></a>
+<ul>
+<li class='toclevel-3'><a href="#Language_Features"><span class="tocnumber">1.3.1</span> <span class="toctext">Language Features</span></a></li>
+<li class='toclevel-3'><a href="#Variables"><span class="tocnumber">1.3.2</span> <span class="toctext">Variables</span></a></li>
+<li class='toclevel-3'><a href="#Data_Types"><span class="tocnumber">1.3.3</span> <span class="toctext">Data Types</span></a>
+<ul>
+<li class='toclevel-4'><a href="#Numbers:"><span class="tocnumber">1.3.3.1</span> <span class="toctext">Numbers:</span></a></li>
+<li class='toclevel-4'><a href="#Strings:"><span class="tocnumber">1.3.3.2</span> <span class="toctext">Strings:</span></a></li>
+<li class='toclevel-4'><a href="#String_Operators:"><span class="tocnumber">1.3.3.3</span> <span class="toctext">String Operators:</span></a></li>
+<li class='toclevel-4'><a href="#Escape_Sequences:"><span class="tocnumber">1.3.3.4</span> <span class="toctext">Escape Sequences:</span></a></li>
+<li class='toclevel-4'><a href="#Booleans:"><span class="tocnumber">1.3.3.5</span> <span class="toctext">Booleans:</span></a></li>
+<li class='toclevel-4'><a href="#Arrays:"><span class="tocnumber">1.3.3.6</span> <span class="toctext">Arrays:</span></a></li>
+<li class='toclevel-4'><a href="#Vectors:"><span class="tocnumber">1.3.3.7</span> <span class="toctext">Vectors:</span></a></li>
+<li class='toclevel-4'><a href="#Summary:"><span class="tocnumber">1.3.3.8</span> <span class="toctext">Summary:</span></a></li>
+</ul>
+</li>
+<li class='toclevel-3'><a href="#Operators"><span class="tocnumber">1.3.4</span> <span class="toctext">Operators</span></a></li>
+<li class='toclevel-3'><a href="#Control_Statements"><span class="tocnumber">1.3.5</span> <span class="toctext">Control Statements</span></a>
+<ul>
+<li class='toclevel-4'><a href="#Branching_Structures"><span class="tocnumber">1.3.5.1</span> <span class="toctext">Branching Structures</span></a></li>
+<li class='toclevel-4'><a href="#Looping_Structures"><span class="tocnumber">1.3.5.2</span> <span class="toctext">Looping Structures</span></a></li>
+</ul>
+</li>
+<li class='toclevel-3'><a href="#Functions"><span class="tocnumber">1.3.6</span> <span class="toctext">Functions</span></a></li>
+<li class='toclevel-3'><a href="#Objects"><span class="tocnumber">1.3.7</span> <span class="toctext">Objects</span></a>
+<ul>
+<li class='toclevel-4'><a href="#Handles_and_Names"><span class="tocnumber">1.3.7.1</span> <span class="toctext">Handles and Names</span></a></li>
+<li class='toclevel-4'><a href="#Dynamic_Fields"><span class="tocnumber">1.3.7.2</span> <span class="toctext">Dynamic Fields</span></a></li>
+<li class='toclevel-4'><a href="#Console_Methods"><span class="tocnumber">1.3.7.3</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class='toclevel-3'><a href="#Packages"><span class="tocnumber">1.3.8</span> <span class="toctext">Packages</span></a></li>
+<li class='toclevel-3'><a href="#Namespaces"><span class="tocnumber">1.3.9</span> <span class="toctext">Namespaces</span></a></li>
+<li class='toclevel-3'><a href="#Datablocks"><span class="tocnumber">1.3.10</span> <span class="toctext">Datablocks</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p><p><br />
+</p>
+<a name="TorqueScript"></a><h2><a name = "HeaderLink1"></a> TorqueScript </h2>
+<p>Link to Commands: <a href="http://tdn.garagegames.com/wiki/TorqueScript_Commands" title="TorqueScript Commands">TorqueScript Commands</a></p>
+<p>If you need to have the benefits of scripting spelled out for you, there is an article available on the subject: <a href="Why%20Use%20Scripting.html" title="Why Use Scripting?">Why Use Scripting?</a>
+</p><p>There is also a short article available on the <a href="Intro%20to%20OOP.html" title="Intro to OOP"> basics of Object Oriented Programming for non-programmers</a>, as well as one on <a href="Basics%20of%20Programming.html" title="Basics of Programming"> fundamental programming principles</a>.
+</p><p><br />
+This chapter is adapted from Ed Maurina's outstanding <i>Essential Guide to TGE</i>. The full version of the EGTGE will be released soon, watch for it! In the mean time, a free <a href="http://www.garagegames.com/index.php?sec=mg&amp;mod=resource&amp;page=view&amp;qid=5661" class='external text' title="http://www.garagegames.com/index.php?sec=mg&amp;mod=resource&amp;page=view&amp;qid=5661" rel="nofollow">preview version</a> is available. Check it out, Ed's work is awesome, and EGTGE should be required reading for any serious Torque developer. 
+</p><p>This chapter offers an introduction to TorqueScript. You will not be a TorqueScript master after simply reading this chapter-- that takes time and practice. But you will walk away with a good feel for how TorqueScript is structured and how it works in general. You will be familiar with the set of tools TorqueScript offers to help you make your game. With this knowledge in hand, you will be ready to take off and start learning how to best use the tools TorqueScript gives you to work with. There are many additional documentation and tutorial resources to help you along after you finish this book. Check out the GarageGames <a href="http://www.garagegames.com/developer/torque/tge/">Torque tutorials page</a> or the <a href="http://tdn.garagegames.com/wiki/noobs_guide" class='external text' title="http://tdn.garagegames.com/wiki/noobs guide" rel="nofollow">Noobs Guide</a> for more information. 
+</p>
+<p>It is assumed in the below that you are familiar with some basic programming concepts. You do not need to be a guru, and you don't need to know the nitty-gritty specifics of a particular language like C++, but you should be familiar with the basics of computer programming to get the most from what is offered here. 
+</p>
+<a name="About_TorqueScript.3F"></a><h4><a name = "HeaderLink2"></a> About TorqueScript? </h4>
+<p>What is Torque's scripting language like? TorqueScript is a very powerful, flexible language with syntax similar to C++. It provides all of the features listed above, including those on the 'would be nice' list. The following sections will describe all of these features and provide examples to clarify concepts. Additionally, there are scripting references in the appendix.
+</p>
+<a name="The_Console_and_Simple_Scripts"></a><h3><a name = "HeaderLink3"></a> The Console and Simple Scripts </h3>
+<p>The next few pages detail specific TorqueScript features. During the explanations, many examples are provided. Example code will be shown in one of two ways: 
+</p>
+<ul><li>Testing examples directly in the console command line, or 
+</li><li>Loading a test script file via the console, and executing it there. 
+</li></ul>
+<p>So, how do you see the console? Easy. First, start the Torque demo application, then hit the tilde key '~' 
+</p>
+<ul><li>if the '~' does not work , for instance on linux or because of the keyboard&nbsp;: 
+</li></ul>
+<p>- edit the file .../client/scripts/default.bind.cs and search for "tilde",
+</p><p>- change the line GlobalActionMap.bind(keyboard, "tilde", toggleConsole) to GlobalActionMap.bind(keyboard, "F12", toggleConsole).
+</p>
+<ul><li>You can also run the game with -console from command line
+</li></ul>
+<p><img src="Console.gif">
+</p><p>You'll be seeing a lot of the echo() command in this chapter. We use the echo() command for testing purposes- it prints values out to the console. Echo() has the following syntax: 
+</p><p><code>
+</p>
+<pre>    echo(string0 [, string1 [,...,[string n]]]);
+</pre>
+<p></code>
+</p><p>Throughout this chapter, statements which appear in a box like the following show lines of actual TorqueScript code. Single-line statements can be copied and pasted (CTRL + V) directly into the console. Try these: 
+</p><p><br />
+<code>
+</p>
+<pre>    echo("Torque Rocks");
+    echo (1+1); 
+</pre>
+<p></code>
+</p><p><br />        
+If you enter this code into the console and hit enter, you'll see it print "Torque Rocks" and "2". Anything placed inside the parenthesis of the echo() command gets echoed back to in the console. Makes sense, ay? Again, this command is used often during the explanations below.
+</p>
+<a name="The_TorqueScript_Language"></a><h3><a name = "HeaderLink4"></a> The TorqueScript Language </h3>
+<a name="Language_Features"></a><h4><a name = "HeaderLink5"></a> Language Features </h4>
+<ul><li><b>Type-insensitive</b>- In TorqueScript, variable types are converted as necessary and can be used interchangeably. TorqueScript provides several basic literal types, which are described later in this chapter.
+</li></ul>
+<p><code>
+</p>
+<pre>                   if("1.2" == 1.2)
+                   { 
+                      echo("Same- TorqueScript is type-insensitive"); 
+                   } 
+                   else 
+                   { 
+                      echo("different- what!?");
+                   }
+</pre>
+<p></code>
+</p><p><br />
+The code above will echo "Same- TorqueScript is type-insensitive."
+</p>
+<ul><li><b>Case-insensitive</b>- TorqueScript ignores case when interpreting variable and function names.
+</li></ul>
+<p><code>
+</p>
+<pre>                   $a = "An example";
+                   echo($a);
+                   echo($A);
+</pre>
+<p></code>
+</p><p>This code will echo "An example" twice.
+</p>
+<ul><li><b>Statement termination</b>- Statements are terminated with a semi-colon (;) as in many modern programming languages (C++, Java, Javascript, etc).
+</li></ul>
+<p><code>
+</p>
+<pre>                   $a = "This is a statement";
+</pre>
+<p></code>
+</p><p>If you do not include the semi-colon at the end of a TorqueScript statement, an error will be echoed to the console.
+</p><p>Note: When typing commands into the console, a semi-colon will automatically be appended if not present.
+</p>
+<ul><li><b>Full complement of operators</b>- The complete list of TorqueScript's operators is given in the appendix. TorqueScript provides all the basic operators common to most programming languages, along with a few more advanced operators.
+</li><li><b>Full complement of control structures</b>- As with any robust language, TorqueScript provides the standard programming constructs: if-then-else, for, while, and switch.
+</li></ul>
+<p><code>
+</p>
+<pre>                   for($a=0; $a &lt; 5; $a++) 
+                   {
+                      echo($a); 
+                   }
+</pre>
+<p></code>
+</p>
+<ul><li><b>Functions</b>- TorqueScript provides the ability to create functions with the optional ability to return values. Parameters are passed by-value and by-reference. (See the full section on functions below for detailed description and examples.)
+</li><li><b>Provides Inheritance and Polymorphism</b>- TorqueScript allows you to inherit from engine objects and to subsequently extend or override object methods. (See below for detailed description and examples.)
+</li><li><b>Provides Namespaces</b>- Like C++, TorqueScript supports the concept of namespaces. Namespaces are used to localize names and identifiers to avoid collisions. Huh? This means, for example, that you can have two different functions named doIt() that exist in two separate namespaces, but which are used in the same code. (See the full section on Namespaces below for detailed description and examples.)
+</li><li><b>Provides on-demand loading and unloading of functions</b>- TorqueScript supports a very cool feature, which allows you to load and unload functions as needed. (See the full section on Packages below for detailed description and examples.)
+</li><li><b>Compiles and executes PCODE</b>- As a bit of icing on the cake, the TorqueScript engine compiles scripts prior to executing them, giving a speed increase as well as providing a point at which errors in scripts can be reasonably found and diagnosed. 
+</li></ul>
+<p>With this overview of TorqueScript's features, we can begin taking a detailed look at how TorqueScript works. We'll start by examining how TorqueScript handles the basics- variables, operators, and control statements. With these topics covered, we'll move on to cover in detail the more advanced features of TorqueScript.
+</p>
+<a name="Variables"></a><h4><a name = "HeaderLink6"></a> Variables </h4>
+<p>Variables come in two flavors in TorqueScript: local and global. Local variables are transient, meaning they are destroyed automatically when they go out of scope. And what is scope? "Scope" is a term used to refer to the block of code a variable is defined in. For example, if we have a function, and we declare a local variable inside of that function, the local variable will be destroyed as soon as the function is done processing. When this happens, we say the variable has "gone out of scope". So, local variables only exist in their local scope- the function or code-block they are defined in. A piece of code inside a different function would not be able to see the local variable. Global variables, on the other hand, are permanent and exist throughout the entire program they are defined in.
+</p><p>TorqueScript specifically marks local and global variables with special characters, so that they are easy to tell apart. The syntax is as follows:
+</p><p><code>
+</p>
+<pre>           %local_var = value;
+           $global_var = value2;
+</pre>
+<p></code>
+</p><p><br />
+In TorqueScript, variables do not need to be created before you use them. If a piece of code attempts to evaluate the value of a variable that was not previously created, TorqueScript will create the variable automatically.
+</p><p><code>
+</p>
+<pre>           for(%a = 0; %a &lt; 5; %a++) 
+           { 
+              echo(%a); 
+           }
+           
+           echo(%a);
+</pre>
+<p></code>
+</p><p><br />
+Let's take a closer look at what this code does:
+</p><p>1)On its first pass through the loop, the above code creates a new variable named %a. It must do so because %a has not yet been created when the loop tries to use it for the first time (i.e. %a=0).
+</p><p>2)The echo() command inside the loop will print the value contained in the variable %a five times, echoing the values 0, 1, 2, 3, and 4, as the loop iterates and %a's value increases.
+</p><p>3)After the loop finishes, %a will be echoed once again, by the line after the loop.
+</p><p>That is a basic description of how local and global variables work in TorqueScript. Now, say we want to create a new variable- we know what will happen if we make it local or global, but what names will TorqueScript allow us to use for our variables?
+</p><p>Variable names may contain any number of alpha-numeric (a..z, A..Z, 0..9) characters, as well as the underscore (_) character. However, the first character in a variable's name cannot be a number. You may end variable names with a number, but if you do, you must be especially careful with array names. For further explanation, see the section on arrays.
+</p><p>Lastly, local and global variables can have the same name, but contain different values.
+</p><p><code>
+</p>
+<pre>           $a="EGT";
+</pre>
+<pre>           for(%a = 0; %a &lt; 4; %a++) 
+           { 
+              echo($a SPC %a); 
+           }
+</pre>
+<p></code>
+</p><p><br />
+This code will echo "EGT 0", "EGT 1", "EGT 2", "EGT 3".
+</p>
+<a name="Data_Types"></a><h4><a name = "HeaderLink7"></a> Data Types </h4>
+<p>TorqueScript implicitly supports several variable data-types: numbers, strings, booleans, and arrays and vectors. Each type is detailed below.
+</p>
+<a name="Numbers:"></a><h5><a name = "HeaderLink8"></a> Numbers: </h5>
+<pre>
+            123     (Integer)
+            1.234   (floating point)
+            1234e-3 (scientific notation)
+            0xc001  (hexadecimal)
+</pre>            
+<p>Nothing mysterious here. TorqueScript handles your standard numeric types.
+</p>
+<a name="Strings:"></a><h5><a name = "HeaderLink9"></a> Strings: </h5>
+<pre>
+            &quot;abcd&quot;	(string)
+            'abcd'	(tagged string)
+</pre>            
+<p>Standard strings, in double-quotes, behave as you would expect. Try these examples:
+</p><p><code>
+</p>
+<pre>           echo("Hello!");
+           echo("1.5" + "0.5");
+</pre>
+<p></code>
+</p><p><br />
+Strings which appear in single quotes, 'abcd', are treated specially by TorqueScript. These strings are called "tagged strings", and they are special in that they contain string data, but also have a special numeric tag associated with them. Tagged strings are used for sending string data across a network. The value of a tagged string is only sent once, regardless of how many times you actually do the sending. On subsequent sends, only the tag value is sent. Tagged values must be de-tagged when printing.
+</p><p>Try these examples:
+<code>
+</p>
+<pre>           $a="This is a regular string";
+           $b='This is a tagged string';
+           echo(" Regular string: ", $a);
+           echo("  Tagged string: ", $b);
+           echo("Detagged string: ", detag('$b'));
+</pre>
+<p></code>
+</p><p>Note: You may find it odd that the last line shows a blank. This is because, although we have created the tagged string, it has not been transmitted to us. You can ONLY detag a tagged string that has been passed to you.
+</p>
+<a name="String_Operators:"></a><h5><a name = "HeaderLink10"></a> String Operators: </h5>
+<pre>
+            @       (concatenates two strings)
+            TAB     (concatenation with tab)
+            SPC     (concatenation with space)
+            NL      (newline)
+</pre>                
+<p>To "concatenate" two strings means, simply, to stick them together. For example, if we concatenate the strings "hello " and "there", we end up with a big string reading "hello there".
+</p><p>The basic syntax for these string operators is
+</p>
+<pre>
+            &quot;string 1&quot; op &quot;string 2&quot;
+</pre>                
+<p>Where op is a string operator. For example:
+<code>
+</p>
+<pre>           echo("Hi" @ "there.");
+           echo("Hi" TAB "there.");
+           echo("Hi" SPC "there.");
+           echo("Hi" NL "there.");
+</pre>
+<p></code>
+</p><p>To get a concrete idea of how these operators work, paste the lines above into the console and observe the differences in the output.
+</p><p>There is one last area you need to know about in order to work with strings in TorqueScript: escape sequences
+</p>
+<a name="Escape_Sequences:"></a><h5><a name = "HeaderLink11"></a> Escape Sequences: </h5>
+<pre>
+            \n          (newline)
+            \r          (carriage return)
+            \t          (tab)
+            \c0...\c9   (colorize subsequent text)
+            \cr         (reset to default color)
+            \cp         (push current color on color stack)
+            \co         (pop color from color stack)
+            \xhh        (two digit hex value ASCII code)
+            \&quot;          (quotation mark)
+            \\          (backslash)
+</pre>                
+<p>As in C, TorqueScript allows you to create new-line and tabs using the tried and true backslash character. These are called "escape sequences". Escape sequences are used to indicate to the string processing system that a special character is being read.
+</p><p>Additionally, for data that is printed to the console and GUIs, you can colorize by using '\cn', where n is a value between 0 and 9, representing a pre-defined set of colors.
+<code>
+</p>
+<pre>           echo("\c2ERROR!!!\c0  =&gt; oops!");
+</pre>
+<p></code>
+</p><p>The code above prints the line "ERROR!!! =&gt; oops!" with the first part in red, and the latter part in black. Going into detail about <a href="http://www.garagegames.com/index.php?sec=mg&amp;mod=resource&amp;page=view&amp;qid=3111" class='external text' title="http://www.garagegames.com/index.php?sec=mg&amp;mod=resource&amp;page=view&amp;qid=3111" rel="nofollow">console output colorizing</a> is beyond the scope of this chapter, but a little experimentation will go a long way toward helping you understand how the system works.
+</p>
+<a name="Booleans:"></a><h5><a name = "HeaderLink12"></a> Booleans: </h5>
+<p>Like most programming languages, TorqueScript also supports Booleans. Boolean numbers have only two values- true or false.
+</p>
+<pre>
+            true    (1)
+            false   (0)
+</pre>            
+<p>Again, as in many programming languages the constant "true" evaluates to the number 1 in TorqueScript, and the constant "false" evaluates to the number 0. However, just like C++, non-zero values are also considered true. 
+</p><p>Numbers, Strings, and Booleans, those are the basic data-types in many programming languages, and TorqueScript supports them all. Next, we'll look at higher-level variable data-types: Arrays and Vectors.
+</p>
+<a name="Arrays:"></a><h5><a name = "HeaderLink13"></a> Arrays: </h5>
+<p><code>
+</p>
+<pre>           $MyArray[n]         (Single-dimension) 
+           $MyMultiArray[m,n]  (Multi-dimension)
+           $MyMultiArray[m_n]  (Multi-dimension)
+</pre>
+<p></code>
+</p><p>TorqueScript is extremely flexible with arrays. Many scripting languages are more flexible with arrays than compiled languages like C++, but TorqueScript is even more flexible than most scripting languages. All this flexibility can get confusing, and deciphering how TorqueScript handles arrays sometimes trips people up.
+</p><p>For example, it is a common misconception that TorqueScript does not support multi-dimensional arrays. This is not true, as the code in the box above shows. The reason many people get confused about multi-dimensional arrays in TorqueScript is that there are multiple-ways to address the array. As you can see, you can separate the dimension indices (m and n, in the above) with commas, or even underscores
+</p><p>Below are two more interesting features of the way TorqueScript handles arrays:
+</p><p>1) $a and $a[0] are separate and distinct variables. It is advisable to use some kind of naming convention so it is clear when you are dealing with an array.
+<code>
+</p>
+<pre>           $a = 5;
+           $a[0] = 6;
+           echo("$a == ", $a);
+           echo("$a[0] == ", $a[0]);
+</pre>
+<p></code>
+</p><p>Run this code, and you will see that $a and $a[0] are distinct in the output.
+</p><p>2) $MyArray0 and $MyArray[0] are the same. It may be surprising, but TorqueScript allows you to access array indices without using the common bracket [] syntax. Again, it is advisable to use a naming convention to identify arrays in your code.
+<code>
+</p>
+<pre>           $aryMyArray[0] = "slot 0";
+           echo ($aryMyArray0);
+           
+           $aryMyArray[1] = "slot 1";
+           echo ($aryMyArray1);
+           
+           $aryMyArray[0,0] = "slot 0-0";
+           echo ($aryMyArray0_0);
+</pre>
+<p></code>            
+</p><p>As the output from the above code illustrates, TorqueScript treats bracketed indices the same as appended indices.
+</p><p><b>Caveat:</b> When passing an argument to a function, be careful if the argument is an array. You cannot successfully pass in, e.g., $aryMyArray as a function argument and reference $aryMyArray[0] within the function body. Instead, you must pass in each of the array elements you will use, thus: myFunction( $aryMyArray[0], $aryMyArray[1] ). This aspect of TorqueScript is easier to understand if you think of the bracket notation as simply a shortcut to forming a variable name with trailing digits: our function call is, in effect, myFunction( $aryMyArray0, $aryMyArray1 ).
+</p><p>Now that we have a basic understanding of arrays, it's time to move on to vectors.
+</p>
+<a name="Vectors:"></a><h5><a name = "HeaderLink14"></a> Vectors: </h5>
+<pre>
+            &quot;1.0 1.0 1.0 1.0&quot;   (4 element vector)
+</pre>            
+<p>"Vectors" are a helpful data-type which are used throughout Torque. For example, many fields in the World Editor take numeric values in sets of 3 or 4. These are stored as strings and interpreted as "vectors". There are a variety of console operations (read as "available in scripts") for manipulating vectors, for example the console function getWord(). Also, vectors are taken as input for many game methods.
+</p><p>In addition to space-delimited vectors described above, TorqueScript has tab-delimited vectors and newline-delimited vectors as well. See, e.g., console functions getField() and getRecord(). Space-, tab-, and newline-delimited vectors can be formed using the TorqueScript concatenation operators SPC, TAB, and NL, respectively.
+</p>
+<a name="Summary:"></a><h5><a name = "HeaderLink15"></a> Summary: </h5>
+<p>We now have a good understanding of how variables work in TorqueScript. Remember that even though TorqueScript supports specific kinds of data-types, it will let you over-ride a variable's data-type however you see fit.
+</p><p>Next, we take a quick look at TorqueScript's operators.
+</p>
+<a name="Operators"></a><h4><a name = "HeaderLink16"></a> Operators </h4>
+<p>A complete listing of TorqueScript's operators appears in the TorqueScript Appendix <a href="http://tdn.garagegames.com/wiki/TorqueScript_Quick_Reference" class='external autonumber' title="http://tdn.garagegames.com/wiki/TorqueScript Quick Reference" rel="nofollow">[1]</a>. In general, operators in TorqueScript behave very similarly to operators in C-derived languages. However, there are two important caveats when working with TorqueScript's operators:
+</p>
+<ul><li>The ++ and -- operators are available only in post-fix form (i.e. ++%a; does not work, only %a++)
+</li><li>String comparisons are of the form:
+</li></ul>
+<pre>
+            $=      (string equal-to operator)
+           &nbsp;!$=     (string not-equal-to operator)
+</pre>                
+while the switch statement appears in numeric- and string forms:<pre>
+            switch  () {}      (numeric switch)
+            switch$ () {}      (string switch)</pre>
+<p>These are the most commonly encountered issues with TorqueScript operators. Again, a complete reference can be found in the Appendix. Next we move on to control statements.
+</p>
+<a name="Control_Statements"></a><h4><a name = "HeaderLink17"></a> Control Statements </h4>
+<a name="Branching_Structures"></a><h5><a name = "HeaderLink18"></a> Branching Structures </h5>
+<p>We now take a look at TorqueScript's control statements—branching and looping structures. TorqueScript supports the familiar branching statements along with an extention specifically for strings:
+</p>
+<ul><li><b>if-then-else</b> The general structure of the if-then-else statement is:
+</li></ul>
+<pre>
+            if(&lt;boolean expression&gt;) 
+            {
+                statements;
+            } else 
+            {
+                alternative statements;
+            }
+</pre>                    
+<p>Things to know:
+</p>
+<ul><li>Brackets '{}' are optional for single line statements. (Many programmers find it more helpful to always use brackets.)
+</li><li>Compound if-then-else-if-then-... statements are perfectly legal (Many programmers find switch statements easier to read for large blocks of related if-cases). 
+</li></ul>
+<ul><li><b>switch</b>—The general structure of the switch statement is:
+</li></ul>
+<pre>
+            switch(&lt;numeric expression&gt;) 
+            {
+            case value0:
+                statements;
+            case value1:
+                statements;
+            ...
+            case valueN:
+                statements;
+            default:
+                statements;
+            }
+</pre>                    
+<p>Things to know:
+</p>
+<ul><li>switch only (correctly) evaluates numerics. There is a separate statement, 'switch$', for strings.
+</li><li>The break statement does not apply to switch. TorqueScript executes only matching cases and automatically breaks at the next case: statement.
+</li><li>In TorqueScript, switch statements are no faster than if-then-else statements. 
+</li></ul>
+<ul><li><b>switch$</b>—The general structure of the switch$ statement is:
+</li></ul>
+<pre>
+            switch$ (&lt;string expression&gt;) 
+            {
+            case &lt;string value 0&gt;:
+                statements;
+            case &lt;string value 1&gt;:
+                statements;
+            ...
+            case &lt;string value N&gt;:
+                statements;
+            default:
+                statements;
+            }
+</pre>                    
+<ul><li>This construct behaves exactly like the 'switch' construct with one important exeception: it is only for strings.
+</li></ul>
+<a name="Looping_Structures"></a><h5><a name = "HeaderLink19"></a> Looping Structures </h5>
+<ul><li><b>for</b>—The general structure of the for-loop is:
+</li></ul>
+<p><code>
+</p>
+<pre>           for(expression0; expression1; expression2) 
+           {
+               statement(s);
+           }
+</pre>
+<p></code>                    
+</p><p>For example, the code:
+<code>
+</p>
+<pre>           for(%count = 0; %count &lt; 3; %count++) 
+           {
+               echo(%count);
+           }
+</pre>
+<p></code>                    
+</p>
+outputs<pre>0
+1
+2</pre>
+<p>As you can see, this is identical to C++'s for-loop. Note: it is beyond the scope of this chapter to try to teach programming basics such as what a for-loop is. Very beginning programmers should read some good tutorials on programming before attempting to make their way through this chapter.
+</p>
+<ul><li><b>while</b>—The general structure of the while-loop is:
+</li></ul>
+<p><code>
+</p>
+<pre>           while(expression) 
+           {
+                statements;
+           }
+</pre>
+<p></code>                    
+As an concrete example, the code:
+<code>
+</p>
+<pre>           %count = 0;
+           
+           while (%count &lt; 3) 
+           {
+               echo(%count);
+               %count++;
+           }
+</pre>
+<p></code>                    
+produces the same as the for-loop above.
+</p><p>In sum, TorqueScript supports the standard set of control statements and handles them very similarly to familiar languages like C++.
+</p><p>In the next section, we continue our detailed examination of TorqueScript's standard features. We'll be looking at how TorqueScript handles functions (surprise: it's similar to C++, but more flexible).
+</p>
+<a name="Functions"></a><h4><a name = "HeaderLink20"></a> Functions </h4>
+<p>Basic functions in TorqueScript are defined as follows:
+<code>
+</p>
+<pre>           function func_name([arg0],...,[argn]) 
+           {
+               statements;
+               [return val;]
+           }
+</pre>
+<p></code>        
+</p><p>Here is an example:
+<code>
+</p>
+<pre>           function echoRepeat (%echoString, %repeatCount) 
+           {
+               for (%count = 0; %count &lt; %repeatCount; %count++)
+               {
+                   echo(%echoString);
+               }
+           }
+</pre>
+<pre>           echoRepeat("hello!", 5);
+</pre>
+<p></code>
+</p><p>The code above will echo the string "hello!" five times to the console.
+</p><p>TorqueScript functions can take any number of arguments, each separated by commas. Functions may return a value by using the return statement, just as in C++.
+</p><p>Things to know:
+</p>
+<ul><li>If you define a function and give it the same name as a previously defined function, TorqueScript will completely override the old function. Even if you define the new function with a different number of parameters, if its name is exactly the same as another function, the older function will be overridden. This is important to note: TorqueScript does not support function polymorphism in the same way C++ does. However, TorqueScript provides packages (see the full section on packages below), which can get around this problem.
+</li></ul>
+<ul><li>If you call a function and pass fewer parameters than the function's definition specifies, the un-passed parameters will be given an empty string as their default value.
+</li></ul>
+<ul><li>TorqueScript supports recursion, and it behaves just as in C++. The following example is a re-write of the echoRepeat() function we used above, but this version uses recursion instead of a for-loop:
+</li></ul>
+<p><code>
+</p>
+<pre>           function echoRepeat (%echoString, %repeatCount) 
+           {
+               if (%repeatCount &gt; 0) 
+               {
+                   echo(%echoString);
+                   echoRepeat(%echoString, %repeatCount--);
+               }
+           }
+</pre>
+<pre>           echoRepeat("hello!", 5);
+</pre>
+<p></code>
+</p>
+<a name="Objects"></a><h4><a name = "HeaderLink21"></a> Objects </h4>
+<p>Having covered the basics of the language, it's time to examine some of TorqueScript's more interesting details.
+</p><p>In Torque, every item in the game world is an object, and all game world objects can be accessed via script. For example, Player, WheeledVehicle, Item, etc are all accessible via script, though they are defined in C++.
+</p><p>Objects are created in TorqueScript using the following syntax:
+<code>
+</p>
+<pre>           // In TorqueScript
+           %var = new ObjectType(Name&nbsp;: CopySource, arg0, ..., argn) 
+           {
+           
+               &lt;datablock = DatablockIdentifier;&gt;
+               
+               [existing_field0 = InitialValue0;]
+               ...
+               [existing_fieldM = InitialValueM;]
+               
+               [dynamic_field0 = InitialValue0;]
+               ...
+               [dynamic_fieldN = InitialValueN;]
+           };
+</pre>
+<p></code>
+</p><p>This syntax is simpler than it looks. Let's break it down:
+</p>
+<ul><li>%var- Is the variable where the object's handle will be stored.
+</li><li>new- Is a key word telling the engine to create an instance of the following ObjectType.
+</li><li>ObjectType- Is any class declared in the engine or in script that has been derived from SimObject or a subclass of SimObject. SimObject-derived objects are what we were calling "game world objects" above.
+</li><li>Name (optional)- Is any expression evaluating to a string, which will be used as the object's name.
+</li><li>CopySource (optional)- The name of an object which is previously defined somewhere in script. Existing field values will be copied from CopySource to the new object being created. Any dynamic fields defined in CopySource will also be defined in the new object, and their values will be copied. Note: If CopySource is of a different ObjectType than the object being created, only CopySource's dynamic fields will be copied.
+</li><li>arg0, ..., argn (optional)- Is a comma separated list of arguments to the class constructor (if it takes any).
+</li><li>datablock- Many objects (those derived from GameBase, or children of GameBase) require datablocks to initialize specific attributes of the new object. Datablocks are discussed below.
+</li><li>existing_fieldM- In addition to initializing values with a datablock, you may also initialize existing class members (fields) here. Note: In order to modify a member of a C++-defined class, the member must be exposed to the Console. This concept is discussed in detail later.
+</li><li>dynamic_fieldN- Lastly, you may create new fields (which will exist only in Script) for your new object. These will show up as dynamic fields in the World Editor Inspector.
+</li></ul>
+<p>Due to the way Torque parses script files, the ObjectType must be known at compile time.  In order to create types that are only known post compile, use the eval() function. For example, this will not compile:
+<code>
+</p>
+<pre>           new %myObjectType(SomeObjectName);
+</pre>
+<p></code>
+Place this in an eval() function to force Torque to evaluate it properly:
+<code>
+</p>
+<pre>           eval("new %myObjectType(SomeObjectName);");
+</pre>
+<p></code>
+</p><p>Let's create one object that doesn't use a datablock and one that does:
+<code>
+</p>
+<pre>           // create a SimObject w/o modifying any fields
+           $example_object = new SimObject();
+           
+           // create a SimObject w/ dynamic fields
+           $example_object = new SimObject() 
+           {
+               a_new_field = "Hello world!";
+           };
+           
+           // create a StaticShape using a datablock
+           datablock StaticShapeData(MyFirstDataBlock) 
+           {   
+               shapeFile = "~/data/shapes/player/player.dts";   
+               junkvar = "helloworld";
+           };
+           
+           new StaticShape() 
+           {
+               dataBlock = "MyFirstDataBlock";
+               position = "0.0 0.0 0.0";
+               rotation = "1 0 0 0";
+               scale = "1 1 1";
+           };
+</pre>
+<p></code>
+</p>
+<a name="Handles_and_Names"></a><h5><a name = "HeaderLink22"></a> Handles and Names </h5>
+<p>Every object in the game is identified and tracked by two parameters:
+</p>
+<ul><li>Handle- Every object is assigned a unique numeric ID upon creation. This is generally referred to as the object's handle.
+</li><li>Name- Additionally, all objects may have a name. 
+</li></ul>
+<p>In most cases, Handles and names may be used interchangeably to refer to the same object, but a word of caution is in order. Handles are always unique, whereas multiple objects may have the same name. If you have multiple objects with the same name, referencing that name will find one and only one of the objects.
+</p><p><b>Fields and Commands</b>
+</p><p>TorqueScript object Fields and Commands are the equivalents of C++ object Members and Methods. Objects instantiated via script may have data members (referred to as Fields) and functional Methods (referred to as Commands). In order to access an object's Fields or Commands, one uses the standard dot notation, as in C++.
+<code>
+</p>
+<pre>           //NOTE: none of the code here will actually run in the console, because 
+           //      we are using names and handles which do not actually exist.
+           //      This code just illustrates some concepts.
+           
+           // Directly access via handle
+           123.field_name = value;
+           123.command_name();
+           
+           // Directly access via name
+           AName.field_name = value;
+           AName.command_name();
+           
+           // Indirectly access via a variable
+           // containing either a name or a handle
+           %AVar.field_name = value;
+           %AVar.command_name();
+</pre>
+<p></code>            
+</p><p>To get a picture of how this works for real do this:
+</p>
+<ol><li>Start the SDK (you can just run the Torque demo, if you like)
+</li><li>Run one of the Missions
+</li><li>Start the World Editor Inspector (press F11)
+</li><li>Switch to camera view (press Alt+C) and select the character (hold down the right mouse-button to look around, drag the mouse down until the character comes into view. Release the right mouse-button and left-click on the character.)
+</li><li>Give the character a name, such as 'myGuy' (type "myGuy", without quotes, in the textbox next to the "Apply" button, and then click the Apply button)
+</li><li>Open the Console (press the ~ key)
+</li><li>Enter the following lines of code:
+</li></ol>
+<p><code>
+</p>
+<pre>           $player_name = "myGuy";
+           $player_id = $player_name.getID();
+           
+           echo($player_name.position);
+           echo($player_name.getID());
+           echo(myGuy.getid());
+</pre>
+<p></code>
+</p>
+<a name="Dynamic_Fields"></a><h5><a name = "HeaderLink23"></a> Dynamic Fields </h5>
+<p>In addition to normal fields, which are common between all instances of an object type, TorqueScript allows you to create dynamic fields. Dynamic fields are associated with a single instance of an object and can be added and removed at will. Adding a dynamic field in TorqueScript is automatic. If you try to read an object field and the field is not found, TorqueScript will simply return an empty string, and no dynamic field will be created. However, if you try to write to an object field which doesn't exist, TorqueScript will automatically create a matching dynamic field for the object, and assign it the value you are trying to.
+<code>
+</p>
+<pre>           // new_var will not be created because we are only
+           // 'reading' it
+           echo($player_id.new_var); 
+           
+           // new_var2 will be created and initialized to "Hello"
+           $player_id.new_var2 = "Hello";
+           echo($player_id.new_var2); 
+</pre>
+<p></code>
+</p>
+<a name="Console_Methods"></a><h5><a name = "HeaderLink24"></a> Console Methods </h5>
+<p>In addition to supporting the creation of functions, TorqueScript allows you to create methods that have no associated C++ counterpart:
+<code>
+</p>
+<pre>           function Classname::func_name(%this, [arg0],...,[argn]) 
+           {
+               statements;
+               [return val;]
+           }
+</pre>
+<p></code>            
+</p><p>The syntax breaks down as follows:
+</p>
+<ul><li>function- Is a keyword telling TorqueScript we are defining a new function.
+</li><li>ClassName::- Is the class type this function is supposed to work with.
+</li><li>func_name- Is the name of the function we are creating.
+</li><li>%this- Is a variable that will contain the handle of the 'calling object'.
+</li><li>...- Is any number of additional arguments. 
+</li></ul>
+<p>At a minimum, Console Methods require that you pass them an object handle. You will often see the first argument named %this. People use this as a hint, but you can name it anything you want. As with Console functions any number of additional arguments can be specified separated by commas. Also, a console method may return an optional value.
+</p><p>Here are some examples:
+<code>
+</p>
+<pre>           function Goober::hi(%this) 
+           {
+               echo("Goober Hello ", %this);
+           }
+</pre>
+<p></code>            
+</p><p>Assuming our player handle is 1000, if we type:
+<code>
+</p>
+<pre>           1000.hi();
+</pre>
+<p></code>            
+</p><p>we get,
+</p>
+<pre>
+            &lt;input&gt; (0): Unknown command hi.
+            Object (1000) Player-&gt;ShapeBase-&gt;GameBase
+            -&gt;SceneObject-&gt;NetObject-&gt;SimObject
+</pre>            
+<p>What has happened is that Torque has searched the entire hierarchy of Player and its parent classes, looking for a function called hi() defined in the context of one of those classes. Not finding one, it prints the above message. To demonstrate that Torque does search the class hierarchy of Player, try this next:
+<code>
+</p>
+<pre>           function NetObject::hi(%this) 
+           {
+               echo("NetObject Hello ", %this);
+           }
+</pre>
+<p></code>
+</p><p>typing,
+<code>
+</p>
+<pre>               1000.hi();
+</pre>
+<p></code>            
+</p><p>we get,
+</p>
+<pre>
+            NetObject Hello 1000
+</pre>            
+<p>Next, if we define:
+<code>
+</p>
+<pre>           function Player::hi(%this) 
+           {
+               echo("Player Hello ", %this);
+               Parent::hi(%this);
+           }
+</pre>
+<p></code>            
+</p><p>we would type,
+<code>
+</p>
+<pre>           1000.hi();
+</pre>
+<p></code>            
+</p><p>and get,
+</p>
+<pre>
+            Player Hello 1000
+            NetObject Hello 1000
+</pre>            
+<p>Do you see what happened? Torque found Player:hi() first, but we also wanted to execute the next previous defintion of hi(). To do this we used the 'Parent::' keyword. Of course, not finding a ShapeBase instance, which is Player's literal parent, Torque then searched down the chain till it came to the NetObject version. Voila!
+</p><p>Lastly, we can force Torque to call a specific instance as follows:
+<code>
+</p>
+<pre>           NetObject::hi(1000);
+</pre>
+<p></code>            
+</p><p>gives us,
+</p>
+<pre>
+            NetObject Hello 1000
+</pre>            
+<p>and
+<code>
+</p>
+<pre>           ShapeBase::hi(1000);
+</pre>
+<p></code>            
+</p><p>also gives us,
+</p>
+<pre>
+            NetObject Hello 1000
+</pre>            
+<p>since there is no ShapeBase instance of hi() defined. Too cool.
+</p><p>Note: Defining subsequent console methods with the same name as prior console methods over-rides the previous definition permanently, unless the re-definition is within a package (see the Packages section).
+</p>
+<a name="Packages"></a><h4><a name = "HeaderLink25"></a> Packages </h4>
+<p>Packages provide dynamic function-polymorphism in TorqueScript. In short, a function defined in a package will over-ride the prior definition of a same named function when the package is activated. Packages have the following syntax:
+<code>
+</p>
+<pre>           package package_name() 
+           {
+               function function_definition0() 
+               {
+                   [statements];
+               }
+               ...
+               function function_definitionN() 
+               {
+                   [statements];
+               }
+           };
+</pre>
+<p></code>        
+</p><p>Things to know:
+</p>
+<ul><li>The same function can be defined in multiple packages.
+</li><li>Only functions can be packaged.
+</li><li>Datablocks (see the Datablocks section for more information) cannot be packaged. 
+</li></ul>
+<p>Packages can be activated,
+<code>
+</p>
+<pre>           ActivatePackage(package_name);
+</pre>
+<p></code>        
+</p><p>and deactivated:
+<code>
+</p>
+<pre>           DeactivatePackage(package_name);
+</pre>
+<p></code>        
+</p><p>The easiest way to get a feel for packages is with an example. The example below is the most detailed we've looked at so far in this guide, but don't worry. It will make perfect sense when we're done.
+</p><p>Copy the code from the box below into a simple text file. You can use your favorite code/text editor (GarageGames recommends JEdit). Save the code as a new file called "package_test.cs" and save it in the "test_scripts" sub-directory of the example directory we created previously *INSERT LINK*.
+<code>
+</p>
+<pre>           //
+           // Define an initial function: demo()
+           //
+           function demo() 
+           {
+               echo("Demo definition 0");
+           }
+           
+           //
+           // Now define three packages, each implementing 
+           // a new instance of: demo()
+           //
+           package DemoPackage1 
+           {
+                 function demo() 
+               {
+                       echo("Demo definition 1");
+               }
+           };
+           
+           package DemoPackage2 
+           {
+               function demo() 
+               {
+                   echo("Demo definition 2");
+               }
+           };
+           
+           package DemoPackage3 
+           {
+               function demo() 
+               {
+                   echo("Demo definition 3");
+                   echo("Prior demo definition was=&gt;");
+                   Parent::demo(); 
+               }
+           };
+           
+           //
+           // Finally, define some tests functions
+           //
+           function test_packages(%test_num) 
+           {
+               switch(%test_num) 
+                 {
+               // Standard usage
+               case 0: 
+                   echo("----------------------------------------");
+                   echo("A packaged function over-rides a prior"); 
+                   echo("defintion of the function, but allows");
+                   echo("the new definition to be \'popped\' "); 
+                   echo("off the stack."); 
+                   echo("----------------------------------------");
+                   demo();
+                   ActivatePackage(DemoPackage1);
+                   demo();
+                   ActivatePackage(DemoPackage2);
+                   demo();
+                   DeactivatePackage(DemoPackage2);
+                   demo();
+                   DeactivatePackage(DemoPackage1);
+                   demo();
+               // Parents
+               case 1: 
+                   echo("----------------------------------------");
+                   echo("The Parent for a packaged function is"); 
+                   echo("always the previously activated ");
+                   echo("packged function."); 
+                   echo("----------------------------------------");
+                   demo();
+                   ActivatePackage(DemoPackage1);
+                   demo();
+                   ActivatePackage(DemoPackage3);
+                   demo();
+                   DeactivatePackage(DemoPackage3);
+                   DeactivatePackage(DemoPackage1);
+                   echo("----------------------------------------");
+           
+                   demo();
+                   ActivatePackage(DemoPackage1);
+                   demo();
+                   ActivatePackage(DemoPackage2);
+                   demo();
+                   ActivatePackage(DemoPackage3);
+                   demo();
+                   DeactivatePackage(DemoPackage3);
+                   DeactivatePackage(DemoPackage2);
+                   DeactivatePackage(DemoPackage1);
+               // Stacking oddities
+               case 2: 
+                   echo("----------------------------------------");
+                   echo("Deactivating a \'tween\' package will"); 
+                   echo("deactivate all packages \'stacked\' after");
+                   echo("it."); 
+                   echo("----------------------------------------");
+                   demo();
+                   ActivatePackage(DemoPackage1);
+                   demo();
+                   ActivatePackage(DemoPackage2);
+                   demo();
+                   DeactivatePackage(DemoPackage1);
+                   demo();
+               }
+           }
+</pre>
+<p></code>
+</p><p>Once you've done that, load the script you just created by opening up the TGE Console and typing
+<code>
+</p>
+<pre>           exec("test_scripts/package_test.cs");
+</pre>
+<p></code>        
+</p><p>Now the script has been loaded, so Torque is aware of all of the code in the file. As such, we can start using the functions we defined above to test with.
+</p><p>The standard way to use a package is to define a previously defined function inside the package, activate it as needed, and then deactivate it to go back to the 'default' case for the function. To see this in action, type: test_packages(0);
+</p><p>TorqueScript provides a useful keyword, 'Parent::'. By using the 'Parent::' keyword in a packaged function, we can execute the function that is being over-ridden. To see this in action, type: test_packages(1);
+</p><p>It is important to understand that packages are, essentially, stacked atop each other. So, if you deactivate a package that was activated prior to other packages, you are in effect automatically deactivating all packages that were activated after it. To see this in action, type: test_packages(2);
+</p><p>Things to know:
+</p>
+<ul><li>Packages may define new functions. Remember, when you deactivate a package, these functions get removed from the namespace.
+</li><li>Parent:: keyword is not recursive, i.e. Parent::Parent::fun() is illegal.
+</li><li>Again, deactivating packages activated prior to other more recently activated packages deactivates all subsequently activated packages. 
+</li></ul>
+<a name="Namespaces"></a><h4><a name = "HeaderLink26"></a> Namespaces </h4>
+<p>As previously mentioned, namespaces are provided in TorqueScript. The way they work is quite simple. First, all objects belong to a namespace. The namespace they belong to normally defaults to the same name as the class.
+<code>
+</p>
+<pre>           // Player class Namespace
+           Player::
+</pre>
+<p></code>        
+</p><p>Also as previously mentioned, these namespaces provide separation of functionality, such that one may have functions with the same name, but belonging to separate namespaces. To use one of these functions, you must either manually select the appropriate namespace, or in some cases this is done automatically for you.
+</p><p>It is important to understand that the "::" is not magical in any way. In fact, you can create functions with "::" in their name. This doesn't mean they belong to a namespace. If the expression prefixing the "::" is not a valid class/namespace name, in effect, all you have done is create a unique name.
+<code>
+</p>
+<pre>           // Not really namespaces
+           function Ver1::doIt() 
+           {
+               ...
+           };
+           
+           function Ver2::doIt() 
+           {
+               ...
+           };
+</pre>
+<p></code>        
+</p><p>Now, there is more to namespaces that you need to understand, but before we can address that we need to learn about some other topics. So, we will re-visit namespaces below in the appropriately titled Datablocks, Objects, and Namespaces Revisited section below.
+</p>
+<a name="Datablocks"></a><h4><a name = "HeaderLink27"></a> Datablocks </h4>
+<p>Of all the features in TorqueScript, Datablocks are probably the most confusing. To make things worse, they are central to the creation of most objects, which means you need to understand them relatively early. I will give a summary of datablocks here, but because you need to understand some other more advanced topics prior to really jumping into datablocks I will defer the in-depth review till later (see "Datablocks, Objects, and Namespaces Revisited" below).
+</p><p>The official definition of datablock is:
+</p><p>"<b>Datablocks are special objects that are used to transmit static data from server to client.</b>" --engine.overview.txt in the Torque Game Engine SDK.
+</p><p>In the words of Keanu Reeves himself, "Whoaa...". Or perhaps in my own words, "huh?". This definition, although true, didn't really tell me much. Some searching turned up additional definitions:
+</p><p>"<b>A datablock is an object that contains a set of characteristics which describe some other type of object.</b>"-- Joel Baxter
+</p><p>Better, but I'm still a little blurry on the purpose and use of datablocks.
+</p><p>"<b>A datablock is a(n) object that can be declared either in C++ engine code, or in script code ... Each declared datablock can then be used as a "template" to create objects...</b>"-- Liquid Creations, Scripting Tutorial #2
+</p><p>OK, now I get it. Datablocks are templates and we use them to create new objects with the attributes specified by the template. Cool. But, how do we do this? For the answer to that question, you'll have to wait. First we need to discuss a few other important topics, and then we will revisit datablocks and give them the thorough coverage that they deserve.
+</p><p><a href="http://tdn.garagegames.com/wiki/TorqueScript/Datablocks" title="TorqueScript/Datablocks">Read more about datablocks...</a>
+</p>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Introduction/TorqueScript.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:54 GMT -->
+</html>

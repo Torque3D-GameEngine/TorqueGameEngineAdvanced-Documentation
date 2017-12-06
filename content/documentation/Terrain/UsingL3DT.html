@@ -1,0 +1,111 @@
+<html>
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Terrain/UsingL3DT.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4263;
+   parent.leftFrame.expandToItem('tree2', 'doc4263');
+   var element = parent.leftFrame.document.getElementById('doc4263');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script><meta http-equiv="Content-Type" content="text/html; charset=ANSI_X3.4-1968"><title>Using Terragen with Atlas</title><link rel="stylesheet" href="style.html" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.62.4"><link rel="home" href="index.html" title="Torque Shader Engine 0.2.x Documentation"><link rel="up" href="ch05.html" title="Chapter&#160;5.&#160;Terrain"><link rel="previous" href="ch05s04.html" title="Atlas Engine Runtime Reference"><link rel="next" href="ch05s06.html" title="Getting Higher Resolution Terrain Data">
+</head><BODY id = "BODYID" onLoad = "initComponent()"  bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="section" lang="en"><div class="titlepage"><div><div>
+  <h2 align="center" class="title" style="clear: both"><u></u><a name = "HeaderLink0"></a>Using L3DT with Atlas</h2>
+			</div>
+			</div>
+<div><em>*Note- This tuotrial was originally a TDN article. You can find more L3DT tutorials at the <a href="http://www.bundysoft.com/wiki/doku.php?id=tutorials:torque">Bundysoft Wiki</a></em></div>
+</div>
+  <h2><a name = "HeaderLink1"></a>Introduction</h2>
+  <p>L3DT is an application well suited to the purpose of creating terrains for TGEA's Atlas Engine. Its available FREE without royalties or other restrictions of use. </p>
+  <p>It can be downloaded from the <a href="http://www.bundysoft.com/L3DT/" class='external text' title="http://www.bundysoft.com/L3DT/" rel="nofollow">L3DT</a> website. </p>
+  <h2><a name = "HeaderLink2"></a>Creating a Heightfield</h2>
+  <p>There are 3 available methods of generating terrains with L3DT, the first 2 are from within L3DT and the third method is via importing a heightfield to L3DT. See below for details. 
+    1. Creating a Heightfield/Terrain </p>
+  <h3><a name = "HeaderLink3"></a>Within L3DT</h3>
+  <p>This is not a complete tutorial on all the options available within L3DT, but an overview of important things as they relate to creating an Atlas Terrain. </p>
+  <p>During the map generation process of L3DT the following maps will be created, the ones in bold have potential use in relation to TGEA; Design Map, Heightfield, Water Map, Salinity Map, Attributes Map, Terrain Normals, Light Map, Texture Map. </p>
+  <p>Heightfield - Covered directly below.
+    Terrain Normals - Doing a search in the forums for 'Normals' and 'Atlas' will bring up results.
+    Light Map - This is useful in the production of terrain textures, see Texture from GIS Data below.
+    Texture Map - This is obvious and covered below in Texture From within L3DT. </p>
+  <p>Start by creating a new map in L3DT.  File--&gt;New Map </p>
+  <p>Then select one of the four Terrain Algorithms. </p>
+  <p><img src="TGEA_L3DT_gis1.jpg" alt="Image:TSE_L3DT_gis1.jpg" width="291" height="308" longdesc="../../../../../wiki/Image_TSE_L3DT_gis1.html" /> </p>
+  <p>The Design/inflate (blank) gives 2 options, a) to design your own heightfield within L3DT and b) allows you to import your own external heightfield. The other three provide an automated method of creating your terrain. </p>
+  <p>Continuing on through the process by continually pressing the next button will provide you with a number of options that are covered in the L3DT online documentation over at BundySoft.</p>
+  <h3><a name = "HeaderLink4"></a>From GIS Data</h3>
+  <p>Step 1. Image Preparation </p>
+  <p>Export your DEM (Digital Environment Map) data from your favourite GIS program in any supported image format ensuring its shades of grey obviously, L3DT supports JPEG, PNG and BMP. Ensure that it is square and of a size supported by L3DT (i.e. 256, 384, 512, 768, 1024, 1536 or 2048). </p>
+  <p>Flip this image vertically in any image manipulation program (This image is reorientated back when exported to the RAW format from L3DT). </p>
+  <p>Step 2. Create Design Map in L3DT </p>
+  <p>Start by creating a new map in L3DT.  File--&gt;New Map </p>
+  <p>Select 'Design/inflate (blank)' from the pop-up dialog. </p>
+  <p>In the second dialog you will define the size of your map.<br />
+    X = 16, Y = 16 gives you a 1024 x 1024 map<br />
+    X = 32, Y = 32 gives you a 2048 x 2048 map </p>
+  <p><img src="TGEA_L3DT_gis2.jpg" alt="Image:TSE_L3DT_gis2.jpg" width="306" height="360" longdesc="../../../../../wiki/Image_TSE_L3DT_gis2.html" /> </p>
+  <p>By default the heightfield resolution is 10, the number you put in for your heightfield resolution is the same number you will be putting for your square size when you convert .RAW to .chu within TGEA. I use 1 for TGEA's scale, 1km x 1km (if you put 10, the map will be ten times larger). </p>
+  <p>Step 3. Import Heightfield </p>
+  <p>Import your heightfield by going to File--&gt;Import--&gt;Heightfield. </p>
+  <p><img src="TGEA_L3DT_gis3.jpg" alt="Image:TSE_L3DT_gis3.jpg" width="328" height="222" longdesc="../../../../../wiki/Image_TSE_L3DT_gis3.html" /> </p>
+  <p>Set the altitude minimum and maximum in metres, the 'Horiz scale' should be the same as the 'Heightfield resolution' in the previous step. </p>
+  <p><img src="TGEA_L3DT_gis4.jpg" alt="Image:TSE_L3DT_gis4.jpg" width="306" height="250" longdesc="../../../../../wiki/Image_TSE_L3DT_gis4.html" /> </p>
+  <h2><a name = "HeaderLink5"></a>Exporting a Heightfield</h2>
+  <p>Step 1. Resize Map </p>
+  <p>Atlas requires the source .RAW file to be one pixel larger so resize the Heightfield map by going to Operations--&gt;Heightfield--&gt;Resample map and adding 1 to your map's Width and Height. </p>
+  <p><img src="TGEA_L3DT_gis5.jpg" alt="Image:TSE_L3DT_gis5.jpg" width="249" height="164" longdesc="../../../../../wiki/Image_TSE_L3DT_gis5.html" /> </p>
+  <p>Step 2. Export Heightfield </p>
+  <p>Make sure the Heightfield is the active map View--&gt;Show map--&gt;Heightfield then export by going File--&gt;Export--&gt;Active map. Set the File format to RAW and set the file name and path to your project folder's /data/terrains </p>
+  <p><img src="TGEA_L3DT_gis6.jpg" alt="Image:TSE_L3DT_gis6.jpg" width="328" height="322" longdesc="../../../../../wiki/Image_TSE_L3DT_gis6.html" /> </p>
+  <p><b>Note:</b> L3DT flips the heightfield vertically when exporting the .RAW file, to remedy this you have a number of options available. a) Open your .RAW in an image manipulation program (Photoshop, GIMP etc) and flip it vertically then resave, b) flip your texture file vertically when you export it and leave the heightfield as is, or c) export the heightfield as a jpg (omitting step 1, resizing) then follow the 'From GIS Data' section above. </p>
+  <p>NB: The version 2.4 betas do not require the texture map to be flipped. It maps to the terrain perfectly with no changes. </p>
+  <p>Step 3. Divide your Heightfield's horizontal scales by 65536 to find the vertscale to use when converting your .RAW to .CHU in TGEA. </p>
+  <p>As an alternative to step 3 you can open up the l3dt viewer application and read the scale from there. </p>
+  <p>It is found under "View-&gt;Map Group Tree View" and selecting Height Field in the tree. The "Vertical Scale" factor is the one that you plot into atlasOldGenerateChunkFileFromRaw16() as the 4th parameter. </p>
+  <p>For details on how to generate the .CHU file in TGEA refer to the TGEA/Atlas/Overview and I highly recommend this Atlas Import GUI. </p>
+  <h2><a name = "HeaderLink6"></a>Creating/Exporting a Texture</h2>
+  <h3><a name = "HeaderLink7"></a>Within L3DT</h3>
+  <p>The first option when creating the texture map is the Light Mapping, the 'Additional Notes' below will help in understanding the direction with the elevation being quite obvious. The Sun Colour and Ambient Colour are also quite obvious, experimenting with their settings and find your desired result. Remember to match their look with the lighting within TGEA. </p>
+  <p><img src="TGEA_L3DT_gis7.jpg" alt="Image:TSE_L3DT_gis7.jpg" width="376" height="280" longdesc="../../../../../wiki/Image_TSE_L3DT_gis7.html" /> </p>
+  <p>The second dialog box involves 2 options, whether to add the Shadows from the light map to the terrain texture and whether to add water effects. The first option I would keep checked, although the potential exists that with the introduction of dynamic lighting and baked in shadows in a future version of TGEA this option will become redundant. </p>
+  <p>With the up coming water shader created for TGEA that calculates the depth of the terrain below the water and darkens accordingly, I would opt out of adding water effects to the texture (i.e. This option has become redundant). </p>
+  <p>Make sure the Texture Map is the active map View--&gt;Show map--&gt;Texture Map then export by going File--&gt;Export--&gt;Active map. Set the File format to JPG and set the file name and path to your project folder's /data/terrains </p>
+  <h3><a name = "HeaderLink8"></a>From GIS Data</h3>
+  <p>Note. This process may become redundant with the addition of 'Dynamic Lighting' to TGEA, assuming it will contain terrain lighting. </p>
+  <p>If you are using an aerial photograph as a base for your terrain, this process will be quick a painless. </p>
+  <p>Continue through L3DT until you generate a lightmap, this is what you'll be needing, same this map out as a .JPG </p>
+  <p>Open up your aerial photograph in any image manipulation program that supports layers (e.g Photoshop, GIMP), ensure its the same size as your original heightfield image and its square. Also load up your lightmap and make it a layer above your aerial images and change its mode to 'Multiply' (i.e. make the white areas transparent leaving the shadows). </p>
+  <p>Flatten your image and save it out. </p>
+  <h2><a name = "HeaderLink9"></a>Importing into Atlas2</h2>
+  <p>The following commands will convert your generated heightmap and texture into an Atlas2 terrain. </p>
+  <p>atlasOldGenerateChunkFileFromRaw16("game/data/terrains/terrain/heightmap16bit.raw", 2048, 5.0, 0.0158, "game/data/terrains/geometry.chu", 1.5, 3); </p>
+  <p>The heighfield in this example uses a 2048x2048 pixel size (2049 minus the 1 pixel extra), a horizontal scale of 5, a vertical scale of 0.0158 (1038/65535). Note the tree leaf size of 3, as we have to use that later. </p>
+  <p>importOldAtlasCHU("game/data/terrains/geometry.chu", "game/data/terrains/geometry.atlas");
+    atlasGenerateTextureTOCFromLargeJPEG("game/data/terrains/terrain/textureCWM.jpg", 3, "game/data/terrains/texture.atlas"); </p>
+  <p>The 3 is the same leaf size as mentioned above </p>
+  <p>atlasGenerateUniqueTerrain("game/data/terrains/myTerrain.atlas", "game/data/terrains/geometry.atlas", "game/data/terrains/texture.atlas"); </p>
+  <p>Thats it! Add the myTerrain datablock to the mission file and you are ready to go. </p>
+  <h2><a name = "HeaderLink10"></a>Additional Notes</h2>
+  <p>L3DT Map Lighting </p>
+  <p>Within L3DT, for lighting land in the northern hemisphere it ranges from Direction 90 degrees (east) through 180 degrees (south) around to 270 degrees (west), in the Southern Hemisphere it ranges from 90 degrees (east) through 0 degrees (north) to 270 degrees (west), with the elevation depending upon which latitude the land is located, the date and time of day. </p>
+  <p>&nbsp;</p>
+  </div>
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Terrain/UsingL3DT.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:24 GMT -->
+</html>

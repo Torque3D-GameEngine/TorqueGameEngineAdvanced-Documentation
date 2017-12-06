@@ -1,0 +1,153 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Terrain/Terrain.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4262;
+   parent.leftFrame.expandToItem('tree2', 'doc4262');
+   var element = parent.leftFrame.document.getElementById('doc4262');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 3632;
+   parent.leftFrame.expandToItem('tree2', 'doc3632');
+   var element = parent.leftFrame.document.getElementById('doc3632');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Atlas - Overview</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+<style type="text/css">
+<!--
+.style5 {font-size: 18px; font-weight: bold; }
+-->
+</style>
+</head>
+
+<BODY id = "BODYID" onLoad = "initComponent()"  id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="0" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+
+<td>
+<blockquote>
+  <p name="Introduction"><a name="Introduction"></a></p>
+  <h2><a name = "HeaderLink0"></a><a name = "HeaderLink0"></a>Introduction</h2>
+  <p>Torque has always been known as an engine with superior support for outdoor scenes. The cornerstone of this support has always been robust terrain engines - from Starsiege to Tribes 2, terrain	has been a major component of Torque games.  </p>
+  <p>With this in mind, TGEA has two distinct terrain engines. The first, the legacy terrain engine, is simply a port of the TGE fixed function terrain engine, with some optimizations for shader-enabled cards. The second, the Atlas terrain engine is a rewrite from the ground up, designed to support very large visible distances, expansive terrain datasets, and large, unique textures.  </p>
+  <p>Legacy terrain has the benefit of having a full set of interactive in-engine editors. This made it very easy to work with the terrain, tweak it, and so forth. Atlas, on the other hand, has a separate set of tools and procedures for terrain generation. Despite the lack of in-game editing of Atlas terrain, the tool pipeline for generating the required data is more flexible.  </p>
+  <p>
+  A common method of generating Atlas data is to create the terrain in a 3rd party application, such as Terragen or l3dt. From there, you'll convert the data into Atlas &quot;chunks&quot; and generate the texture trees that cover the huge amount of terrain.
+  </p>
+  <p>&nbsp;</p>
+  <table width="292" cellspacing="20" class='toc' id='toc'>
+    <tr>
+      <td><div id='toctitle'>
+        <h2><a name = "HeaderLink1"></a><a name = "HeaderLink1"></a>Contents</h2>
+      </div>
+          <ul>
+            <li class='toclevel-1'><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+            <li class='toclevel-1'><a href="#Stages"><span class="tocnumber">2</span> <span class="toctext">Atlas Features</span></a></li>
+            <li class='toclevel-1'><a href="#Rendering_Properties"><span class="tocnumber">3</span> <span class="toctext">Creating Performant Terrains</span></a></li>
+            </ul></td>
+    </tr>
+  </table>
+</blockquote>
+<blockquote>
+  <p><br />
+  </p>
+  <p name="Stages"><a name="Stages"></a></p>
+  <h2><a name = "HeaderLink2"></a><a name = "HeaderLink2"></a>Atlas Features</h2>
+  <h4><em></em><a name = "HeaderLink3"></a>Lightweight CPU Usage</h4>
+  <pre>Atlas uses less than 10% of CPU time per frame to update and render. Compare this with approximately 30% for legacy terrain.</pre>
+  <h4><em></em><a name = "HeaderLink4"></a>Massive Landscapes</h4>
+  <pre>Supports landscapes of arbitrary size, bounded only by disk space. The current system supports approximately 10 quinquagintillion (or ten thousand quintillion vigintillion for those Brits in the audience,
+or 10^154 chunks on the base level).</pre>
+  <h4><em></em><a name = "HeaderLink5"></a>Vast View Distances</h4>
+  <pre>Can quickly render unlimited view distances, bounded only by the working range of the video card's Z-Buffer.
+Atlas can achieve 100+ fps on a midrange Radeon, with a view distance of approximately 4,000 meters. 
+The legacy terrain is not even capable of rendering this view distance by default!</pre>
+  <h4><em></em><a name = "HeaderLink6"></a>Unique Textures</h4>
+  <pre>Atlas supports a single massive texture for your entire terrain! Every texel is unique. 
+Support for extremely large textures (in excess of 32,768 by 32,768 pixels) on all hardware. 
+Of course, all this is streamed, so you only pay memory cost for the texture detail near you.</pre>
+  <h4><em></em><a name = "HeaderLink7"></a>Streaming Data</h4>
+  <pre>Data is streamed from the disc as needed, so you can have very large terrains without exceeding your memory. Both geometry and texture data are loaded on the fly.</pre>
+  <h4><em></em><a name = "HeaderLink8"></a>Accurate Collision</h4>
+  <pre>What is rendered is what is collided against, so you get full interaction support for anything Atlas can render - overhangs, gaps, ditches, and so on. 
+As the toolset for this engine matures, it will be possible to actually create such terrains. 
+But the runtime as of now supports this sort of topology.</pre>
+  <h4><em></em><a name = "HeaderLink9"></a>Compressed Textures</h4>
+  <pre>Atlas fully supports industry-standard DXT texture compression. It compresses offline for maximum quality, pregenerates mipmaps for minimal CPU usage at runtime, then streams it directly into GPU memory.</pre>
+  <p name="Rendering_Properties"><a name="Rendering_Properties"></a></p>
+  <h2><a name = "HeaderLink3"></a><a name = "HeaderLink10"></a>Creating Performant Terrain</h2>
+  <p>
+  The biggest factor to making performant, good looking terrains is to tune your data for the expected usage. The algorithm will deal well with almost any data set, but if you know how the landscape will be viewed, you can make some optimizations.
+
+First, find the highest error metric that looks good. Pay attention to the polygon usage report from the chunk generator. You might need to up your error metric, or make the chunk quadtree deeper. 
+  <br />
+  <br />
+  </p>
+  <p>For texture quad trees, you need to find balance between depth of the tree and size of the textures. Larger textures will load more quickly, but may cause hitching when they upload. Smaller textures will load more smoothly but potentially take longer to detail in. Similarly, shallow trees load faster and take less memory. (The parent levels of a texture remain resident in memory while the child textures are loaded.) But deeper trees allow you to have more detail without having to increase your texture size. Node texture sizes over about 1024x1024 may run less well on older cards.
+  <br />
+  <br />
+  </p>
+  
+  <p> If you know that you're going to be up close to the terrain and moving relatively slowly (ie, an FPS), you can have a deeper, more detailed geometry data set. On the other hand, this is a waste for a flightsim - you can spend more resources on high texture detail, and cut back significantly on geometric detail.
+
+Also be aware that the terrain collides exactly against whatever is rendered for the lowest level detail. Having too many polygons in a single chunk at the lowest level may cause some performance issues. 
+  <br />
+  <br />
+  </p>
+  <p>
+  Now that you have an idea of what the Atlas terrain system is capable of, it's time to move on to the technical details.
+
+Continue on to the next lesson, <a href="GenerateAtlasData.html" class="style5">Generating Atlas Data</a>.<br />
+  <br />
+  </p>
+  </p>
+  </blockquote>
+<blockquote>&nbsp;</blockquote></td>
+</tr>
+</table>
+
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Terrain/Terrain.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:20 GMT -->
+</html>

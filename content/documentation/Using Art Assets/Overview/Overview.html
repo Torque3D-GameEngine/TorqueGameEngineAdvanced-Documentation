@@ -1,0 +1,94 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Overview/Overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4287;
+   parent.leftFrame.expandToItem('tree2', 'doc4287');
+   var element = parent.leftFrame.document.getElementById('doc4287');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Using Art Assets - Overview</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.html"/>
+<link rel="STYLESHEET" type="text/css" href="content.html"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700">
+<h2 style='text-align:justify'><a name="_Toc193254903"><span style='font-size:
+13.5pt'></span></a><span style='font-size:13.5pt'><o:p></o:p></span><a name = "HeaderLink0"></a>Introduction</h2>
+<div class="thumb tright"><div style="width:102px;"><img src="100px-Orc01.jpg"></a>  <div class="thumbcaption" >Good ol classic orc.</div></div></div>
+<p>DTS (Dynamix Three Space) is the file format Torque uses for detailed 3d objects. Everything from interactive shapes like characters, vehicles, and weapons to static environment art like foliage and rocks will be brought into your game as a DTS.<br /><br />
+</p>
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink1"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class='toclevel-1'><a href="#Basic_DTS_Hierarchy"><span class="tocnumber">2</span> <span class="toctext">Basic DTS Hierarchy</span></a></li>
+<li class='toclevel-1'><a href="#Getting_Your_Art_Into_Torque"><span class="tocnumber">3</span> <span class="toctext">Getting Your Art Into Torque</span></a></li>
+<li class='toclevel-1'><a href="#Animation"><span class="tocnumber">4</span> <span class="toctext">Animation</span></a></li>
+<li class='toclevel-1'><a href="#Moving_On"><span class="tocnumber">5</span> <span class="toctext">Moving On</span></a></li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="Basic_DTS_Hierarchy"></a><h2><a name = "HeaderLink2"></a>Basic DTS Hierarchy</h2><br />
+<p>No matter the complexity, a dts shape will always be structured the same way.  A series of nodes and meshes, the basic hierarchy looks like the image shown.
+</p>
+<div class="thumb tright"><div style="width:517px;"><img src="3dsmax_DTSHierarchy.jpg">  <div class="thumbcaption" >This image shows the hierarchy from within 3DSMax, other modeling programs will have similar setups.</div></div></div><br /><br />
+<p>First is a base node, which simply acts as the beginning of the chain.  Under base is the start, detail, and collision markers.  These all perform different tasks.<br /><br />
+The detail markers alert the engine to the number of level of detail (LOD) meshes the shape has while the collision markers alert the engine to the existance of a collision mesh.  The start node is the parent of any meshes (both detail and collision) you have in your scene.<br /><br />
+</p><p>The process for building this hierarchy varies from application to application, so don't worry if you have no idea how to set it up (or even if you didn't understand a word of that last paragraph); you'll be made a pro in the following tutorials.<br /><br />
+</p><p>Besides the base, start, detail, and collision nodes, there are other nodes which perform different functions.  Mount nodes are used to attach one dts to another.  There are nodes which define the location of the muzzle as well as the shell ejection point for weapons.  There are vehicle specific nodes, as well, which perform a number of functions.  For instance, there is a node which identifes the tips of a flying vehicle's wings for jet contrails is a great example of this.<br /><br />
+</p>
+<a name="Getting_Your_Art_Into_Torque"></a><h2><a name = "HeaderLink3"></a>Getting Your Art Into Torque</h2><br />
+<p>The Torque art pipeline can best be illustrated with a simple list:<br /><br />
+</p><p>1. Model and texture your shape<br />
+2. Check your work in your 3D modeling app<br />
+3. Configure the exporter for the shape and export<br />
+4. Check your work in <a href="http://www.garagegames.com/products/59/" class='external text' title="http://www.garagegames.com/products/59/" rel="nofollow">ShowToolPro</a><br />
+5. Write any necessary scripts<br />
+6. Check your work again in ShowToolPro<br />
+7. Load into the engine via the <a href="file:///C|/Torque/documentation/SourceDocumentation/TGEA/documentation/Mission Editor/Overview.html">Mission Editor</a><br />
+8. Check your work in the developers console<br /><br />
+</p><p>Take special notice of steps 2, 4, 6, and 8.  You should be checking your work whenever you do something major.  This is because most errors you'll recieve are simple ones that are easy to fix if you dont build on top of them.  Getting into the habit of making sure things are perfect as you work will stop you from ending up with a compound problem down the line.  <br /><br />
+</p><p>Over the course of these tutorials you'll be instructed on what you need to look for in order to ensure a flawless DTS.<br /><br />
+</p>
+<a name="Animation"></a><h2><a name = "HeaderLink4"></a>Animation</h2><br />
+<p>Animation can be exported within the DTS shape or as a separate animation file known as a DSQ.  DSQs are typically used for things like characters, while simpler shapes have the animation exported within the DTS.  The advantage to exporting character animation as a DSQ is that the sequences can be used by more than one model provided they were rigged with the same skeleton.  Needless to say, creating one set of animations that each character in your game will use can save weeks of developement time, which is why its such a good practice.<br /><br />
+</p><p>Simple animations (like the spinning of a radar dish) or animations associated with vehicles or weapons can be exported with the DTS, since those sequences are very unique and can only be used by the shapes they were created for.<br /><br />
+</p>
+<a name="Moving_On"></a><h2><a name = "HeaderLink5"></a>Moving On</h2><br />
+<p>The DTS format is exceptionally versatile.  If you can imagine it and have the ability to build it, you can get it into your Torque game.  Over the course of the official DTS lessons, you'll learn how to do everything from simple shapes to complex characters and vehicles.<br /><br />
+</p><p>Okay!  Consider yourself primed and ready!  Head back to the Getting Started with DTS menu and choose the Downloading and Installing the DTS Exporter Lesson for your modeling app of choice.<br /><br />
+</p>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Overview/Overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:37 GMT -->
+</html>

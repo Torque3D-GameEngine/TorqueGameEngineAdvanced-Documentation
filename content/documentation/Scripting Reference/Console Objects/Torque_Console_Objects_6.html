@@ -1,0 +1,1311 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_6.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4241;
+   parent.leftFrame.expandToItem('tree2', 'doc4241');
+   var element = parent.leftFrame.document.getElementById('doc4241');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>Torque Console Objects 6 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+ <table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console_Objects_Fields_and_Methods_Quick_Reference_Part_6"><span class="tocnumber">1</span> <span class="toctext">Console Objects Fields and Methods Quick Reference Part 6</span></a>
+<ul>
+<li class="toclevel-2"><a href="#GameConnection_Cntd."><span class="tocnumber">1.1</span> <span class="toctext">GameConnection Cntd.</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Methods_Cntd."><span class="tocnumber">1.1.1</span> <span class="toctext">Console Methods Cntd.</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#HoverVehicle"><span class="tocnumber">1.2</span> <span class="toctext">HoverVehicle</span></a></li>
+<li class="toclevel-2"><a href="#HoverVehicleData"><span class="tocnumber">1.3</span> <span class="toctext">HoverVehicleData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields"><span class="tocnumber">1.3.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#InteriorInstance"><span class="tocnumber">1.4</span> <span class="toctext">InteriorInstance</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_2"><span class="tocnumber">1.4.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Globals"><span class="tocnumber">1.4.2</span> <span class="toctext">Globals</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries"><span class="tocnumber">1.4.3</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods"><span class="tocnumber">1.4.4</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Item"><span class="tocnumber">1.5</span> <span class="toctext">Item</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_3"><span class="tocnumber">1.5.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_2"><span class="tocnumber">1.5.2</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_2"><span class="tocnumber">1.5.3</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#ItemData"><span class="tocnumber">1.6</span> <span class="toctext">ItemData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_4"><span class="tocnumber">1.6.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Lightning"><span class="tocnumber">1.7</span> <span class="toctext">Lightning</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_5"><span class="tocnumber">1.7.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_3"><span class="tocnumber">1.7.2</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_3"><span class="tocnumber">1.7.3</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Console_Objects_Fields_and_Methods_Quick_Reference_Part_6"></a><h1><a name = "HeaderLink1"></a>Console Objects Fields and Methods Quick Reference Part 6</h1>
+<p><br />
+</p><p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br /><br />
+</p>
+<a name="GameConnection_Cntd."></a><h3><a name = "HeaderLink2"></a> GameConnection Cntd. </h3>
+<hr />
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<a name="Console_Methods_Cntd." xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink3"></a>Console Methods Cntd. </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setControlCameraFov( newFOV )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setControlCameraFov</b></i> method to change the FOV of the control object 'camera'.<br />
+<br />
+<b>Syntax<br />
+<i>newFOV</i></b> – A floating-point value between 0.0 and 180.0 representing the new field-of-view setting for any and all cameras attached to this connection.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+This setting is sticky.  That is, as the camera object is changed, this value will be retained.  These values are however constrained by the datablock min and max FOV settings that are currently in effect.<br />
+<br />
+<b>See Also</b><br />
+getControlCameraFov<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b> 
+<p>setControlObject( object )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setControlObject</b></i> method to change the control object for this server-side GameConnection to the GameBase object specified by <i><b>object</b></i>.  <br />
+<br />
+<b>Syntax<br />
+<i>object</i></b> – A valid GameBase object to make the new control object.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the control object was successfully changed, otherwise returns false.<br />
+<br />
+<b>Notes</b><br />
+The same control object may <u>NOT</u> be used by more than one client connection.<br />
+<br />
+<b>See Also</b><br />
+getControlObject<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b> 
+<p>setFirstPerson( isFirstPerson )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setFirstPerson</b></i> method to change the current point-of-view to first or third-person, depending on the value of <i><b>isFirstPerson</b></i>.<br />
+<br />
+<b>Syntax<br />
+isF<i>irstPerson</i></b> – A boolean value.  If set to true, the POV for this GameConnection is set to 1st POV, otherwise it is set to 3rd POV.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+This will <u>NOT</u> override value specified in the control-object/camera datablocks enabling or disabling a particular POV.<br />
+<br />
+<b>See Also</b><br />
+isFirstPerson<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setJoinPassword( password )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setJoinPassword</b></i> method to set the <i><b>password</b></i> required to connect to this server-side GameConnection.<br />
+<br />
+<b>Syntax<br />
+<i>password</i></b> – A string representing the case insensitive password to use for this server-side GameConnection.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Pass a NULL string to clear the password.<br />
+<br />
+<b>See Also</b><br />
+setConnectArgs<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setMissionCRC( CRC )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setMissionCRC</b></i> method to set the cyclic-redundancy-check (CRC) value for the current mission.  This allows clients to determine whether they need to relight a scene or not.  The CRC value of a mission file is used to calculate the signature of a mission lighting file (.ml).  If the signature does not match the current CRC, the mission will be relit.<br />
+<br />
+<b>Syntax<br />
+<i>CRC</i></b> – An integer value representing the cyclic-redundancy-check code for the current misssion file.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>startRecording( fileName )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>startRecording</b></i> method to tell the GameConnection to start recording a demo. The demo will be stored at the location specified by <i><b>fileName</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>fileName</i></b> – To location to store the demo file. This should be a complete filename, including path and file name.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+isDemoPlaying, isDemoRecording, playDemo, stopRecording<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>stopRecording()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>stopRecording</b></i> method to tell the GameConnection to stop recording a demo.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+isDemoPlaying, isDemoRecording, playDemo, startRecording<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>transmitDataBlocks( sequence )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>transmitDataBlocks</b></i> method to start sending datablocks to the client connected to this GameConnection. <br />
+<br />
+<b>Syntax<br />
+<i>sequence</i></b> – A book-keeping value used by scripts.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="HoverVehicle" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink4"></a>HoverVehicle</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This class is used represent the hover variety of vehicles.  Space A hover vehicle is any vehicle that must maintain a specific distance between the vehicle and the ground at all times, which is not the same as a flying vehicle which may change this distance.<br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="HoverVehicleData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink5"></a>HoverVehicleData</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">The datablock associated with hover vehicle class.  This class describes all of the behaviors of the hover vehicle.<br />
+</p>
+<a name="Fields" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink6"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">brakingActivationSpeed</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum rate at which braking force will be activated.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">brakingForce</td>	
+<td width="60%" bgcolor="#CCCCCC">A force used to bring a drifting hover vehicle to a halt.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">dragForce</td>	
+<td width="60%" bgcolor="#CCCCCC">A percentage of the current velocity applied in the opposite direction of the hover vehicles current motion.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.01 , 1 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">dustTrailEmitter</td>	
+<td width="60%" bgcolor="#CCCCCC">ParticleEmitterData datablock for dust trails.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">ParticleEmitterData datablock</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">dustTrailFreqMod</td>	
+<td width="60%" bgcolor="#CCCCCC">Dust trail modulator.  Lower values equal more dense trail, higher values equal more sparse trail.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">dustTrailOffset</td>	
+<td width="60%" bgcolor="#CCCCCC">A vector by which to offset the dust trail emitter from it's mount node. By default the emitter plays directly beneath the center of the vehicle.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“0.0 5.0 0.0”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">engineSound</td>	
+<td width="60%" bgcolor="#CCCCCC">Engine sound special effect.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">AudioProfile datablock</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">floatingGravMag</td>	
+<td width="60%" bgcolor="#CCCCCC">Gravity modifier that is enabled while vehicle is in contact with other objects.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">floatingThrustFactor</td>	
+<td width="60%" bgcolor="#CCCCCC">When vehicle is NOT floatingFloating thrust is equal to: ( floatingThrustFactor * mainThrustForce ), otherwise it is 100% of mainThrustForce.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">floatSound</td>	
+<td width="60%" bgcolor="#CCCCCC">Floating sound effect.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">AudioProfile datablock</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">forwardJetEmitter</td>	
+<td width="60%" bgcolor="#CCCCCC">ParticleEmitterData datablock used for forward thrust jets, attached at JetNozzle0 and JetNozzle1.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">ParticleEmitterData datablock</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">gyroDrag</td>	
+<td width="60%" bgcolor="#CCCCCC">Gyroscopic force that resists tilting.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">jetSound</td>	
+<td width="60%" bgcolor="#CCCCCC">Jetting sound special effect.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">AudioProfile datablock</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">mainThrustForce</td>	
+<td width="60%" bgcolor="#CCCCCC">Forward thrust factor.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">normalForce</td>	
+<td width="60%" bgcolor="#CCCCCC">A force that attempts to right a tilted vehicle.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">pitchForce</td>	
+<td width="60%" bgcolor="#CCCCCC">A force applied forward or backward, depending on the amount of vehicle pitch.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">restorativeForce</td>	
+<td width="60%" bgcolor="#CCCCCC">Another minor force used to level a tiltled vehicle.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">reverseThrustForce</td>	
+<td width="60%" bgcolor="#CCCCCC">Reverse thrust factor.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">rollForce</td>	
+<td width="60%" bgcolor="#CCCCCC">A force applied left or right, depending on the amount of vehicle roll.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stabDampingConstant</td>	
+<td width="60%" bgcolor="#CCCCCC">A value used to keep the vehicle from bouncing up-and down with minor elevation changes.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stabLenMax</td>	
+<td width="60%" bgcolor="#CCCCCC">A limiting factor applied to the automatically generated stabilizing 'box'.  This box grows and shrinks as the velocity of the hover vehicle increase and decreases.  This phantom box will collide with objects so limitting it's maximum size is a good idea.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stabLenMin</td>	
+<td width="60%" bgcolor="#CCCCCC">A limiting factor applied to the automatically generated stabilizing 'box'.  This box grows and shrinks as the velocity of the hover vehicle increase and decreases.  If the box becomes too small, the vehicle will become unstable and prone to tilting.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">stabSpringConstant</td>	
+<td width="60%" bgcolor="#CCCCCC">This value should be at least twice the mass of the hoverVehicle and is used to keep the vehicle from sinking to the ground.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">steeringForce</td>	
+<td width="60%" bgcolor="#CCCCCC">Controls strength of steering controls.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">strafeThrustForce</td>	
+<td width="60%" bgcolor="#CCCCCC">Side to side thrust strength.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">triggerTrailHeight</td>	
+<td width="60%" bgcolor="#CCCCCC">Height at which dust trail emitter is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">turboFactor</td>	
+<td width="60%" bgcolor="#CCCCCC">A multiplier applied to thrustforce while jetting ($mvTriggerCount3 &gt; 0 ).</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">vertFactor</td>	
+<td width="60%" bgcolor="#CCCCCC">A multiplier to use to increase or decrese drag in the vertical direction.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="InteriorInstance" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink7"></a>InteriorInstance</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This class is used represent interiors. That is, objects/meshes use to represent buildings bridges and other large objects in the world which can be entered. As the name would imply, interiors have an inside, and interior. Interior instance utilizes a BSP collision algorithm, as well as portals and other features.<br />
+</p>
+<a name="Fields_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink8"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">interiorFile</td>	
+<td width="60%" bgcolor="#CCCCCC">The DIF filename or for this interior.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">~/path/filename.dif</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">showTerrainInside</td>	
+<td width="60%" bgcolor="#CCCCCC">If false, and interior uses portals, terrain will not render inside the interior.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">useGLLighting</td>	
+<td width="60%" bgcolor="#CCCCCC">If this is set to true, interiors wil have basic GL lighting as soon as they are placed, otherwise a relight will be required to make textures show up.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Globals" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink9"></a>Globals</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Variable Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">pref::Interior::LightUpdatePeriod</td>	
+<td width="60%" bgcolor="#CCCCCC">Millisecond between dynamic light updates for interiors.  Default is 66 millseconds.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 1 , inf ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">pref::Interior::ShowEnvironmentMaps</td>	
+<td width="60%" bgcolor="#CCCCCC">Enables environmental mapping for all interiors.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">pref::Interior::DynamicLights</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable dymamic lights for all interiors.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">pref::Interior::VertexLighting</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable vertex lighting for all interiors.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">pref::Interior::TexturedFog</td>	
+<td width="60%" bgcolor="#CCCCCC">Enables advanced fog rendering for all interiors.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">pref::Interior::lockArrays</td>	
+<td width="60%" bgcolor="#CCCCCC">Advanced rendering feature.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">pref::Interior::detailAdjust</td>	
+<td width="60%" bgcolor="#CCCCCC">LOD transition tolerance.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.3 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">pref::Interior::DontRestrictOutside</td>	
+<td width="60%" bgcolor="#CCCCCC">Debug mode.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink10"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">activateLight</td>	
+<td width="33%" align="center" bgcolor="#009900">deactivateLight</td>	
+<td width="33%" align="center" bgcolor="#009900">echoTriggerableLights</td>	
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getNumDetailLevels</td>	
+<td width="33%" align="center" bgcolor="#009900">magicButton</td>	
+<td width="33%" align="center" bgcolor="#009900">setAlarmMode</td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink11"></a>Console Methods</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>activateLight( lightName )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>activateLight</b></i> method to enable a named light in the current interior.<br />
+<br />
+<b>Syntax<br />
+<i>lightName</i></b> – A string containing the name of a light to be activated.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+deactivateLight, echoTriggerableLights<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>deactivateLight( lightName )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>deactivateLight</b></i> method to disable a named light in the current interior.<br />
+<br />
+<b>Syntax<br />
+<i>lightName</i></b> – A string containing the name of a light to be deactivated.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+activateLight, echoTriggerableLights<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>echoTriggerableLights()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>echoTriggerableLights</b></i> method to dump a list of all the triggerable lights this interior contains to the console.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+This is a nice helper function for those of us who can't always remember our light names.<br />
+<br />
+<b>See Also</b><br />
+activateLight, deactivateLight<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getNumDetailLevels()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getNumDetailLevels</b></i> method to determine the number of details that the current interior has.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer value representing the maximum number of detail levels present in this interior.  <br />
+<br />
+<b>Notes</b><br />
+Detail levels start from 0 and increment, where 0 has the most detail, 1 less than 0, 2 less than 1,  et cetera.<br />
+<br />
+<b>See Also</b><br />
+setDetailLevel<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setAlarmMode( mode )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setAlarmMode</b></i> method to set the global alarm mode for this interior.  This will enable or disable all alarm mode lights.<br />
+<br />
+<b>Syntax<br />
+<i>mode</i></b> – A string.  If this value is set to “On”, then all alarm mode lights will be enabled.  Any other value disables all alarm mode lights.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setDetailLevel( level )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setDetailLevel</b></i> method to force the current interior to render at a specific LOD, if the interior supports that <i><b>level</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>level</i></b> – An integer value greater than or equal to zero, representing a LOD to render this interior at.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Detail levels start from 0 and increment, where 0 has the most detail, 1 less than 0, 2 less than 1,  et cetera.<br />
+<br />
+<b>See Also</b><br />
+getNumDetailLevels<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setSkinBase( basename )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setSkinBase</b></i> method to switch skins on an interior. <br />
+<br />
+<b>Syntax<br />
+<i>basename</i></b> – Text string equivalent to new texture(s) prefix.<br />
+<br />
+<b>Notes</b><br />
+Currently not working.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Item" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink12"></a>Item</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This class, derived from ShapeBase, is used to represent small object in the world which are intended to be interacted with and/or picked up.  That is coinscoins, grenades, rifles, gems, etc.  This class of object does not require a collision mass although having one is useful in certain circumstances, specifically for line of sight collisions. By default the engine will supply a simple collision mesh for object to object collisions. This object supplies a several physical as well as visible behaviors, including object specific gravity, elasticity, lighting, etc.<br />
+</p>
+<a name="Fields_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink13"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">collidable</td>	
+<td width="60%" bgcolor="#CCCCCC">--</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">deprecated</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">rotate</td>	
+<td width="60%" bgcolor="#CCCCCC">If set to a true, this item will auto-rotate.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">static</td>	
+<td width="60%" bgcolor="#CCCCCC">if this value is set to true, the item will not move when placed. Conversely, a non-static shape is allowed to move.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink14"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getLastStickyNormal</td>	
+<td width="33%" align="center" bgcolor="#009900">getLastStickyPos</td>	
+<td width="33%" align="center" bgcolor="#009900">isRotating</td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink15"></a>Console Methods</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getLastStickyNormal()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getLastStickyNormal</b></i> method to get the normal vector for the last sticky collision.  If the item is not set to sticky, that is the datablock field <i>sticky</i> is set to false, this object will not track collisions. <br />
+<br />
+<b>Returns</b><br />
+Returns a string containing the XYZ values of the normal vector. If no normal vector is available, or if the item is not sticky this method will return the NULL string.<br />
+<br />
+<b>Notes</b><br />
+To enable sticky collisions, set the <i>ItemData.sticky</i> field to true.<br />
+<br />
+<b>See Also</b><br />
+getLastStickyPos<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getLastStickyPos()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getLastStickyPos</b></i> method to get the position vector for the last sticky collision.  If the item is not set to sticky, that is the datablock field <i>sticky</i> is set to false, this object will not track collisions. <br />
+<br />
+<b>Returns</b><br />
+Returns a string containing the XYZ coordinates of the last collision position. If no normal vector is available, or if the item is not sticky this method will return the null string ("").<br />
+<br />
+<b>Notes</b><br />
+To enable sticky collisions, set the <i>ItemData.sticky</i> field to true.<br />
+<br />
+<b>See Also</b><br />
+getLastStickyNormal<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isRotating()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isRotating</b></i> method to determine if this item is playing the built-in rotation animation.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the current item is rotating, that is if the rotate field was set to true when this object was created. <br />
+<br />
+<b>Notes</b><br />
+To enable rotation, set the <i>rotate</i> field in the item instance to true.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isStatic()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isStatic</b></i> method to determine if this is a static item.  A static item will not change position as the result of the application of outside forces like gravity and impulses.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the current item is static, that is the static field was set to true when this object was created.<br />
+<br />
+<b>Notes</b><br />
+To make an item static, set the <i>static</i> field in the item instance to true.<br />
+A static item can still play animations and auto-rotate.<br />
+<br />
+<b>See Also</b><br />
+isRotating<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setCollisionTimeout( obj )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setCollisionTimeout</b></i> method to disable collisions between a specific GameBase derived object and this item.  The default period for this timeout is 15 ticks (15 x 32ms is equal to 480ms) or roughly one-half second.  <br />
+<br />
+<b>Syntax<br />
+<i>obj</i></b> – The name or ID of a GameBase derived object with which to ignore collisions for ~1/2 second.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the collision timeout was successfully set.<br />
+<br />
+<b>Notes</b><br />
+To modify the default timeout duration, see <i>sCollisionTimeout</i> in item.cc.  It should be noted, that the colliding object is the one that is told to (temporarily) ignore subsequent collisions, not the item.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="ItemData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink16"></a>ItemData</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This is the datablock associated with the item object. This class specifies most of the behavior of an item.<br />
+<br />
+</p>
+<a name="Fields_4" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink17"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Pickups</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">pickupName</td>	
+<td width="55%" bgcolor="#CCCCCC">Message to be printed when this object is picked up.  It is the responsibility of scripts to print this message.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Physics</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">elasticity</td>	
+<td width="55%" bgcolor="#CCCCCC">A floating-point value specifying how 'bouncy' this object is.  i.e.  How much of the shape's velocity is lost onCollision(). <br />
+<p><br />
+Note:  Because of rounding errors between gravity and elasticity calculations, an object with 1.0 elasticity that is bouncing up and down will eventually bounce away.
+</p>
+</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">Allowed: [ 0.0 , inf ) <br />
+<p><br />
+Suggested: [ 0.0 , 1.0 )
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">friction</td>	
+<td width="55%" bgcolor="#CCCCCC">A floating-point value specifying how much velocity is lost to impact and sliding friction.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">Allowed:( -inf , inf )<br />
+<p>Suggested: [ 0.0 , 1.0 ]
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">gravityMod</td>	
+<td width="55%" bgcolor="#CCCCCC">A floating-point value specifying an individual variance of local gravity for this item.  In other words, an item can be told to ignore gravity, or to be affected by 2x gravity, or even to float upward.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">Allowed:( -inf , inf )<br />
+<p>Suggested:( -20.0 , 20.0 )
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxVelocity</td>	
+<td width="55%" bgcolor="#CCCCCC">A floating-point value specifying a limit on this item's maximum velocity.  This can be used to keep the item from falling for flying too fast.  It is also helpful to limit the effects of other settings like velocity, etc.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">sticky</td>	
+<td width="55%" bgcolor="#CCCCCC">A boolean value specifying whether this object will arrest  (stop) on impact.  Furthermore, if an object is sticky, it retains information about the last location is hit which can be accessed via console methods (see below).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ true, false ]</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Type</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">dynamicType</td>	
+<td width="55%" bgcolor="#CCCCCC">An integer value which, if speficied, is added to the value retured by getType().</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">See dynamicType below</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Light</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightColor</td>	
+<td width="55%" bgcolor="#CCCCCC">A three-value floating-point vector contaiining the RGB components of this item's light.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">Individually: [ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightOnlyStatic</td>	
+<td width="55%" bgcolor="#CCCCCC">A boolean value instructing the item to produce light, only in the case that the object field 'isStatic' is true.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightRadius</td>	
+<td width="55%" bgcolor="#CCCCCC">A floating point value specifying the radius for this item's light.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , 20.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightTime</td>	
+<td width="55%" bgcolor="#CCCCCC">A floating point value specifying the time (in milliseconds) it takes for a pulsing light to transition on-off-on.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( 100 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightType</td>	
+<td width="55%" bgcolor="#CCCCCC">A string specifying the type of light, if any, this shape emits.
+</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">
+<p>“NoLight”<br />
+“ConstantLight”<br />
+“PulsingLight”
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Lightning" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink18"></a>Lightning</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This class is used to represent the special effect lightning. Lightning can be generated or rendered from a bitmap. Lightning bolts start at the top of the specified lightning block and terminate somewhere at the bottom or below the specified lightning block.<br />
+<br />
+</p>
+<a name="Fields_5" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink19"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">boltStartRadius</td>	
+<td width="55%" bgcolor="#CCCCCC">This field specifies the radius within which lightning bolts will start.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( 0.0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">chanceToHitTarget</td>	
+<td width="55%" bgcolor="#CCCCCC">Defunct.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">color</td>	
+<td width="55%" bgcolor="#CCCCCC">This field is used to specify the color of lightning when it is created. Note, this is the exact color for generated lightning but should be considered a filter color for lightning that he uses bitmaps.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"r g b a" (float)</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">fadeColor</td>	
+<td width="55%" bgcolor="#CCCCCC">This field is used to specify the color of lightning as it fades out.  Note, this is the exact color for generated lightning but should be considered a filter color for lightning that he uses bitmaps.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"r g b a" (float)</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">strikeRadius</td>	
+<td width="55%" bgcolor="#CCCCCC">This value is used to specify the radius in which lightning will strike.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( 0.0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">strikesPerMinute</td>	
+<td width="55%" bgcolor="#CCCCCC">This value is used to specify the number of strikes permitted. Note, strikes occur at random but engine guarantees that at least strikes per minute strikes will occur space every minute.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0 , inf ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">strikeWidth</td>	
+<td width="55%" bgcolor="#CCCCCC">This value specifies the width of the bitmap or generated lightning, at the point of its strike.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( 0.0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">useFog</td>	
+<td width="55%" bgcolor="#CCCCCC">If such true this lightning will be affected by fog. Note, this only applies to lightning generated using bitmaps.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink20"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">strikeObject</td>	
+<td width="33%" align="center" bgcolor="#009900">strikeRandomPoint</td>	
+<td width="33%" align="center" bgcolor="#009900">warningFlashes</td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink21"></a>Console Methods</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>strikeObject( obj )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>strikeObject</b></i> method to cause lightning to strike the object specified object.<br />
+<br />
+<b>Syntax<br />
+<i>obj</i></b> – The name or ID of a GameBase derived object to strike with lightning.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Not working as of this time.<br />
+<br />
+<b>See Also</b><br />
+strikeRandomPoint<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>strikeRandomPoint()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>strikeRandomPoint</b></i> method to generate a random lightning strike.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+strikeObject<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+<a href="Console%20Objects.html" title="Torque Console Objects TOC"> Table of Contents</a> || <a href="Torque_Console_Objects_1.html" title="Torque Console Objects"> Part 1</a> || <a href="Torque_Console_Objects_2.html" title="Torque Console Objects 2"> Part 2</a> || <a href="Torque_Console_Objects_3.html" title="Torque Console Objects 3"> Part 3</a> || <a href="Torque_Console_Objects_4.html" title="Torque Console Objects 4"> Part 4</a> || <a href="Torque_Console_Objects_5.html" title="Torque Console Objects 5"> Part 5</a> || <a href="Torque_Console_Objects_7.html" title="Torque Console Objects 7"> Part 7</a> || <a href="Torque_Console_Objects_8.html" title="Torque Console Objects 8"> Part 8</a> || <a href="Torque_Console_Objects_9.html" title="Torque Console Objects 9"> Part 9</a> || <a href="Torque_Console_Objects_10.html" title="Torque Console Objects 10"> Part 10</a> || <a href="Torque_Console_Objects_11.html" title="Torque Console Objects 11"> Part 11</a> || <a href="Torque_Console_Objects_12.html" title="Torque Console Objects 12"> Part 12</a> || <a href="Torque_Console_Objects_13.html" title="Torque Console Objects 13"> Part 13</a> || <a href="Torque_Console_Objects_14.html" title="Torque Console Objects 14"> Part 14</a> || <a href="Torque_Console_Objects_15.html" title="Torque Console Objects 15"> Part 15</a>
+</p>
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_6.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:03 GMT -->
+</html>

@@ -1,0 +1,221 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Maya/Simple Shape.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4286;
+   parent.leftFrame.expandToItem('tree2', 'doc4286');
+   var element = parent.leftFrame.document.getElementById('doc4286');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Using Art Assets - 3D Studio Max - Simple Shape</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+<link rel="STYLESHEET" type="text/css" href="torque.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+<td>
+   
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#Simple_Shape_Tutorial"><span class="tocnumber">1</span> <span class="toctext">Simple Shape Tutorial</span></a></li>
+<li class='toclevel-1'><a href="#Project_Setup"><span class="tocnumber">2</span> <span class="toctext">Project Setup</span></a></li>
+<li class='toclevel-1'><a href="#Create_simpleShape"><span class="tocnumber">3</span> <span class="toctext">Create simpleShape</span></a></li>
+<li class='toclevel-1'><a href="#Create_a_Material_for_simpleShape"><span class="tocnumber">4</span> <span class="toctext">Create a Material for simpleShape</span></a></li>
+<li class='toclevel-1'><a href="#Export_simpleShape"><span class="tocnumber">5</span> <span class="toctext">Export simpleShape</span></a></li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+
+<a name="Simple_Shape_Tutorial"></a><h2><a name = "HeaderLink1"></a>Simple Shape Tutorial</h2><br />
+<p>The following tutorial will walk you through setting up
+a very simple shape in Maya and exporting it for use in the Torque Game Engine.
+  Please note that this is not a Maya how-to. For more information on the general
+  use of Maya, refer to the help files that are included with the Maya installation.</p>
+<p>Keep in mind that this tutorial is designed to introduce
+  you to the basic tools and techniques used to setup and export shapes for the
+  Torque Game Engine. It is not designed to show you how to get a shape working
+  in your game. Characters, vehicles, and weapons are obviously more complex
+  than the simple shape in this tutorial and will require very specific types
+  of objects and naming conventions in order to function properly. Please refer
+  to appropriate sections in this document for more information. </p>
+<p>The <strong>File Pack</strong> contains
+  files that you may use during these tutorials. <strong class="red_text">simpleShapeBase.mb,</strong> <strong class="red_text">simpleShapeDetails.mb</strong>,  <strong class="red_text">simpleShapeCollisions.mb</strong> are
+  the finished versions of the Maya scene files that are ready for export. <strong class="red_text">simpleShapeAnimation.mb</strong>  contains
+  an animated object that is ready to be set up for export. <strong class="red_text">simpleTexture.png</strong>  is
+  the texture for all scene files.</p>
+
+<a name="Project_Setup"></a><h2><a name = "HeaderLink2"></a>Project Setup</h2><br />
+<p>Set up a new project workspace for this tutorial.</p>
+<p>This tutorial will assume the following settings: </p>
+<blockquote>
+  <p><img src="04_01_project.jpg" alt="simpleShape project" width="450" height="510" border="0" /></p>
+</blockquote>
+<p>All other fields should be left blank.</p>
+<p>Copy <strong class="red_text">simpleTexture.png</strong> from the file pack and put it in the main project directory.
+  Based on the settings provided above, the main project directory for this tutorial
+  is <em>C:\Projects\simpleShape</em>.</p>
+<p>Custom exportDTS and exportDSQ locations can be set in the <strong class="red_text">Export
+Settings</strong> dialog box.</p>
+
+<a name="Create_simpleShape"></a><h2><a name = "HeaderLink3"></a>Create simpleShape</h2><br />
+<p>1. Begin by creating a polygon sphere (<em>Create &gt; Polygon
+    Primitives &gt; Sphere</em>).</p>
+<p>2. In the Channel box, rename the sphere to <strong class="red_text">simpleShape2</strong>.
+  The <strong class="red_text">2</strong> is
+  the detail resolution for the shape.</p>
+<p>3. Set <strong class="red_text">translateY</strong> to <strong class="red_text">1</strong> to
+  make it rest on the home grid.</p>
+<p>4. In the Inputs section of the Channel Box, select <strong class="red_text">polySphere1</strong>  to
+  bring up the sphere's attributes. Set its <strong class="red_text">subdivisionsAxis</strong> and <strong class="red_text">subdivisionsHeight</strong>  to <strong class="red_text">16</strong>.</p>
+<blockquote>
+  <p><img src="04_02a_simpleshape.jpg" alt="simpleShape wireframe" width="568" height="514" border="0" /> </p>
+</blockquote>
+<p>5. All meshes
+  need to be triangulated in order to export. Switch to the Modeling menu set
+  (<em>F3</em> on the keyboard). With <strong class="red_text">simpleShape2</strong> still
+  selected, go to <em>Polygons &gt; Triangulate</em>.
+Deselect and re-select <strong class="red_text">simpleShape2</strong> to
+clear the face selection.</p>
+<p>6. Press 6 on the keyboard to view the model in shaded mode.
+  Press 4 to view as wireframe again.</p>
+<blockquote>
+  <p><img src="04_02b_triangulate.jpg" alt="simpleShape triangulated" width="568" height="514" border="0" /> </p>
+</blockquote>
+
+<a name="Create_a_Material_for_simpleShape"></a><h2><a name = "HeaderLink4"></a>Create a Material for simpleShape</h2><br />
+<p>1. Open HyperShade (<em>Window &gt; Rendering
+    Editors &gt; HyperShade</em>).</p>
+<p>2. In the Create Bar on the left, select <strong>Lambert</strong>. <strong class="red_text">lambert2</strong>  is
+  created in Materials section.</p>
+<blockquote>
+  <p> <img src="04_03a_hypershade.jpg" alt="hypershade" width="677" height="475" border="0" /></p>
+</blockquote>
+<p>3. Double-click <strong class="red_text">lambert2</strong> to
+  open its Attribute Editor.</p>
+<blockquote>
+  <p> <img src="04_03b_materialeditor.jpg" alt="material attributes" width="428" height="488" border="0" /></p>
+</blockquote>
+<p>4. Rename the material <strong class="red_text">simpleTexture</strong>.</p>
+<p>5. In the Common Material Attributes section, click the
+  checkered box to the right of the Color attribute to bring up the Create Render
+  Node window.</p>
+<p>6. Click the <strong>File</strong> button
+  in the 2D Textures section. The file node's attributes are now displayed in
+  the Attribute Editor.</p>
+<blockquote>
+  <p> <img src="04_03c_createrendernode.jpg" alt="create render node" width="315" height="540" border="0" /></p>
+</blockquote>
+<p>7. Click the folder icon to the right of the <strong>Image
+  Name</strong>  field.</p>
+<p>8. In the file dialog, set the <strong>Files
+    of Type</strong> dropdown
+    menu to <strong class="red_text">Best Guess</strong>.
+  Then choose <strong class="red_text">simpleTexture.png</strong> from
+  the file dialog.</p>
+<blockquote>
+  <p> <img src="04_03d_fileeditor.jpg" alt="file attributes" width="428" height="488" border="0" /></p>
+</blockquote>
+<p>9. Close the Attribute Editor.</p>
+<p>10. Middle-mouse drag <strong class="red_text">simpleTexture</strong> from
+  HyperShade onto <strong class="red_text">simpleShape2</strong> to apply
+  the material.</p>
+<p>11. Close HyperShade.</p>
+<blockquote>
+  <p> <img src="04_03e_texturedshape.jpg" alt="textured shape" width="460" height="460" border="0" /></p>
+</blockquote>
+<p>12. Save the scene file as <strong class="red_text">simpleShapeBase.mb</strong>.</p>
+
+<a name="Export_simpleShape"></a><h2><a name = "HeaderLink5"></a>Export simpleShape</h2><br />
+<p>1. Open the dtsUtility window.</p>
+<p>2. Click the <strong>Create Bounding
+    Box</strong> button. This creates
+    a cube named <strong class="red_text">bounds</strong> that
+  will serve as the bounding box. The bounding box needs to encompass the entire
+  shape, so set its scale attributes to 2. Check the <strong>Lock</strong> checkbox so that the
+  bounding box does not obscure <strong class="red_text">simpleShape2</strong>.</p>
+<p>3. Make sure <strong class="red_text">simpleShape2</strong> is
+  selected. Click the <strong>Embed Shape</strong> button. Then click the <strong>Register
+  Details</strong> button.</p>
+<p>4. Open HyperGraph (<em>Window &gt; HyperGraph</em>).
+  What you see should look like this:</p>
+<blockquote>
+  <p> <img src="04_04_hypergraph.jpg" alt="hypergraph" width="760" height="465" border="0" /></p>
+  <p>The <strong>Embed Shape</strong> button created a hierarchy for your shape which will allow
+    it to export. The <strong>Register Details</strong> button created a detail marker that matches
+    the detail resolution on <strong class="red_text">simpleShape2</strong>. The detail marker tells the exporter
+    that there is a detail mesh that should be exported.</p>
+  <p>The base and start shapes and the detail marker can
+    be created manually as well by creating empty groups (<em>Create &gt; Empty Group</em>)
+  then renaming and parenting them accordingly.</p>
+</blockquote>
+<p>You are now ready to export the shape.</p>
+<p>5. In the dtsUtilty window, press the <strong>Export</strong> button.</p>
+<p>6. In the file dialog, set <strong>Files
+    of Type</strong> to <strong class="red_text">exportDTS</strong>.
+  Name the file <strong class="red_text">simpleShapeBase.dts</strong>.
+  If your project is set up properly, the file will be saved to the dts directory
+  inside the main project workspace directory (<em>C:\Projects\simpleShape\dts</em>).
+  Click Export to save the dts file.</p>
+<p>7. Save the scene file.</p>
+
+<a name="Export_simpleShape"></a><h2><a name = "HeaderLink6"></a>simpleShape with Detail Levels</h2><br />
+<p>Continue working with <strong class="red_text">simpleShapeBase.mb</strong> from the previous section.</p>
+<p>1. Select <strong class="red_text">simpleShape2</strong>.
+  Rename it to <strong class="red_text">simpleShape128</strong>.</p>
+<p>2. Open the Duplicate options box (<em>Edit &gt; Duplicate
+options box</em>).</p>
+<p>3. Check <strong class="red_text">Duplicate Input
+    Graph</strong>. Click the
+<strong>Duplicate</strong> button to make a copy of <strong class="red_text">simpleShape128</strong>with inputs.</p>
+<blockquote>
+  <p> <img src="04_07_duplicateoptions.jpg" alt="duplicate options" width="525" height="350" border="0" /></p>
+</blockquote>
+<p>4. Rename <strong class="red_text">simpleShape129</strong> to <strong class="red_text">simpleShape64</strong>.
+  Change its <strong class="red_text">subdivisionsAxis</strong> and <strong class="red_text">subdivisionsHeight</strong>  to <strong class="red_text">8</strong>.</p>
+<p>5. Duplicate this shape, and rename the new shape to <strong class="red_text">simpleShape2</strong>.
+  Change its
+  <strong class="red_text">subdivisionsAxis</strong> and <strong class="red_text">subdivisionsHeight</strong> to <strong class="red_text">4</strong>.</p>
+<p>6. Select <strong class="red_text">simpleShape128</strong> and <strong class="red_text">simpleShape64</strong>.
+  Press the <strong>Register Details</strong> button in the
+  dtsUtility window.</p>
+<p>7. Select <strong class="red_text">simpleShape64</strong> and <strong class="red_text">simpleShape2</strong>.
+  Unparent them from the main hierarchy (<em>Edit &gt; Unparent</em>).</p>
+<p>8. Open HyperGraph. What you see should look like this:</p>
+<blockquote>
+  <p> <img src="04_08_hypergraph.jpg" alt="detail hierarchy" width="760" height="465" border="0" /></p>
+</blockquote>
+<p>9. Save the scene as <strong class="red_text">simpleShapeDetails.mb</strong>.</p>
+<p>10. Export this as <strong class="red_text">simpleShapeDetails.dts</strong>.</p>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Maya/Simple Shape.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:48 GMT -->
+</html>

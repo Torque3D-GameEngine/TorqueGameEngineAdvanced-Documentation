@@ -1,0 +1,645 @@
+﻿<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Quick Reference/Interfacing with the Engine.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4259;
+   parent.leftFrame.expandToItem('tree2', 'doc4259');
+   var element = parent.leftFrame.document.getElementById('doc4259');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Scripting Reference - Features, Variables, Constants, and Operators</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+<link rel="STYLESHEET" type="text/css" href="torque.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="15" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+<td width="1645">
+
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#Engine_Interfacing"><span class="tocnumber">1</span> <span class="toctext">Engine Interfacing</span></a>
+<ul>
+<li class='toclevel-2'><a href="#addField"><span class="tocnumber">1.1</span> <span class="toctext">addField</span></a></li>
+<li class='toclevel-2'><a href="#addFieldV"><span class="tocnumber">1.2</span> <span class="toctext">addFieldV</span></a></li>
+<li class='toclevel-2'><a href="#addNamedField"><span class="tocnumber">1.3</span> <span class="toctext">addNamedField</span></a></li>
+<li class='toclevel-2'><a href="#addNamedFieldV"><span class="tocnumber">1.4</span> <span class="toctext">addNamedFieldV</span></a></li>
+<li class='toclevel-2'><a href="#addVariable"><span class="tocnumber">1.5</span> <span class="toctext">addVariable</span></a></li>
+<li class='toclevel-2'><a href="#removeVariable"><span class="tocnumber">1.6</span> <span class="toctext">removeVariable</span></a></li>
+<li class='toclevel-2'><a href="#ConsoleFunction"><span class="tocnumber">1.7</span> <span class="toctext">ConsoleFunction</span></a></li>
+<li class='toclevel-2'><a href="#ConsoleMethod"><span class="tocnumber">1.8</span> <span class="toctext">ConsoleMethod</span></a></li>
+<li class='toclevel-2'><a href="#IMPLEMENT_CONOBJECT"><span class="tocnumber">1.9</span> <span class="toctext">IMPLEMENT_CONOBJECT</span></a></li>
+<li class='toclevel-2'><a href="#IMPLEMENT_CO_DATABLOCK"><span class="tocnumber">1.10</span> <span class="toctext">IMPLEMENT_CO_DATABLOCK</span></a></li>
+<li class='toclevel-2'><a href="#executef"><span class="tocnumber">1.11</span> <span class="toctext">executef</span></a></li>
+<li class='toclevel-2'><a href="#executef.28this.29"><span class="tocnumber">1.12</span> <span class="toctext">executef(this)</span></a></li>
+<li class='toclevel-2'><a href="#EnumTable::Enums"><span class="tocnumber">1.13</span> <span class="toctext">EnumTable::Enums</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="Engine_Interfacing"></a><h2><a name = "HeaderLink1"></a> Engine Interfacing </h2>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700">
+<p>The engine provides a powerful set of tools to expose the core engine functionality and structures in the console (to TorqueScript). 
+In addition, usage of these console functions and classes sometimes involves enumerated types. 
+The following problem-solution matrix summarizes tasks relating to the Console and how to accomplish them. 
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table width="740" cellspacing="0" cellpadding="4" border="1" bgcolor="#CCCCCC">
+<tr>
+<td bgcolor="#999999"><b>Need to…</b></td>
+<td align="center" bgcolor="#999999"><b>Solution</b></td>
+</tr>
+<tr>
+<td>Expose <b>Member</b> as <b>Field</b>.</td>
+<td align="center" bgcolor="#00D000"><a href="#addField" title="">addField()</a><br /> <a href="#addFieldV" title="">addFieldV()</a></td>
+</tr>
+<tr>
+<td>Expose named <b>Member</b> as <b>Field</b>. </td>
+<td align="center" bgcolor="#00D000"><a href="#addNamedField" title="">addNamedField()</a><br /><a href="#addNamedFieldV" title="">addNamedFieldV()</a></td>
+</tr>
+<tr>
+<td>Expose/Remove <u>global</u> <b>C++ Variable</b> or <u>static</u> <b>Member</b> as <b>Local Variable</b> </td>
+<td align="center" bgcolor="#00D000"><a href="#addVariable" title="">Con::addVariable()</a><br /><a href="#removeVariable" title="">Con::removeVariable()</a></td>
+</tr>
+<tr>
+<td>Create <b>Console Function</b> from C++ </td>
+<td align="center" bgcolor="#00D000"><a href="#ConsoleFunction" title="">ConsoleFunction()</a></td>
+</tr>
+<tr>
+<td>Create a <b>Console Class's Method</b> from C++. </td>
+<td align="center" bgcolor="#00D000"><a href="#ConsoleMethod" title="">ConsoleMethod()</a></td>
+</tr>
+<tr>
+<td>Create a <b>Console Class</b> from C++ </td>
+<td align="center" bgcolor="#00D000"><a href="#IMPLEMENT_CONOBJECT" title="">IMPLEMENT_CONOBJECT()</a></td>
+</tr>
+<tr>
+<td>Create a <b>Console Datablock</b> from C++ </td>
+<td align="center" bgcolor="#00D000"><a href="#IMPLEMENT_CO_DATABLOCK" title="">IMPLEMENT_CO_DATABLOCK()</a></td>
+</tr>
+<tr>
+<td>Invoke a <b>Console Callback Method</b> from C++ </td>
+<td align="center" bgcolor="#00D000"><a href="#executef.28this.29" title="">Con::executef( this, ... )</a></td>
+</tr>
+<tr>
+<td>Invoke a <b>Console Callback Function</b> from C++ </td>
+<td align="center" bgcolor="#00D000"><a href="#executef" title="">Con::executef(  ... )</a></td>
+</tr>
+<tr>
+<td>Create a <b>Enumerated Data Type</b> from C++ </td>
+<td align="center" bgcolor="#00D000"><a href="#EnumTable::Enums" title="">EnumTable::Enums</a></td>
+</tr>
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="addField"></a><h3><a name = "HeaderLink2"></a>addField</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+Provides a means to expose C++ class members as TorqueScript object fields.  This function is normally called in a class’ initPersistFields() method.</p>
+<p><b>Syntax</b><br />
+</p>
+<table>
+<tr><b>addField(</b></tr>
+<tr><td></td><td><b>const char *</b></td><td><i> in_pFieldname </i><b>,</b></td></tr>
+<tr><td></td><td><b>const U32</b></td><td><i>in_fieldType</i><b>,</b></td></tr>
+<tr><td></td><td><b>const dsize_t</b></td><td><i>in_fieldOffset</i><b>,</b></td></tr>
+<tr><td></td><td><b>const char *</b></td><td><i>in_pFieldDocs</i><b>,</b></td></tr>
+<tr><td><b>)</b></td></tr>
+</table>
+<p><br />
+</p>
+<table>
+<tr><b>addField(</b></tr>
+<tr><td></td><td><b>const char *</b></td><td><i> in_pFieldname </i><b>,</b></td></tr>
+<tr><td></td><td><b>const U32</b></td><td><i>in_fieldType</i><b>,</b></td></tr>
+<tr><td></td><td><b>const dsize_t</b></td><td><i>in_fieldOffset</i><b>,</b></td></tr>
+<tr><td></td><td><b>const U32</b></td><td><i> in_elementCount</i><b>,</b></td></tr>
+<tr><td></td><td><b>EnumTable *</b></td><td><i>in_table</i><b>,</b></td></tr>
+<tr><td></td><td><b>const char *</b></td><td><i>in_pFieldDocs</i><b>,</b></td></tr>
+<tr><td><b>)</b></td></tr>
+</table>
+<p>where,
+</p>
+<ul>
+<li><i>in_pFieldname</i> - String specifying variable name as used in console.
+<li><i>in_fieldType</i> - The variable type. (Types specified in consoleTypes.h).
+<li><i>in_fieldOffset</i> - Numeric value calculated using the Offset() macro.
+<li><i>in_elementCount</i> - Number of elements at offset. The default value is 1, but if you are referencing an array, then this value will be the number of elements in the array.
+<li><i>in_table</i> - This argument is used when the field type is TypeEnum.  In this special case, you need to define an EnumTable containing a map of the ENUM values and the strings to represent them in the console.
+<li><i>in_pFieldDocs</i> - A short string describing the field in plain English.  This field is used in Torque’s automatic Console documentation functionality.
+</ul>
+<p><br />
+<b>Example</b>: Class GuiControl<br />
+In ./gui/core/guiControl.h:
+</p>
+<pre>
+class GuiControl&nbsp;: public SimGroup
+{
+ ...
+   StringTableEntry mClassName;
+   StringTableEntry mSuperClassName;
+ ...
+}
+</pre>
+<p>In ./gui/core/guiControl.cc:
+</p>
+<pre>
+void GuiControl::initPersistFields()
+{
+ ...
+   addField( &quot;class&quot;,      TypeString, Offset( mClassName,      GuiControl), 
+      &quot;Script Class of object.&quot;         )&nbsp;; 
+   addField( &quot;superclass&quot;, TypeString, Offset( mSuperClassName, GuiControl), 
+      &quot;Script SuperClass of object.&quot; )&nbsp;; 
+ ...
+}
+</pre>
+<p><b>See Also</b><br />
+<a href="#addFieldV" title="">addFieldV</a>, <a href="#addNamedField" title="">addNamedField</a>, <a href="#addNamedFieldV" title="">addNamedFieldV</a>
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="addFieldV"></a><h3><a name = "HeaderLink3"></a>addFieldV</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+Augments <i>addField</i> with ‘Type Validator’ classes.
+</p><p>Type Validator Classes are used to restrict the values a field may be given.
+If illegal values are assigned to a validated field, the validator function will print an error to the console and set the field to a valid value.
+</p><p>The two most commonly used Type Validator Classes are <i>FRangeValidator</i> and <i>IRangeValidator</i>.
+New validators may be derived from either of these, or their base class <i>TypeValidator</i>.
+</p><p>Note: <i>addFieldV</i> does not support arrays or enumerated types.<br />
+<br />
+<b>Syntax</b><br />
+</p>
+<table>
+<tr><b>addFieldV(</b></tr>
+<tr><td></td><td><b>const char *</b></td><td><i>in_pFieldname </i><b>,</b></td></tr>
+<tr><td></td><td><b>const U32</b></td><td><i>in_fieldType</i><b>,</b></td></tr>
+<tr><td></td><td><b>const dsize_t</b></td><td><i>in_fieldOffset</i><b>,</b></td></tr>
+<tr><td></td><td><b>TypeValidator *</b></td><td><i>validator</i><b>,</b></td></tr>
+<tr><td><b>)</b></td></tr>
+</table>
+<p>where
+</p>
+<ul>
+<li><i>in_pFieldname</i> - String specifying variable name as used in console.
+<li><i>in_fieldType</i> - The variable type. (Types specified in consoleTypes.h).
+<li><i>in_fieldOffset</i> - Numeric value calculated using the Offset() macro.
+<li><i>validator</i> - Pointer to a TypeValidator class instance of which there are several derived types to choose from.
+</ul>
+<p><b>Example</b>: Field lightRadius<br />
+From projectile.cc, around line 126. The validator will limit the field to between 1.0 and 20.0, inclusive:
+</p>
+<pre>
+addFieldV( &quot;lightRadius&quot;, 
+           TypeF32, 
+           ProjectileData,  
+           new FRangeValidator(1, 20) );
+</pre>
+<p><b>See Also</b><br />
+<a href="#addField" title="">addField</a>, <a href="#addNamedField" title="">addNamedField</a>, <a href="#addNamedFieldV" title="">addNamedFieldV</a>
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="addNamedField"></a><h3><a name = "HeaderLink4"></a>addNamedField</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <i>addNamedField</i> is a macro that makes use of the simple version <i>addField</i> function and provides a short-hand method of adding fields.  It does not support enumerated types or arrays.  Also, it does not provide a means of adding documentation strings. It is worth noting that the macro uses the same name for the field as the variable.<br />
+<br />
+<b>Syntax</b><br />
+</p>
+<pre>
+addNamedField( fieldname , type , className )&nbsp;;
+</pre>
+<ul><li>fieldname - Name of variable to expose.  Will be used as name of field.<br />
+<li>type - The variable type. (Types are specified in consoleTypes.h).<br />
+<li>className - Name of C++ class containing variable.</ul>
+<pre>
+addNamedField( isBallistic , TypeBool , ProjectileData );
+</pre>
+<p><b>See Also</b><br />
+<a href="#addField" title="">addField</a>, <a href="#addFieldV" title="">addFieldV</a>, <a href="#addNamedFieldV" title="">addNamedFieldV</a>
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="addNamedFieldV"></a><h3><a name = "HeaderLink5"></a>addNamedFieldV</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <i>addNamedField</i> is a macro that makes use of the <i>addFieldV</i> function and provides a short-hand method of adding validated fields.<br />
+<br />
+<b>Syntax</b><br />
+</p>
+<pre>
+addNamedFieldV( fieldname , type, className,  validator ); 
+</pre>
+<ul><li>fieldname - Name of variable to expose.  Will be used as name of field.<br />
+<li>type - The variable type. (Types are specified in consoleTypes.h).<br />
+<li>className - Name of C++ class containing variable.<br />
+<li>validator - This is a pointer to a TypeValidator class instance of which there are several derived types to choose from.</ul>
+<pre>
+addNamedFieldV( lightRadius, 
+               TypeF32, 
+               ProjectileData, 
+               new FRangeValidator( 1 , 20 ) );
+</pre>
+<p><b>See Also</b><br />
+<a href="#addField" title="">addField</a>, <a href="#addFieldV" title="">addFieldV</a>, <a href="#addNamedField" title="">addNamedField</a>
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="addVariable"></a><h3><a name = "HeaderLink6"></a>addVariable</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <b>Con::addVariable()</b> function provides a means to expose global C++ variables or static class Members as Torque Script global variables.  This function is normally called in a class’ consoleInit () method.<br />
+<br />
+<b>Syntax</b><br />
+</p>
+<pre>
+Con::addVariable( const char * name , t ,  void * dp );
+</pre>
+<ul><li>name - String specifying name of global variable (in console).<br />
+<li>t - The variable type. (Types are specified in consoleTypes.h).<br />
+<li>dp - A pointer to the global C++ variable, or static Member.</ul>
+<pre>
+// From camera.cc
+Con::addVariable( &quot;Camera::movementSpeed&quot; , TypeF32 , &amp;mMovementSpeed );
+</pre>
+<p><b>See Also</b><br />
+<a href="#removeVariable" title="">Con::removeVariable</a>
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="removeVariable"></a><h3><a name = "HeaderLink7"></a>removeVariable</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <b>Con::removeVariable</b> function provides a means to un-expose global C++ variables or static class Members previously exposed as Torque Script global variables with <i>Con::addVariable</i>.<br />
+<br />
+This call is global. i.e. Once we remove a variable, we cannot put it back.<br />
+<br />
+<b>Syntax</b><br />
+</p>
+<pre>
+removeField( const char* in_pFieldname );
+</pre>
+<ul><li>in_pFieldname - String specifying field to be removed.</ul>
+<pre>
+// 1. TerrainBlock is inherited from SceneObject.
+// 2. SceneObject links member mObjToWorld to the 
+//    Torque Script field position.
+// 3. TerrainBlock undoes this(in terrData.cc)
+
+removeField( &quot;position&quot; );
+</pre>
+<p><b>See Also</b><br />
+<a href="#addVariable" title="">Con::addVariable</a>
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="ConsoleFunction"></a><h3><a name = "HeaderLink8"></a>ConsoleFunction</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The C<i>onsoleFunction</i> macro provides a means to create function from C++ in the console.<br />
+<br />
+<b>Syntax</b><br />
+</p>
+<pre>
+ConsoleFunction(  name , returnType , minArgs , maxArgs , usage ) 
+{
+
+// Function body
+
+}
+</pre>
+<ul><li>name - This is the name of the function as it will be used in the console.<br />
+<li>returnType - Is the return type of the function. <br />
+<li>minArgs - Minimum arguments this function can accept. 1 is the minimum, because the name of the function is automatically passed as the first argument.<br />
+<li>maxArgs - Maximum arguments this function can accept. If you put 0 in this field, it means any number of arguments may be passed to the function.<br />
+<li>usage - Is a string that will be printed as a help statement if someone later attempts to use this function with the wrong number of arguments.</ul>
+<pre>
+// From main.cc
+ConsoleFunction( getSimTime , S32 , 1 , 1, 
+                &quot;getSimTime() – Time since game started.&quot;)
+{
+  return Sim::getCurrentTime();
+}
+</pre>
+<p><b>See Also</b><br />
+<a href="#ConsoleMethod" title="">ConsoleMethod</a>
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="ConsoleMethod"></a><h3><a name = "HeaderLink9"></a>ConsoleMethod</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <b>ConsoleMethod</b> macro provides a means to create a Console Method from C++ in the console.  The static variant of ConsoleMethod is for methods that you want to be able to call statically. For example:, <i>GameConnection::getServerConnection()</i>.<br />
+<br />
+<b>Syntax</b><br />
+</p>
+<pre>
+ConsoleMethod( 
+   className , scriptname , returnType , 
+   minArgs , maxArgs , usage 
+) 
+{
+   // Method body
+}
+</pre>
+<p>or
+</p>
+<pre>
+ConsoleStaticMethod( 
+   className , scriptname , returnType , 
+   minArgs , maxArgs , usage ) 
+{
+ 	// Method body
+}
+</pre>
+<ul>
+<li>className - The name of the class the method is in.
+<li>scriptname - The name the method will be given in the console (i.e. used by TorqueScript).
+<li>returntype -  The return type of the method.
+<li>minargs - The minimum arguments this method takes.  The minimum is 2, because the name of the console method is automatically passed as the first argument and the object’s handle is automatically passed as the second argument.
+<li>maxargs - The maximum number of args that can be passed to this method.  If you put 0 in this field, it means any number of arguments may be passed to the method.
+<li>usage - A string that will be printed as a help statement if someone later attempts to use this method with the wrong number of arguments.  This usage is also when you use the obj.dump() command.
+</ul>
+<p>From SimBase.cc:
+</p>
+<pre>
+ConsoleMethod( SimObject , getId , S32 , 2 , 2 , &quot;obj.getId()&quot; )
+{
+  argc; argv;
+  return object-&gt;getId();
+}
+</pre>
+<p><b>See Also</b><br />
+<a href="#ConsoleMethod" title="">ConsoleMethod</a>
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="IMPLEMENT_CONOBJECT"></a><h3><a name = "HeaderLink10"></a>IMPLEMENT_CONOBJECT</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The C++ macro-instruction used to define a Console Class. In TGB, there are over 170 such classes.
+</p><p>In ./gui/core/guiControl.cc, the console class GuiControl is defined:
+</p>
+<pre>
+IMPLEMENT_CONOBJECT(GuiControl);
+</pre>
+<p><b>See Also</b><br />
+<a href="#IMPLEMENT_CO_DATABLOCK" title="">IMPLEMENT_CO_DATABLOCK</a>
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="IMPLEMENT_CO_DATABLOCK"></a><h3><a name = "HeaderLink11"></a>IMPLEMENT_CO_DATABLOCK</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The C++ macro-instruction used to define a Console Datablock. In TGB, there are about a dozen such classes.
+</p><p>In ./source/T2D/t2dBaseDatablock.cc, the console datablock t2dBaseDatablock is defined:
+</p>
+<pre>
+IMPLEMENT_CO_DATABLOCK_V1(t2dBaseDatablock);
+</pre>
+<p><b>See Also</b><br />
+<a href="#IMPLEMENT_CONOBJECT" title="">IMPLEMENT_CONOBJECT</a>
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="executef"></a><h3><a name = "HeaderLink12"></a>executef</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+Class method <b>Con::executef()</b> invokes a console callback function. 
+</p><p>In .game/net/serverQuery.cc, the console function onServerQueryStatus is invoked:
+</p>
+<pre>
+static void processMasterServerQuery( U32 session )
+{
+...
+   Con::executef( 4, &quot;onServerQueryStatus&quot;, &quot;update&quot;, &quot;Switching master servers...&quot;, &quot;0&quot; );
+...
+}
+</pre>
+<p><b>See Also</b><br />
+<a href="#executef.28this.29" title="">executef(this)</a>
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="executef.28this.29"></a><h3><i></i><a name = "HeaderLink13"></a>executef(this)</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+Class method <b>Con::executef(</b><i>this</i>...<b>)</b> invokes a console class's callback method. 
+</p>
+<pre>
+bool GuiControl::onWake( ) 
+{
+   ...
+   if ( isMethod( &quot;onWake&quot; ) )
+      Con::executef( this, 1, &quot;onWake&quot; )&nbsp;; 
+   ...
+}
+</pre>
+<p><b>See Also</b><br />
+<a href="#executef" title="">executef</a>
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="EnumTable::Enums"></a><h3><a name = "HeaderLink14"></a>EnumTable::Enums</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+Declare a new static variable in the  EnumTable::Enums scope for use as an enumerated data type.
+For example, in ./gui/containers/guiStackCtrl.cc:
+</p>
+<pre>
+static EnumTable::Enums stackTypeEnum[] =
+{
+	{ GuiStackControl::stackingTypeVert, &quot;Vertical&quot;  },
+	{ GuiStackControl::stackingTypeHoriz,&quot;Horizontal&quot; },
+	{ GuiStackControl::stackingTypeDyn,&quot;Dynamic&quot; }
+};
+static EnumTable gStackTypeTable(3, &amp;stackTypeEnum[0]);
+</pre>
+<p>Note that employing the table in the console requires further work; consult the source code.
+</p>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Quick Reference/Interfacing with the Engine.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:57 GMT -->
+</html>

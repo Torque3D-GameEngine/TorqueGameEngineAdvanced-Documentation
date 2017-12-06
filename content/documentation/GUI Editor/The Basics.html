@@ -1,0 +1,711 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/GUI Editor/The Basics.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4202;
+   parent.leftFrame.expandToItem('tree2', 'doc4202');
+   var element = parent.leftFrame.document.getElementById('doc4202');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="The%20Basics_files/filelist.html">
+<link rel=Edit-Time-Data href="The%20Basics_files/editdata.html">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>GUI Editor Basics</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>perrym</o:Author>
+  <o:LastAuthor>perrym</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>60</o:TotalTime>
+  <o:Created>2008-03-13T12:58:00Z</o:Created>
+  <o:LastSaved>2008-03-13T18:29:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1082</o:Words>
+  <o:Characters>6172</o:Characters>
+  <o:Company>Coalescent Technologies</o:Company>
+  <o:Lines>51</o:Lines>
+  <o:Paragraphs>14</o:Paragraphs>
+  <o:CharactersWithSpaces>7240</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>BestFit</w:Zoom>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all title="gemdoc_auto_stylesheet"
+href="images/gemdoc.css">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1627421319 -2147483648 8 0 66047 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#840084;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tabletitle, li.tabletitle, div.tabletitle
+	{mso-style-name:tabletitle;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.tableextras, li.tableextras, div.tableextras
+	{mso-style-name:tableextras;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:8.5pt;
+	mso-fareast-font-family:"Times New Roman";}
+p.mediaobject, li.mediaobject, div.mediaobject
+	{mso-style-name:mediaobject;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.guibutton, li.guibutton, div.guibutton
+	{mso-style-name:guibutton;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#999999;
+	border:none;
+	mso-border-alt:inset black .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.guilabel, li.guilabel, div.guilabel
+	{mso-style-name:guilabel;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#999999;
+	border:none;
+	mso-border-alt:inset black .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.informalexample, li.informalexample, div.informalexample
+	{mso-style-name:informalexample;
+	margin:7.5pt;
+	mso-pagination:widow-orphan;
+	background:#66CCFF;
+	border:none;
+	mso-border-alt:three-d-engrave black 2.25pt;
+	padding:0in;
+	mso-padding-alt:8.0pt 8.0pt 8.0pt 8.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.Heading2Justified, li.Heading2Justified, div.Heading2Justified
+	{mso-style-name:"Heading 2 + Justified";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:16.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:241794359;
+	mso-list-template-ids:-674321266;}
+@list l0:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+<link rel=HOME title="GUI Editor Introduction" href=index.html>
+<link rel=PREVIOUS title="Exploring the GUI Editor"
+href=guieditor.exploring.html>
+<link rel=NEXT title="Creating A New Dialog"
+href=guieditor.creatingadialog.html>
+</head>
+
+<BODY id = "BODYID" onLoad = "initComponent()"  bgcolor=white lang=EN-US link=blue vlink="#840084" style='tab-interval:
+.5in' alink="#0000FF">
+
+<div class=Section1>
+
+<div>
+
+<p class=Heading2Justified><a name=guieditor.thebasics></a><span
+style='font-size:18.0pt'>GUI Editor Basics<o:p></o:p></span></p>
+
+<p><span style='font-size:10.0pt;font-family:Verdana'>Now that we've taken a
+first look at the GUI Editor's interface, let's take a moment to learn more
+about placing, moving, and editing the properties of a GUI control.<o:p></o:p></span></p>
+
+<p><span style='font-size:10.0pt;font-family:Verdana'>The following guide will take
+you through the process of creating a new command button, step-by-step.<o:p></o:p></span></p>
+
+<div>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Verdana;mso-fareast-font-family:Verdana;mso-bidi-font-family:Verdana'><span
+style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style='font-size:10.0pt;font-family:Verdana'>Create
+a new Button control by opening the <em><span style='font-family:Verdana'>Control
+Palette</span></em> and selecting <em><span style='font-family:Verdana'>GuiButtonCtrl</span></em>,
+as shown in Figure 17. Standard Buttons use a single color as their background,
+can display text, and be clicked on.<span style='mso-spacerun:yes'>&nbsp;
+</span>There are flashier button controls, but those will be addressed in the <b
+style='mso-bidi-font-weight:normal'>Tutorial</b> sections of this
+documentation.<o:p></o:p></span></p>
+
+<p style='margin-left:.5in'><span style='font-size:10.0pt;font-family:Verdana'>Once
+you've clicked the <em><span style='font-family:Verdana'>GuiButtonCtrl</span></em>,
+you'll notice that nothing appears on your screen.<span
+style='mso-spacerun:yes'>&nbsp; </span>What you have to do is click on the
+control, hold down the mouse button, and drag it onto your working area
+(demonstrated in Figure 18).</span></p>
+<p style='margin-left:.5in; margin-bottom: .0001pt;'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=614 height=461
+src="The%20Basics_files/image002.jpg" v:shapes="_x0000_i1025">
+  
+  <o:p></o:p>
+</span></p>
+<p style='margin-left:.5in; margin-bottom: .0001pt;'><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Verdana'>Figure 17
+  <o:p></o:p>
+</span></b></p>
+<p style='margin-left:.5in; margin-bottom: .0001pt;'>&nbsp;</p>
+<p style='margin-left:.5in; margin-bottom: .0001pt;'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=601 height=452
+src="The%20Basics_files/image031.jpg" v:shapes="_x0000_i1026"></span></p>
+<p style='margin-left:.5in; margin-bottom: .0001pt;'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 18
+  <o:p></o:p>
+</span></b></p>
+<div>
+  <p align=center style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-align:center'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></b></p>
+
+<p align=center style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;font-family:Verdana'>Once
+placed, the component will automatically be selected for you as shown in Figure
+19. Also, the control will be listed in the Inspector Dialog tree, under <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Unified<em><span
+style='font-family:Verdana'>MainMenuGui</span></em></i></b><em><span
+style='font-family:Verdana;font-weight:normal;mso-bidi-font-weight:bold;
+font-style:normal;mso-bidi-font-style:italic'> as shown in Figure 20</span></em>.
+This is because you created the control inside the 'window' that defines the
+Main Menu. As such, the UnifiedMainMenuGui is the parent, or container object,
+of GuiButtonCtrl. The properties of Parent controls can also affect the
+properties of controls that are contained within them. For example, if the
+UnifiedMainMenuGui&#8217;s visibility is set to false, all of its children will
+be invisible as well.<o:p></o:p></span></p>
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'>&nbsp;</p>
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=266 height=137
+src="The%20Basics_files/image005.jpg" v:shapes="_x0000_i1027"><o:p></o:p>
+</span></p>
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 19<o:p></o:p></span></b></p>
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'>&nbsp;</p>
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'>&nbsp;</p>
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:Verdana'>
+
+  <img width=411 height=352
+src="The%20Basics_files/image007.jpg" v:shapes="_x0000_i1028"></span></p>
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 20<o:p></o:p></span></b></p>
+<div><p align=center style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p style='margin-left:.5in'><span style='font-size:10.0pt;font-family:Verdana'>You
+should also notice that when your GuiButtonCtrl is selected, as shown on
+Inspector Dialog in Figure 21, it has its own properties unique to the
+component type.<span style='mso-spacerun:yes'>&nbsp; </span>The Profile field
+is currently set as GuiButtonProfile.<span style='mso-spacerun:yes'>&nbsp;
+</span>Profiles are used to determine the appearance of a GUI component: color
+scheme, bitmap array, font size and type, etc. <o:p></o:p></span></p>
+<p style='margin-left:.5in'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=288 height=430
+src="The%20Basics_files/image009.jpg" v:shapes="_x0000_i1029"></span></p>
+<p style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 21<o:p></o:p></span></b></p>
+</div>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Verdana;mso-fareast-font-family:Verdana;mso-bidi-font-family:Verdana'><span
+style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style='font-size:10.0pt;font-family:Verdana'>While
+we are looking at the Properties window, let&#8217;s go ahead and change some
+fields.<span style='mso-spacerun:yes'>&nbsp; </span>At the very top of the
+properties is the <b style='mso-bidi-font-weight:normal'>Name</b> field.<span
+style='mso-spacerun:yes'>&nbsp; </span>This will set the actual name of the
+GUI.<span style='mso-spacerun:yes'>&nbsp; </span>Currently, the name is blank,
+which means we only see the component type (GuiButtonCtrl) and ID, in the Gui
+Tree View.<span style='mso-spacerun:yes'>&nbsp; </span>Fill in the blank space
+with <b style='mso-bidi-font-weight:normal'>myButton</b>, then click the <b
+style='mso-bidi-font-weight:normal'>Apply</b> button in the top right.<span
+style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p style='margin-left:.5in'><span style='font-size:10.0pt;font-family:Verdana'>Scroll
+down through the properties until you come to the <b style='mso-bidi-font-weight:
+normal'>text</b> field under <b style='mso-bidi-font-weight:normal'>GuiButtonBaseCtrl.<span
+style='mso-spacerun:yes'>&nbsp; </span></b>Change this field to &#8220;<b
+style='mso-bidi-font-weight:normal'>Show Hello World&#8221;</b> (*without the
+quotes*).<span style='mso-spacerun:yes'>&nbsp; </span>Again, click the <b
+style='mso-bidi-font-weight:normal'>Apply</b> button in the top right to save
+the changes.<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span>See Figure 22 to
+view the changes made to <b style='mso-bidi-font-weight:normal'>Name</b> and <b
+style='mso-bidi-font-weight:normal'>Text</b>.<o:p></o:p></span></p>
+<p style='margin-left:.5in'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=308 height=460
+src="The%20Basics_files/image011.jpg" v:shapes="_x0000_i1030"></span></p>
+<p style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 22<o:p></o:p></span></b></p>
+<p align=center style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p style='margin-left:.5in'><span style='font-size:10.0pt;font-family:Verdana'>Your
+text will now display on the button, as shown in Figure 23.<span
+style='mso-spacerun:yes'>&nbsp; </span>Also, if you look at the GUI Tree View,
+your button will now have a name.<span style='mso-spacerun:yes'>&nbsp;
+</span>This helps with organization and finding your controls easily.<span
+style='mso-spacerun:yes'>&nbsp; </span>Look at Figure 23 to see an example of
+how <b style='mso-bidi-font-weight:normal'>myButton</b> looks in the GUI Tree
+View.<o:p></o:p></span></p>
+<p style='margin-left:.5in'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=249 height=83
+src="The%20Basics_files/image013.jpg" v:shapes="_x0000_i1031"><o:p></o:p>
+</span></p>
+<p style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 23<o:p></o:p></span></b></p>
+<p style='margin-left:.5in'>&nbsp;</p>
+<p style='margin-left:.5in'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=378 height=310
+src="The%20Basics_files/image015.jpg" v:shapes="_x0000_i1032"></span></p>
+<p style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 24<o:p></o:p></span></b></p>
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Verdana;mso-fareast-font-family:Verdana;mso-bidi-font-family:Verdana'><span
+style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style='font-size:10.0pt;font-family:Verdana'>Before
+we move on to cosmetic changes, we should give the button some
+functionality.<span style='mso-spacerun:yes'>&nbsp; </span>With the control
+still selected, look for the '<b style='mso-bidi-font-weight:normal'>command</b>'
+field in the Inspector Dialog. Whenever a button is clicked, whatever script
+command is placed in this field will be executed.<span
+style='mso-spacerun:yes'>&nbsp; </span>Using real data and syntax is
+important.<span style='mso-spacerun:yes'>&nbsp; </span>Enter the following command:
+<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Canvas.pushDialog(HelloWorld);</i></b><o:p></o:p></span></p>
+
+<p style='margin-left:.5in'><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:Verdana'><span
+style='mso-spacerun:yes'>&nbsp;</span></span></i><span style='font-size:10.0pt;
+font-family:Verdana'>See Figure 25 if you need a visual reference on what to
+type and where.<span style='mso-spacerun:yes'>&nbsp; </span>Everything you see
+on screen is layered on a main <b style='mso-bidi-font-weight:normal'>Canvas</b>.<span
+style='mso-spacerun:yes'>&nbsp; </span>The command we added tells the main
+Canvas to push a separate dialog (which we will create later) on to the
+screen.<span style='mso-spacerun:yes'>&nbsp; </span>Detailed information on
+Torque Script will be covered in a separate section.<span
+style='mso-spacerun:yes'>&nbsp; </span>For now, that simple explanation will
+do.</span></p>
+<p style='margin-left:.5in'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=376 height=479
+src="The%20Basics_files/image016.jpg" v:shapes="_x0000_i1033"></span></p>
+<p style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 25<o:p></o:p></span></b></p>
+<div><p align=center style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Verdana;mso-fareast-font-family:Verdana;mso-bidi-font-family:Verdana'><span
+style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style='font-size:10.0pt;font-family:Verdana'>Let&#8217;s
+make a few cosmetic changes to the <b style='mso-bidi-font-weight:normal'>myButton</b>.<span
+style='mso-spacerun:yes'>&nbsp; </span>Because user interfaces are very
+important to keep your audience interested, you need to have precise control
+over the placement of all your GUI controls. We can do this in Torque's GUI
+Editor by changing the &#8216;<b style='mso-bidi-font-weight:normal'>position&#8217;</b>
+and &#8216;<b style='mso-bidi-font-weight:normal'>Extent&#8217;</b> fields in
+the Inspector Dialog.<span style='mso-spacerun:yes'>&nbsp;
+</span>Alternatively, if you click and drag one of the black boxes at the
+corners and sides of the button, the corresponding fields in the Inspector
+Dialog will change.<span style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p style='margin-left:.5in'><span style='font-size:10.0pt;font-family:Verdana'>When
+moving the entire component around, the &#8216;<b style='mso-bidi-font-weight:
+normal'>position</b>&#8217; field will change.<span
+style='mso-spacerun:yes'>&nbsp; </span>If you resize the button, the &#8216;<b
+style='mso-bidi-font-weight:normal'>extent&#8217;</b> field will adjust
+accordingly.<span style='mso-spacerun:yes'>&nbsp; </span>If you type your
+values into the proper fields, the button will change automatically to fit the
+proper data.<span style='mso-spacerun:yes'>&nbsp; </span>See Figure 26 for a
+visual reference as to what you should click, and where you should look in the
+Inspector Dialog.<o:p></o:p></span></p>
+<p style='margin-left:.5in'>&nbsp;</p>
+<p style='margin-left:.5in'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=674 height=273
+src="The%20Basics_files/image018.jpg" v:shapes="_x0000_i1034"></span></p>
+<p style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 25<o:p></o:p></span></b></p>
+<div></div>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;margin-bottom:
+12.0pt;margin-left:.5in;text-align:center'><span style='font-size:10.0pt;
+font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Verdana;mso-fareast-font-family:Verdana;mso-bidi-font-family:Verdana'><span
+style='mso-list:Ignore'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style='font-size:10.0pt;font-family:Verdana'>Whenever
+you are doing any kind of editing on a computer, whether it is documentation or
+game development, you should always remember the classic mantra: <b
+style='mso-bidi-font-weight:normal'>&#8220;Save, and save often.<span
+style='mso-spacerun:yes'>&nbsp; </span>Then save some more.&#8221;</b><span
+style='mso-spacerun:yes'>&nbsp; </span>Torque&#8217;s GUI Editor does not have
+an auto-save feature.<span style='mso-spacerun:yes'>&nbsp; </span>If your
+computer crashes after you have spent hours creating a GUI, you will not be a
+happy developer.<span style='mso-spacerun:yes'>&nbsp; </span>Now would be a
+great time to save the work you&#8217;ve put into creating this button.<o:p></o:p></span></p>
+
+<p style='margin-left:.5in'><span style='font-size:10.0pt;font-family:Verdana'>As
+shown in Figure 26, go the top left corner of the GUI editor and click on <b
+style='mso-bidi-font-weight:normal'>File-&gt;Save to Files&#8230;<span
+style='mso-spacerun:yes'>&nbsp; </span>Ctrl s</b>.<span
+style='mso-spacerun:yes'>&nbsp; </span>When the &#8220;Save As&#8221; file
+dialog appears, click on the <b style='mso-bidi-font-weight:normal'>MainMenuGui.gui</b>
+file and click <b style='mso-bidi-font-weight:normal'>Save</b> to overwrite the
+old Main Menu GUI with the new button addition.<span
+style='mso-spacerun:yes'>&nbsp; </span>Match your save dialog with the one
+shown in Figure 27.<o:p></o:p></span></p>
+<p style='margin-left:.5in'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=215 height=192
+src="The%20Basics_files/image020.jpg" v:shapes="_x0000_i1035"></span></p>
+<p style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 26</span></b></p>
+<p style='margin-left:.5in'>&nbsp;</p>
+<p style='margin-left:.5in'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=491 height=359
+src="The%20Basics_files/image022.jpg" v:shapes="_x0000_i1036">
+    
+  <o:p></o:p>
+</span></p>
+<p style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 27<o:p></o:p></span></b></p>
+<p align=center style='margin-left:.5in;text-align:center'><span
+style='font-size:10.0pt;font-family:Verdana'><o:p></o:p></span><span style='font-size:10.0pt;
+font-family:Verdana'>
+  <o:p>&nbsp;</o:p>
+</span></p>
+
+<p style='margin-left:.5in; text-indent:-.25in; mso-list:l0 level1 lfo2; tab-stops:list .5in; margin-bottom: .0001pt;'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Verdana;mso-fareast-font-family:Verdana;mso-bidi-font-family:Verdana'><span
+style='mso-list:Ignore'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style='font-size:10.0pt;font-family:Verdana'>With
+your changes saved, press <b style='mso-bidi-font-weight:normal'>F10</b> to
+close the GUI Editor and see how your new button looks on the Main Menu.<span
+style='mso-spacerun:yes'>&nbsp; </span>If your button has moved or resized, as
+shown in Figure 28, we need to change a few fields.</span></p>
+<p style='margin-left:.5in; mso-list:l0 level1 lfo2; tab-stops:list .5in; margin-bottom: .0001pt;'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=638 height=478
+src="The%20Basics_files/image024.jpg" v:shapes="_x0000_i1037">
+  
+  <o:p></o:p>
+</span></p>
+<p style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'> Figure 28
+      <o:p></o:p>
+</span></b></p>
+<p align=center style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-align:center'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></b></p>
+
+<p style='margin-left:.5in'><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Verdana'>This happens because the control does not have a
+proper alignment. To fix this, go back into the GUI Editor, select the button
+you created, and change the <b style='mso-bidi-font-weight:normal'>vertSizing</b>
+to &quot;</span><em><span style='font-size:10.0pt;font-family:Verdana'>Top</span></em><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Verdana'>&quot;,
+as in Figure 29. Now, click Apply. By changing the <b style='mso-bidi-font-weight:
+normal'>vertSizing</b> or <b style='mso-bidi-font-weight:normal'>horizSizing</b>
+options you're telling the GUI control to align the control in a particular
+way. <o:p></o:p></span></p>
+
+<p style='margin-left:.5in'><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Verdana'>You can experiment with the different alignment
+options to see the effects they have on controls. The main point to remember
+though is that if your controls don't render in the proper place when the GUI
+Editor closes, you need to change the <b style='mso-bidi-font-weight:normal'>vertSizing</b>
+and/or <b style='mso-bidi-font-weight:normal'>horizSizing</b> options, so that
+the controls are properly aligned to a border. Once you are done setting the
+alignment, save the edited GUI again to finalize your work.</span><span
+style='font-size:10.0pt;font-family:Verdana'><o:p></o:p></span></p>
+<p style='margin-left:.5in'>&nbsp;</p>
+<p style='margin-left:.5in'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=497 height=308
+src="The%20Basics_files/image026.jpg" v:shapes="_x0000_i1038"><o:p></o:p>
+</span></p>
+<p style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 29<o:p></o:p></span></b></p>
+<p style='margin-left:.5in'><span style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p style='margin-left:.5in'><span style='font-size:10.0pt;font-family:Verdana'>Close
+the GUI Editor (<b style='mso-bidi-font-weight:normal'>F10</b>) again, and take
+time to appreciate your work.<span style='mso-spacerun:yes'>&nbsp;
+</span>Depending on any cosmetic adjustments you made, your final button
+won&#8217;t look quite the same as what is shown in Figure 30, but you should
+have something similar.<span style='mso-spacerun:yes'>&nbsp; </span>Try
+clicking on the button.<span style='mso-spacerun:yes'>&nbsp; </span>Nothing
+happens, right?<span style='mso-spacerun:yes'>&nbsp; </span>We&#8217;ve added a
+command, but if something has gone wrong we should always check the <b
+style='mso-bidi-font-weight:normal'>Console </b>first.<span
+style='mso-spacerun:yes'>&nbsp; </span>Press the ~ key to open the
+Console.<span style='mso-spacerun:yes'>&nbsp; </span>You should have an error
+in the Console, as shown in Figure 31.<span style='mso-spacerun:yes'>&nbsp;
+</span><o:p></o:p></span></p>
+<p style='margin-left:.5in'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=635 height=476
+src="The%20Basics_files/image028.jpg" v:shapes="_x0000_i1039"><o:p></o:p>
+</span></p>
+<p style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 30<o:p></o:p></span></b></p>
+<p style='margin-left:.5in'>&nbsp;</p>
+<p style='margin-left:.5in'><span
+style='font-size:10.0pt;font-family:Verdana'><img width=535 height=229
+src="The%20Basics_files/image030.jpg" v:shapes="_x0000_i1040"><o:p></o:p>
+</span></p>
+<p style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 31
+  <o:p></o:p>
+</span></b></p>
+<p align=center style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-align:center'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></b></p>
+
+<p style='margin-left:.5in'><span style='font-size:10.0pt;font-family:Verdana'>The
+command works, but there is no <b style='mso-bidi-font-weight:normal'>HelloWorld</b>
+dialog.<span style='mso-spacerun:yes'>&nbsp; </span>We have given the button a
+script command to execute when it is clicked, but the command we entered won't
+make any sense to Torque until we follow the steps in the next section, <a
+href="Creating%20a%20Dialog.html">Creating A  Dialog</a>.<span
+style='mso-spacerun:yes'>&nbsp; </span>Our script command told Torque to open a
+new dialog control called &quot;HelloWorld&quot;, but we have not yet created
+that dialog. Once we do so, everything will work as planned! 
+<o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/GUI Editor/The Basics.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:31 GMT -->
+</html>

@@ -1,0 +1,1586 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4216;
+   parent.leftFrame.expandToItem('tree2', 'doc4216');
+   var element = parent.leftFrame.document.getElementById('doc4216');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueScript Console Functions 3 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <p xmlns="http://www.w3.org/1999/xhtml"><big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <strong> String Manipulation</strong> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br />
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table id="toc" class="toc" xmlns="http://www.w3.org/1999/xhtml"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#String_Manipulation"><span class="tocnumber">1</span> <span class="toctext">String Manipulation</span></a></li>
+<li class="toclevel-1"><a href="#addBadWord.28_aBadWord_.29"><span class="tocnumber">2</span> <span class="toctext">addBadWord( aBadWord )</span></a></li>
+<li class="toclevel-1"><a href="#containsBadWords.28_string_.29"><span class="tocnumber">3</span> <span class="toctext">containsBadWords( string )</span></a></li>
+<li class="toclevel-1"><a href="#string_filterString.28_baseString_.5B_.2C_replacementChars_.5D_.29"><span class="tocnumber">4</span> <span class="toctext">string filterString( baseString [ , replacementChars ] )</span></a></li>
+<li class="toclevel-1"><a href="#strcmp.28_string1_.2C_string2_.29"><span class="tocnumber">5</span> <span class="toctext">strcmp( string1 , string2 )</span></a></li>
+<li class="toclevel-1"><a href="#stricmp.28_string1_.2C_string2_.29"><span class="tocnumber">6</span> <span class="toctext">stricmp( string1 , string2 )</span></a></li>
+<li class="toclevel-1"><a href="#strlwr.28_sourceString_.29"><span class="tocnumber">7</span> <span class="toctext">strlwr( sourceString )</span></a></li>
+<li class="toclevel-1"><a href="#strupr.28_sourceString_.29"><span class="tocnumber">8</span> <span class="toctext">strupr( sourceString )</span></a></li>
+<li class="toclevel-1"><a href="#getField.28_sourceString_.2C_index_.29"><span class="tocnumber">9</span> <span class="toctext">getField( sourceString , index )</span></a></li>
+<li class="toclevel-1"><a href="#getFieldCount.28_sourceString_.29"><span class="tocnumber">10</span> <span class="toctext">getFieldCount( sourceString )</span></a></li>
+<li class="toclevel-1"><a href="#getFields.28_sourceString_.2C_index_.5B_.2C_endindex_.5D_.29"><span class="tocnumber">11</span> <span class="toctext">getFields( sourceString , index [ , endindex ] )</span></a></li>
+<li class="toclevel-1"><a href="#removeField.28_sourceString_.2C_index_.29"><span class="tocnumber">12</span> <span class="toctext">removeField( sourceString , index )</span></a></li>
+<li class="toclevel-1"><a href="#setField.28_sourceString_.2C_index_.2C_replace_.29"><span class="tocnumber">13</span> <span class="toctext">setField( sourceString , index , replace )</span></a></li>
+<li class="toclevel-1"><a href="#strlen.28_string"><span class="tocnumber">14</span> <span class="toctext">strlen( string</span></a></li>
+<li class="toclevel-1"><a href="#getRecord.28_sourceString_.2C_index_.29"><span class="tocnumber">15</span> <span class="toctext">getRecord( sourceString , index )</span></a></li>
+<li class="toclevel-1"><a href="#getRecordCount.28_sourceString_.29"><span class="tocnumber">16</span> <span class="toctext">getRecordCount( sourceString )</span></a></li>
+<li class="toclevel-1"><a href="#getRecords.28_sourceString_.2C_index_.5B_.2C_endindex_.5D_.29"><span class="tocnumber">17</span> <span class="toctext">getRecords( sourceString , index [ , endindex ] )</span></a></li>
+<li class="toclevel-1"><a href="#removeRecord.28_sourceString_.2C_index_.29"><span class="tocnumber">18</span> <span class="toctext">removeRecord( sourceString , index )</span></a></li>
+<li class="toclevel-1"><a href="#setRecord.28_sourceString_.2C_index_.2C_replace_.29"><span class="tocnumber">19</span> <span class="toctext">setRecord( sourceString , index , replace )</span></a></li>
+<li class="toclevel-1"><a href="#strreplace.28_sourceString_.2C_from_.2C_to_.29"><span class="tocnumber">20</span> <span class="toctext">strreplace( sourceString , from , to )</span></a></li>
+<li class="toclevel-1"><a href="#getSubStr.28_sourceString_.2C_start__.2C_count__.29"><span class="tocnumber">21</span> <span class="toctext">getSubStr( sourceString , start  , count  )</span></a></li>
+<li class="toclevel-1"><a href="#strchr.28_sourceString_.2C_char_.29"><span class="tocnumber">22</span> <span class="toctext">strchr( sourceString , char )</span></a></li>
+<li class="toclevel-1"><a href="#strpos.28_sourceString_.2C_searchString_.5B_.2C_offset_.5D_.29"><span class="tocnumber">23</span> <span class="toctext">strpos( sourceString , searchString [ , offset ] )</span></a></li>
+<li class="toclevel-1"><a href="#strstr.28_sourceString_.2C_searchString_.29"><span class="tocnumber">24</span> <span class="toctext">strstr( sourceString , searchString )</span></a></li>
+<li class="toclevel-1"><a href="#stripChars.28_sourceString_.2C_chars_.29"><span class="tocnumber">25</span> <span class="toctext">stripChars( sourceString , chars )</span></a></li>
+<li class="toclevel-1"><a href="#stripColorCodes.28_stringtoStrip_.29"><span class="tocnumber">26</span> <span class="toctext">stripColorCodes( stringtoStrip )</span></a></li>
+<li class="toclevel-1"><a href="#stripMLControlChars.28_sourceString_.29"><span class="tocnumber">27</span> <span class="toctext">stripMLControlChars( sourceString )</span></a></li>
+<li class="toclevel-1"><a href="#stripTrailingSpaces.28_sourceString_.29"><span class="tocnumber">28</span> <span class="toctext">stripTrailingSpaces( sourceString )</span></a></li>
+<li class="toclevel-1"><a href="#ltrim.28_sourceString_.29"><span class="tocnumber">29</span> <span class="toctext">ltrim( sourceString )</span></a></li>
+<li class="toclevel-1"><a href="#rtrim.28_sourceString_.29"><span class="tocnumber">30</span> <span class="toctext">rtrim( sourceString )</span></a></li>
+<li class="toclevel-1"><a href="#trim.28_sourceString_.29"><span class="tocnumber">31</span> <span class="toctext">trim( sourceString )</span></a></li>
+<li class="toclevel-1"><a href="#nextToken.28_tokenList_.2C_tokenVar_.2C_delimeter_.29"><span class="tocnumber">32</span> <span class="toctext">nextToken( tokenList , tokenVar , delimeter )</span></a></li>
+<li class="toclevel-1"><a href="#firstWord.28_sourceString_.29"><span class="tocnumber">33</span> <span class="toctext">firstWord( sourceString )</span></a></li>
+<li class="toclevel-1"><a href="#getWord.28_sourceString_.2Cindex_.29"><span class="tocnumber">34</span> <span class="toctext">getWord( sourceString ,index )</span></a></li>
+<li class="toclevel-1"><a href="#getWordCount.28_sourceString_.29"><span class="tocnumber">35</span> <span class="toctext">getWordCount( sourceString )</span></a></li>
+<li class="toclevel-1"><a href="#getWords.28_sourceString_.2Cindex_.5B.2Cendindex.5D.29"><span class="tocnumber">36</span> <span class="toctext">getWords( sourceString ,index [,endindex])</span></a></li>
+<li class="toclevel-1"><a href="#removeWord.28_sourceString_.2Cindex.29"><span class="tocnumber">37</span> <span class="toctext">removeWord( sourceString ,index)</span></a></li>
+<li class="toclevel-1"><a href="#restWords.28_sourceString_.29"><span class="tocnumber">38</span> <span class="toctext">restWords( sourceString )</span></a></li>
+<li class="toclevel-1"><a href="#setWord.28_sourceString_.2Cindex.2Creplace.29"><span class="tocnumber">39</span> <span class="toctext">setWord( sourceString ,index,replace)</span></a></li>
+</ul>
+</td></tr></table>
+<p xmlns="http://www.w3.org/1999/xhtml"></p>
+<a name="String_Manipulation" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink1"></a> String Manipulation </h3>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p>Torque includes a bad word filtering feature that can be used process strings and to replace any words matching words on the list of known bad works.  This list is built manually.  Bad words are replaced with a user-defined set of random characters. Please note, a small but common list of bad words is already included in the engine.  Please refer to the engine source code for this list as a would-be tasteless the list of words here.
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="addBadWord.28_aBadWord_.29"></a><h3><a name = "HeaderLink2"></a>addBadWord( aBadWord )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>addBadWord</b></i> function to add new 'bad words' to the current 'bad word' list.  Once a word is added to the list, it may not be removed.  Also, adding a word more than once has no additional effect.<br />
+<br />
+<i><b>Syntax<br />
+aBadWord</b></i> – A word to be considered as foul language and to be looked for when the <i>containsBadWords</i> and/or <i>filterString</i> functions are called.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+Several bad words are already added by the engine.  Please refer to the source code for a full listing. <br />
+<br />
+<b>See Also</b><br />
+containsBadWords, filterString<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="containsBadWords.28_string_.29"></a><h3><a name = "HeaderLink3"></a>containsBadWords( string )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>containsBadWords</b></i> function to check <i><b>string</b></i> for any previosly specified 'bad words'.<br />
+<br />
+<i><b>Syntax<br />
+string</b></i> – Any string to be checked for bad words.<br />
+<br />
+<b>Returns</b><br />
+Returns true if any words on the bad word list are found in the string.  Returns false otherwise.<br />
+<br />
+<i><b>Notes</b></i><br />
+This function will catch whole words and variants as long as the variant contains the full spelling of the bad word.  For example, if 'whack' were defined as a bad word, this function would return true if the word 'whacko' were included in a sentence.<br />
+<br />
+<b>See Also</b><br />
+addBadWord, filterString<br />
+<br />
+Returns true if <i><b>string</b></i> contains any known bad words.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="string_filterString.28_baseString_.5B_.2C_replacementChars_.5D_.29"></a><h3><a name = "HeaderLink4"></a>string filterString( baseString [ , replacementChars ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>filterString</b></i> function to parse baseString for words on the 'bad word' list and to then replace those words with random characters.<br />
+<br />
+<i><b>Syntax<br />
+baseString</b></i> – The original string, possibly containing bad words.<br />
+<i><b>replacementChars</b></i> – This optional argument can be used to supply a single character or a list of chracters to use for the replacement of characters the bad words. If no replacement chracters are specified, the engine will choose randomly from lower-case alpha-characters (a..z).<br />
+<br />
+<b>Returns</b><br />
+Returns a 'cleaned' string.  This string will contain all the original words, except that any words which were deemed 'bad' will have had each character in the word replaced with a random replacement character.<br />
+<br />
+<i><b>Notes</b></i><br />
+This function will catch whole words and variants as long as the variant contains the full spelling of the bad word.  For example, if 'whack' where defined as a bad word, this function would return true if the word 'whacko' were included in a sentence.<br />
+<br />
+<b>See Also</b><br />
+addBadWord, containsBadWords<br />
+<br />
+</p>
+<pre>
+function badWordTest()
+{
+  addBadWord( "poop" );
+  
+  %testPhrase = "This is the poop!";
+  
+  %filteredPhrase = filterString( %testPhrase , "@#$*" );
+  
+  echo("Contains bad words? ==&gt; " , containsBadWords( %testPhrase ) );
+  
+  echo("Before filtering: ", %testPhrase );
+  
+  echo("After  filtering: ", %filteredPhrase );
+
+}
+
+
+badWordTest();
+
+Contains bad words? ==&gt; 1
+Before filtering: This is the poop!
+After  filtering: This is the $@@*!
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="strcmp.28_string1_.2C_string2_.29"></a><h3><a name = "HeaderLink5"></a>strcmp( string1 , string2 )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>strcmp</b></i> function to do a lexicographic <u>case sensitive</u> string comparison between <i><b>string1</b></i> and <i><b>string2</b></i>.  <br />
+<br />
+<i><b>Syntax<br />
+string1</b></i> – String to be compared to string2.<br />
+<i><b>string2</b></i> – String to be compared to string1.<br />
+<br />
+<b>Returns</b><br />
+Returns a numeric value:<br />
+		      -1 – <i><b>string1</b></i> is less than <i><b>string2</b></i>, including case.<br />
+		       0 – <i><b>string1</b></i> is equal to <i><b>string2</b></i>, including case.<br />
+		       1 – <i><b>string1</b></i> is greater than <i><b>string2</b></i>, including case.<br />
+<br />
+<b>See Also</b><br />
+see stricmp, strstr<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="stricmp.28_string1_.2C_string2_.29"></a><h3><a name = "HeaderLink6"></a>stricmp( string1 , string2 )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>stricmp</b></i> function to do a lexicographic <u>case in-sensitive</u> string comparison between <i><b>string1</b></i> and <i><b>string2</b></i>.  <br />
+<br />
+<i><b>Syntax<br />
+string1</b></i> – String to be compared to string2.<br />
+<i><b>string2</b></i> – String to be compared to string1.<br />
+<br />
+<b>Returns</b><br />
+Returns a numeric value:<br />
+		      -1 – <i><b>string1</b></i> is less than <i><b>string2</b></i>, ignoring case.<br />
+		       0 – <i><b>string1</b></i> is equal to <i><b>string2</b></i>, ignoring case.<br />
+		       1 – <i><b>string1</b></i> is greater than <i><b>string2</b></i>, ignoring case.<br />
+<br />
+<b>See Also</b><br />
+see strcmp, strstr<br />
+</p>
+<pre>
+function strcmptest() 
+{
+  echo("Lexicographic comparisons are not the same as arithmetic comparisons...");
+  
+  echo("100 - 10 == 90, but strcmp( \"100\" , \"10\" ) == " , 
+       strcmp( "100" , "10" ) );
+        
+  echo("\n", "Don't forget about case-senstivity...");
+ 
+  echo("strcmp( \"ABC\" , \"abc\" )  == " , 
+       strcmp( "ABC" , "abc" ) , "\n\n, but \n" );
+  
+  echo("stricmp( \"ABC\" , \"abc\" ) == " , 
+       stricmp( "ABC" , "abc" ) );
+}
+
+
+strcmptest();
+
+Lexicographic comparisons are not the same as arithmetic comparisons...
+100 - 10 == 90, but strcmp( "100" , "10" ) == 1
+
+Don't forget about case-senstivity...
+strcmp( "ABC" , "abc" )  == -1
+
+, but 
+
+stricmp( "ABC" , "abc" ) == 0
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="strlwr.28_sourceString_.29"></a><h3><a name = "HeaderLink7"></a>strlwr( sourceString )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>strlwr</b></i> function to convert all alpha characters in <i><b>sourceString</b></i> to lower-case equivalents.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – The string to be modified.<br />
+<br />
+<b>Returns</b><br />
+Returns a copy of <b>souriceString</b> in which all upper-case characters have been coverted to lower-case letters.<br />
+<br />
+<b>See Also</b><br />
+strupr<br />
+<br />
+</p>
+<pre>
+echo( strlwr( "ABCD123" ) ); // Prints abcd123
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="strupr.28_sourceString_.29"></a><h3><a name = "HeaderLink8"></a>strupr( sourceString )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>strupr</b></i> function to convert all alpha characters in <i><b>sourceString</b></i> to upper-case equivalents.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – The string to be modified.<br />
+<br />
+<b>Returns</b><br />
+Returns a copy of <b>souriceString</b> in which all lower-case characters have been coverted to upper-case letters.<br />
+<br />
+<b>See Also</b><br />
+strlwr<br />
+<br />
+</p>
+<pre>echo( strupr( "abcd123" ) ); // Prints ABCD123</pre>
+</td>
+</tr>
+
+</table>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p>A field is a sub-string withing a larger string, where each field is delimted by a <b><u>NEWLINE</u></b> character or a <b><u>TAB</u></b> character. A newline can be represented as either "<b><u>\n</u></b>" or the keyword <b><u>NL</u></b>, and a tab can be represented by hitting the TAB key, or by the keyword <b>TAB</b>.<br />
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getField.28_sourceString_.2C_index_.29"></a><h3><a name = "HeaderLink9"></a>getField( sourceString , index )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getField</b></i> function to get the field at <i><b>index</b></i> in <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more fields.<br />
+<br />
+<b>Returns</b><br />
+Returns field at <i><b>index</b></i> in <i><b>sourceString</b></i>, or null string if no field exists at that index. <br />
+<br />
+<b>See Also</b><br />
+getFields, setField<br />
+<br />
+</p>
+<pre>
+// Prints Torque
+echo( getField( "GPGTGE + " NL "AND" TAB "Torque" TAB "Rocks" , 2 ) );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getFieldCount.28_sourceString_.29"></a><h3><a name = "HeaderLink10"></a>getFieldCount( sourceString )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getFieldCount</b></i> function to get the number of fields in <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more fields.<br />
+<br />
+<b>Returns</b><br />
+Returns number of fields in <i><b>sourceString</b></i> or 0 if no fields are present.<br />
+<br />
+</p>
+<pre>
+%fields = "You" TAB "must" TAB "buy" TAB "GPGTGE";
+
+echo( getFieldCount( %fields ) ); // Prints 4
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getFields.28_sourceString_.2C_index_.5B_.2C_endindex_.5D_.29"></a><h3><a name = "HeaderLink11"></a>getFields( sourceString , index [ , endindex ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getFields</b></i> function to retrieve a set of fields from a <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more fields.<br />
+<i><b>index</b></i> – The index of the first field to retrieve.<br />
+<i><b>endindex</b></i> – The index of the final field to retrieve.<br />
+<br />
+<b>Returns</b><br />
+Returns all fields (separated by current delimiter) from <i><b>sourceString</b></i>, starting at <i><b>index</b></i> and ending at <i><b>endIndex</b></i> or end of string, whichever comes first.  If no <i><b>endIndex</b></i> is specified, all remaining fields are returned.<br />
+<br />
+<b>See Also</b><br />
+getField, setField<br />
+<br />
+</p>
+<pre>
+// Prints Torque^Rocks (^ is printed TAB in console)
+echo( getFields( "GPGTGE + " NL "AND" TAB "Torque" TAB "Rocks" , 2 , 3 ) );
+
+// Also prints Torque^Rocks
+echo( getFields( "GPGTGE + " NL "AND" TAB "Torque" TAB "Rocks" , 2 ) );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="removeField.28_sourceString_.2C_index_.29"></a><h3><a name = "HeaderLink12"></a>removeField( sourceString , index )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>removeField</b></i> function to remove a single indexed field from a <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more fields.<br />
+<i><b>index</b></i> – The index of the field to remove.<br />
+<br />
+<br />
+<b>Returns</b><br />
+Returns <i><b>sourceString</b></i> minus the removed field.  If the index is greater than the number of fields in <i><b>sourceString</b></i>, the original string is returned.<br />
+<br />
+<b>See Also</b><br />
+setField<br />
+<br />
+</p>
+<pre>
+%fields = "Torque" TAB "So" TAB "Totally" TAB "Rocks!";
+
+// %fields will contain three fields: "Torque", "Totally", and "Rocks!".
+%fields = removeField( %fields, 1 );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setField.28_sourceString_.2C_index_.2C_replace_.29"></a><h3><a name = "HeaderLink13"></a>setField( sourceString , index , replace )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setField</b></i> function to replace an existing field with a new field(s), or to add field(s) to a string..<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more fields.<br />
+<i><b>index</b></i> – The index of the field to remove.<br />
+<i><b>replace</b></i> – The new field(s) to replace the field at <i><b>index</b></i> with.<br />
+<br />
+<br />
+<b>Returns</b><br />
+There are multiple return cases:<br />
+- In the first case, a simple one-to-one replacement, the field at <i><b>index</b></i> in <i><b>sourceString</b></i> will be replaced with the value in <i><b>replace</b></i>, and the new string will be returned.<br />
+<br />
+- In the second case, a multi-to-one replacement, the field at <i><b>index</b></i> in <i><b>sourceString</b></i> will be replaced with the value in <i><b>replace</b></i>, which can be two or more fields, and the new string will be returned.<br />
+<br />
+- In the thrid and final case, new records, empty or filled, can be appended to the end of <i><b>sourceString</b></i>.  If <i><b>index</b></i> is beyond the end of the <i><b>sourceString</b></i>, that is, the <i><b>index</b></i> is greater than the total count of fields in <i><b>sourceString</b></i>, the requisite number of empty (null-string) fields will be appended to the end of <i><b>sourceString</b></i> and the value in <i><b>replace</b></i> will be appended to the end of this new string.  This entire resultant string will be returned.<br />
+<br />
+<b>See Also</b><br />
+getField, getFields, removeField<br />
+<br />
+</p>
+<pre>
+// %fields will contain two fields, "Torque" and "Rocks!",
+%fields =  setField( "Torque" TAB "Rock" , 1 , "Rocks!" );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="strlen.28_string"></a><h3><i></i><a name = "HeaderLink14"></a>strlen( string </h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>strlen</b></i> function to determine how many characters there are in <i><b>string</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+string</b></i> – The string to count characters for.<br />
+<br />
+<b>Returns</b><br />
+Returns the number of characters in <i><b>string</b></i>, or 0 if <i><b>string</b></i> is invalid or a NULL string.<br />
+<br />
+</p>
+<pre>
+// Prints 10
+echo( strlen( "0123456789" ) );
+</pre>
+</td>
+</tr>
+
+</table>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p>A record is a sub-string withing a larger string, where each record is delimted by a <b><u>NEWLINE</u></b> character. A newline can be represented as either "<b><u>\n</u></b>" or the keyword <b><u>NL</u></b>.<br />
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getRecord.28_sourceString_.2C_index_.29"></a><h3><a name = "HeaderLink15"></a>getRecord( sourceString , index )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getRecord</b></i> function to get the record at <i><b>index</b></i> in <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more records.<br />
+<br />
+<b>Returns</b><br />
+Returns record at <i><b>index</b></i> in <i><b>sourceString</b></i>, or NULL string if no record exists at that index. <br />
+<br />
+<b>See Also</b><br />
+getRecords, setRecord<br />
+<br />
+</p>
+<pre>
+// Prints Torque
+echo( getRecord( "GPGTGE + " NL "AND" TAB "Torque" TAB "Rocks" , 2 ) );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getRecordCount.28_sourceString_.29"></a><h3><a name = "HeaderLink16"></a>getRecordCount( sourceString )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getRecordCount</b></i> function to get the number of records in <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more records.<br />
+<br />
+<b>Returns</b><br />
+Returns number of records in <i><b>sourceString</b></i> or 0 if no records are present.<br />
+<br />
+</p>
+<pre>
+%records = "You" TAB "must" TAB "buy" TAB "GPGTGE";
+
+echo( getRecordsCount( %records ) ); // Prints 4
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getRecords.28_sourceString_.2C_index_.5B_.2C_endindex_.5D_.29"></a><h3><a name = "HeaderLink17"></a>getRecords( sourceString , index [ , endindex ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getRecords</b></i> function to retrieve a set of records from a <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more records.<br />
+<i><b>index</b></i> – The index of the first record to retrieve.<br />
+<i><b>endindex</b></i> – The index of the final record to retrieve.<br />
+<br />
+<b>Returns</b><br />
+Returns all records (separated by current delimiter) from <i><b>sourceString</b></i>, starting at <i><b>index</b></i> and ending at <i><b>endIndex</b></i> or end of string, whichever comes first.  If no <i><b>endIndex</b></i> is specified, all remaining records are returned.<br />
+<br />
+<b>See Also</b><br />
+getRecord, setRecord<br />
+<br />
+</p>
+<pre>
+// Prints Torque^Rocks (^ is printed TAB in console)
+echo( getRecords( "GPGTGE + " NL "AND" TAB "Torque" TAB "Rocks" , 2 , 3 ) ); 
+
+// Also prints Torque^Rocks
+echo( getRecords( "GPGTGE + " NL "AND" TAB "Torque" TAB "Rocks" , 2 ) );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="removeRecord.28_sourceString_.2C_index_.29"></a><h3><a name = "HeaderLink18"></a>removeRecord( sourceString , index )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>removeRecord</b></i> function to remove a single indexed record from a <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more records.<br />
+<i><b>index</b></i> – The index of the record to remove.<br />
+<br />
+<b>Returns</b><br />
+Returns <i><b>sourceString</b></i> minus the removed record.  If the index is greater than the number of records in <i><b>sourceString</b></i>, the original string is returned.<br />
+<br />
+<b>See Also</b><br />
+setRecord<br />
+<br />
+</p>
+<pre>
+%records = "Torque" TAB "So" TAB "Totally" TAB "Rocks!";
+
+// %records will contain three records: "Torque", "Totally", and "Rocks!".
+%records = removeRecord( %records, 1 );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setRecord.28_sourceString_.2C_index_.2C_replace_.29"></a><h3><a name = "HeaderLink19"></a>setRecord( sourceString , index , replace )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setRecord</b></i> function to replace an existing record with a new record(s), or to add record(s) to a string..<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more records.<br />
+<i><b>index</b></i> – The index of the record to remove.<br />
+<i><b>replace</b></i> – The new record(s) to replace the record at <i><b>index</b></i> with.<br />
+<br />
+<b>Returns</b><br />
+There are multiple return cases:<br />
+- In the first case, a simple one-to-one replacement, the record at <i><b>index</b></i> in <i><b>sourceString</b></i> will be replaced with the value in <i><b>replace</b></i>, and the new string will be returned.<br />
+<br />
+- In the first case, a multi-to-one replacement, the record at <i><b>index</b></i> in <i><b>sourceString</b></i> will be replaced with the value in <i><b>replace</b></i>, which can be two or more records, and the new string will be returned.<br />
+<br />
+- In the thrid and final case, new records, empty or filled, can be appended to the end of <i><b>sourceString</b></i>.  If <i><b>index</b></i> is beyond the end of the <i><b>sourceString</b></i>, that is, the <i><b>index</b></i> is greater than the total count of records in <i><b>sourceString</b></i>, the requisite number of empty (null-string) records will be appended to the end of <i><b>sourceString</b></i> and the value in <i><b>replace</b></i> will be appended to the end of this new string.  This entire resultant string will be returned.<br />
+<br />
+<b>See Also</b><br />
+getRecord, getRecords, removeRecord<br />
+<br />
+</p>
+<pre>
+// %records will contain two records, "Torque" and "Rocks!",
+%Records =  setRecord( "Torque" TAB "Rock" , 1 , "Rocks!" );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="strreplace.28_sourceString_.2C_from_.2C_to_.29"></a><h3><a name = "HeaderLink20"></a>strreplace( sourceString , from , to )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>strreplace</b></i> function to replace every instance of <i><b>from</b></i> in <i><b>sourceString</b></i> with <i><b>to</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – The string to do replacement operations on.<br />
+<i><b>from</b></i> – The old value to be replaced.<br />
+<i><b>to</b></i> – The new value to replace old values with.<br />
+<br />
+<b>Returns</b><br />
+Returns a new version of <i><b>sourceString</b></i> in which every instance of the value in <i><b>from</b></i> was replaced with the value in <i><b>to</b></i>.<br />
+<br />
+<i><b>Notes</b></i><br />
+This function is case-sensitive and only does exact matching.<br />
+<br />
+</p>
+<pre>
+// Prints Torque rocks!
+echo( strreplace("Torque is cool!" , "is cool" , "rocks" ) );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getSubStr.28_sourceString_.2C_start__.2C_count__.29"></a><h3><a name = "HeaderLink21"></a>getSubStr( sourceString , start  , count  )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getSubStr</b></i> function to get a sub-string of <i><b>sourceString</b></i>, starting at character index <i><b>start</b></i> and ending at character index <i><b>start + count</b></i>, or the end-of-string, which ever comes first.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – The string from which to extract a sub-string.<br />
+<i><b>start</b></i> – The character index at which the extraction starts.<br />
+<i><b>count</b></i> – The length of the sub-string to extract.<br />
+<br />
+<b>Returns</b><br />
+Returns a string made up of the character at <i><b>start</b></i> in <i><b>sourceString</b></i> and ending at the end of the original sourceString, or <i><b>start + count</b></i>,  whichever comes first.<br />
+<br />
+<i><b>Notes</b></i><br />
+If <i><b>start + count</b></i> is greater than the length of <i><b>sourceString</b></i>, the extraction will return a string shorter than <i><b>count.</b></i><br />
+<br />
+<b>See Also</b><br />
+strchr<br />
+<br />
+</p>
+<pre>
+// Prints 2345
+echo( getSubStr( "0123456789" , 2 , 4 ) );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="strchr.28_sourceString_.2C_char_.29"></a><h3><a name = "HeaderLink22"></a>strchr( sourceString , char )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>strchr</b></i> function to extract a sub-string of <i><b>sourceString</b></i>, where the sub-string is equal to the first occurence of <i><b>char</b></i> in <i><b>sourceString</b></i> followed by the remainder of <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – The string from which to extract a sub-string.<br />
+<i><b>char</b></i> – The character to search for in sourceString.<br />
+<br />
+<b>Returns</b><br />
+Returns a string composed of first instance of <i><b>char</b></i> in <i><b>sourceString</b></i>, and all of the characters after it.  If <i><b>char</b></i> is not found, a NULL string is returned.<br />
+<br />
+<b>See Also</b><br />
+getSubStr<br />
+<br />
+</p>
+<pre>
+// Prints 3456789
+echo( strchr( "0123456789" , "3" ) );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="strpos.28_sourceString_.2C_searchString_.5B_.2C_offset_.5D_.29"></a><h3><a name = "HeaderLink23"></a>strpos( sourceString , searchString [ , offset ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>strPos</b></i> function to locate the first instance of <i><b>searchString</b></i> in <i><b>sourceString</b></i>, starting at character 0, or at an optional <i><b>offset</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – The string in which to search for <i><b>searchString</b></i>.<br />
+<i><b>searchString</b></i> – The string for which to search for in <i><b>sourceString</b></i>.<br />
+<i><b>offset</b></i> – An optional non-negative integer value representing the character offset within <i><b>sourceString</b></i> at which to begin the search.<br />
+<br />
+<b>Returns</b><br />
+Returns a numeric character index representing the postion in <i><b>sourceString</b></i> at which <i><b>searchString</b></i> was found, or -1 to indicate that no instance of <i><b>searchString</b></i> was found.<br />
+<br />
+<b>See Also</b><br />
+strstr<br />
+<br />
+</p>
+<pre>
+// Prints 2
+echo( strpos( "This is a test" , "is" ) );
+
+// Prints 5
+echo( strpos( "This is a test" , "is" , 3 ) );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="strstr.28_sourceString_.2C_searchString_.29"></a><h3><i></i><i></i><a name = "HeaderLink24"></a>strstr( sourceString , searchString )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>strstr</b></i> function to locate the first instance of <i><b>searchString</b></i> in <i><b>sourceString.<br />
+<br />
+Syntax<br />
+sourceString</b></i> – The string in which to search for <i><b>searchString</b></i>.<br />
+<i><b>searchString</b></i> – The string for which to search for in <i><b>sourceString</b></i>.<br />
+<br />
+<b>Returns</b><br />
+Returns a numeric character index representing the postion in <i><b>sourceString</b></i> at which <i><b>searchString</b></i> was found, or -1 to indicate that no instance of <i><b>searchString</b></i> was found.<br />
+<br />
+<b>See Also</b><br />
+strpos<br />
+<br />
+</p>
+<pre>
+// Prints -1
+echo( strstr( "This is a test" , "IS" ) );
+
+// Prints 2
+echo( strstr( "This is a test" , "is" ) );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="stripChars.28_sourceString_.2C_chars_.29"></a><h3><i></i><i></i><a name = "HeaderLink25"></a>stripChars( sourceString , chars )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>stripChars</b></i> function to remove <i><b>chars</b></i> from <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax</b></i>
+</p><p><i>sourceString</i>—The string to be modified.<br />
+<i>chars</i>—The character or characters to search for and remove.<br />
+<br />
+<b>Returns</b><br />
+Returns a copy of <i><b>sourceString</b></i>, from which all instances of <i><b>chars</b></i> have been removed.  This may be the original <i><b>sourceString</b></i>, if <i><b>chars</b></i> was not found.<br />
+<br />
+<b>See Also</b><br />
+stripMLControlChars, stripTrailingSpaces<br />
+<br />
+</p>
+<pre>
+// Prints WowThisIsCool
+echo( stripChars("WowxThisy*IsCoolz!" , "*xyz" ) );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="stripColorCodes.28_stringtoStrip_.29"></a><h3><i></i><a name = "HeaderLink26"></a>stripColorCodes( stringtoStrip )</h3></b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+</p><p>Removes <a href="TorqueML.html" title="GUI/TorqueML">TorqueML</a> color codes from the given string.
+</p><p><i><b>Syntax</b></i>
+</p><p><i>stringtoStrip</i>—The input string.
+</p><p><b>Returns</b>
+</p><p>Returns a copy of <i>stringtoStrip</i>, from which all instances of TorqueML markup color codes have been removed.
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="stripMLControlChars.28_sourceString_.29"></a><h3><a name = "HeaderLink27"></a>stripMLControlChars( sourceString )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>stripMLControlChars</b></i> function to remove all Torque Markup-Language (ML) symbols from <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – The string to be modified.<br />
+<br />
+<b>Returns</b><br />
+Returns a copy of <i><b>sourceString</b></i> with all the ML symbols removed, or the original string if no ML symbols were present.<br />
+<br />
+<i><b>Caution</b></i><br />
+This may not remove <br /> correctly, so check before you trust this function.<br />
+<br />
+<b>See Also</b><br />
+stripChars, stripTrailingSpaces<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="stripTrailingSpaces.28_sourceString_.29"></a><h3><a name = "HeaderLink28"></a>stripTrailingSpaces( sourceString )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>stripTrailingSpaces</b></i> function to remove all spaces <u>and underscores</u> from <i><b>sourceString</b></i>. <br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – The string to be modified.<br />
+<br />
+<b>Returns</b><br />
+Returns modified string, or original string if no trailing spaces found found.<br />
+<br />
+<i><b>Notes</b></i><br />
+This function <u>DOES NOT</u> remove TAB characters, only a space " ", or underline "_" are considered spaces.<br />
+<br />
+<b>See Also</b><br />
+stripChars, stripMLControlChars, ltrim, rtrim, trim<br />
+<br />
+</p>
+<pre>
+// Prints This is a test.
+echo( stripTrailingSpaces( "This is a    " ) SPC "test." );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="ltrim.28_sourceString_.29"></a><h3><a name = "HeaderLink29"></a>ltrim( sourceString )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>ltrim</b></i> function to strip the leading white space from <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – The string to be trimmed.<br />
+<br />
+<b>Returns</b><br />
+Returns <i><b>sourceString</b></i> with all the leading white spaces removed.<br />
+<br />
+<i><b>Notes</b></i><br />
+White space is any character in this set: spaces, TABs, and NULL strings.<br />
+<br />
+<b>See Also</b><br />
+stripChars, stripMLControlChars, stripTrailingSpaces, rtrim, trim <br />
+<br />
+</p>
+<pre>
+// Prints This is a test.
+echo( ltrim( " " TAB " " SPC "This is a test." ) );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="rtrim.28_sourceString_.29"></a><h3><a name = "HeaderLink30"></a>rtrim( sourceString )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>rtrim</b></i> function to strip the trailing white space from <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – The string to be trimmed.<br />
+<br />
+<b>Returns</b><br />
+Returns <i><b>sourceString</b></i> with all the trailing white spaces removed.<br />
+<br />
+<i><b>Notes</b></i><br />
+White space is any character in this set: spaces, TABs, and NULL strings.<br />
+<br />
+<b>See Also</b><br />
+stripChars, stripMLControlChars, stripTrailingSpaces, ltrim, trim<br />
+<br />
+</p>
+<pre>
+// Prints This is a test.
+echo( rtrim( "This is a    " ) SPC "test." );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="trim.28_sourceString_.29"></a><h3><a name = "HeaderLink31"></a>trim( sourceString )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>trim</b></i> function to strip the leading and trailing white space from <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – The string to be trimmed.<br />
+<br />
+<b>Returns</b><br />
+Returns <i><b>sourceString</b></i> with all the leading and trailing white spaces removed.<br />
+<br />
+<i><b>Notes</b></i><br />
+White space is any character in this set: spaces, TABs, and NULL strings.<br />
+<br />
+<b>See Also</b><br />
+stripChars, stripMLControlChars, stripTrailingSpaces, ltrim, rtrim<br />
+<br />
+</p>
+<pre>
+// Prints This is a test.
+echo( trim( " " TAB " " SPC "This is a     " ) SPC "test." );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="nextToken.28_tokenList_.2C_tokenVar_.2C_delimeter_.29"></a><h3><a name = "HeaderLink32"></a>nextToken( tokenList , tokenVar , delimeter )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>nextToken</b></i> function to get the first token found in <i><b>tokenList</b></i>, where tokens are separated by the character(s) specified in <i><b>delimeter</b></i>.  The token itself is stored in a variable whose name is specified in <i><b>tokenVar</b></i>. This function provides complex power in a simple package.  Please read the notes below, they are <u>very</u> important.<br />
+<br />
+<i><b>Syntax<br />
+tokenList</b></i> – The string containing token(s).<br />
+<i><b>tokenVar</b></i> – The 'name' of the variable to store the token in.<br />
+<i><b>delimeter</b></i> – The character(s) to use as a delimeter.  A delimeter may be a single character, or a sequence of characters.<br />
+<br />
+<b>Returns</b><br />
+Returns a copy of tokenList, less the first token and the first delimeter.  If there are no more tokens, a NULL string is returned.<br />
+<br />
+<i><b>Notes</b></i><br />
+This function is scope-smart.  That is, when we specify the name of the variable to store a token in by passing a value in <i><b>tokenVar</b></i>, we do not include either a local symbol (%), or a global symbol ($).  We just pass in an un-adorned name, let's say "George".  Then, depending on where this function is called, "George" will become a local (%George), or a global ($George) variable.  If this function is called within a function or method definition, "George" will be local (%George).  If this function is called from the file-scope (execucted as part of a file and not within the scope of a function or method), "George" will become a global ($George).  There is one additional special case.  If you attempt to use this from the console command line, the token will vaporize and no variable will be created.<br />
+<br />
+</p>
+<pre>
+function testTokens( )
+{
+  %myTokens = "A,E,I,O,U";
+
+  while( "" !$= %myTokens )
+  {
+     %myTokens = nextToken( %myTokens , "theToken" , "," ); 
+   
+     echo( %theToken );
+   }
+}
+
+testTokens(); 
+A
+E
+I
+O
+U
+</pre>
+</td>
+</tr>
+
+</table>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p>A word is a sub-string withing a larger string, where each word is delimted by a <b><u>SPACE</u></b> character. A space can be represented as either " " or the keyword <b><u>SPC</u></b>.<br />
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="firstWord.28_sourceString_.29"></a><h3><a name = "HeaderLink33"></a>firstWord( sourceString )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>firstWord</b></i> function to retrieve the first word found in sourceString.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more words.<br />
+<br />
+<b>Returns</b><br />
+Returns the first word found in <i><b>sourceString</b></i>, or a NULL string, if no words are found.<br />
+<br />
+<b>See Also</b><br />
+restWords<br />
+<br />
+</p>
+<pre>
+// a target in range was found so select it
+if (%scanTarg) 
+{
+   %targetObject = firstWord(%scanTarg);
+   %client.setSelectedObj(%targetObject);
+}
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getWord.28_sourceString_.2Cindex_.29"></a><h3><a name = "HeaderLink34"></a>getWord( sourceString ,index )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getWord</b></i> function to get the word at <i><b>index</b></i> in <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more words.<br />
+<br />
+<b>Returns</b><br />
+Returns word at <i><b>index</b></i> in <i><b>sourceString</b></i>, or null string if no word exists at that index. <br />
+<br />
+<b>See Also</b><br />
+getWords, setWord<br />
+<br />
+</p>
+<pre>
+function TerrainEditor::offsetBrush(%this, %x, %y) 
+{
+   %curPos = %this.getBrushPos();
+   %this.setBrushPos(getWord(%curPos, 0) + %x, getWord(%curPos, 1) + %y);
+}
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getWordCount.28_sourceString_.29"></a><h3><a name = "HeaderLink35"></a>getWordCount( sourceString )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getWordCount</b></i> function to get the number of words in <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more words.<br />
+<br />
+<b>Returns</b><br />
+Returns number of words in <i><b>sourceString</b></i> or 0 if no words are present.<br />
+<br />
+</p>
+<pre>
+if ( %pos != -1 ) 
+{
+   %wordCount = getWordCount( %action );
+   %mods = %wordCount &gt; 1 ? getWords( %action, 0, %wordCount - 2 ) @ " " : "";
+   %object = getWord( %action, %wordCount - 1 );
+   switch$ ( %object ) 
+   {
+      case "upov":   %object = "POV1 up";
+      case "dpov":   %object = "POV1 down";
+      case "lpov":   %object = "POV1 left";
+      case "rpov":   %object = "POV1 right";
+      case "upov2":  %object = "POV2 up";
+      case "dpov2":  %object = "POV2 down";
+      case "lpov2":  %object = "POV2 left";
+      case "rpov2":  %object = "POV2 right";
+      default:       %object = "??";
+   }
+   return( %mods @ %object );
+}
+ else 
+{
+   error( "Unsupported Joystick input object passed to getDisplayMapName!" );
+}
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getWords.28_sourceString_.2Cindex_.5B.2Cendindex.5D.29"></a><h3><a name = "HeaderLink36"></a>getWords( sourceString ,index [,endindex])</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getWords</b></i> function to retrieve a set of words from a <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more words.<br />
+<i><b>index</b></i> – The index of the first word to retrieve.<br />
+<i><b>endindex</b></i> – The index of the final word to retrieve.<br />
+<br />
+<b>Returns</b><br />
+Returns all words (separated by current delimiter) from <i><b>sourceString</b></i>, starting at <i><b>index</b></i> and ending at <i><b>endIndex</b></i> or end of string, whichever comes first.  If no <i><b>endIndex</b></i> is specified, all remaining words are returned.<br />
+<br />
+<b>See Also</b><br />
+getWord, setWord<br />
+<br />
+</p>
+<pre>
+%pos    = getWords(%obj.getTransform(), 0, 2);
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="removeWord.28_sourceString_.2Cindex.29"></a><h3><a name = "HeaderLink37"></a>removeWord( sourceString ,index)</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>removeWord</b></i> function to remove a single indexed word from a <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more words.<br />
+<i><b>index</b></i> – The index of the word to remove.<br />
+<br />
+<br />
+<b>Returns</b><br />
+Returns <i><b>sourceString</b></i> minus the removed word.  If the index is greater than the number of words in <i><b>sourceString</b></i>, the original string is returned.<br />
+<br />
+<b>See Also</b><br />
+setWord<br />
+<br />
+</p>
+<pre>
+%cam = removeWord(%cam, 0, getWord(%pos, 0));
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="restWords.28_sourceString_.29"></a><h3><a name = "HeaderLink38"></a>restWords( sourceString )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>restWords</b></i> function to retrieve all words after the first word in <i><b>sourceString</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more words.<br />
+<br />
+<b>Returns</b><br />
+Returns a string containing all the words after the first word found in sourceString, or a NULL string if no words remain after the first word (or if no words at all remain).<br />
+<br />
+<b>See Also</b><br />
+firstWord<br />
+<br />
+</p>
+<pre>
+function Heightfield::showTab(%id) 
+{
+   Heightfield::hideTab();
+   %data = restWords(Heightfield_operation.getRowTextById(%id));
+   %tab  = getField(%data,1);
+   echo("Tab data: " @ %data @ " tab: " @ %tab);
+   %tab.setVisible(true);
+}
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setWord.28_sourceString_.2Cindex.2Creplace.29"></a><h3><a name = "HeaderLink39"></a>setWord( sourceString ,index,replace)</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setWord</b></i> function to replace an existing word with a new word(s), or to add word(s) to a string..<br />
+<br />
+<i><b>Syntax<br />
+sourceString</b></i> – A string containing one or more words.<br />
+<i><b>index</b></i> – The index of the word to remove.<br />
+<i><b>replace</b></i> – The new word(s) to replace the word at <i><b>index</b></i> with.<br />
+<br />
+<br />
+<b>Returns</b><br />
+There are multiple return cases:<br />
+- In the first case, a simple one-to-one replacement, the word at <i><b>index</b></i> in <i><b>sourceString</b></i> will be replaced with the value in <i><b>replace</b></i>, and the new string will be returned.<br />
+<br />
+- In the second case, a multi-to-one replacement, the word at <i><b>index</b></i> in <i><b>sourceString</b></i> will be replaced with the value in <i><b>replace</b></i>, which can be two or more words, and the new string will be returned.<br />
+<br />
+- In the third and final case, new records, empty or filled, can be appended to the end of <i><b>sourceString</b></i>.  If <i><b>index</b></i> is beyond the end of the <i><b>sourceString</b></i>, that is, the <i><b>index</b></i> is greater than the total count of words in <i><b>sourceString</b></i>, the requisite number of empty (null-string) words will be appended to the end of <i><b>sourceString</b></i> and the value in <i><b>replace</b></i> will be appended to the end of this new string.  This entire resultant string will be returned.<br />
+<br />
+<b>See Also</b><br />
+getWord, getWords, removeWord<br />
+<br />
+</p>
+<pre>
+function WorldEditor::dropCameraToSelection(%this) 
+{
+   if(%this.getSelectionSize() == 0) return;
+
+   %pos = %this.getSelectionCentroid();
+   %cam = LocalClientConnection.camera.getTransform();
+
+   // set the pnt
+   %cam = setWord(%cam, 0, getWord(%pos, 0));
+   %cam = setWord(%cam, 1, getWord(%pos, 1));
+   %cam = setWord(%cam, 2, getWord(%pos, 2));
+   LocalClientConnection.camera.setTransform(%cam);
+}
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+<big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <strong> String Manipulation</strong> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:07 GMT -->
+</html>

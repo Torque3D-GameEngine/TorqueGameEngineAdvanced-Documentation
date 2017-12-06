@@ -1,0 +1,495 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Introduction to Asset Pipeline/Content Generation Process.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4279;
+   parent.leftFrame.expandToItem('tree2', 'doc4279');
+   var element = parent.leftFrame.document.getElementById('doc4279');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="Content%20Generation%20Process_files/filelist.html">
+<title>Contents</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>perrym</o:Author>
+  <o:LastAuthor>perrym</o:LastAuthor>
+  <o:Revision>4</o:Revision>
+  <o:TotalTime>9</o:TotalTime>
+  <o:Created>2008-03-14T14:46:00Z</o:Created>
+  <o:LastSaved>2008-03-14T14:50:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>376</o:Words>
+  <o:Characters>2144</o:Characters>
+  <o:Company>Coalescent Technologies</o:Company>
+  <o:Lines>17</o:Lines>
+  <o:Paragraphs>5</o:Paragraphs>
+  <o:CharactersWithSpaces>2515</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	border:none;
+	mso-border-bottom-alt:solid #AAAAAA .75pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 2.0pt 0in;
+	font-size:18.0pt;
+	font-family:Verdana;
+	color:black;
+	font-weight:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	text-transform:uppercase;
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:24.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:48.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:84.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.Heading2135pt, li.Heading2135pt, div.Heading2135pt
+	{mso-style-name:"Heading 2 + 13\.5 pt\,Justified";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.NormalWebJustified, li.NormalWebJustified, div.NormalWebJustified
+	{mso-style-name:"Normal \(Web\) + Justified\,After\:  12 pt";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:452409254;
+	mso-list-type:hybrid;
+	mso-list-template-ids:969033848 -2000252376 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-text:"%1 ";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<BODY id = "BODYID" onLoad = "initComponent()"  lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width=432 style='width:323.95pt;
+ mso-cellspacing:1.5pt;background:#E6E6E6;border:solid windowtext 1.0pt;
+ mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes;
+  height:115.8pt'>
+  <td width=428 style='width:320.95pt;border:none;padding:.75pt .75pt .75pt .75pt;
+  height:115.8pt'>
+  <div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+  mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0in 0in 2.0pt 0in'>
+  <h2 align=center style='text-align:center'><a name="_Toc193254902"></a><a
+  name="_Toc193221746"><span style='mso-bookmark:_Toc193254902'></span></a><a name = "HeaderLink0"></a>Contents</h2>
+  </div>
+  <p class=MsoToc2 style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+  tab-stops:list .5in right 431.5pt'><![if !supportLists]><span
+  style='font-size:12.0pt;font-weight:normal;mso-no-proof:yes'><span
+  style='mso-list:Ignore'>1 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span class=MsoHyperlink><span
+  style='font-size:12.0pt;mso-no-proof:yes'><a href="#_Toc193254903">2D Images
+  of Textures and GUIs</a></span></span><span style='font-size:12.0pt;
+  font-weight:normal;mso-no-proof:yes'><o:p></o:p></span></p>
+  <p class=MsoToc2 style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+  tab-stops:list .5in right 431.5pt'><![if !supportLists]><span
+  style='font-size:12.0pt;font-weight:normal;mso-no-proof:yes'><span
+  style='mso-list:Ignore'>2 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span class=MsoHyperlink><span
+  style='font-size:12.0pt;mso-no-proof:yes'><a href="#_Toc193254904">3D
+  Modeling of Objects and Avatars</a></span></span><span style='font-size:12.0pt;
+  font-weight:normal;mso-no-proof:yes'><o:p></o:p></span></p>
+  <p class=MsoToc2 style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+  tab-stops:list .5in right 431.5pt'><![if !supportLists]><span
+  style='font-size:12.0pt;font-weight:normal;mso-no-proof:yes'><span
+  style='mso-list:Ignore'>3 <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span class=MsoHyperlink><span
+  style='font-size:12.0pt;mso-no-proof:yes'><a href="#_Toc193254905">DIF
+  Generation for Interiors and Props</a></span></span><span style='font-size:
+  12.0pt;font-weight:normal;mso-no-proof:yes'><o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+  line-height:16.0pt'><!--[if supportFields]><span style='color:black'><span
+  style='mso-element:field-end'></span></span><![endif]--><span
+  style='color:black'><o:p>&nbsp;</o:p></span></p>  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0in 0in 2.0pt 0in'>
+
+<h2 style='text-align:justify'><a name="_Toc193254903"><span style='font-size:
+13.5pt'></span></a><span style='font-size:13.5pt'><o:p></o:p></span><a name = "HeaderLink1"></a>2D Images of Textures and GUIs</h2>
+
+</div>
+
+<p class=NormalWebJustified>Whatever application you use, whether it is Gimp,
+Photoshop, or <span class=SpellE>MSPaint</span>, you need to plan out your idea
+ahead of time.<span style='mso-spacerun:yes'>  </span>Determined whether you
+need transparency or not.<span style='mso-spacerun:yes'>  </span>JPG files
+cannot handle transparency.<span style='mso-spacerun:yes'>  </span>PNG files
+cannot handle layers.<span style='mso-spacerun:yes'>  </span>Some applications
+do not even support either option for saving an image.</p>
+
+<p class=NormalWebJustified><o:p>&nbsp;</o:p></p>
+
+<p class=NormalWebJustified>Whatever you decide to create, and how you do it,
+there are no extra steps when using an image as a texture for a <span
+class=SpellE>heightfield</span> or GUI icon.<span style='mso-spacerun:yes'> 
+</span>Using images as textures for objects, however, needs some
+attention.<span style='mso-spacerun:yes'>  </span>Try to always store your
+textures in the same folder hierarchy as when you were creating the 3D object
+that will use it.<span style='mso-spacerun:yes'>  </span>For TGEA, you will
+need to create materials out of the textures to properly view them.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0in 0in 2.0pt 0in'>
+
+<h2 style='text-align:justify'><a name="_Toc193254904"><span style='font-size:
+13.5pt;mso-bidi-font-size:18.0pt;font-family:"Times New Roman";color:windowtext'></span></a><span style='mso-bookmark:_Toc193254904'></span><span
+style='font-size:13.5pt'><o:p></o:p></span><a name = "HeaderLink2"></a>3D Modeling of Objects and Avatars</h2>
+
+</div>
+
+<p class=NormalWebJustified>The actual modeling of an object you wish to inject
+into Torque will vary between 3D modeling applications, such as 3D Studio Max
+or Maya.<span style='mso-spacerun:yes'>  </span>What should remain solid, however,
+is the process used to get a model from your application to the TGEA editor.</p>
+
+<p class=NormalWebJustified><o:p>&nbsp;</o:p></p>
+
+<p class=NormalWebJustified>1. Model</p>
+
+<p class=NormalWebJustified>2. Install Exporter</p>
+
+<p class=NormalWebJustified>3. Use Exporter utility to setup model for export</p>
+
+<p class=NormalWebJustified>4. Export model</p>
+
+<p class=NormalWebJustified>5. Copy .<span class=SpellE>dts</span>, .<span
+class=SpellE>dsq</span>, textures, etc. to your game/<span class=SpellE>scriptsAndAssets</span>/data/shapes/
+directory. This is based on the <span class=SpellE>gameExamples</span>, so if
+you are storing them in your own unique location, use that folder instead.</p>
+
+<p class=NormalWebJustified>6. Launch TGEA</p>
+
+<p class=NormalWebJustified>7. Load a mission</p>
+
+<p class=NormalWebJustified>8. Load the Mission Editor [F11]</p>
+
+<p class=NormalWebJustified>9. Press [F3] to open the Mission Editor Creator</p>
+
+<p class=NormalWebJustified>10. Locate where you placed your shape (usually in
+a filter called &quot;Static Shapes&quot;</p>
+
+<p class=NormalWebJustified>11. Click on your object or drag it to the world</p>
+
+<p class=NormalWebJustified>12. Use the Mission Editor Tools to manipulate your
+object</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0in 0in 2.0pt 0in'>
+
+<h2 style='text-align:justify'><a name="_Toc193254905"><span style='font-size:
+13.5pt;mso-bidi-font-size:18.0pt;font-family:"Times New Roman";color:windowtext'></span></a><span style='mso-bookmark:_Toc193254905'></span><span
+style='font-size:13.5pt'><o:p></o:p></span><a name = "HeaderLink3"></a>DIF Generation for Interiors and Props</h2>
+
+</div>
+
+<p class=NormalWebJustified>There are a few tools you can use to create <span
+class=SpellE>DIFs</span>.<span style='mso-spacerun:yes'>  </span>The most
+popular are Quark and Constructor.<span style='mso-spacerun:yes'>  </span>Both
+used brushes to create convex objects and portals that can make up buildings
+for you.<span style='mso-spacerun:yes'>  </span></p>
+
+<p class=NormalWebJustified><o:p>&nbsp;</o:p></p>
+
+<p class=NormalWebJustified>One of the differences to note is that Constructor
+is a tool developed by <span class=SpellE>GarageGames</span>, and was released
+free of charge for the <span class=SpellE>GarageGames</span> community.<span
+style='mso-spacerun:yes'>  </span>It is the best WYSIWYG DIF editor if you want
+the closest representation of what your object will look like in the game.<span
+style='mso-spacerun:yes'>  </span>It also has exporters built in for saving your
+scenes as .map, .dif, or .<span class=SpellE>csx</span> (constructor format).</p>
+
+</div>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Introduction to Asset Pipeline/Content Generation Process.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:38 GMT -->
+</html>

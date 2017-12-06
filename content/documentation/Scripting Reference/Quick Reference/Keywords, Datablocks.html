@@ -1,0 +1,1046 @@
+﻿<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Quick Reference/Keywords, Datablocks.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4260;
+   parent.leftFrame.expandToItem('tree2', 'doc4260');
+   var element = parent.leftFrame.document.getElementById('doc4260');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Scripting Reference - Features, Variables, Constants, and Operators</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+<link rel="STYLESHEET" type="text/css" href="torque.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="15" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+<td width="1645">
+
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#Keywords"><span class="tocnumber">1</span> <span class="toctext">Keywords</span></a>
+<ul>
+<li class='toclevel-2'><a href="#break"><span class="tocnumber">1.1</span> <span class="toctext">break</span></a></li>
+<li class='toclevel-2'><a href="#case"><span class="tocnumber">1.2</span> <span class="toctext">case</span></a></li>
+<li class='toclevel-2'><a href="#continue"><span class="tocnumber">1.3</span> <span class="toctext">continue</span></a></li>
+<li class='toclevel-2'><a href="#datablock"><span class="tocnumber">1.4</span> <span class="toctext">datablock</span></a>
+<ul>
+<li class='toclevel-3'><a href="#Current_Datablock_Classes_and_associated_Object_Classes"><span class="tocnumber">1.4.1</span> <span class="toctext">Current Datablock Classes and associated Object Classes</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="#default"><span class="tocnumber">1.5</span> <span class="toctext">default</span></a></li>
+<li class='toclevel-2'><a href="#else"><span class="tocnumber">1.6</span> <span class="toctext">else</span></a></li>
+<li class='toclevel-2'><a href="#FALSE"><span class="tocnumber">1.7</span> <span class="toctext">FALSE</span></a></li>
+<li class='toclevel-2'><a href="#for"><span class="tocnumber">1.8</span> <span class="toctext">for</span></a></li>
+<li class='toclevel-2'><a href="#function"><span class="tocnumber">1.9</span> <span class="toctext">function</span></a></li>
+<li class='toclevel-2'><a href="#if"><span class="tocnumber">1.10</span> <span class="toctext">if</span></a></li>
+<li class='toclevel-2'><a href="#new"><span class="tocnumber">1.11</span> <span class="toctext">new</span></a></li>
+<li class='toclevel-2'><a href="#package"><span class="tocnumber">1.12</span> <span class="toctext">package</span></a></li>
+<li class='toclevel-2'><a href="#parent"><span class="tocnumber">1.13</span> <span class="toctext">parent</span></a></li>
+<li class='toclevel-2'><a href="#return"><span class="tocnumber">1.14</span> <span class="toctext">return</span></a></li>
+<li class='toclevel-2'><a href="#switch"><span class="tocnumber">1.15</span> <span class="toctext">switch</span></a></li>
+<li class='toclevel-2'><a href="#switch.24"><span class="tocnumber">1.16</span> <span class="toctext">switch$</span></a></li>
+<li class='toclevel-2'><a href="#TRUE"><span class="tocnumber">1.17</span> <span class="toctext">TRUE</span></a></li>
+<li class='toclevel-2'><a href="#while"><span class="tocnumber">1.18</span> <span class="toctext">while</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="Keywords"></a><h2><a name = "HeaderLink1"></a> Keywords </h2>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+
+<td width="700">
+<p><b>Note:</b> Although keywords are not reserved, it is considered bad practice to use variables that have the same spelling as a keyword.
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="break"></a><h3><a name = "HeaderLink2"></a>break</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+Use <i>break</i> to exit the innermost <a href="#for" title="Keywords, Datablocks">for</a> or <a href="#while" title="Keywords, Datablocks">while</a> loop.  
+Unlike C and C++, <i>break</i> has no effect in a <a href="#switch" title="Keywords, Datablocks">switch</a> or <a href="#switch.24" title="Keywords, Datablocks">switch$</a> statement.<br />
+</p>
+<pre>
+%count = 0; 
+while( 1 ) 
+{  
+   echo(%count++); 
+   if (%count &gt; 2) 
+   break; 
+}
+</pre>
+<p><b>See Also</b><br />
+<a href="#for" title="Keywords, Datablocks">for</a>, <a href="#while" title="Keywords, Datablocks">while</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="case"></a><h3><a name = "HeaderLink3"></a>case</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+Used to label cases in a <a href="#switch" title="Keywords, Datablocks">switch</a> or <a href="#switch.24" title="Keywords, Datablocks">switch$</a> statement.<br />
+<b>Syntax</b><br />
+<b>case</b> <i>expression</i> <b>:</b>(colon character)<br />
+The argument of the enclosing <a href="#switch" title="Keywords, Datablocks">switch</a> or <a href="#switch.24" title="Keywords, Datablocks">switch$</a> statement is evaluated and compared to the value of <i>expression</i> using operator <b>==</b> or <b>$=</b>, respectively. <br />
+If <a href="#TRUE" title="Keywords, Datablocks">true</a>, execute the statements up to the next <a href="#case" title="Keywords, Datablocks">case</a> statement and exit the <a href="#switch" title="Keywords, Datablocks">switch</a>. <br />
+If <a href="#FALSE" title="Keywords, Datablocks">false</a>, skip to the next <a href="#case" title="Keywords, Datablocks">case</a> statement.<br />
+<b>See Also</b><br />
+<a href="#switch" title="Keywords, Datablocks">switch</a>, <a href="#switch.24" title="Keywords, Datablocks">switch$</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="continue"></a><h3><a name = "HeaderLink4"></a>continue</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+Causes the script to skip to the next iteration of the <a href="#for" title="Keywords, Datablocks">for</a> or <a href="#while" title="Keywords, Datablocks">while</a> loop in which it appears; <br />
+</p>
+<pre>
+%count = 0; 
+while(%count++ &lt; 8) 
+{ 
+   if ( %count &gt; 2 )
+      continue; // echo will not be executed
+   echo(%count); 
+}
+</pre>
+<p><b>See Also:</b> <br />
+<a href="#for" title="Keywords, Datablocks">for</a>, <a href="#while" title="Keywords, Datablocks">while</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="datablock"></a><h3><a name = "HeaderLink5"></a>datablock</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The datablock keyword is used to declare a new datablock.  A datablock object is used in the declaration and initialization of a special set of classes that take a datablock(s).  Datablocks are created on the server and ghosted to clients.<br />
+<br />
+<b>Syntax</b><br />
+<br />
+</p>
+<pre>
+datablock DatablockClass ( NewDatablockName&nbsp;: InheritDatablock ) 
+{
+   className = “SomeName”;
+
+   DataBlockBody
+};
+</pre>
+<p><br />
+</p>
+<ul><li>DatablockClass – A predefined engine class which inherits from SimDataBlock or one of it’s children.</ul>
+<p><br />
+</p>
+<ul><li>NewDatablockName – The name for this datablock.  Must be unique.</ul>
+<p><br />
+</p>
+<ul><li>InheritDatablock – Previously defined datablock to inherit (copy) DataBlockBody values from. Optional.</ul>
+<p><br />
+</p>
+<ul><li>className – This is a special field which can be initialized with the name of a previously defined [in Torque Script] datablock.  In effect, this inserts the ‘SomeName’ name into the namespace calling sequence between NewDatablockName and DatablockClass.  For some datablock classes, className can be a non-datablock name, but it isn’t guaranteed to work for all calling sequences or classes.  </ul>
+<p><br />
+</p>
+<ul><li>DataBlockBody – Fields and the values they will be assigned for this datablock.</ul>
+<p><br />
+</p>
+<pre>
+datablock SimDataBlock( myDataBlock ) 
+{
+   newField = &quot;Hello&quot;;
+   newField2 = 10;
+}; 
+</pre>
+<p>Here we have declared a new SimDataBlock datablock named myDataBlock.  Additionally, we have given it a new field named newField, initialized to “Hello” and a new field named newField2 initialized to 10.  The namespace calling sequence for this datablock is: <b>myDataBlock -&gt; SimDataBlock</b><br />
+</p>
+<pre>
+datablock SimDataBlock( mySecondDataBlock&nbsp;: myDataBlock) 
+{
+   className = “myDataBlock”;
+   newField2 = 15;
+}; 
+</pre>
+<p>Here we have declared a new SimDataBlock datablock named mySecondDataBlock that derives from myDataBlock.  Because it is deriving from a prior datablock, it will copy any fields that were declared and/or initialized in the ‘parent’ datablock.  However, because we are re-declaring the field newField2.   The new initialization value is taken in preference to the copied value, meaning that newField has the value “Hello” and newField2 has the value 15.  Finally, we have defined className as myDataBlock, making the namespace calling sequence for mySecondDataBlock:<br />
+<br />
+<b>mySecondDataBlock -&gt; myDataBlock -&gt; SimDataBlock<br />
+<br />
+See Also</b><br />
+<a href="#new" title="Keywords, Datablocks">new</a>, <a href="#parent" title="Keywords, Datablocks">Parent</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+<a name="Current_Datablock_Classes_and_associated_Object_Classes"></a><h4><a name = "HeaderLink6"></a> Current Datablock Classes and associated Object Classes </h4>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+<tr>
+<td width="900" bgcolor="#999999"><b><center>
+<p>Datablock Class
+</p>
+</center></b></td>
+<td width="900" bgcolor="#999999"><b><center>
+<p>Object Class
+</p>
+</center></b></td>
+</tr>
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC"><center>
+<p>CameraData<br />
+DebrisData<br />
+ExplosionData<br />
+FlyingVehicleData<br />
+GameBaseData<br />
+HoverVehicleData<br />
+ItemData<br />
+LightningData<br />
+MissionMarkerData<br />
+ParticleData<br />
+ParticleEmitterData<br />
+PathEmitterNodeData<br />
+PathCameraData<br />
+PlayerData<br />
+PrecipitationData<br />
+ProjectileData<br />
+ShapeBaseData<br />
+SimDataBlock<br />
+SplashData<br />
+StaticShapeData<br />
+TriggerData<br />
+VehicleData<br />
+WheeledVehicleData<br />
+WheeledVehicleSpring<br />
+WheeledVehicleTire
+</p>
+</center></td>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC"><center>
+<p>Camera<br />
+Debris<br />
+Explosion<br />
+FlyingVehicle<br />
+GameBase<br />
+HoverVehicle<br />
+Item<br />
+Lightning<br />
+MissionMarker<br />
+Particle<br />
+ParticleEmitter<br />
+PathEmitterNode<br />
+PathCamera<br />
+Player<br />
+Precipitation<br />
+Projectile<br />
+ShapeBase<br />
+-none-<br />
+Splash<br />
+StaticShape<br />
+Trigger<br />
+Vehicle<br />
+WheeledVehicle<br />
+WheeledVehicle<br />
+WheeledVehicle
+</p>
+</center></td>
+</tr>
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="default"></a><h3><a name = "HeaderLink7"></a>default</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The default case in a <a href="#switch" title="Keywords, Datablocks">switch</a> or <a href="#switch.24" title="Keywords, Datablocks">switch$</a> statement,  i.e., the case that is executed if no other cases are chosen.<br />
+<b>Syntax</b><br />
+<b>default&nbsp;:</b>(colon character)<br />
+<b>Note:</b> The <i>default</i> keyword must be listed after all <a href="#case" title="Keywords, Datablocks">case</a> keywords.  It is a syntax error to place it before subsequent <a href="#case" title="Keywords, Datablocks">case</a> keywords.<br />
+<br />
+<b>See Also</b><br />
+<a href="#switch" title="Keywords, Datablocks">switch</a>, <a href="#switch.24" title="Keywords, Datablocks">switch$</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="else"></a><h3><a name = "HeaderLink8"></a>else</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <i>else</i> keyword is used with the <a href="#if" title="Keywords, Datablocks">if</a> keyword to control the flow of a script.  The general form of the well known if-then-else construct is as follows:<br />
+</p>
+<pre>
+if (expression) 
+{ 
+   statement(s); 
+} 
+else 
+{ 
+   alternate statement(s); 
+}
+</pre>
+<p>Where the alternate statement(s) are executed if the expression evaluates to 0.<br />
+<br />
+See <a href="#if" title="Keywords, Datablocks">if</a> example.<br />
+<br />
+<b>See Also</b><br />
+<a href="#if" title="Keywords, Datablocks">if</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="FALSE"></a><h3><a name = "HeaderLink9"></a>FALSE</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <a href="#FALSE" title="Keywords, Datablocks">false</a> keyword is used for boolean comparison and evalulates to 0.<br />
+</p>
+<pre>
+if( false == 0 ) 
+{ 
+   echo( “false evaulates to” SPC 0 ); 
+}
+</pre>
+<p><b>See Also</b><br />
+<a href="#if" title="Keywords, Datablocks">if</a>, <a href="#true" title="Keywords, Datablocks">true</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="for"></a><h3><a name = "HeaderLink10"></a>for</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+A looping construct, whose general form is:<br />
+<b>for</b> ( <i>statement0</i>&nbsp;; <i>expression1</i>&nbsp;; <i>statement2</i> ) <br />
+{<br />
+<i>   statements(s)</i><br />
+}<br />
+where,
+</p>
+<ul>
+<li><i>statement0</i> – Usually an assignment.
+<li><i>expression1</i> – An expression, usually of the form: <i>variable</i> <b>compare op</b> <i>value</i>
+<li><i>statement2</i> – Usually an assignment.
+</ul>
+<p><b>Execution</b>
+<ol>
+</p>
+<li>To begin, <i> statement0 </i> is executed.<br />
+<li>Then, <i>expression1</i> is tested. If false, end the <b>for</b> loop.
+<li>Execute statement(s), then execute  <i>statement2</i>.
+<li>Continue with Step 2 and 3.
+</ol>
+
+<b>Notes</b>
+<ul>
+<li>All three of <i>statement0</i>, <i>expression1</i>, and <i>statement2</i> are <b>required</b>.  If you need <i>statement0</i> or <i>statement2</i> to be empty, just insert a 0.
+<li>Composite expressions of the form ( <i>sub_expression0</i> , <i>sub_expression1</i> , … <i>sub_expressionN</i> ) are illegal.
+</ul>
+<p><b>Example 1</b>
+</p>
+<pre>
+for( %val = 0&nbsp;; %val &lt;  3&nbsp;; %val++ ) 
+{ 
+   echo( %val );
+}
+</pre>
+<p><b>Example 2</b> – Empty <i>statement0</i> and <i>statement2</i><br />
+</p>
+<pre>
+%value = 0; 
+for( 0&nbsp;; %val &lt; 3&nbsp;; 0 ) 
+{ 
+   echo( %val ); 
+   %val ++;
+}
+</pre>
+<p><b>Example 3</b> – Illegal sub-expressions (would produce an error while compiling):
+</p>
+<pre>
+%val = 0; 
+for( %val0 = 0 , %val1 = 3&nbsp;; %val0 &lt;  3&nbsp;; %val0++, %val1-- )  
+{ 
+   echo( %val0 );
+   echo( %val1 );
+}
+</pre>
+<p><b>See Also</b><br />
+<a href="#break" title="Keywords, Datablocks">break</a>, <a href="#continue" title="Keywords, Datablocks">continue</a>, <a href="#while" title="Keywords, Datablocks">while</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="function"></a><h3><a name = "HeaderLink11"></a>function</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <i>function</i> keyword is used to define a new console function or method.  Unlike a language like C or C++, functions are not declared in one place and defined in another, but defined <u>only</u>. Redeclaring a named function later in script over-rides the previous definition.  The format of a function takes one of two forms:<br />
+<br />
+<b>Function definition</b>
+</p>
+<pre>
+function func_name( [arg0] , … , [argn] ) 
+{
+   statements;
+   [return val;]
+}
+</pre>
+<ul>
+<li>func_name – Name by which this function will be subsequently called.<br />
+<li>[arg0] , … , [argn] – Optional arguments.<br />
+<li>statements – Any number of statements may be contained within the body of the function.<br />
+<li>val – Functions may optionally return a value;
+</ul>
+<p><br />
+<b>Console method definition</b>
+</p>
+<pre>
+function namespace::func_name( %this, [arg0] , … , [argn] ) 
+{
+   statements;
+   [return val;]
+}
+</pre>
+<ul><li>namespace – The name of a datablock or object classname.<br />
+<li>:: – Namespace resolution operator.<br />
+<li>%this – The first argument of a console method is always the handle to the object which is calling the method.</ul>
+<p><br />
+<b>Defining a function</b>
+</p>
+<pre>
+function test( %val ) 
+{
+  echo( “test(“ SPC %val SPC “)” );
+
+  if( 10 = %val ) return true;
+
+  return false;
+}
+</pre>
+<p><b>Defining a console method</b>
+</p>
+<pre>
+function Item::test( %this , %val ) 
+{
+  echo( “Item::test(“ SPC %this SPC “,” SPC %val SPC “)” );
+
+  if( 10 = %val ) return true;
+
+  return false;
+}
+</pre>
+<p><b>Instantiating a console object</b>
+</p>
+<pre>
+%obj = new Item(MyItem)
+{
+  // ..
+};
+</pre>
+<p><b>Invoking a console method</b>
+</p>
+<pre>
+Item::test( %obj, 10 )&nbsp;; 	
+%obj.test( 10 )&nbsp;;   		
+MyItem.test( 10 )&nbsp;; 
+%obj.getName().test( 10 )&nbsp;; 
+</pre>
+<ul>
+<li>In the first example of invoking, it should be clear that we have simply defined a function in the <i>Item</i> namespace and are now invoking it in the normal way.
+<li>In the second example, which is equivalent to the first, the syntax used automatically passes the object's handle as the first argument to the function.
+<li>In the third example, we take advantage of the ability of the <b>.</b>(dot) operator to use the name of an object in lieu of its handle.
+<li>The fourth example illustrates a different way of doing the same thing, this time using the SimObject::getName() function, defined for every console class.
+</ul>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="if"></a><h3><a name = "HeaderLink12"></a>if</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <a href="#if" title="Keywords, Datablocks">if</a>  keyword is used with or without the <a href="#else" title="Keywords, Datablocks">else</a> keyword to control the flow of a script.  The general form of the well known if-then-else construct is as follows,<br />
+</p>
+<pre>
+if (expression) 
+{ 
+   statement(s); 
+}
+else 
+{ 
+   alternate statement(s); 
+}
+</pre>
+<p>Where the statement(s) are executed if the expression evaluates to a non-zero value.<br />
+</p>
+<pre>
+if(0) 
+{ 
+   echo( “hello” ); 
+} 
+else 
+{ 
+   echo( “goodbye” ); 
+}
+
+if(5) 
+{ 
+   echo( “hello” ); 
+} 
+else 
+{ 
+   echo( “goodbye” ); 
+}
+</pre>
+<p><b>See Also</b><br />
+<a href="#else" title="Keywords, Datablocks">else</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="new"></a><h3><a name = "HeaderLink13"></a>new</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <i>new</i> keyword is used to instantiate (create) a new copy of a conobject.  A conobject is:<br />
+<br />
+</p>
+<ul><li>an engine class available in the console (Item(), Player(), etc.), or<br />
+<li>a datablock (derived or otherwise).</ul>
+<p><br />
+</p>
+<pre>
+// New non-datablock (using) object
+%obj = new ScriptObject();
+
+//New datablock (using) object
+datablock ItemData( GoldCoin ) 
+{
+...
+};
+
+%coin = new Item( myGoldCoin ) 
+{
+  // ...
+  datablock = GoldCoin;
+};
+</pre>
+<p><b>See Also</b><br />
+<a href="#datablock" title="Keywords, Datablocks">datablock</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="package"></a><h3><a name = "HeaderLink14"></a>package</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The package keyword tells the console that the subsequent block of code is to be declared but not loaded.  Packages provide dynamic function-polymorphism in TorqueScript.  In short, a function defined in a package will over-ride the prior definition of a same named function when the  is activated.  When the package is subsequently de-activated, the previous definition of any overridden functions will be re-asserted.
+</p><p>A package will have the following syntax:
+</p>
+<pre>
+package package_name 
+{
+	function function_definition0() 
+	{
+		[statements;]
+	}
+	...
+	function function_definitionN() 
+	{
+		[statements;]
+	}
+};
+</pre>
+<p>Things to know:
+</p>
+<ul>
+<li>The same function can be defined in multiple packages.
+<li>Only functions can be packaged.
+<li>Datablocks cannot be packaged.
+<li>Packages ‘stack’ meaning that deactivating packages activated prior to the currently active (s) will deactivate all packages activated prior to the  being deactivated (see example below).
+<li>Functions in a  may activate and deactivate packages.
+</ul>
+<p><b>Activating</b><br />
+In order to use the functions in a package, the package must be activated:<br />
+</p>
+<pre>
+ActivatePackage(_name);
+</pre>
+<p><b>Deactivating</b> <br />
+Subsequently a package can be deativated:<br />
+</p>
+<pre>
+DeactivatePackage(_name);
+</pre>
+<p><b>Usage</b> <br />
+First, define a function and two packages, each of which provides an alternative definition by the same name.
+</p>
+<pre>
+function testFunction() 
+{
+   echo( “testFunction() - unpackaged.” );
+}
+
+package MyPackage0
+{
+  function testFunction() 
+  {
+      echo( “testFunction() - MyPackage0.” );
+  }
+};
+
+MyPackage1
+{
+  function testFunction() 
+  {
+      echo( “testFunction() – MyPackage1.” );
+  }
+};
+</pre>
+<p>Next, invoke that function under three different conditions. The following is as if run in the console, with our input set off by '==&gt;'
+</p>
+<pre>
+==&gt; testFunction(); 
+testFunction() - unpackaged.
+
+==&gt; ActivatePackage( MyPackage0 );
+
+==&gt; testFunction(); 
+testFunction() - MyPackage0.
+
+==&gt; ActivatePackage( MyPackage1 );
+
+==&gt; testFunction(); 
+testFunction() – MyPackage1.
+
+==&gt; DeactivatePackage( MyPackage0 );  // MyPackage1 is automatically deactivated.
+
+==&gt; testFunction(); 
+testFunction() - unpackaged.
+</pre>
+<p><b>See Also</b><br />
+<a href="#function" title="Keywords, Datablocks">function</a>, <a href="#parent" title="Keywords, Datablocks">Parent</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="parent"></a><h3><a name = "HeaderLink15"></a>parent</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <i>Parent</i> keyword is used with the namespace operator (<b>::</b>) to reference the previous definition of a function what has been over-ridden either through inheritance or packaging.  The <i>Parent</i> keyword can only be used within specific contexts:<br />
+<br />
+</p>
+<ul><li>From within a consoleMethod, or<br />
+<li>from within a packaged function.</ul>
+<pre>
+// Calling an inherited parent
+datablock ItemData( GoldCoin ) 
+{
+...
+};
+
+function ItemData::onAdd( %db, %obj ) 
+{
+   echo( “ItemData::onAdd()” );
+}
+
+function GoldCoin::onAdd( %db, %obj ) 
+{
+   Parent::onAdd( %db, %obj );
+
+   echo( “GoldCoin::onAdd()” );
+}
+
+// Calling a  parent
+function testFunction() 
+{
+   echo( “testFunction() - unpackaged.” );
+}
+
+MyPackage0
+{
+  function testFunction() 
+  {
+     Parent::testFunction();
+     echo( “testFunction() - MyPackage0.” );
+  }
+};
+
+...
+
+testFunction(); 
+// prints =&gt; testFunction() - unpackaged.
+
+ActivatePackage( MyPackage0 );
+
+testFunction(); 
+// prints =&gt; testFunction() - unpackaged.
+// prints =&gt; testFunction() - MyPackage0.
+</pre>
+<p><b>See Also</b><br />
+<a href="#datablock" title="Keywords, Datablocks">datablock</a>, <a href="#function" title="Keywords, Datablocks">function</a> <br />
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="return"></a><h3><a name = "HeaderLink16"></a>return</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <i>return</i> keyword is used to return a value from a <a href="#function" title="Keywords, Datablocks">function</a><br />
+</p>
+<pre>
+function equal_to( %arg0 , %arg1 ) 
+{ 
+   return ( %arg0 == %arg1 ); 
+}
+
+echo( equal_to(10,11) ); // prints 0
+
+echo( equal_to(11,11) ); // prints 1
+</pre>
+<p><b>See Also</b><br />
+<a href="#function" title="Keywords, Datablocks">function</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="switch"></a><h3><a name = "HeaderLink17"></a>switch</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <i>switch</i>  keyword is used to control the flow of a script.  
+It is like the <a href="#switch.24" title="Keywords, Datablocks">switch$</a> statement, but intended for numeric comparisons instead of string comparisons.
+</p><p>The general form of a switch statement is as follows:<br />
+</p>
+<pre>
+switch ( numeric expression ) 
+{
+case value0:
+   statement(s);
+   break;
+case value1:
+   statement(s);
+   break;
+. . .
+case valueN:
+   statement(s);
+   break;
+default:
+   statement(s);
+}
+</pre>
+<p><b>Execution</b>
+<ol>
+</p>
+<li>First, <i>numeric expression</i> is evaluated and compared with <i>value0</i>. 
+<li>If the result is <i>true</i>, the statement(s) associated with that case are executed, and the <i>switch</i> statement is exited.
+<li>If not, control passes to the next <a href="#case" title="Keywords, Datablocks">case</a> statement, where <i>numeric expression</i> is again evaluated, this time being compared to <i>value1</i>.
+<li>If control falls through to the <a href="#default" title="Keywords, Datablocks">default</a> case, its statements will be executed.
+</ol>
+<i>switch</i> is intended for use <u>ONLY</u> with numerical comparisons (<b>==</b>). If string comparisons are desired, use <a href="#switch.24" title="Keywords, Datablocks">switch$</a>.
+<br />
+Note: Unlike C/C++, the <a href="#break" title="Keywords, Datablocks">break</a> statement is not for use in <i>switch</i>.  TorqueScript will only execute matching cases and will <u>NOT</u> automatically execute all subsequent cases.  This is proven in the example below.<br />
+<pre>
+%tmp = 1;
+
+switch( %tmp  ) 
+{ 
+case 0: 
+   echo( 0 ); 
+case 1: 
+   echo( 1 ); 
+default: 
+   echo( &quot;proof&quot; ); 
+}
+</pre>
+<p><b>See Also</b><br />
+<a href="#case" title="Keywords, Datablocks">case</a>, <a href="#default" title="Keywords, Datablocks">default</a>, <a href="#switch.24" title="Keywords, Datablocks">switch$</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="switch.24"></a><h3><a name = "HeaderLink18"></a>switch$</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <i>switch$</i>  keyword is used to control the flow of a script.  
+It is like the <a href="#switch" title="Keywords, Datablocks">switch</a> statement, but intended for string comparisons instead of numeric comparisons.
+</p><p>The general form of the <i>switch$</i> statement is:<br />
+</p>
+<pre>
+switch$ ( string expression ) 
+{
+case string_value0:
+   statement(s);
+
+case string_value1:
+   statement(s);
+. . .
+case string_valueN:
+   statement(s);
+
+default:
+   statement(s);
+}
+</pre>
+<p><b>Execution</b>
+<ol>
+</p>
+<li>First, <i>string expression</i> is evaluated and compared with <i>value0</i>. 
+<li>If the result is <i>true</i>, the statement(s) associated with that case are executed, and the <i>switch$</i> statement is exited.
+<li>If not, control passes to the next <a href="#case" title="Keywords, Datablocks">case</a> statement, where <i>string expression</i> is again evaluated, this time being compared to <i>value1</i>.
+<li>If control falls through to the <a href="#default" title="Keywords, Datablocks">default</a> case, its statements will be executed.
+</ol>
+<i>switch$</i> is intended for use <u>ONLY</u> with string comparisons (<b>$=</b>). If numeric comparisons are desired, use <a href="#switch" title="Keywords, Datablocks">switch</a>.
+<br />
+Note: Unlike C/C++, the <a href="#break" title="Keywords, Datablocks">break</a> statement has no role in <i>switch$</i>, see <a href="#switch" title="Keywords, Datablocks">switch</a>.
+<br /><b>See Also</b><br />
+<a href="#case" title="Keywords, Datablocks">case</a>, <a href="#default" title="Keywords, Datablocks">default</a>, <a href="#switch" title="Keywords, Datablocks">switch</a><br />
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="TRUE"></a><h3><a name = "HeaderLink19"></a>TRUE</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <a href="#TRUE" title="Keywords, Datablocks">true</a> keyword is used for boolean comparison and evalulates to 1.<br />
+</p>
+<pre>
+if(true == 1) 
+{ 
+   echo( “true evaulates to” SPC 1 ); 
+}
+</pre>
+<p><b>See Also</b><br />
+<a href="#if" title="Keywords, Datablocks">if</a>, <a href="#FALSE" title="Keywords, Datablocks">false</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+<p><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1">
+
+<tr>
+<td width="900" bgcolor="#6699FF"><b>
+<a name="while"></a><h3><a name = "HeaderLink20"></a>while</h3></b></td>
+</tr>
+
+<tr>
+<td width="900" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+The <i>while</i>  keyword is a looping construct whose general form is:<br />
+</p>
+<pre>
+while (expression)
+{
+   statements(s); 
+}
+</pre>
+<p>Where expression is usually of the form: variable <i>compare op</i> value, and the loop continues to execute statement(s) until expression evaluates to false (i.e. 0).<br />
+</p>
+<pre>
+%val=5; 
+
+while( %val ) 
+{ 
+   echo( %val-- ); 
+}
+</pre>
+<p><b>See Also</b><br />
+<a href="#break" title="">break</a>, <a href="#continue" title="">continue</a>, <a href="#for" title="">for</a><br />
+</p>
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Quick Reference/Keywords, Datablocks.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:57 GMT -->
+</html>
+</html>

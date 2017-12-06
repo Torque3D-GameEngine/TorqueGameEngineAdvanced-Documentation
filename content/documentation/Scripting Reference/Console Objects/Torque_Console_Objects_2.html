@@ -1,0 +1,1119 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4237;
+   parent.leftFrame.expandToItem('tree2', 'doc4237');
+   var element = parent.leftFrame.document.getElementById('doc4237');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>Torque Console Objects 2 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+ <table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console_Objects_Fields_and_Methods_Quick_Reference_Part_2"><span class="tocnumber">1</span> <span class="toctext">Console Objects Fields and Methods Quick Reference Part 2</span></a>
+<ul>
+<li class="toclevel-2"><a href="#AudioEmitter"><span class="tocnumber">1.1</span> <span class="toctext">AudioEmitter</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields"><span class="tocnumber">1.1.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#AudioProfile"><span class="tocnumber">1.2</span> <span class="toctext">AudioProfile</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_2"><span class="tocnumber">1.2.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Camera"><span class="tocnumber">1.3</span> <span class="toctext">Camera</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Globals"><span class="tocnumber">1.3.1</span> <span class="toctext">Globals</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries"><span class="tocnumber">1.3.2</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods"><span class="tocnumber">1.3.3</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#CameraData"><span class="tocnumber">1.4</span> <span class="toctext">CameraData</span></a></li>
+<li class="toclevel-2"><a href="#ConsoleLogger"><span class="tocnumber">1.5</span> <span class="toctext">ConsoleLogger</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_3"><span class="tocnumber">1.5.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Debris"><span class="tocnumber">1.6</span> <span class="toctext">Debris</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_4"><span class="tocnumber">1.6.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_2"><span class="tocnumber">1.6.2</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method"><span class="tocnumber">1.6.3</span> <span class="toctext">Console Method</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#DebrisData"><span class="tocnumber">1.7</span> <span class="toctext">DebrisData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_5"><span class="tocnumber">1.7.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#DecalData"><span class="tocnumber">1.8</span> <span class="toctext">DecalData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_6"><span class="tocnumber">1.8.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#DecalManager"><span class="tocnumber">1.9</span> <span class="toctext">DecalManager</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Globals_2"><span class="tocnumber">1.9.1</span> <span class="toctext">Globals</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#EditManager"><span class="tocnumber">1.10</span> <span class="toctext">EditManager</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_3"><span class="tocnumber">1.10.1</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_2"><span class="tocnumber">1.10.2</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Explosion"><span class="tocnumber">1.11</span> <span class="toctext">Explosion</span></a></li>
+<li class="toclevel-2"><a href="#ExplosionData"><span class="tocnumber">1.12</span> <span class="toctext">ExplosionData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_7"><span class="tocnumber">1.12.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Console_Objects_Fields_and_Methods_Quick_Reference_Part_2"></a><h1><a name = "HeaderLink1"></a>Console Objects Fields and Methods Quick Reference Part 2</h1>
+<p><br />
+</p><p><br />
+This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br /><br />
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<a name="AudioEmitter" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink2"></a>AudioEmitter</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+Audio emitters are non-visible objects that can be placed in the game world and are used to produce 2D and 3D sound in game.  All sounds produced by these emitters are networked.  Therefore, all audio profiles, and other sound entities used by emitters must use the datablock keyword (not new).<br />
+</p>
+<a name="Fields" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink3"></a>Fields </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">coneInsideAngle</td>	
+<td width="60%" bgcolor="#CCCCCC">Sweep angle of inner cone.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[0..360]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">coneOutsideAngle</td>	
+<td width="60%" bgcolor="#CCCCCC">Sweep angle of Outside cone.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[0..360]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">coneOutsideVolume</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum gain in Zone C (see above).</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[0.0, 1.0]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">coneVector</td>	
+<td width="60%" bgcolor="#CCCCCC">Audio emitter’s eye (pointing) vector.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC"><b>information only (use visual feedback to direct sound)</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Description</td>	
+<td width="60%" bgcolor="#CCCCCC">Optional Audio Description</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">Audio Description</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">enableVisualFeedback</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable visual effects showing audio-cones, facing, and on-off indication.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">fileName</td>	
+<td width="60%" bgcolor="#CCCCCC">Relative or absolute path to sound file.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">Filename</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">is3D</td>	
+<td width="60%" bgcolor="#CCCCCC">Enables 3D sound.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">isLooping</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable looping.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">loopCount</td>	
+<td width="60%" bgcolor="#CCCCCC">-1 – Loop infinitely. <br />
+<p>0 – Loop once and only once.<br />
+1 – Loop once, possibly twice. <br />
+</p>
+(N &gt; 1) – Loop N times.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">See Description
+</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxDistance</td>	
+<td width="60%" bgcolor="#CCCCCC">Outer boundary for 3D sound sphere. Sound turns on-off here at this distance from 3D emitter.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ referenceDistance , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxLoopGap</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum delay between subsequent loop.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minLoopGap</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum delay between subsequent loop.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">outsideAmbient</td>	
+<td width="60%" bgcolor="#CCCCCC">If true, plays outside only (turns off when player is inside interior). </td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">position</td>	
+<td width="60%" bgcolor="#CCCCCC">Optional audio profile.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">AudioProfile</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Profile</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum gain distance.  Inner-cone gain is maxed when player is within this distance of 3D emitter.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , maxDistance ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ReferenceDistance</td>	
+<td width="60%" bgcolor="#CCCCCC">Distance at which sound turns on to 100% of current maximum gain.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">type</td>	
+<td width="60%" bgcolor="#CCCCCC">Audio type.  There can be multiple numeric audio types, each with its own globally controlled max gain.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">useProfileDescription</td>	
+<td width="60%" bgcolor="#CCCCCC">Use audio profile instead of values set via inspector.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">volume</td>	
+<td width="60%" bgcolor="#CCCCCC">Emitter’s maximum gain.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<a name="AudioProfile" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink4"></a>AudioProfile</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+This is a special type of data block used to describe 2-D and 3-D sounds. It can be created using the new keyword or the data block keyword. In the prior case, the audio description is intended to be used for 2-D sounds usually for interfaces and other client-side sounds.  Space In the latter case, the audio description is intended to be used for networked sounds. This is a crucial difference. <br />
+</p>
+<a name="Fields_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink5"></a>Fields </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">description</td>	
+<td width="60%" bgcolor="#CCCCCC">AudioDescription to use with this AP.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">environment</td>	
+<td width="60%" align="center" bgcolor="#CCCCCC"> - ignore -</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">fileName</td>	
+<td width="60%" bgcolor="#CCCCCC">Path to WAV or OGG file.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">~/path/filename.wav</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">preload</td>	
+<td width="60%" bgcolor="#CCCCCC">If set to true, file is pre-loaded, otherwise it is loaded on-demand.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Camera" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink6"></a>Camera</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+The camera class is a lightweight class use to represent the position in view of the camera in the game world. It is derived from shape base, and adds no new fields of its own. It adds a few new methods, used to enable free fly mode and orbiting mode.<br />
+</p>
+<a name="Globals" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink7"></a>Globals</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Variable Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Camera::movementSpeed</td>	
+<td width="60%" bgcolor="#CCCCCC">
+Controls the free camera movement speed.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink8"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" bgcolor="#009900"><div class="center">getPosition</div></td>
+<td width="33%" bgcolor="#009900"><div class="center">setFlyMode</div></td>
+<td width="34%" bgcolor="#009900"><div class="center">setOrbitMode</div></td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink9"></a>Console Methods </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getPosition()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getPosition</b></i> method to find the current world position of the camera.<br />
+<br />
+<b>Returns</b><br />
+Return a vector containing the XYZ position of the camera.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setFlyMode()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setFlyMode</b></i> method to toggle the camera between free fly mode and attached mode. In the prior mode, the camera is able to move about the game world free of an avatar, it is in effect the avatar.  The latter mode, is when the camera is attached to another object, the control object.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+When if fly-mode, $Camera::movementSpeed controls the movement rate of the camera.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setOrbitMode( orbitObject , transform , minDistance , maxDistance , curDistance , ownClientObject ) 
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setOrbitMode</b></i> method to force the camera to orbit any particular game base object with a starting position and orientation and at a fixed minimum and maximum distance.<br />
+<br />
+<b>Syntax<br />
+<i>orbitObject</i></b> – The object to orbits about.<br />
+<i><b>transform</b></i>  – A matrix describing both the position and orientation of the camera.<br />
+<i><b>minDistance</b></i> – The minimum distance the camera is allowed to be from the object it is orbiting about.<br />
+<i><b>maxDistance</b></i> – The maximum distance the camera is allowed to be from the object it is orbiting about.<br />
+<i><b>curDistance</b></i> – The starting position of the camera from the object it is orbiting about. Note, this overrides the position portion of the transform, forcing the camera to be at this distance from the object.<br />
+<i><b>ownClientObject</b></i> – Set this to true if the object the camera is orbiting is owned by the client that owns the camera, otherwise set to false.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<a name="CameraData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink10"></a>CameraData</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+This is the data block that goes with the camera.  It is used to do find any special attributes the camera should have, if it is not in fact to deriving these attributes from the object that it is attached to.<br />
+</p>
+<a name="ConsoleLogger" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink11"></a>ConsoleLogger</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+This class is supplied to allow us to capture the output of the console and redirected to a file. Is useful in a variety of situations. It can be set to capture all output, only warnings, or only errors.<br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink12"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">level</td>	
+<td width="60%" bgcolor="#CCCCCC">Logging level for this logger.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">normal, warning, error</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Debris" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink13"></a>Debris</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+Debris objects are used to represent the refuse left behind by an exploding or destroyed object.  However, this object is versatile enought to be used for various purposes, to include a rockfall that blocks the road, the remains of a fallen building, etc.<br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_4" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink14"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lifeTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Lifetime of debris in seconds.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink15"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="100%" bgcolor="#009900"><div class="center">init()</div></td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink16"></a>Console Method</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>init( position , velocity )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>init</b></i> method to set the initial <i><b>position</b></i> and <i><b>velocity</b></i> of a debris object.<br />
+<br />
+<b>Syntax<br />
+<i>position</i></b> – A three-element floating-point vector representing the starting location of the debris object in the game world.<br />
+<i><b>velocity</b></i> – A three-element floating-point vector representing the direction and magnitude of the debris object's original path.<br />
+<br />
+<b>Returns</b><br />
+Returns true on sucess or false on failure.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="DebrisData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink17"></a>DebrisData</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+The data block that goes with debris. This class is used to describe most of the behavior of the debris.<br />
+</p>
+<a name="Fields_5" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink18"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">baseRadius</td>	
+<td width="60%" bgcolor="#CCCCCC">Debris starts at minimum of this distance from creation point. Requires useRadiusMass to be true.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( 0.2 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">bounceVariance</td>	
+<td width="60%" bgcolor="#CCCCCC">Total bounces == numBounces +/- bounceVariance.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( 0 , numBounces )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">elasticity</td>	
+<td width="60%" bgcolor="#CCCCCC">How bouncy is this debris? Values &gt; 1.0 add energy to the system.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">emitters[0]<br />
+emitters[1]</td>	
+<td width="60%" bgcolor="#CCCCCC">ParticleEmitterData datablocks used to trail particles behind moving debris.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">ParticleEmitterData</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">explodeOnMaxBounce</td>	
+<td width="60%" bgcolor="#CCCCCC">Does this debris explode when it hits maxBounce count?</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Explosion</td>	
+<td width="60%" bgcolor="#CCCCCC">ExplosionData datablock used for exploding debris.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">ExplosionData</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">fade</td>	
+<td width="60%" bgcolor="#CCCCCC">If set to true, the debris will start to fade from view in the last second of its liftetime.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">friction</td>	
+<td width="60%" bgcolor="#CCCCCC">How much friction is applied when thid debris slides?</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">gravModifier</td>	
+<td width="60%" bgcolor="#CCCCCC">How much does gravity affect this debris?</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ignoreWater</td>	
+<td width="60%" bgcolor="#CCCCCC">If set to false, debris will bounce off of water, else it will sink.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lifetime</td>	
+<td width="60%" bgcolor="#CCCCCC">Total life of particle == lifetime +/- lifetimeVariance in milliseconds.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lifetimeVariance</td>	
+<td width="60%" bgcolor="#CCCCCC">Total life of particle == lifetime +/- lifetimeVariance in milliseconds.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , lifetime )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxSpinSpeed</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum angular rotation of debris in degrees-per-second.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minSpinSpeed</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum angular rotation of debris in degrees-per-second.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">numBounces</td>	
+<td width="60%" bgcolor="#CCCCCC">Total bounces == numBounces +/- bounceVariance.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">render2D</td>	
+<td width="60%" bgcolor="#CCCCCC">If this field is set to true, debris will render a billboard using texture as the image source.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">shapeFile</td>	
+<td width="60%" bgcolor="#CCCCCC">The file to be used for this debris' mesh.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">~/path/filename</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">snapOnMaxBounce</td>	
+<td width="60%" bgcolor="#CCCCCC">If set to to true, and staticOnMaxBounce is also true, this debris will 'stick' in its last contact orientation on the surface it contacted.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">staticOnMaxBounce</td>	
+<td width="60%" bgcolor="#CCCCCC">If set to to true, the debris will be replaced (temporarily) with a static shape.  This shape will still be destroyed after the debris's total lifetime expires.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">terminalVelocity</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum velocity at which this debris will fall (or rise).</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">texture</td>	
+<td width="60%" bgcolor="#CCCCCC">A texture to be used for rendering a billboard, if render2D is set to true.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">~/path/filename</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">useRadiusMass</td>	
+<td width="60%" bgcolor="#CCCCCC">If set to true (and baseRadius &gt; 0.2) , the initial rendering position of the debris will be at a random position baseRadius from the creation point.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">velocity</td>	
+<td width="60%" bgcolor="#CCCCCC">Total initial velocity == velocity +/ velocityVariance.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">velocityVariance</td>	
+<td width="60%" bgcolor="#CCCCCC">Total initial velocity == velocity +/ velocityVariance.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , velocity )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="DecalData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink19"></a>DecalData</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+A data block describing an individual decal.<br />
+</p>
+<a name="Fields_6" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink20"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">sizeX</td>	
+<td width="60%" bgcolor="#CCCCCC">The horizontal width in meters.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">sizeY</td>	
+<td width="60%" bgcolor="#CCCCCC">The vertical height in meters.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">textureName</td>	
+<td width="60%" bgcolor="#CCCCCC">The full path to the texture to use this decal.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">~/path/filename</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="DecalManager" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink21"></a>DecalManager</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+All details are managed by the decal manager which provides a few global variables for managing the number of decals that are visible at any one time and the lifetime of the decal. As well we can disable all decals.<br />
+</p>
+<a name="Globals_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink22"></a>Globals</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Variable Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">$pref::decalsOn</td>	
+<td width="60%" bgcolor="#CCCCCC">If set to true, decals are enabled, otherwise no decals will render.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">$pref::Decal::maxNumDecals</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum decals allowed at any one time.  Once this limit is breached, old decals start to be removed as new decals are added.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">$pref::Decal::decalTimeout</td>	
+<td width="60%" bgcolor="#CCCCCC">Time in milliseconds it takes for a decal to be destroyed.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="EditManager" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink23"></a>EditManager</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+While editing, it is possible to set bookmarks on the current position of the camera and then come back to that position by going back to the bookmark. Up to 10 bookmarks can be set. Setting a previously set bookmark will overwrite the old bookmark setting with a new bookmark setting. Bookmarks are not saved between sessions. <br />
+<br />
+</p>
+<a name="Console_Method_Summaries_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink24"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="50%" bgcolor="#009900"><div class="center">setBookmark</div></td>
+<td width="50%" bgcolor="#009900"><div class="center">gotoBookmark</div></td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink25"></a>Console Methods</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>gotoBookmark( slot )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>gotoBookmark</b></i> method to move the camera to the bookmark specified by slot.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer between 0 and 9.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+setBookmark<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setBookmark( slot )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setBookmark</b></i> method to set a bookmark on the current position of the camera. To bookmark is saved in a position specified by <i><b>slot</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between zero and nine.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+gotoBookmark<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Explosion" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink26"></a>Explosion</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+The explosion class is used to represent various pyrotechnic displays. It is in fact a combination of multiple other classes used simultaneously or in sequence to produce various special effects.<br />
+<br />
+</p>
+<a name="ExplosionData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink27"></a>ExplosionData</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+This is the data block that goes with the explosion class. It is used to describe all of the action be its of an individual explosion.<br />
+<br />
+</p>
+<a name="Fields_7" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink28"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">camShakeAmp</td>	
+<td width="60%" bgcolor="#CCCCCC">The camera shake amplitude for all three axes: X, Y, and Z.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">"1.0 2.0 3.0"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">camShakeDuration</td>	
+<td width="60%" bgcolor="#CCCCCC">Time in seconds the shaking will occur over.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">camShakeFalloff</td>	
+<td width="60%" bgcolor="#CCCCCC">Magnitude by which shaking decreases over distance to camShakeRadius.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">camShakeFreq</td>	
+<td width="60%" bgcolor="#CCCCCC">The camera shake frequency for all three axes: X, Y, and Z.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">"1.0 2.0 3.0"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">camShakeRadius</td>	
+<td width="60%" bgcolor="#CCCCCC">Radius about the explosion in which shaking will be applied.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Debris</td>	
+<td width="60%" bgcolor="#CCCCCC">DebrisData datablock to use for this explosion.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">debrisNum</td>	
+<td width="60%" bgcolor="#CCCCCC">Total debris produced == debrisNum +/- debrisNumVariance.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">debrisNumVariance</td>	
+<td width="60%" bgcolor="#CCCCCC">Total debris produced == debrisNum +/- debrisNumVariance.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">debrisPhiMax</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum degrees of angular debris projection about the Y axis.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">debrisPhiMin</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum degrees of angular debris projection about the Y axis.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">debrisThetaMax</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum degrees of angular debris projection about an arbitray axis in the X-Z plane.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">debrisThetaMin</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum degrees of angular debris projection about an arbitray axis in the X-Z plane.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">debrisVelocity</td>	
+<td width="60%" bgcolor="#CCCCCC">Initial debris projection velocity == debrisVelocity +/- debrisVelocityVariance.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">debrisVelocityVariance</td>	
+<td width="60%" bgcolor="#CCCCCC">Initial debris projection velocity == debrisVelocity +/- debrisVelocityVariance.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">delayMS</td>	
+<td width="60%" bgcolor="#CCCCCC">Delay explosion 'effect' by delayMS +/- delayVariance after explosion object is created.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">delayVariance</td>	
+<td width="60%" bgcolor="#CCCCCC">Delay explosion 'effect' by delayMS +/- delayVariance after explosion object is created.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>emitter[0]<br />
+emitter[1]<br />
+emitter[2]<br />
+emitter[3]
+</p>
+</td>	
+<td width="60%" bgcolor="#CCCCCC">ParticleEmitterData to play when explosion occurs. Up to four are allowed.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">explosionscale</td>	
+<td width="60%" bgcolor="#CCCCCC">The scale of this explosion.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">"1.0 2.0 3.0"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">explosionShape</td>	
+<td width="60%" bgcolor="#CCCCCC">An optional shape that can be displayed at the time of the explosion with an (also) optional 'ambient' animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">~/path/filename</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">faceViewer</td>	
+<td width="60%" bgcolor="#CCCCCC">Keep particles facing viewer.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lifetimeMS</td>	
+<td width="60%" bgcolor="#CCCCCC">Total life of explosion == lifetimeMS +/- lifetimeVariance.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lifetimeVariance</td>	
+<td width="60%" bgcolor="#CCCCCC">Total life of explosion == lifetimeMS +/- lifetimeVariance.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightEndColor</td>	
+<td width="60%" bgcolor="#CCCCCC">Ending color of light (emitted by explosion).</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">"1.0 0.5 0.5"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightEndRadius</td>	
+<td width="60%" bgcolor="#CCCCCC">Ending radius of light (emitted by explosion).</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightStartColor</td>	
+<td width="60%" bgcolor="#CCCCCC">Starting color of light (emitted by explosion).</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">"1.0 0.5 0.5"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightStartRadius</td>	
+<td width="60%" bgcolor="#CCCCCC">Starting radius of light (emitted by explosion).</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">offset</td>	
+<td width="60%" bgcolor="#CCCCCC">Explosion effects offset from explosion creation point.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">particleDensity</td>	
+<td width="60%" bgcolor="#CCCCCC">Total number of particles to eject.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">particleEmitter</td>	
+<td width="60%" bgcolor="#CCCCCC">The emitter description (ParticleEmitterData) for this explosion.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">particleRadius</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum radius from effect center at which particles will be randomly created.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">playSpeed</td>	
+<td width="60%" bgcolor="#CCCCCC">Overall rate of this explosion.  Scales all effects.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">shakeCamera</td>	
+<td width="60%" bgcolor="#CCCCCC">If set to true, enables camera shaking.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>sizes[0]<br />
+sizes[1]<br />
+sizes[2]<br />
+sizes[3]
+</p>
+</td>	
+<td width="60%" bgcolor="#CCCCCC">Key-framing size controls for particles.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>"1.0 2.0 3.0"<br />
+"1.0 2.0 3.0"<br />
+"1.0 2.0 3.0"<br />
+"1.0 2.0 3.0"
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">soundProfile</td>	
+<td width="60%" bgcolor="#CCCCCC">description</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">see type</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>subExplosion[0]<br />
+subExplosion[1]<br />
+subExplosion[2]<br />
+subExplosion[3]<br />
+subExplosion[4]
+</p>
+</td>	
+<td width="60%" bgcolor="#CCCCCC">Sub-explosions to play as part of this explosion. Up to five sub-explosions are allowed.Using parent explosions as sub-explosions or as children of sub-explosions will create an infinte loop of explosions.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+ExplosionData datablock</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>times[0]<br />
+times[1]<br />
+times[2]<br />
+times[3]
+</p>
+</td>	
+<td width="60%" bgcolor="#CCCCCC">Key-framing time controls for particles.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>[        0.0, times[1] ]<br />
+[ times[0], times[2] ]<br />
+[ times[1], times[3] ]<br />
+[ times[2], 1.0        ]
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+<a href="Console%20Objects.html" title="Torque Console Objects TOC"> Table of Contents</a> || <a href="Torque_Console_Objects_1.html" title="Torque Console Objects"> Part 1</a> || <a href="Torque_Console_Objects_3.html" title="Torque Console Objects 3"> Part 3</a> || <a href="Torque_Console_Objects_4.html" title="Torque Console Objects 4"> Part 4</a> || <a href="Torque_Console_Objects_5.html" title="Torque Console Objects 5"> Part 5</a> || <a href="Torque_Console_Objects_6.html" title="Torque Console Objects 6"> Part 6</a> || <a href="Torque_Console_Objects_7.html" title="Torque Console Objects 7"> Part 7</a> || <a href="Torque_Console_Objects_8.html" title="Torque Console Objects 8"> Part 8</a> || <a href="Torque_Console_Objects_9.html" title="Torque Console Objects 9"> Part 9</a> || <a href="Torque_Console_Objects_10.html" title="Torque Console Objects 10"> Part 10</a> || <a href="Torque_Console_Objects_11.html" title="Torque Console Objects 11"> Part 11</a> || <a href="Torque_Console_Objects_12.html" title="Torque Console Objects 12"> Part 12</a> || <a href="Torque_Console_Objects_13.html" title="Torque Console Objects 13"> Part 13</a> || <a href="Torque_Console_Objects_14.html" title="Torque Console Objects 14"> Part 14</a> || <a href="Torque_Console_Objects_15.html" title="Torque Console Objects 15"> Part 15</a>
+</p>
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:02 GMT -->
+</html>

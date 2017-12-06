@@ -1,0 +1,321 @@
+﻿<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Maya/Characters.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4282;
+   parent.leftFrame.expandToItem('tree2', 'doc4282');
+   var element = parent.leftFrame.document.getElementById('doc4282');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Using Art Assets - Maya - Creating a Simple Character</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table width="700" border="0" align="left" cellpadding="15" cellspacing="0" style="text-align: justify;">
+<tr>
+<td width="700">
+
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class='toclevel-1'><a href="#Acknowledgments"><span class="tocnumber">2</span> <span class="toctext">Acknowledgments</span></a></li>
+<li class='toclevel-1'><a href="#The_basic_steps"><span class="tocnumber">3</span> <span class="toctext">The basic steps</span></a></li>
+<li class='toclevel-1'><a href="#Set_up_Maya.E2.80.99s_workspace_to_work_with_Torque"><span class="tocnumber">4</span> <span class="toctext">Set up Maya’s workspace to work with Torque</span></a></li>
+<li class='toclevel-1'><a href="#Create_your_character_model"><span class="tocnumber">5</span> <span class="toctext">Create your character model</span></a></li>
+<li class='toclevel-1'><a href="#Triangulate_your_model"><span class="tocnumber">6</span> <span class="toctext">Triangulate your model</span></a></li>
+<li class='toclevel-1'><a href="#Freeze_transformations_an_all_geometry"><span class="tocnumber">7</span> <span class="toctext">Freeze transformations an all geometry</span></a></li>
+<li class='toclevel-1'><a href="#Delete_model_history"><span class="tocnumber">8</span> <span class="toctext">Delete model history</span></a></li>
+<li class='toclevel-1'><a href="#UV_mapping_the_model"><span class="tocnumber">9</span> <span class="toctext">UV mapping the model</span></a></li>
+<li class='toclevel-1'><a href="#Create_LOD_meshes_.28optional.29"><span class="tocnumber">10</span> <span class="toctext">Create LOD meshes (optional)</span></a></li>
+<li class='toclevel-1'><a href="#Naming_the_model_parts_for_LOD_identification"><span class="tocnumber">11</span> <span class="toctext">Naming the model parts for LOD identification</span></a></li>
+<li class='toclevel-1'><a href="#Rigging_and_skinning_your_model"><span class="tocnumber">12</span> <span class="toctext">Rigging and skinning your model</span></a></li>
+<li class='toclevel-1'><a href="#Adding_special_nodes"><span class="tocnumber">13</span> <span class="toctext">Adding special nodes</span></a></li>
+<li class='toclevel-1'><a href="#Adding_collision_meshes_and_LOS_meshes"><span class="tocnumber">14</span> <span class="toctext">Adding collision meshes and LOS meshes</span></a></li>
+<li class='toclevel-1'><a href="#Embedding_the_model_in_the_Torque_hierarchy"><span class="tocnumber">15</span> <span class="toctext">Embedding the model in the Torque hierarchy</span></a></li>
+<li class='toclevel-1'><a href="#Registering_any_LOD_meshes"><span class="tocnumber">16</span> <span class="toctext">Registering any LOD meshes</span></a></li>
+<li class='toclevel-1'><a href="#Modifying_the_hierarchy"><span class="tocnumber">17</span> <span class="toctext">Modifying the hierarchy</span></a></li>
+<li class='toclevel-1'><a href="#Creating_a_bounding_box"><span class="tocnumber">18</span> <span class="toctext">Creating a bounding box</span></a></li>
+<li class='toclevel-1'><a href="#Animating_the_model"><span class="tocnumber">19</span> <span class="toctext">Animating the model</span></a>
+<ul>
+<li class='toclevel-2'><a href="#Model_and_animation_data_in_single_DTS_file"><span class="tocnumber">19.1</span> <span class="toctext">Model and animation data in single DTS file</span></a></li>
+<li class='toclevel-2'><a href="#Model_and_animation_in_separate_DTS_and_DSQ_files"><span class="tocnumber">19.2</span> <span class="toctext">Model and animation in separate DTS and DSQ files</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="#Creating_a_configuration_file"><span class="tocnumber">20</span> <span class="toctext">Creating a configuration file</span></a></li>
+<li class='toclevel-1'><a href="#Exporting_the_model"><span class="tocnumber">21</span> <span class="toctext">Exporting the model</span></a>
+<ul>
+<li class='toclevel-2'><a href="#Exporting_all_as_one_DTS_file"><span class="tocnumber">21.1</span> <span class="toctext">Exporting all as one DTS file</span></a></li>
+<li class='toclevel-2'><a href="#Exporting_model_and_animation_as_separate_DSQ_files"><span class="tocnumber">21.2</span> <span class="toctext">Exporting model and animation as separate DSQ files</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="#About_the_guide"><span class="tocnumber">22</span> <span class="toctext">About the guide</span></a></li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="Introduction"></a><h2><a name = "HeaderLink1"></a>Introduction</h2>
+<p>The following guide will show you how to export a skinned model from Maya to Torque. This applies to any model that uses joints to animate, including characters and weapons. The tutorial will assume that the reader is familiar with modelling and texturing in Maya and so won’t go into detail on those topics. The tutorial also assumes that the maya2dts plug-in and DTS Utility have been installed. For information on downloading and installing the plug-in, please go to the <a href="file:///C|/Torque/documentation/SourceDocumentation/TGEA/documentation/Using Art Assets/Maya/Setup.html">Setup Document</a>.</p><p>&nbsp;</p>
+<p>The screenshots in the guide were taken using Maya 7, but should apply to most Maya versions.
+</p><p>A PDF version of this guide can be download <a href="http://tdn.garagegames.com/wiki/images/3/39/Maya2dts_skinned_mesh_tutorial.pdf" class='external text' title="http://tdn.garagegames.com/wiki/images/3/39/Maya2dts skinned mesh tutorial.pdf" rel="nofollow">here</a>.
+</p>
+<a name="Acknowledgments"></a><h2><a name = "HeaderLink2"></a>Acknowledgments</h2>
+<p>Infinite thanks to Dave MacIsaac for his immense help in getting my Maya models to export after more than a week of battling with it on my own!
+</p>
+<a name="The_basic_steps"></a><h2><a name = "HeaderLink3"></a>The basic steps</h2>
+<p>Creating a character for Torque involves a 18-step process:
+</p><p>1. Set up Maya’s workspace to work with Torque
+</p><p>2. Create you character model
+</p><p>3. Triangulate your model
+</p><p>4. Freeze transformations on all geometry
+</p><p>5. Delete model history
+</p><p>6. UV mapping the model
+</p><p>7. Create LOD meshes (optional)
+</p><p>8. Naming the model parts for LOD identification
+</p><p>9. Rigging and skinning your model
+</p><p>10. Adding special nodes
+</p><p>11. Adding collision meshes and LOS meshes
+</p><p>12. Embedding your model in the Torque hierarchy
+</p><p>13. Registering any LOD meshes
+</p><p>14. Modifying the hierarchy
+</p><p>15. Creating a bounding box
+</p><p>16. Animating the model
+</p><p>17. Creating a configuration file
+</p><p>18. Exporting the model
+</p>
+<a name="Set_up_Maya.E2.80.99s_workspace_to_work_with_Torque"></a><h2><a name = "HeaderLink4"></a>Set up Maya’s workspace to work with Torque</h2>
+<p>The first step needed before creating your model is to set up Maya’s workspace so that its units and axis match those used by Torque. To do so, load up the DTS Utility, then in the DTS Utility menu select <i>Setup-->Set All Units</i>
+</p><p><img src="Maya2dts_character_tutorial_02.png">
+</p><p>You will see Maya’s grid resize and the axis change orientation.
+</p>
+<a name="Create_your_character_model"></a><h2><a name = "HeaderLink5"></a>Create your character model</h2>
+<p>You are now ready to create your character’s geometry. <b>Note:</b> When modelling your character, ensure that it follows the Torque axis system i.e.: Z axis is up, Y axis is forward and X axis is right. If your character appears oriented incorrectly in game, the model will most likely be incorrectly oriented in Maya.
+</p><p><img src="Maya2dts_character_tutorial_03.png">
+</p>
+<a name="Triangulate_your_model"></a><h2><a name = "HeaderLink6"></a>Triangulate your model</h2>
+<p>All models used by Torque have to be triangulated. To do that, select all your geometry, then in the menu select <i>Polygons-->Triangulate</i>
+</p><p><img src="Maya2dts_character_tutorial_04.png">
+</p>
+<a name="Freeze_transformations_an_all_geometry"></a><h2><a name = "HeaderLink7"></a>Freeze transformations an all geometry</h2>
+<p>Select all your geometry, then select <i>Modify-->Freeze Transformations-->Box</i>
+</p><p><img src="Maya2dts_character_tutorial_05.png">
+</p><p>In the dialog box that appears, select <i>Edit-->Reset Settings</i> to freeze transformations on you geometry’s position, rotation and scale information, then click on <i>Freeze Transform</i>.
+</p>
+<a name="Delete_model_history"></a><h2><a name = "HeaderLink8"></a>Delete model history</h2>
+<p>This step is important as it gets rid of a lot of unnecessary information which would otherwise be exported and could cause problems.
+</p><p>Select your geometry then select <i>Edit-->Delete by Type-->History</i>
+</p><p><img src="Maya2dts_character_tutorial_06.png">
+</p>
+<a name="UV_mapping_the_model"></a><h2><a name = "HeaderLink9"></a>UV mapping the model</h2>
+<p>With the main model geometry complete, now is a good time to UV map the model.
+</p>
+<a name="Create_LOD_meshes_.28optional.29"></a><h2><a name = "HeaderLink10"></a>Create LOD meshes (optional)</h2>
+<p>LOD meshes are low poly versions of the main model that Torque displays instead of the main model when the model is far away from the camera. A simple way to create LOD geometry is to select your main model, duplicate it in the same position, then select <i>Polygons-->Reduce</i>.
+</p><p><img src="Maya2dts_character_tutorial_07.png">
+</p><p><img src="Maya2dts_character_tutorial_08.png">
+</p><p><b>(Note: The above image shows only the reduced model – the main model has been hidden to take a screenshot)</b>
+</p><p>After creating all the LOD meshes you need, don’t forget to triangulate, freeze transformations and delete history. If you have already UV mapped your main model, then you will not need to UV map the LOD meshes.
+</p>
+<a name="Naming_the_model_parts_for_LOD_identification"></a><h2><a name = "HeaderLink11"></a>Naming the model parts for LOD identification</h2>
+<p><b>Note: in previous versions of this guide, the LOD section was incorrectly written and the images in the guide reflected this incorrect information. The corrections have been made in this section, but the images have not been updated.</b> 
+</p><p>In order to tell the exporter the order in which we want out LOD meshes to be displayed in the game, we add a number to the end of the name of each mesh. The number indicates the minimum size of the object, in pixels on the screen, that this LOD will be drawn.
+</p><p>For example, let's say we have 3 LOD in our model and have called them mesh300, mesh150 and mesh0. Mesh300 will be drawn when the object is 300 pixels or greater. Mesh150 will be drawn when the object is between 150 and 300 pixels in size. Mesh0 will be drawn when the object is less than 150 pixels in size.
+</p><p>It is important to note that if we did not have mesh0, then the object would not be drawn at all when it was smaller than 150 pixels in size.
+</p><p>If you have just 1 mesh and no LOD, you still need to add a number to the names of the parts and this number should be 0, so that your object is drawn all the time.
+</p>
+<a name="Rigging_and_skinning_your_model"></a><h2><a name = "HeaderLink12"></a>Rigging and skinning your model</h2>
+<p>Now that the model geometry is complete, you are ready to rig and skin the model.
+</p><p><img src="Maya2dts_character_tutorial_12.png">
+</p><p>Torque supports Smooth Binding. When binding the skeleton to the mesh, don’t forget to bind it to the LOD meshes too.
+</p>
+<a name="Adding_special_nodes"></a><h2><a name = "HeaderLink13"></a>Adding special nodes</h2>
+<p>The next step involves adding Torque-specific nodes: eye and cam nodes and mount points. To add these, open the DTS Utility and select <i>DTS-->Utility Nodes</i> then select the required node.
+</p><p><img src="Maya2dts_character_tutorial_13.png">
+</p><p>Place the nodes in their required positions and orient them correctly. Take note of the nodes’ axis: in Torque, z is up, y is forward and x is right.
+</p><p><img src="Maya2dts_character_tutorial_14.png">
+</p><p>After creating and placing your nodes, you may need to parent some of the nodes to joints on your skeleton (e.g.: a mount point to a hand) so that they move with the skeleton. To do this select the joint you want to parent to first, then select the utility node and select <i>Constrain-->Parent-->Box</i> from the animation menu
+</p><p><img src="Maya2dts_character_tutorial_15.png">
+</p><p>In the dialog box that appears, select <i>Edit-->Reset Settings</i>, then click on <i>Add</i>
+</p><p><img src="Maya2dts_character_tutorial_16.png">
+</p><p>Repeat this for all utility nodes that need to be parented.
+</p>
+<a name="Adding_collision_meshes_and_LOS_meshes"></a><h2><a name = "HeaderLink14"></a>Adding collision meshes and LOS meshes</h2>
+<p>Note: this section does not apply to player objects, as their collision meshes are generated in script.
+</p><p>In order for your model to collide with the game world, you need to add collision meshes to the model. However, if you want your object to respond to ray cast tests (and as a result of that, projectile collisions), then you will also need to add LOS meshes to your model.
+</p><p>Both these types of collision meshes need to be convex shapes. Also, it is recommended that these meshes be as simple as possible, since collision detection is an intensive process.
+</p><p>A model can have up to 9 collision meshes, named Col_1 to Col_9, and 7 LOS meshes, called LOScol_9 to LOScol_15.
+</p><p>After adding collision and LOS meshes, triangulate them.
+</p>
+<a name="Embedding_the_model_in_the_Torque_hierarchy"></a><h2><a name = "HeaderLink15"></a>Embedding the model in the Torque hierarchy</h2>
+<p>Load up the DTS Utility, select all your meshes (including LODs, but not the skeleton) then click on the <i>Embed Shape</i> button.
+</p><p><img src="Maya2dts_character_tutorial_17.png">
+</p><p>This creates a hierarchy which is used by the DTS format and places your geometry in it.
+</p>
+<a name="Registering_any_LOD_meshes"></a><h2><a name = "HeaderLink16"></a>Registering any LOD meshes</h2>
+<p>With your geometry still selected, click on <i>Register Details</i>.
+</p><p><img src="Maya2dts_character_tutorial_18.png">
+</p><p>The exporter will examine the meshes in your model and create detail markers for each LOD it identifies, named <i>detailX</i>, where <i>X</i> is the detail level.
+</p><p>If you have any collision or LOS meshes, then the exporter will also create detail markers in your hierarchy corresponding to the numbers at the end of the collision and LOS mesh names. These must be renamed to <i>Collision_X</i> for collision meshes and <i>LOS_X</i> for LOS meshes, where <i>X</i> is the number of the mesh the marker represents.
+</p>
+<a name="Modifying_the_hierarchy"></a><h2><a name = "HeaderLink17"></a>Modifying the hierarchy</h2>
+<p>Open up your Hypergraph (<i>Window-->Hypergraph</i>) or Outliner (<i>Window-->Outliner</i>) window (whichever you prefer working with)
+</p><p><img src="Maya2dts_character_tutorial_19.png">
+</p><p>At this stage, your Hypergraph should look similar to this one:
+</p><p><img src="Maya2dts_character_tutorial_20.png">
+</p><p>The Outliner would look like this:
+</p><p><img src="Maya2dts_character_tutorial_21.png">
+</p><p>This hierarchy needs to be modified before we can export the model. We are going to remove the geometry from the <b>start01</b> node and place it at the scene root, and then we are going to put the skeleton in its place.
+</p><p>Firstly, select all the geometry under <b>start01</b> in the Hypergraph/Outliner, then drag it all to the scene root using your middle mouse button. Next, select your skeleton and drag it onto the <b>start01 </b>node using your middle mouse button. Your Hypergraph should now look similar to the following:
+</p><p><img src="Maya2dts_character_tutorial_22.png">
+</p><p>The Outliner would look like this:
+</p><p><img src="Maya2dts_character_tutorial_23.png">
+</p><p>Note that IK handles are not moved into the <b>start01</b> node.
+</p>
+<a name="Creating_a_bounding_box"></a><h2><a name = "HeaderLink18"></a>Creating a bounding box</h2>
+<p>The next step is to create a bounding box. To do this, open the DTS Utility, select all your character geometry and click on <i>Create Bounding Box</i>
+</p><p><img src="Maya2dts_character_tutorial_24.png">
+</p><p>This creates a bounding box around your character model. Tick the <i>Lock</i> checkbox so that the bounding box does not occlude your model. Resize the bounding box so that it encompasses all the model geometry at all stages of its animation. You may need to do this after you animate your model.
+</p>
+<a name="Animating_the_model"></a><h2><a name = "HeaderLink19"></a>Animating the model</h2>
+<p>Animation in Torque can be done in two ways. The first is where the model and animation data are both stored in a single DTS file. The second method is where the model is stored in the DTS file and each animation is stored in a separate DSQ file.
+</p>
+<a name="Model_and_animation_data_in_single_DTS_file"></a><h4><a name = "HeaderLink20"></a>Model and animation data in single DTS file</h4>
+<p>This section assumes that you have already created the animations for your model.
+</p><p>To export animations, you need to create what is called a sequence node. You then modify the properties of the sequence node to correspond to the animation it is supposed to represent.
+</p><p>To create a sequence node, open the DTS Utility and click on <i>Create Sequence Node</i>
+</p><p><img src="Maya2dts_character_tutorial_25.png">
+</p><p>This will create a sequence node at the centre of the scene.
+</p><p>Now select the sequence node then open up the Channel Editor
+</p><p><img src="Maya2dts_character_tutorial_26.png">
+</p><p>The properties for the selected sequence node are displayed
+</p><p><img src="Maya2dts_character_tutorial_27.png">
+</p><p>By default, the DTS Utility gives sequence nodes a name of <i>Sequence_animX</i>, where <i>X</i> is a number. To change the name of the sequence node, replace the <i>animX</i> section with the name you require, for example <i>Sequence_wave</i> would create an animation called <i>wave</i> in Torque. Note that the <i>Sequence_</i> prefix <b>must </b>be present in the node name.
+</p><p>The properties of the sequence node need to be modified to match the animation it represents. For example, if a character has a wave animation that is present in frames 10-45 in the Maya scene, you would modify the attributes of the sequence node so that its <i>Start Frame</i> is 10 and its <i>End Frame</i> is 45. Other properties can be modified too, for example if <i>Cyclic</i> is on, then the animation will repeat indefinitely, otherwise it will play once and stop.
+</p><p>For each animation in your model file, place one sequence node for that animation, name it properly and change its properties to match that particular animation.
+</p><p>The model is now ready to be exported.
+</p>
+<a name="Model_and_animation_in_separate_DTS_and_DSQ_files"></a><h4><a name = "HeaderLink21"></a>Model and animation in separate DTS and DSQ files</h4>
+<p>If you want to export your animations as separate DSQ files, you need to save each animation as a separate Maya file. Then in each file create one sequence node, name it and modify its properties to match that animation (as described in the above section), and then export the DSQ.
+</p><p>For example, to export the <i>wave</i> animation of a character as a DSQ file, you would first save a copy of the main model file. In the new model file, create the <i>wave </i>animation. Then create a sequence node and name it <i>Sequence_wave</i> and modify its properties to match the <i>wave</i> animation. The <i>wave </i>animation is now ready to be exported as a DSQ file.
+</p><p>Repeat the above steps for each animation.
+</p>
+<a name="Creating_a_configuration_file"></a><h2><a name = "HeaderLink22"></a>Creating a configuration file</h2>
+<p>The last step before exporting a model is to create a configuration file. In the configuration file, list all the utility nodes (eye, cam, mount) and all the joints that are present in the model so that the exporter will export them.
+</p><p>The configuration file’s name must be in the form <i>mayafilename.cfg</i>. For example, if a character model is stored in the Maya file <i>boxman.mb</i>, its corresponding configuration file would be called <i>boxman.cfg</i>.
+</p><p>The contents of a configuration file should look similar to this:
+</p>
+<table border="0" cellspacing="2" width="100%">
+<tr>
+<td align="justify" colspan="3">AlwaysExport:
+</td><td align="justify">&nbsp;
+</td><td align="justify">&nbsp;
+</td><td align="justify">&nbsp;
+</td><td align="justify"><font color="#FF0000">The file should start with this.</font>
+</td></tr>
+<tr>
+<td align="justify">Eye
+</td><td align="justify">&nbsp;
+</td><td align="justify">&nbsp;
+</td><td align="justify">&nbsp;
+</td><td align="justify">&nbsp;
+</td><td align="justify">&nbsp;
+</td><td align="justify">List <b>all</b> the utility nodes and joints
+</td></tr>
+<tr>
+<td align="justify">Cam
+</td><td align="justify">&nbsp;
+</td><td align="justify">&nbsp;
+</td><td align="justify">&nbsp;
+</td><td align="justify">&nbsp;
+</td><td align="justify">&nbsp;
+</td><td align="justify">that you want to export.
+</td></tr>
+</table>
+<p>mount0
+</p><p>mount1
+</p><p>root
+</p><p>spine1
+</p><p>spine2
+</p><p>spine3
+</p><p>right_hip
+</p><p>right_knee
+</p><p>right_ankle
+</p><p>left_hip
+</p><p>left_knee
+</p><p>left_ankle
+</p><p>head
+</p><p>right_shoulder
+</p><p>right_elbow
+</p><p>right_hand
+</p><p>left_shoulder
+</p><p>left_elbow
+</p><p>left_hand
+</p>
+<table border="0" cellspacing="2" width="100%">
+<tr>
+<td align="justify">-Param::CollapseTransforms
+</td><td align="justify"><font color="#FF0000">The file should end with this.</font>
+</td></tr>
+</table>
+<p>The configuration file needs to be written using a text editor capable of saving the file with <i>UNIX line endings</i>. Once such editor is SuperEdi, a free text editor, which can be downloaded from <a href="http://www.wolosoft.com/en/superedi" class='external free' title="http://www.wolosoft.com/en/superedi" rel="nofollow">http://www.wolosoft.com/en/superedi</a>. The following screenshot shows how to save the configuration file with UNIX line endings in SuperEdi:
+</p><p><img src="Maya2dts_character_tutorial_28.png">
+</p><p>Once the file has been written, save the file in the same directory as your model file.
+</p><p>Note: If you are exporting your model as separate DTS and DSQ files, then only the main model scene needs a configuration file. However, if you find that animations are not exporting correctly then create a configuration file for each of the animation scene files. The configuration file for these is identical to the one used by the main model file; all that is needed is to name the configuration file correctly.
+</p>
+<a name="Exporting_the_model"></a><h2><a name = "HeaderLink23"></a>Exporting the model</h2>
+<p>Depending on how you set up the animations for your model, you will either export the model and animations as one DTS file, or you will export the model as a DTS file and each animation as a separate DSQ file.
+</p>
+<a name="Exporting_all_as_one_DTS_file"></a><h4><a name = "HeaderLink24"></a>Exporting all as one DTS file</h4>
+<p>To export the model as one DTS file, the model and <b>all</b> animation data must be present in a single Maya scene file. This section assumes that you have built and animated your model, and created and configured all the required sequence nodes for your animations.
+</p><p>Open up the DTS Utility and select <i>Export…</i>
+</p><p><img src="Maya2dts_character_tutorial_29.png">
+</p><p>In the dialog box that appears, select a name for your model file and make sure that <i>Files of type</i> is set to <i>exportDTS</i>
+</p><p><img src="Maya2dts_character_tutorial_30.png">
+</p><p>You should see the model playing through its animations and then the export will be completed.
+</p><p>The model can now be viewed in the Show Tool or used in Torque.
+</p>
+<a name="Exporting_model_and_animation_as_separate_DSQ_files"></a><h4><a name = "HeaderLink25"></a>Exporting model and animation as separate DSQ files</h4>
+<p>First open up the main model file. This file should contain the model and skeleton and <b>no sequence nodes</b>. Export the model in the same manner as above.
+</p><p>Next open up one of the animation scene files. This file should contain the model and <b>one sequence node</b>. Open the DTS Utility and select <i>DTS--&gt;Export Settings…</i>
+</p><p><img src="Maya2dts_character_tutorial_31.png">
+</p><p>In the dialog that appears, modify the <i>Sequence Name </i>and <i>Sequence Location</i> text boxes to determine where you want to save your DSQ file, then click on <i>Close</i>
+</p><p><img src="Maya2dts_character_tutorial_32.png">
+</p><p>Finally, in the DTS Utility, select <i>Export Sequence</i>
+</p><p><img src="Maya2dts_character_tutorial_33.png">
+</p><p>You should see the model playing through its animation and then the DSQ export will be completed.
+</p><p>Repeat the above steps for each animation you need to export.
+</p>
+<a name="About_the_guide"></a><h2><a name = "HeaderLink26"></a>About the guide</h2>
+<p>This guide was written due to the lack of detailed information in one place on this subject. I hope that you have found the guide useful, and if there are any queries or suggestions please feel free to contact me by email:
+</p><p><a href="mailto:amrbekhit@gmail.com" class='external text' title="mailto:amrbekhit@gmail.com" rel="nofollow">amrbekhit [at] gmail [dot] com</a>.
+</p>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Maya/Characters.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:48 GMT -->
+</html>

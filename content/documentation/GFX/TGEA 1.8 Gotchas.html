@@ -1,0 +1,626 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/GFX/TGEA 1.8 Gotchas.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4196;
+   parent.leftFrame.expandToItem('tree2', 'doc4196');
+   var element = parent.leftFrame.document.getElementById('doc4196');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueGameEngineAdvanced/1 8 Beta/Porting/Gotchas - TDN</title>
+<link rel="stylesheet" type="text/css" href="container.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  bgcolor="#FFFFFF">
+
+<table width="700" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+        <table width="700" border="0" cellpadding="15" cellspacing="0" xmlns="http://www.w3.org/1999/xhtml">
+          <tbody>
+            <tr>
+              <td width="700"><table id="toc">
+                  <tbody>
+                    <tr>
+                      <td><div id="toctitle">
+                          <h2><a name = "HeaderLink0"></a>Contents</h2>
+                          <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+                        <ul>
+                          <li class="toclevel-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+                          <li class="toclevel-1"><a href="#Main_Loop_Change"><span class="tocnumber">2</span> <span class="toctext">Main Loop Change</span></a></li>
+                          <li class="toclevel-1"><a href="#Setting_Shader_Constant_Buffers"><span class="tocnumber">3</span> <span class="toctext">Setting Shader Constant Buffers</span></a></li>
+                          <li class="toclevel-1"><a href="#Transpose_Gotcha"><span class="tocnumber">4</span> <span class="toctext">Transpose Gotcha</span></a></li>
+                          <li class="toclevel-1"><a href="#Name_Consistency"><span class="tocnumber">5</span> <span class="toctext">Name Consistency</span></a></li>
+                          <li class="toclevel-1"><a href="#Shader_Compile_Failure"><span class="tocnumber">6</span> <span class="toctext">Shader Compile Failure</span></a></li>
+                          <li class="toclevel-1"><a href="#Set_StateBlock"><span class="tocnumber">7</span> <span class="toctext">Set StateBlock</span></a></li>
+                          <li class="toclevel-1"><a href="#RenderDelegate"><span class="tocnumber">8</span> <span class="toctext">RenderDelegate</span></a></li>
+                          <li class="toclevel-1"><a href="#GLSL_Texture_Order"><span class="tocnumber">9</span> <span class="toctext">GLSL Texture Order</span></a></li>
+                          <li class="toclevel-1"><a href="#Shared_Shader_Global_Space"><span class="tocnumber">10</span> <span class="toctext">Shared Shader Global Space</span></a></li>
+                          <li class="toclevel-1"><a href="#Resource_Loading_Change"><span class="tocnumber">11</span> <span class="toctext">Resource Loading Change</span></a></li>
+                          <li class="toclevel-1"><a href="#What_is_a_CSF.3F"><span class="tocnumber">12</span> <span class="toctext">What is a CSF?</span></a></li>
+                          <li class="toclevel-1"><a href="#Material_Initialization"><span class="tocnumber">13</span> <span class="toctext">Material Initialization</span></a></li>
+                          <li class="toclevel-1"><a href="#OGLSamplerNames_Field_Name_Change"><span class="tocnumber">14</span> <span class="toctext">OGLSamplerNames Field Name Change</span></a></li>
+                          <li class="toclevel-1"><a href="#Automated_Mapping_of_samplerNames"><span class="tocnumber">15</span> <span class="toctext">Automated Mapping of samplerNames</span></a></li>
+                          <li class="toclevel-1"><a href="#November_2008_DirectX_SDK_Shader_Bug"><span class="tocnumber">16</span> <span class="toctext">November 2008 DirectX SDK Shader Bug</span></a></li>
+                        </ul></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>
+                  </p>
+                <a name="Introduction" id="Introduction"></a>
+                <h2><a name = "HeaderLink1"></a>Introduction</h2>
+                <p>Welcome to the "Gotcha" section of TGEA's 1.8 porting guide. If you
+                  are unfamiliar with the term "Gotcha" (quotes and all), imagine writing
+                  valid code in the engine that results in a bug or crash. The code
+                  worked in a previous version of TGEA, but is busted in 1.8. What you
+                  are experiencing is an engine modification you are not aware of messing
+                  up your work. </p>
+                <p><br />
+                  This is the engine's way of saying "Gotcha!" We've taken some time to
+                  document common issues you will run into while porting your previous
+                  work into TGEA 1.8, or writing your own code that is dated when
+                  compared to new GFX2 code. The most critical issues are listed in this
+                  article, but more may be added at a later date. If you run into a
+                  graphical issue that does not result in a crash or error, be sure to
+                  check this page again to see if you've fallen into a "Gotcha"
+                  situation. </p>
+                <a name="Main_Loop_Change" id="Main_Loop_Change"></a>
+                <h2><a name = "HeaderLink2"></a>Main Loop Change</h2>
+                <p>This "Gotcha" is one of the first modifications you need to make if you are merging an older project. Each game project has a <b>main.cpp</b> file. This source file is local to your project, not the engine's source. For example, the T3D main.cpp can be found in the <b>GameExamples/T3D/source/</b> directory. Within this file is the entry point for your game: </p>
+                <pre>// Entry point for your game.
+//
+// This is build by default using the "StandardMainLoop" toolkit. Feel free
+// to bring code over directly as you need to modify or extend things. You 
+// will need to merge against future changes to the SML code if you do this.
+S32 TorqueMain(S32 argc, const char **argv)
+{
+    ...
+}
+</pre>
+                <p><br />
+                  The actual main loop used to be a standard function call: </p>
+                <pre>// Main loop
+   StandardMainLoop::doMainLoop();
+</pre>
+                <p><br />
+                  However, if you try running this on a 1.8 build, the application
+                  will run once and exit immediately. To rectify this, you must use a
+                  standard C while loop to keep your application running: </p>
+                <pre>// Main loop
+   while(StandardMainLoop::doMainLoop());
+</pre>
+                <a name="Setting_Shader_Constant_Buffers" id="Setting_Shader_Constant_Buffers"></a>
+                <h2><a name = "HeaderLink3"></a>Setting Shader Constant Buffers</h2>
+                <p>Before you perform a draw call, you must remember to set your shader
+                  constant buffers (GFXShaderConstBufferRef). If you forget to do this,
+                  you can end up with odd graphical glitches that do not actually produce
+                  errors/crashes/warnings. </p>
+                <p><br />
+                  <b>Pseudo-Code</b> </p>
+                <pre>// Get projection matrix first
+proj = GFX-&gt;getProjectionMatrix();
+
+// Here, we are asssigning our shader constant buffer properties
+myShaderConstBuffer-&gt;set(mModelViewProjSC, &amp;proj);
+myShaderConstBuffer-&gt;set(mOpacityMapSC, (S32)0);
+mShaderConsts-&gt;set(mLightMapSC, (S32)1);
+
+// *** SET SHADER CONSTANT BUFFER ***
+GFX-&gt;setShaderConstBuffer(mShaderConsts);
+
+// Now you can safely use draw calls
+...
+</pre>
+                <p><br />
+                  <b>Actual Code: Precipitation</b> </p>
+                <p>In Precipication.h, you will find various shader constant buffer variables. Here are a few examples: </p>
+                <pre>GFXShaderConstBufferRef mSplashShaderConsts;
+   
+GFXShaderConstHandle* mSplashShaderModelViewSC;
+GFXShaderConstHandle* mSplashShaderFadeStartEndSC;
+</pre>
+                <p><br />
+                  The <a href="Render%20Delegate.html" title="TorqueGameEngineAdvanced/1 8 Beta/RenderDelegate">Render Delegate</a> for Precipication is called <b>renderObject(...)</b>.
+                  Within this function, you can see how we have modified the file to
+                  avoid this "Gotcha". First, we actually initialize the shader constant
+                  buffer: </p>
+                <pre>      if (mSplashShaderConsts.isNull())
+      {
+         mSplashShaderConsts = mSplashShader-&gt;mShader-&gt;allocConstBuffer();
+
+         if (mSplashShaderConsts)
+         {
+            mSplashShaderModelViewSC = mSplashShaderConsts-&gt;getShader()-&gt;getShaderConstHandle("$modelView");
+            mSplashShaderFadeStartEndSC = mSplashShaderConsts-&gt;getShader()-&gt;getShaderConstHandle("$fadeStartEnd");
+            mSplashShaderCameraPosSC = mSplashShaderConsts-&gt;getShader()-&gt;getShaderConstHandle("$cameraPos");
+            mSplashShaderAmbientSC = mSplashShaderConsts-&gt;getShader()-&gt;getShaderConstHandle("$ambient");
+         }
+      }
+</pre>
+                <p><br />
+                  In the above code, we check to see if our shader constant buffer
+                  is nullified. If it is, we allocate a buffer. If that succeeded, we
+                  initialize shader constant handles. Once everything is initialized, we
+                  address the "Gotcha" in two spots. One is right below the
+                  initialization: </p>
+                <pre>      if (mSplashShaderModelViewSC)
+         mSplashShaderConsts-&gt;set(mSplashShaderModelViewSC, proj);
+
+      if (mSplashShaderFadeStartEndSC)
+         mSplashShaderConsts-&gt;set(mSplashShaderFadeStartEndSC, fadeStartEnd);
+</pre>
+                <p><br />
+                  The other happens further down, just before rendering occurs: </p>
+                <pre>   if (mSplashShader)
+   {
+      if (mSplashShaderConsts.isValid())
+         GFX-&gt;setShaderConstBuffer(mSplashShaderConsts);
+
+      mSplashShader-&gt;getShader()-&gt;process();
+   }
+</pre>
+                <p>As you can see, the main point of this section is addressed. If we
+                  are using the Splash Shader, we check to see if we have a valid shader
+                  constant buffer for splash rendering. If so, GFX sets the shader
+                  constant buffer before we render. </p>
+                <a name="Transpose_Gotcha" id="Transpose_Gotcha"></a>
+                <h2><a name = "HeaderLink4"></a>Transpose Gotcha</h2>
+                <p>Do not transpose transform matrices before passing a shader. Doing
+                  so will result in odd visuals, since you will be passing in the wrong
+                  matrix. You might see objects flickering and shooting off into infinity
+                  from your perspective. We've avoided doing this in the newer GFX2 code,
+                  but if you need to see an example of where this "Gotcha" was corrected,
+                  you can look at the fxFoliageReplicator class. Open
+                  fxFoliageReplicator.cpp. </p>
+                <p><br />
+                  The class's <a href="Render%20Delgate.html" title="TorqueGameEngineAdvanced/1 8 Beta/RenderDelegate">Render Delegate</a> is <b>renderObject(...)</b>.
+                  If you jump down to where the shader constant handles are set in this
+                  function (around line 1632), you will see the "Gotcha" being handled: </p>
+                <pre> // Set up our shader constants	
+// Projection matrix
+MatrixF proj = GFX-&gt;getProjectionMatrix();
+//proj.transpose();
+
+if (mFoliageShaderProjectionSC)
+               mFoliageShaderConsts-&gt;set(mFoliageShaderProjectionSC, proj);
+</pre>
+                <p>In the above code, we get the projection matrix from GFX. A few
+                  lines down, we set the shader. As you can see, we commented the
+                  transpose function. Keep this in mind when you are writing similar
+                  rendering code. </p>
+                <a name="Name_Consistency" id="Name_Consistency"></a>
+                <h2><a name = "HeaderLink5"></a>Name Consistency</h2>
+                <p>This can be a very frustrating "Gotcha", as the likelihood of
+                  repeating the mistake is high. You must avoid inconsistent naming of
+                  shader variables. As an example, we are going to examine a water shader
+                  which has been updated to work with TGEA 1.8. </p>
+                <p><br />
+                  You will want to open <b>GameExamples/Stronghold/game/shaders/water/waterCubeReflectRefractV.hlsl</b> with a text editor of your choice. Pay close attention to what
+                  variables are assigned to which registers. The previous version of this
+                  shader used a different name for its light vector: </p>
+                <pre>uniform float3   lightVec        : register(C21),
+</pre>
+                <p><br />
+                  In past versions, you would directly set the register and what
+                  you named lightVec did not matter. You were mainly concerned with using
+                  the appropriate variables defined in <b>shaderConsts.h</b>.
+                  Now, using "lightVec" as the name will result in odd water rendering,
+                  such as completely black. Compare this to TGEA 1.8's version of this
+                  shader: </p>
+                <pre>uniform float3   inLightVec      : register(C21),
+</pre>
+                <p><br />
+                  lightVec has been renamed to <i>inLightVec</i>. Using the new
+                  variable name solves the bad water rendering. This "Gotcha" is easy to
+                  fix, so long as you remember the following information. If you wish to
+                  use TGEA's material system with a shader, the variables you assign to a
+                  register must match the ones used in the shader gen related source
+                  files. If you have not already tracked these files down, let's take a
+                  look. </p>
+                <p><br />
+                  Navigate to the <i>engine/source/shaderGen</i> directory. Open <b>shaderGenVars.h</b> and <b>shaderGenVars.cpp</b>. In the header, a struct called <b>ShaderGenVars</b> is defined. Pre-TGEA 1.8 used VC_LIGHT_DIR1, so scroll down until you see something similar. You should come across this: </p>
+                <pre>const static String light1Direction;
+</pre>
+                <p>How does this relate to the naming consistency issue? Switch to shaderGenVars.cpp and browse for light1Direction again. </p>
+                <pre>const String ShaderGenVars::light1Direction("$inLightVec");
+</pre>
+                <p>Jackpot! This is where inLightVec is assigned, and this is how the
+                  shaders tie in with TGEA's custom material system. So, to reiterate,
+                  make sure the shader variable names you use in a shader file match the
+                  ones declared in the engine. Don't forget the $ symbol, either! </p>
+                <a name="Shader_Compile_Failure" id="Shader_Compile_Failure"></a>
+                <h2><a name = "HeaderLink6"></a>Shader Compile Failure</h2>
+                <p>This is a simple "Gotcha" to explain, but you need to keep an eye
+                  out for it. If your shader is not being displayed, or has bad results,
+                  check for a shader compile failure listed in the console. The engine
+                  may continue to run with only a warning about the compile failure. If
+                  this happens, go to the shader and check for any syntax errors or
+                  improper logic. </p>
+                <a name="Set_StateBlock" id="Set_StateBlock"></a>
+                <h2><a name = "HeaderLink7"></a>Set StateBlock</h2>
+                <p>The introduction of StateBlocks introduces a new "Gotcha", but only
+                  if you are coding in the engine. When you declare a GFXStateBlocKData
+                  in script, the StateBlock is automatically set. This isn't the case
+                  when you are working in the engine. If you need an example, let's take
+                  a look at the Sky class. Open Sky.cpp, then scroll down to <b>renderSkyBox(...)</b>. </p>
+                <pre>GFX-&gt;setStateBlock(mSkyBoxSB);
+</pre>
+                <p>The very first operation after the variables are declared is setting the StateBlock. This <b>must</b> happen before any rendering calls are made. Another issue with setting
+                  a StateBlock is the overriding that can occur. If you have declared a
+                  GFXStateBlock in script, it will override any C++ counterpart. For
+                  instance, if you are making changes to the terrain StateBlocks in C++,
+                  you will most likely not see any results since the TorqueScript version
+                  has taken over. </p>
+                <a name="RenderDelegate" id="RenderDelegate"></a>
+                <h2><a name = "HeaderLink8"></a>RenderDelegate</h2>
+                <p>When reading about a <a href="Render%20Delegate.html" title="TorqueGameEngineAdvanced/1 8 Beta/RenderDelegate">Render Delegate</a>,
+                  this "Gotcha" is stated but not in a way you might have noticed. Prior
+                  to TGEA 1.8, objects were automatically rendered using the same
+                  function signal. This function was renderObject(), which every object
+                  had to use if it wanted to be drawn on screen. </p>
+                <p><br />
+                  With the introduction of <a href="Render%20Delegate.html" title="TorqueGameEngineAdvanced/1 8 Beta/RenderDelegate">Render Delegate</a>,
+                  this is no longer the case. This is actually a huge benefit, as you can
+                  now name an object's render function more appropriately. For instance,
+                  if you could change the Sky class's rendering function name to
+                  "renderSky", so long as you modify its <a href="Render%20Delegate.html" title="TorqueGameEngineAdvanced/1 8 Beta/RenderDelegate">Render Delegate</a> at the time. </p>
+                <p><br />
+                  This brings up another "Gotcha" related to RenderDelegate. If you keep
+                  the function name "renderObject", you must change the function
+                  parameters and how it is set up. Again, let's use Sky as an example.
+                  Before 1.8, the prepRenderImage(...) class method contained this
+                  codeblock: </p>
+                <pre>if (state-&gt;isObjectRendered(this)) 
+{
+   RenderInst *ri = gRenderInstManager.allocInst();
+   ri-&gt;obj = this;
+   ri-&gt;state = state;
+   ri-&gt;type = RenderInstManager::RIT_Sky;
+   gRenderInstManager.addInst( ri );
+
+}
+</pre>
+                <p><br />
+                  Compare that to how TGEA 1.8 sets up the RenderInst pointer: </p>
+                <pre>if (state-&gt;isObjectRendered(this)) 
+{
+   ObjectRenderInst *ri = gRenderInstManager-&gt;allocInst&lt;ObjectRenderInst&gt;();
+   ri-&gt;mRenderDelegate = mRenderDelegate;
+   ri-&gt;state = state;
+   ri-&gt;type = RenderPassManager::RIT_Sky;
+   gRenderInstManager-&gt;addInst( ri );
+}
+</pre>
+                <p><br />
+                  There are several changes to this code block, but we will
+                  address all of them in the Sky Class Comparison document. For now,
+                  let's focus on the assignment of <b>mRenderDelegate</b>.
+                  Sky's RenderDelegate is assigned to Sky::renderObject(...). This
+                  function existed before TGEA 1.8 and continues to exist in the current
+                  version of TGEA. However, there is not a 1 to 1 compatibility between
+                  the versions. The parameters that are passed have changed: </p>
+                <p><br />
+                  <b>Previous TGEA Version</b> </p>
+                <pre>void renderObject(SceneState *state, RenderInst *ri);
+</pre>
+                <p><b>TGEA 1.8 Version</b> </p>
+                <pre>void renderObject(ObjectRenderInst *ri, BaseMatInstance* );
+</pre>
+                <p><br />
+                  Instead of taking in SceneState and RenderInst pointers, the new renderObject function takes in an [<a href="GFXRenderManagement.html#ObjectRenderInst%7CObjectRenderInst*" class="external autonumber" title="http://tdn.garagegames.com/wiki/TorqueGameEngineAdvanced/1 8 Beta/GFXRenderManagement#ObjectRenderInst|ObjectRenderInst*" rel="nofollow">[1]</a>]
+                  and a BaseMatInstance*. The main point is previous class
+                  implementations of renderObject(...) are no longer compatible with TGEA
+                  1.8 renderObject(...). </p>
+                <p><br />
+                  Remember this point or you could end up with a compiler error that
+                  makes no sense and is hard to track down. For example, Sky's
+                  RenderDelegate member variable is bound in the constructor: </p>
+                <pre>mRenderDelegate.bind(this, &amp;Sky::renderObject);
+</pre>
+                <p>If you do not modify the old Sky::renderObject(...) parameters, you will receive this error: </p>
+                <pre>error C2660: 'fastdelegate::FastDelegate2&lt;Param1,Param2,RetType&gt;::bind' : function does not take 2 arguments
+</pre>
+                <p>Notice the lack of information pointing you to the renderObject(...) function. </p>
+                <a name="GLSL_Texture_Order" id="GLSL_Texture_Order"></a>
+                <h2><a name = "HeaderLink9"></a>GLSL Texture Order</h2>
+                <p>By supporting OpenGL, we have to adhere to certain rules we were not
+                  obligated to follow in past versions of TGEA. One such rule is enforced
+                  when creating ShaderData objects in TorqueScript. ShaderData must now
+                  contain DX and OGL shader file references, as well as a new element. </p>
+                <p>If you open <i>C:/torque/TGEA_1_8_Repo/GameExamples/Stronghold/game/common/clientScripts/shaders.cs</i>, you will see a perfect example of this "Gotcha": </p>
+                <pre>new ShaderData( _DebugInterior_ )
+{
+   DXVertexShaderFile   = "shaders/debugInteriorsV.hlsl";
+   DXPixelShaderFile    = "shaders/debugInteriorsP.hlsl";
+   
+   OGLVertexShaderFile   = "shaders/gl/debugInteriorsV.glsl";
+   OGLPixelShaderFile    = "shaders/gl/debugInteriorsP.glsl";
+   
+   OGLSamplerNames[0] = "$diffuseMap";
+   
+   pixVersion = 1.1;
+};
+</pre>
+                <p><br />
+                  Notice how vertex and pixel shader files are represented for both DX and OGL. That's not all. Look at the <b>OGLSamplerNames[0]</b> variable and the <b>$diffuseMap</b> value assigned to it. This is a new section of ShaderData, which is
+                  necessary because a GL shader does not know anything about texture
+                  order. Unlike a hlsl shader, it does not assume anything. </p>
+                <p><br />
+                  Let's compare the pixel shaders listed in the above ShaderData object. Specifically, let's focus on the diffuseMap usage: </p>
+                <p><br />
+                  DX (debugInteriorsP.hlsl) </p>
+                <pre>//-----------------------------------------------------------------------------
+// Structures                                                                  
+//-----------------------------------------------------------------------------
+struct ConnectData
+{
+   float2 texCoord        : TEXCOORD0;
+};
+
+
+struct Fragout
+{
+   float4 col : COLOR0;
+};
+
+
+//-----------------------------------------------------------------------------
+// Main                                                                        
+//-----------------------------------------------------------------------------
+Fragout main( ConnectData IN,
+              uniform sampler2D diffuseMap      : register(S0),
+              uniform float4    shadeColor      : register(C0)
+              
+)
+{
+   Fragout OUT;
+
+   OUT.col = shadeColor;
+   OUT.col *= tex2D(diffuseMap, IN.texCoord);
+
+   return OUT;
+}
+</pre>
+                <p><br />
+                  OGL (debugInteriorsP.glsl) </p>
+                <pre>uniform sampler2D diffuseMap;
+uniform vec4 shadeColor;
+
+varying vec2 TEX0;
+
+void main()
+{
+   vec4 diffuseColor = texture2D( diffuseMap, TEX0 );
+   
+   gl_FragColor = diffuseColor;
+   gl_FragColor *= shadeColor;
+}
+</pre>
+                <p><br />
+                  As you can see in the OGL shader, the texture order is explicitly expressed in the first line of the <i>main()</i> function. Since you must have a OpenGL shader equivalent to the DX version, keep this texture order "Gotcha" in mind. </p>
+                <a name="Shared_Shader_Global_Space" id="Shared_Shader_Global_Space"></a>
+                <h2><a name = "HeaderLink10"></a>Shared Shader Global Space</h2>
+                <p>This is a simple "Gotcha" to remember. Pixel and vertex shaders
+                  constants share the same global space. You must name your variables
+                  differently. Let's say you are using $modelView for a pixel shader
+                  const and vertex shader const. The system will read in and use the
+                  vertex shader first. </p>
+                <p><br />
+                  Now, if a variable contains the same data for both shader consts, you
+                  should not have a problem. However, this is not always going to be the
+                  case and you should keep this in mind. </p>
+                <a name="Resource_Loading_Change" id="Resource_Loading_Change"></a>
+                <h2><a name = "HeaderLink11"></a>Resource Loading Change</h2>
+                <p>The new Resource Manager introduces a "Gotcha", which directly
+                  affects the loading of texture files, such as bitmaps and DDS.
+                  Previously, the GBitmap and DDSFile classes would return a class
+                  pointer. For example: </p>
+                <pre>GBitmap* bitmap = GBitmap::load( path );
+</pre>
+                <p><br />
+                  This is no longer the case. The new Resource Manger actually
+                  returns a resource handle. The GFXTextureManager class has a perfect
+                  example. An extremely important class function <b>GFXTextureManager::createTexture(...)</b>. Within this function, we can see the Resource Manager in action: </p>
+                <pre>// MP: Load a DDS file
+Resource&lt;DDSFile&gt; dds = DDSFile::load( path );
+
+// MP: Load a bitmap file
+Resource&lt;GBitmap&gt; bitmap = GBitmap::load( path );
+</pre>
+                <p><br />
+                  As you can see, instead of returning a class pointer (GBitmap* or
+                  DDSFile*), the ::load function now returns a handle to the
+                  resource, via a templated class that acts as a wrapper
+                  (Resource&lt;class T&gt;). </p>
+                <a name="What_is_a_CSF.3F" id="What_is_a_CSF.3F"></a>
+                <h2><a name = "HeaderLink12"></a>What is a CSF?</h2>
+                <p>Simply put, CSF stands for <b>C</b>ompiled <b>S</b>hader <b>F</b>ile.
+                  CSF files are automatically created, depending on a few conditions
+                  checked by the engine internally. CSF files have a similar
+                  functionality as DSO files. </p>
+                <p>When you compile a TorqueScript file to DSO, the game still
+                  reads it properly, but the script itself is converted to binary form
+                  making it more secure. When your shader file is compiled to CSF, it can
+                  no longer be modified by an end user. </p>
+                <p><br />
+                  When a shader declaration is read, the engine initializes it internally: </p>
+                <pre>bool GFXD3D9Shader::init(  const Torque::Path &amp;vertFile, 
+                           const Torque::Path &amp;pixFile, 
+                           F32 pixVersion,
+                           const Vector&lt;GFXShaderMacro&gt; &amp;macros )
+{
+        ...
+}
+</pre>
+                <p><br />
+                  Inside the the init function, there is a check to see if the system needs to compile the shader: </p>
+                <pre>if ((GFXD3DX.isLoaded) &amp;&amp; (!Con::getBoolVariable("$shaders::forceLoadCSF", false)))
+   {
+      _compileShader( vertFile, vertTarget, d3dXMacros, mVertexConstBufferLayoutF, mVertexConstBufferLayoutI);
+...
+</pre>
+                <p><br />
+                  In the engine's source, there is a preprocessor definition named <b>TORQUE_ENABLE_CSF_GENERATION</b>. If this has been defined, the shader file will be compiled and saved out as a CSF: </p>
+                <pre>#ifdef TORQUE_ENABLE_CSF_GENERATION
+      // Ok, we've got a valid shader and constants, let's write them all out.
+      if (!_saveCompiledOutput(filePath, code, bufferLayoutF, bufferLayoutI))
+         Con::errorf("Unable to save shader compile output for: %s", filePath);
+#endif
+</pre>
+                <a name="Material_Initialization" id="Material_Initialization"></a>
+                <h2><a name = "HeaderLink13"></a>Material Initialization</h2>
+                <p>The way materials are initialized has changed. We can look at the MatInstance class (<i>engine/source/materials/matInstance.h</i>) to see this modification: </p>
+                <p><br />
+                  Old Initialization Function </p>
+                <pre>void init( SceneGraphData &amp;dat, GFXVertexFlags vertFlags );
+</pre>
+                <p><br />
+                  New Initialization Function </p>
+                <pre>virtual void init(const GFXMaterialFeatureData::FeatureListHandle instanceData, const GFXMaterialFeatureData::FeatureListHandle globalData, GFXVertexFlags vertFlags);
+</pre>
+                <p><br />
+                  Previously, the init(...) function took in a SceneGraphData
+                  reference which was parsed for information and features. In TGEA 1.8,
+                  we pass in two very different parameters in addition to the original <i>vertFlags</i> parameter: </p>
+                <ul>
+                  <li><b>GFXMaterialFeatureData::FeatureListHandle instanceData</b> -
+                    Should contain all of the features that this instance can support. For
+                    example, if it supports lightmaps then LightMap should be turned on,
+                    but if it's an instance for a mesh without lightmaps, then lightmap
+                    should be off. </li>
+                  <li><b>GFXMaterialFeatureData::FeatureListHandle globalData</b> -
+                    Used to turn features on and off at a more broad level. By default,
+                    just get the one from the MaterialManager. This and instance data are
+                    AND'ed together and used with the material setup to figure out which
+                    features to turn on and off. </li>
+                  <li><b>GFXVertexFlags vertFlags</b> - The vertex type to be used with this instance. </li>
+                </ul>
+                <a name="OGLSamplerNames_Field_Name_Change" id="OGLSamplerNames_Field_Name_Change"></a>
+                <h2><a name = "HeaderLink14"></a>OGLSamplerNames Field Name Change</h2>
+                <p>Prior to TGEA 1.8, the exposed form of the ShaderData class
+                  (ConsoleObject used in TorqueScript) used a field named
+                  "OGLSamplerNames". The internal variable used by this field was
+                  ShaderData::mOGLSamplerNames, found in
+                  engine/source/materials/shaderData.h. </p>
+                <pre>void ShaderData::initPersistFields()
+{
+   // ... previous and remaining code not shown
+    
+   String                  mOGLSamplerNames[TEXTURE_STAGE_COUNT];
+
+}
+</pre>
+                <p><br />
+                  This variable was used in many places throughout the engine, but was
+                  exposed to TorqueScript in ShaderData:initPersistFields() (found in
+                  engine/source/shaderData.cpp): </p>
+                <pre>addField("OGLSamplerNames",      TypeRealString,      Offset(mOGLSamplerNames, ShaderData), TEXTURE_STAGE_COUNT);
+</pre>
+                <p><br />
+                  The latest version of TGEA has renamed both the class member
+                  variable and the script implementation. The following code represents
+                  the name change: </p>
+                <p><b>Declaration of class variable in engine/source/shaderData.h:</b> </p>
+                <pre>String                  mSamplerNames[TEXTURE_STAGE_COUNT];
+</pre>
+                <p><br />
+                  <b>Exposing variable to script in engine/source/shaderData.cpp:</b> </p>
+                <pre>void ShaderData::initPersistFields()
+{
+   // ... previous and remaining code not shown
+
+   String                  mSamplerNames[TEXTURE_STAGE_COUNT];
+
+}
+                </pre>
+                <a name="Automated_Mapping_of_samplerNames" id="Automated_Mapping_of_samplerNames"></a>
+                <h2><a name = "HeaderLink15"></a>Automated Mapping of samplerNames</h2>
+                <p>A new class method has been added to ShaderData, which can be found in enginer/source/materials/shaderData.h/.cpp: </p>
+                <pre>void mapSamplerNames(GFXShaderConstBufferRef constBuffer);
+</pre>
+                <p><br />
+                  The new function definition can be found below: </p>
+                <pre>//--------------------------------------------------------------------------
+// mapSamplerNames
+//--------------------------------------------------------------------------
+void ShaderData::mapSamplerNames(GFXShaderConstBufferRef constBuffer)
+{
+   if (constBuffer.isNull())
+      return;
+
+   // Map the stage numbers to the constants
+   for (U32 i = 0; i &lt; TEXTURE_STAGE_COUNT; i++)
+   {
+      if (mTexHandlesSC[i])
+         constBuffer-&gt;set(mTexHandlesSC[i], (S32)i);
+   }
+}
+</pre>
+                <p><br />
+                  The purpose of this new method is to automate the mapping of the
+                  "samplerNames" fields from script to the actual shader buffer
+                  constants. You should use this function anytime after you use
+                  GFXShader::allocConstBuffer() and pass it in your newly created
+                  GFXShaderConstBufferRef so it can map the actual texture stage values
+                  into your constant buffer's parameters. </p>
+                <p><br />
+                  You will need to do this to allow GLSL shaders to properly sample from
+                  the right texture register. A simple example can be found in
+                  GroundCover class, specifically GroundCover::_initShader(). Open up <i>engine/source/T3D/fx/groundCover.cpp</i>.
+                  Scroll down to the function I just mentioned. Halfway through the
+                  function, after the samplers are set up, you will see the example: </p>
+                <p>void GroundCover::_initShader()
+                  { </p>
+                <pre>  // ... previous and remaining code not shown
+</pre>
+                <pre>  mConstBuffer = mBBShader-&gt;mShader-&gt;allocConstBuffer();
+</pre>
+                <pre>  if (mConstBuffer)
+     mBBShader-&gt;mapSamplerNames(mConstBuffer);
+</pre>
+                <p>}
+                  &lt;/pre&gt; </p>
+                <p><br />
+                  As you can see, once the allocConstBuffer is called successfully we call mapSamplerNames with thew newly defined mConstBuffer. </p>
+                <a name="November_2008_DirectX_SDK_Shader_Bug" id="November_2008_DirectX_SDK_Shader_Bug"></a>
+                <h2><a name = "HeaderLink16"></a>November 2008 DirectX SDK Shader Bug</h2>
+                <p>There was a bug in the shader compiler in the November 2008 DirectX SDK (as referenced in this GarageGames forum thread: <a href="result.thread82a7.html?qt=80763" class="external text" title="http://www.garagegames.com/mg/forums/result.thread.php?qt=80763" rel="nofollow">TGEA 1.7.1 and DirectX Nov. 2008 - broken</a> ). A workaround was added for it that is specific to the Nov 2008 DXSDK (also detailed in that thread). </p>
+                <p><br />
+                  However, we recommend you stick with the August 2008 DXSDK
+                  (also linked in that thread). Our contacts at Microsoft informed us the
+                  bug report was recorded and should be fixed in the March 2009 DirectX
+                  SDK. </p></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        
+    
+  
+  
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/GFX/TGEA 1.8 Gotchas.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:16 GMT -->
+</html>

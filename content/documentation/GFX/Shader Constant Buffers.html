@@ -1,0 +1,238 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/GFX/Shader Constant Buffers.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4193;
+   parent.leftFrame.expandToItem('tree2', 'doc4193');
+   var element = parent.leftFrame.document.getElementById('doc4193');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueGameEngineAdvanced/1 8 Beta/GFXShaderConstantBuffers - TDN</title>
+<link rel="stylesheet" type="text/css" href="container.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  bgcolor="#FFFFFF" id="body-with-lockmark">
+
+<table width="700" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+      
+        <table width="700" border="0" cellpadding="0" cellspacing="0" xmlns="http://www.w3.org/1999/xhtml">
+          <tbody>
+            <tr>
+              <td width="700"><table id="toc">
+                  <tbody>
+                    <tr>
+                      <td><div id="toctitle">
+                          <h2><a name = "HeaderLink0"></a>Contents</h2>
+                          <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+                        <ul>
+                          <li class="toclevel-1"><a href="#Concept"><span class="tocnumber">1</span> <span class="toctext">Concept</span></a></li>
+                          <li class="toclevel-1"><a href="#Technical_Description"><span class="tocnumber">2</span> <span class="toctext">Technical Description</span></a></li>
+                          <li class="toclevel-1"><a href="#Source_Code"><span class="tocnumber">3</span> <span class="toctext">Source Code</span></a></li>
+                          <li class="toclevel-1"><a href="#Engine_Example"><span class="tocnumber">4</span> <span class="toctext">Engine Example</span></a></li>
+                          <li class="toclevel-1"><a href="#Conclusion"><span class="tocnumber">5</span> <span class="toctext">Conclusion</span></a></li>
+                        </ul></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>
+                  </p>
+                <a name="Concept" id="Concept"></a>
+                <h2><a name = "HeaderLink1"></a>Concept</h2>
+                <p>Much like state blocks, shader constant buffers are new tech
+                  introduced in TGEA 1.8 which help reduce the amount of rendering code
+                  you have to write. This concept is quite similar to DiretX 10's version
+                  of constant buffers, which share a similar purpose: </p>
+                <p><br />
+                  <b>Quoted concepts from DirectX HLSL MSDN:</b> </p>
+                <pre>A constant buffer, or shader constant buffer, is a buffer that contains shader constants. 
+Conceptually, it looks just like a single-element vertex buffer. 
+A constant buffer is a specialized buffer resource that is accessed like a buffer. 
+A buffer resource is designed to minimize the overhead of setting shader constants.
+</pre>
+                <a name="Technical_Description" id="Technical_Description"></a>
+                <h2><a name = "HeaderLink2"></a>Technical Description</h2>
+                <p>A shader constant buffer is just a block of memory (or an object)
+                  that contains the constants that a shader needs to have bound.
+                  Specifically, the buffer a collection of string/value pairs that are
+                  sent to a shader. They are allocated by the shader itself because the
+                  shader may have information about layout that no other part of the
+                  system will know about. </p>
+                <p><br />
+                  You can look up handles by shader constant name. This removes the need
+                  for a static shader constant to slot mapping and also allows us to do
+                  some CPU side optimizations. Under the hood, the string value pair is
+                  mapped to a block of memory that can be handed to a shader with one
+                  call. </p>
+                <a name="Source_Code" id="Source_Code"></a>
+                <h2><a name = "HeaderLink3"></a>Source Code</h2>
+                <p>We are going to take a light tour of the engine code that makes up the GFXShaderConstBuffer system. Let's start by opening <i>engine/source/gfx/gfxShader.h</i>. Toward the top of this header, you will see a struct and two base classes that make up this system: </p>
+                <pre>/// Instances of this struct are returned GFXShaderConstBuffer
+struct GFXShaderConstDesc {...};
+
+
+/// This is an opaque handle used by GFXShaderConstBuffer clients to set individual shader constants.
+/// Derived classes can put whatever info they need into here, these handles are owned by the shader constant buffer
+/// (or shader).  Client code should not free these.
+class GFXShaderConstHandle {...};
+
+
+/// GFXShaderConstBuffer is a collection of string/value pairs that are sent to a shader.
+/// Under the hood, the string value pair is mapped to a block of memory that can
+/// be blasted to a shader with one call (ideally)
+class GFXShaderConstBuffer {...}
+</pre>
+                <p><br />
+                  It should be obvious by the amount of pure virtual function
+                  declarations that GFXShaderConstHandle and GFXShaderConstBuffer are
+                  meant to have children. Both GFXD3D9 and GFXGL will get their own
+                  versions of shader constant buffers. In this file, there is not much
+                  you can learn from GFXShaderConstHandle. However, you might want to
+                  scan GFXShaderConstBuffer. </p>
+                <p><br />
+                  It is derived from StrongRefBase and GFXResource. Being a
+                  StrongRefBase object, the stateblock will exist as long as the
+                  reference exists. When all of the strong references to the stateblock
+                  go away, it is permanently deleted. It is treated as a GFXResource
+                  since our GFX system needs to track its resources owned by a particular
+                  device. </p>
+                <p><br />
+                  The virtual function declarations should give you insight on how we are
+                  setting up the future child functionality. We have almost twenty
+                  overloaded functions named <b>set(...)</b>.
+                  Each one takes in a GFXShaderConstHandle* and a constant. The handles
+                  contains the name of the constant, which should be a name contained in
+                  the array returned in getShaderConstDesc. </p>
+                <p><br />
+                  It is very important that you remember what GFXShaderConstBufferRef is: </p>
+                <p><br />
+                  <b>In engine/source/gfx/gfxShader.h:</b> </p>
+                <pre>typedef StrongRefPtr&lt;GFXShaderConstBuffer&gt; GFXShaderConstBufferRef;
+</pre>
+                <p><br />
+                  GFXShaderConstBufferRef is like a pointer (reference) to
+                  GFXShaderConstBuffer, with a few key differences. A few paragraphs back
+                  I mentioned GFX tracking its resources and references, and this is one
+                  of the ways it does so. This is a <b>referenced counted</b>, object template pointer class (quite descriptive!). Heavy emphasis on the <b>referenced counted</b>. </p>
+                <p><br />
+                  If you open engine/source/gfx/gl/gfxGLShader.h, you can see how we have set up our OpenGL version of a constant shader buffer. </p>
+                <p><br />
+                  <b>We have our child class declaration:</b> </p>
+                <pre>class GFXGLShaderConstBuffer : public GFXShaderConstBuffer{...}
+</pre>
+                <p><br />
+                  <b>The GL version contains an activation function:</b> </p>
+                <pre>/// Called by GFXGLDevice to activate this buffer.
+void activate();
+</pre>
+                <p><br />
+                  <b> The class even keeps track of the shader that creates the buffer:</b> </p>
+                <pre>GFXGLShader* mShader;
+
+/// Return the shader that created this buffer
+virtual GFXShader* getShader() { return mShader; }
+</pre>
+                <p><br />
+                  Of course, the multiple virtual void set(...) functions get defined as
+                  well, but in the gfxGLShader.cpp file. The base relationship you should
+                  remember is a GFX shader creates and uses a shader constant buffer,
+                  while the constant buffer keeps track of its owner and sets the actual
+                  constants. </p>
+                <a name="Engine_Example" id="Engine_Example"></a>
+                <h2><a name = "HeaderLink4"></a>Engine Example</h2>
+                <p>As for an engine example, I'll start with a generic chunk of code: </p>
+                <p><br />
+                  <b>Instead of:</b> </p>
+                <pre>GFX-&gt;setShaderVertexConstF(14, myConst);
+</pre>
+                <p><br />
+                  <b>We will set up our constant buffer and handle once</b> </p>
+                <pre>// Setup code
+GFXShaderConstBuffer* myBuff = shader-&gt;allocConstBuffer();
+GFXShaderConstHandle* myHandle = shader-&gt;getShaderConstHandle("$diffuseColor");
+</pre>
+                <p><br />
+                  <b>Now you can set the constant buffer</b> </p>
+                <pre>// Render code
+myBuff-&gt;set(myHandle, myConst);
+GFX-&gt;setShaderConstBuffer(myBuff);
+</pre>
+                <p><br />
+                  Now that you see the basic code concept, let's see an actual
+                  working constant buffer. Most gamers and developers know what bloom is
+                  by now, so we are going to focus on code related to rendering the blur
+                  for a bloom effect. Open <b>engine/source/lightingSystem/synapsegaming/sgDynamicRangeLighting.h/.cpp</b>. </p>
+                <p><br />
+                  <b>The </b>sgDRLSurfaceChain<b> class contains the two variables we want to follow for this example:</b> </p>
+                <pre>ShaderData *sgBloomBlur;
+GFXShaderConstBufferRef sgBloomBlurConstBuffer;
+</pre>
+                <p><br />
+                  Next, the setup begins... </p>
+                <p><br />
+                  In sgDynamicRangeLighting.cpp, sgDRLSurfaceChain::sgPrepChain(...): </p>
+                <pre>sgBloomBlurConstBuffer = sgBloomBlur-&gt;mShader-&gt;allocConstBuffer();
+</pre>
+                <p><br />
+                  The blur shader (sgBloomBlur) initializes our shader constant buffer.
+                  When we get into the render chain function (sgRenderChain), we get to
+                  the two big function calls for our system </p>
+                <p><br />
+                  <b>Just after we set our stateblock in sgRenderChain(...):</b> </p>
+                <pre>GFX-&gt;setShaderConstBuffer(sgBloomBlurConstBuffer);
+
+// MP Documentation Note - Slightly further down in code
+
+Point4F temp(sgLightManager::sgBloomSeedAmount, sgLightManager::sgBloomSeedAmount,
+			sgLightManager::sgBloomSeedAmount, sgLightManager::sgBloomSeedAmount);
+
+sgLightManager::sgSafeSet(sgBloomBlurConstBuffer, sgDRLSurfaceChain::sgBloomSeedAmountShaderVar, temp);
+</pre>
+                <p><br />
+                  Not the easiest concept to pick up and master, but the core
+                  functionality makes sense after you get used to reading through the
+                  rendering code. </p>
+                <a name="Conclusion" id="Conclusion"></a>
+                <h2><a name = "HeaderLink5"></a>Conclusion</h2>
+                <p>The intent of this document was to provide you with a strong
+                  introduction to GFX shader constant buffers. There are various examples
+                  scattered throughout the engine, so you might want to spend some more
+                  time browsing through the code and comments. </p>
+                <p><br />
+                  Should you decide to create your own custom classes with renderable
+                  objects, remember to check this doc again and see how you can use
+                  constant buffers in your code. The optimization is well worth the
+                  learning curve. </p></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        
+    
+  
+  
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/GFX/Shader Constant Buffers.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:14 GMT -->
+</html>

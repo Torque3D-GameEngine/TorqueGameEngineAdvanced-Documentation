@@ -1,0 +1,223 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/3D Studio Max/Simple Character.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4272;
+   parent.leftFrame.expandToItem('tree2', 'doc4272');
+   var element = parent.leftFrame.document.getElementById('doc4272');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Using Art Assets - Creating a Simple Character</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+<td>
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class='toclevel-1'><a href="#Create_model"><span class="tocnumber">2</span> <span class="toctext">Create model</span></a>
+<ul>
+<li class='toclevel-2'><a href="#Create_sphere_and_box"><span class="tocnumber">2.1</span> <span class="toctext">Create sphere and box</span></a></li>
+<li class='toclevel-2'><a href="#UV.2FTexture"><span class="tocnumber">2.2</span> <span class="toctext">UV/Texture</span></a></li>
+<li class='toclevel-2'><a href="#Proper_scaling_methods"><span class="tocnumber">2.3</span> <span class="toctext">Proper scaling methods</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="#Setup_Export_nodes"><span class="tocnumber">3</span> <span class="toctext">Setup Export nodes</span></a>
+<ul>
+<li class='toclevel-2'><a href="#Hierarchy"><span class="tocnumber">3.1</span> <span class="toctext">Hierarchy</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="#Animation"><span class="tocnumber">4</span> <span class="toctext">Animation</span></a>
+<ul>
+<li class='toclevel-2'><a href="#Creating_animations"><span class="tocnumber">4.1</span> <span class="toctext">Creating animations</span></a>
+<ul>
+<li class='toclevel-3'><a href="#Root"><span class="tocnumber">4.1.1</span> <span class="toctext">Root</span></a></li>
+<li class='toclevel-3'><a href="#Forward"><span class="tocnumber">4.1.2</span> <span class="toctext">Forward</span></a></li>
+<li class='toclevel-3'><a href="#Back"><span class="tocnumber">4.1.3</span> <span class="toctext">Back</span></a></li>
+<li class='toclevel-3'><a href="#Side"><span class="tocnumber">4.1.4</span> <span class="toctext">Side</span></a></li>
+<li class='toclevel-3'><a href="#Jump"><span class="tocnumber">4.1.5</span> <span class="toctext">Jump</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="#Sequence_setup"><span class="tocnumber">4.2</span> <span class="toctext">Sequence setup</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="#Export"><span class="tocnumber">5</span> <span class="toctext">Export</span></a>
+<ul>
+<li class='toclevel-2'><a href="#.cfg_file"><span class="tocnumber">5.1</span> <span class="toctext">.cfg file</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="#Get_ingame"><span class="tocnumber">6</span> <span class="toctext">Get ingame</span></a>
+<ul>
+<li class='toclevel-2'><a href="#A.09Test_in_Show_Tool_Pro"><span class="tocnumber">6.1</span> <span class="toctext">A	Test in Show Tool Pro</span></a></li>
+<li class='toclevel-2'><a href="#Replace_Orc"><span class="tocnumber">6.2</span> <span class="toctext">Replace Orc</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="#Troubleshooting"><span class="tocnumber">7</span> <span class="toctext">Troubleshooting</span></a>
+<ul>
+<li class='toclevel-2'><a href="#No_Details_to_Export"><span class="tocnumber">7.1</span> <span class="toctext">No Details to Export</span></a></li>
+<li class='toclevel-2'><a href="#No_bounding_box_found"><span class="tocnumber">7.2</span> <span class="toctext">No bounding box found</span></a></li>
+<li class='toclevel-2'><a href="#Unexpected_material_type_on_node_.3Csomenode.3E"><span class="tocnumber">7.3</span> <span class="toctext">Unexpected material type on node &lt;somenode&gt;</span></a></li>
+<li class='toclevel-2'><a href="#Model_exports_but_isn.27t_visible_when_loaded_ingame"><span class="tocnumber">7.4</span> <span class="toctext">Model exports but isn't visible when loaded ingame</span></a></li>
+<li class='toclevel-2'><a href="#You_setup_the_materials_and_they.27re_visible_on_the_model_in_3ds_Max.2C_but_the_dts_still_shows_up_white_ingame"><span class="tocnumber">7.5</span> <span class="toctext">You setup the materials and they're visible on the model in 3ds Max, but the dts still shows up white ingame</span></a></li>
+<li class='toclevel-2'><a href="#You_replaced_the_orc_with_the_pogo_character.2C_but_the_engine_crashes_when_you_spawn"><span class="tocnumber">7.6</span> <span class="toctext">You replaced the orc with the pogo character, but the engine crashes when you spawn</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="Introduction"></a><h2><a name = "HeaderLink1"></a>Introduction</h2>
+<p>	To help introduce you to the basics of exporting characters to Torque, we're going to start with a very basic example.  While the model isn't all that impressive looking, make sure you go through this tutorial anyway when first trying to export a player, as it covers a number of usefull topics&nbsp;;)  We'll be creating a simple Pogo character; basically a sphere and a box that will hop around and be controllable as a player ingame.
+</p>
+<a name="Create_model"></a><h2><a name = "HeaderLink2"></a>Create model</h2>
+   <a name="Create_sphere_and_box"></a><h4><a name = "HeaderLink3"></a>Create sphere and box</h4>
+<div class="floatright"><span><img src="CreateSphere.jpg"></span></div>
+<p>	To start with, we need to create some geometry to work with, so go to the Create panel in max, and on the geometry page select sphere, and drag out a sphere with a radius of .5, and give it 14 segments - enough to look pretty round, while keeping the polycount low.  Torque's unit system means one unit in max, of whatever type max is set to, is equal to one meter ingame.  So this 1 unit diameter sphere will be half a meter ingame.  
+</p><p>	To make it easier to align the box we'll create in a moment, let's go ahead and center the sphere on the max coordinate system.  Select the sphere, turn on the move tool, and right click on the move tool to open the Move Transform Type-In dialog box.  Right click on the spinners for Absolute:World X, Y, and Z.  This will center the sphere on the coordinate system.  Since we want our model to be player sized, we need to move it up a bit, so for Z, type in 1.75.  This will mean our player model is 2.25 meters tall ingame (1.75 meters up to the center of the sphere, plus the .5 radius).
+</p>
+<div class="floatleft"><span><img src="ZeroCoords.jpg"></span></div>
+<p>	In the top viewport, drag out a box with length and width of .5, and height of 1.75.  Like you did with the sphere, select the box, turn on the move tool, and right click on it to open the Move Transform Type-In dialog box.  Right click on the spinners for X Y and Z.  Since the box was created in the top viewport, the pivot point is centered on the bottom of the box, so this will align our box perfectly with the sphere.  
+</p>
+	<a name="UV.2FTexture"></a><h4><a name = "HeaderLink4"></a>UV/Texture</h4>
+<p>	The primitives in max are able to generate basic UV coordinates automatically simply by clicking Generate Mapping Coords. under their properties rollout, so we won't cover complex uv mapping in this tutorial.  There are a number of tutorials online, as well as several Max comes with if you want to learn about UV Mapping.  We do however, still need to assign a texture. We'll just use a basic texture as an example, though you could of course make something more complex if you wanted.  
+</p>
+Open your image editing program, create a new image with<div class="thumb tleft"><div style="width:162px;"><a href="MatEd.jpg"><img src="160px-MatEd.jpg"></a>  <div class="thumbcaption" ><div class="magnify" style="float:right"><a href="MatEd.jpg" class="internal" title="Enlarge"><img src="magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div></div></div></div> a resolution of 128x128, and fill it with the color of your choice (we'll use blue in the tutorial so it matches the blue Box Guy).  Save this texture as a jpg, and name it base.pogo.jpg.  Having base. in front of the name will allow torque to easily swap the texture out ingame if we so choose.
+<p>		Back in max, open the Material Editor by pushing m on your keyboard.  In a new material slot, click the square next to the diffuse color swatch, and choose Bitmap from the window that pops up.  Navigate to the place you saved the base.pogo.jpg texture, and select it.  Now select both the box and the sphere in the viewport, and drag the big sphere that represents your material from the material editor onto the box and sphere, and when it asks if you want to apply to object or selection, choose selection.  Now when you export, the character shouldn't be white, but instead use the jpg for the texture.
+</p><p>For a more detailed overview of the material system with torque, be sure to read the <a href="Materials.html" title="Materials">Materials</a> tutorial.
+</p>
+	<a name="Proper_scaling_methods"></a><h4><a name = "HeaderLink5"></a>Proper scaling methods</h4>
+<p>	While we created this simple model at the proper scale for torque, in many cases the model is much too big for torque to begin with.  If you were to just scale the mesh(es) like normal, it would look the proper size in 3ds Max, but after exporting, it would still be huge ingame.  In order to properly scale the model, you have three choices.  
+</p><p>	If you've already scaled it down improperly using the scale tool, you're best bet is probably the Box Trick.  To use the box trick, drag out a box in the perspective or top viewport, right click it, and go to convert to -&gt; editable mesh.  On the Modify tab of the Command Panel among the editable mesh tools, locate and click attach, and click on the mesh you scaled down already.  Now go to the element subobject mode (shortcut key is 5 by default) and select then delete the box you dragged out for this.  This resets the transforms on the model so the exporter will realize its actually this small.
+</p><p>	If you've not scaled yet, usually the easiest method is to go into a subobject mode such as Vertex, select all, and then scale.  As long as you're in a subobject mode when you scale, torque will realize the mesh has been scaled.
+</p><p>	There are some times when either of these two methods would result in a lot of work having to be redone, particularly after rigging a complex character with the skin modifier.  To work around this, Max includes a handy utility called Rescale World Units.  To use it, go to the Utilities tab on the Command panel, click the More button, and select Rescale World Units.  After clicking OK, a new button will appear on the utilities panel saying Rescale... Click this button and a dialog will pop up to allow you to rescale either by scene or selection.  As the scale factor you use will vary per model, you'll likely have to experiment a bit to get the proper size.
+</p>
+<a name="Setup_Export_nodes"></a><h2><a name = "HeaderLink6"></a>Setup Export nodes</h2>
+	<a name="Hierarchy"></a><h4><a name = "HeaderLink7"></a>Hierarchy</h4>
+<div class="thumb tright"><div style="width:182px;"><a href="PogoHierarchy.jpg"><img src="180px-PogoHierarchy.jpg"></a>  <div class="thumbcaption" ><div class="magnify" style="float:right"><a href="PogoHierarchy.jpg" class="internal" title="Enlarge"><img src="magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div></div></div></div>
+<p>	Before animating, it's usually a good idea to setup the export and test, since you may need to change the hierarchy if it's not right, which in some cases will throw off existing animations.  To start with, name the sphere sphere2 and the box box2.  The first part of the name isn't important, but the number on the end is, as it specifies which LOD level those meshes belong to, in this case detail2.  Now go to the utilities tab on the Command panel in Max, click More, and select DTS Exporter Utility.  A number of new rollouts will appear, with the Utilities one already being expanded.  Select both sphere2 and box2, and click Embed Shape. (Note: if you want, you can Embed the Shape yourself by creating dummy objects named as shown in the image.)  This will setup a simple hierarchy composed of base01 as the root node, with start01 and detail2 linked to base01, and the two meshes, sphere2 and box2, linked to start01.  Now create the bounds box by dragging out a new Box primitive, in the perspective or top viewport, that encloses the pogo character, then name it bounds.
+</p><p>	As this is a player model, we need to add a few additional nodes.  To create a node in max, you use the dummy object.  To create a dummy object, go to the helpers panel on the Create tab, click on Dummy, then drag it out in either the top or perspective viewports.  Since pivot point orientation of nodes is important, you want to only ever create them in top or perspective.  Name this first node eye, and move it so its centered roughly on the sphere2 mesh, and then move it so its coordinates are roughly 0 0.7 1.75.  Holding shift, drag this node back and up a bit so it's behind the player, and name it cam.  Finally drag one more clone somewhere down around the middle of the box and name it mount0 so you have a place to mount a weapon.  Link eye to sphere2, cam to start01, and mount0 to box2.
+</p><p>	At this point, you could export and drop the model into torque as a static shape.  To be able to use it as a player though, we need to create some animations.
+</p>
+<a name="Animation"></a><h2><a name = "HeaderLink8"></a>Animation</h2>
+<p>The player animations in the TGE player class are layered. The movement animations, which are the forward run, the backstep, the sidestep, and the root animation are all played on based on user input in the 'action' thread. These animations are played and, based on input, transition from one animation to the next.
+</p><p>The Jump and Standjump animations are called explicitly when jumping, and they are also played on the action thread.<br />
+The Fall animation is an animation that is played automatically when a player is not on the ground and falling down.<br />
+The Land animation is played when the player lands.<br />
+Layered on top of the action thread are the arm and head threads (Look, Head, and Headside). These animations are blend animations and are played on top of and added to any action animation currently playing.<br />
+The death (Death1) and celebration animations are special cases that override all animations being played and just play through.<br />
+</p><p>Blend animations are animations that are layered on top of the base 'action' animations in the game when creating player models. In order for the animations to behave as you would expect, the position of the character if frame 0 of the source file that the blend animation is being exported from must be  exactly the same as the pose that the blend is being layered on top of. (usually the root 'gun hold' pose)
+</p><p>Note that the offsets from blend animations are measured from the offset of a reference frame. This frame is frame 0 of the model file. Any difference in position of the model from the reference frame and the position of the bones in the blend animations will be considered 'animated' and will be offset. Often, the animator will set up the source file in such a way so that frame 0 of the blend animation file is the skin binding (DaVinci) pose. Particularly with the look animation, when the arms are put into the 'gun hold' position, the offset from the DaVinci pose will force the arms into strange directions. Note that the effect of this error in game may appear exaggerated. This is due to the error in offset being applied down the entire arm chain.
+</p>
+	<a name="Creating_animations"></a><h4><a name = "HeaderLink9"></a>Creating animations</h4>
+<p>	In this tutorial, we'll only cover the basic movement animations, since these are required for essentially all player models.  Also, if you try to use a dts as a player model without having a root animation, the game will crash.
+</p>
+		<a name="Root"></a><h5><a name = "HeaderLink10"></a>Root</h5>
+<div class="thumb tright"><div style="width:182px;"><a href="Root.jpg"><img src="180px-Root.jpg"></a>  <div class="thumbcaption" ><div class="magnify" style="float:right"><a href="Root.jpg" class="internal" title="Enlarge"><img src="magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div></div></div></div>
+<p>	For the Root animation, we'll just make the sphere bob up and down on the box slightly.  To create this animation, move the time slider to frame 15, turn on Auto Key, then drag the sphere down just slightly. Two keys will be created, one at frame 0, and one at frames 15.  Click once on the one at frame 0 to select it, then, while holding shift so it clones, drag it to frame 30.  You now have a 30 frame looping animation to use for the Root animation.
+</p>
+		<a name="Forward"></a><h5><a name = "HeaderLink11"></a>Forward</h5>
+<div class="thumb tright"><div style="width:182px;"><a href="Forward.jpg"><img src="180px-Forward.jpg"></a>  <div class="thumbcaption" ><div class="magnify" style="float:right"><a href="Forward.jpg" class="internal" title="Enlarge"><img src="magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div></div></div></div>
+<p>	Since we aren't using a bone system, we'll need to have all the animations in the dts (dsq's are covered in the Advanced Character tutorial).  You'll run into a slight problem with the forward animation if you aren't careful: because you only animated the sphere for the root animation, the box has no keyframes yet, so if you animate it with Auto Key, its first keyframe will be at frame 0, adding some unwanted motion to the root animation.  To correct this, move the time slider to frame 35, select the box2 and sphere2 meshes, turn on Set Key (just below Auto Key), and click the big square button with the key on it right next to Auto and Set key to add a keyframe for both of these at frame 35 so the forward animation doesn't interfere with the root animation.
+</p><p>	For the movement animations, we want the sphere to move in sync with the box, so we'll go ahead and link the sphere2 mesh to the box2 mesh.  While you generally don't want to change the hierarchy once you start animating, it's early enough in this case to not cause any problems.
+</p><p>	To begin with, move to frame 50 (15 frames after the first frame of the forward animation, which is frame 35) and, with Auto Key turned on, move the box up about .7 units.  Now move to frame 55, and move the sphere up a little bit more.  Now select both the sphere and box meshes, select the key at frame 35, and holding shift, drag it to frame 65 to create a clone of it so the animation will loop from frames 35 to 65.  If you play these frames now, the box and sphere will hop up and down with the sphere lagging slightly behind the box.  Now move to frame 43 (about the middle between frames 35 and 50), and rotate the box -15 degrees along the X axis.  If you look in the front viewport, you'll see this makes the character lean away from you.  When exporting to torque, the front viewport should show the back of the player model, so this rotation will make the character lean into the hop.  Still at frame 43, turn on the move tool, and switch the coordinate system from View to Local.  This will let you move the sphere along its local coordinate axis, making it easy to keep it lined up with the box rotated.  Drag the sphere down slightly so the "head" of this character dips down just before hopping forward.  That completes the Forward animation now, time to move onto the Back animation.
+</p>
+		<a name="Back"></a><h5><a name = "HeaderLink12"></a>Back</h5>
+<div class="thumb tright"><div style="width:182px;"><a href="Back.jpg"><img src="180px-Back.jpg"></a>  <div class="thumbcaption" ><div class="magnify" style="float:right"><a href="Back.jpg" class="internal" title="Enlarge"><img src="magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div></div></div></div>
+<p>	The other movement animations will all be fairly similar to the Forward animation, so we'll use a couple shortcuts to create them easier.  To begin with select both meshes, and then select all the keyframes from frame 35 through frame 65.  Holding shift, drag this group of keys so you have a copy at them from frame 70 through frame 100.  With Auto Key still turned on, Move to frame 78, and change the X axis rotation value of the box from -15 to 15.  This will make it lean back when this animation is played.  The rest of the Back animation will remain the same as the forward animation, so we're done with it now.
+</p>
+		<a name="Side"></a><h5><a name = "HeaderLink13"></a>Side</h5>
+<div class="thumb tright"><div style="width:182px;"><a href="Side.jpg"><img src="180px-Side.jpg"></a>  <div class="thumbcaption" ><div class="magnify" style="float:right"><a href="Side.jpg" class="internal" title="Enlarge"><img src="magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div></div></div></div>
+<p>	When you start a new scene, max defaults to having frames 0 through 100 visible.  As we've already used all these up, we need to expand the frames visible so we have enough room.  Click the Time Configuration button, and change End Time to 200.  This will provide enough room for the Side and Jump animations/
+</p><p>	Side animations are slightly different than the other animations.  Instead of making one animation for right, and one for left, you make a single animation stepping right, and it plays it in reverse for the left sidestep.  Because of this, if we make it lean into the hop like with forward and back, it will look weird.  
+</p><p>	To start with, clone the keys from 70 through 100 for the box and sphere like you did for the back animation, this time dragging them to frames 105 through 135.  Delete the keys at frames 113 and 125 as we'll be changing this animation a bit more.  This leaves you with just the basic up and down hop motion.  At frame 120 (the peak of the hop) move the sphere up slightly.  At frame 113, move the sphere down slightly, and rotate the box 10 degrees along its Z axis.  Select both the box and the sphere, and holding shift, drag the frame from 113 to 128.  Make sure your rotate coordinate system is switched back to View from local, and change the box's Z rotation at frame 128 to -10.  Because this animation is setup so frame 128 is essentially the reverse of frame 113, the animation will look correct whether it plays forward or back, making it good for the sidestep animation.
+</p>
+		<a name="Jump"></a><h5><a name = "HeaderLink14"></a>Jump</h5>
+<div class="thumb tright"><div style="width:182px;"><a href="Jump.jpg"><img src="180px-Jump.jpg"></a>  <div class="thumbcaption" ><div class="magnify" style="float:right"><a href="Jump.jpg" class="internal" title="Enlarge"><img src="magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div></div></div></div>
+<p>	For the jump animation, start by cloning the keys from the Side animation.  So with both the box and sphere selected, select the frames from 105 through 135, and while holding shift, drag them to 140 through 170.  Select just the box, and delete frames 148 and 163 in order to remove the twist.  At frames 145 and 165, drag the box down so it's still on the ground.  At frame 148, drag the sphere down a bit more to accentuate the downward bob just before the jump and then at frame 155 drag it up a little bit more.  With the sphere still selected, drag the frame from 163 to 165 (without holding shift this time).  That completes the last of the animations we'll make for this player.
+</p>
+	<a name="Sequence_setup"></a><h4><a name = "HeaderLink15"></a>Sequence setup</h4>
+	<div class="thumb tright"><div style="width:52px;"><a href="SeqOptions.jpg"><img src="50px-SeqOptions.jpg"></a>  <div class="thumbcaption" ><div class="magnify" style="float:right"><a href="SeqOptions.jpg" class="internal" title="Enlarge"><img src="magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div></div></div></div>For the first sequence dummy, go to the helpers panel on the Create tab of the Command Panel, and click the drop down.  Select General DTS Objects.  Click sequence and drag one out in the viewport; size doesn't matter and location doesn't mater.  Name it root.  For this first sequence, we don't need to change any of the options, so go ahead and open up the track view.  To open the track vies select the root object, right click and navigate to curve editor.  Select the sequence dummy you just created, and expand Object (Sequence II) so you see the Sequence Begin/End track, then select it.  Go to Keys -&gt; Add Keys on the menu at the top, and click once at frame 0 and frame 30 on the grey line.  You can zoom in with your scroll button to help you line up the frames.  That's all that's required to setup the root animation for export.
+<p>	For the forward animation, hold shift, and with Auto Key turned off, drag the root sequence to the side a bit to make a clone and name this clone run.  Slide the keys for forward to frames 35 and 65, and under its general rollout on the Modify tab of the Command Panel.
+</p><p>We now need to repeat the same process for the other animations.  Make another clone, name it back, and set its keys to 70 and 100.  Name the next clone side, and set its keys to 105 and 135.  
+</p><p>	Finally make one more clone and name it jump and move its keys to frames 140 and 170.  The jump animation requires one minor thing different than the previous sequence: you need to uncheck cyclic sequence on its properties.
+</p>
+<a name="Export"></a><h2><a name = "HeaderLink16"></a>Export</h2>
+	<a name=".cfg_file"></a><h4><a name = "HeaderLink17"></a>.cfg file</h4>
+<div class="thumb tright"><div style="width:52px;"><a href="Exporter.jpg"><img src="50px-Exporter.jpg" ></a>  <div class="thumbcaption" ><div class="magnify" style="float:right"><a href="Exporter.jpg" class="internal" title="Enlarge"><img src="magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div></div></div></div>
+<p>	We now have the model setup with a proper hierarchy and animations, ready to export.  If we were to export right now though, the eye, cam, and mount0 nodes would all get culled out, putting the camera at the bottom of the player ingame (where the bounds pivot is).  To correct this, we need to create a .cfg file.  A cfg file is .txt renamed to .cfg that controls what the exporter does and does not cull out.  For this model, create a text file in the same directory as your .max file for the character, and rename it to pogo.cfg  The name doesn't matter, only the extension, but its a good idea to name it so you can remember which model it goes with easily.  Open this file up, and enter the following:
+</p><p>AlwaysExport:<br />
+eye<br />
+cam<br />
+mount*<br />
+</p><p>This tells it to never cull out any nodes named eye, cam, or any starting with mount.  If you want to always cull out something, add NeverExport: below that, and list the nodes beneath it; for this player though, we have none we wish to cull out, so we don't need it.
+</p><p>Now that you have a .cfg file, we can finally export our pogo player model.  Click the Whole Shape button on the DTS Exporter Utility, navigate to a location, and name it pogo.  If you have any errors, check the DTS Exporter FAQs, but if you followed this tutorial, there should be none.
+</p><p>More on the config file <a href="Config.html">here</a>
+</p>
+<a name="Get_ingame"></a><h2><a name = "HeaderLink18"></a>Get ingame</h2>
+	<a name="A.09Test_in_Show_Tool_Pro"></a><h4><a name = "HeaderLink19"></a>A	Test in Show Tool Pro</h4>
+	<div class="thumb tleft"><div style="width:182px;"><a href="Tstp_mat.jpg"><img src="180px-Tstp_mat.jpg"></a>  <div class="thumbcaption" ><div class="magnify" style="float:right"><a href="Tstp_mat.jpg" class="internal" title="Enlarge"><img src="magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div></div></div></div>Now that it's exported, we can see about getting it ingame.  Before replacing the orc and going ingame though, it's a good idea to test in Torque Show Tool Pro.  First copy the pogo.dts and base.pogo.jpg to /data/shapes/pogo.  Then open Show Tool Pro, and load the dts by clicking on the Load DTS button on the left sidebar.  If you haven't setup your Project Directory yet, you likely won't see the model in the list;  Refer to the Show Tool Pro documentation to correct that if need be.
+<p>	After loading the pogo.dts, go through all the animations making sure they play properly.  To do so, use the drop down along the bottom to change the selected animation, and the VCR like controls along the bottom right to play them.  Also check in the nodes drop down list to make sure eye, cam, and mount0 are still there.
+</p>
+	<a name="Replace_Orc"></a><h4><a name = "HeaderLink20"></a>Replace Orc</h4>
+<p>	You could just copy over the orc's player.dts and have it work ingame, but we'll cover changing the scripts to point to the new dts instead.  Navigate to /server/scripts and open player.cs.  Because we aren't using dsq's, at the top, comment out the line: 
+</p>
+<pre>       exec("~/data/shapes/player/player.cs");
+</pre>
+<p>Then go to Edit -&gt; Find and type in dts.  Change this path from:
+</p>
+<pre>       shapeFile = "~/data/shapes/player/player.dts";
+</pre>
+<p>to:
+</p>
+<pre>       shapeFile = "~/data/shapes/pogo/pogo.dts";
+</pre>
+<p>Now when you start the game, you'll spawn as the pogo character.
+</p>
+<a name="Troubleshooting"></a><h2><a name = "HeaderLink21"></a> Troubleshooting</h2>
+<p>	<a name="No_Details_to_Export"></a><h5><a name = "HeaderLink22"></a>No Details to Export</h5><br />
+	Either you have no detail# dummy in the scene, or you do but it is not linked to the root node.</p>
+<p>	<a name="No_bounding_box_found"></a><h5><a name = "HeaderLink23"></a>No bounding box found</h5><br />
+	You have no mesh in the scene named bounds</p>
+<p>	<a name="Unexpected_material_type_on_node_.3Csomenode.3E"></a><h5><a name = "HeaderLink24"></a>Unexpected material type on node &lt;somenode&gt;</h5><br />
+	&lt;somenode&gt; has a material type other than Standard applied to it.  Find the material used for that mesh, and make sure it is a standard material, not Raytrace or any of the other types.</p>
+<p>	<a name="Model_exports_but_isn.27t_visible_when_loaded_ingame"></a><h5><a name = "HeaderLink25"></a>Model exports but isn't visible when loaded ingame</h5><br />
+	You have your detail numbers mixed up.  Meshes are set to one detail number, and the node is set to another.  You should have one node with the same number per set of meshes.  Ie if you have ball2 and ball50, you should have detail2 and detail50.</p>
+<p>	<a name="You_setup_the_materials_and_they.27re_visible_on_the_model_in_3ds_Max.2C_but_the_dts_still_shows_up_white_ingame"></a><h5><a name = "HeaderLink26"></a>You setup the materials and they're visible on the model in 3ds Max, but the dts still shows up white ingame</h5><br />
+	Several things can cause this, if the textures are now in the same folder as the dts in your game, they will not be found.  If the textures are there but still not showing up, make sure that they are either jpg or png format, and that they are a power of 2 resolution.  Power of 2 means each side must be 2, 4, 8, 16, 32, 64, 128, 256, 512, or 1024 pixels long.</p>
+<p>	<a name="You_replaced_the_orc_with_the_pogo_character.2C_but_the_engine_crashes_when_you_spawn"></a><h5><a name = "HeaderLink27"></a>You replaced the orc with the pogo character, but the engine crashes when you spawn</h5><br />
+Although a number of things can cause this, the most common is missing a root animation.  Make sure you setup the sequence helper for the root animation (frames 0 through 30 in this tutorial) and that it is named root.</p><b>Animation moves differently Show Tool Pro</b> <br />
+<p>After you have checked your config and exported different variations and you know that your bones are all exporting correctly and the .cfg file is set up right, but the animation still isn't moving correctly. Try  modifying the sequence priority in your sequence node. ( set mine to one and it cleared up the issue).
+</p>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/3D Studio Max/Simple Character.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:46 GMT -->
+</html>

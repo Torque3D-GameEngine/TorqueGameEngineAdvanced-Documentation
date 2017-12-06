@@ -1,0 +1,246 @@
+﻿<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/3D Studio Max/Characters.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4266;
+   parent.leftFrame.expandToItem('tree2', 'doc4266');
+   var element = parent.leftFrame.document.getElementById('doc4266');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Using Art Assets - Complex Characters</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+<td>
+
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#Exporting_Characters"><span class="tocnumber">1</span> <span class="toctext">Exporting Characters</span></a>
+<ul>
+<li class='toclevel-2'><a href="#General_Information_and_Tricks_of_the_Trade:"><span class="tocnumber">1.1</span> <span class="toctext">General Information and Tricks of the Trade:</span></a></li>
+<li class='toclevel-2'><a href="#Resetting_Transforms:"><span class="tocnumber">1.2</span> <span class="toctext">Resetting Transforms:</span></a></li>
+<li class='toclevel-2'><a href="#Skeleton_Creation:"><span class="tocnumber">1.3</span> <span class="toctext">Skeleton Creation:</span></a>
+<ul>
+<li class='toclevel-3'><a href="#Real_Time_Deformation_vs._Morph_animation:"><span class="tocnumber">1.3.1</span> <span class="toctext">Real Time Deformation vs. Morph animation:</span></a></li>
+<li class='toclevel-3'><a href="#Physique:"><span class="tocnumber">1.3.2</span> <span class="toctext">Physique:</span></a></li>
+<li class='toclevel-3'><a href="#ComSkin_and_Deformable_Meshes:"><span class="tocnumber">1.3.3</span> <span class="toctext">ComSkin and Deformable Meshes:</span></a></li>
+<li class='toclevel-3'><a href="#Setting_up_the_Skin_Modifier:"><span class="tocnumber">1.3.4</span> <span class="toctext">Setting up the Skin Modifier:</span></a></li>
+<li class='toclevel-3'><a href="#Linking_the_Bounds:"><span class="tocnumber">1.3.5</span> <span class="toctext">Linking the Bounds:</span></a></li>
+<li class='toclevel-3'><a href="#MultiRes_and_Deformable_Mesh_.28Com_Skin.29_objects:"><span class="tocnumber">1.3.6</span> <span class="toctext">MultiRes and Deformable Mesh (Com_Skin) objects:</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="#Exporting_the_DTS_Shape:"><span class="tocnumber">1.4</span> <span class="toctext">Exporting the DTS Shape:</span></a>
+<ul>
+<li class='toclevel-3'><a href="#Setting_up_the_.CFG_file_for_the_DTS_shape:"><span class="tocnumber">1.4.1</span> <span class="toctext">Setting up the .CFG file for the DTS shape:</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="#UnMessDTS:"><span class="tocnumber">1.5</span> <span class="toctext">UnMessDTS:</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="Exporting_Characters"></a><h2><a name = "HeaderLink1"></a>Exporting Characters </h2>
+
+<a name="General_Information_and_Tricks_of_the_Trade:"></a><h3><a name = "HeaderLink2"></a>General Information and Tricks of the Trade:</h3>
+<p>Building a character.  There are good references out there. I suggest "Modeling a Character in 3DSMAX" by Paul Steed.</p>
+<p><br />
+<a href="http://www.amazon.com/exec/obidos/ASIN/1556228155/qid=/103-5952444-2188629" class='external text' title="http://www.amazon.com/exec/obidos/ASIN/1556228155/qid=/103-5952444-2188629" rel="nofollow"><img src="../../../../../../../images.amazon.com/images/P/1556228155.01.MZZZZZZZ.jpg" alt="1556228155.01.MZZZZZZZ.jpg" /></a>
+<br />
+<a href="http://www.amazon.com/exec/obidos/ASIN/1556228155/qid=/103-5952444-2188629" class='external text' title="http://www.amazon.com/exec/obidos/ASIN/1556228155/qid=/103-5952444-2188629" rel="nofollow">Go to Amazon.com</a>
+</p>
+<p>Here is an example file of a completed character model.  Both the model (<i>player.max</i>) and the skin (<i>player.png</i>) are located in the documentation file pack.<br />
+
+<img src="Player_img.jpg">
+</p>
+<p>Make sure that your unit scale is correct (see General Information in the beginning of the Documentation) and that the character is facing forward (looking down the positive Y axis). If you go to Front view in 3DSMAX, you should be looking at the characters backside.</p>
+<p>Create your bounding box. As above make sure it is aligned correctly (create it in either the top, perspective, or user view).</p>
+<p>Check the mesh for holes and double faces. I do this by using the STL check modifier, the use of which is covered in your 3DSMAX documentation. This will allow you to see if the mesh has any holes or double faces. If it does, fix them before hooking up the mesh to the bone system.</p>
+<p>Make sure your mesh transforms are clean. If you have scaled the shape or used mirroring any portion of the mesh during construction, reset the transform.</p>
+<p>There is a foolproof way to reset the transform of a mesh in 3DSMAX. Most of the built in methods for resetting the transform are not as clean doing 'The box trick".</p>
+<p><br />
+</p>
+<hr />
+<a name="Resetting_Transforms:"></a><h3><a name = "HeaderLink3"></a>Resetting Transforms:</h3>
+<p>Make a box, put it at the origin of the bounding box (use the align tool) and then collapse the box so that it becomes an editable mesh. Go into the modifier panel and click on the "attach" button, then click on your character mesh to attach it to the box that you just created.  The character should now be a part of Box01.  Choose &gt;Select by Element&gt; select the box shape and delete it.</p>
+<p>Your character mesh has a brand new transform. Now you just need to rename your character mesh so that it conforms to the export parameters.</p>
+<p>It is preferable to do this then to use reset x-form. Reset x-form does it's work by sticking a modifier in the 3DSMAX modifier stack. This adds additional data that must be interpreted by 3DSMAX in order to output the correct data, and it is not always correct or accurate. It works, but it has proved problematic in the past on certain shapes.</p>
+<p><br />
+</p>
+<hr />
+<a name="Skeleton_Creation:"></a><h3><a name = "HeaderLink4"></a>Skeleton Creation:</h3>
+<p>Create a skeleton for the character and add any necessary nodes that are required for the game.  There is nothing in the DTS exporter that demands anything to exist in the scene (except a bounding box).  In this example, a Character Studio Biped is used for the skeleton, but you can use 3DSMAX bones, boxes, dummies, or whatever.</p>
+<p>Biped is not required to work with the Torque engine.</p>
+<p>The game (take for example the demo) may require your character to have certain nodes contained in the shape in order to function properly. These usually consist of camera and eye nodes, mount points for weapons, etc�</p>
+<p>If you are just starting out with characters for the Torque Engine, it is advisable that you use the default player skeleton. The naming convention and structure of the skeleton is visible in the following image.</p>
+<p><img src="Schematic_sm.jpg">
+</p>
+<p>The bones that are not included in the schematic (they were omitted to fit the image on  one screen) follow the default Biped naming convention.</p>
+<p><br />
+</p>
+<ul>
+<hr />
+<a name="Real_Time_Deformation_vs._Morph_animation:"></a><h4><a name = "HeaderLink5"></a>Real Time Deformation vs. Morph animation:</h4>
+<p>The exporter and the game engine support both morphing meshes and real time skin deformation. To get the most out of both types, one must understand the differences between the two.</p>
+<p>Real time deformation uses the node transforms (a skeleton) to drive the deformation of the mesh vertices in the engine. The vertices of your mesh are assigned weights to the skeletal nodes and the transforms of the skeletal nodes then deform the mesh. This happens in real time.</p>
+<p>It is very efficient, the files are smaller, and it is flexible as it allows for the animation (and direct manipulation) of the skeleton to deform the mesh.</p>
+<p>Morph meshes do not use nodes to drive the animation. In the 3DSMAX scene, you may be using bones, x-forms, or linked x-forms to animate the mesh, but the end result is different.</p>
+<p>In morph animations, the location of every vertex in the mesh is saved off for every frame (and every detail level) and the position of each vertex is updated on every frame.  Morph animations are not as efficient of flexible as real time skeletal deformation. </p>
+<p>It is advisable to use skeletal animation rather than morph animation in all but the most special of circumstances.</p>
+<p><br />
+</p>
+<hr />
+<a name="Physique:"></a><h4><a name = "HeaderLink6"></a>Physique:</h4>
+<p>Physique is <b>not</b> supported for real time deformation. If you use physique, it will be exported as a 'Morph" animation. It will take a snapshot of the position of the mesh at every frame for all of the animations. Real-time deformation will not be taking place, which means it will not work with the default animations, blend animations will not work, and the transitions will not work. This also makes the files HUGE. It has to take a snapshot of every vertex (including the vertices of all the detail levels) for every frame of the animation.</p>
+<p>Other mesh deformation modifiers like x-form and linked x-form are supported as morph animations, but as above, they will not deform in real time based on the skeleton.</p>
+<p><br />
+</p>
+<hr />
+<a name="ComSkin_and_Deformable_Meshes:"></a><h4><a name = "HeaderLink7"></a>ComSkin and Deformable Meshes:</h4>
+<p>Deformable meshes (skeletal animations) are supported in the game.  The mesh will deform in real time based on the movement of an internal skeleton.  To use this feature, the object must be set up using the Skin Modifier in 3DSMAX.  Physique is not supported for real-time deformation and animation exported using physique will be exported as morph meshes.</p>
+<p>3DSMAX 3 requires a special version of the skin modifier called Com_skin. </p>
+<p>NOTE: The procedure outlined below is not required for 3DS-MAX 4.</p>
+<p>To use ComSkin you must install two plugins: <i>skin.dlm</i> and <i>MAXComponents.dll</i>, both of which are available in the documentation file pack</p>
+<p>To install it, you must follow this procedure:</p>
+<ul>
+	<li>0.  Quit all 3dsmax sessions.
+	<li>1.  Create a folder called 'old' in your 3dsmax3\stdplugs directory.
+	<li>2.  Move bonesDef.dlm into this directory.
+	<li>3.  Copy file skin.dlm into your 3dsmax3\plugins directory.
+	<li>4.  Copy file MaxComponents.dll into your 3dsmax3\ directory
+	<li>5.  Register the dll manually by calling: "regsvr32 MAXComponents.dll" from the command line.
+	<li>6.  Restart 3DSMAX.  Skin objects from before will work just the same except they should now be called "Com Skin" objects.
+
+</ul>
+<p>Some people have had problems running com_skin without certain .dlls that come with MSVC++. If you can't register MAXComponents, this is most likely the problem.</p>
+<p><b>NOTE:</b> The procedure outlined above is not required for 3DSMAX 4.</p>
+<p>Objects that have the skin modifier applied to them are recognized by the exporter as skin objects.  They should be unlinked and floating in the scene (they do not have to be a part of the shape subtree).</p>
+<p>The deformation gizmos in 3DSMAX 4 (part of the skin modifier) are not supported.</p>
+<p><br />
+</p>
+<hr />
+<a name="Setting_up_the_Skin_Modifier:"></a><h4><a name = "HeaderLink8"></a>Setting up the Skin Modifier:</h4>
+<p>Get you character and skeleton aligned and apply the skin modifier. Before you do this make sure that the mesh to be skinned is not linked to anything. If it is linked to the start of the hierarchy, you will get an additional transform introduced into the shape and it will behave incorrectly.</p>
+<p>The skin modifier is covered in detail in the 3DSMAX documentation. Use those documents for information about how to set up your envelopes and otherwise control the weighting of the skin.</p>
+<p>The following information includes some Torque specific tips.</p>
+<p>You don't need to included all the bones. Include only the bones necessary to make the deformation work. Be particular about what you add.</p>
+<p>Just about anything can be used as a bone, but certain objects like space warps, lights, and cameras, and Biped footsteps do not always work (they won't be considered bones on export). </p>
+<p>Although there is a button to remove bones from the skinlist, don't get in the habit of using it.  It will remove it from the display, but it may confuse the exporter. Adding the bone back in won't solve the problems that removing the bone caused, the only solution is to delete the modifier and redo the skinning.</p>
+<p>This is a limitation of 3DSMAX 3. Deleting bones usually works in 3DSMAX 4, but it is a good habit not to delete bones from the skinlist.</p>
+<p>The Deformation gizmos introduced in 3DSMAX 4 are not supported.</p>
+<p><br />
+</p>
+<hr />
+<a name="Linking_the_Bounds:"></a><h4><a name = "HeaderLink9"></a>Linking the Bounds:</h4>
+<p>After the shape is all linked up, link the bounding box to the hip (or BIP node) of the character.  Later on, when we get into animation, it will be important that this is done.  Go into the Hierarchy panel and turn off the X and Z inheritance for the bounding box. Turn off the rotation inheritance as well.</p>
+<p><img src="Inherit.jpg">
+</p>
+<p>The bounding box will now follow the shape as it animates forward, but will not inherit the Z (up and down) and X (side to side) motion.  The inherit X should be turned back on for aniamtions that require the character to move sideways (strafe or sidestep animations)</p>
+<p><br />
+</p>
+<hr />
+<a name="MultiRes_and_Deformable_Mesh_.28Com_Skin.29_objects:"></a><h4><a name = "HeaderLink10"></a>MultiRes and Deformable Mesh (Com_Skin) objects:</h4>
+<p>You can use MultiRes to generate the detail levels for your deformable mesh objects.  When we first tried it in 3DSMAX 3, it didn't work.  It resulted in an instant crash of 3DSMAX. So, the way it works is that you have to make a copy of the mesh in the exact same position as the skinned mesh. One copy contains the weighting information, the other contains the MultiRes information.</p>
+<p>What you will need to do is clone the skinned object (using Tools&gt;Snapshot) at frame 0 in your 3DSMAX scene. Choose single, with mesh output. The exporter uses frame 0 as the reference frame for comparison of the vertex positions so it can reconstruct the shape.</p>
+<p><img src="Snapshot.jpg">
+</p>
+<p>Don't use edit&gt;clone to make a new shape.  If you do so, the mesh will be in the initial position that object was in before it was skinned and put in the root position. The 'skinned' mesh and the MultiRes mesh must be in the EXACT same position (all the vertices must be in the exact same place) or it will not export properly.</p>
+<p>This will give you and editable mesh in the exact same position as the skinned mesh.  Rename this mesh MultiRes::&lt;yourShape&gt; and then link it to the skinned mesh. Apply a MultiRes modifier and hit the generate button.</p>
+<p>Use the 'AdjustLODs' script to generate the values in the shapes User Properties using the method covered in Section I: Mutires.</p>
+<p>You will have two copies of your shape in the scene.  One with the skin modifier and one with the MultiRes modifier.  If you change either object you'll have to "synch" them up again (i.e., repeat the procedure we just went through).</p>
+<p>Note: shapes made using MultiRes in 3DSMAX 3 will generate a  "Missing OSM" (Missing Object Space Modifier) warning when you open them in 3DS Max 4.  To solve this problem, delete the "Missing OSM" from the top of the modifier stack of the objects that generate this error and add a new MultiRes modifier to the object (don't forget to hit the generate button).</p>
+<p>3DSMAX 4 won't crash if you put a Multires modifier on top of a deformable mesh (skin) object, but you still have to make the clone or the exporter will not recognize it.</p>
+<p>NOTE: <i>The meshes must be in EXACTLY the same position or it will not work properly!  It will export, but in the engine it will look like a big spiky ball of polygons.</i></p>
+</ul>
+<hr />
+<a name="Exporting_the_DTS_Shape:"></a><h3><a name = "HeaderLink11"></a>Exporting the DTS Shape:</h3>
+<p>Export it as a DTS. (Choose Export&gt;Whole Shape in the Exporter Utility). Name it appropriately. If you are going the be putting this shape in as a player, it will simplify things if you name the shape player.DTS. Make sure you rename the default player shape to player.DTS.old so you don't overwrite it. </p>
+<ul>
+
+<hr />
+<a name="Setting_up_the_.CFG_file_for_the_DTS_shape:"></a><h4><a name = "HeaderLink12"></a>Setting up the .CFG file for the DTS shape:</h4>
+<p>If it exports, then the mesh shape is okay and not corrupt in any way, and you can move onto the .CFG file to tune the shape and include what is necessary for it to work with the animations. </p>
+<p>A DSQ file, or sequence animation, will not load into a shape if it has nodes that are not in the base (DTS)shape. This is the #1 reason why shapes mysteriously stop working in the game when they get re-exported.  The exporter discards what it thinks are useless nodes.  These include nodes without meshes, and nodes that are not animating.  In the base DTS shape file, there are usually a lot of 'useless' nodes.  These same nodes may be animated in a DSQ shape file, and the exporter will not consider them to be so useless and include them during export, resulting in DSQ with a node that does not exist in the DTS.</p>
+<p>In order to make sure they get exported in the base DTS shape, you should use a .CFG file to make sure all the needed nodes are included in the shape.</p>
+<p>When you export a shape the exporter looks for a file called &lt;somename&gt;.CFG' (usually named DTSScene.CFG) in the same directory as the .max file being exported</p>
+<p>We have included an example of a scene .CFG script in the documentation file pack name <i>player.cfg</i></p>
+<p>Names of nodes are put into one of 3 lists (the always export list, the never export list, or the never animate list).  Which list depends on which of the 3 keywords occurred most recently in the file (if none of them have, the name is put on the always export list).  Names can include wildcards (*). </p>
+<p>You should put all the skeletal nodes that are going to be animated in the 'Always Export'list.</p>
+<p>Here is the config file that I am using for my latest character.  It is a single mesh character using the default Torque character animations.</p>
+<ul><ul><pre>
+AlwaysExport:
+eye
+cam
+mount0
+//mount1
+//jetnozzle0
+
+NeverExport:
+Bip01
+Bip01 L Finger*
+Bip01 R Finger*
+Dummy*
+Bip01 L Toe*
+Bip01 R Toe*
+start01
+mountpoint
+DELETE*
+//Ski0
+//Ski1
+Light0
+Light1
+//Mount1
+//Mount2
+</pre></ul></ul>
+<p>Note that you can comment out lines of the .CFG by using "//". In this example, I am culling out nodes that are not animated in the DSQ files, and are not necessary for the shape to function.  The more nodes that you can cull out, the smaller  and more efficient the shape will be.</p>
+<p>On the Always export list, certain nodes that usually would get discarded (non-animating dummies  and nodes without meshes are included)</p>
+<p>I should mention that the file is not named DTSscene.CFG. This one, for the player, is called player.CFG</p>
+<p>The shape looks for a file with a .CFG extension in the directory that the shape is in when it exports the shape.  I like to rename them to match the shape.  Usually I set up a directory for each shape. In your text editor, it makes it easier to deal with.  When we get into animation, you might have several .CFG files open at once, and it is hard to keep track of what you are doing if all of them are named DTSscene.CFG.</p>
+<p>Now that you have a .CFG file, and it is set up properly with al the relevant nodes on the list, and all extraneous shapes and nodes (Lights, reference shapes, etc�) culled out by putting them on the 'Never Export" list, you are ready for exporting the finished model. Export it.</p>
+<p>You should now have a nearly finished almost working DTS shape.  It will work in show, but it may not function properly in the game yet.</p>
+<p>NOTE: It is a good idea to get into the habit of checking your dump.dmp files to make sure that the nodes you think are exporting are exporting.   Look at the bottom of the file for the Shape Hierarchy, it tells you everything you need to know.  Looking at the dump file is alos useful for tracking down problems in the shape when it is failing to export, often times allowing you to track down the problem mesh or bone or vertex.</p>
+<p>NOTE: You can also achieve the same results in the DTS shape file by exporting it with 'collapse transforms' turned off.  This is not considered to be a good practice, as you should be using the .CFG files to control your node structure, but it works as it ensures that ALL the nodes in the shape are included in the DTS file.</p>
+</ul>
+<hr />
+<a name="UnMessDTS:"></a><h3><a name = "HeaderLink13"></a>UnMessDTS:</h3>
+<p>The T2Autodetail scheme introduced at the end of Tribes 2 does not work with deformable meshes. In order to get them to function properly in the game, you must turn off the new detailing scheme. Unfortunately, the last code drop GarageGames received from the Tribes 2 team happened before the switches introduced into the exporter to accomplish this got into the source.</p>
+<p>There is a little utility called UnMessDTS that reverts the shapes back to the 'old' way of doing things, and they then work fine in the game engine.</p>
+<p>The <i>unMessDTS.exe</i> utility is included in the documentation file pack.</p>
+<p>Here is the usage.</p>
+<p>From the command line:</p>
+<ul><pre>unmessDTS &amp;ltinput&amp;gt.DTS &amp;ltoutput&amp;gt.DTS</pre></ul>
+<p>You should now have a fully functioning and optimized shape and should be ready to move onto animation.</p>
+
+</td>
+</tr>
+</table>
+   
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/3D Studio Max/Characters.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:46 GMT -->
+</html>

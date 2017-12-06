@@ -1,0 +1,534 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/GUI Editor/Creating a Dialog.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4197;
+   parent.leftFrame.expandToItem('tree2', 'doc4197');
+   var element = parent.leftFrame.document.getElementById('doc4197');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="Creating%20a%20Dialog_files/filelist.html">
+<link rel=Edit-Time-Data href="Creating%20a%20Dialog_files/editdata.html">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Creating A New Dialog</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>perrym</o:Author>
+  <o:LastAuthor>perrym</o:LastAuthor>
+  <o:Revision>8</o:Revision>
+  <o:TotalTime>42</o:TotalTime>
+  <o:Created>2008-03-13T16:46:00Z</o:Created>
+  <o:LastSaved>2008-03-13T18:30:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>707</o:Words>
+  <o:Characters>4034</o:Characters>
+  <o:Company>Coalescent Technologies</o:Company>
+  <o:Lines>33</o:Lines>
+  <o:Paragraphs>9</o:Paragraphs>
+  <o:CharactersWithSpaces>4732</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>71</w:Zoom>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all title="gemdoc_auto_stylesheet"
+href="images/gemdoc.css">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1627421319 -2147483648 8 0 66047 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#840084;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.tabletitle, li.tabletitle, div.tabletitle
+	{mso-style-name:tabletitle;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+p.tableextras, li.tableextras, div.tableextras
+	{mso-style-name:tableextras;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:8.5pt;
+	mso-fareast-font-family:"Times New Roman";}
+p.mediaobject, li.mediaobject, div.mediaobject
+	{mso-style-name:mediaobject;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.guibutton, li.guibutton, div.guibutton
+	{mso-style-name:guibutton;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#999999;
+	border:none;
+	mso-border-alt:inset black .25pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.guilabel, li.guilabel, div.guilabel
+	{mso-style-name:guilabel;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#999999;
+	border:none;
+	mso-border-alt:inset black .25pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.informalexample, li.informalexample, div.informalexample
+	{mso-style-name:informalexample;
+	margin:3.95pt;
+	mso-pagination:widow-orphan;
+	background:#66CCFF;
+	border:none;
+	mso-border-alt:three-d-engrave black 2.25pt;
+	padding:0in;
+	mso-padding-alt:4.0pt 4.0pt 4.0pt 4.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.Heading2Justified, li.Heading2Justified, div.Heading2Justified
+	{mso-style-name:"Heading 2 + Justified";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+<link rel=HOME title="GUI Editor Introduction" href=index.html>
+<link rel=PREVIOUS title="GUI Editor Basics" href=guieditor.thebasics.html>
+<link rel=NEXT title="Putting It All Together" href=guieditor.finishingup.html>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]--></head>
+
+<BODY id = "BODYID" onLoad = "initComponent()"  bgcolor=white lang=EN-US link=blue vlink="#840084" style='tab-interval:
+.5in' alink="#0000FF">
+
+<div class=Section1>
+
+<div>
+
+<p class=Heading2Justified><a name=guieditor.creatingadialog></a><b
+style='mso-bidi-font-weight:normal'><span style='font-size:18.0pt'>Creating A
+New Dialog<o:p></o:p></span></b></p>
+
+<p><span style='font-size:10.0pt;font-family:Verdana'>Now that we've spent some
+time going over the basics of the GUI Editor and have created a command button,
+we will create a brand new dialog for the users of your game to interact with.
+Then, in the section after this, we'll attach both the button we made above and
+the dialog we are about to make together to show you how these two separate
+GUI's come together to create a user interface.<o:p></o:p></span></p>
+
+<p><span style='font-size:10.0pt;font-family:Verdana'>To begin, open the GUI
+Editor and click on the File option on the menu bar at the top, as shown in
+Figure 32. In the dialog window that appears type &quot;<em><span
+style='font-family:Verdana'>HelloWorld</span></em>&quot; in the GUI Name field
+and click the <em><span style='font-family:Verdana'>Create</span></em> button,
+as shown in Figure 33.<span style='mso-spacerun:yes'>&nbsp; </span>Leaving the
+class as GuiControl is fine.<span style='mso-spacerun:yes'>&nbsp; </span>After
+doing so, you'll be presented with a new GUI editing screen, as in Figure 34.<o:p></o:p></span></p>
+<p><span
+style='font-size:10.0pt;font-family:Verdana'><img width=215 height=167
+src="Creating%20a%20Dialog_files/image013.jpg" v:shapes="_x0000_i1025"><o:p></o:p>
+</span></p>
+<p><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt;font-family:
+Verdana'>Figure 32<o:p></o:p></span></b></p>
+<p>&nbsp;</p>
+<p><span
+style='font-size:10.0pt;font-family:Verdana'><img width=409 height=209
+src="Creating%20a%20Dialog_files/image014.jpg" v:shapes="_x0000_i1026"><o:p></o:p>
+</span></p>
+<p><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt;font-family:
+Verdana'>Figure 33<o:p></o:p></span></b></p>
+<p>&nbsp;</p>
+<p><span
+style='font-size:10.0pt;font-family:Verdana'><img width=554 height=416
+src="Creating%20a%20Dialog_files/image015.jpg" v:shapes="_x0000_i1027"><o:p></o:p>
+</span></p>
+<p><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt;font-family:
+Verdana'>Figure 34<o:p></o:p></span></b></p>
+<div></div>
+
+<p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center'><span
+style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p><span style='font-size:10.0pt;font-family:Verdana'>You now have a blank
+screen to work with. The first thing to do is create a new GUI control that
+your user can interact with. Otherwise, we'll end up with all sorts of problems
+if we push this screen to the canvas and it has no controls.<o:p></o:p></span></p>
+
+<p><span style='font-size:10.0pt;font-family:Verdana'>Open the <em><span
+style='font-family:Verdana'>Control Palette</span></em> and select the <b
+style='mso-bidi-font-weight:normal'>GuiWindowCtrl </b>text, as shown in Figure
+35.<o:p></o:p></span></p>
+<p><span
+style='font-size:10.0pt;font-family:Verdana'><img width=228 height=388
+src="Creating%20a%20Dialog_files/image016.jpg" v:shapes="_x0000_i1028"><o:p></o:p>
+</span></p>
+<p><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt;font-family:
+Verdana'>Figure 35<o:p></o:p></span></b></p>
+<div></div>
+
+<p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center'><span
+style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p><span style='font-size:10.0pt;font-family:Verdana'>Just like you did in The
+Basics section, you need to click on the text, keep the mouse button down, and
+drag the control onto your working area (Figure 36).<span
+style='mso-spacerun:yes'>&nbsp; </span>When the new control appears, drag and
+size it, so that it looks similar to the control in Figure 36. You want to make
+sure it is wide enough to display a title in the top bar.<span
+style='mso-spacerun:yes'>&nbsp; </span>It should also be tall enough and wide
+enough to hold another control that we will add shortly.<o:p></o:p></span></p>
+<p><span
+style='font-size:10.0pt;font-family:Verdana'><img width=337 height=322
+src="Creating%20a%20Dialog_files/image009.jpg" v:shapes="_x0000_i1029"><o:p></o:p>
+</span></p>
+<p><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt;font-family:
+Verdana'>Figure 36<o:p></o:p></span></b></p>
+<div><p align=center style='text-align:center'><span style='font-size:10.0pt;
+font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='font-size:10.0pt;
+font-family:Verdana'>Now we&#8217;ll change some of the window&#8217;s
+properties.<span style='mso-spacerun:yes'>&nbsp; </span>With the window still
+selected, look at the GUI Inspector.<span style='mso-spacerun:yes'>&nbsp;
+</span>Enter the following information and edits to the properties:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:27.35pt'><span style='font-size:10.0pt;
+font-family:Verdana'>Change the <b style='mso-bidi-font-weight:normal'>name </b>to
+<b style='mso-bidi-font-weight:normal'>&#8220;myWindow&#8221;</b> (*without the
+quotes*). Changes the GUIs name<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:27.35pt'><span style='font-size:10.0pt;
+font-family:Verdana'>Change the <b style='mso-bidi-font-weight:normal'>text</b>
+to <b style='mso-bidi-font-weight:normal'>&#8220;Hello World!&#8221;</b>
+(*without the quotes*). Changes the text displayed at the top of the window<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:27.35pt'><span style='font-size:10.0pt;
+font-family:Verdana'>Uncheck the <b style='mso-bidi-font-weight:normal'>canMinimize</b>
+box.<span style='mso-spacerun:yes'>&nbsp; </span>Prevents user from minimizing,
+also removes the minimize button<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:27.35pt'><span style='font-size:10.0pt;
+font-family:Verdana'>Uncheck the <b style='mso-bidi-font-weight:normal'>canMaximize</b>
+box.<span style='mso-spacerun:yes'>&nbsp; </span>Prevents user from maximizing,
+also removes the maximize button<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana'>Your
+window&#8217;s properties should look like Figure 37.<span
+style='mso-spacerun:yes'>&nbsp; </span>At this point, right click on the <b
+style='mso-bidi-font-weight:normal'>myWindow</b> control in your working
+area.<span style='mso-spacerun:yes'>&nbsp; </span>The end result of your window
+after the edits will look like Figure 38.<o:p></o:p></span></p>
+<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal><span
+style='font-size:10.0pt;font-family:Verdana'><img width=315 height=371
+src="Creating%20a%20Dialog_files/image010.jpg" v:shapes="_x0000_i1030"><o:p></o:p>
+</span></p>
+<p class=MsoNormal><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 37<o:p></o:p></span></b></p>
+<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal><span
+style='font-size:10.0pt;font-family:Verdana'><img width=423 height=417
+src="Creating%20a%20Dialog_files/image017.jpg" v:shapes="_x0000_i1031"><o:p></o:p>
+</span></p>
+<p class=MsoNormal><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 38<o:p></o:p></span></b></p>
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;margin-left:27.35pt'><span
+style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p><span style='font-size:10.0pt;font-family:Verdana'>Now that you've laid out
+how you want your dialog window control to look, it's time to place another
+control on the window. When we created this window control, it was a part of
+the canvas. Now, when we create another control, we want it to be a child of
+our window control, instead of the canvas itself. Making the new control a
+child of the dialog window we just created will force the new control to move
+around with window control.<span style='mso-spacerun:yes'>&nbsp; </span>If
+you&#8217;ll notice, we currently have a blue outline around <b
+style='mso-bidi-font-weight:normal'>myWindow</b> indicating that it is
+currently set as the parent.<span style='mso-spacerun:yes'>&nbsp; </span>This
+happened when we right clicked on the object.<span
+style='mso-spacerun:yes'>&nbsp; </span>As long as it has the focus, any new
+controls we add in the GUI Editor will become a child of the dialog window
+control, thus inheriting its position, visibility, and other properties. See
+Figure 38 to view the outline.<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center'><span
+style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p><span style='font-size:10.0pt;font-family:Verdana'>With your window control
+still in focus, open the <b style='mso-bidi-font-weight:normal'>Control Palette.<span
+style='mso-spacerun:yes'>&nbsp; </span></b>Select <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>GuiTextCtrl </i></b>and drag it
+onto <b style='mso-bidi-font-weight:normal'>myWindow.</b><span
+style='mso-spacerun:yes'>&nbsp; </span>See Figure 39 for a visual reference of
+this step.<b style='mso-bidi-font-weight:normal'><span
+style='mso-spacerun:yes'>&nbsp; </span></b>Don't worry about positioning the
+text control in the exact center of the dialog; we'll let the GUI Editor do
+this for us. With the text control still selected, look in the Inspector Dialog
+and set horizSizing and vertSizing both to &quot;<em><span style='font-family:
+Verdana'>Center</span></em>&quot;. Finally set the text field to whatever you
+like.<span style='mso-spacerun:yes'>&nbsp; </span>Here, we&#8217;ve used the
+phrase <b style='mso-bidi-font-weight:normal'>&#8220;I R GENIUS.&#8221;</b><span
+style='mso-spacerun:yes'>&nbsp; </span>Click Apply. See Figure 40 for details
+and Figure 41 for the final product.<o:p></o:p></span></p>
+<p><span
+style='font-size:10.0pt;font-family:Verdana'><img width=708 height=499
+src="Creating%20a%20Dialog_files/image019.jpg" v:shapes="_x0000_i1032"><o:p></o:p>
+</span></p>
+<p><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt;font-family:
+Verdana'>Figure 39<o:p></o:p></span></b></p>
+<p>&nbsp;</p>
+<p><span
+style='font-size:10.0pt;font-family:Verdana'><img width=789 height=433
+src="Creating%20a%20Dialog_files/image021.jpg" v:shapes="_x0000_i1033"><o:p></o:p>
+</span></p>
+<p><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 40<o:p></o:p></span></b></p>
+<p>&nbsp;</p>
+<p><span
+style='font-size:10.0pt;font-family:Verdana'><img width=289 height=286
+src="Creating%20a%20Dialog_files/image022.jpg" v:shapes="_x0000_i1034"><o:p></o:p>
+</span></p>
+<p><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>Figure 41<o:p></o:p></span></b></p>
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p><span style='font-size:10.0pt;font-family:Verdana'><o:p></o:p>
+</span><span style='font-size:10.0pt;font-family:Verdana'>Before we continue to the
+next section, you should save your new GUI, so that you can exit the GUI Editor
+without worrying about losing your work. To save your new control, click on
+File menu and choose the <em><span style='font-family:Verdana'>Save To File</span></em>
+option (Figure 42).<span style='mso-spacerun:yes'>&nbsp; </span>When the file
+browser dialog appears, you need to navigate to the folder you keep your
+GUIs.<span style='mso-spacerun:yes'>&nbsp; </span>You generally need to know
+this before you save, but in this instance we&#8217;ll tell you were to put
+it.<span style='mso-spacerun:yes'>&nbsp; </span>Browse to the game&#8217;s <b
+style='mso-bidi-font-weight:normal'>game/ScriptsAndAssets/client/ui</b> directory as shown in Figure 43. Type in &quot;<em><span style='font-family:
+Verdana'>HelloWorld.gui</span></em>&quot; (no quotes), then hit save as shown
+in Figure 44.</span></p>
+<p><span
+style='font-size:10.0pt;font-family:Verdana'><img width=216 height=167
+src="Creating%20a%20Dialog_files/image024.jpg" v:shapes="_x0000_i1035">
+    
+    <o:p></o:p>
+</span></p>
+<p><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt;font-family:
+Verdana'>Figure 42<o:p></o:p></span></b></p>
+<p><span
+style='font-size:10.0pt;font-family:Verdana'><img width=348 height=352
+src="Creating%20a%20Dialog_files/image026.jpg" v:shapes="_x0000_i1036">
+    
+    <o:p></o:p>
+</span></p>
+<p><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt;font-family:
+Verdana'>Figure 43<o:p></o:p></span></b></p>
+<p><span
+style='font-size:10.0pt;font-family:Verdana'>
+  <!--[if gte vml 1]><v:shape id="_x0000_i1037"
+ type="#_x0000_t75" style='width:362.25pt;height:264.75pt'>
+ <v:imagedata src="Creating%20a%20Dialog_files/image027.jpg" o:title="NewDlg_14_SaveFinal"/>
+</v:shape><![endif]-->
+  <![if !vml]>
+  <img width=483 height=353
+src="Creating%20a%20Dialog_files/image028.jpg" v:shapes="_x0000_i1037">
+  
+  <o:p></o:p>
+</span></p>
+<p><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt;font-family:
+Verdana'>Figure 44<o:p></o:p></span></b></p>
+<div></div>
+
+<p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center'><span
+style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Verdana'>Now
+that your new GUI is saved, exit the GUI Editor by hitting <b style='mso-bidi-font-weight:
+normal'>F10</b>, and then shut down the TGEA Application.<span
+style='mso-spacerun:yes'>&nbsp; </span>We have to do a small amount of script
+work to tie this all together.<span style='mso-spacerun:yes'>&nbsp; </span>Go
+to the <a href="Finishing%20Up.html">Finishing Up</a> section now to close out
+the tutorial.<o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/GUI Editor/Creating a Dialog.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:33 GMT -->
+</html>

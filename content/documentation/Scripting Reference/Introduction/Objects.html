@@ -1,0 +1,117 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Introduction/Objects.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4255;
+   parent.leftFrame.expandToItem('tree2', 'doc4255');
+   var element = parent.leftFrame.document.getElementById('doc4255');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueScript/Objects - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <a name="TorqueScript_Objects" xmlns="http://www.w3.org/1999/xhtml"></a><h2 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink0"></a> TorqueScript Objects </h2>
+<p xmlns="http://www.w3.org/1999/xhtml">Having covered the basics of the language, it's time to examine some of TorqueScript's more interesting details.
+</p><p xmlns="http://www.w3.org/1999/xhtml">In Torque, every item in the game world is an object, and all game world objects can be accessed via script. For example, Player, WheeledVehicle, Item, etc are all accessible via script, though they are defined in C++.
+</p><p xmlns="http://www.w3.org/1999/xhtml">Objects are created in TorqueScript using the following syntax:
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">           // In TorqueScript
+           %var = new ObjectType(Name : CopySource, arg0, ..., argn) 
+           {
+           
+               &lt;datablock = DatablockIdentifier;&gt;
+               
+               [existing_field0 = InitialValue0;]
+               ...
+               [existing_fieldM = InitialValueM;]
+               
+               [dynamic_field0 = InitialValue0;]
+               ...
+               [dynamic_fieldN = InitialValueN;]
+           };
+</pre>
+<p xmlns="http://www.w3.org/1999/xhtml">This syntax is simpler than it looks. Let's break it down:
+</p>
+<ul xmlns="http://www.w3.org/1999/xhtml">
+    <li>%var- Is the variable where the object's handle will be stored.</li>
+    <li>new- Is a key word telling the engine to create an instance of the following ObjectType.</li>
+    <li> ObjectType- Is any class declared in the engine or in script that has been derived from SimObject or a subclass of SimObject. SimObject-derived objects are what we were calling "game world objects" above.</li>
+    <li> Name (optional)- Is any expression evaluating to a string, which will be used as the object's name.</li>
+    <li> CopySource (optional)- The name of an object which is previously defined somewhere in script. Existing field values will be copied from CopySource to the new object being created. Any dynamic fields defined in CopySource will also be defined in the new object, and their values will be copied. Note: If CopySource is of a different ObjectType than the object being created, only CopySource's dynamic fields will be copied.</li>
+    <li> arg0, ..., argn (optional)- Is a comma separated list of arguments to the class constructor (if it takes any).</li>
+    <li> datablock- Many objects (those derived from GameBase, or children of GameBase) require datablocks to initialize specific attributes of the new object. Datablocks are discussed below.</li>
+   <li> existing_fieldM- In addition to initializing values with a datablock, you may also initialize existing class members (fields) here. Note: Note: In order to modify a member of a C++-defined class, the member must be exposed to the Console. This concept is discussed in detail later.</li>
+    <li> dynamic_fieldN- Lastly, you may create new fields (which will exist only in Script) for your new object. These will show up as dynamic fields in the World Editor Inspector. </li></ul>
+<p xmlns="http://www.w3.org/1999/xhtml"><b>Let's create one object that doesn't use a datablock and one that does:</b>
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">           // create a SimObject w/o modifying any fields
+           $example_object = new SimObject();
+           
+           // create a SimObject w/ dynamic fields
+           $example_object = new SimObject() 
+           {
+               a_new_field = "Hello world!";
+           };
+           
+           // create a StaticShape using a datablock
+           datablock StaticShapeData(MyFirstDataBlock) 
+           {   
+               shapeFile = "~/data/shapes/player/player.dts";   
+               junkvar = "helloworld";
+           };
+           
+           new StaticShape() 
+           {
+               dataBlock = "MyFirstDataBlock";
+               position = "0.0 0.0 0.0";
+               rotation = "1 0 0 0";
+               scale = "1 1 1";
+           };
+</pre>
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Introduction/Objects.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:56 GMT -->
+</html>

@@ -1,0 +1,218 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Terrain/GenerateAtlasData.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4261;
+   parent.leftFrame.expandToItem('tree2', 'doc4261');
+   var element = parent.leftFrame.document.getElementById('doc4261');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 3632;
+   parent.leftFrame.expandToItem('tree2', 'doc3632');
+   var element = parent.leftFrame.document.getElementById('doc3632');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Atlas - Generate Chunks</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+<style type="text/css">
+<!--
+.style6 {
+	font-size: 14pt;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<BODY id = "BODYID" onLoad = "initComponent()"  id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="0" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+
+<td>
+<blockquote>
+  <p align="center" class="style6"><u><a name="section.terrain.performance"></a>Generating Atlas Data</u></p>
+  <table width="292" cellspacing="20" class='toc' id='toc'>
+    <tr>
+      <td><div id='toctitle'>
+        <h2><a name = "HeaderLink1"></a><a name = "HeaderLink0"></a>Contents</h2>
+      </div>
+          <ul>
+            <li class='toclevel-1'><a href="#Generating_Chunks"><span class="tocnumber">1</span> <span class="toctext">Generating Chunks</span></a></li>
+            <li class='toclevel-1'><a href="#Generating_Texture_Trees"><span class="tocnumber">2</span> <span class="toctext">Generating Texture Trees</span></a></li>
+            <li class='toclevel-1'><a href="#Run_Time_Reference"><span class="tocnumber">3</span> <span class="toctext">Run Time Reference</span></a></li>
+            <li class='toclevel-1'><a href="#Tools"><span class="tocnumber">4</span> <span class="toctext">Tools</span></a></li>
+          </ul></td>
+    </tr>
+  </table>
+</blockquote>
+<blockquote>
+  <p><br />
+  </p>
+  <p name="Stages"><a name="Generating_Chunks"></a></p>
+  <h2><a name = "HeaderLink2"></a><a name = "HeaderLink1"></a>Generating Chunks</h2>
+  <h4><em></em><a name = "HeaderLink2"></a>Technical Details</h4>
+  <p>
+   Atlas terrains are very efficient because they simply stream data describing chunks of precalculated levels of detail from the disk. These files are generated in a preprocessing step which is done offline, as it can potentially take a bit of time to process a heightfield (a 4097x4097 heightfield recently took 5-10 minutes to process).
+</p>
+
+<p>
+The geometry processing is done by a console function called generateChunkFileFromRaw16. This interface will be extended for later milestones (or you can refer to the code contained at the end of engine/atlas/chunkGen.cpp and write your own variant of the function), but currently only loads from a raw unsigned 16bit heightfield, such as Terragen produces. 
+</p>
+<p>The values from the .RAW file are signed 16 bit integers. They go from about -32767 to +32767. In whole numbers. Atlas works in whole meter units, so that means you get from -32km to +32km, in whole meter increments. This might be useful in some cases but for a terrain you walk on is way too much!
+</p>
+<p> So we have a scaling factor. The raw integer values are multiplied by the scaling factor to convert to floating point values that are more useful for realistic terrains.
+
+The error metric is applied after the scaling factor. So if you change the scaling factor you probably have to change the error metric. If the error metric isn't big enough it will crash. If it's too big you'll get an undetailed terrain. There is another parameter for horizontal spacing, the squareSize, but it just affects how values are written out, and won't affect processing time or crashes/accuracy. 
+</p>
+<p>The mesh generation works via a quadtree. Each vertex is descended and a delta is calculated from that vertex's real position to where (essentially) the mesh would be at that point if the vertex was present. The distance is divided by the error metric. The resulting number is rounded down to a whole number. That number is the LOD at which that vertex will show up. When the quadtree is generated, it works up from the lowest levels of detail.
+</p>
+<p>A general note: when working with tree depths, bear in mind that 2treeDepth-1 is the number of nodes on a side that tree will be. This becomes important when working with the TQT generator, for instance, when you implicitly describe the size of the input texture by treeDepth and leafSize. This means that 2treeDepth-1 * leafSize = imageSize.
+</p>
+<p>So, the idea when you're setting up your LOD parameters is to get a good number of vertices on the highest detail chunks without maxing out (ie, exceeding the 65k limit) on the lower detail chunks
+</p>
+<p>The simplest way to ensure that is to set a really high error metric. What's high and low? Well, if you're multiplying all the incoming points by 1.0/256.0, you have a working range of heights from -128 to positive 128 meters (we multiply the min/max values for heights, -32767 and +32767, by the scale factor). Depending on how jagged your terrain is, you might need quite a high error metric to avoid maxing out. 
+</p>
+<p>You might start with an error metric of 50 or 100 in this case, note that you get a very undetailed terrain, and start lowering it. Most of the time the error metric is going to be around 1% of your working range, but it depends on what sort of terrain you're feeding it.
+</p>
+<p>&nbsp;</p>
+<h4><em></em><a name = "HeaderLink3"></a>Example:</h4>
+  <pre><code><strong>// <span class="programlisting">Calling generateChunkFileFromRaw16</span>.</strong><br>
+<span class="programlisting">generateChunkFileFromRaw16(
+          "demo/data/terrains/test_16_4097.raw", 
+          4096, 2.0, 1.0 / 256.0, 
+          "demo/data/terrains/large.chu", 2.0, 6);</span></code></pre>
+  <p><strong><em>srcFile</em></strong></p>
+  <p>Filename of the source raw 16 bit heightfield we wish to
+      generate data for. Example: "demo/data/terrains/test_16_4097.raw".</p>
+  <p><b><strong><em>size</em></strong></b> </p>
+  <p>Size of the heightfield, which is assumed to be square. 
+      The heightfield will be expected to be ONE MORE THAN THIS.
+      Integer. Size must be a power of 2. Example: 4096.</p>
+  <p><strong><em>squareSize</em></strong></p>
+  <p>Spacing between sample points, in meters. The default in
+      legacy was 8 meters. This is a floating point number. 
+      There are no limitations on this value, although high
+      polygon density may result in reduced frame rates.
+      Example: 2.0.</p>
+  <p><strong><em>vertScale</em></strong></p>
+  <p>Vertical scale factor. Incoming raw data comes in as a 
+      whole number between -32,765 and +32,765, and is scaled 
+      by this factor to convert to meters.</p>
+  <p>Factors are commonly of the form 1.0 / 2.0<sup>n</sup>, 
+      n often being between 1 and 8. 1.0 / 256.0 gives you a
+      workable range of about 256 meters in the vertical range.</p>
+  <p><strong><em>destFile</em></strong></p>
+  <p>File to which generated data is written. This file should
+      end in <tt class="filename">.chu</tt> for TGEA's resource
+      manager to properly load it. Example: <tt class="filename">"demo/data/terrains/large.chu"</tt>.</p>
+  <p><strong><em>error</em></strong></p>
+  <p>Floating point number indicating the acceptable amount
+      of error for each LOD to possess compared to the
+      previous. This directly and dramatically impacts the
+      number of polygons that will be rendered. Example: 2.0.</p>
+  <p><strong><em>treeDepth</em></strong></p>
+  <p>Integer indicating how deep the quadtree of chunks is
+      to be. Example: 6.</p>
+  <p>&nbsp;</p>
+  <br>
+   
+  
+  <p name="Generating_Texture_Trees"><a name="Generating_Texture_Trees"></a></p>
+  <h2><a name = "HeaderLink3"></a><a name = "HeaderLink4"></a>Generating Texture Trees</h2>
+  <p>
+   Similarly, textures are generated from a single large source texture.
+    Consumer hardware cannot support textures much larger than 4096x4096,
+    so it is necessary to slice the source texture into smaller pieces so
+    that they may be loaded piecemeal to the card. In addition, detail levels
+    are precalculated, and the textures are compressed (currently with DXT).</p>
+  <h4><em></em><a name = "HeaderLink5"></a>Example:</h4>
+  <pre><code><strong>// Generating a TQT.</strong><br>generateTQT("demo/data/terrains/tseSurf.jpg", 
+            "demo/data/terrains/large.tqt", 5, 512);</code></pre>
+  <p name="Run_Time_Reference"><a name="Run_Time_Reference"></a></p>
+  <h2><a name = "HeaderLink3"></a><a name = "HeaderLink6"></a>Run Time Reference</h2>
+  <p>This section discusses three major aspects of the Atlas engine runtime: the script interface, the runtime parameters, and the C++ code layout. Together, knowledge of these sections will result in familiarity with how the runtime operates. </p>
+  </p>
+  <h4><em></em><a name = "HeaderLink7"></a>C++ Reference</h4>
+  <p>
+   The Atlas engine resides in the Atlas sub-directory. The header files are annotated with Doxygen-compatible comments, which fully explain the functioning of the various classes	and components of the terrain. The terrain itself is self-contained, and should not require any modifications to existing objects to work properly.
+</p>
+<p>
+If you should require a C++ reference, simply run doxygen on the TGEA codebase and refer to the appropriate sections. Or, you can read the comments, which are what the Doxygen documentation is generated from. The offline documentation covering the Atlas system is also a useful reference.<br><br></p>
+
+<h4><em></em><a name = "HeaderLink8"></a>Script Reference</h4>
+  <p>There is only one class exposed to the script system, <em>AtlasInstance</em>. Beyond the <em>position</em> and <em>rotation</em> fields,
+		these are the other important fields:<br>
+  <pre><p class="title"><b>AtlasInstance Fields</b></p>
+<strong>tqtFile</strong><br>- Path to the .TQT file for this instance.<br><br>
+<strong>chunkFile</strong><br>- Path to the .CHU file for this instance.><br><br>
+<strong>detailTexture</strong><br>- Detail texture for the terrain.<br><br>
+<strong>materialName</strong><br>- Name of the CustomMaterial used to render this instance. &quot;AtlasMaterial&quot; by default, and recommended to stay default. 
+  Do not change this variable if you do not know what you are doing.  This will not work except with custom shaders<br><br>
+<strong>detailTexture</strong><br>- Detail texture for the terrain.<br><br>
+</pre>
+  
+  <h4><em></em><a name = "HeaderLink9"></a>Run time Parameter Reference</h4>
+  <p> Runtime parameters can be access from the console to control various  			aspects of the runtime behavior of the Atlas engine. They have  			global, immediate effect, and are not networked.<br>
+  <pre><p class="title"><b>Atlas Engine Runtime Parameters</b></p>
+<strong>$AtlasInstance::showChunkBounds</strong><br>- Render bounding boxes showing the extents of each currently loaded geometry chunk in the hierarchy. 
+  Color of the box ranges from yellow to red to black, indicating the relative amount of paging activity occurring on that node. Boolean, default is false. <br><br>
+<strong>$AtlasInstance::renderWireframe</strong><br>- Draw all Atlas geometry in wireframe mode. Boolean, default is false.<br><br>
+<strong>$AtlasInstance::synchronousLoad</strong><br>- If true, performs all loading each frame in the main thread. If false, performs all loading in a background thread. Boolean, default is false. <br><br>
+<strong>$AtlasInstance::lockCamera</strong><br>- Debug parameter. Locks the camera position for testing LOD and culling code. Boolean, default is false. <br><br>
+<strong>$AtlasInstance::collideChunkBoxes</strong><br>- Debug parameter. For raycasts, treats chunks as big boxes. Useful for debugging raycast code. Boolean, default is false. <br><br>
+<strong>$AtlasInstance::collideGeomBoxes</strong><br>- Debug parameter. For raycasts, treats the nodes of the collision quadtree in a chunk as big boxes. Useful for debugging raycast code. Boolean, default is false.<br><br>
+  </pre>
+  </p>
+  <p name="Tools"><a name="Tools"></a></p>
+  <h2><a name = "HeaderLink3"></a><a name = "HeaderLink10"></a>Tools</h2>
+  <p>Now that you have a stronger technical understanding of the Atlas terrain system, this might be a good time to experiment. Check out the following tutorials for creating terrains:</p>
+  <p>- <a href="UsingTerragen.html">Using Terragen With Atlas</a><br>
+- <a href="UsingL3DT.html">Using L3Dt With Atlas</a></p>
+  </blockquote>
+  
+<blockquote>&nbsp;</blockquote></td>
+</tr>
+</table>
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Terrain/GenerateAtlasData.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:20 GMT -->
+</html>

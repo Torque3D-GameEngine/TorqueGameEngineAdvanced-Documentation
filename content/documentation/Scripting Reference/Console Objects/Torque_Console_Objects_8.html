@@ -1,0 +1,1254 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_8.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4243;
+   parent.leftFrame.expandToItem('tree2', 'doc4243');
+   var element = parent.leftFrame.document.getElementById('doc4243');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>Torque Console Objects 8 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+ <table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console_Objects_Fields_and_Methods_Quick_Reference_Part_8"><span class="tocnumber">1</span> <span class="toctext">Console Objects Fields and Methods Quick Reference Part 8</span></a>
+<ul>
+<li class="toclevel-2"><a href="#PathCamera"><span class="tocnumber">1.1</span> <span class="toctext">PathCamera</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Method_Summaries"><span class="tocnumber">1.1.1</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods"><span class="tocnumber">1.1.2</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#PhysicalZone"><span class="tocnumber">1.2</span> <span class="toctext">PhysicalZone</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields"><span class="tocnumber">1.2.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_2"><span class="tocnumber">1.2.2</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_2"><span class="tocnumber">1.2.3</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Player"><span class="tocnumber">1.3</span> <span class="toctext">Player</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_3"><span class="tocnumber">1.3.1</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_3"><span class="tocnumber">1.3.2</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#PhysicalZone_2"><span class="tocnumber">1.4</span> <span class="toctext">PhysicalZone</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_2"><span class="tocnumber">1.4.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Console_Objects_Fields_and_Methods_Quick_Reference_Part_8"></a><h1><a name = "HeaderLink1"></a>Console Objects Fields and Methods Quick Reference Part 8</h1>
+<p><br />
+</p><p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br /><br />
+</p>
+<a name="PathCamera"></a><h3><a name = "HeaderLink2"></a>PathCamera</h3>
+<hr />
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml">This object is a special version of the camera that can be placed on a path.  The camera can then be made to travel along this path.  This feature can be used for many purposes, including cut-scenes, in-game movies, demos, etc.<br />
+<br />
+</p>
+<a name="Console_Method_Summaries" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink3"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">popFront</td>	
+<td width="33%" align="center" bgcolor="#009900">pushBack</td>	
+<td width="33%" align="center" bgcolor="#009900">pushFront</td>	
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">reset</td>	
+<td width="33%" align="center" bgcolor="#009900">setPosition</td>	
+<td width="33%" align="center" bgcolor="#009900">setState</td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink4"></a>Console Methods </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>popFront()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>popFront</b></i> method to remove a knot from the front of the camera's knot queue.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Removes first node in path, does not affect node base or position.<br />
+<br />
+<b>See Also</b><br />
+pushBack, pushFront<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>pushBack( transform , speed , type , path )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>pushBack</b></i> method to add a new knot to the back of a path camera's path.<br />
+<br />
+<b>Syntax<br />
+<i>transform</i></b> – Transform vector for new knot.<br />
+<i><b>speed</b></i> – Speed setting for knot.<br />
+<i><b>type</b></i> – Knot type. (“Normal”, “Position Only”, “Kink”)<br />
+<i><b>path</b></i> – Path type. (“Linear”, “Spline”)<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+pushFront<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>pushFront( transform , speed , type , path )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>pushFront</b></i> method to add a new knot to the front of a path camera's path.<br />
+<br />
+<b>Syntax<br />
+<i>transform</i></b> – Transform vector for new knot.<br />
+<i><b>speed</b></i> – Speed setting for knot.<br />
+<i><b>type</b></i> – Knot type. (“Normal”, “Position Only”, “Kink”)<br />
+<i><b>path</b></i> – Path type. (“Linear”, “Spline”)<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+pushBack<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>reset( [ speed ] )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>reset</b></i> method to move the camera back to the beginning of the path and optionally give it a new travel speed.<br />
+<br />
+<b>Syntax<br />
+<i>speed</i></b> – A positive floating-point value corresponding to the rate of travel for the camera.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+setState<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setPosition( pos )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setPosition</b></i> method to set the position of the camera on a path as a percentage.<br />
+<br />
+<b>Syntax<br />
+<i>pos</i></b> – A floating point value equal to the position on the current camera path. Between 0.0 and 1.0.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+setState, setTarget<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setState( state )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setState</b></i> method to set the camera's current movement state.<br />
+<br />
+<b>Syntax<br />
+<i>state</i></b> – A string containing either:<br />
+<i>forward</i>  – moving from front of path to back of path.<br />
+<i>backward</i> – moving from back of path to front of path.<br />
+<i>stop</i>     - not moving.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+reset, setPosition<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setTarget( pos )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setTarget</b></i> method to set the next position target for this path camera.  A path camera will travel along the path until it reaches the current target.  This target is set as a percentage of the entire path.<br />
+<br />
+<b>Syntax<br />
+<i>pos</i></b> – A floating point value represent the next target on this path camera's path. Between 0.0 and 1.0.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Setting a target position behind the current path camera position will not make the camera travel in reverse unless the moving state is backward.<br />
+<br />
+<b>See Also</b><br />
+setPosition, setState<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="PhysicalZone" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink5"></a>PhysicalZone</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink6"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">appliedForce</td>	
+<td width="55%" bgcolor="#CCCCCC">Three-element floating point value representing forces in three axes to apply to objects entering pzone.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">
+<p>“x y z”<br />
+Each value in range:<br />
+[ -40000 , 40000 ]
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">gravityMod</td>	
+<td width="55%" bgcolor="#CCCCCC">Gravity in pzone.  Multiplies against standard gravity.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">polyhedron</td>	
+<td width="55%" bgcolor="#CCCCCC">Floating point values describing outer bounds of pzone.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">velocityMod</td>	
+<td width="55%" bgcolor="#CCCCCC">Multiply velocity of objects entering zone by this value every tick.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ -40000 , 40000 ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink7"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="50%" align="center" bgcolor="#009900">activate</td>	
+<td width="50%" align="center" bgcolor="#009900">deactivate</td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink8"></a>Console Methods </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>activate()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>activate</b></i> method to enable this physicalZone.  Once enabled, all of the physicalZone attributes will be in effect.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+deactivate<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>deactivate()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>deactivate</b></i> method to disable this physicalZone.  Once disabled, none of the physicalZone attributes will be in effect.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+activate<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Player" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink9"></a>Player</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink10"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">checkDismountPoint</td>	
+<td width="33%" align="center" bgcolor="#009900">clearControlObject</td>	
+<td width="33%" align="center" bgcolor="#009900">getControlObject</td>	
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getDamageLocation</td>	
+<td width="33%" align="center" bgcolor="#009900">getState </td>	
+<td width="33%" align="center" bgcolor="#009900">setActionThread</td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink11"></a>Console Methods </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>checkDismountPoint( oldPos , pos )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>checkDismountPoint</b></i> method to see if dismounting a player from one position to another will cause a collision, or a cohabitation of space.<br />
+<br />
+<b>Syntax<br />
+<i>oldPos</i></b> – Original position of player.<br />
+<i><b>pos</b></i> – Intended position of player.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the new position does not result in any collisions, false otherwise.<br />
+<br />
+<b>Notes</b><br />
+This can be used for a variety of things besides dismounting checks.  Basically, any time you want to check if a player can be moved into a new position, you may use this.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>clearControlObject()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>clearControlObject</b></i> method to undo the results of a call to <i>player.setControlObject</i>, re-establishing this player as the control object.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+It is possible to temporarily make another player receive move commands that would normally be sent to this player, while leaving this player in place.  Unless moved, the camera will stay mounted to this player, while the other player receives movement inputs.  <br />
+<br />
+<b>See Also</b><br />
+getControllingObject, setControlObject<br />
+<br />
+Description<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getControllingObject()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getControllingObject</b></i> method to determine if this player object is receiving input commands from another player.  <br />
+<br />
+<b>Returns</b><br />
+Returns 0 if this object is not being controlled by another player object, or it will return a non-zero positive integer specifying the ID of the player object that is controlling this player.<br />
+<br />
+<b>Notes</b><br />
+It is possible to temporarily make another player receive move commands that would normally be sent to this player, while leaving this player in place.  Unless moved, the camera will stay mounted to this player, while the other player receives movement inputs.<br />
+<br />
+<b>See Also</b><br />
+clearControlObject, setControlObject<br />
+<br />
+Description<br />
+<br />
+Returns float<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getDamageLocation( damagePosition )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getDamageLocation</b></i> method to get the named damage location and modifier for a given <i><b>damagePosition</b></i>.  The player object can differentiate 'hit' locations based on a pre-defined set of datablock settings.  You may modify these settings, to vary the percentage of area given over to any body region.<br />
+<br />
+<b>Syntax<br />
+<i>damagePosition</i></b> – A position for which to retrieve a body region on this player. <br />
+<br />
+<b>Returns</b><br />
+Returns a string containing two words (space separated strings), where the first is a location and the second is a modifier:<br />
+<br />
+<b>Posible locations</b><br />
+</p>
+<ul><li>legs</li>
+<li>torso</li>
+<li> head</li>
+</ul>
+<p><br />
+<b>Head modifiers</b><br />
+</p>
+<ul><li>front_left</li>
+<li>front_right</li>
+<li>back_left</li>
+<li>back_right</li>
+</ul>
+<p><br />
+<b>Legs/Torso modifiers</b><br />
+</p>
+<ul><li>middle_back</li>
+<li>right_back</li>
+<li>left_middle</li>
+<li>middle_middle</li>
+<li>right_middle</li>
+<li>left_front</li>
+<li>middle_front</li>
+<li>right_front</li>
+</ul>
+<p><br />
+<b>Notes</b><br />
+Positions do not need to be on or even near the player.  The engine will calculate which body location and modifier best fit any position relative to the player.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getState()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getState</b></i> method to get the current state of this player.<br />
+<br />
+<b>Returns</b><br />
+Returns a string specifying the current state of the player: <br />
+<br />
+<b>Possible states</b><br />
+Dead    – Damage less than or equal to disabledLevel<br />
+Mounted – Mounted to another object.<br />
+Move    - Alive and able to move.<br />
+Recover – Recovering from a long fall or hard impact (unable to move).<br />
+<br />
+<b>Notes</b><br />
+The most important fact to note is that your player is considered dead at the disabledLevel, not the destroyedLevel.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setActionThread( string sequenceName , hold , fps )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setActionThread</b></i> method to play a specific animation.  This is similar to the <i>playThread</i> method that comes with all ShapeBase objects, but it is designed for full body animations and comes with a few different options.  Optionally, a player may be told to play a thread and then to hold at the last frame of that animation until another over-rides it.<br />
+<br />
+<b>Syntax<br />
+<i>sequenceName</i></b> – A string containing the name of the animation to play.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setControlObject( obj )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setControlObject</b></i> method to have this player object 'control' another player object.  Doing so will re-direct movement inputs from this player object to the controlled player object.  This can be used when you want one player to act as a mount for another player.<br />
+<br />
+<b>Syntax<br />
+<i>obj</i></b> – The ID of the surrogate player that should now receive movement inputs previously destined for this player.<br />
+<br />
+<b>Returns</b><br />
+Returns true on success, and false on failure.<br />
+<br />
+<b>Notes</b><br />
+It is possible to temporarily make another player receive move commands that would normally be sent to this player, while leaving this player in place.  Unless moved, the camera will stay mounted to this player, while the other player receives movement inputs.<br />
+<br />
+<b>See Also</b><br />
+clearControlObject, getControllingObject<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="PhysicalZone_2" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink12"></a>PhysicalZone</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink13"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Rendering</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">renderFirstPerson</td>	
+<td width="55%" bgcolor="#CCCCCC">If true, render the player mesh while in 1st POV.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Pickups</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">pickupRadius</td>	
+<td width="55%" bgcolor="#CCCCCC">Can be used to increase the sizeof the player box for item collisions ONLY.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Looking</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxFreelookAngle</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum free-look angle in radians.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ -3.14159 , 3.14159 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxLookAngle</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum look angle in radians.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ -3.14159 , 3.14159 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minLookAngle</td>	
+<td width="55%" bgcolor="#CCCCCC">Minimum look angle in radians.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ -3.14159 , 3.14159 ]</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Time Scaling</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxTimeScale</td>	
+<td width="55%" bgcolor="#CCCCCC">Limits animation scaling.  Animations will scale up to this amount when matching ground velocity.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Step Height</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxStepHeight</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum height player will be able to step up.  Heights larger than this will stop a walking player.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Forces and Factors</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">horizMaxSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum horizontal velocity on ground, in air, or in water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">horizResistFactor</td>	
+<td width="55%" bgcolor="#CCCCCC">Delta factor used to determine how muchof 'horizResistspeed' is removed from  current velocity.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">horizResistSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Velocity at which horizontal resistance kicks in.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">jumpDelay</td>	
+<td width="55%" bgcolor="#CCCCCC">Forced delay between jumps (in ticks).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">jumpEnergyDrain</td>	
+<td width="55%" bgcolor="#CCCCCC">Drain this many energy points for every jump.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">jumpForce</td>	
+<td width="55%" bgcolor="#CCCCCC">Force applied to player on jump.  Should be less than 40000 * mass.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">jumpSurfaceAngle</td>	
+<td width="55%" bgcolor="#CCCCCC">Cannot jump if surface angle equal to or greater to this many degrees.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxJumpSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Cannot jump if running faster than this.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minJumpEnergy</td>	
+<td width="55%" bgcolor="#CCCCCC">Cannot jump if energy lower than this.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minRunEnergy</td>	
+<td width="55%" bgcolor="#CCCCCC">Cannot run if energy lower than this.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">recoverDelay</td>	
+<td width="55%" bgcolor="#CCCCCC">Number of ticks that player stays in 'recovery mode' after hard impact.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0 , inf ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">recoverRunForceScale</td>	
+<td width="55%" bgcolor="#CCCCCC">Run force is multiplied by this amount during 'recovery'.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">runEnergyDrain</td>	
+<td width="55%" bgcolor="#CCCCCC">Drain this much energy per tick while running.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">runForce</td>	
+<td width="55%" bgcolor="#CCCCCC">Accelerate player by this much per tick as a result of a move (command).  Should be less than 40000 * mass.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">runSurfaceAngle</td>	
+<td width="55%" bgcolor="#CCCCCC">Cannot accelerate if surface angle equal to or greater to this many degrees.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">upMaxSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum velocity allowed in the positve Z direction.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">upResistFactor</td>	
+<td width="55%" bgcolor="#CCCCCC">Delta factor used to determine how muchof 'upResistSpeed' is removed from  current velocity.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">upResistSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Velocity at which vertical resistance kicks in.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Velocity</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxBackwardSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum backward velocity in m/s.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxForwardSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum forward velocity in m/s.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxSideSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum sideway velocity in m/s.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxUnderwaterBackwardSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum underwater backward velocity in m/s.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxUnderwaterForwardSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum underwater forward velocity in m/s.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxUnderwaterSideSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Maximum underwater sideway velocity in m/s.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Impacts0</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">groundImpactMinSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">The velocity at which a collision with the ground is registered as an impact.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">groundImpactShakeAmp</td>	
+<td width="55%" bgcolor="#CCCCCC">Camera shake amplitude when a ground impact is registered.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">“1.0 1.0 10.0“</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">groundImpactShakeDuration</td>	
+<td width="55%" bgcolor="#CCCCCC">Camera shake duration when a ground impact is registered.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">groundImpactShakeFalloff</td>	
+<td width="55%" bgcolor="#CCCCCC">a multiplier determining at what rate the shaking from an impact is reduced over time.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">groundImpactShakeFreq</td>	
+<td width="55%" bgcolor="#CCCCCC">Camera shake frequency  when a ground impact is registered.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">“4.0 4.0 4.0“</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minImpactSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">The velocity at which a collision with the any object is registered as an impact.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Hit Boxes</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">boundingBox</td>	
+<td width="55%" bgcolor="#CCCCCC">A vector containing the radius values for each dimension of the unscaled player's bounding box. (Will be multiplied by scale.)</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">“1.6 1.6 2.3”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">boxHeadBackPercentage</td>	
+<td width="55%" bgcolor="#CCCCCC">In conjunction with boxHeadBackPercentage, used to determine whether the front, middle, or back side of the player's torso or legs was hit. Note: this functionality is difficult to proprely change; it is recommended taht default values be used. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">0</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">boxHeadFrontPercentage</td>	
+<td width="55%" bgcolor="#CCCCCC">In conjunction with boxHeadBackPercentage, used to determine whether the front, middle, or back side of the player's torso or legs was hit. Note: this functionality is difficult to proprely change; it is recommended taht default values be used.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">1</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">boxHeadLeftPercentage</td>	
+<td width="55%" bgcolor="#CCCCCC">In conjunction with boxHeadRightPercentage, used to determine whether the left, middle, or right side of the player's torso or legs was hit. Note: this functionality is difficult to properly change; it is recommended that default values be used </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">0</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">boxHeadPercentage</td>	
+<td width="55%" bgcolor="#CCCCCC">The distance from the bottom of the player's bounding box, to the beginning of the area considered to bound the player's head. Measured as a raw percentage.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">boxHeadRightPercentage</td>	
+<td width="55%" bgcolor="#CCCCCC">In conjunction with boxHeadRightPercentage, used to determine whether the left, middle, or right side of the player's torso or legs was hit. Note: this functionality is difficult to properly change; it is recommended that default values be used </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">1</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">boxTorsoPercentage</td>	
+<td width="55%" bgcolor="#CCCCCC">Like boxHeadPercentage, but specifies where the torso area begins.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Footprints and -puffs</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">decalData</td>	
+<td width="55%" bgcolor="#CCCCCC">DecalData datablock used for footprints.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">decalOffset</td>	
+<td width="55%" bgcolor="#CCCCCC">The offset from the player's center by which the decal should be displayed; should correlate with the distance from player's center, to the player's right foot center. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">dustEmitter</td>	
+<td width="55%" bgcolor="#CCCCCC">--</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">Not Used</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">footPuffEmitter</td>	
+<td width="55%" bgcolor="#CCCCCC">The ParticleEmitterData datablock will be used to emit particles at footstep locations.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">footPuffNumParts</td>	
+<td width="55%" bgcolor="#CCCCCC">Number of dust particles to be generated for foot puffs.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">footPuffRadius</td>	
+<td width="55%" bgcolor="#CCCCCC">The radius of dust spread from foot steps.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Sounds and Modifiers</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">exitingWater</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds when emerging from water. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">exitSplashSoundVelocity</td>	
+<td width="55%" bgcolor="#CCCCCC">The minimum velocity at which the exit splash sound will be played when emerging from water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FootBubblesSound</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile  used to produce sounds for bubbles produced by footsteps. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FootHardSound</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds for hard footsteps. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FootMetalSound</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds for soft footsteps. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FootShallowSound</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds for shallow water footsteps. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FootSoftSound</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile  used to produce sounds for soft footsteps. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FootUnderWater</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile  used to produce sounds for funderwater footsteps.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Footwading</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds for wading footsteps.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">hardSplashSoundVelocity</td>	
+<td width="55%" bgcolor="#CCCCCC">The minimum velocity at which the hard splash sound will be played when entering or leaving water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">impactHardSound</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds for hard impacts.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">impactMetal</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds for metal impacts. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">impactSnowSound</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds for snow impacts. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">impactSoftSound</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds for soft impacts. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">impactWaterEasy</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds for soft impacts against water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">impactWaterHard</td>	
+<td width="55%" bgcolor="#CCCCCC">The minimum velocity at which the hard water impact sound will be played when entering or leaving water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">impactWaterMedium</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds for medium impacts against water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">mediumSplashSoundVelocity</td>	
+<td width="55%" bgcolor="#CCCCCC">The minimum velocity at which the medium water impact sound will be played when entering or leaving water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">movingBubblesSound</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds for underwater bubble  while the player is moving.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">waterBreathSound</td>	
+<td width="55%" bgcolor="#CCCCCC">The AudioProfile used to produce sounds for underwater breathing.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Splashes and Bubbles</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">bubbleEmitTime</td>	
+<td width="55%" bgcolor="#CCCCCC">The length of time to continue emitting bubbles. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">footstepSplashHeight</td>	
+<td width="55%" bgcolor="#CCCCCC">The maximum height at which to play the shallow footstep effect.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">splash</td>	
+<td width="55%" bgcolor="#CCCCCC">The SplashData datablock used to emit splashes.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">splashAngle</td>	
+<td width="55%" bgcolor="#CCCCCC">The mimimum verticle angle at which a player must be travelling in order to generate a splash effect.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>splashEmitter[0]<br />
+splashEmitter[1]
+</p>
+</td>	
+<td width="55%" bgcolor="#CCCCCC">Array of pointers to ParticleEmitterData datablocks which will be used to generate splash effect particles.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">splashFreqMod</td>	
+<td width="55%" bgcolor="#CCCCCC">The simulated frequency modulation of a splash generated by this player. Multiplied along with player speed and time elapsed when determining splash emition rate. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">splashVelEpsilon</td>	
+<td width="55%" bgcolor="#CCCCCC">The threshold speed at which we consider the player's movement to have stopped when updating splash effects.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">splashVelocity</td>	
+<td width="55%" bgcolor="#CCCCCC">The mimimum velocity a player needs in order to generate a splash effect.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><a href="Console%20Objects.html" title="Torque Console Objects TOC"> Table of Contents</a> || <a href="Torque_Console_Objects_1.html" title="Torque Console Objects"> Part 1</a> || <a href="Torque_Console_Objects_2.html" title="Torque Console Objects 2"> Part 2</a> || <a href="Torque_Console_Objects_3.html" title="Torque Console Objects 3"> Part 3</a> || <a href="Torque_Console_Objects_4.html" title="Torque Console Objects 4"> Part 4</a> || <a href="Torque_Console_Objects_5.html" title="Torque Console Objects 5"> Part 5</a> || <a href="Torque_Console_Objects_6.html" title="Torque Console Objects 6"> Part 6</a> || <a href="Torque_Console_Objects_7.html" title="Torque Console Objects 7"> Part 7</a> || <a href="Torque_Console_Objects_9.html" title="Torque Console Objects 9"> Part 9</a> || <a href="Torque_Console_Objects_10.html" title="Torque Console Objects 10"> Part 10</a> || <a href="Torque_Console_Objects_11.html" title="Torque Console Objects 11"> Part 11</a> || <a href="Torque_Console_Objects_12.html" title="Torque Console Objects 12"> Part 12</a> || <a href="Torque_Console_Objects_13.html" title="Torque Console Objects 13"> Part 13</a> || <a href="Torque_Console_Objects_14.html" title="Torque Console Objects 14"> Part 14</a> || <a href="Torque_Console_Objects_15.html" title="Torque Console Objects 15"> Part 15</a>
+</p>
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_8.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:04 GMT -->
+</html>

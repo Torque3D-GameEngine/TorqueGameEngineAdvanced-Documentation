@@ -1,0 +1,563 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_5.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4218;
+   parent.leftFrame.expandToItem('tree2', 'doc4218');
+   var element = parent.leftFrame.document.getElementById('doc4218');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueScript Console Functions 5 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <p xmlns="http://www.w3.org/1999/xhtml"><big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <strong> Console</strong> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.
+</p>
+<i><b><hr /></b></i>
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table id="toc" class="toc" xmlns="http://www.w3.org/1999/xhtml"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console"><span class="tocnumber">1</span> <span class="toctext">Console</span></a>
+<ul>
+<li class="toclevel-2"><a href="#call.28_funcName_.5B_.2C_args_..._.5D_.29"><span class="tocnumber">1.1</span> <span class="toctext">call( funcName [ , args ... ] )</span></a></li>
+<li class="toclevel-2"><a href="#cls.28_.29"><span class="tocnumber">1.2</span> <span class="toctext">cls( )</span></a></li>
+<li class="toclevel-2"><a href="#collapseEscape.28_text_.29"><span class="tocnumber">1.3</span> <span class="toctext">collapseEscape( text )</span></a></li>
+<li class="toclevel-2"><a href="#compile.28_fileName_.29"><span class="tocnumber">1.4</span> <span class="toctext">compile( fileName )</span></a></li>
+<li class="toclevel-2"><a href="#deleteVariables.28_wildCard_.29"><span class="tocnumber">1.5</span> <span class="toctext">deleteVariables( wildCard )</span></a></li>
+<li class="toclevel-2"><a href="#echo.28_text_.5B_.2C_..._.5D_.29"><span class="tocnumber">1.6</span> <span class="toctext">echo( text [ , ... ] )</span></a></li>
+<li class="toclevel-2"><a href="#enableWinConsole.28_enable_.29"><span class="tocnumber">1.7</span> <span class="toctext">enableWinConsole( enable )</span></a></li>
+<li class="toclevel-2"><a href="#error.28_text_.5B_.2C_..._.5D_.29"><span class="tocnumber">1.8</span> <span class="toctext">error( text [ , ... ] )</span></a></li>
+<li class="toclevel-2"><a href="#eval.28_script_.29"><span class="tocnumber">1.9</span> <span class="toctext">eval( script )</span></a></li>
+<li class="toclevel-2"><a href="#exec.28_fileName_.5B_.2C_nocalls_.5B_.2C_journalScript_.5D_.5D_.29"><span class="tocnumber">1.10</span> <span class="toctext">exec( fileName [ , nocalls [ , journalScript ] ] )</span></a></li>
+<li class="toclevel-2"><a href="#expandEscape.28_text_.29"><span class="tocnumber">1.11</span> <span class="toctext">expandEscape( text )</span></a></li>
+<li class="toclevel-2"><a href="#export.28_wildCard_.5B_.2C_fileName_.5B_.2C_append_.5D_.5D_.29"><span class="tocnumber">1.12</span> <span class="toctext">export( wildCard [ , fileName [ , append ] ] )</span></a></li>
+<li class="toclevel-2"><a href="#quit.28.29"><span class="tocnumber">1.13</span> <span class="toctext">quit()</span></a></li>
+<li class="toclevel-2"><a href="#warn.28_text_.5B_.2C_..._.5D_.29"><span class="tocnumber">1.14</span> <span class="toctext">warn( text [ , ... ] )</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p xmlns="http://www.w3.org/1999/xhtml"></p>
+<a name="Console" xmlns="http://www.w3.org/1999/xhtml"></a><h2 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink1"></a>Console </h2>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="call.28_funcName_.5B_.2C_args_..._.5D_.29"></a><h3><a name = "HeaderLink2"></a>call( funcName [ , args ... ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>call</b></i> function to dynamically build and call a function.<br />
+<br />
+<i><b>Syntax<br />
+funcName</b></i> – A string containing the unadorned name of a function to be executed.<br />
+<i><b>args ...</b></i> - Any arguments that should be passed to the function.<br />
+<br />
+<b>Returns</b><br />
+Returns a string containing the results from the function that is built and called.<br />
+<br />
+<b>See Also</b><br />
+eval<br />
+<br />
+</p>
+<pre>
+// Prints Hello World
+call( "echo" , "Hello" , " ", "World" );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="cls.28_.29"></a><h3><a name = "HeaderLink3"></a>cls( )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>cls</b></i> function to clear the console output.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="collapseEscape.28_text_.29"></a><h3><a name = "HeaderLink4"></a>collapseEscape( text )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>collapseEscape</b></i> function to replace all escape sequences ('\\xx') with a collapsed version ('\xx').<br />
+<br />
+<i><b>Syntax<br />
+text</b></i> – A string, possibly containing escape sequences.<br />
+<br />
+<b>Returns</b><br />
+Returns a copy of <i><b>text</b></i> with all escape sequences coverted to an encoding.<br />
+<br />
+<i><b>See Also</b></i> <br />
+expandEscape<br />
+<br />
+</p>
+<pre>
+echo( "edo\\t" ); // Prints edo\t
+
+echo( collapseEscape( "edo\\t" ) ); \\ Prints edo^
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="compile.28_fileName_.29"></a><h3><a name = "HeaderLink5"></a>compile( fileName )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>compile</b></i> function to pre-compile a script file without executing the contents.<br />
+<br />
+<i><b>Syntax<br />
+fileName</b></i> – A path to the script to compile.<br />
+<br />
+<b>Returns</b><br />
+Returns 1 if the script compiled without errors and 0 if the file did not compile correctly or if the path is wrong.  Also, ff the path is invalid, an error will print to the console.<br />
+<br />
+<b>See Also</b><br />
+exec<br />
+<br />
+</p>
+<pre>
+compile("./main.cs");
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="deleteVariables.28_wildCard_.29"></a><h3><a name = "HeaderLink6"></a>deleteVariables( wildCard )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>deleteVariables</b></i> function to delete any global variable matching the <i><b>wildCard</b></i> statement.<br />
+<br />
+<i><b>Syntax<br />
+wildCard</b></i> – A string identifying what variable(s) to delete. All chracters used to create a global are allowed and the special symbol "*", meaning 0 or more instances of any character.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+</p>
+<pre>
+$edo = "cool";
+
+echo( $edo ); // Prints cool
+
+deleteVariables( "$ed*" ); // Delete all globals starting with $ed
+
+echo( $edo ); // Prints "" because $edo was deleted
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="echo.28_text_.5B_.2C_..._.5D_.29"></a><h3><a name = "HeaderLink7"></a>echo( text [ , ... ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>echo</b></i> function to print messages to the console.<br />
+<br />
+<i><b>Syntax<br />
+text</b></i> – Any valid text string.<br />
+...  - Any additional valid text string(s).<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+error, warn<br />
+</p>
+<pre>
+// Prints This is a test
+echo( "This is a test" );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="enableWinConsole.28_enable_.29"></a><h3><a name = "HeaderLink8"></a>enableWinConsole( enable )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>enableWinConsole</b></i> function to tell TGE to create an external console window, either as a separate DOS window or as a new window under OSX/Linux/*NIX.<br />
+<br />
+<i><b>Syntax<br />
+enable</b></i> – A boolean.  If this value is set to true, a new console window will be created.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+Subsequent calls to this function do nothing.  Only one external console is allowed.<br />
+<br />
+</p>
+<pre>
+enableWinConsole( true ); // Open an external console.
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="error.28_text_.5B_.2C_..._.5D_.29"></a><h3><a name = "HeaderLink9"></a>error( text [ , ... ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>error</b></i> function to print error  messages to the console. These messages usually print in red.<br />
+<br />
+<i><b>Syntax<br />
+text</b></i> – Any valid text string.<br />
+...  - Any additional valid text string(s).<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+echo, warn<br />
+<br />
+</p>
+<pre>
+// Prints This is a test
+error( "This is a test" );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="eval.28_script_.29"></a><h3><a name = "HeaderLink10"></a>eval( script )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>eval</b></i> function to execute any valid <i><b>script</b></i> statement.<br />
+<br />
+<i><b>Syntax<br />
+script</b></i> – A string containing a valid <i><b>script</b></i> statement. This may be a single line statement or multiple lines.<br />
+<br />
+<b>Returns</b><br />
+Returns the result of executing the <i><b>script</b></i> statement.<br />
+<br />
+<i><b>Notes</b></i><br />
+If you choose to eval a multi-line statement, be sure that there are no comments or (\\) comment blocks (\**\) embedded in the <i><b>script</b></i> string.<br />
+<br />
+<b>See Also</b><br />
+call<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="exec.28_fileName_.5B_.2C_nocalls_.5B_.2C_journalScript_.5D_.5D_.29"></a><h3><a name = "HeaderLink11"></a>exec( fileName [ , nocalls [ , journalScript ] ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>exec</b></i> function to compile and execute a normal script, or a special journal script.<br />
+<br />
+<i><b>Syntax<br />
+fileName</b></i> – A string containing a path to the script to be compiled and executed.<br />
+<i><b>nocalls</b></i> – A boolean value.  If this value is set to true, then all function calls encountered while executing the script file will be skipped and not called.  This allows us to re-define function definitions found in a script file, without re-executing other worker scripts in the same file.<br />
+<i><b>journalScript</b></i> – A boolean value.  If this value is set tot true, and if a journal is being played, the engine will attempt to read this script from the journal stream.  If no journal is playing, this field is ignored.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the file compiled and executed w/o errors, false otherwise.<br />
+<br />
+<b>Notes</b><br />
+If $Pref::ignoreDSOs is set to true, the system will use .cs before a .dso file if both are found.<br />
+<br />
+<b>See Also</b><br />
+compile<br />
+<br />
+</p>
+<pre>
+exec( "./main.cs" );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="expandEscape.28_text_.29"></a><h3><a name = "HeaderLink12"></a>expandEscape( text )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>collapseEscape</b></i> function to replace all escape sequences ('\xx') with an expanded version ('\\xx').<br />
+<br />
+<i><b>Syntax<br />
+text</b></i> – A string, possibly containing escape sequences.<br />
+<br />
+<b>Returns</b><br />
+Returns a copy of <i><b>text</b></i> with all escape sequences expanded.<br />
+<br />
+<i><b>See Also</b></i> <br />
+collapseEscape<br />
+<br />
+</p>
+<pre>
+echo( "edo\t" ); // Prints edo^
+
+echo( expandEscape( "edo\t" ) ); \\ Prints edo\t
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="export.28_wildCard_.5B_.2C_fileName_.5B_.2C_append_.5D_.5D_.29"></a><h3><a name = "HeaderLink13"></a>export( wildCard [ , fileName [ , append ] ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>export</b></i> function to save all global variables matching the specified name pattern in <i><b>wildCard</b></i> to a file, either appending to that file or over-writing it.<br />
+<br />
+<i><b>Syntax<br />
+wildCard</b></i> – A string identifying what variable(s) to export. All chracters used to create a global are allowed and the special symbol "*", meaning 0 or more instances of any character.<br />
+<i><b>fileName</b></i> – A string containing a path to a file in which to save the globals and their definitions.
+<i><b>append</b></i> – A boolean value.  If this value is true, the file will be appnded to if it exists, otherwise it will be created/over-written.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+</p>
+<pre>
+	echo("Exporting server prefs");
+	export("$Pref::Server::*", "./server/prefs.cs", False);
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="quit.28.29"></a><h3><a name = "HeaderLink14"></a>quit()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>quit</b></i> function to stop the engine and quit to the command line.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+</p>
+<pre>
+quit();
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="warn.28_text_.5B_.2C_..._.5D_.29"></a><h3><a name = "HeaderLink15"></a>warn( text [ , ... ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>warn</b></i> function to print warning messages to the console.  These messages usually yellow or orange.<br />
+<br />
+<i><b>Syntax<br />
+text</b></i> – Any valid text string.<br />
+...  - Any additional valid text string(s).<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+warn, error<br />
+<br />
+</p>
+<pre>
+// Prints This is a test
+warn( "This is a test" );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+<big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <strong> Console</strong> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_5.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:08 GMT -->
+</html>

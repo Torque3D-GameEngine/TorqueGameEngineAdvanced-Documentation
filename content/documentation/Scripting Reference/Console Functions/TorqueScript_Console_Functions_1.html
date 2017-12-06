@@ -1,0 +1,706 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4214;
+   parent.leftFrame.expandToItem('tree2', 'doc4214');
+   var element = parent.leftFrame.document.getElementById('doc4214');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueScript Console Functions 1 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <p xmlns="http://www.w3.org/1999/xhtml"><big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <strong> OpenAL</strong> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p><b>Introduction</b><br />This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table id="toc" class="toc" xmlns="http://www.w3.org/1999/xhtml"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#OpenAL_Wrappers"><span class="tocnumber">1</span> <span class="toctext">OpenAL Wrappers</span></a></li>
+<li class="toclevel-1"><a href="#OpenAL_Functions"><span class="tocnumber">2</span> <span class="toctext">OpenAL Functions</span></a>
+<ul>
+<li class="toclevel-2"><a href="#alxGetChannelVolume.28_channelID_.29"><span class="tocnumber">2.1</span> <span class="toctext">alxGetChannelVolume( channelID )</span></a></li>
+<li class="toclevel-2"><a href="#alxGetListenerf.28_ALEnum_.29"><span class="tocnumber">2.2</span> <span class="toctext">alxGetListenerf( ALEnum )</span></a></li>
+<li class="toclevel-2"><a href="#alGetListener3f.28_ALEnum_.29"><span class="tocnumber">2.3</span> <span class="toctext">alGetListener3f( ALEnum )</span></a></li>
+<li class="toclevel-2"><a href="#alGetListeneri.28_ALEnum_.29"><span class="tocnumber">2.4</span> <span class="toctext">alGetListeneri( ALEnum )</span></a></li>
+<li class="toclevel-2"><a href="#alxGetSourcef.28_handle_.2C_ALEnum_.29"><span class="tocnumber">2.5</span> <span class="toctext">alxGetSourcef( handle , ALEnum )</span></a></li>
+<li class="toclevel-2"><a href="#alxGetSourcei.28_handle_.2C_ALEnum_.29"><span class="tocnumber">2.6</span> <span class="toctext">alxGetSourcei( handle , ALEnum )</span></a></li>
+<li class="toclevel-2"><a href="#alxGetSource3f.28_handle_.2C_ALEnum_.29"><span class="tocnumber">2.7</span> <span class="toctext">alxGetSource3f( handle , ALEnum )</span></a></li>
+<li class="toclevel-2"><a href="#alxGetStreamDuration.28_handle_.29"><span class="tocnumber">2.8</span> <span class="toctext">alxGetStreamDuration( handle )</span></a></li>
+<li class="toclevel-2"><a href="#alxGetStreamPosition.28_handle_.29"><span class="tocnumber">2.9</span> <span class="toctext">alxGetStreamPosition( handle )</span></a></li>
+<li class="toclevel-2"><a href="#alGetString.28_ALEnum_.29"><span class="tocnumber">2.10</span> <span class="toctext">alGetString( ALEnum )</span></a></li>
+<li class="toclevel-2"><a href="#alxGetWaveLen.28_fileName_.29"><span class="tocnumber">2.11</span> <span class="toctext">alxGetWaveLen( fileName )</span></a></li>
+<li class="toclevel-2"><a href="#alListener3f.28_ALEnum_.2C_x_.2C_y_.2C_z.29"><span class="tocnumber">2.12</span> <span class="toctext">alListener3f( ALEnum , x , y , z)</span></a></li>
+<li class="toclevel-2"><a href="#alxListenerf.28_AlEnum_.2C_value_.29"><span class="tocnumber">2.13</span> <span class="toctext">alxListenerf( AlEnum , value )</span></a></li>
+<li class="toclevel-2"><a href="#alxIsPlaying.28_handle_.29"><span class="tocnumber">2.14</span> <span class="toctext">alxIsPlaying( handle )</span></a></li>
+<li class="toclevel-2"><a href="#alxPlay.28_handle_.29"><span class="tocnumber">2.15</span> <span class="toctext">alxPlay( handle )</span></a></li>
+<li class="toclevel-2"><a href="#alxPlay.28_profile_.29"><span class="tocnumber">2.16</span> <span class="toctext">alxPlay( profile )</span></a></li>
+<li class="toclevel-2"><a href="#alxPlay.28_profile_.2C_x_.2C_y_.2C_z_.29"><span class="tocnumber">2.17</span> <span class="toctext">alxPlay( profile , x , y , z )</span></a></li>
+<li class="toclevel-2"><a href="#alxSetChannelVolume.28_channelD_.2C_volume_.29"><span class="tocnumber">2.18</span> <span class="toctext">alxSetChannelVolume( channelD , volume )</span></a></li>
+<li class="toclevel-2"><a href="#alxSourcef.28_handle_.2C_ALEnum_.2C_value_.29"><span class="tocnumber">2.19</span> <span class="toctext">alxSourcef( handle , ALEnum , value )</span></a></li>
+<li class="toclevel-2"><a href="#alxSourcei.28_handle_.2C_ALEenum_.2C_value_.29"><span class="tocnumber">2.20</span> <span class="toctext">alxSourcei( handle , ALEenum , value )</span></a></li>
+<li class="toclevel-2"><a href="#alxSource3f.28_handle_.2C_ALEnum_.2C_x_.2C_y_.2C_z_.29"><span class="tocnumber">2.21</span> <span class="toctext">alxSource3f( handle , ALEnum , x , y , z )</span></a></li>
+<li class="toclevel-2"><a href="#alxStop.28_handle_.29"><span class="tocnumber">2.22</span> <span class="toctext">alxStop( handle )</span></a></li>
+<li class="toclevel-2"><a href="#alxStopAll.28.29"><span class="tocnumber">2.23</span> <span class="toctext">alxStopAll()</span></a></li>
+<li class="toclevel-2"><a href="#OpenALInitDriver.28.29"><span class="tocnumber">2.24</span> <span class="toctext">OpenALInitDriver()</span></a></li>
+<li class="toclevel-2"><a href="#OpenALShutdownDriver.28.29"><span class="tocnumber">2.25</span> <span class="toctext">OpenALShutdownDriver()</span></a></li>
+<li class="toclevel-2"><a href="#alxCreateSource.28_profile_.29"><span class="tocnumber">2.26</span> <span class="toctext">alxCreateSource( profile )</span></a></li>
+<li class="toclevel-2"><a href="#alxCreateSource.28_profile.2C_x.2C_y.2C_z_.29"><span class="tocnumber">2.27</span> <span class="toctext">alxCreateSource( profile, x, y, z )</span></a></li>
+<li class="toclevel-2"><a href="#alxCreateSource.28_description.2C_filename_.29"><span class="tocnumber">2.28</span> <span class="toctext">alxCreateSource( description, filename )</span></a></li>
+<li class="toclevel-2"><a href="#alxCreateSource.28_description.2C_filename.2C_x.2C_y.2C_z_.29"><span class="tocnumber">2.29</span> <span class="toctext">alxCreateSource( description, filename, x, y, z )</span></a></li>
+<li class="toclevel-2"><a href="#OpenALRegisterExtensions.28.29"><span class="tocnumber">2.30</span> <span class="toctext">OpenALRegisterExtensions()</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p xmlns="http://www.w3.org/1999/xhtml"></p>
+<a name="OpenAL_Wrappers" xmlns="http://www.w3.org/1999/xhtml"></a><h2 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink1"></a>OpenAL Wrappers</h2>
+<p xmlns="http://www.w3.org/1999/xhtml">The following functions are for the most part wrappers on OpenAL functions.  Many of these functions use enumerated values.  The following table includes the string equivalents to the OpenAL enums as well as information on flags associated with them:
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+<td width="226" bgcolor="#999999"><b><div class="center">ALEnum</div></b></td>
+<td width="226" bgcolor="#999999"><b><div class="center">OpenAL Enum (C++)</div></b></td>
+<td width="226" bgcolor="#999999"><b><div class="center">Flags</div></b></td>
+</tr>
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><p>AL_CONE_INNER_ANGLE<br />
+AL_CONE_OUTER_ANGLE<br />
+AL_CONE_OUTER_GAIN<br />
+AL_DIRECTION<br />
+AL_EXTENSIONS<br />
+AL_GAIN_LINEAR<br />
+AL_GAIN<br />
+AL_LOOPING<br />
+AL_MAX_DISTANCE<br />
+AL_ORIENTATION<br />
+AL_PITCH<br />
+AL_POSITION<br />
+AL_REFERENCE_DISTANCE<br />
+AL_RENDERER<br />
+AL_VELOCITY<br />
+AL_VENDOR<br />
+AL_VERSION
+</p>
+</td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><p>AL_CONE_INNER_ANGLE<br />
+AL_CONE_OUTER_ANGLE<br />
+AL_CONE_OUTER_GAIN<br />
+AL_DIRECTION<br />
+AL_EXTENSIONS<br />
+AL_GAIN_LINEAR<br />
+AL_GAIN<br />
+AL_LOOPING<br />
+AL_MAX_DISTANCE<br />
+AL_ORIENTATION<br />
+AL_PITCH<br />
+AL_POSITION<br />
+AL_REFERENCE_DISTANCE<br />
+AL_RENDERER<br />
+AL_VELOCITY<br />
+AL_VENDOR<br />
+AL_VERSION
+</p>
+</td>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><p>(Source-Get-Set-Int)<br />
+(Source-Get-Set-Int)<br />
+(Source-Get-Set-Float)<br />
+(Source-Get-Set-Float3)<br />
+(Context-Get)<br />
+(Source-Listener-Get-Set-Float)<br />
+(Source-Listener-Get-Set-Float)<br />
+(Source-Get-Set-Int)<br />
+(Source-Get-Set-Float)<br />
+(Listener-Set-Float6)<br />
+(Source-Get-Set-Float)<br />
+(Source-Listener-Get-Set-Float3)<br />
+(Source-Get-Set-Float)<br />
+(Context-Get)<br />
+(Source-Listener-Get-Set-Float3)<br />
+(Context-Get)<br />
+(Context-Get)
+</p>
+</td>
+</tr>
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<a name="OpenAL_Functions" xmlns="http://www.w3.org/1999/xhtml"></a><h2 xmlns="http://www.w3.org/1999/xhtml"><b></b><a name = "HeaderLink2"></a>OpenAL Functions</h2>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b> 
+<a name="alxGetChannelVolume.28_channelID_.29"></a><h3><a name = "HeaderLink3"></a>alxGetChannelVolume( channelID )</h3>
+ </b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <b><i>alxGetChannelVolume </i></b> function to get the volume setting for a specified channel.<br /><br />
+</p><p><b> Syntax<br />
+<i>channelID</i></b> – An integer value, equal to or greater than 0, corresponding to a valid audio channel.<br /><br />
+</p><p><b>Returns</b><br />
+Returns volume [ 0.0, 1.0 ] for channel specified by channelID.<br /><br />
+</p><p><b>See Also</b><br />
+alxSetChannelVolume
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b> 
+<a name="alxGetListenerf.28_ALEnum_.29"></a><h3><a name = "HeaderLink4"></a>alxGetListenerf( ALEnum )</h3>
+<a name="alGetListener3f.28_ALEnum_.29"></a><h3><a name = "HeaderLink5"></a>alGetListener3f( ALEnum )</h3>
+<a name="alGetListeneri.28_ALEnum_.29"></a><h3><a name = "HeaderLink6"></a>alGetListeneri( ALEnum )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>al*GetListener*</b></i> function to get the current value of a listener parameter, as specified by <i><b>ALEnum</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+ALEnum</b></i> – A string containing an OpenAL enumerated type name.  See (above) table of ALEnum values for legal values.<br />
+<br />
+<b>Returns</b><br />
+Returns a float (alxGetListenerf), a vector of three floats (alGetListener3f), or an integer value respectively (alGetListeneri).<br />
+<br />
+<i><b>Notes</b></i><br />
+Depending on the ALEnum you need to acquire, be sure to use the correct version (i.e. correct return type) of al*GetListener*.<br />
+<br />
+<b>See Also</b><br />
+alxGetSource*<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b> 
+<a name="alxGetSourcef.28_handle_.2C_ALEnum_.29"></a><h3><a name = "HeaderLink7"></a>alxGetSourcef( handle , ALEnum )</h3>
+<a name="alxGetSourcei.28_handle_.2C_ALEnum_.29"></a><h3><a name = "HeaderLink8"></a>alxGetSourcei( handle , ALEnum )</h3>
+<a name="alxGetSource3f.28_handle_.2C_ALEnum_.29"></a><h3><a name = "HeaderLink9"></a>alxGetSource3f( handle , ALEnum )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>alxGetSource*</b></i> function to get the current value of a source parameter, as specified by <i><b>ALEnum</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+handle</b></i> – The ID (a non-negative integer) corresponding to a previously set up sound source.<br />
+<i><b>ALEnum</b></i> – A string containing an OpenAL enumerated type name.  See (above) table of ALEnum values for legal values.<br />
+<br />
+<b>Returns</b><br />
+Returns current value of parameter specified by <i><b>ALEnum</b></i> for source identified by <i><b>handle</b></i>.<br />
+<br />
+<i><b>Notes</b></i><br />
+Depending on the ALEnum you need to acquire, be sure to use the correct version (i.e. correct return type) of alxGetSource*.<br />
+<br />
+<b>See Also</b><br />
+alxSource*, al*GetListener*<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b> 
+<a name="alxGetStreamDuration.28_handle_.29"></a><h3><a name = "HeaderLink10"></a>alxGetStreamDuration( handle )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>alxGetStreamDuration</b></i> function to determine the length of a previously set up sound in seconds.<br />
+<br />
+<i><b>Syntax<br />
+handle –</b></i> The ID (a non-negative integer) corresponding to a previously set up sound source.<br />
+<br />
+<b>Returns</b><br />
+Returns -1 for invalid <i><b>handle</b></i>, and 0.0 to N.M for valid <i><b>handle</b></i> indicating length of scheduled sound in seconds.<br />
+<br />
+<b>See Also</b><br />
+alxGetStreamPosition<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b> 
+<a name="alxGetStreamPosition.28_handle_.29"></a><h3><a name = "HeaderLink11"></a>alxGetStreamPosition( handle )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>alxGetStreamPosition</b></i> function to get the current play position for a playing sound.  Note, this value is a percentage equivalent to the percent of the sound that as <u>already</u> played.<br />
+<br />
+<i><b>Syntax<br />
+handle –</b></i> The ID (a non-negative integer) corresponding to a previously set up sound source.<br />
+<br />
+<b>Returns</b><br />
+Returns -1 for invalid <i><b>handle</b></i>, and 0.0 to 1.0 for valid <i><b>handle</b></i> indicating what percentage of the sound file has been played.<br />
+<br />
+<b>See Also</b><br />
+alxGetStreamDuration<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b> 
+<a name="alGetString.28_ALEnum_.29"></a><h3><i></i><a name = "HeaderLink12"></a>alGetString( ALEnum )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>alGetString</b></i> function to get the string equivalent to the specified OpenAL enumerated value.<br />
+<br />
+<i><b>Syntax<br />
+ALEnum</b></i> – A string containing an OpenAL enumerated type name.  See (above) table of ALEnum values for legal values.<br />
+<br />
+<b>Returns</b><br />
+Returns a string corresponding to the passed <i><b>ALEnum</b></i>.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b> 
+<a name="alxGetWaveLen.28_fileName_.29"></a><h3><a name = "HeaderLink13"></a>alxGetWaveLen( fileName )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>alxGetWaveLen</b></i> function to get the play-length of a specified sound file in milliseconds.<br />
+<br />
+<i><b>Syntax<br />
+fileName</b></i> – A full path to legally formatted sound file. <br />
+<br />
+<b>Returns</b><br />
+Returns play-length of the WAV file specified by <i><b>filename</b></i> in milliseconds.<br />
+<br />
+<b>See Also</b><br />
+alxGetStreamDuration, alxGetStreamPosition<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="alListener3f.28_ALEnum_.2C_x_.2C_y_.2C_z.29"></a><h3><a name = "HeaderLink14"></a>alListener3f( ALEnum , x , y , z)</h3>
+<a name="alxListenerf.28_AlEnum_.2C_value_.29"></a><h3><a name = "HeaderLink15"></a>alxListenerf( AlEnum , value )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>al*Listener*</b></i> function to set a listenter parameter(s) as specified by the OpenAL enumerated type <i><b>ALEnum</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+ALEnum –</b></i> A string containing an OpenAL enumerated type name.  See (above) table of ALEnum values for legal values.<br />
+<i><b>x,y,z –</b></i> XYZ floating-point coordinates.<br />
+<i><b>value –</b></i> An <i><b>ALEnum</b></i> type specific value corresponding to the new value for this enumerated parameters.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+al*GetListener*, alxSource*<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="alxIsPlaying.28_handle_.29"></a><h3><i></i><a name = "HeaderLink16"></a>alxIsPlaying( handle )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>alxIsPlaying</b></i> function to determine if the sound associated with a previously set-up sound <i><b>handle</b></i> is playing or not.<br />
+<br />
+<i><b>Syntax<br />
+handle –</b></i> The ID (a non-negative integer) corresponding to a previously set up sound source.<br />
+<br />
+<b>Returns</b><br />
+Returns 1 if specified <i><b>handle</b></i> is being played, 0 otherwise.<br />
+<br />
+<b>See Also</b><br />
+alxPlay, alxStop, alxStopAll<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="alxPlay.28_handle_.29"></a><h3><i></i><a name = "HeaderLink17"></a>alxPlay( handle )</h3>
+<a name="alxPlay.28_profile_.29"></a><h3><i></i><a name = "HeaderLink18"></a>alxPlay( profile )</h3>
+<a name="alxPlay.28_profile_.2C_x_.2C_y_.2C_z_.29"></a><h3><i></i><i></i><i></i><i></i><a name = "HeaderLink19"></a>alxPlay( profile , x , y , z )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>alxPlay</b></i> function to start playing a sound specified by either a previously set up sound (handle), or a previously defined audio profile.  For 3D sounds, you must specify a XYZ coordinate for the source to play at.<br />
+<br />
+<i><b>Syntax<br />
+handle –</b></i> The ID (a non-negative integer) corresponding to a previously set up sound source.<br />
+<i><b>profile –</b></i> The ID (a non-negative integer) corresponding to a previously set up audio profile.<br />
+<i><b>x,y,z –</b></i> XYZ floating-point coordinates.<br />
+<br />
+<b>Returns</b><br />
+Returns handle to playing sound, or 0 on failure.<br />
+<br />
+<b>See Also</b><br />
+alxIsPlaying, alxStop, alxStopAll<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="alxSetChannelVolume.28_channelD_.2C_volume_.29"></a><h3><i></i><i></i><a name = "HeaderLink20"></a>alxSetChannelVolume( channelD , volume )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>alxSetChannelVolume</b></i> function to set a <i><b>volume</b></i> [ 0.0, 1.0 ] for the channel specified by <i><b>channelID</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+channelID</b></i> – An integer value, equal to or greater than 0, corresponsding to a valid audio channel.<br />
+<i><b>volume</b></i> – A value between 0.0 and 1.0 specifying the new volume for the specified channel.<br />
+<br />
+<b>Returns</b><br />
+Returns true on success and false on failure.<br />
+<br />
+<b>See Also</b><br />
+alxGetChannelVolume<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="alxSourcef.28_handle_.2C_ALEnum_.2C_value_.29"></a><h3><i></i><i></i><i></i><a name = "HeaderLink21"></a>alxSourcef( handle , ALEnum , value )</h3>
+<a name="alxSourcei.28_handle_.2C_ALEenum_.2C_value_.29"></a><h3><i></i><i></i><i></i><a name = "HeaderLink22"></a>alxSourcei( handle , ALEenum , value )</h3>
+<a name="alxSource3f.28_handle_.2C_ALEnum_.2C_x_.2C_y_.2C_z_.29"></a><h3><i></i><i></i><i></i><i></i><i></i><a name = "HeaderLink23"></a>alxSource3f( handle , ALEnum , x , y , z )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>alxSource*</b></i> function to set a source parameter(s) as specified by the OpenAL enumerated type <i><b>ALEnum</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+handle –</b></i> The ID (a non-negative integer) corresponding to a previously set up sound source.<br />
+<i><b>ALEnum –</b></i> A string containing an OpenAL enumerated type name.  See (above) table of ALEnum values for legal values.<br />
+<i><b>value –</b></i> An <i><b>ALEnum</b></i> type specific value corresponding to the new value for this enumerated parameters.<br />
+<i><b>x,y,z –</b></i> XYZ floating-point coordinates.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+alxGetSource*, al*Listener*<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="alxStop.28_handle_.29"></a><h3><i></i><a name = "HeaderLink24"></a>alxStop( handle )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>alxStop</b></i> function to stop a currently playing sound as specified by <i><b>handle</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+handle –</b></i> The ID (a non-negative integer) corresponding to a previously set up sound source.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+alxIsPlaying, alxPlay, alxStopAll<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="alxStopAll.28.29"></a><h3><a name = "HeaderLink25"></a>alxStopAll()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>alxStopAll</b></i> function to stop all currently playing sounds associated with registered handles.<br />
+<br />
+<b>Returns</b><br />
+No return.<br />
+<br />
+<b>See Also</b><br />
+alxIsPlaying, alxPlay, alxStop<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="OpenALInitDriver.28.29"></a><h3><a name = "HeaderLink26"></a>OpenALInitDriver()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>OpenALInitDriver</b></i> function to initialize the OpenAL driver.<br />
+<br />
+<b>Returns</b><br />
+Returns true on successful initialization, false otherwise.<br />
+<br />
+<i><b>Notes</b></i><br />
+This must be done before <u>all</u> other OpenAL operations.<br />
+<br />
+<b>See Also</b><br />
+OpenALShutdownDriver<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="OpenALShutdownDriver.28.29"></a><h3><a name = "HeaderLink27"></a>OpenALShutdownDriver()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>OpenALShutdownDriver</b></i> function to stop/shut down the OpenAL driver.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+After this is called, you must restart the driver with <i>OpenALInitDriver</i> to execute any new sound operations.<br />
+<br />
+<b>See Also</b><br />
+OpenALInitDriver<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="alxCreateSource.28_profile_.29"></a><h3><i></i><a name = "HeaderLink28"></a>alxCreateSource( profile )</h3>
+<a name="alxCreateSource.28_profile.2C_x.2C_y.2C_z_.29"></a><h3><i></i><i></i><i></i><i></i><a name = "HeaderLink29"></a>alxCreateSource( profile, x, y, z )</h3>
+<a name="alxCreateSource.28_description.2C_filename_.29"></a><h3><i></i><i></i><a name = "HeaderLink30"></a>alxCreateSource( description, filename )</h3>
+<a name="alxCreateSource.28_description.2C_filename.2C_x.2C_y.2C_z_.29"></a><h3><i></i><i></i><i></i><i></i><i></i><a name = "HeaderLink31"></a>alxCreateSource( description, filename, x, y, z )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+</p><p>--<a href="User:Arthur_Ogawa" title="User:Arthur Ogawa">Arthur Ogawa</a> 07:06, 15 March 2007 (PST)No information at present. This console function is present in TGE as of version 1.5.
+</p><p><b>Returns</b>
+</p><p>Integer
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="OpenALRegisterExtensions.28.29"></a><h3><a name = "HeaderLink32"></a>OpenALRegisterExtensions()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b>
+</p><p>--<a href="User:Arthur_Ogawa" title="User:Arthur Ogawa">Arthur Ogawa</a> 07:06, 15 March 2007 (PST)No information at present. This console function is present in TGE as of version 1.5.
+</p><p><b>Returns</b>
+</p><p>No return value.
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+<big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <strong> OpenAL</strong> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<div id="catlinks" xmlns="http://www.w3.org/1999/xhtml"><p class="catlinks"><a href="index.phpafe7.html?title=Special:Categories&amp;article=TorqueScript_Console_Functions_1" title="Special:Categories">Categories</a>: <a href="Category:TGE" title="Category:TGE">TGE</a> | <a href="Category:TorqueScript" title="Category:TorqueScript">TorqueScript</a></p></div>            
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:06 GMT -->
+</html>

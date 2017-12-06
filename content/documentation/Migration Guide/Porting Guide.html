@@ -1,0 +1,1222 @@
+﻿<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Migration Guide/Porting Guide.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4207;
+   parent.leftFrame.expandToItem('tree2', 'doc4207');
+   var element = parent.leftFrame.document.getElementById('doc4207');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="porting_files/filelist.html">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>perrym</o:Author>
+  <o:LastAuthor>perrym</o:LastAuthor>
+  <o:Revision>13</o:Revision>
+  <o:TotalTime>14</o:TotalTime>
+  <o:Created>2008-06-06T13:38:00Z</o:Created>
+  <o:LastSaved>2008-06-06T20:20:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2644</o:Words>
+  <o:Characters>15073</o:Characters>
+  <o:Company>Coalescent Technologies</o:Company>
+  <o:Lines>125</o:Lines>
+  <o:Paragraphs>35</o:Paragraphs>
+  <o:CharactersWithSpaces>17682</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>90</w:Zoom>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+@media print {
+      body { 
+        padding: 0; 
+        margin: 0; 
+      }
+
+      ol[type="a"] { list-style-type: lower-alpha }
+      ol[type="A"] { list-style-type: upper-alpha }
+      ol[type="i"] { list-style-type: lower-roman }
+      ol[type="I"] { list-style-type: upper-roman }
+    
+      div.google_header, div.google_footer {
+        display: block;
+        min-height: 0;
+        border: none;
+      }
+
+      div.google_header {
+        flow: static(header);
+      }
+
+      /* used to insert page numbers */
+      div.google_header::before, div.google_footer::before {
+        position: absolute;
+	top: 0;
+      }
+
+      div.google_footer {
+        flow: static(footer);
+      }
+
+      /* always consider this element at the start of the doc */
+      div#google_footer {
+        flow: static(footer, start);
+      }
+
+      span.google_pagenumber {
+        content: counter(page);
+      }
+
+      span.google_pagecount {
+        content: counter(pages);
+      }
+    }
+@top {
+        content: flow(header);
+      }
+@bottom {
+        content: flow(footer);
+      }
+div.GOOGLE\_HEADER
+	{position:relative;}
+div.GOOGLE\_FOOTER
+	{position:relative;}
+
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h3
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h4
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h5
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h6
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+address
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:26176516;
+	mso-list-template-ids:1721789000;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:55714353;
+	mso-list-template-ids:-87521888;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:849179180;
+	mso-list-template-ids:-1568012840;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:1564095668;
+	mso-list-template-ids:1388994906;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:1787237340;
+	mso-list-template-ids:324180724;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l5
+	{mso-list-id:1886596293;
+	mso-list-template-ids:1930093556;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6
+	{mso-list-id:1919631185;
+	mso-list-template-ids:-1727899556;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+.style1 {font-size: 12pt}
+.style2 {font-size: 12}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<BODY id = "BODYID" onLoad = "initComponent()"  bgcolor=white lang=EN-US link=blue vlink=blue style='tab-interval:.5in'
+revision="df7h82mp_42f5vxrg:82">
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><u><span
+style='font-size:20.0pt;font-family:Verdana'>TGEA 1.7 Porting Guide<o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal><b><u><span style='font-size:14.0pt;font-family:Verdana'>Introduction</span></u></b><span
+style='font-size:10.0pt;font-family:Verdana'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana'>The goal
+of this guide is to provide a launching point for people just starting out
+using TGEA 1.7, with detailed help for those moving from TGEA 1.0.3 and TGE
+1.5.2.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana'>The <i
+style='mso-bidi-font-style:normal'><u>High Level Directory Explanation</u></i>
+will provide you with a brief description of how standard TGEA 1.7 projects
+(such as the ones found in GameExamples) are laid out.<span
+style='mso-spacerun:yes'>  </span>Structuring your project directory similar to
+this is recommended, but not an absolute requirement.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana'>The
+actual porting guide is broken into 2 sections: Summary of Changes and
+Checklist.<span style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana'>The <i
+style='mso-bidi-font-style:normal'>Changes Summary</i> is a reference of
+critical code changes you should keep in mind, or use to modify your existing
+projects that were created pre-1.7.<span style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana'>The <i
+style='mso-bidi-font-style:normal'>Checklist</i> is a simple set of steps to
+follow when performing a high level transfer of your pre-1.7 projects.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana'><br>
+For more detailed information on setting up your system for Torque development, head over to the </span><span class="style2" style='font-family:Verdana'><a href="../Getting%20Started/Getting%20Started.html" class="style1">Getting Started</a></span> <span style='font-size:10.0pt;font-family:Verdana'>section of the documents. <br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]>
+<br style='mso-special-character:line-break'>
+<![endif]>
+<o:p></o:p>
+</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><u><span
+style='font-size:14.0pt;font-family:Verdana'>High Level Directory Explanation</span></u></b><span
+style='font-size:10.0pt;font-family:Verdana'><br>
+The TGEA 1.7 codebase is a unification of the TGE and TGEA codebases.&nbsp; The
+core of the engine is based on part new code and part stable TGE/TGEA
+code.&nbsp; The rendering engine is based on TGEA, with an updated GFX to
+support d3d, “shaderized”, and fixed function rendering.&nbsp; The windowing
+code allows multiple windows, ideal for tool development.&nbsp;<br>
+<br>
+One of the major changes in TGEA 1.7 compared to TGE/TGEA is the project
+layout.&nbsp; Whereas before the engine was a game and one created a new game
+by modifying the single SDK project, we now are set up to support multiple
+projects side by side, each treating the engine as a library.&nbsp; To this
+end, you'll find several projects in the GameExamples directory.&nbsp; Each of
+these is laid out the same:<br>
+<br>
+GameExamples/<br>
+&nbsp;&nbsp; &nbsp;&nbsp; T3DDemo/<o:p></o:p></span></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>art/ <o:p></o:p></span></li>
+ <ul style='margin-top:0in' type=circle>
+  <li class=MsoNormal style='mso-list:l2 level2 lfo3;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>holds source art files for
+      your game <o:p></o:p></span></li>
+ </ul>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>game/ <o:p></o:p></span></li>
+ <ul style='margin-top:0in' type=circle>
+  <li class=MsoNormal style='mso-list:l2 level2 lfo3;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>holds scripts, data, and
+      loadable art assets for your game. <o:p></o:p></span></li>
+ </ul>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>buildFiles/ <o:p></o:p></span></li>
+ <ul style='margin-top:0in' type=circle>
+  <li class=MsoNormal style='mso-list:l2 level2 lfo3;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>these are the project and
+      solution files for the various IDE's that are created by the Project
+      Generation process. <o:p></o:p></span></li>
+ </ul>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>config/ <o:p></o:p></span></li>
+ <ul style='margin-top:0in' type=circle>
+  <li class=MsoNormal style='mso-list:l2 level2 lfo3;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>files for configuring the
+      projects.&nbsp; This is one of the major places that the project can be
+      specialized.&nbsp;<o:p></o:p></span></li>
+ </ul>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>source/ <o:p></o:p></span></li>
+ <ul style='margin-top:0in' type=circle>
+  <li class=MsoNormal style='mso-list:l2 level2 lfo3;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>source files specific to
+      your game.&nbsp; This is also the home of torqueConfig.h file, which lets
+      you specialize the engine per project. <o:p></o:p></span></li>
+ </ul>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>DeleteDSOs.bat <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>DeletePrefs.bat <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>generateProjects.bat <o:p></o:p></span></li>
+ <ul style='margin-top:0in' type=circle>
+  <li class=MsoNormal style='mso-list:l2 level2 lfo3;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>creates the project files
+      for all the platforms.&nbsp; The project generator scans the source
+      directories to figure out what files need to go in the project files so
+      you don't have to manually maintain this across all your projects.<o:p></o:p></span></li>
+ </ul>
+</ul>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'>&nbsp;</p>
+<p class=MsoNormal style='margin-bottom:12.0pt'><i style='mso-bidi-font-style:
+normal'><span style='font-size:10.0pt;font-family:Verdana'>*Note</span></i><span
+style='font-size:10.0pt;font-family:Verdana'> that project directories need to
+  be 2 deep in the TGEA directory just like above in order for the project
+  generator to work correctly.<br style='mso-special-character:line-break'>
+  <![if !supportLineBreakNewLine]>
+</span></p>
+<p class=MsoNormal style='margin-bottom:12.0pt'><span
+style='font-size:10.0pt;font-family:Verdana'>For more details on folder hierarchy and what projects ship with TGEA 1.7, check out the </span><span class="style1"
+style='font-family:Verdana'><a href="../Getting%20Started/Getting%20Started.html#_Toc193773460">Directory Layout</a></span><span
+style='font-size:10.0pt;font-family:Verdana'> section of the <a href="../Getting%20Started/Getting%20Started.html">Getting Started</a> Docs.<br style='mso-special-character:line-break'>
+    <![endif]>
+  <o:p></o:p>
+</span></p>
+<p class=MsoNormal style='margin-bottom:12.0pt'><b><u><span style='font-size:
+14.0pt;font-family:Verdana'>Porting from TGE/TGEA</span></u></b><span
+style='font-size:10.0pt;font-family:Verdana'><br>
+<br>
+<br>
+</span><b><span style='font-family:Verdana'>Summary of changes before porting
+from TGE/TGEA</span></b><span style='font-size:10.0pt;font-family:Verdana'> (<i
+style='mso-bidi-font-style:normal'>use for reference only, a checklist for
+porting is provided below</i>)<o:p></o:p></span></p>
+<strong>General  Changes:</strong><br>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>Changes from TGEA material
+     system:&nbsp; TGEA 1.7 has an updated gfx system which supports D3D8,
+     D3D9, and fixed function rendering.&nbsp; To support fixed function
+     rendering we have introduced the ProcessedMaterial class.&nbsp; This is
+     all the data associated with rendering a material instance in a particular
+     mode (e.g., fixed function vs shaderized). NOTE: ProcessedMaterials are
+     generated and used by the engine to contain the runtime data derived from
+     CustomMaterial and Material datablocks in your project, including
+     fallbacks as necessary. They are not directly created or used by the
+     developer or artists. <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>In addition, basic materials
+     will be generated during shape loading if a material has not been defined.
+     This will simply wrap any textures referenced with a basic material, and
+     will not give any shadergen effects. It does keep you from having to
+     create a new material for any artwork that simply needs a mapTo= line
+     however.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>File moves (source code): the
+     old engine/game directory has been removed.&nbsp; The files from this
+     directory can now be found either in engine/app or engine/T3D.&nbsp; The
+     purpose of this rearrangement is to begin separating example code from
+     true engine code.&nbsp; Thus, engine/app contains code that is essential
+     to creating a generic TGEA application.&nbsp; The files in engine/T3D,
+     however, are specific to creating a game in 3D. NOTE: The engine/T3D
+     directory contains classes such as ShapeBase, Player, and other FPS
+     specific game level objects for reference and example purposes. For new
+     projects, code that you write should be placed in the
+  /projects/YourGame/source directory. 
+     <o:p></o:p></span></li></ul><br>
+ <strong>Rendering/GFX Changes:</strong><br>
+
+<ul style='margin-top:0in' type=disc>    
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>Find and replace <strong><span
+     style='font-family:Verdana'>#include &quot;game/game.h&quot;</span></strong>
+     with<strong><span style='font-family:Verdana'> #include
+     &quot;app/game.h&quot;</span></strong><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>Some <strong><span
+     style='font-family:Verdana'>GFX</span></strong> calls need to change to <strong><span
+     style='font-family:Verdana'>GFX-&gt;getDrawUtil()</span></strong>: <o:p></o:p></span></li>
+ <ul style='margin-top:0in' type=circle>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>DrawRect<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>DrawBitmap<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>DrawLine<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>DrawText<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>clearBitmapModulation<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>setBitmapModulation<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>ex - <strong><span
+      style='font-family:Verdana'>GFX-&gt;clearBitmapModulation()</span></strong>
+      changes to <strong><span style='font-family:Verdana'>GFX-&gt;getDrawUtil()-&gt;clearBitmapModulation()</span></strong><o:p></o:p></span></li>
+ </ul>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>The RenderInst class has been
+     changed to a structure. Replace all <strong><span style='font-family:Verdana'>class
+     RenderInst</span></strong> with <strong><span style='font-family:Verdana'>struct
+     RenderInst</span></strong><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>.cc to .cpp: in TGE all files
+     used the .cc file extension.&nbsp; This caused some problems with Visual
+     Studio.&nbsp; In TGEA, many files were renamed to use the .cpp file
+     extension.&nbsp; In TGEA 1.7, all files use the .cpp extension.&nbsp; This
+     can cause some issues with merging and doing file compares.&nbsp; One
+  useful trick is to set your diff viewer to ignore file extensions. <o:p></o:p></span></li></ul><br>
+  <strong>General Engine Changes:</strong><br>
+
+<ul style='margin-top:0in' type=disc>   
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>Code that uses $Con::root to
+     construct path names may need to be checked to make sure it still
+     constructs valid paths.&nbsp; For example, the following will not be
+     expanded to a valid path on TGEA, but might have worked on previous
+     versions of Torque:&nbsp;&nbsp;&nbsp; %this.setBitmap($Con::Root @
+     &quot;~/client/ui/game/numbers/&quot; @ %number @ &quot;.png&quot;); <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>The C++ console function
+     &quot;createCanvas&quot; is gone.&nbsp; The example apps create a script
+     function createCanvas which you should copy to your project (and be sure
+     to merge changes to the example createCanvas back into your app). <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>TGEA 1.7 does not close your
+     application when you click the X on your window.&nbsp; Instead, a call is
+     made to the script method GuiCanvas::onWindowClose (this is in case you
+     have a multi-window application).&nbsp; To close your app when X is
+     clicked, call 'quit();' from within GuiCanvas::onWindowClose (as is done
+     in the example apps). 
+    <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>Gui profiles used for text
+     controls must have a fontType string set, or else they will assert/crash<o:p></o:p></span></li>
+ <li class=MsoNormal><span style="font-size:10.0pt;font-family:Verdana">StringHandle class has
+    changed to NetStringHandle</span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>An additional parameter has
+   been added to OnStaticModified():
+   <o:p></o:p>
+ </span></li>
+ <ul style='margin-top:0in' type=circle>
+   <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>Within any subclasses of SimObject,
+     replace virtual void onStaticModified(const char* slotName); with <strong><span
+      style='font-family:Verdana'>virtual void onStaticModified(const char*
+       slotName, const char*newValue =NULL);</span></strong>
+     <o:p></o:p>
+   </span></li>
+   <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>See <a
+      href="http://www.garagegames.com/mg/forums/result.thread.php?qt=74521">Jeff
+     Faust's Post</a> for more details
+     <o:p></o:p>
+   </span></li>
+ </ul>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>The member variable <strong><span
+     style='font-family:Verdana'>mBounds</span></strong> is not public anymore <o:p></o:p></span></li>
+ <ul style='margin-top:0in' type=circle>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>Change <strong><span
+      style='font-family:Verdana'>mBounds.extent.x</span></strong> to <strong><span
+      style='font-family:Verdana'>getWidth()</span></strong><o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>Change <strong><span
+      style='font-family:Verdana'>mBounds.extent.y</span></strong> to <strong><span
+      style='font-family:Verdana'>getHeight()</span></strong><o:p></o:p></span></li>
+ </ul></ul>
+<br>
+  <strong>General Script Changes:</strong><br>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>ClientMissionCleanup group is
+     now necessary.&nbsp; If you don't have it your particle emitters will
+     assert in debug and in release builds the game will probably crash.&nbsp;
+     The group must be created from scripts.&nbsp; Search for ClientMissionCleanup
+     in a TGEA 1.7 example project to see where to put it. <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>If you are porting old
+     scripts you will need to comment out activateKeyboard/deactivateKeybaoard
+     calls (affects console). <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>getRes/getResolution/getResolutionList
+     global functions are gone.&nbsp; You will need to replace these with Canvas.getVideoMode/Canvas.getModeCount/Canvas.getMode.
+     <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>Find first/next file now
+     returns full system-specific absolute paths, not paths relative to the
+     game root as it did before.&nbsp; You will need to convert the paths to
+     relative using a command like this: %file = makeRelativePath(%file,
+     getMainDotCsDir()); <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>GameConnection::getServerConnection()
+     is now called getConnectionToServer()<o:p></o:p></span><span
+      style='font-size:10.0pt;font-family:Verdana'>
+     <o:p></o:p>
+     </span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>Custom shaders: if you have
+     written custom shaders, you should make sure that the constants used by
+     the engine match what your shaders are expecting. Shader Constants are
+     defined per project in your /&lt;project name&gt;/game/shaderConsts.h
+     file.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>If you are using your own
+     game scripts, and you do not have the lighting system/shaders, you will
+     need to add those, or else you won't get shadows in game.&nbsp; Merge in
+     common\lighting and shaders\lightingSystem, then, in initBaseClient, add
+     this line: exec(&quot;./lighting/sgShaders.cs&quot;); <o:p></o:p></span></li></ul>
+     <br>
+  <strong>Particle Emitter Changes:</strong><br>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>If you keep pointers to
+     ParticleEmitters in your game objects, change these to
+     SimObjectPtr&lt;ParticleEmitter&gt; so that you don't have double delete
+     problems.&nbsp; Ditto for SFXSource objects.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>The TGEA particle system has
+     a <strong><span style='font-family:Verdana'>one texture per emitter
+     requirement</span></strong>. This means that all of your particles must share
+     teh same texture. For proper results, create a tiled texture and assign
+     texture coordinates in each particle so that each uses a different tile.
+     See this <a href="http://tdn.garagegames.com/wiki/TSE/Particles">TDN
+     Particle Article</a> for more information.<o:p></o:p></span></li></ul>
+     <br>
+  <strong>Console and Sim Changes:</strong><br>
+
+<ul style='margin-top:0in' type=disc>
+ 
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>Con::executef() only takes in
+     char variables as parameters now: <o:p></o:p></span></li>
+ <ul style='margin-top:0in' type=circle>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>ex - <strong><span
+      style='font-family:Verdana'>Con::executef(getDataBlock(), 2, name,
+      scriptThis());</span></strong> changes to <strong><span style='font-family:
+      Verdana'>Con::executef(getDataBlock(), name, scriptThis())</span></strong><o:p></o:p></span></li>
+ </ul>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>The mCross function can now
+     take in a pointer as a parameter: <o:p></o:p></span></li>
+ <ul style='margin-top:0in' type=circle>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>ex - <strong><span
+      style='font-family:Verdana'>mCross(forward, up, right);</span></strong>
+      can be <strong><span style='font-family:Verdana'>mCross(forward, up,
+      &amp;right);</span></strong><o:p></o:p></span></li>
+ </ul>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>Location of sim files have
+     changed. You want to adjust your paths and includes for the following: <o:p></o:p></span></li>
+ <ul style='margin-top:0in' type=circle>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><strong><span
+      style='font-size:10.0pt;font-family:Verdana'>sim/</span></strong><span
+      style='font-size:10.0pt;font-family:Verdana'>sceneObject.h --&gt; <strong><span
+      style='font-family:Verdana'>sceneGraph/</span></strong>sceneObject.h<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><strong><span
+      style='font-size:10.0pt;font-family:Verdana'>sim/</span></strong><span
+      style='font-size:10.0pt;font-family:Verdana'>decalManager.h --&gt; <strong><span
+      style='font-family:Verdana'>sceneGraph/</span></strong>decalmanager.h<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><strong><span
+      style='font-size:10.0pt;font-family:Verdana'>sim/</span></strong><span
+      style='font-size:10.0pt;font-family:Verdana'>decalManager.cpp --&gt; <strong><span
+      style='font-family:Verdana'>sceneGraph/</span></strong>decalmanager.cpp<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><strong><span
+      style='font-size:10.0pt;font-family:Verdana'>sim/</span></strong><span
+      style='font-size:10.0pt;font-family:Verdana'>pathManager.h --&gt; <strong><span
+      style='font-family:Verdana'>sceneGraph/</span></strong>pathManager.c<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><strong><span
+      style='font-size:10.0pt;font-family:Verdana'>sim/</span></strong><span
+      style='font-size:10.0pt;font-family:Verdana'>pathManager.cpp --&gt; <strong><span
+      style='font-family:Verdana'>sceneGraph/</span></strong>pathManager.cpp<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><strong><span
+      style='font-size:10.0pt;font-family:Verdana'>sim/</span></strong><span
+      style='font-size:10.0pt;font-family:Verdana'>simPath.h --&gt; <strong><span
+      style='font-family:Verdana'>sceneGraph/</span></strong>simPath.h<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><strong><span
+      style='font-size:10.0pt;font-family:Verdana'>sim/</span></strong><span
+      style='font-size:10.0pt;font-family:Verdana'>simPath.cpp --&gt; <strong><span
+      style='font-family:Verdana'>sceneGraph/</span></strong>simPath.cpp<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><strong><span
+      style='font-size:10.0pt;font-family:Verdana'>sim/</span></strong><span
+      style='font-size:10.0pt;font-family:Verdana'>sceneObject.h --&gt; <strong><span
+      style='font-family:Verdana'>sceneGraph/</span></strong>sceneObject.h<o:p></o:p></span></li>
+ </ul></ul>
+     <br>
+  <strong>SFX/Audio Changes:</strong><br>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>If you were using OpenAL you
+     will need to update to the SFX system. <o:p></o:p></span></li>
+ <ul style='margin-top:0in' type=circle>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>rename AudioDescription
+      objects to SFXDescription in scripts <o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>rename AudioProfile objects
+      to SFXProfile objects in scripts<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>Replace any <strong><span
+      style='font-family:Verdana'>#include &quot;audio/audioDataBlock.h&quot;</span></strong>
+      code to <strong><span style='font-family:Verdana'>#include &quot;sfx/sfxSystem.h&quot;</span></strong><o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>AUDIOHANDLE has changed to
+      SFXSource*<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>Replace all references to TypeAudioProfilePtr
+      to TypeSFXProfilePtr<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>Replace all alxStop function
+      calls with sfxStop<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>in common/client/audio.cs,
+      copy in the sfx functions from T3D/assets/common/gameScripts/audio<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>replace all alxStopAll with
+      sfxStopAll($SimAudioType); <o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>rename alxPlay to sfxPlay <o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>code that used to call alxStop($sourceId)
+      will need to be changed to $sourceId.stop(), because sfxPlay now returns
+      sim objects for the sources.&nbsp; Or you can add this function to
+      sfxSystem and just change alxStop to sfxStop in the scripts:<o:p></o:p></span></li>
+ </ul>
+</ul>
+
+<pre style='margin-left:1.0in'><span style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'>     </span>ConsoleFunction(sfxStop, void, 2, 2, &quot;(S32 id): stop a source, equivalent to id.stop()&quot;)
+</pre><pre style='margin-left:1.0in'><span style='mso-spacerun:yes'>      </span>{
+</pre><pre style='margin-left:1.0in'><span style='mso-spacerun:yes'>         </span>S32 id = dAtoi(argv[1]);<br style='mso-special-character:line-break'>
+</pre><pre style='margin-left:1.0in'><span style='mso-spacerun:yes'>         </span>SFXSource * obj;<br style='mso-special-character:line-break'>
+</pre><pre style='margin-left:1.0in'><span style='mso-spacerun:yes'>         </span>if (Sim::findObject&lt;SFXSource&gt;(id, obj))
+</pre><pre style='margin-left:1.0in'><span style='mso-spacerun:yes'>            </span>obj-&gt;stop();
+</pre><pre style='margin-left:1.0in'><span style='mso-spacerun:yes'>      </span>}<br
+style='mso-special-character:line-break'>
+<span style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span></pre>
+<ul style='margin-top:0in' type=disc>
+ <ul style='margin-top:0in' type=circle>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>alxGetWaveLen changes to ???
+      <o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>alxSourcef changes to ??? <o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>alxCreateSource changes to
+      sfxCreateSource (also check parameters to the function) <o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>alxSetMasterVolume changes
+      to sfxSetMasterVolume<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>call sfxStartup() somewhere
+      (A good place is right after Canvas is created, but make sure defaults.cs
+      and prefs have been executed first so that you get the user's volume
+      preferences) <o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>call sfxShutdown() somewhere
+      (shutdownCommon() if you have it, common::onExit if you don't)<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>if you have your own options
+      gui, merge in updateChannelVolume from common/gameScripts/options.cs <o:p></o:p></span></li>
+  <ul style='margin-top:0in' type=square>
+   <li class=MsoNormal style='mso-list:l1 level3 lfo6;tab-stops:list 1.5in'><span
+       style='font-size:10.0pt;font-family:Verdana'>change pref variables from
+       $pref::Audio to $pref::SFX.&nbsp; As of this writing (6/4/2007), the
+       following prefs are valid for SFX:<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-list:l1 level3 lfo6;tab-stops:list 1.5in'><span
+       style='font-size:10.0pt;font-family:Verdana'>$pref::SFX::frequency <o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-list:l1 level3 lfo6;tab-stops:list 1.5in'><span
+       style='font-size:10.0pt;font-family:Verdana'>$pref::SFX::bitrate <o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-list:l1 level3 lfo6;tab-stops:list 1.5in'><span
+       style='font-size:10.0pt;font-family:Verdana'>$pref::SFX::channelVolumeXX
+       (not actually used by SFX directly, but used to save channel volume
+       settings and passed to sfxSetChannelVolume) ($pref::Audio) <o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-list:l1 level3 lfo6;tab-stops:list 1.5in'><span
+       style='font-size:10.0pt;font-family:Verdana'>$pref::SFX::masterVolume
+       (ditto) (formerly $pref::Audio)<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-list:l1 level3 lfo6;tab-stops:list 1.5in'><span
+       style='font-size:10.0pt;font-family:Verdana'>$pref::SFX::provider <o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-list:l1 level3 lfo6;tab-stops:list 1.5in'><span
+       style='font-size:10.0pt;font-family:Verdana'>$pref::SFX::device <o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-list:l1 level3 lfo6;tab-stops:list 1.5in'><span
+       style='font-size:10.0pt;font-family:Verdana'>$pref::SFX::useHardware <o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-list:l1 level3 lfo6;tab-stops:list 1.5in'><span
+       style='font-size:10.0pt;font-family:Verdana'>$pref::SFX::maxSoftwareBuffers
+       (set this &gt; 0 if you are not using hardware sound, otherwise you will
+       hear no sound) <o:p></o:p></span></li>
+  </ul>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>add a call to sfxSetMasterVolume
+      where appropriate in your scripts<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>add calls to sfxSetChannelVolume
+      where appropriate in your scripts <o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>set $pref::SFX::provider to
+      a provider in your scripts, in defaults.cs usually.&nbsp; choices are
+      &quot;DirectSound&quot; or &quot;OpenAL&quot; <o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l1 level2 lfo6;tab-stops:list 1.0in'><span
+      style='font-size:10.0pt;font-family:Verdana'>if your SFXDescription
+      objects specified a &quot;type&quot; field to set the channel, you will
+      need to rename that to &quot;channel&quot; in the scripts, or else add
+      the following line to <o:p></o:p></span></li>
+ </ul>
+</ul>
+
+<pre style='margin-left:1.0in'><span style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'>     </span>SFXDescription::initPersistFields::addField(&quot;type&quot;, TypeS32, Offset(mChannel, SFXDescription)); // for backwards compatibility<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><span style='mso-spacerun:yes'></span></pre>
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana'><br>
+    <strong>Merging</strong>:
+    <o:p></o:p></span></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l3 level1 lfo10;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>Each time your merge with a
+     new version of TGEA 1.7, you will need to manually merge source/torqueConfig.h
+     and source/main.cpp.&nbsp; Typical these files should be compared with the
+     appropriate 3D example or template in the TGEA tree.&nbsp; <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l3 level1 lfo10;tab-stops:list .5in'><span
+     style='font-size:10.0pt;font-family:Verdana'>You will need to merge in the
+     build configurators projects.conf file with the appropriate file in your
+     game directory.&nbsp; After that you will need to re-generate your project
+     files as normal. <o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='font-size:10.0pt;
+font-family:Verdana'><br><br>
+</span><b><span style='font-size:13.5pt;font-family:Verdana'>Common
+Porting/Upgrade Checklist (TGE or TGEA)</span></b><span style='font-size:10.0pt;
+font-family:Verdana'><br>
+<br>
+<b>Prep</b>:<br>
+ If you wish to start with a completely clean TGEA 1.7.1 project and add your code to it, try using the new project generator tool included with the latest version.</span></p>
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='font-size:10.0pt;
+font-family:Verdana'>For detailed information on how to use the new tool, read through the <a href="../Getting%20Started/New%20Project%20Generator.html">New Project Generator Guide</a>.<br>
+  <br>
+  <br>
+  <b>SOURCE CHANGES</b>:<br>
+  <br>
+  Extract all of your custom files from your original project, and place them in
+  the top level &lt;MyGame&gt;/source directory. You should not need to change
+  any #include lines, as all directory references are abstracted.<br>
+  <br>
+  If you have made changes directly to stock code (Player.cpp for example), you
+  will have to manually merge your changes.<br>
+  <br>
+  Once you have finished separating your changes, execute the &quot;generateProjects.bat&quot;
+  file at the top level of your project directory. This will automatically
+  generate .vsproj project files and a new solution file.
+  <br>
+  <br>
+  <b>SCRIPT CHANGES</b>:<br>
+  <br>
+  delete template versions of /client, /data, /server if desired<br>
+  <br>
+  Important Note: the /common directory is still important at this stage, and we
+  are using it as a &quot;wrapper&quot; to ease the porting process.<br>
+  If you have for whatever reason removed the use of the /common directory, you
+  will need to manually merge and adjust the calls and scripts in<br>
+  the various directories. The /clientScripts/client.cs is of particular
+  importance.<br>
+  <br>
+  copy over your /client, /data, and /server directories, as well as your main.cs
+  from your project to /scriptsAndAssets.<br>
+  <br>
+  /client/init.cs:<br>
+  <br>
+  add $Pref::Video::MainWindowTitle = &quot;Torque Game Engine Advanced&quot;;
+  Under the<br>
+  <br>
+  &nbsp;&nbsp; $Client::MissionTypeQuery = &quot;Any&quot;;<br>
+  <br>
+  add&nbsp;&nbsp;&nbsp; loadMaterials(); after<br>
+  <br>
+  &nbsp;&nbsp; // Default player key bindings<br>
+  &nbsp;&nbsp; exec(&quot;./scripts/default.bind.cs&quot;);<br>
+  &nbsp;&nbsp; exec(&quot;./config.cs&quot;);<br>
+  <br>
+  <br>
+  <br>
+  in scriptsAndAssets/main.cs add in<br>
+  <br>
+  // Start up the audio system.<br>
+  &nbsp;&nbsp; sfxStartup();<br>
+  <br>
+  after<br>
+  <br>
+  &nbsp;&nbsp; // Load the scripts that start it all...<br>
+  &nbsp;&nbsp; exec(&quot;./client/init.cs&quot;);<br>
+  &nbsp;&nbsp; exec(&quot;./server/init.cs&quot;);<br>
+  <br>
+  <span style='color:black'>Re-export all of your interiors with TGE_A 1.03
+    map2dif<br>
+    --alternatively, you can use Constructor 1.03, using the &quot;Save as
+    DIF&quot; option</span><br>
+  <br>
+  if you have a hard coded mission file, make sure your createServer line
+  properly expands file names:<br>
+  <br>
+  createServer(&quot;SinglePlayer&quot;,
+  expandFileName(&quot;~/data/missions/features.mis&quot;));<br>
+  <br>
+  If you have a custom mission loading mechanism, you will need to make sure you
+  are properly<br>
+  tracking the directory structure changes<br>
+  <br>
+  Copy in the new waterblock from the TGEDemo (use as template) into your .mis
+  file(s)<br>
+  <br>
+  Change all references:<br>
+  <br>
+  AudioDescription to SFXDescription<br>
+  AudioProfile to SFXProfile<br>
+  alxPlay/alxStop to sfxPlay/sfxStop<br>
+  <br>
+  TGEA 1.7 is more stringent when it comes to namespace management, and will not
+  like if you name an object the same as it's underlying class, such as:<br>
+  <br>
+  new Sun(Sun)<br>
+  <br>
+  You should add the word &quot;Object&quot; after the token that is the same for
+  any objects created in your mission file (or elsewhere):<br>
+  <br>
+  new Sun(SunObject)<br>
+  <br>
+  new MissionArea(MissionAreaObject)<br>
+  <br>
+  etc.<br>
+  <br>
+  TGEA 1.7 will also warn if you have a persistent field class or superClass that
+  defines a namespace that already exists for this object.<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <b>PORTING FROM TGEA 1.0.3 or TGE 1.5.2:</b><br>
+  <br>
+  --comment out all 4 legacy terrain shader defs in
+  scriptsAndAssets/client/scripts/shaders.cs to read:<br>
+  <br>
+  /*<br>
+  new ShaderData( TerrShader )<br>
+  {<br>
+  &nbsp;&nbsp; DXVertexShaderFile&nbsp;&nbsp; =
+  &quot;shaders/legacyTerrain/terrainLightingV.hlsl&quot;;<br>
+  &nbsp;&nbsp; DXPixelShaderFile&nbsp;&nbsp;&nbsp; =
+  &quot;shaders/legacyTerrain/terrainLightingP.hlsl&quot;;<br>
+  &nbsp;&nbsp; pixVersion = 1.1;<br>
+  };<br>
+  <br>
+  new ShaderData( TerrBlender20Shader )<br>
+  {<br>
+  &nbsp;&nbsp; DXVertexShaderFile&nbsp;&nbsp;&nbsp;&nbsp; =
+  &quot;shaders/legacyTerrain/terrainBlenderPS20V.hlsl&quot;;<br>
+  &nbsp;&nbsp; DXPixelShaderFile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = &quot;shaders/legacyTerrain/terrainBlenderPS20P.hlsl&quot;;<br>
+  &nbsp;&nbsp; pixVersion = 2.0;<br>
+  };<br>
+  <br>
+  new ShaderData( TerrBlender11AShader )<br>
+  {<br>
+  &nbsp;&nbsp; DXVertexShaderFile&nbsp;&nbsp;&nbsp;&nbsp; =
+  &quot;shaders/legacyTerrain/terrainBlenderPS11AV.hlsl&quot;;<br>
+  &nbsp;&nbsp; DXPixelShaderFile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+  &quot;shaders/legacyTerrain/terrainBlenderPS11AP.hlsl&quot;;<br>
+  &nbsp;&nbsp; pixVersion = 1.1;<br>
+  };<br>
+  <br>
+  new ShaderData( TerrBlender11BShader )<br>
+  {<br>
+  &nbsp;&nbsp; DXVertexShaderFile&nbsp;&nbsp;&nbsp;&nbsp; =
+  &quot;shaders/legacyTerrain/terrainBlenderPS11BV.hlsl&quot;;<br>
+  &nbsp;&nbsp; DXPixelShaderFile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+  &quot;shaders/legacyTerrain/terrainBlenderPS11BP.hlsl&quot;;<br>
+  &nbsp;&nbsp; pixVersion = 1.1;<br>
+  };<br>
+  <br>
+  */<br>
+  <br>
+  <br>
+  <br>
+  <br style='mso-special-character:line-break'>
+  <![if !supportLineBreakNewLine]>
+  <br style='mso-special-character:line-break'>
+  <![endif]>
+  <o:p></o:p>
+</span></p>
+</div>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Migration Guide/Porting Guide.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:15 GMT -->
+</html>

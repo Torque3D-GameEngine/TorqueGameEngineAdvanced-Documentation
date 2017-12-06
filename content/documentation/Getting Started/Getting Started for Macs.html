@@ -1,0 +1,299 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Getting Started/Getting Started for Macs.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4187;
+   parent.leftFrame.expandToItem('tree2', 'doc4187');
+   var element = parent.leftFrame.document.getElementById('doc4187');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Getting Started - Macs</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+</style>
+</head>
+
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="0" cellpadding="0" border="0" style="text-align: justify;">
+<tr>
+
+<td>
+<blockquote>
+  <p name="Introduction"><a name="Introduction"></a></p>
+  <h2><a name = "HeaderLink0"></a>Introduction</h2>
+  <p>As of version 1.8, TGEA is compatible with Mac OS X. With the inclusion of OpenGL extensions, as well as other modules, you can now download, develop, and run TGEA applications. This article will take you from start to finish of setting up a development environment on OS X.</p>
+  <p>&nbsp;</p>
+  <table width="292" cellspacing="20" class='toc' id='toc'>
+    <tr>
+      <td><div id='toctitle'>
+        <h2><a name = "HeaderLink1"></a>Contents</h2>
+      </div>
+          <ul>
+            <li class='toclevel-1'><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+            <li class='toclevel-1'><a href="#Install_Compiler"><span class="tocnumber">2</span> <span class="toctext">Installing a Compiler</span></a>
+                <ul>
+                  <li class='toclevel-2'><a href="#Xcode_Intro"><span class="tocnumber">2.1</span> <span class="toctext">Xcode Introduction</span></a></li>
+                  <li class='toclevel-2'><a href="#Get_Xcode"><span class="tocnumber">2.2</span> <span class="toctext">Getting Xcode</span></a></li>
+                  <li class='toclevel-2'><a href="#Install_Xcode"><span class="tocnumber">2.3</span> <span class="toctext">Installing Xcode</span></a></li>
+                </ul>
+            </li>
+            <li class='toclevel-1'><a href="#Install_Engine"><span class="tocnumber">3</span> <span class="toctext">Installing the Engine </span></a>
+            	<ul>
+                  <li class='toclevel-2'><a href="#TGEA_Intro"><span class="tocnumber">3.1</span> <span class="toctext">TGEA Introduction</span></a></li>
+                  <li class='toclevel-2'><a href="#Get_TGEA"><span class="tocnumber">3.2</span> <span class="toctext">Getting TGEA</span></a></li>
+                  <li class='toclevel-2'><a href="#Install_TGEA"><span class="tocnumber">3.3</span> <span class="toctext">Installing TGEA</span></a></li>
+                </ul>
+            </li>
+            <li class='toclevel-1'><a href="#Enviro_Setup"><span class="tocnumber">4</span> <span class="toctext">Setting Up Your Environment</span></a></li>
+            <li class='toclevel-1'><a href="#Directory_Layout"><span class="tocnumber">5</span> <span class="toctext">Directory Layout</span></a></li>
+            <li class='toclevel-1'><a href="#Torque_Folder"><span class="tocnumber">6</span> <span class="toctext">Dissecting a Torque Game Folder</span></a></li>
+            <li class='toclevel-1'><a href="#Compiling_TGEA"><span class="tocnumber">7</span> <span class="toctext">Compiling TGEA SDK</span></a></li>
+            <li class='toclevel-1'><a href="#Summary"><span class="tocnumber">8</span> <span class="toctext">Summary</span></a></li>
+          </ul></td>
+    </tr>
+  </table>
+</blockquote>
+<blockquote>
+  <p><br />
+  </p>
+  <p name="Overview"><a name="Overview"></a></p>
+  <h2><a name = "HeaderLink2"></a>Overview</h2>
+  <p>Setting up TGEA is a simple process. When you license TGEA, you get access to full engine source code. 
+     This gives you the power to make changes to the engine's functionality, should you choose to. 
+     Studying the source-code is also a great way to learn about advanced game engine programming. 
+     Even if you <a href="#_Downloading_the_TGEA">download the source code now</a>, you need to prepare your system before you work with TGEA.</p>
+  <br>
+  <p name="Install_Compiler"><a name="Install_Compiler"></a></p>
+  <h2><a name = "HeaderLink3"></a>Installing A Compiler</h2>
+  <p name="Xcode_Intro"><a name="Xcode_Intro"></a></p>
+  <h3><a name = "HeaderLink4"></a>Xcode Introduction</h3>
+  <p>Before you can make any modifications to the engine's source code, you will need a developer tool that can compile code into a launchable application. Most PC users install and develop using Microsoft Visual Studio. For Mac OS X application development, we recommend you use Xcode which is a free download containing the Xcode IDE and the rest of the developer tools. </p>
+  <br>
+  <p name="Get_Xcode"><a name="Get_Xcode"></a></p>
+  <h3><a name = "HeaderLink5"></a>Getting Xcode</h3>
+  <p>When it comes to obtaining the actual installer for Xcode, you have a few different options. Most Leopard discs have Xcode, which means you simply have to put the disc in your drive, find the setup file, and run it from there. For this tutorial, we will use a different procedure. We are actually going to download the latest version of Xcode directly from the <a href="http://developer.apple.com/tools/xcode/">Apple Developer Tools website</a>. You can actually navigate directly to the <a href="http://developer.apple.com/technology/xcode.html">Xcode Download Page</a>. Once you are on the site, you will look for the Download Now Button (Shown in Figure 1). If you do not already have an ADC (Apple Developer Connection) account, you will want to create one. If you already have an account, you will enter your credentials at the login screen (Shown in Figure 2).</p>
+  <img src="MacGettingStartedImages/XCodeSite.jpg" width="316" height="158" border="0"><br>
+  <em>Figure 1</em><br>
+  <br>
+  <img src="MacGettingStartedImages/XCodeSite_Login.jpg" width="340" height="207"><br>
+  <em>Figure 2</em><br>
+  <br>
+  <p>Once you are logged in as an ADC member, you can then proceed to the Xcode downloads section (Shown in Figure 3). You should be presented with two file downloads. The one you absolutely need is the Xcode Developer DVD (Disc Image). Go ahead and download that (Shown in Figure 4). Optionally, you can download the PDF which contains various descriptions and and features of Xcode.</p>
+  <br>
+  <img src="MacGettingStartedImages/XCodeSite_DownloadScreen.jpg" width="481" height="225"><br>
+  <em>Figure 3</em><br>
+  <br>
+  <img src="MacGettingStartedImages/XCodeSite_DownloadStatus.jpg" width="349" height="157"><br>
+  <em>Figure 4</em><br>
+  <p name="Install_Xcode"><a name="Install_Xcode"></a></p>
+  <h3><a name = "HeaderLink6"></a>Installing Xcode</h3>
+  <p>Once your downloading is complete, navigate to the directory where you downloaded the Xcode files. You should see a file called <em>xcode31_2199_developerdvd.dmg</em> (Shown in Figure 5). The numbers may be different defepending on what version you have downloaded. When you open that file, you are actually navigating a disc image just as if you were browsing a DVD in your drive. You should now see the Xcode installer (Shown in Figure 6). Open that file to begin the installation process. The first few screens you will be presented with are the Welcome Screen (Shown in Figure 7) and the License Agreement Screen (Shown in Figure 8). Click continue through the Welcome Screen and agree to the license terms.</p>
+  <br>
+  <img src="MacGettingStartedImages/XCode_DMGFile.jpg" width="450" height="262"><br>
+  <em>Figure 5</em><br>
+  <br>
+  <img src="MacGettingStartedImages/XCode_DownloadComplete.jpg" width="307" height="330"><br>
+  <em>Figure 6</em><br>
+  <br>
+  <img src="MacGettingStartedImages/XCodeInstaller_Welcome.jpg" width="420" height="298"><br>
+  <em>Figure 7</em><br><br>
+  <img src="MacGettingStartedImages/XCodeInstaller_AgreeToLicense.jpg" width="449" height="157"><br>
+  <em>Figure 8</em><br>
+  <br>
+  <p>Once you've agreed to the licensing terms, you will be presented with a screen that allows you to customize your installation (Shown in Figure 9). Make sure your options reflect what is shown in Figure 9. Click continue to proceed. At this point, you will see a screen that allows you to change your installation directory (Shown in Figure 10). For the sake of simplicity, especially if you are a new developer, do not change the Installation Location.</p><br>
+  <img src="MacGettingStartedImages/XCodeInstall_CustomOptions.jpg" width="420" height="298"><br>
+  <em>Figure 9</em><br>
+  <br>
+  <img src="MacGettingStartedImages/XCodeInstall_Finalize.jpg" width="420" height="298"><br>
+  <em>Figure 10</em><br>
+  <br>
+  
+  <p>This is your last chance to double check your installation settings. When you click the <em>Install</em> button, Xcode will be installed on your machine (Shown in Figure 11). If all went well, you will finally see a &quot;Install Succeeded Screen&quot; (Shown in Figure 12). Now that your compiler is installed, it's time to move on to setting up TGEA.</p>
+  <br>
+  <img src="MacGettingStartedImages/XCodeInstall_Progress.jpg" width="420" height="298"><br>
+  <em>Figure 11</em><br>
+  <br>
+  <img src="MacGettingStartedImages/XCodeInstall_Done.jpg" width="420" height="298"><br>
+  <em>Figure 12</em><br>
+  <br>
+  <p name="Install_Engine"><a name="Install_Engine"></a></p>
+  <h2><a name = "HeaderLink7"></a>Installing the Engine</h2>
+  <p name="TGEA_Intro"><a name="TGEA_Intro"></a></p>
+  <h3><a name = "HeaderLink8"></a>TGEA Introduction</h3>
+  <p>Torque Game Engine Advanced is first and foremost a <a href="http://en.wikipedia.org/wiki/Software_Development_Kit">Software Development Kid (SDK)</a>. Essentially, the engine provides you with the tools to make your game, but does not actually design and make your game for you. Compared to other Torque products, TGEA is aimed at experienced developers. After you have purchased a license, you are free to download and install TGEA. There are many components that ship with the engine, but first let's obtain the installer.</p>
+  <p name="Get_TGEA"><a name="Get_TGEA"></a></p>
+  <h3><a name = "HeaderLink9"></a>Getting TGEA</h3>
+  <p>Start by visiting <a href="http://www.garagegames.com/">GarageGames.com</a> and <a href="http://www.garagegames.com/main/login/">log-in</a>. After you are logged in, you will have an option to click on your account (Shown in Figure 13).
+  <br><br>
+  <img src="MacGettingStartedImages/MyAccount.jpg" width="472" height="76"><br>
+    <em>Figure 13</em>
+  <br><br><br>Once you are on your account page, look for the line containing your Torque Game Engine Advanced info (Shown in Figure 14).
+  <br><br>
+  <img src="MacGettingStartedImages/AccountPage.jpg" width="547" height="57"><br>
+  <em>Figure 14</em><br><br><br>
+  Click on the Download link, which will take you to the TGEA Download Page. Underneath the Macintosh Downloads section (Shown in Figure 15), you will want to click on TGEA 1.8.0. 
+  <br>
+  <br>
+  <img src="MacGettingStartedImages/TGEAPage.jpg" width="474" height="165"><br>
+  <em>Figure 15</em><br><br><br>
+  Now you simply have to wait for the SDK to finish downloading (Shown in Figure 16).</p>
+    <img src="MacGettingStartedImages/TGEADownloadStatus.jpg" width="349" height="157"><br>
+  <em>Figure 16</em><br>
+  <br>
+  <br>
+  <p name="Install_TGEA"><a name="Install_TGEA"></a></p>
+  <h3><a name = "HeaderLink10"></a>Installing TGEA</h3>
+  <p>Bumpmaps give a material a more 3D appearance. The TGEA supports bumpmaps through the use of normalmaps. There are many free utilities available to create normalmaps. nVIDIA has a nice PhotoShop plugin for this purpose available at <a href="http://developer.nvidia.com/" class='external text' title="http://developer.nvidia.com" rel="nofollow">developer.nvidia.com</a>.  </p>
+
+  
+  <p name="Enviro_Setup"><a name="Enviro_Setup"></a></p>
+  <h2><a name = "HeaderLink11"></a>Setting Up Your Environment</h2>
+  <p>Materials </p>
+  <p><br />
+  </p>
+  <p name="Directory_Layout"><a name="Directory_Layout"></a></p>
+  <h2><a name = "HeaderLink12"></a>Directory  Layout</h2>
+  <p>This section of the documentation can also be titled “What the heck did I just download?” A fresh install of TGEA will contain dozens of folders and hundreds of files. This section will give you a high level tour of what you are looking at. If you blindly rush into development without knowing how a Torque project is put together, you may paint yourself into a corner and have to start over.<br><br>  
+    <strong>Root Directory:</strong> This will be the location you choose to install TGEA. Along with the sub-folders that make up the SDK, there are a few important files to note.<br>
+    <br>
+    <strong>Root\Documentation:</strong> Here you will find the offline documents, which you are reading right now. You can open individual pages or load the whole document.<br>
+    <br>
+    <strong>Root\Engine:</strong> The various sub-folders, files, and libraries found in this directory make up the core source code of TGEA<br>
+    <br>
+    <strong>Engine\bin:</strong> Contains executables useful for advanced development, doxygen document generation, nasm assembly, etc.<br>
+    <br>
+    <strong>Engine\lib:</strong> Contains the critical libraries for compiling a Torque project. Later in development, if you wish to add custom 3rd party projects, such as PhysX or the P5 Glove SDK, this would be a good directory to add the .dlls and .libs to link to.<br>
+    <br>
+    <strong>Engine\Source:</strong> Organized in folders by module, this directory contains all of the files that make up the TGEA source code. Once you read a little more documentation and experimentation, finding what you want will be much easier. Still, some modules are more self-explanatory than the others. For instance, the “atlas” folder will contain the classes and code pertinent to the Atlas terrain system. <br>
+    <br>
+    <strong>Root\GameExamples</strong>: Each folder within this directory contains a separate demo, game mod, or prototype. Each example shows off features that make TGEA stand out. This directory will most likely be where you want to create
+    your own game folder/project.<br>
+    <strong><br>
+    GameExamples\AtlasDemo</strong>: This game example shows off the blended Atlas terrain feature and a simple waterblock. Loading this project, viewing the scripts, editing the mission, etc, will give you a good understanding on how
+    to load and modify Atlas terrain.<br>
+    <br>
+    <strong>GameExamples\TGEDemoAdvanced</strong>: This demo is a direct port of TGE's demo. This is a guided walkthrough of the more prominent Torque tech feature set. Even if this is a guided demo, there are several key scripts and classes
+    at work: particle systems, camera objects, weather control, lighting effects, scene manipulation, animation, and more.<br>
+	<br>
+    <strong>GameExamples\Forge</strong>: The Forge game mod shows off the prettier side of Torque. This has been a conference favorite for a while. Here, you can view advanced lighting, particles, and shaders at work.<br>
+    <br>
+    <strong>GameExamples\Stronghold:</strong> In terms of game play, Stronghold has more to show than the other mods. This is your basic FPS starter kit. The core Torque systems are in full effect: networked game play, collision, projectiles,
+    rendering effects (particles, explosions), environment (Sun, water, terrain), and more. If you want to jump right into developing a game prototype, modifying the Stronghold game might be the way to go.<br>
+	<br>
+    <strong>GameExamples\T3D</strong>: New TGEA features are shown off in this game example. Before you even jump into the game, you can change your game character via the "Select Model" option. The mission itself shows off
+    the new feature of having multiple, tiled Legacy terrains. While not immediately apparent, the character is reacting to interiors and the terrain using the new Polysoup collision system.<br>
+    
+    <br>
+    <strong>*Note for Users of Older TGEA Versions*</strong>- Some key folders in the source directory you are used to coding in have been moved or renamed.&nbsp;The big one is that the &ldquo;game&rdquo; directory (containing classes for the player, AI, vehicles,
+    camera, etc) has been renamed to T3D.&nbsp;Newcomers will want to spend a lot of time in this directory as well. </p>
+  <p><br />
+  </p>
+  <p name="Torque_Folder"><a name="Torque_Folder"></a></p>
+  <h2><a name = "HeaderLink13"></a>Dissecting a Torque Game Folder</h2>
+  <p>Each example game shares a common organization theme and folder hierarchy. So, for this next section we are going to dissect a specific game example and examine how a typical Torque project is organized. Let’s dig into Stronghold.<br><br>
+
+    <strong>Base Directory Files</strong> – The three <span class="style1">batch</span> files found here perform useful automated routines that can speed up your development.<br>
+    <ul>
+    	<li class="style1"><strong>DeleteDSOs.bat</strong> – Deletes all the .dso files (compiled script code) found in all sub-directories of the game example</li>
+        <li class="style1"><strong>DeletePrefs.bat</strong> – Deletes all preference files in all the sub-directories of the game example. These files usually contain information such as custom screen resolutions, audio levels, and so on.</li>
+        <li class="style1"><strong>generateProjects</strong> – Will create your Visual Studio projects and solutions for you. Considering the amount of files, folders, and libs that make up the TGEA SDK, you definitely want to use this if you have to
+        develop a gameexample from scratch</li>
+    </ul>
+    <br>
+    <strong>source</strong> – This folder will hold source code specific to your game will be found here. This is entirely separate from the core source code used by all the game examples.<br>
+    <br>
+    <strong>buildFiles</strong> – Each sub-folder found here contains the projects and solution you can load into your compiler. You obviously want to choose the one that supports your compiler. <span class="style1">The compile.bat file is a command line
+    application that will automatically build your solution for you, without opening your compiler. If you run the file as it is, or do not pass arguments to it in the command line, it will automatically build the VC2005
+    project. See Compiling the TGEA Source Code for more information.</span><br>
+    <br>
+    <strong>config</strong> – This directory contains configuration files that are loaded by other applications For instance, engineDoc.conf is used by Doxygen to create an engine reference document. project.conf is used by the
+    <span class="style1">generateProjecs.bat</span> to determine how and what to include in the projects and solutions.<br>
+    <br>
+    <strong>game</strong> – The game folder contains everything that makes up your game: scripts, GUIs, assets, and editors. From here on out, assume we are looking at folders inside of the game directory.<br>
+    <br>
+    <strong>common</strong> – This directory is very similar to the scriptsAndAssets folder. You will find scripts, GUIs, and data just like in the scriptsAndAssets folder, except these are shared amongst all game mods added to your
+    project. In other words, you can create a "Survival Horror" folder in the game directory, which is completely separate from scriptsAndAssets. Both mods will share the common scripts and folders.<br>
+    <br>
+    <strong>profile</strong> – The scripts found in this directory are used to check your graphics card for compatibility against the engine. If you do not have a supported graphics card, or you do not have capable drivers, you will be
+    reminded to upgrade and update.<br>
+    <br>
+    <strong>shaders</strong> – This is the directory you should store all of your hlsl (high level shader language) files. Sub-folders are used for organization. If you have several shaders related to each other, all weather shaders for
+    example, you can create a folder and store them there.<br>
+    <br>
+    <strong>tools</strong> – Your GUI editor, Mission editor, debugger, and other tools/classes will be located here. These are described in depth in other sections of this documentation<br>
+    <br>
+    <strong>scriptsAndAssets</strong> – The bulk of your game content is found in this directory. Typically, this directory is broken down into three sections: client, server, and data.<br>
+    <br>
+    <strong>client</strong> – Your client side scripts and data will be found here. This usually pertains to logic and GUIs not shared by in a multi-player game, like an Options Menu or action map script. In Stronghold, scripts and logic
+    pertaining to input binding, GUI helper scripts, and mission downloading are stored in "scripts." GUIs and images can be found in "ui"<br>
+    <br>
+    <strong>data</strong> – Anything related to this game play assets will be found here: 3D models (shapes), environment data (skies, environment, terrains), audio files (sound). These are usually sorted by both relevancy and data type. DTS
+    files used to represent 3D models will be found in the “shapes” folder. DIFF files which contain building and interior geometry will be found in the “interiors” folder. OGG and WAV files for sound effects will be found in
+    the “sound” folder. Have a look around, as the data folder is pretty straight forward.<br>
+    <br>
+    <strong>server</strong> – Server side functionality and scripts, which every player is affected by in a multi-player session, are found here. A large portion of your time will be spent in this directory while developing your game. This folder contains the script files used to build the player (player.cs), AI (aiplayer.cs), weapons (weapon.cs & crossbow.cs), network connection (game.cs), core game logic (game.cs), and so on. Individual scripts will be addressed in later tutorials. </p>
+  <p><br />
+  </p>
+  <p name="Compiling_TGEA"><a name="Compiling_TGEA"></a></p>
+  <h2><a name = "HeaderLink14"></a>Compiling TGEA SDK</h2>
+  <p>Materials   </p>
+  <p><br />
+  </p>
+  <p name="Summary"><a name="Summary"></a></p>
+  <h2><a name = "HeaderLink15"></a>Summary</h2>
+  <p>
+  Setting up TGEA can be a lengthy process, but you want to have a strong foundation and stable system before you dive into development. From here, you can go to any other part of the documentation that pertains to what
+  you want to start developing. There is no right or wrong starting point beyond this document. However, if you want to go from high level to low level, this is one recommended path:<br><br>
+<blockquote>
+Work with the <a href="../GUI%20Editor/GUI%20Introduction.html">GUI Editor</a> and <a href="../Mission%20Editor/Overview.html">Mission Editor</a>. The drag and drop functionality of these tools will allow you to experience modifying a game project without performing extensive script editing.<br>
+<br>
+
+Study the <a href="../Scripting%20Reference/Introduction/TorqueScript.html">Torque Script documentation</a> to find out what major systems are exposed to the script language. Take the time to learn the syntax, how the example games use Torque Script, and try out some of your own custom code<br>
+<br>
+
+Start mixing your script modifications with the components you create with the GUI and Mission editors. Following the <a href="../GUI%20Editor/GUI%20Introduction.html">starter tutorial</a> in the GUI Editor section is a great example.<br>
+<br>
+
+Begin browsing and modifying the engine source code. A great way to learn how to modify the source code is to download and integrate the free <a href="http://www.garagegames.com/index.php?sec=mg&amp;mod=resource&amp;page=home">GarageGames Community Resources</a>. Not only will you get new functionality, but these mini-tours of the engine are invaluable.<br>
+<br>
+</blockquote>
+Whatever path you decide to take, there is a mantra that every newcomer to TGEA and novice programmer should memorize:<br><br>
+
+“READ. READ CODE. CODE”<br><br>
+
+Read through this documentation, and regularly check the <a href="http://www.garagegames.com/mg/forums/result.area.php">forum posts</a> on <a href="http://www.garagegames.com/">GarageGames.com</a>. Read the sample code and resources posted by others to get an idea of how to modify the engine. Finally, start with simple changes to the scripts and engines. Expecting to launch out of the starting gate and creating a MMORPG will only end in frustration.   </p>
+  <p><br />
+  </p>
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Getting Started/Getting Started for Macs.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:06 GMT -->
+</html>

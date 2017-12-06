@@ -1,0 +1,2813 @@
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/File Formats/DIF File Format 44-14.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4277;
+   parent.leftFrame.expandToItem('tree2', 'doc4277');
+   var element = parent.leftFrame.document.getElementById('doc4277');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style>
+BODY, P, DIV, H1, H2, H3, H4, H5, H6, ADDRESS, OL, UL, TITLE, TD, OPTION, SELECT {
+ font-family: Verdana;
+ 
+}
+
+BODY, P, DIV, ADDRESS, OL, UL, LI, TITLE, TD, OPTION, SELECT {  
+  font-size: 10.0pt;
+  margin-top:0pt;  
+  margin-bottom:0pt;  
+} 
+
+BODY, P {
+  margin-left:0pt; 
+  margin-right:0pt;
+}
+
+BODY {
+  line-height: normal;
+
+  margin: 6px;
+  padding: 0px;
+}
+
+h6 { font-size: 10pt }
+h5 { font-size: 11pt }
+h4 { font-size: 12pt }
+h3 { font-size: 13pt }
+h2 { font-size: 14pt }
+h1 { font-size: 16pt }
+
+blockquote {padding: 10px; border: 1px #DDDDDD dashed }
+
+a img {border: 0}
+
+#doc-contents {
+  background-color: #ffffff;
+}
+
+
+</style>
+
+<title>TGEA - Using Art assets - DIF File Format 44 - 14</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.html" />
+<link rel="STYLESHEET" type="text/css" href="content.html" />
+
+</head>
+
+
+<BODY id = "BODYID" onLoad = "initComponent()"  revision="dghwrd8q_4dsjcgz:564">
+
+<table width="700" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+   
+<P class=MsoNormal style="MARGIN:0pt 0pt 0pt">
+  <SPAN style=" FONT-FAMILY:Arial"><FONT size=3><b>DIF File Format
+  Specification</b></FONT></SPAN>
+</P>
+<P class=MsoNormal style="MARGIN:0pt 0pt 0pt">&nbsp;
+  
+</P>
+<P class=MsoNormal style="MARGIN:0pt 0pt 0pt">
+  InteriorResource Version 44
+</P>
+<P class=MsoNormal style="MARGIN:0pt 0pt 0pt">
+  Interior Version 14
+</P>
+<P class=MsoNormal style="MARGIN:0pt 0pt 0pt">&nbsp;
+  
+</P>
+<P class=MsoNormal>
+  U32 interiorResourceFileVersion
+</P>
+<P class=MsoNormal>
+  bool previewIncluded&nbsp;
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp; if (previewIncluded)&nbsp;
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PNG previewBitmap&nbsp;
+</P>
+<P class=MsoNormal>
+  U32 numDetailLevels&nbsp;
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp; for 0 to numDetailLevels&nbsp;
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Interior&nbsp;&nbsp;
+</P>
+<P class=MsoNormal style="MARGIN:0pt 0pt 0pt">
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <A name=Interior_read></A>U32
+  <A href=#interiorFileVersion title=fileVersion>interiorFileVersion</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32
+  <A href=#detailLevel title=detailLevel>detailLevel</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32
+  <A href=#minPixels title=minPixels>minPixels</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  BoxF
+  <A href=#boundingBox title=boundingBox>boundingBox</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  SphereF
+  <A href=#boundingSphere title=boundingSphere>boundingSphere</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Bool
+  <A href=#hasAlarmState title=hasAlarmState>hasAlarmState</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32
+  <A href=#mLightStateEntries title=mLightStateEntries>numLightStateEntries</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32
+  <A href=#mPlanes title=mPlanes>numNormals</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for 0 to numNormals
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Point3F normal
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32
+  <A href=#mPlanes title=mPlanes>numPlanes</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for 0 to numPlanes
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32 normalIndex
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  F32 planeDistance
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32
+  <A href=#mPoints title=mPoints>numPoints</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for 0 to numPoints
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Point3F point
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32
+  <A href=#mPointVisibilities title=mPointVisibilities>numPointVisibilities</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for 0 to numPointVisibilities
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U8 pointVisibility
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32
+  <A href=#mTexGenEqs title=mTexGenEqs>numTexGenEqs</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for 0 to numTexGenEQs
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  PlaneF planeX
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  PlaneF planeY
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32
+  <A href=#mBSPNodes title=mBSPNodes>numBSPNodes</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for 0 to numBSPNodes
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U16 planeIndex
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32 frontIndex
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32 backIndex
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32
+  <A href=#mBSPSolidLeaves title=mBSPSolidLeaves>numBSPSolidLeaves</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for 0 to numBSPSolidLeaves
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32 surfaceIndex
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U16 surfaceCount
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <A href=#MaterialList title=MaterialList>MaterialList</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <A name=MaterialList_read></A>U8 version
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32 numMaterials
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for 0 to numMaterials
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  String
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <A name=String_read></A>U8 length
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for 0 to length
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U8 character
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32
+  <A href=#mWindings title=mWindings>numWindings</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for 0 to numWindings
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32&nbsp;index
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32
+  <A href=#mWindingIndices title=mWindingIndices>numWindingIndices</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for 0 to numWindingIndices
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32 windingStart
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32 windingCount
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32
+  <A href=#mEdges title=mEdges>numEdges</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for 0 to numEdges
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  S32 pointIndex0
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  S32 pointIndex1
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  S32 surfaceIndex0
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  S32 surfaceIndex1
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32
+  <A href=#mZones title=mZones>numZones</A>
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  for 0 to numZones
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U16 portalStart
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U16 portalCount
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32 surfaceStart
+</P>
+<P class=MsoNormal>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U16 surfaceCount
+</P>
+<P>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32 staticMeshStart
+</P>
+<P>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  U32 staticMeshCount
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 flags
+  </P>
+  <P class=MsoNormal style="MARGIN:0pt 0pt 0pt">
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mZoneSurfaces title=mZoneSurfaces>numZoneSurfaces</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numZoneSurfaces
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 zoneSurface
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mZonePortalList title=mZonePortalList>numZonePortalList</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numZonePortalList
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 zonePortalList
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mPortals title=mPortals>numPortals</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numPortals
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 planeIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 triFanCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 triFanStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 zoneFront
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 zoneBack
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mSurfaces title=mSurfaces>numSurfaces</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numSurfaces
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 windingStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 windingCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 planeIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 textureIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 texGenIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8&nbsp;&nbsp; surfaceFlags
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 fanMask
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    LightMapTexGen
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 finalWord
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 texGenXDistance
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 texGenYDistance
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 lightCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 lightStateInfoStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 mapOffsetX
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 mapOffsetY
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 mapSizeX
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 mapSizeY
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    bool&nbsp;unused&nbsp;
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mNormalLMapIndices title=mNormalLMapIndices>numNormalLMapIndices</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numNormalLMapIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 normalLMapIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mAlarmLMapIndices title=mAlarmLMapIndices>numAlarmLMapIndices</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numAlarmLMapIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 alarmLMapIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mNullSurfaces title=mNullSurfaces>numNullSurfaces</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numNullSurfaces
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 windingStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 planeIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8&nbsp;&nbsp; surfaceFlags
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 windingCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mLightMaps title=mLightMaps>numLightMaps</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numLightMaps
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    PNG lightMap
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    PNG lightDirMap&nbsp;&nbsp;
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    bool keepLightMap
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mSolidLeafSurfaces title=mSolidLeafSurfaces>numSolidLeafSurfaces</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numSolidLeafSurfaces
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 solidLeafSurface
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mAnimatedLights title=mAnimatedLights>numAnimatedLights</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numAnimatedLights
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 nameIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 stateIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 stateCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 flags
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 duration
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mLightStates title=mLightStates>numLightStates</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numLightStates
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8&nbsp;&nbsp; red
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8&nbsp;&nbsp; green
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8&nbsp;&nbsp; blue
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 activeTime
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 dataIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 dataCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mStateDatas title=mStateDatas>numStateDatas</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numStateData
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 surfaceIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 mapIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 lightStateIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mStateDataBuffers title=mStateDataBuffers>numStateDataBuffers</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 flags
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numStateDataBuffers
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 stateDataBuffer
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mNameBuffers title=mNameBuffers>numNameBuffers</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numNameBuffers
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    S8 character
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mSubObjects title=mSubObjects>numSubObjects</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numSubObjects
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    InteriorSubObject object
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mConvexHulls title=mConvexHulls>numConvexHulls</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numConvexHulls
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 hullStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 hullCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 minX
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 maxX
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 minY
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 maxY
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 minZ
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 maxZ
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 surfaceStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 surfaceCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 planeStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 polyListPlaneStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 polyListPointStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 polyListStringStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    bool staticMesh
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mConvexHullEmitStrings title=mConvexHullEmitStrings>numConvexHullEmitStrings</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numConvexHullEmitStrings
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 convexHullEmitStringCharacter
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mHullIndices title=mHullIndices>numHullIndices</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numHullIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 hullIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mHullPlaneIndices title=mHullPlaneIndices>numHullPlaneIndices</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numHullPlaneIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 hullPlaneIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mHullEmitStringIndices title=mHullEmitStringIndices>numHullEmitStringIndices</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numHullEmitStringIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 hullEmitStringIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mHullSurfaceIndices title=mHullSurfaceIndices>numHullSurfaceIndices</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numHullSurfaceIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 hullSurfaceIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mPolyListPlanes title=mPolyListPlanes>numPolyListPlanes</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numPolyListPlanes
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 ployListPlaneIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mPolyListPoints title=mPolyListPoints>numPolyListPoints</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numPolyListPoints
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 polyListPointIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mPolyListStrings title=mPolyListStrings>numPolyListStrings</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numPolyListStrings
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 polyListStringCharacter
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to
+    <A href=#mCoordBins title=mCoordBins>NumCoordBins
+    * NumCoordBins</A> (16 * 16 by default)
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 binStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 binCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mCoordBinIndices title=mCoordBinIndices>numCoordBinIndices</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numCoordBinIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 coordBinIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#coordBinMode title=coordBinMode>coordBinMode</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    ColorF
+    <A href=#baseAmbientColor title=baseAmbientColor>baseAmbientColor</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 red
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 green
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 blue
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 alpha
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    ColorF
+    <A href=#alarmAmbientColor title=alarmAmbientColor>alarmAmbientColor</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 red
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 green
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 blue
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 alpha
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mStaticMeshes title=mStaticMeshes>numStaticMeshes</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numStaticMeshes
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    ConstructorSimpleMesh
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numPrimitives
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numPrimitives
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    bool alpha
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 texS
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 texT
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    S32 diffuseIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    S32 lightMapIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 start
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 count
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    PlaneF lightMapEquationX
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    PlaneF lightMapEquationY
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Point2I lightMapOffset
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Point2I lightMapSize
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 index
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numVertices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numVertices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Point3F vertex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numNormals
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numNormals
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Point3F normal
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numDiffuseUVs
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numDiffuseUVs
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Point2F diffuseUV
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numLightmapUVs
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numLightmapUVs
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Point2F lightmapUV
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    bool hasMaterialList
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    if (hasMaterialList)
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    TSMaterialList
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <A href=#MaterialList_read title=MaterialList::read()>MaterialList</A><A href=#MaterialList_read title=MaterialList::read()></A>
+    baseMaterialList &nbsp;
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to materialCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 flags
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to materialCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 reflectanceMap
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to materialCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 bumpMap
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to materialCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 detailMap
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to materialCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 lightMap
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to materialCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 detailScale
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to materialCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 reflectionAmount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numDiffuseBitmaps
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numDiffuseBitmaps
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    bool hasBitmap
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    if (hasBitmap)
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    PNG bitmap
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    bool hasSolid
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    bool hasTranslucency
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Box3F bounds
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    MatrixF transform
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Point3F scale
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mNormals title=mNormals>numNormals</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numNormals
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Point3F normal
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mTexMatrices title=mTexMatrices>numTexMatrices</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numTexMatrices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    S32 T
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    S32 N
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    S32 B
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#mTexMatIndices title=mTexMatIndices>numTexMatIndices</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numTexMatIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 texMatIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32
+    <A href=#extendedLightMapData title=extendedLightMapData>extendedLightMapData</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    if (extendedLightMapData == 1)
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 lightMapBorderSize
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 dummy
+  </P>
+  <P class=MsoNormal>
+    U32
+    <A href=#mSubObjects_resource title=numSubObjects>numSubObjects</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; for 0 to numSobObjects
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <A href=#Interior_read title=Interior::read()>Interior</A><A href=#Interior_read title=Interior::read()></A>
+    subObject
+  </P>
+  <P class=MsoNormal>
+    U32
+    <A href=#mTriggers title=numTriggers>numTriggers</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for 0 to numTriggers
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <A href=#String_read title=String::read()>String</A><A href=#String_read title=String::read()></A>
+    name
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <A href=#String_read title=String::read()>String</A>
+    datablock&nbsp;
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U32
+    numPolyHedronPoints
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numPolyHedronPoints
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Point3F point
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U32
+    numPolyHedronPlanes
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numPolyHedronPlanes
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    PlaneF plane
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U32
+    numPolyHedronEdges
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numPolyHedronEdges
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U32
+    face0
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 face1
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 vertex0
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 vertex1
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Point3F offset
+  </P>
+  <P class=MsoNormal>
+    U32
+    <A href=#mInteriorPathFollowers title=numInteriorPathFollowers>numInteriorPathFollowers</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for 0 to numInteriorPathFollowers
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <A href=#String_read title=String::read()>String</A><A href=#String_read title=String::read()></A>
+    name
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <A href=#String_read title=String::read()>String</A>
+    datablock
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; U32 interiorResIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Point3F offset
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dictionary
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <A name=Dictionary_read></A>U32 size
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to size
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <A href=#String_read title=String::read()>String</A><A href=#String_read title=String::read()></A>
+    name
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <A href=#String_read title=String::read()>String</A><A href=#String_read title=String::read()></A>
+    value
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; U32 numTriggerIds
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numTriggerIds
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 triggerId
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; U32 numWayPoints
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numWayPoints
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Point3F pos
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QuatF&nbsp;&nbsp;
+    rot
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U32
+    msToNext
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U32
+    smoothingType
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; U32 totalMS
+  </P>
+  <P class=MsoNormal>
+    U32
+    <A href=#mForceFields title=numForceFields>numForceFields</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; for 0 to numForceFields
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; U32
+    forceFieldFileVersion
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A href=#String_read title=String::read()>String</A><A href=#String_read title=String::read()></A>
+    name
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; U32 numTriggers
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numTriggers
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <A href=#String_read title=String::read()>String</A><A href=#String_read title=String::read()></A>
+    trigger
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Box3F boundingBox
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SphereF
+    boundingSphere
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U32 numNormals
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numNormals
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Point3F normal
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U32 numPlanes
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numPlanes
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 normalIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 planeDistance
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U32 numBSPNodes
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numBSPNodes
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 planeIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 frontIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 backIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U32
+    numBSPSolidLeaves
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numBSPSolidLeaves
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 surfaceIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 surfaceCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U32 numWindings
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 index
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U32 numSurfaces
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numSurfaces
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 windingStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8&nbsp;&nbsp; windingCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 planeIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8&nbsp;&nbsp; surfaceFlags
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 fanMask
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U32
+    numSolideLeafSurfaces
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for 0 to
+    numSolideLeafSurfaces
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 surfaceIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ColorI
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 red
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 green
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 blue
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 alpha
+  </P>
+  <P class=MsoNormal>
+    U32
+    <A href=#mAISpecialNodes title=numAISpecialNodes>numAISpecialNodes</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; for 0 to numAISpecialNodes
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <A href=#String_read title=String::read()>String</A><A href=#String_read title=String::read()></A>
+    name
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Point3F position
+  </P>
+  <P class=MsoNormal>
+    U32 readVehicleCollision
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (readVehicleCollision == 1)
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <A href=#VehicleCollision title=VehicleCollision>VehicleCollision</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 vehicleCollisionFileVersion
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numVehicleConvexHulls
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numVehicleConvexHulls
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 hullStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 hullCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 minX
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 maxX
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 minY
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 maxY
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 minZ
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    F32 maxZ
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 surfaceStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 surfaceCount
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 planeStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 polyListPlaneStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 polyListPointStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 polyListStringStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numVehicleConvexHullEmitStrings
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numVehicleConvexHullEmitStrings
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 vehicleConvexHullEmitStringCharacter
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numVehicleHullIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numVehicleHullIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 vehicleHullIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numVehicleHullPlaneIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numVehicleHullPlaneIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 vehicleHullPlaneIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numVehicleHullEmitStringIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numVehicleHullEmitStringIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 vehicleHullEmitStringIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numVehicleHullSurfaceIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numVehicleHullSurfaceIndices
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 vehicleHullSurfaceIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numVehiclePolyListPlanes
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numVehiclePolyListPlanes
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 vehiclePloyListPlaneIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numVehiclePolyListPoints
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numVehiclePolyListPoints
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 vehiclePolyListPointIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numVehiclePolyListStrings
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numVehiclePolyListStrings
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8 vehiclePolyListStringCharacter
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 numVehicleNullSurfaces
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    for 0 to numVehicleNullSurfaces
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 windingStart
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U16 planeIndex
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U8&nbsp;&nbsp; surfaceFlags
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    U32 windingCount
+  </P>
+  <P class=MsoNormal>
+    U32 readGameEntities
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; if (readGameEntities == 2)
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; U32
+    <A href=#mGameEntities title=numGameEntities>numGameEntities</A>
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for 0 to
+    numGameEntities
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    ItrGameEntity
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A href=#String_read title=String::read()>String</A>
+    datablock
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A href=#String_read title=String::read()>String</A>
+    gameClass
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Point3F
+    position
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A href=#Dictionary_read title=Dictionary>Dictionary</A>
+    properties
+  </P>
+  <P class=MsoNormal>
+    U32 dummy
+  </P>
+  <P class=MsoNormal style="MARGIN:0pt 0pt 0pt">&nbsp;
+    
+  </P>
+  <P class=MsoNormal style="MARGIN:0pt 0pt 0pt">
+    <U>Descriptions</U>
+  </P>
+  <P class=MsoNormal>
+    interiorResourceFileVersion
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; The file version for this InteriorResource. Not to
+    be confused with the
+    <A href=#interiorFileVersion title="file version">file
+    version</A> for the Interior read.
+  </P>
+  <P class=MsoNormal>
+    <A name=previewIncluded></A>previewIncluded
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated</i> - A preview bitmap can be in
+    inserted into the InteriorResource
+  </P>
+  <P class=MsoNormal>
+    mDetailLevels
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; Each DIF/InteriorResource can actually have
+    multiple Interior files saved into it to be used as the different levels of
+    detail
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; for rendering.
+  </P>
+  <P class=MsoNormal>
+    <A name=interiorFileVersion></A>interiorFileVersion
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; The file version for this Interior
+  </P>
+  <P class=MsoNormal>
+    <A name=detailLevel></A>detailLevel
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; The detail number that this Interior corresponds to
+  </P>
+  <P class=MsoNormal>
+    <A name=minPixels></A>minPixels
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; The minimum pixel size that this Interior should
+    start rendering at if there is more that one LOD in the InteriorInstance
+  </P>
+  <P class=MsoNormal>
+    <A name=boundingBox></A>boundingBox
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; An axis-aligned&nbsp;bounding box should exactly
+    encompess all of the geometry
+  </P>
+  <P class=MsoNormal>
+    <A name=boundingSphere></A>boundingSphere
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; A sphere that completely encloses the geometry
+  </P>
+  <P class=MsoNormal>
+    <A name=hasAlarmState></A>hasAlarmState
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated</i> - denotes whether or not the
+    Interior has alarm lighting baked in
+  </P>
+  <P class=MsoNormal>
+    <A name=mLightStateEntries></A>mLightStateEntries
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated</i>
+  </P>
+  <P class=MsoNormal>
+    <A name=mPlanes></A>mPlanes
+  </P>
+  <P class=MsoNormal>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;These planes are used by the surfaces, bsp
+    nodes, and hulls for collision and clipping. They are defined&nbsp; by a
+    normal and a
+    <P>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;distance along that normal. This allows the
+      normals to be shared to save on file size. The planes are written out as a
+      list of
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;normals and then a list of indices into those
+      normals and a distance along that normal.&nbsp;For most of the data in the
+      Interior
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; (bsp node plane indices being the exception), the
+      plane indices can&nbsp;be stored with an |= 0x8000 to indicate that it is
+      an
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; inverted version of the plane indexed.
+    </P>
+    <P class=MsoNormal>
+      <A name=mPoints></A>mPoints
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; These are all of the Point3F's that make up the
+      geometry in the Interior
+    </P>
+    <P class=MsoNormal>
+      <A name=mPointVisibilities></A>mPointVisibilities
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; These aren't used by the engine for anything but
+      they match up 1:1 to the mPoints. A value of 1 indicates
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; that the point is part of the
+      <A href=#mSurfaces title=mSurfaces>visible
+      geometry</A>&nbsp;while a value of 0 indicates that the point is only
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; used as part of the
+      <A href=#mConvexHulls title=mConvexHulls>collision
+      hulls</A>.
+    </P>
+    <P class=MsoNormal>
+      <A name=mTexGenEqs></A>mTexGenEqs
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; The list of texgens that the
+      <A href=#mSurfaces title=mSurfaces>surfaces</A>
+      index into. Each texgen is comprised of a PlaneF for calculating the u
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; coordinates and a PlaneF for calculating the v
+      coordinates for each vertex of each surface.
+    </P>
+    <P class=MsoNormal>
+      <A name=mBSPNodes></A>mBSPNodes
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; The bsp nodes are used primarily for ray cast
+      collisions. They include an index into the
+      <A href=#mPlanes title=mPlanes>planes</A>
+      as well as an
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; index to the a front node and a back node. If
+      either of the node indices is masked by 0x80000 then it is a
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; leaf index. If the leaf index is masked by
+      0x40000 then it is an empty leaf and you can get its zone by using
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; (index &amp; ~0xC0000). If it is not a leaf index
+      then it is an index into the
+      <FONT size=2><FONT size=2><A href=#mBSPSolidLeaves title=mBSPSolidLeaves>solid
+      bsp leaves</A></FONT></FONT>. You can retrieve the
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; solid leaf index with (index &amp; ~0xC0000). It
+      is important to note that the engine does not support "inverted"
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; plane indices for bsp nodes.
+    </P>
+    <P class=MsoNormal>
+      <A name=mBSPSolidLeaves></A>mBSPSolidLeaves
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;The solid bsp leaves that are used for ray cast
+      collision. They reference a starting point and number of surfaces
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;in
+      <FONT size=2><A href=#mSolidLeafSurfaces title=mSolidLeafSurfaces>mSolidLeafSurfaces</A></FONT>.&nbsp;&nbsp;
+    </P>
+    <P class=MsoNormal>
+      <A name=MaterialList></A>MaterialList
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; A list of the textures used by the
+      <A href=#mSurfaces title=surfaces>surfaces</A>.
+      They should not include path information directly in the material
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; name. The IO for MaterialList's is handled
+      external to the Interior code and its format can change.
+    </P>
+    <P class=MsoNormal>
+      <A name=mWindings></A>mWindings
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp; &nbsp;&nbsp;A list of indices into
+      <A href=#mPoints title=mPoints>mPoints</A>
+      which are used by the
+      <A href=#mSurfaces title=mSurfaces>surfaces</A>&nbsp;and
+      <A href=#mPortals title=portals>portals</A>.
+    </P>
+    <P class=MsoNormal>
+      <A name=mWindingIndices></A>mWindingIndices
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;The winding indices are pairs of start and count
+      values used by the
+      <A href=#mPortals title=portals>portals</A>
+      to get at their list of indices from mWindings.
+    </P>
+    <P class=MsoNormal>
+      <A name=mEdges></A>mEdges
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;A list of all of the edges in the Interior.
+      It&nbsp;defines the edge with&nbsp;two indices into
+      <A href=#mPoints title=mPoints>mPoints</A>
+      and two indices into
+      <A href=#mSurfaces title=mSurfaces>mSurfaces</A>.
+    </P>
+    <P class=MsoNormal>
+      <A name=mZones></A>mZones
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;The Interior is split into multiple zones which
+      are rendered according to which portals are in view of the camera.
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;Each zone references a list of
+      <A href=#mZoneSurfaces title=surfaces>surfaces</A>
+      that belong to it and a list of
+      <A href=#mZonePortalList title=portals>portals</A>
+      which are attached to it.
+    </P>
+    <P class=MsoNormal>
+    </P>
+    <P class=MsoNormal>
+      <A name=mZoneSurfaces></A>mZoneSurfaces
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;A list of the
+      <A href=#mSurfaces title=surfaces>surfaces</A>
+      that belong to the zones in the Interior. These are used to decide which
+      surfaces
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;are rendered.
+    </P>
+    <P class=MsoNormal>
+      <A name=mZonePortalList></A>mZonePortalList
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;A list of the
+      <A href=#mPortals title=portals>portals</A>
+      that belong to the zones in the Interior.
+    </P>
+    <P class=MsoNormal>
+      <A name=mPortals></A>mPortals
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp; &nbsp;&nbsp;Portals are coplanar
+      (<A href=#mPlanes title=planeIndex>planeIndex</A>)
+      triangle fans that link two
+      <A href=#mZones title=zones>zones</A>
+      together. The triangle fans are indexed by using a list
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp; &nbsp;&nbsp;of
+      <A href=#mWindingIndices title=mWindingIndices>mWindingIndices</A>
+      (triFanStart and triFanCount) which index into the
+      <A href=#mWindings title=mWindings>mWindings</A>
+      array.
+    </P>
+    <P class=MsoNormal>
+      <A name=mSurfaces></A>mSurfaces
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;The surfaces are the core geometry of the
+      Interior. The are used by the
+      <A href=#mZones title=zones>zones</A>,
+      the
+      <A href=#mBSPSolidLeaves title="bsp solid leaves">bsp
+      solid leaves</A>, and the
+      <A href=#mConvexHulls title="convex hulls">convex
+      hulls</A>.
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp; &nbsp;&nbsp;They are also the only geometry in the Interior
+      intended for rendering.
+    </P>
+    <P class=MsoNormal>&nbsp;
+      
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp; &nbsp;&nbsp;Each surface is defined by a list of
+      <A href=#mWindings title=indices>indices</A>
+      (windingStart and windingCount) from
+      <A href=#mWindings title=mWindings>mWindings</A>,
+      an index (planeIndex)&nbsp;into
+      <A href=#mPlanes title=mPlanes>mPlanes</A>
+    </P>
+    <P class=MsoNormal>
+      &nbsp; &nbsp;&nbsp;(which may be masked as inverted), an index
+      (textureIndex) into the
+      <A href=#MaterialList title=MaterialList>MaterialList</A>
+      for its texture, an index (texGenIndex) into the
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;
+      &nbsp;&nbsp;<A href=#mTexGenEqs title=mTexGenEqs>mTexGenEqs</A>,
+      a set of surfaceFlags (which indicate whether or not it is an outside
+      surface or a static mesh surface), and a
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;fanMask (used to determine if a point should be
+      in a collision fan - points inserted to fix t-junctions should not).
+    </P>
+    <P class=MsoNormal>&nbsp;
+      
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp; &nbsp;&nbsp;The lightCount and lightStateInfoStart data are
+      used for animated lights and are <i>depreciated</i>.
+    </P>
+    <P class=MsoNormal>&nbsp;
+      
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;The surface's lightmap index can be found in
+      <A href=#mNormalLMapIndices title=mNormalLMapIndices>mNormalLMapIndices</A>
+      (1:1 relationship&nbsp;with the surfaces). It actually only uses a small
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;subset of a larger shared lightmap sheet as
+      defined by mapSizeX, mapSizeY, mapOffsetX, and mapOffsetY. The lightmap
+      texgens
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;are stored in an encoded form in the surface data
+      (see readLMapTexGen() for more information).
+    </P>
+    <P class=MsoNormal>
+      <A name=mNormalLMapIndices></A>mNormalLMapIndices
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp; &nbsp;&nbsp;An index into the
+      <A href=#mLightMaps title=mLightmaps>lightmaps</A>.
+      There is one for each
+      <A href=#mSurfaces title=mSurfaces>surface</A>.
+    </P>
+    <P class=MsoNormal>
+      <A name=mAlarmLMapIndices></A>mAlarmLMapIndices
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;<i>Depreciated</i> - An index into the lightmaps.
+      There is one for each surface. A value of 255 indicates that the
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;index is unsued.
+    </P>
+    <P class=MsoNormal>
+      <A name=mNullSurfaces></A>mNullSurfaces
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; Null surfaces are surfaces that are used for
+      collision but not rendering. The surfaces are defined by a list of
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp; &nbsp;indices and a plane. Note that the null surfaces
+      are not a triangle strip while the
+      <A href=#mSurfaces title=surfaces>surfaces</A>
+      are.
+    </P>
+    <P class=MsoNormal>
+      <A name=mLightMaps></A>mLightMaps
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; The lightmaps used for rendering the
+      <A href=#mSurfaces title=mSurfaces>surfaces</A>.
+      Multiple lightmaps are packed into a larger sheets. Each lightmap
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; has a flag to indicate whether or not to keep the
+      lightmap bits after uploading them to the Lightmap Manager.
+    </P>
+    <P class=MsoNormal>
+      <A name=mSolidLeafSurfaces></A>mSolidLeafSurfaces
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; List of indices into surfaces and null surfaces
+      used by the solid bsp leaves. Null surface indices are masked by
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; 0x80000000.
+    </P>
+    <P class=MsoNormal>
+      <A name=mAnimatedLights></A>mAnimatedLights
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated</i> - Animated lights
+    </P>
+    <P class=MsoNormal>
+      <A name=mLightStates></A>mLightStates
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated</i> - The color states and info
+      for animated lights
+    </P>
+    <P class=MsoNormal>
+      <A name=mStateDatas></A>mStateDatas
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated</i> - Used for tracking the
+      various states of animated lights
+    </P>
+    <P class=MsoNormal>
+      <A name=mStateDataBuffers></A>mStateDataBuffers
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated</i> - Used to store intesity maps
+      for animated lights
+    </P>
+    <P class=MsoNormal>
+      <A name=mNameBuffers></A>mNameBuffers
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated</i> - Used to store the name of
+      animated lights
+    </P>
+    <P class=MsoNormal>
+      <A name=mSubObjects></A>mSubObjects
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; Mirrors are currently the only
+      InteriorSubObject's that are implemented. Please refer to
+      MirrorSubObject::_readISO() for more
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; information on its file format.
+    </P>
+    <P class=MsoNormal>
+      <A name=mConvexHulls></A>mConvexHulls
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; The convex hulls are the closed convex volumes
+      that are used to gather collision data in Torque (getFeatures() and
+      getPolyList()).
+    </P>
+    <P class=MsoNormal>
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; Each convex references a list of
+      <A href=#mHullSurfaceIndices title=surfaces>surfaces</A><A href=#mHullSurfaceIndices title=surfaces></A>&nbsp;(surfaceStart
+      and surfaceCount), a list of
+      <A href=#mHullIndices title=indices>indices</A>
+      (hullStart and hullCount) that translates
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; its local point indices into
+      <A href=#mPoints title=mPoints>mPoints</A><A href=#mPoints title=mPoints></A>,
+      a list of
+      <A href=#mHullPlaneIndices title=indices>indices</A><A href=#mHullPlaneIndices title=indices></A>
+      (planeStart) that translates its local plane indices into
+      <A href=#mPlanes title=mPlanes>mPlanes</A>,
+      a list of
+      <A href=#mHullStringEmitIndices title=indices>indices</A>
+    </P>
+    <P class=MsoNormal style="MARGIN:0pt 0pt 0pt">
+      &nbsp;&nbsp;&nbsp;&nbsp; (hullStart) into the
+      <A href=#mConvexHullEmitStrings title="emit strings">emit
+      strings</A>, a list of
+      <A href=#mPolyListPlanes title=indices>indices</A>
+      (polyListPlaneStart) that translates its local plane indices into
+      <A href=#mPlanes title=mPlanes>mPlanes</A>
+      for the polylist
+    </P>
+    <P class=MsoNormal style="MARGIN:0pt 0pt 0pt">
+      &nbsp;&nbsp;&nbsp;&nbsp; system, a list of
+      <A href=#mPolyListPoints title=indices>indices</A>
+      (polyListPointStart) that translates its local point indices into
+      <A href=#mPoints title=mPoints>mPoints</A>,
+      and an index in
+      <A href=#mPolyListStrings title=mPolyListStrings>mPolyListStrings</A>
+      for
+    </P>
+    <P class=MsoNormal style="MARGIN:0pt 0pt 0pt">
+      &nbsp;&nbsp;&nbsp;&nbsp; where its polylist string starts.
+    </P>
+    <P class=MsoNormal>&nbsp;
+      
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; The
+      <A href=#mConvexHullEmitStrings title="convex hull emit strings">convex
+      hull emit strings</A> and supporting index arrays are used primarily for
+      getFeatures() which is integral to the GJK convex-to-
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; convex collision system in Torque. Each emit
+      string describes a convex silhouette of a the convex hull from each of the
+      points on the
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; convex hull.
+    </P>
+    <P class=MsoNormal>&nbsp;
+      
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; The polylist and supporting index arrays are
+      primarily used for getPolyList() which is used in various other collision
+      subsystems (like
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; Player) and in the calculation of dynamic
+      shadows. It describes the convex hull in its entirety (points, indices,
+      planes).
+    </P>
+    <P class=MsoNormal>&nbsp;
+      
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; Also included in the convex hull data are the max
+      and min points of its axis aligned bounding box.&nbsp;
+    </P>
+    <P class=MsoNormal>
+      <A name=mConvexHullEmitStrings></A>mConvexHullEmitStrings
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; The convex hull emit strings are used to get a
+      convex silhouette of a
+      <A href=#mConvexHulls title="convex hull">convex
+      hull</A>&nbsp;for&nbsp;use in Torque's GJK collisions (getFeatures()).
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp; The emit string for a point has this format:
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; numVertices
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      for 0 to numVertices
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      a relative index into this hull's
+      <A href=#mHullIndices title=mHullIndices>mHullIndices</A>&nbsp;which
+      map the hull's local vertex indices to the Interior's
+      <A href=#mPoints title=mPoints>mPoints</A>
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numEdges (it
+      is important to note that this includes all of the edges of the faces
+      attached to the point we are emitting for)
+    </P>
+    <P>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      for 0 to numEdges
+    </P>
+    <P>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      a relative index into&nbsp;the vertex list above&nbsp;for the first vertex
+      on the edge
+    </P>
+    <P class=MsoNormal>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      a relative index into the vertex list above&nbsp;for the&nbsp;other vertex
+      on the edge
+      <P>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numFaces
+      </P>
+      <P class=MsoNormal>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        for&nbsp;0 to numFaces
+      </P>
+      <P class=MsoNormal>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        numPoints
+      </P>
+      <P class=MsoNormal>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        a relative index into
+        <A href=#mHullPlaneIndices title=mHullPlaneIndices>mHullPlaneIndices</A>
+        for the face's plane
+      </P>
+      <P class=MsoNormal>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        for 0 to numPoints
+      </P>
+      <P class=MsoNormal>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        a relative index into the vertex list above
+      </P>
+      <P class=MsoNormal>&nbsp;
+        
+      </P>
+      <P class=MsoNormal>
+        &nbsp;&nbsp;&nbsp;&nbsp; The convex hull emit strings can and often are
+        shared by multiple hulls since they use relative indices (a corner on a
+        cube looks like
+      </P>
+      <P class=MsoNormal>
+        &nbsp;&nbsp;&nbsp;&nbsp; the corner on another cube no matter what the
+        actual vertex values are when using indices that are local to the
+        convexes).
+      </P>
+      <P class=MsoNormal>
+        <A name=mHullIndices></A>mHullIndices
+      </P>
+      <P class=MsoNormal>
+        &nbsp;&nbsp;&nbsp;&nbsp; These remap the local point indices of the
+        <A href=#mConvexHulls title="convex hulls">convex
+        hulls</A> to the Interior's
+        <A href=#mPoints title=mPoints>mPoints</A>
+        array.
+      </P>
+      <P class=MsoNormal>
+        <A name=mHullPlaneIndices></A>mHullPlaneIndices
+      </P>
+      <P class=MsoNormal>
+        &nbsp;&nbsp;&nbsp;&nbsp; These remap the local plane indices of the
+        <A href=#mConvexHulls title="convex hulls">convex
+        hulls</A> to the Interior's
+        <A href=#mPlanes title=mPlanes>mPlanes</A>
+        array.
+      </P>
+      <P class=MsoNormal>
+        <A name=mHullEmitStringIndices></A>mHullEmitStringIndices
+      </P>
+      <P class=MsoNormal>
+        &nbsp;&nbsp;&nbsp;&nbsp; The hull emit string indices are a list of
+        indices into the
+        <A href=#mConvexHullEmitStrings title=mConvexHullEmitStrings>mConvexHullEmitStrings</A>
+        (which can be shared by multiple hull points). There
+      </P>
+      <P class=MsoNormal>
+        &nbsp;&nbsp;&nbsp;&nbsp; should be an emit string index for each point
+        on each hull (as referenced by hullStart and hullCount).
+      </P>
+      <P class=MsoNormal>
+        <A name=mHullSurfaceIndices></A>mHullSurfaceIndices
+      </P>
+      <P class=MsoNormal>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A list of indices into
+        <A href=#mSurfaces title=mSurfaces>mSurfaces</A>
+        which indicates which surfaces belong to which convex collision hull (as
+        referenced by surfaceStart and surfaceCount).
+      </P>
+      <P class=MsoNormal>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Null surface indices are masked
+        by&nbsp;0x80000000.
+        <P class=MsoNormal>
+          <A name=mPolyListPlanes></A>mPolyListPlanes
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp; These remap the local plane indices of the
+          <A href=#mConvexHulls title="convex hulls">convex
+          hulls</A> to the Interior's
+          <A href=#mPlanes title=mPlanes>mPlanes</A>
+          array.
+        </P>
+        <P class=MsoNormal>
+          <A name=mPolyListPoints></A>mPolyListPoints
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp; These remap the local point indices of the
+          <A href=#mConvexHulls title="convex hulls">convex
+          hulls</A> to the Interior's
+          <A href=#mPoints title=mPoints>mPoints</A>
+          array.
+        </P>
+        <P class=MsoNormal>
+          <A name=mPolyListStrings></A>mPolyListStrings
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp; The poly list strings are used for quickly
+          getting at the geometry data of the convex hulls. It must describe a
+          closed convex volume.
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp; This data can easily be generated by
+          processHullPolyLists() if the
+          <A href=#mHullSurfaceIndices title="convex hull surfaces">convex
+          hull
+          surfaces</A><A href=#mHullSurfaceIndices title="convex hull surfaces"></A>
+          are already set up. The format is:
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; numPlanes
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          for 0 to numPlanes
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp; a relative index into
+          <A href=#mPolyListPlanes title=mPolyListPlanes>mPolyListPlanes</A>
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numPoints&nbsp;high
+          byte
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          numPoints&nbsp;low byte
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          for 0 to numPoints
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          a relative index into
+          <A href=#mPolyListPoints title=mPolyListPoints>mPolyListPoints</A>
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; numSurfaces
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          for 0 to numSurfaces
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          numSurfacePoints
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          mask
+        </P>
+        <P class=MsoNormal>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          a relative index into&nbsp;the plane list above
+          <P>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            for 0 to numSurfacePoints
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            a relative index into&nbsp;the poly list above&nbsp;high bit
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a
+            relative index into the poly list above&nbsp;low&nbsp;bit
+          </P>
+          <P class=MsoNormal>
+            <A name=mCoordBins></A>mCoordBins
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; The coord bins are a 2d grid of the volume
+            of the Interior's
+            <A href=#boundingBox title="bounding box">bounding
+            box</A>. The convex hulls are then sorted into their
+            <A href=#mCoordBinIndices title="respective bins">respective
+            bins</A> according to
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; to their bounding boxes.
+          </P>
+          <P class=MsoNormal>
+            <A name=mCoordBinIndices></A>mCoordBinIndices
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; A list of the indices of the convex brushes
+            that belong in each bin (binStart through binCount).
+          </P>
+          <P class=MsoNormal>
+            <A name=coordBinMode></A>coordBinMode
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated</i> - used to indicate which
+            two axii are used for the 2d bins grid...currently only BinsXY is
+            used
+          </P>
+          <P class=MsoNormal>
+            <A name=baseAmbientColor></A>baseAmbientColor
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated</i> - the base ambient color
+            for the Interior lightmaps
+          </P>
+          <P class=MsoNormal>
+            <A name=alarmAmbientColor></A>alarmAmbientColor
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated</i> - the base alarm ambient
+            color for the Interior alarm lightmaps
+          </P>
+          <P class=MsoNormal>
+            <A name=mStaticMeshes></A>mStaticMeshes
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; These are the lightmapped detail meshes
+            that get baked into the Interior. They include simple mesh data
+            (vertices, indices, uvs, textures, and lightmaps).
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; There is also some extended data (hasSolid,
+            hasTranslucency, bounds, transform, scale) that are used in the
+            rendering of the mesh.
+          </P>
+          <P class=MsoNormal>&nbsp;
+            
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; Two things are important to note here:
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; 1) Baking the diffuse bitmaps into the
+            Interior file has been <i>depreciated</i> in favor of having the
+            textures external to the Interior file and as such may not
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; work correctly
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; 2) The IO for static meshes is implemented
+            externally to the Interior code and can change from the format
+            specified here
+          </P>
+          <P class=MsoNormal>
+            <A name=mNormals></A>mNormals
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; These are the actual normals used by the
+            <A href=#mTexMatrices title="texture matrices">texture
+            matrices</A>. They can and often are shared among multiple
+            <A href=#mTexMatrices title="texture matrices">texture
+            matrices</A>.
+          </P>
+          <P class=MsoNormal>
+            <A name=mTexMatrices></A>mTexMatrices
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; The texture matrices are used to properly
+            transform lighting operations into texture space. This is mostly
+            used by shaders and is essential for smooth
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; shading on Interiors but you can also use
+            it to get point normals by accessing the N normal. Each texture
+            matrix is comprised of three indices into the
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <A href=#mNormals title=mNormals>mNormals</A>
+            array. They are mapped to each vertex on each face through
+            mTexMatIndices.
+          </P>
+          <P class=MsoNormal>
+            <A name=mTexMatIndices></A>mTexMatIndices
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; Each point on each
+            <A href=#mSurfaces title=surface>surface</A>
+            should have an index into the
+            <A href=#mTexMatrices title=mTexMatrices>mTexMatrices</A>
+            array for its own texture matrix.
+          </P>
+          <P class=MsoNormal>
+            <A name=extendedLightMapData></A>extendedLightMapData
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; If extendedLightMapData is set to 1 then
+            the next value read will be the padding around the lightmaps. This
+            is used to combat the lightmap
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; bleeding that can occur when anti-aliasing
+            is enabled on a video card (since it samples outside the uv coords).
+          </P>
+          <P class=MsoNormal>
+            <A name=mSubObjects_resource></A>mSubObjects
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; Used for storing Interior based subobjects
+          </P>
+          <P class=MsoNormal style="MARGIN:0pt 0pt 0pt">
+            <SPAN style=" FONT-FAMILY:Arial"><FONT face=Verdana><A name=mTriggers></A>mTriggers</FONT></SPAN>
+          </P>
+          <P class=MsoNormal>
+            <FONT face=Verdana>&nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated</i> -
+            Allows the InteriorInstance to manager its own set of Trigger
+            objects...mostly used in conjunction with PathedInteriors</FONT>
+          </P>
+          <P class=MsoNormal>
+            <A name=mInteriorPathFollowers></A>mInteriorPathFollowers
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated</i> - Stores a list of
+            PathedInterior object along with their paths and links to
+            <A href=#mTriggers title=triggers>triggers</A>
+          </P>
+          <P class=MsoNormal>
+            <A name=mForceFields></A>mForceFields
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated</i> - Special collision
+            brushes designed to block moving objects in the world
+          </P>
+          <P class=MsoNormal>
+            <A name=mAISpecialNodes></A>mAISpecialNodes
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; <i>Depreciated </i>- Nodes used for AI
+            navigation
+          </P>
+          <P class=MsoNormal>
+            <A name=VehicleCollision></A>VehicleCollision
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; Special convex brushes that are used only
+            for vehicle collision. These are used in place where you don't want
+            the vehicle to be able to procede or in places
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; where the normal brushes are dense enough
+            to cause collision slow downs. These brushes' emit strings and
+            polylist strings are constructed in the same way
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; that
+            <A href=#mConvexHulls title="convex hulls">convex
+            hulls</A>' are.
+          </P>
+          <P class=MsoNormal>
+            <A name=mGameEntities></A>mGameEntities
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; Game Entities are placeholders for in-game
+            objects. By running the magicButton() script command on an
+            InteriorInstance you can instantiate these entities
+          </P>
+          <P class=MsoNormal>
+            &nbsp;&nbsp;&nbsp;&nbsp; into the current mission.
+          </P>
+
+        
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/File Formats/DIF File Format 44-14.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:42 GMT -->
+</html>

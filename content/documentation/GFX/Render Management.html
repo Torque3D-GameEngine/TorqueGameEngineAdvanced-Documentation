@@ -1,0 +1,275 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/GFX/Render Management.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4192;
+   parent.leftFrame.expandToItem('tree2', 'doc4192');
+   var element = parent.leftFrame.document.getElementById('doc4192');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueGameEngineAdvanced/1 8 Beta/GFXRenderManagement - TDN</title>
+<link rel="stylesheet" type="text/css" href="container.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  bgcolor="#FFFFFF" id="body-with-lockmark">
+
+<table width="700" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+        <table width="700" border="0" cellpadding="15" cellspacing="0" xmlns="http://www.w3.org/1999/xhtml">
+          <tbody>
+            <tr>
+              <td width="700"><table id="toc">
+                  <tbody>
+                    <tr>
+                      <td><div id="toctitle">
+                          <h2><a name = "HeaderLink0"></a>Contents</h2>
+                          <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+                        <ul>
+                          <li class="toclevel-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+                          <li class="toclevel-1"><a href="#RenderInst"><span class="tocnumber">2</span> <span class="toctext">RenderInst</span></a></li>
+                          <li class="toclevel-1"><a href="#ObjectRenderInst"><span class="tocnumber">3</span> <span class="toctext">ObjectRenderInst</span></a></li>
+                          <li class="toclevel-1"><a href="#MeshRenderInst"><span class="tocnumber">4</span> <span class="toctext">MeshRenderInst</span></a></li>
+                          <li class="toclevel-1"><a href="#RenderBinManager"><span class="tocnumber">5</span> <span class="toctext">RenderBinManager</span></a></li>
+                          <li class="toclevel-1"><a href="#RenderPassManager"><span class="tocnumber">6</span> <span class="toctext">RenderPassManager</span></a></li>
+                          <li class="toclevel-1"><a href="#Sub-Managers"><span class="tocnumber">7</span> <span class="toctext">Sub-Managers</span></a></li>
+                          <li class="toclevel-1"><a href="#Conclusion"><span class="tocnumber">8</span> <span class="toctext">Conclusion</span></a></li>
+                        </ul></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>
+                  </p>
+                <a name="Introduction" id="Introduction"></a>
+                <h2><a name = "HeaderLink1"></a>Introduction</h2>
+                <p>Most of the rendering system concepts from pre-TGEA 1.8 have been
+                  left intact. One system that has changed It shouldn't be a hard
+                  transition to use the changes that have been made. The purpose of GFX2
+                  is to allow for more flexibility at runtime within the current
+                  structure. </p>
+                <p><br />
+                  Most of the rendering code has been moved from familiar
+                  classes/structs, such as SceneManager and RenderInst. The member
+                  variables and functionality have been split across multiple render
+                  managers, which you should find quite easy to pick up on. </p>
+                <a name="RenderInst" id="RenderInst"></a>
+                <h2><a name = "HeaderLink2"></a>RenderInst</h2>
+                <p><b>RenderInst</b> used to be a class that contained all the
+                  information needed to render an object. This included sorting
+                  information, geometry, textures, vertex and primitive buffers, and so
+                  on. When TGEA 1.7 was released, RenderInst became a struct, but still
+                  contained nearly all the same information. </p>
+                <p><br />
+                  TGEA 1.8 strips RenderInst down to a very simple structure. It now acts
+                  as a base structure for more task-specific render managers. The current
+                  version of RenderInst only contains information on sorting,
+                  translucency, and rendering type overrides. </p>
+                <a name="ObjectRenderInst" id="ObjectRenderInst"></a>
+                <h2><a name = "HeaderLink3"></a>ObjectRenderInst</h2>
+                <p><b>ObjectRenderInst</b> is a new structure derived from RenderInst,
+                  declared directly below the RenderInst structure. It contains variables
+                  and functionality used in rendering an object (RIT_OBJECT) instance
+                  type. The ObjectRenderInst basically just contains a pointer to to the
+                  object to call back into for its rendering function. It does not
+                  contain any information about meshes, materials, transforms, etc. </p>
+                <p><br />
+                  Along with the SceneState of the object, ObjectRenderInst contains a very important element: the <b><a href="Render%20Delegate.html" title="TorqueGameEngineAdvanced/1 8 Beta/RenderDelegate">Render Delegate</a></b>. </p>
+                <a name="MeshRenderInst" id="MeshRenderInst"></a>
+                <h2><a name = "HeaderLink4"></a>MeshRenderInst</h2>
+                <p>Derived from RenderInst, a <b>MeshRenderInst</b> object contains the
+                  critical information needed for rendering. It is declared directly
+                  below ObjectRenderInst. Within this structure, an object's
+                  geometry(mesh), lighting information, textures, transforms, and
+                  miscellaneous rendering states are kept as internal members. </p>
+                <p>Some of the most basic GFX classes are used in RenderMeshInt: </p>
+                <ul>
+                  <li>GFXVertexBufferHandleBase and GFXPrimitiveBufferHandle handle the vertex buffer and primitive buffer (respectively) </li>
+                  <li>World and object to world transforms are handled by MatrixF pointers </li>
+                  <li>LightInfo pointers retain information for primary and secondary lighting </li>
+                  <li>GFXTextureObject pointers also aid in lighting, as well as texturing the object. </li>
+                </ul>
+                <a name="RenderBinManager" id="RenderBinManager"></a>
+                <h2><a name = "HeaderLink5"></a>RenderBinManager</h2>
+                <p><b>RenderBinManager</b> is the first manager we are going to cover.
+                  This class manages and renders out a list of MainSortElem structures
+                  (mElementList). A MainSortElem is a simple struct that wraps a
+                  RenderInst object with a key. In essence, RenderBinManager manages and
+                  signals a main list of RenderInst objects. </p>
+                <p><br />
+                  RenderBinManager contains the variables and functions
+                  necessary for adding, processing, sorting, and clearing RenderInst
+                  objects. To get a closer look at RenderBinManager, open <i>engine/source/renderInstance/renderBinManager.h</i> and <i>renderBinManager.cpp</i>. </p>
+                <p><br />
+                  Most of the important management functionality is defined in the class,
+                  but you should notice a very important chunk of functionality missing: <b>rendering code</b>. RenderBinManager does have a rendering function: </p>
+                <pre>virtual void render(SceneState *){};
+</pre>
+                <p><br />
+                  But as you can see, we are not going to be directly using a
+                  RenderBinManager for rendering. It's important to know how the class's
+                  base functionality works, but we will get to the actual rendering code
+                  when we look at RenderBinManager's children. </p>
+                <p><br />
+                  This class lays the ground work, but the tangible rendering
+                  sub-managers derive from RenderBinManager: renderMeshMgr,
+                  renderObjectMgr, renderTranslucentMgr, and so on. These are detailed
+                  further down in the <a href="#Sub-Managers" title="TorqueGameEngineAdvanced/1 8 Beta/GFXRenderManagement">Sub-Managers section</a>. </p>
+                <a name="RenderPassManager" id="RenderPassManager"></a>
+                <h2><a name = "HeaderLink6"></a>RenderPassManager</h2>
+                <p>The RenderPassManager could be considered the "top manager" when it
+                  comes to GFX2's rendering system. We can actually refer to this class's
+                  instantiation: <b>gRenderInstManager</b>. We can do so, since there is only one instantiation of RenderPassManager: </p>
+                <p><br />
+                  <b>At the bottom of engine/source/renderInstance/renderPassManager.h:</b> </p>
+                <pre>extern RenderPassManager* gRenderInstManager;
+</pre>
+                <p><br />
+                  As you can see, gRenderInstManager is a global variable. This means we
+                  can use our one RenderPassManager anywhere we include the class's
+                  header. This necessary considering the responsibilities of this
+                  manager: </p>
+                <ul>
+                  <li>Declaring and organizing the various RIT : "R"ender "I"nstance "T"ypes </li>
+                  <li>Allocating a render instance for MeshRenderInst, ObjectRenderInst, and so on. </li>
+                  <li>Adding, sorting, and rendering a list of RenderInst's per bin </li>
+                  <li>Memory allocation and deallocation for the RenderBinManagers </li>
+                  <li>Adding, sorting, and managing the various RenderBinManagers. The importance of this task is best shown in code: </li>
+                </ul>
+                <p><br />
+                  <b>In engine/source/renderInstance/renderPassManager.cpp:</b> </p>
+                <pre>void RenderPassManager::_initBins()
+{
+   _uninitBins();
+
+   addManager(new RenderObjectMgr(RIT_Sky, 0.1f, 0.1f));
+   addManager(new RenderObjectMgr(RIT_Begin, 0.2f, 0.2f));
+   addManager(new RenderMeshMgr(RIT_Interior, 0.3f, 0.3f));
+   addManager(new RenderMeshDynamicLightingMgr(RIT_InteriorDynamicLighting, 0.4f, 0.4f));
+   addManager(new RenderMeshMgr(RIT_Mesh, 0.5f, 0.5f));
+   addManager(new RenderMeshDynamicLightingMgr(RIT_MeshDynamicLighting, 0.55f, 0.55f));
+   addManager(new RenderObjectMgr(RIT_Object, 0.6f, 0.6f));
+   addManager(new RenderObjectMgr(RIT_Shadow, 0.7f, 0.7f));
+   addManager(new RenderObjectMgr(RIT_Decal, 0.8f, 0.8f));
+   addManager(new RenderRefractMgr(0.9f, 0.9f));
+   addManager(new RenderObjectMgr(RIT_Water, 1.0f, 1.0f));
+   addManager(new RenderObjectMgr(RIT_Foliage, 1.1f, 1.1f));
+   addManager(new RenderTranslucentMgr(1.2f, 0.01f));
+   addManager(new RenderGlowMgr(1.3f, 1.3f));
+}
+</pre>
+                <p><br />
+                  Even if you are not yet a master of GFX2, the premise behind
+                  this chunk of code is simple. RenderPassManager has a function called
+                  _initBins. This is called as soon as our SceneGraph's rendering is
+                  initialized. </p>
+                <p><br />
+                  An internal list of RenderBinManagers is stored within
+                  RenderPassManager. We have managers for Sky, Interiors, Lighting, Mesh,
+                  Objects, Shadows, and so on. Those managers get stored in the internal
+                  bin list. Calling gRenderInstManager "the manager of managers" seems
+                  appropriate. </p>
+                <p><br />
+                  If you read the class from top to bottom, the layout of the code and
+                  accompanying comments will provide you with a few more details as how
+                  the RenderPassManager performs is duties and what other classes are
+                  involved. </p>
+                <a name="Sub-Managers" id="Sub-Managers"></a>
+                <h2><a name = "HeaderLink7"></a>Sub-Managers</h2>
+                <p>As mentioned previously, the actual rendering managers are children
+                  of RenderBinManager. We are calling them sub-managers, since the
+                  RenderPassManager manages and maintains them. Each of these rendering
+                  sub-managers contains rendering code unique to its purpose, though
+                  multiple instantiations do occur to handle our various renderable
+                  Torque objects. </p>
+                <p><br />
+                  Let's go down a simplified list of these classes and their main purpose: </p>
+                <ul>
+                  <li><b>RenderObjectMgr</b> - This class is used for rendering more
+                    than any of the other sub-managers. This manager is responsible for
+                    rendering common objects that do not have a standard mesh.
+                    <ul>
+                      <li>Sky </li>
+                      <li>Shadows </li>
+                      <li>Decals </li>
+                      <li>terrain chunks </li>
+                      <li>fxSunLight </li>
+                      <li>waterblocks </li>
+                      <li>foliage </li>
+                      <li>shapebase. </li>
+                    </ul>
+                  </li>
+                  <li><b>RenderMeshMgr</b> - This class is used for rendering mesh
+                    based objects such as interiors and TSMesh. Additionally, RenderMeshMgr
+                    has children. One such class, RenderMeshDynamicLightingMgr, is
+                    described next. </li>
+                  <li><b>RenderMeshDynamicLightingMgr</b> - As the name describes,
+                    this class manages the rendering dynamic lighting on a mesh. This is
+                    primarily used with the SG lighting kit additions to TGEA which provide
+                    dynamic lighting on meshes and interiors. </li>
+                  <li><b>RenderRefractMgr</b> - Stock TGEA uses only one
+                    RenderRefractMgr. The name of the manager describes it well. This
+                    manager takes in RenderInst elements and checks to see if they have a
+                    refraction custom material. If this check succeeds, the element is
+                    maintained by the manager and makes use of the refraction rendering
+                    code. </li>
+                  <li><b>RenderTranslucentMgr</b> - Stock TGEA uses only one
+                    RenderTranslucentMgr. This manager is a bit more complex than the
+                    previous ones described. A RenderInst element must meet a strict set of
+                    requirements to be managed by this class. If you look at
+                    RenderTranslucentMgr::addElement(...), you can see there are 3 main if
+                    statements checking for translucent properties and appropriate render
+                    instance type. Additionally, RenderTranslucentMgr must setup/modify the
+                    scene graph data and stateblocks before it can render its elements. The
+                    actual render function is quite clean, and you can gain more insight
+                    about the class by reading through it. </li>
+                  <li><b>RenderGlowMgr</b> - Just like the previous two managers,
+                    there is only one instance of RenderGlowMgr in stock TGEA 1.8. The name
+                    is pretty self-descriptive. This manager is responsible for accepting
+                    RenderInst elements that require rendering with a properly set up glow
+                    buffer. </li>
+                </ul>
+                <a name="Conclusion" id="Conclusion"></a>
+                <h2><a name = "HeaderLink8"></a>Conclusion</h2>
+                <p>The purpose of this doc was to provide you with a basic
+                  understanding of the rendering management system used by TGEA's GFX2
+                  (introduced in version 1.8). There is still much to be explained in the
+                  way of rendering flow, extending the system, and specific examples. </p>
+                <p><br />
+                  We've covered the basic renderable object instances, base class render
+                  managers, specialized rendering manager classes, and touched on some
+                  new subjects such as the RenderDelegate. If you would like a more
+                  concrete example of GFX2's changes and how render management works,
+                  read through the RenderDelegate doc and Sky Comparison Guide. (TODO:
+                  links here). </p></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        
+    
+  
+  
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/GFX/Render Management.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:14 GMT -->
+</html>

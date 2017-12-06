@@ -1,0 +1,244 @@
+﻿<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/3D Studio Max/Materials.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4268;
+   parent.leftFrame.expandToItem('tree2', 'doc4268');
+   var element = parent.leftFrame.document.getElementById('doc4268');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Using Art Assets - Materials</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+
+<td>
+<a name="Introduction"></a>
+<h2><a name = "HeaderLink0"></a>Introduction</h2><br />
+<p>So, you've got a cool model with some great animation to bring it to life.  You export and drop it into Torque, but it's all white.  What to do?  Well, you could try rewriting your story so your game is set in a world completely devoid of color, or, of course, you can add some textures to it.<br /><br />
+</p><p>While Torque doesn't support every single material setting 3ds Max has, all the basics are covered. This includes Diffuse, Opacity, Self Illumination, and Additive Blending to name a few.  Though this tutorial will primarily cover these different materials, we'll also go over billboards and ifl animations.  Lucky for us, all of which are used in the ThinkTanks Powerup. The powerup model's geometry is very simple, but it's material settings that are anything butt.<br /><br />
+</p>
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink1"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class='toclevel-1'><a href="#Setting_up_the_Base_Material"><span class="tocnumber">2</span> <span class="toctext">Setting up the Base Material</span></a>
+<ul>
+<li class='toclevel-2'><a href="#Basic_Diffuse_Material"><span class="tocnumber">2.1</span> <span class="toctext">Basic Diffuse Material</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="#Setting_up_Glass"><span class="tocnumber">3</span> <span class="toctext">Setting up Glass</span></a>
+<ul>
+<li class='toclevel-2'><a href="#Alpha_Opacity"><span class="tocnumber">3.1</span> <span class="toctext">Alpha Opacity</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="#Setting_up_Flash"><span class="tocnumber">4</span> <span class="toctext">Setting up Flash</span></a>
+<ul>
+<li class='toclevel-2'><a href="#IFL"><span class="tocnumber">4.1</span> <span class="toctext">IFL</span></a></li>
+<li class='toclevel-2'><a href="#Self_Illumination"><span class="tocnumber">4.2</span> <span class="toctext">Self Illumination</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="#Setting_up_Glow"><span class="tocnumber">5</span> <span class="toctext">Setting up Glow</span></a>
+<ul>
+<li class='toclevel-2'><a href="#Billboard"><span class="tocnumber">5.1</span> <span class="toctext">Billboard</span></a></li>
+<li class='toclevel-2'><a href="#Alpha_Opacity_2"><span class="tocnumber">5.2</span> <span class="toctext">Alpha Opacity</span></a></li>
+<li class='toclevel-2'><a href="#Self_Illumination_2"><span class="tocnumber">5.3</span> <span class="toctext">Self Illumination</span></a></li>
+<li class='toclevel-2'><a href="#Visibility_Animation"><span class="tocnumber">5.4</span> <span class="toctext">Visibility Animation</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="#Setting_up_Specular"><span class="tocnumber">6</span> <span class="toctext">Setting up Specular</span></a>
+<ul>
+<li class='toclevel-2'><a href="#Billboard_2"><span class="tocnumber">6.1</span> <span class="toctext">Billboard</span></a></li>
+<li class='toclevel-2'><a href="#Alpha_Opacity_and_Self_Illumination"><span class="tocnumber">6.2</span> <span class="toctext">Alpha Opacity and Self Illumination</span></a></li>
+<li class='toclevel-2'><a href="#Billboard_Tricks"><span class="tocnumber">6.3</span> <span class="toctext">Billboard Tricks</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="#Setting_up_Jets"><span class="tocnumber">7</span> <span class="toctext">Setting up Jets</span></a>
+<ul>
+<li class='toclevel-2'><a href="#Alpha_Opacity_and_Self_Illumination_2"><span class="tocnumber">7.1</span> <span class="toctext">Alpha Opacity and Self Illumination</span></a></li>
+<li class='toclevel-2'><a href="#Additive_Blending"><span class="tocnumber">7.2</span> <span class="toctext">Additive Blending</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="#General_Export_Information"><span class="tocnumber">8</span> <span class="toctext">General Export Information</span></a>
+<ul>
+<li class='toclevel-2'><a href="#Sequences"><span class="tocnumber">8.1</span> <span class="toctext">Sequences</span></a></li>
+<li class='toclevel-2'><a href="#Export"><span class="tocnumber">8.2</span> <span class="toctext">Export</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="#Troubleshooting"><span class="tocnumber">9</span> <span class="toctext">Troubleshooting</span></a>
+<ul>
+<li class='toclevel-2'><a href="#No_Details_to_Export"><span class="tocnumber">9.1</span> <span class="toctext">No Details to Export</span></a></li>
+<li class='toclevel-2'><a href="#No_bounding_box_found"><span class="tocnumber">9.2</span> <span class="toctext">No bounding box found</span></a></li>
+<li class='toclevel-2'><a href="#Unexpected_material_type_on_node_.3Csomenode.3E"><span class="tocnumber">9.3</span> <span class="toctext">Unexpected material type on node &lt;somenode&gt;</span></a></li>
+<li class='toclevel-2'><a href="#Model_exports_but_isn.27t_visible_when_loaded_ingame"><span class="tocnumber">9.4</span> <span class="toctext">Model exports but isn't visible when loaded ingame</span></a></li>
+<li class='toclevel-2'><a href="#You_setup_the_materials_and_they.27re_visible_on_the_model_in_3ds_Max.2C_but_the_dts_still_shows_up_white_ingame"><span class="tocnumber">9.5</span> <span class="toctext">You setup the materials and they're visible on the model in 3ds Max, but the dts still shows up white ingame</span></a></li>
+<li class='toclevel-2'><a href="#You_can_run_right_through_your_model_ingame_and_don.27t_want_to_be_able_to"><span class="tocnumber">9.6</span> <span class="toctext">You can run right through your model ingame and don't want to be able to</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="Setting_up_the_Base_Material"></a><h2><a name = "HeaderLink2"></a>Setting up the Base Material</h2><br /><br />
+<a name="Basic_Diffuse_Material"></a><h3><a name = "HeaderLink3"></a>Basic Diffuse Material</h3><br />
+<p>The main body of the powerup uses the simplest of the materials we'll be setting up during this tutorial.  To start with, open the Material Editor, and select a blank material Slot.  Name this material Health.  While providing a name other than the default ones is not necessary for setting materials up for torque, since we'll be working with a number of different materials during this tutorial, it'll help with organization.<br /><br />
+</p><p><img src="MaterialGui.jpg"><br /><br />
+</p><p>The body of the powerup uses a Diffuse texture and an Environment map.  To add the Diffuse texture, click the square next to the Diffuse color swatch.  In the window that pops up, select Bitmap.  If you don’t see bitmap, make sure under Browse From: on the Material/Map browser New is selected.  After you select Bitmap, another window will pop up to let you choose what bitmap texture you want to use.  Pick the health.jpg texture.  Although 3ds Max can use a ton of different image formats, Torque only supports jpg and png, so make sure the textures you use are in one of these two formats.<br /><br />
+</p><p>Max will now switch the material editor to a screen showing all the various options for bitmap textures.  Since this is a diffuse texture, we don't need to change anything in here.  Click Go To Parent to move back to the top of the Material.<br /><br />
+</p><p><img src="Blinn.jpg"><br /><br />
+</p><p>We could keep the material like this with just the Diffuse texture, but let's add an Environment map so the metal is a little shiny looking ingame.  The strength of Environment mapping in torque can be controlled by either the Reflection spinner in max, or the Alpha channel of a texture; we'll be using the Alpha channel.  Keep in mind though that using the Alpha channel for reflection on a model that also uses the Alpha channel for opacity is generally not a good idea.  In this case, you'd want to use the reflection spinner to control its strength.<br /><br />
+</p><p><img src="Photoshop.jpg"><br /><br />
+</p><p>Since we just have health.jpg, I'll walk you through creating an Alpha channel to use for the environment map.  To begin with, open health.jpg up in Photoshop. You can use a different image editor if you don't have Photoshop, but you may have to search around a bit to find a similar method in it.  First, right click on the Background layer, and left click duplicate.  Push Ctrl+Shift+U to make this new layer greyscale.  Since paint is a bit less reflective than bare metal, use the Rectangular and Elliptical Marquee tools to select all of the texture except the bolt heads and the metal strip along the top.  Once you're done selecting, go to Image -&gt; Adjustments -&gt; Brightness/Contrast and drag the brightness slider down to about -30.  Click ok, then click once with one of the Marquee tools to deselect everything.  Go back to Brightness/Contrast, and drag brightness down to around -35 and contrast up to around +10.  We want a fairly faint Environment Map effect, so we are keeping the layer that will be used for our alpha map fairly dark.<br /><br />
+</p><p>Now that we have a texture to use for the Alpha map, we need to set it up as a Mask in Photoshop.  Duplicate the Background layer again by right clicking on it, then left clicking on duplicate.  With this new layer selected, click on Add Layer Mask at the bottom of the Photoshop layers pallet.  This will add a Mask channel to this layer.  <br /><br />
+</p><p><img src="AlphaMap.jpg"><br /><br />
+</p><p>Select the greyscale layer you created earlier, push Ctrl+A and then copy this layer by pushing Ctrl+C.  Hide the greyscale and Background layers by clicking the little eye icon just to the left of them in the layers pallet.    Select the remaining visible layer, and click the Channels tab at the top of the layers pallet.  You'll see five layers here.  Set the bottom all white one visible and select it. With the bottom layer selected, push Ctrl+V to paste the greyscale image you created earlier into it.  This will make Photoshop use the greyscale texture as the mask of the color texture creating a mostly transparent version of the health.jpg texture.<br /><br />
+</p><p>Go back to the Layers tab, and on the remaining visible layer, click the colored thumbnail on the left to switch off the Alpha channel.  All that's left to do now is save the new health texture to a .png.  So go to File -&gt; Save As and choose png from the format list, and name it health.<br /><br />
+</p><p><img src="Reflection.jpg"><br /><br />
+</p><p>Now we have a version of health.jpg saved as health.png, we can setup the material with an environment map.  First, we need to change the Diffuse channel to use health.png instead of health.jpg, so click the square next to the Diffuse color swatch to switch back to the bitmap properties for the Diffuse channel.  Click the wide button with the health.jpg texture listed in it, and select health.png instead.  Click Go To Parent.  &lt;imExpand the Maps rollout, and drag the health.png texture in the wide button beside Diffuse Color to the wide button beside Reflection.  Select Copy and click ok.  Click the button you just copied the texture to, and change Mono Channel Output to Alpha. <br /><br />
+</p>
+The image to the left shows the powerup in Show Tool Pro with and without an Environment map, but you can't really judge the effect from a still image, so give it a try yourself.<div class="floatright"><span><img src="Emap.jpg"></span></div><br /><br />
+<p>To assign the material to the mesh it's for, right click on the sphere up above for the material you're working on (it'll have the material wrapped around it) and make sure Drag/Copy is checked.  Now click and drag that sphere onto the powerup2 mesh to assign your new Health material to it.  You'll probably want to be able to see the material on the mesh in the viewport so you can make sure it's showing up as you expect, so click the Show Map in Viewport button.  If you exported the model now, and put the dts and health.png in the same directory, you'd see the powerup with the body textured.
+<br /><br />
+</p>
+<a name="Setting_up_Glass"></a><h2><a name = "HeaderLink4"></a>Setting up Glass</h2><br /><br />
+<a name="Alpha_Opacity"></a><h3><a name = "HeaderLink5"></a>Alpha Opacity</h3><br /><br />
+<p>Now that you have an idea how to setup a basic material for torque, it's time to look at some of the other more complex settings possible.  Obviously you don't want glass to be solid, the whole point of using glass is that it can be seen through.  Luckily for you, torque supports Opacity.  When setting up Opacity, you have two options:  you can use the Opacity Spinner to set the entire material to a single level, or, as we'll be doing in this tutorial, you can use the alpha channel of a png to control opacity.  Using a png's Alpha Channel provides the advantage of being able to selectively adjust the opacity of a material.  Instead of it all being one value, you could, for instance, have most of it completely solid, and place holes in it.<br /><br />
+</p>
+<div class="floatright"><span><img src="CopyMap.jpg"></span></div>
+<p>To setup the glass material, first move to a new Material slot, since you don't want to overwrite the Health material you just created.  Name this material Glass.  Once again, click the little square next to the Diffuse color swatch, and choose Bitmap from the menu.  Select powerupGlass.png, and then click Go To Parent.<br /><br />
+</p>
+<div class="floatright"><span><img src="Alpha.jpg"></span></div>
+<p>Since we're using the same bitmap to control the opacity, click and drag from the square next to the Diffuse color swatch to the square next to the Opacity spinner.  A new dialog will pop up asking what method of copy you want to use.  Since we'll be changing some settings from what the Diffuse channel uses, select Copy, and click OK.<br /><br />
+</p><p>We only need to change one setting to enable Opacity using the Alpha Channel.  Simply change Mono Channel Output: from RGB Intensity to Alpha.  If Alpha is greyed out, make sure you're using a png not a jpg, and if it's still greyed out, check you're Image Editor settings, as you didn't save the png with an alpha channel.<br /><br />
+</p><p>Click Go to Parent, drag the material onto the glass2 mesh, and click on View Map in Viewport.  If you're using DirectX for your viewport driver, you'll be able to see the Alpha Opacity in the viewport.  If you're using OpenGL, you'll need to render to be able to see it.<br /><br />
+</p>
+<a name="Setting_up_Flash"></a><h2><a name = "HeaderLink6"></a>Setting up Flash</h2>
+<a name="IFL"></a><h3><a name = "HeaderLink7"></a>IFL</h3><br /><br />
+<p>So now you have your glass setup so it can be seen through in torque, but there's nothing interesting underneath it.  Time to fix this!  The light2 mesh of the powerup uses a special texture type called IFL, or Image File List, in order to animate the blinking light.  An IFL file is a text file that lets you setup a series of textures to be played back flipbook style.  You create an IFL by first creating a new .txt and renaming the extension to .ifl.  Since we'll be naming this one health, you should have health.ifl now.  Open this up using notepad or whatever text editor you prefer, and type the names of the images you want to use in the order they should play, one per line.  By default, each image displays for one frame, if you want any of them to display longer than that, which we do with the first and last images, you can put the number of frames they should display after them.  For this IFL, you should have the following:<br /><br />
+</p>
+<div class="floatright"><span><img src="Ifl.jpg"></span></div>
+<p>healthLight01.jpg 10 <br />
+healthLight02.jpg    <br />
+healthLight03.jpg    <br />
+healthLight04.jpg    <br />
+healthLight05.jpg    <br />
+healthLight06.jpg    <br />
+healthLight07.jpg    <br />
+healthLight01.jpg 34 <br /><br />
+</p><p>This IFL will play healthLight01.jpg for 10 frames, then continue playing the others one frame each, till it reaches the end, healthLight01.jpg again, which it will play for 34 frames.<br /><br />
+</p><p>The healthLight images were created by first creating a new image in Photoshop with a resolution of 32x32 pixels.  The background layer was then filled with solid black. Save this image as healthLight01.jpg After saving, create a new layer a fill it with bright red.  Go to File -&gt; Save As and name it healthLight02.jpg.  Hide this red layer by clicking the little eye to the left of it, and create yet another new layer.  This time, use a 12 pixel wide paintbrush to put a red dot in the center of the layer. Go to Filter -&gt; Blur -&gt; Gaussian blur and set it to 6.0 pixels.  Save this image as healthLight03.jpg.  Change the Layer opacity for the layer with the blurred dot to 80% and save it as healthLight04.jpg.  Reduce it to 60% and save as healthLight05.jpg.  Continue reducing by 20% and saving until you reach 0%.<br /><br />
+</p><p>When setting up a material using IFL files, you treat the IFL as you would any other bitmap texture.  So pick a new material slot, name it Light, and assign health.ifl to the Diffuse channel.  Click Go to Parent, as we have a few other settings to change for the material.<br /><br />
+</p>
+<a name="Self_Illumination"></a><h3><a name = "HeaderLink8"></a>Self Illumination</h3><br /><br />
+<div class="floatright"><span><img src="SelfIllum.jpg"></span></div>
+<p>While this material doesn't use Opacity, it does make use of one of the other material settings support by torque: Self-Illumination.  Self-Illumination is basically a way to control the amount of shadows a material receives in torque.  At 0 (the default) It recieves full shadows ingame.  As you increase the spinner, the amount of shadows it receives gradually decreases, till at 100, torque completely ignores shadows on that material.  This is handy for things like lights (such as the one we're setting up) and can also help with cartoonish graphics by making things look more vibrant.  Since this material is for a light, go ahead and set Self-Illumination to 100.<br /><br />
+</p><p>Now that the Light material is setup, you need to assign it to the light2 mesh.  Since light2 is beneath glass2, you'll likely have a bit of trouble if you drag and drop, so first select light2 in the viewport, then click Assign Material to Selection in the material editor.<br /><br />
+</p>
+<a name="Setting_up_Glow"></a><h2><a name = "HeaderLink9"></a>Setting up Glow</h2><br /><br />
+<div class="floatright"><span><img src="Glow.jpg"></span></div>
+<p>So now you have a blinking light on the powerup, but what good is a light that doesn't appear to light anything? Using Opacity, Billboards, and Visibility animation, it's easy to create a simple effect similar to that of a glow shader. <br /><br />
+</p>
+<a name="Billboard"></a><h3><a name = "HeaderLink10"></a>Billboard</h3><br /><br />
+<p>In the scene, you'll see a mesh named BB::Flash2.  Since the BB:: in front of its name tells the engine that that mesh is a billboard, it will always rotate around its pivot point so that its Y- axis is facing the player.  We'll be applying a texture with an alpha map to make it look round, so With the billboard always rotating to face the player it will create a glowing aura effect around the light.<br /><br />
+</p>
+<a name="Alpha_Opacity_2"></a><h3><a name = "HeaderLink11"></a>Alpha Opacity</h3><br /><br />
+<p>To start with, pick a new material slot, name it Aura, and assign healthflash.png to the Diffuse channel.  Click Go To Parent, and copy that material to the Opacity channel by dragging from the Diffuse channel's square with an M in it (showing that it has a material) to the square next to the Opacity channel's spinner.  Select copy and click OK.  Like before, change Mono Channel Output to Alpha to enable Alpha opacity.  Click Go To Parent.<br /><br />
+</p>
+<a name="Self_Illumination_2"></a><h3><a name = "HeaderLink12"></a>Self Illumination</h3><br /><br />
+<p>Since this is supposed to be a glow around a light, we want it to look bright, so set Self-Illumination to 100.  Go ahead and drag this material onto the BB::Flash2 mesh, and click Show Map in Viewport to see how it looks.<br /><br />
+</p>
+<a name="Visibility_Animation"></a><h3><a name = "HeaderLink13"></a>Visibility Animation</h3><br /><br />
+<p>Now you should have a nice glow around the light, but the lights not always on, and the glow is.  So we need to animate its visibility to match the light.  Unfortunately, Max will not show the animated visibility when Alpha mapped Opacity is also shown, so click Show Map in Viewport again to turn that off.  To animate its visibility, first turn on Auto Key (it will turn red when it's on).  Make sure the Time Slider is at frame 0, right click on the BB::Flash2 mesh, and left click properties.  In the window that comes up, change Visibility to 0.0 and click ok.  Move the time slider to frame 10, right click the mesh, left click properties and change it to 1.0 then click OK. <br /><br />
+</p><p>You should now have keys for this mesh at frames 0 and 10.  Since we want it to be a sudden quick blink, we'll need to add two more.  First, left click on the key at frame 0, then while holding shift, drag it to frame 9.  This will create a new key with the same settings.  Since visibility is blended between keys, having 0.0 right next to 1.0 will make it go straight to 1.0, instead of fading in.  once again, left click on the key at frame 0, and holding shift, drag it to frame 14.  Now the flash will quickly fade out after appearing, to match the blinking light.<br /><br />
+</p>
+<a name="Setting_up_Specular"></a><h2><a name = "HeaderLink14"></a>Setting up Specular</h2><br /><br />
+<div class="floatright"><span><img src="Spec.jpg"></span></div> <br /><br />
+<a name="Billboard_2"></a><h3><a name = "HeaderLink15"></a>Billboard</h3><br /><br />
+<p>Billboards don't always have to appear to rotate in place.  By moving the pivot point of the billboard for the BB::Spec2 to the center of the light2 mesh and moving the actual mesh to just a hair outside of the glass2 mesh and off center from the Y- axis, we can create a fake specular highlight on the glass. With the pivot centered on the light2 mesh, and the mesh just outside the glass2 mesh, it will appear to slide around on the glass.<br /><br />
+</p>
+<a name="Alpha_Opacity_and_Self_Illumination"></a><h3><a name = "HeaderLink16"></a>Alpha Opacity and Self Illumination</h3><br /><br />
+<p>Currently though, it would just be a square ingame, so once again we need to create a new material.  Switch to yet another empty material slot, name it Spec, and assign powerupGlassSpec.png to the Diffuse channel.  Then copy it to the Opacity channel like last time, and change Mono Output to Alpha.  Click Go To Parent, and change Self-Illumination to 100. <br /><br /> 
+</p>
+<a name="Billboard_Tricks"></a><h3><a name = "HeaderLink17"></a>Billboard Tricks</h3><br /><br />
+<p>Billboards aren't limited to just flat planes, though that's what we've used them for in this shape.  In thinktanks for instance, the eyeballs on the brains are billboards, so they always stare at you.  You could also use a billboard for something like a security camera, basically anything you want to always track the player. They can also be used for Markers in the WorldEditor, to customise the location of your items or new datablocks. Here is a billboard Marker example, featuring a simple billboard facing the camera - <a href="http://docs.garagegames.com/wiki/images/8/8c/Markers_billboards.zip" class='internal' title="Markers billboards.zip">Billboard Marker</a>.<br /><br />
+</p>
+<div class="floatright"><span><img src="Eye.jpg"></span></div><br /><br />
+<p>To see an example of an eyeball mesh used as a billboard <a href="http://tdn.garagegames.com/wiki/images/d/df/Eyeball.avi" class='external text' title="http://tdn.garagegames.com/wiki/images/d/df/Eyeball.avi" rel="nofollow">Go Here.</a>  This model uses an eyeball mesh setup as a billboard like we did with the specular and aura materials above, and also has an extra sphere mesh (which is NOT a billboard) with Alpha opacity to provide a bit of shadow around the edges of the eyeball.  If we were to paint the shadow  onto the eyeball's texture, it wouldn't look right as it would constantly be out of place.  If you want to take a look at the Max 5 file and try dissecting it yourself, as well as the dts so you can see it in action, <a href="http://tdn.garagegames.com/wiki/images/5/5a/Eyeball.zip" class='external text' title="http://tdn.garagegames.com/wiki/images/5/5a/Eyeball.zip" rel="nofollow">Click Here.</a><br /><br />
+</p>
+<a name="Setting_up_Jets"></a><h2><a name = "HeaderLink18"></a>Setting up Jets</h2><br /><br />
+<a name="Alpha_Opacity_and_Self_Illumination_2"></a><h3><a name = "HeaderLink19"></a>Alpha Opacity and Self Illumination</h3><br /><br />
+<p>We have one last material to setup for this powerup model.  Once again, it's going to use Alpha opacity and Self-Illumination, so pick yet another empty material slot, name it Jets, and put jet.png in the Diffuse channel.  Copy this material to the Opacity channel, and change Mono Channel Output to Alpha.  Then click Go To Parent, and set Self-Illumination to 100.<br /><br />
+</p>
+<a name="Additive_Blending"></a><h3><a name = "HeaderLink20"></a>Additive Blending</h3><br /><br />
+<p><img src="AddiBlend.jpg"><br /><br />
+</p><p>This material has one additional setting the others did not use: Additive Blending.  Because this is supposed to be flames coming out of the jets, we want it to look hot ingame.  Additive Blending makes semi-transparent objects look brighter by adding the Diffuse channels colors to the background.  Obviously, the darker the material is to begin with, the less it will brighten what's behind it, so typically you only use it with materials that are relatively bright to begin with.  Torque also supports Subtractive Blending, but it's rarely used, since it most cases, it looks weird and ugly.<br /><br />
+</p><p><img src="Additive.jpg"><br /><br />
+</p><p>To turn on Additive Blending for this Jets material, make sure you are at the top of the material (if not, click Go To Parent) and expand the Extended Parameters rollout.  By default, all materials are set to Filter for the Advanced Transparency type.  For Additive blending, simply change that to Additive.<br /><br />
+</p>
+<a name="General_Export_Information"></a><h2><a name = "HeaderLink21"></a>General Export Information</h2><br /><br />
+<a name="Sequences"></a><h3><a name = "HeaderLink22"></a>Sequences </h3><br /><br />
+<div class="floatright"><span><img src="Sequence.jpg"></span></div><br /><br />
+<p>The powerup makes use of a single animation named Ambient.  While the meshes in the scene are already animated and the Ambient sequence object is setup for them, during this tutorial we added several new types of animation with the materials we created. <br /><br />
+</p><p>If you were to export the model right now, you'd not see the blinking light, so we need to tell the exporter that both IFL and Visibility animations exist.  To do so, first select the Ambient sequence object in the scene.  The easiest way to do that is to push H to bring up the Select Objects dialog, click on Ambient to highlight it, then click Select.  With it selected, go to the Modify tab, and you'll see a number of options for it in the right sidebar.  The ones we'll want to modify are under the Export Control rollout, so if it isn't already, click on it to expand it.  Currently only the Transform Animation is checked, so only mesh transform animations would be exported.  To enable Visibility and IFL animations, simply check Visibility Animation and IFL Animation under Enable.<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</p>
+<a name="Export"></a><h3><a name = "HeaderLink23"></a>Export</h3><br /><br />
+<p><img src="Tstp_mat.jpg"><br /><br />
+</p><p>Now that the hierarchy and materials are setup, we can export the model.  Go to the Utilities tab in 3ds Max, click the More button, and select DTS Exporter Utility.  You'll now have several new rollouts appear on the utilities tab.  Since we don't need to change any settings for this model, just click Whole Shape, navigate to the folder you want to put the dts in, and give it a name.<br /><br />
+</p><p>Before dropping the shape ingame, its usually a good idea to look over things first in show tool to make sure everything is as it should be.  Torque comes with a basic show tool, but Show Tool Pro allows to check many more things, as well as having a much easier to use UI.  Of particular interest to this tutorial, is the ability to check material settings for a dts.<br /><br />
+</p><p>To do so, drop your exported dts and whatever textures it uses into a folder under /data/shapes, in this case, &lt;torqueroot&gt;/starter.fps/data/shapes/powerup.  Now load up Show Tool Pro, and click on the Load DTS button to load your shape.  After loading the powerup, you can select and play sequences with the controls along the bottom.  To view the materials used, click the Material List button on the left hand side.  In here, you can see all the textures the dts will look for, as well as the settings each uses.<br /><br />
+</p><p>If everything looks good in show tool, its time to load it ingame.  Start up torque, load a mission, and open the mission editor (F11 by default).  Push F4, and expand the Static Shapes hierarchy till you find your shape.  Just click on it once to add it, and you're done!<br /><br /><br />
+</p>
+<a name="Troubleshooting"></a><h2><a name = "HeaderLink24"></a> Troubleshooting</h2>
+<a name="No_Details_to_Export"></a><h4><a name = "HeaderLink25"></a>No Details to Export</h4><br />
+<p>Either you have no detail# dummy in the scene, or you do but it is not linked to the root node.<br />
+</p>
+<a name="No_bounding_box_found"></a><h4><a name = "HeaderLink26"></a>No bounding box found</h4><br />
+<p>You have no mesh in the scene named bounds<br />
+</p>
+<a name="Unexpected_material_type_on_node_.3Csomenode.3E"></a><h4><a name = "HeaderLink27"></a>Unexpected material type on node &lt;somenode&gt;</h4><br />
+<p>&lt;somenode&gt; has a material type other than Standard applied to it.  Find the material used for that mesh, and make sure it is a standard material, not Raytrace or any of the other types.<br />
+</p>
+<a name="Model_exports_but_isn.27t_visible_when_loaded_ingame"></a><h4><a name = "HeaderLink28"></a>Model exports but isn't visible when loaded ingame</h4><br />
+<p>You have your detail numbers mixed up.  Meshes are set to one detail number, and the node is set to another.  You should have one node with the same number per set of meshes.  Ie if you have ball2 and ball50, you should have detail2 and detail50
+</p>
+<a name="You_setup_the_materials_and_they.27re_visible_on_the_model_in_3ds_Max.2C_but_the_dts_still_shows_up_white_ingame"></a><h4><a name = "HeaderLink29"></a>You setup the materials and they're visible on the model in 3ds Max, but the dts still shows up white ingame</h4><br />
+<p>	Several things can cause this, if the textures are not in the same folder as the dts, they will not be found.  If the textures are there but still not showing up, make sure that they are either jpg or png format, and that they are a power of 2 resolution.  Power of 2 means each side must be 2, 4, 8, 16, 32, 64, 128, 256, 512, or 1024 pixels long.
+</p>
+<a name="You_can_run_right_through_your_model_ingame_and_don.27t_want_to_be_able_to"></a><h4><a name = "HeaderLink30"></a>You can run right through your model ingame and don't want to be able to</h4><br />
+<p>	Either you don't have a collision mesh setup in your scene properly (requires a collision-# node linked to the root node and a col-# node linked to start with # being the same for both) Or your collision mesh is concave.  All collision meshes MUST be convex or the shape will export fine, but the engine will ignore the collision.  To test whether a mesh is convex or not, in max, go to the Utilities panel,and select reactor from the list of buttons.  Expand the Properties rollout, and near the bottom is a Test Convexity button that will tell you whether the currently selected mesh is convex or concave.</p>
+<p>  <img src="Convex_concave.jpg">
+</p>
+<p><br />
+</p>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/3D Studio Max/Materials.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:46 GMT -->
+</html>

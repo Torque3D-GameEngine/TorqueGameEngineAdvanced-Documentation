@@ -1,0 +1,351 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_16.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4229;
+   parent.leftFrame.expandToItem('tree2', 'doc4229');
+   var element = parent.leftFrame.document.getElementById('doc4229');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueScript Console Functions 16 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <p xmlns="http://www.w3.org/1999/xhtml"><big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <strong> Containers and Raycasts</strong> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table id="toc" class="toc" xmlns="http://www.w3.org/1999/xhtml"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Containers_and_Raycasts"><span class="tocnumber">1</span> <span class="toctext">Containers and Raycasts</span></a>
+<ul>
+<li class="toclevel-2"><a href="#ContainerBoxEmpty.28_mask_.2C_location_.2C_xRadius_.5B_.2C_yRadius_.2C_zRadius_.5D_.29"><span class="tocnumber">1.1</span> <span class="toctext">ContainerBoxEmpty( mask , location , xRadius [ , yRadius , zRadius ] )</span></a></li>
+<li class="toclevel-2"><a href="#containerFindFirst.28_mask_.2C_location.2C_.2C_xRadius_.2C_yRadius_.2C_zRadius__.29"><span class="tocnumber">1.2</span> <span class="toctext">containerFindFirst( mask , location, , xRadius , yRadius , zRadius  )</span></a></li>
+<li class="toclevel-2"><a href="#containerFindNext.28.29"><span class="tocnumber">1.3</span> <span class="toctext">containerFindNext()</span></a></li>
+<li class="toclevel-2"><a href="#ContainerRayCast_.28_startPos_.2C_endPos_.2C_mask_.5B_.2C_exempt_.5D_.29"><span class="tocnumber">1.4</span> <span class="toctext">ContainerRayCast ( startPos , endPos , mask [ , exempt ] )</span></a></li>
+<li class="toclevel-2"><a href="#ContainerSearchCurrDist.28.29"><span class="tocnumber">1.5</span> <span class="toctext">ContainerSearchCurrDist()</span></a></li>
+<li class="toclevel-2"><a href="#ContainerSearchCurrRadiusDist.28.29"><span class="tocnumber">1.6</span> <span class="toctext">ContainerSearchCurrRadiusDist()</span></a></li>
+<li class="toclevel-2"><a href="#ContainerSearchNext.28.29"><span class="tocnumber">1.7</span> <span class="toctext">ContainerSearchNext()</span></a></li>
+<li class="toclevel-2"><a href="#InitContainerRadiusSearch_.28_centerPos_.2C_radius_.2C_mask_.29"><span class="tocnumber">1.8</span> <span class="toctext">InitContainerRadiusSearch ( centerPos , radius , mask )</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p xmlns="http://www.w3.org/1999/xhtml"></p>
+<a name="Containers_and_Raycasts" xmlns="http://www.w3.org/1999/xhtml"></a><h2 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink1"></a>Containers and Raycasts</h2>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="ContainerBoxEmpty.28_mask_.2C_location_.2C_xRadius_.5B_.2C_yRadius_.2C_zRadius_.5D_.29"></a><h3><a name = "HeaderLink2"></a>ContainerBoxEmpty( mask , location , xRadius [ , yRadius , zRadius ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>ContainerBoxEmpty</b></i> function to check for any objects of type mask within a box of variable size located at <br />
+<br />
+<i><b>Syntax<br />
+mask</b></i> – A bitmask corresponding to the type of objects to check for.  See the 'Object Types Table'.<br />
+<i><b>location</b></i> – An XYZ position vector in the game world, pinpointing the centroid of the bounding box.<br />
+<i><b>xRadius</b></i> – The radius of the bounding box in the X-axis.<br />
+<i><b>yRadius</b></i> – The optional radius of the bounding box in the Y-axis.<br />
+<i><b>zRadius</b></i> – The optional radius of the bounding box in the Z-axis.<br />
+<br />
+<b>Returns</b><br />
+Returns true, if not objects were found, and false if objects were found.<br />
+<br />
+<b>Notes</b><br />
+If the <i><b>yRadius</b></i> and <i><b>zRadius</b></i> values are not supplied, they are assumed to be equal to <i><b>xRadius</b></i>.<br />
+<br />
+<b>See Also</b><br />
+containerFindFirst, containerFindNext, ContainerRayCast<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="containerFindFirst.28_mask_.2C_location.2C_.2C_xRadius_.2C_yRadius_.2C_zRadius__.29"></a><h3><a name = "HeaderLink3"></a>containerFindFirst( mask , location, , xRadius , yRadius , zRadius  )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>containerFindFirst</b></i> function to find the first instance of an object matching the type mask within the specified bounding box.<br />
+<br />
+<i><b>Syntax<br />
+mask</b></i> – A bitmask corresponding to the type of objects to check for.  See the 'Object Types Table'.<br />
+<i><b>location</b></i> – An XYZ position vector in the game world, pinpointing the centroid of the bounding box.<br />
+<i><b>xRadius</b></i> – The radius of the bounding box in the X-axis.<br />
+<i><b>yRadius</b></i> – The optional radius of the bounding box in the Y-axis.<br />
+<i><b>zRadius</b></i> – The optional radius of the bounding box in the Z-axis.<br />
+<br />
+<b>Returns</b><br />
+Returns 0 if no objects are found, otherwise returns an integer representing the ID of the first object found.<br />
+<br />
+<b>See Also</b><br />
+ContainerBoxEmpty, containerFindNext, ContainerRayCast<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="containerFindNext.28.29"></a><h3><a name = "HeaderLink4"></a>containerFindNext()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>containerFindNext</b></i> function to find the next instance of an object in a  bounding box search previously initiated with <i>containerFindFirst</i>.<br />
+<br />
+<b>Returns</b><br />
+Returns 0 if no objects are found, otherwise returns an integer representing the ID of the next object found.<br />
+<br />
+<b>See Also</b><br />
+ContainerBoxEmpty, containerFindFirst, ContainerRayCast<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="ContainerRayCast_.28_startPos_.2C_endPos_.2C_mask_.5B_.2C_exempt_.5D_.29"></a><h3><a name = "HeaderLink5"></a>ContainerRayCast ( startPos , endPos , mask [ , exempt ] )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>ContainerRayCast</b></i> function to see if an object matching the specified <i><b>mask</b></i> type is positioned along a ray starting at <i><b>startPos</b></i> and ending at <i><b>endPos</b></i>.  One object may be marked for expemption from ray cast collisions.<br />
+<br />
+<i><b>Syntax<br />
+startPos</b></i> – An XYZ vector containing the tail position of the ray.<br />
+<i><b>endPos</b></i> – An XYZ vector containing the head position of the ray.<br />
+<i><b>mask</b></i> – A bitmask corresponding to the type of objects to check for.  See the 'Object Types Table'.<br />
+<i><b>exempt</b></i> – An optional ID for a single object that ignored for this raycast.<br />
+<br />
+<b>Returns</b><br />
+Returns 0 if no objects were struck by the ray, or a non-zero integer representing the ID of the object that was struck.<br />
+<br />
+<i><b>Notes</b></i><br />
+The <i><b>exempt</b></i> field is used to keep ray casts originating at an object from hitting the object itself.<br />
+<br />
+<b>See Also</b><br />
+ContainerBoxEmpty, containerFindFirst,  containerFindNext<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="ContainerSearchCurrDist.28.29"></a><h3><a name = "HeaderLink6"></a>ContainerSearchCurrDist()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>ContainerSearchCurrDist</b></i> function when using <i>InitContainerRadiusSearch</i> and <i>ContainerSearchNext</i> functions to find objects to determine the distance of the <u>center</u> of the last object found from the center of the current search container.<br />
+<br />
+<b>Returns</b><br />
+Returns a floating point value equal to the distance between center the last found container search item and the center of the container search box.  <br />
+<br />
+<i><b>Notes</b></i><br />
+Caution!  Do not call this function without first setting up a search container or the engine will crash. <br />
+<br />
+<b>See Also</b><br />
+ContainerSearchCurrRadiusDist, ContainerSearchNext, InitContainerRadiusSearch<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="ContainerSearchCurrRadiusDist.28.29"></a><h3><a name = "HeaderLink7"></a>ContainerSearchCurrRadiusDist()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>ContainerSearchCurrDist</b></i> function when using <i>InitContainerRadiusSearch</i> and <i>ContainerSearchNext</i> functions to find objects to determine the distance of the <u>closest point</u> of the last object found from the center of the current search container.<br />
+<br />
+<b>Returns</b><br />
+Returns a floating point value equal to the distance between center of the container search box and the point on the last found item that is closest to the container center.<br />
+<br />
+<i><b>Notes</b></i><br />
+Caution!  Do not call this function without first setting up a search container or the engine will crash.<br />
+<br />
+<b>See Also</b><br />
+ContainerSearchCurrDist, ContainerSearchNext, InitContainerRadiusSearch<br />
+<br />
+</p>
+<pre>
+%rad = ContainerSearchCurrRadiusDist();
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="ContainerSearchNext.28.29"></a><h3><a name = "HeaderLink8"></a>ContainerSearchNext()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>ContainerSearchNext</b></i> function to find the next object in the currently defined search container.<br />
+<br />
+<b>Returns</b><br />
+Returns non-zero integer value equal to the ID of an object, or zero if no objects were found.<br />
+<br />
+<i><b>Notes</b></i><br />
+Caution!  Do not call this function without first setting up a search container or the engine will crash. <br />
+<br />
+<b>See Also</b><br />
+ContainerSearchCurrDist, ContainerSearchCurrRadiusDist, InitContainerRadiusSearch<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="InitContainerRadiusSearch_.28_centerPos_.2C_radius_.2C_mask_.29"></a><h3><a name = "HeaderLink9"></a>InitContainerRadiusSearch ( centerPos , radius , mask )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC"><b>Purpose</b><br />
+<p>Use the <i><b>InitContainerRadiusSearch</b></i> function to find all objects matching the specified <i><b>mask</b></i> type within a bounding <i><b>radius</b></i> centered at <i><b>centerPos</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+centerPos</b></i> – An XYZ vector specifying the world position of the search container's centroid.<br />
+<i><b>radius</b></i> – A floating-point value specifying the radius of the search container.<br />
+<i><b>mask</b></i> – A bitmask corresponding to the type of objects to check for.  See the 'Object Types Table'.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+This search is static.  That is it will find all objects within the specified radius and then the found objects can be retrieved with <i>ContainerSearchNext</i>.  To find new objects, you will have to re-initialize the search.<br />
+<br />
+<b>See Also</b><br />
+ContainerSearchCurrDist, ContainerSearchCurrRadiusDist,  ContainerSearchNext<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+<big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <strong> Containers and Raycasts</strong> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_16.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:12 GMT -->
+</html>

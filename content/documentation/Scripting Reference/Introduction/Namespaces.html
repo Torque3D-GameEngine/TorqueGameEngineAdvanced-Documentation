@@ -1,0 +1,268 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Introduction/Namespaces.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4254;
+   parent.leftFrame.expandToItem('tree2', 'doc4254');
+   var element = parent.leftFrame.document.getElementById('doc4254');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueScript/Namespaces - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <a name="Namespace-es_Give_Me_Headache-es.21" xmlns="http://www.w3.org/1999/xhtml"></a><h2 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink0"></a>Namespace-es Give Me Headache-es!</h2>
+<p xmlns="http://www.w3.org/1999/xhtml">Why the title? Well, to be honest when I started to write this guide I thought, "Oh, yeah... I get that namespace thing... no problemo." Then, reality hit me in the face. I started making test cases for a project one day and found I had crossed my wires somewhere. After a few days and some help from Josh Williams (employee #9, not to be mistaken with the guy who gets eaten by the grue in episode 47...) I got my head on straight again.<br /><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml">For every object in Torque there is a namespace. Additionally, namespaces are chained. This means, that when the engine starts to search for something in the namespace, it begins at the entry point associated with the current object and seeks upward through all the parent's namespaces till it either finds what it is looking for or fails out. "Yes, yes", you say, "we've covered this, but how do we use this feature?" To answer that question, we'll look at some examples, starting with the simple stuff.<br /><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><b>Object Namespace Hierarchies</b><br />
+When we wish to create a new function for the namespace of an object, we do something like this:
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">
+            function GameBase::doIt(%this) 
+            {
+                echo ("Calling StaticShape::doIt() ==&gt; on object" SPC %this);
+            };
+</pre>
+<p xmlns="http://www.w3.org/1999/xhtml">The function 'doIt' is being declared in the 'GameBase' namespace. This means, that we can call this function on any object created from the GameBase class or its children. For example: 
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">
+            %myTarget = new StaticShape(CoolTarget) 
+            {
+                position = "0 0 0";
+                dataBlock = "SimpleTarget1";
+            };
+            
+            %myTarget.doIt();</pre>
+<p xmlns="http://www.w3.org/1999/xhtml">Assuming the tag in %myTarget is, say... 100, the above call would produce the output in the console: 
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">
+            Calling StaticShape::doIt() ==&gt; on object 100</pre>
+<p xmlns="http://www.w3.org/1999/xhtml">If you are observant, you'll notice a couple of things:
+</p>
+<ol type="1" xmlns="http://www.w3.org/1999/xhtml"><li>
+                        When we called <em>doIt()</em>, we did so without passing an argument explicitly, but when the console message printed, it did in fact get an argument with the value 100.
+                    </li><li>
+<pre>                       The one argument <em>doIt()</em> does take is named %this.
+</pre>
+                    </li>
+</ol>
+<p xmlns="http://www.w3.org/1999/xhtml">Regarding #1, because we used the handle to call the function (%myTarget.doIt()), the tag (ID) of this object gets passed implicitly to the function. That said, all the following calls will produce the same result:
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">
+            %myTarget.doIt();
+
+            StaticShape::doIt(%myTarget);
+            
+            CoolTarget.doIt();
+            
+            "CoolTarget".doIt();
+            
+            100.doIt()
+            
+            "100".doIt()
+            
+            StaticShape::doIt(100);</pre>
+<p xmlns="http://www.w3.org/1999/xhtml">As you can see, there are various ways to call the same function, all of which are useful in different scenarios. Isn't TorqueScript great? Please note, in the cases where we use the name of the object, the name will be passed as the ID. Torque automatically does lookups for names, thus in most cases, names can be used interchangeably with IDs, as long as the names are unique. <br /><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml">So far so good, we've discussed the most basic use of namespaces. Now let's talk about datablock namespaces.<br /><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><b>Simple Datablock Namespaces</b><br />
+As previously mentioned, datablocks are nothing more than objects themselves. They exist in the console alongside regular objects and they too have their own namespaces. For example if we wish to create a new function for ItemData namespace, we can do something like this:
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">
+            function ItemData::GetFields(%ItemDbID) 
+            {    
+                echo ("Calling ItemData::GetFields () ==&gt; on object" SPC %ItemDbID);    
+                echo (" catetory     =&gt;" SPC %ItemDbID.category);    
+                echo (" shapeFile    =&gt;" SPC %ItemDbID.shapeFile);    
+                echo (" mass         =&gt;" SPC %ItemDbID.mass);    
+                echo (" elasticity   =&gt;" SPC %ItemDbID.elasticity);    
+                echo (" friction     =&gt;" SPC %ItemDbID.friction);    
+                echo (" pickUpName   =&gt;" SPC %ItemDbID.pickUpName);    
+                echo (" maxInventory =&gt;" SPC %ItemDbID.maxInventory);    
+            }</pre>
+<p xmlns="http://www.w3.org/1999/xhtml">The function 'GetFields' is being declared in the 'ItemData' namespace. Considering that CrossbowAmmo is an instance of ItemData: 
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">
+            // from crossbow.cs (edited)
+            datablock ItemData(CrossbowAmmo)
+            {
+                category = "Ammo";
+                shapeFile = "~/data/shapes/crossbow/ammo.dts";
+                mass = 1;
+                elasticity = 0.2;
+                friction = 0.6;
+                pickUpName = "crossbow bolts";
+                maxInventory = 20;
+            };</pre>
+<p xmlns="http://www.w3.org/1999/xhtml">We could call our new function on it thus: 
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">
+            ==&gt;CrossbowAmmo.GetFields();
+
+             Calling ItemData::GetFields () ==&gt; on object CrossbowAmmo
+             catetory     =&gt; Ammo
+             shapeFile    =&gt; egt/data/shapes/crossbow/ammo.dts
+             mass         =&gt; 1
+             elasticity   =&gt; 0.199413
+             friction     =&gt; 0.599218
+             pickUpName   =&gt; crossbow bolts
+             maxInventory =&gt; 20
+             </pre>
+<p xmlns="http://www.w3.org/1999/xhtml">Now, this may seem completely trivial, but it is important to understand, that a majority of the interesting methods that are called by the engine as a response to user action, like onCollision(), onAdd(), create(), etc., are not called on instances of objects. They are called on the datablocks of instances of objects that use datablocks. This is crucial because we can do some very special things with datablocks and their namespaces.<br /><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><b>Inserting Datablock Namespaces (ClassName)</b>
+Datablocks provide a 'hook' with which to manipulate the namespace calling sequence. The 'hook' is the className field. You'll see this used in crossbow.cs for the CrossbowAmmo datablock. It works thus: 
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">
+            datablock ItemData(CrossbowAmmo)
+            {
+                ...
+                className = "Ammo";
+                ...
+            };
+            
+</pre>
+<p xmlns="http://www.w3.org/1999/xhtml">What this is doing is 'adding' a new namespace between CrossbowAmmo and ItemData, so that the namespace calling sequence will look like this: CrossbowAmmo -&gt; Ammo -&gt; ItemData -&gt; et cetera. If we defined two functions thus: 
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">
+
+            function Ammo::onPickup(%AmmoDB, %AmmoOBJ, %Picker, %Amount) 
+            {
+               echo ("Calling Ammo::onPickup () ==&gt; on ammo DB" SPC %AmmoDB);    
+                %AmmoDB.DoIt();
+            }
+            
+            function Ammo::DoIt(%AmmoDB) 
+            {
+               echo ("Calling Ammo::DoIt () ==&gt; on ammo DB" SPC %AmmoDB);    
+            }
+            
+</pre>
+<p xmlns="http://www.w3.org/1999/xhtml">We could then collide with an ammo item and expect to see the following message: 
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">
+
+            Calling Ammo::onPickup () ==&gt; on ammo DB 66
+            Calling Ammo::DoIt () ==&gt; on ammo DB 66
+      </pre>      
+<p xmlns="http://www.w3.org/1999/xhtml">This powerful feature allows us to insert a special namespace which we can use for several different datablocks. In otherwords, if we were to define two more ItemDatablocks thus: 
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">
+            datablock ItemData(FlamingCrossbowAmmo)
+            {
+                ...
+                className = "Ammo";
+                ...
+            };
+            
+            datablock ItemData(ExplodingCrossbowAmmo)
+            {
+                ...
+                className = "Ammo";
+                ...
+            };
+            
+</pre>
+<p xmlns="http://www.w3.org/1999/xhtml">Later in our code object derived from the three different datablocks CrossbowAmmo, FlamingCrossbowAmmo, and ExplodingCrossbowAmmo, can all use the same onPickup() and DoIt() functions as declared in the Ammo:: namespace. This cuts way down on the amount of code we need to write.<br /><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><b>Namespace Inheritance?</b>
+You might wonder at some time, whether namespace hierarchies can be inherited. The answer is both No. If we do this, 
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">
+
+            datablock ItemData(CrossbowAmmo)
+            {
+                ...
+                // no classNameField
+                ...
+            };
+            
+            
+            datablock ItemData(FlamingCrossbowAmmo : CrossbowAmmo)
+            {
+                ...
+            };
+            
+</pre>
+<p xmlns="http://www.w3.org/1999/xhtml">The namespace calling sequence for CrossbowAmmo will be: CrossbowAmmo -&gt; ItemData -&gt; et cetera, and for FlamingCrowssbowAmmo it will be: FlamingCrossbowAmmo -&gt; ItemData -&gt; et cetera. If we want FlamingCrossbowAmmo to use the CrossbowAmmo namespace, we have to do this: 
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">
+
+
+            datablock ItemData(CrossbowAmmo)
+            {
+                ...
+                // no classNameField
+                ...
+            };
+            
+            
+            datablock ItemData(FlamingCrossbowAmmo)
+            {
+                ...
+                className = "CrossbowAmmo";
+                ...
+            };
+            
+</pre>
+<p xmlns="http://www.w3.org/1999/xhtml">Note: If you do define a className field in a datablock, subsequent children datablocks will copy that value to their own className field unless it is over-written in the childs definition: 
+</p>
+<pre xmlns="http://www.w3.org/1999/xhtml">
+
+            datablock ItemData(CrossbowAmmo)
+            {
+                ...
+                className = "Ammo";
+                ...
+            };
+            
+            
+            datablock ItemData(FlamingCrossbowAmmo:CrossbowAmmo)
+            {
+                ...
+            };
+            
+</pre>
+<p xmlns="http://www.w3.org/1999/xhtml">Now, the namespace calling sequence for CrossbowAmmo will be: CrossbowAmmo -&gt; Ammo -&gt; ItemData -&gt; et cetera, and for FlamingCrowssbowAmmo it will be: FlamingCrossbowAmmo -&gt; Ammo -&gt; ItemData -&gt; et cetera.
+</p>
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Introduction/Namespaces.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:56 GMT -->
+</html>

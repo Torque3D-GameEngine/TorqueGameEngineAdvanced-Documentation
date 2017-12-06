@@ -1,0 +1,1307 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_5.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4240;
+   parent.leftFrame.expandToItem('tree2', 'doc4240');
+   var element = parent.leftFrame.document.getElementById('doc4240');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>Torque Console Objects 5 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+ <table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console_Objects_Fields_and_Methods_Quick_Reference_Part_5"><span class="tocnumber">1</span> <span class="toctext">Console Objects Fields and Methods Quick Reference Part 5</span></a>
+<ul>
+<li class="toclevel-2"><a href="#fxSunLight"><span class="tocnumber">1.1</span> <span class="toctext">fxSunLight</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields"><span class="tocnumber">1.1.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries"><span class="tocnumber">1.1.2</span> <span class="toctext">Console Method Summaries</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#GameBase"><span class="tocnumber">1.2</span> <span class="toctext">GameBase</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_2"><span class="tocnumber">1.2.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Globals"><span class="tocnumber">1.2.2</span> <span class="toctext">Globals</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_2"><span class="tocnumber">1.2.3</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods"><span class="tocnumber">1.2.4</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#GameBaseData"><span class="tocnumber">1.3</span> <span class="toctext">GameBaseData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_3"><span class="tocnumber">1.3.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#GameConnection"><span class="tocnumber">1.4</span> <span class="toctext">GameConnection</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_3"><span class="tocnumber">1.4.1</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_2"><span class="tocnumber">1.4.2</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Console_Objects_Fields_and_Methods_Quick_Reference_Part_5"></a><h1><a name = "HeaderLink1"></a>Console Objects Fields and Methods Quick Reference Part 5</h1>
+<p><br />
+</p><p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br /><br />
+</p>
+<a name="fxSunLight"></a><h3><a name = "HeaderLink2"></a> fxSunLight </h3>
+<hr />
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml">This class is used to represent celestial bodies. You may defined as many fxSunlight objects as you need in your seeing. Each object may be animated independently. As a whole, this class provides several features allowing us to represent a variety of celestial bodies with many different behaviors.<br />
+<br />
+</p>
+<a name="Fields" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink3"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AnimAzimuth</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable azimuth animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AnimBrightness</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable brightness animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AnimColour</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable color animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AnimElevation</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable elevation animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AnimRotation</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable rotation animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AnimSize</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable size animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AzimuthKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for azimuth animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AzimuthTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Round-trip animation time for azimuth.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">BlendMode</td>	
+<td width="60%" bgcolor="#CCCCCC">
+<p>0 = GL_SRC_ALPHA, GL_ONE<br />
+1 = GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA<br />
+2 = GL_ONE, GL_ONE
+</p>
+</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0 , 2 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">BlueKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for blue channel animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Brightness</td>	
+<td width="60%" bgcolor="#CCCCCC">Starting brightness.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">BrightnessKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for brightness animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">BrightnessTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Round-trip animation time for brightness.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Colour</td>	
+<td width="60%" bgcolor="#CCCCCC">Initial color.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“1.0 1.0 0.0 1.0”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ColourTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Round-trip animation time for color.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ElevationKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for elevation animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ElevationTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Round-trip animation time for elevation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Enable</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable or disable fxSunlight object rendering.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FadeTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Round-trip animation time for fade.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FlareSize</td>	
+<td width="60%" bgcolor="#CCCCCC">Size for flare bitmap.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FlareTP</td>	
+<td width="60%" bgcolor="#CCCCCC">If true, enables flare in third person.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">GreenKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for green channel animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LerpAzimuth</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable azimuth interpolation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LerpBrightness</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable brightness interpolation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LerpColour</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable color interpolation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LerpElevation</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable elevationr interpolation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LerpRotation</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable rotation interpolation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LerpSize</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable size interpolation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LinkFlareSize</td>	
+<td width="60%" bgcolor="#CCCCCC">Flag controlling whether the flare is linked to the light by size.  If on then the flare tracks the color &amp; brightness settings of the light to control its size.  The brighter the light, the larger the flare.  The flare is scaled according to it's current animation e.g. it never gets any bigger than it would with this setting off.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LocalFlareBitmap</td>	
+<td width="60%" bgcolor="#CCCCCC">Lens flare texture.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">~/path/filename.png</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LockToRealSun</td>	
+<td width="60%" bgcolor="#CCCCCC">Elevation and azimuth for this object follows elevation and azimuth for Sun object.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MaxAzimuth</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum azimuth setting.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 360.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MaxBrightness</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum brightness when brightness animation is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MaxColour</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum color when color animation is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MaxElevation</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum elevation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ -90.0 , 90.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MaxRotation</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum rotation when rotation animation is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 360.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MaxSize</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum size for flare.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MinAzimuth</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum azimuth setting.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 360.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MinBrightness</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum brightness when brightness animation is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MinColour</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum color when color animation is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“0.0 0.0 1.0 1.0”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MinElevation</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum elevation setting.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ -90.0 90.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MinRotation</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum rotation when rotation animation is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 360.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MinSize</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum flare size.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">NearDistance</td>	
+<td width="60%" bgcolor="#CCCCCC">Distance from light when flare achieves screen size of NearSize.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">NearSize</td>	
+<td width="60%" bgcolor="#CCCCCC">Screen size for flare at NearDistance and closer.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">OffsetKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for offset animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">OffsetTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Round-trip animation time for offset.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">RedKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for red channel animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">RemoteFlareBitmap</td>	
+<td width="60%" bgcolor="#CCCCCC">The sun texture.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">~/path/filename.png</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">RotationKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for rotation animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">RotationTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Round-trip animation time for rotation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">SingleColourKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Use RedKeys to animate all colors at the same time.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">SizeKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for size animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">SizeTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Round-trip animation time for size.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">SunAzimuth</td>	
+<td width="60%" bgcolor="#CCCCCC">Initial azimuth setting.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 360.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">SunElevation</td>	
+<td width="60%" bgcolor="#CCCCCC">Initial elevation setting.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ -90.0 , 90.0 ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink4"></a>Console Method Summaries</h4>
+<p xmlns="http://www.w3.org/1999/xhtml">Long descriptions for these functions have not been supplied because the functions are very simple and their names are quite descriptive.<br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">reset()</td>
+<td width="33%" align="center" bgcolor="#009900">setAzimuthKeys( keys ) </td>
+<td width="34%" align="center" bgcolor="#009900">setAzimuthTime( time )</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setBlendMode( mode ) </td>
+<td width="33%" align="center" bgcolor="#009900">setBlueKeys( keys ) </td>
+<td width="34%" align="center" bgcolor="#009900">setBrightnessKeys( keys )</td>
+</tr>
+ 
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setBrightnessTime( time )</td>
+<td width="33%" align="center" bgcolor="#009900">setColourTime( time ) </td>
+<td width="34%" align="center" bgcolor="#009900">setElevationKeys( keys )</td>
+</tr>
+ 
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setElevationTime( time )</td>
+<td width="33%" align="center" bgcolor="#009900">setEnable( status ) </td>
+<td width="34%" align="center" bgcolor="#009900">setFadeTime( time )</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setFlareBitmaps( local , remote ) </td>
+<td width="33%" align="center" bgcolor="#009900">setFlareBrightness( brightness ) </td>
+<td width="34%" align="center" bgcolor="#009900">setFlareColour( r , g , b )</td>
+</tr>
+ 
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setFlareSize( size )</td>
+<td width="33%" align="center" bgcolor="#009900">setFlareTP( status ) </td>
+<td width="34%" align="center" bgcolor="#009900">setGreenKeys( keys )</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setLerpAzimuth( status ) </td>
+<td width="33%" align="center" bgcolor="#009900">setLerpBrightness( status ) </td>
+<td width="34%" align="center" bgcolor="#009900">setLerpColour( status )</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setLerpElevation( status ) </td>
+<td width="33%" align="center" bgcolor="#009900">setLerpRotation( status )</td>
+<td width="34%" align="center" bgcolor="#009900">setLerpSize( status ) </td>
+</tr>
+ 
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setLinkFlareSize( status )</td>
+<td width="33%" align="center" bgcolor="#009900">setMaxAzimuth( azimuth )</td>
+<td width="34%" align="center" bgcolor="#009900">setMaxBrightness( brightness )</td>
+</tr>
+ 
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setMaxColour( r , g , b )</td>
+<td width="33%" align="center" bgcolor="#009900">setMaxElevation( elevation ) </td>
+<td width="34%" align="center" bgcolor="#009900">setMaxRotation( rotation )</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setMaxSize( size )</td>
+<td width="33%" align="center" bgcolor="#009900">setMinAzimuth( azimuth )</td>
+<td width="34%" align="center" bgcolor="#009900">setMinBrightness( brightness )</td>
+</tr> 
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setMinColour( r , g , b )</td>
+<td width="33%" align="center" bgcolor="#009900">setMinElevation( elevation )</td>
+<td width="34%" align="center" bgcolor="#009900">setMinRotation( rotation )</td>
+</tr>
+ 
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setMinSize( size )</td>
+<td width="33%" align="center" bgcolor="#009900">setRedKeys( keys )</td>
+<td width="34%" align="center" bgcolor="#009900">setRotationKeys( keys )</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setRotationTime( time )</td>
+<td width="33%" align="center" bgcolor="#009900">setSingleColourKeys( status )</td>
+<td width="34%" align="center" bgcolor="#009900">setSizeKeys( keys )</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setSizeTime( time ) </td>
+<td width="33%" align="center" bgcolor="#009900">setSunAzimuth( azimuth )</td>
+<td width="34%" align="center" bgcolor="#009900">setSunElevation( elevation )</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setUseAzimuth( status ) </td>
+<td width="33%" align="center" bgcolor="#009900">setUseBrightness( status )</td>
+<td width="34%" align="center" bgcolor="#009900">setUseColour( status )</td>
+</tr>
+ 
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setUseElevation( status )</td>
+<td width="33%" align="center" bgcolor="#009900">setUseRotation( status )</td>
+<td width="34%" align="center" bgcolor="#009900">setUseSize( status )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="GameBase" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink5"></a> GameBase </h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This is the base class to all classes using or requiring a data block. This class can be considered virtual as you do not create instances of it in the game world.<br />
+<br />
+</p>
+<a name="Fields_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink6"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">dataBlock</td>	
+<td width="60%" bgcolor="#CCCCCC">The corresponding data block for this object.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">GameBaseData datablock</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Globals" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink7"></a>Globals</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Variable Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">$gameBase::boundingBox</td>	
+<td width="60%" bgcolor="#CCCCCC">If true, objects will display their bounding boxes.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink8"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="50%" align="center" bgcolor="#009900">getDataBlock</td>
+<td width="50%" align="center" bgcolor="#009900">setDataBlock</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink9"></a>Console Methods</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getDataBlock()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getDataBlock</b></i> method to get the datablock used by this object.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+setDataBlock<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setDataBlock( db )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setDataBlock</b></i> method to change the datablock for this object to a new datablock represented by db. <br />
+<br />
+<b>Syntax<br />
+<i>db</i></b> – A datablock name or ID.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the datablock with successfully changed, otherwise it returns false.<br />
+<br />
+<b>Notes</b><br />
+The new datablock must be of a compatible type with the current class.<br />
+<br />
+<b>See Also</b><br />
+getDataBlock<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="GameBaseData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink10"></a> GameBaseData </h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This class is the corresponding data block the gamebase. It can be considered virtual also.<br />
+<br />
+</p>
+<a name="Fields_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink11"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">category</td>	
+<td width="60%" bgcolor="#CCCCCC">Creator category to place this object in.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“MyCategory”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">className</td>	
+<td width="60%" bgcolor="#CCCCCC">A new namespace to be inserted between the name of the data block and the class name of the data block.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“SomeClassname”</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="GameConnection" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink12"></a> GameConnection </h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">A class connecting the client in the current executable to a server in the current executable or to a server and external executable.<br />
+</p>
+<a name="Console_Method_Summaries_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink13"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">activateGhosting</td>	
+<td width="33%" align="center" bgcolor="#009900">chaseCam</td>
+<td width="34%" align="center" bgcolor="#009900">clearCameraObject</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">delete</td>	
+<td width="33%" align="center" bgcolor="#009900">getCameraObject</td>
+<td width="34%" align="center" bgcolor="#009900">getControlCameraFov</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getControlObject</td>	
+<td width="33%" align="center" bgcolor="#009900">getServerConnection</td>
+<td width="34%" align="center" bgcolor="#009900">isAIControlled</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">isDemoPlaying</td>	
+<td width="33%" align="center" bgcolor="#009900">isDemoRecording</td>
+<td width="34%" align="center" bgcolor="#009900">isFirstPerson</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">listClassIDs</td>	
+<td width="33%" align="center" bgcolor="#009900">play2D</td>
+<td width="34%" align="center" bgcolor="#009900">play3D</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">playDemo</td>	
+<td width="33%" align="center" bgcolor="#009900">resetGhosting</td>
+<td width="34%" align="center" bgcolor="#009900">setBlackOut</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setCameraObject</td>	
+<td width="33%" align="center" bgcolor="#009900">setConnectArgs</td>
+<td width="34%" align="center" bgcolor="#009900">setControlCameraFov</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setControlObject</td>	
+<td width="33%" align="center" bgcolor="#009900">setFirstPerson</td>
+<td width="34%" align="center" bgcolor="#009900">setJoinPassword</td>
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setMissionCRC</td>	
+<td width="33%" align="center" bgcolor="#009900">startRecording</td>
+<td width="34%" align="center" bgcolor="#009900">stopRecording</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink14"></a>Console Methods</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>activateGhosting()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>activateGhosting</b></i> method to GameConnection instance to start ghosting objects to the client.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+This is called on each client connection by the server.<br />
+<br />
+<b>See Also</b><br />
+resetGhosting<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>chaseCam( delay )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>chaseCam</b></i> method to insert a delay in between translations and rotations of the control object and the attached 3rd POV camera.  That is, if <i><b>delay</b></i> is a positive non-zero value, the camera will lag behind translations and rotations of the 3rd POV player.  <br />
+<br />
+<b>Syntax<br />
+<i>delay</i></b> – An integer value equal to or greater than zero.  If this value is greater than zero, the camera will begin to lag the players translations and rotations.<br />
+<br />
+<b>Notes</b><br />
+This can quickly become disconcerting as it disconnects player input from the results.  Use this feature cautiously.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>delete( [ reason ] )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>delete</b></i> method to destroy and disconnect the current connection, giving an optional <i><b>reason</b></i>. If reason is specified, it will be transmitted to the client/server on the other end of the connection.<br />
+<br />
+<b>Syntax<br />
+<i>reason</i></b> – A string explaining while the connection is being severed.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getCameraObject()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getCameraObject</b></i> method to  get the current camera object ID.<br />
+<br />
+<b>Returns</b><br />
+Returns the ID of the current camera object, or the control object if the POV is first person.<br />
+<br />
+<b>See Also</b><br />
+setCameraObject()<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getControlCameraFov()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getControlCameraFov</b></i> method to FOV of the current control 'camera'.<br />
+<br />
+<b>Returns</b><br />
+Returns a FOV angle between 0.0 and 180.0.<br />
+<br />
+<b>Notes</b><br />
+This may not actually be the FOV of the camera object, but rather the FOV being used by the camera.  The difference is subtle, but if a camea is attached to an object and using that object's FOV setting, then the FOV is actually coming from the object, not the camera.<br />
+<br />
+<b>See Also</b><br />
+getCameraObject, setControlCameraFov<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getControlObject()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getControlObject</b></i> method to get the ID of the current control-object for this GameConnection.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer value representing the ID of an object acting as the control-object for this GameConnection.  If no control-object was set up, this will return 0.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getServerConnection()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getServerConnection</b></i> method to get the ID of the server this client-side GameConnection is attached to.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer representing the ID of a server-side GameConnection on the other end of this client-side GameConnection.  If no server is connected, or if this GameConnection is a server-side connection, the return value is 0.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isAIControlled()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isAIControlled</b></i> method to determine if this is an AIGameConnection.<br />
+<br />
+<b>Returns</b><br />
+Returns true if this is an AIGameConnection instance.<br />
+<br />
+<b>Notes</b><br />
+This will always return false for a GameConnection and always return true for an AIGameConnection.  It was defined here to allow scripts to call it universally on either type of connection.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isDemoPlaying()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isDemoPlaying</b></i> method to see if this GameConnection is playing a demo.<br />
+<br />
+<b>Returns</b><br />
+Returns true if a demo is being played, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+isDemoRecording, playDemo, startRecording, stopRecording<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isDemoRecording()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isDemoRecording</b></i> method to see if this GameConnection is recording a demo.<br />
+<br />
+<b>Returns</b><br />
+Returns true if a demo is being recorded, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+isDemoPlaying, playDemo, startRecording, stopRecording<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isFirstPerson()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isFirstPerson</b></i> method to see if the camera attached to this GameConnection is in 1st POV.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the camera attached to this GameConnection is in 1st POV, false otherwise.<br />
+<br />
+See Also<br />
+setFirstPerson<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>listClassIDs()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>listClassIDs</b></i> method to dump a list of all class IDs that this GameConnection knows about.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+This is a debug feature.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>play2D( AP )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>play2D</b></i> method to play a 2D AudioProfile previously specified using the datablock keyword.<br />
+<br />
+<b>Syntax<br />
+<i>AP</i></b> – A 2D AudioProfile previously specified using the datablock keyword.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the sound can be played, false otherwise.<br />
+<br />
+<b>Notes</b><br />
+Be sure to use only AudioProfiles created using the datablock keyword.<br />
+<br />
+<b>See Also</b><br />
+play3D<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>play3D( AP , position )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>play2D</b></i> method to play a 3D AudioProfile previously specified using the datablock keyword.<br />
+<br />
+<b>Syntax<br />
+<i>AP</i></b> – A 3D AudioProfile previously specified using the datablock keyword.<br />
+<i><b>position</b></i> – The position to play this sound at.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the sound can be played, false otherwise.<br />
+<br />
+<b>Notes</b><br />
+Be sure to use only AudioProfiles created using the datablock keyword.<br />
+<br />
+<b>See Also</b><br />
+play2D<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>playDemo( demoFileName )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>playDemo</b></i> method to play a previously recorded demo on this GameConnection.<br />
+<br />
+<b>Syntax<br />
+<i>demoFileName</i></b> – A path and file name pointing to a previously recorded demo.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the demo was succesfully played, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+isDemoPlaying, isDemoRecording, startRecording, stopRecording<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>resetGhosting()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>resetGhosting</b></i> method to reset ghosting. This in effect tells the server to resend each ghost to insure that all objects which should be ghosts and are in fact ghosted.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+activateGhosting<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setBlackOut( doFade , timeMS )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setBlackOut</b></i> method to fade (black) the screen out, or in.<br />
+<br />
+<b>Syntax<br />
+<i>doFade</i></b> – A boolean value.  If set to true, the screen is blacked out, if false, the blackout is reversed.<br />
+<i><b>timeMS</b></i> – An integer value specifying the time it takes to fade-out or to fade back in.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+This is only called on the client-side GameConnection (from client to server), calling in on a server-side connection (from server to client), will do nothing.<br />
+<br />
+The GameBase class provides two similar features for whiting out the screen and causing damage flashes.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setCameraObject( newCamera )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setCameraObject</b></i> method to change the camera object associated with this GameConnection to <i><b>newCamera</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>newCamera</i></b> – The ID of a valid camera object.<br />
+<br />
+<b>Returns</b><br />
+Returns true on success and false on failure.<br />
+<br />
+<b>Notes</b><br />
+This can only be called on the serer-side GameConnection.<br />
+<br />
+<b>See Also</b><br />
+getCameraObject<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setConnectArgs( name [ , arg1 , ... , arg15 ] )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setConnectArgs</b></i> method to set the connection arguments for this client-side GameConnection.  These values will be passed to the server upon establishing a connection.<br />
+<br />
+<b>Syntax<br />
+<i>name</i></b> – Generally, the first argument is the name of the player.<br />
+<i><b>arg1 , ... , arg15</b></i> – 15 additional arguments may be passed.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+setJoinPassword<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><a href="Console%20Objects.html" title="Torque Console Objects TOC"> Table of Contents</a> || <a href="Torque_Console_Objects_1.html" title="Torque Console Objects"> Part 1</a> || <a href="Torque_Console_Objects_2.html" title="Torque Console Objects 2"> Part 2</a> || <a href="Torque_Console_Objects_3.html" title="Torque Console Objects 3"> Part 3</a> || <a href="Torque_Console_Objects_4.html" title="Torque Console Objects 4"> Part 4</a> || <a href="Torque_Console_Objects_6.html" title="Torque Console Objects 6"> Part 6</a> || <a href="Torque_Console_Objects_7.html" title="Torque Console Objects 7"> Part 7</a> || <a href="Torque_Console_Objects_8.html" title="Torque Console Objects 8"> Part 8</a> || <a href="Torque_Console_Objects_9.html" title="Torque Console Objects 9"> Part 9</a> || <a href="Torque_Console_Objects_10.html" title="Torque Console Objects 10"> Part 10</a> || <a href="Torque_Console_Objects_11.html" title="Torque Console Objects 11"> Part 11</a> || <a href="Torque_Console_Objects_12.html" title="Torque Console Objects 12"> Part 12</a> || <a href="Torque_Console_Objects_13.html" title="Torque Console Objects 13"> Part 13</a> || <a href="Torque_Console_Objects_14.html" title="Torque Console Objects 14"> Part 14</a> || <a href="Torque_Console_Objects_15.html" title="Torque Console Objects 15"> Part 15</a>
+</p>
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_5.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:03 GMT -->
+</html>

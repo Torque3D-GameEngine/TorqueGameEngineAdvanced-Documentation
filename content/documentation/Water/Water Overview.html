@@ -1,0 +1,277 @@
+<html>
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Water/Water Overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4289;
+   parent.leftFrame.expandToItem('tree2', 'doc4289');
+   var element = parent.leftFrame.document.getElementById('doc4289');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script><meta http-equiv="Content-Type" content="text/html; charset=ANSI_X3.4-1968"><title>TGEA Water</title><link rel="stylesheet" href="style.html" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.62.4"><link rel="home" href="index.html" title="Torque Shader Engine 0.2.x Documentation"><link rel="up" href="index.html" title="Torque Shader Engine 0.2.x Documentation"><link rel="previous" href="ch05s06.html" title="Getting Higher Resolution Terrain Data"><link rel="next" href="ch06s02.html" title="The Grid">
+<style type="text/css">
+<!--
+.style1 {
+	font-size: 20px;
+	font-style: italic;
+}
+.style2 {
+	font-size: 18px;
+	font-style: italic;
+}
+.style3 {font-size: 18px}
+-->
+</style>
+</head><BODY id = "BODYID" onLoad = "initComponent()"  bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="chapter" lang="en"><div class="titlepage"><div><div>
+        <h2 align="center" class="title"><u></u><a name = "HeaderLink0"></a>TGEA Water System Overview</h2>
+        </div></div><div></div></div>
+<p>This section of the docs will provide a high level tour through some of the major systems that interact with each other, in order to make up the water system for Torque Game Engine Advanced.</p><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title style1" style="clear: both"><a name = "HeaderLink1"></a>Setting the water transform</h2>
+</div>
+</div><div></div></div><p>
+            Unlike many of the other water parameters, the position, rotation, scale, and
+            gridSize can all be changed and updated while in the editor without the need
+            for reloading the mission to see the results.  Moving and rotating a WaterBlock
+            is done in the same way as any other object.  The scale and gridSize control 
+            the size.
+        </p>
+<div class="section" lang="en">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title style1" style="clear: both"><a name = "HeaderLink2"></a>The Grid</h2>
+      </div>
+    </div>
+    <div></div>
+  </div>
+  <p> The water is square in shape because it is set up as a brute-force grid mesh.
+    It will draw all of the vertices in the grid regardless of what your view
+    distance may be set to. </p>
+  <p> One of the most important performance parameters for the WaterBlock is gridSize.
+    The gridSize controls how much spacing there is between vertices in the grid - 
+    and therefore how many vertices there are in the grid.
+    It should be set as high as possible as suits the needs of the environment.  The
+    reason for this is that when the water draws, it will always draw the entire grid.
+    So if you have a 2 kilometer by 2 kilometer size WaterBlock, it will process
+    all of the vertices in the grid, even if you have a viewing distance of a few
+    hundred meters.  If your gridSize is set large enough in this case, it's not a 
+    big deal.  A size of 100 for instance, would process 400 vertices for a 2000x2000 size grid.
+    If your gridSize was 10, however, it would process 40000 vertices which is much
+    slower and wouldn't look a whole lot better. </p>
+  <p> There are two reasons for having lower gridSize values.  The first is fogging.
+    Fog is calculated per-vertex, so if the fog distance less than or near
+    to the gridSize, there will likely be artifacts in the fog because the grid is
+    not fine enough.  If the fog distance is very near, and the WaterBlock is large,
+    it might be best to change the shader such that the fog calculations are done
+    per-pixel instead of per-vertex.  Then the WaterBlock could be expanded into one
+    large quad. </p>
+  <p> The second reason for small gridSizes would be smaller WaterBlocks.  A WaterBlock
+    can only be as small as one grid element and the size of that element is the
+    gridSize parameter.  Ie. if you want a 10x10 size WaterBlock, you must have at
+    most a gridSize of 10. </p>
+</div>
+<div class="section" lang="en">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title" style="clear: both"><span class="style1"></span><a name = "HeaderLink3"></a>Wave Data</h2>
+      </div>
+    </div>
+    <div></div>
+  </div>
+  <p> There are wave settings for the waves that are used in the ps 2.0 water shader.
+    The wave parameters do not affect the 1.0 water movement.
+    
+    The water shader uses the wave parameters to sample the water bumpmap and combine
+    it in different ways to get the final movement effect. It averages the first two 
+    waves and adds the third at 1/3 the strength of the first two.  The purpose of
+    the third wave is to break up repetitive patterns that the first two can form.  It
+    is best, therefore, to use a larger texture scale for the third wave.
+    
+    The parameters for the waves are: </p>
+  <div class="section" lang="en">
+    <div class="titlepage">
+      <div>
+        <div><strong><em>          waveDir</em></strong><br>
+          - Direction that the wave travels along the x/y plane.  It is a 2D normalized
+      vector. </div>
+      </div>
+      <div></div>
+    </div>
+    </div>
+  <div class="section" lang="en">
+    <p> <strong><em>waveSpeed</em></strong><br>
+      - Speed that the wave travels in the specified direction.  This is a single
+      floating point value. </p>
+  </div>
+  <div class="section" lang="en">
+    <div class="titlepage">
+      <div>
+        <div>          <strong><em>waveTexScale</em></strong><br>
+          - This is the scale of the wave - how much the texture is stretched. </div>
+      </div>
+      <div></div>
+    </div>
+
+  </div>
+</div>
+<div class="section" lang="en">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title style2" style="clear: both"><a name = "HeaderLink4"></a>Reflections</h2>
+      </div>
+    </div>
+    <div></div>
+  </div>
+  <p> WaterBlocks are capable of providing full dynamic reflections for pixel shader
+    2.0+ hardware.  They will reflect everything in the scene.  To reflect only
+    certain objects, the "objTypeFlag" variable can be changed in the 
+    WaterBlock::updateReflection() function.  The reflections are updated at roughly
+    60htz.  This can also be changed in the updateReflections() function. </p>
+  <p> Full reflections are expensive to render.  To kick the reflections down to 
+    static cubemap reflections, set the "fullReflect" parameter to false; </p>
+  <p> The pixel shader 1.1 water reflects only a cubemap.  The bump surface itself is
+    generated by blending two normalmaps in a pixel shader to a render target.  The
+    render target is then used for a bump-environment map operation to get the
+    "shiny" bump / cubemap interaction. </p>
+</div>
+<div class="section" lang="en">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title style3" style="clear: both"><em></em><a name = "HeaderLink5"></a>Fog</h2>
+      </div>
+    </div>
+    <div></div>
+  </div>
+  <p> Fog is calculated on a per-vertex basis in the ps 2.0 rendering path.  The gridSize
+    can affect how the fog looks if the fog is fairly close in.  The <a href="ch06s02.html#Grid">Grid</a> section
+    covers this in more detail.  The fog uses the fog texture generated by the scenegraph
+    for consistency with the rest of the scene. </p>
+  <p> The ps 1.1 path is rendered as a second pass over the bumpEnvMap pass.  It uses a
+    stencil operation to avoid z-fighting on the surface over large areas.  A special
+    fog mesh is generated for this path.  It is a radial mesh (a set of
+    linked concentric rings) that expands as it gets further out to reduce vertices.
+    Rendering of the fog mesh can be turned off by setting the "renderFogMesh" parameter
+    to false. </p>
+</div>
+<div class="section" lang="en">
+  <div class="titlepage">
+    <div>
+      <div>
+        <h2 class="title style3" style="clear: both"><em></em><a name = "HeaderLink6"></a>Surface Materials</h2>
+      </div>
+    </div>
+    <div></div>
+  </div>
+  <p> There are several "Surface Material" slots that identify which Materials
+    are to be used for varius passes.  The MaterialType enum in WaterBlock.h
+    dictates which slots are used for which passes.  At the time of this writing,
+    the first slot is used for the "base" material.  The underwater material is
+    in the second slot, followed by the fog material (for the 1.1 fog pass).  The
+    fourth material is used for blending the normal map used on the 1.1 base surface.
+    The final material is used when dynamic textures are turned off. </p>
+</div>
+<div class="section" lang="en">
+  <div class="section" lang="en">
+    <div class="titlepage">
+      <div></div>
+    </div>
+    <div>
+      <div>
+        <h3 class="title"><em></em><a name = "HeaderLink7"></a>Color / Clarity / Fresnel Parameters</h3>
+      </div>
+    </div>
+    <div class="section" lang="en">
+      <div class="titlepage">
+        <div>
+          <div> <em><strong>baseColor</strong></em><br>
+            - The actual color of the water
+          </div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="section" lang="en">
+      <div class="titlepage">
+        <div>
+          <div><br>
+            <em><strong>underwaterColor</strong></em><br>
+            - Color of the fullscreen filter when the camera is underwater.  Note
+        you can make this more opaque with the alpha color. </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+    <div class="section" lang="en">
+      <div class="titlepage">
+        <div>
+          <div><br>
+            <em><strong>clarity</strong></em><br>
+            - How clear the water is.  This is a linear slider between the refraction
+        buffer and the baseColor of the water. </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+    <div class="section" lang="en">
+      <div class="titlepage">
+        <div>
+          <div> <br>
+            <em><strong>fresnelBias</strong></em><br>
+            - Water reflects more of the sky as the angle between it and the camera
+        becomes greater (as it goes out into the distance).  This is simulated
+        using an approximation of Fresnel's reflection equation.  The "fresnelBias"
+        parameter indicates the minimum reflectance that the water will have.  If this
+        is set to zero, the water will not be reflective at all close to the camera. </div>
+        </div>
+        <div></div>
+      </div>
+
+    </div>
+    <div class="section" lang="en">
+      <div class="titlepage">
+        <div>
+          <div><br>
+            <em><strong>fresnelPower</strong></em><br>
+            - The rate at which the water becomes more reflective as it stretches towards
+        the horizon is exponential.  This parameter sets the exponential power by
+        which the rate changes. <br><br></div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="titlepage">
+  <div>
+    <div> <span class="style3"><strong><em>Miscellaneous</em></strong></span><br>
+      You can have multiple WaterBlocks in the same level.  NOTE - this can cause 
+      serious performance loss if full reflections are turned on. <br>
+    </div>
+  </div>
+  <div></div>
+</div>
+<p>&nbsp;</p>
+</div></div>
+<div class="footer">   
+  <div align="center"><span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../tgea.html" target="">Home</a>   <a href="#">Back to Top</a></div>
+</div>
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Water/Water Overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:26 GMT -->
+</html>

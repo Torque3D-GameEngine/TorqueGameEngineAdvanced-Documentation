@@ -1,0 +1,722 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_15.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4250;
+   parent.leftFrame.expandToItem('tree2', 'doc4250');
+   var element = parent.leftFrame.document.getElementById('doc4250');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>Torque Console Objects 15 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+ <table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console_Objects_Fields_and_Methods_Quick_Reference_Part_15"><span class="tocnumber">1</span> <span class="toctext">Console Objects Fields and Methods Quick Reference Part 15</span></a>
+<ul>
+<li class="toclevel-2"><a href="#WaterBlock"><span class="tocnumber">1.1</span> <span class="toctext">WaterBlock</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields"><span class="tocnumber">1.1.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#WheeledVehicles"><span class="tocnumber">1.2</span> <span class="toctext">WheeledVehicles</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Methods"><span class="tocnumber">1.2.1</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#WheeledVehicleData"><span class="tocnumber">1.3</span> <span class="toctext">WheeledVehicleData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_2"><span class="tocnumber">1.3.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#WheeledVehicleSpring"><span class="tocnumber">1.4</span> <span class="toctext">WheeledVehicleSpring</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_3"><span class="tocnumber">1.4.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#WheeledVehicleTire"><span class="tocnumber">1.5</span> <span class="toctext">WheeledVehicleTire</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_4"><span class="tocnumber">1.5.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Console_Objects_Fields_and_Methods_Quick_Reference_Part_15"></a><h1><a name = "HeaderLink1"></a>Console Objects Fields and Methods Quick Reference Part 15</h1>
+<p><br />
+</p><p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br /><br />
+</p>
+<a name="WaterBlock"></a><h3><a name = "HeaderLink2"></a>WaterBlock</h3>
+<hr />
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<a name="Fields" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink3"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">density</td>	
+<td width="55%" bgcolor="#CCCCCC">The default water density is one.  Meanwhile, the default character density is 10.  This means the character will sink upon entering the water.  Therefore, if you want the character to be more buoyant, you can adjust either or both parameters.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">DepthGradient</td>	
+<td width="55%" bgcolor="#CCCCCC">Controls the slope between MinAlpha and MaxAlpha.  In older versions of the engine, Melvin implemented this as a sigmoid function, but since version 1.2, it has been implemented using the (more involved) gamma-correction function.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">DistortGridScale</td>	
+<td width="55%" bgcolor="#CCCCCC">This allows you to adjust distortion such that the effect is the same between a large water block and a small water block.  There are not set rules really.  You’ll just have to experiment.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">DistortMag</td>	
+<td width="55%" bgcolor="#CCCCCC">If this vale is not zero, distortion is enabled.  Generally, the magnitude of this value should be less than one or the distortion behaves…strangely.  Both positive and negative values are legal.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">DistortTime</td>	
+<td width="55%" bgcolor="#CCCCCC">As you might guess, this period of the distort function.  It is inversely proportional to the distortion’s rate of change.  In other words, larger values mean slower distortions and smaller values mean faster distortions.  A value of zero (0) is illegal and will cause the texture rendering to fail gracefully.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">envMapIntensity</td>	
+<td width="55%" bgcolor="#CCCCCC">description</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">envMapOverTexture</td>	
+<td width="55%" bgcolor="#CCCCCC">If environmental mapping (see .Reflections and Specular Masks’ below) is enabled, this texture is rendered when looking down onto the water from above.  This represents an environmental reflection on the water’s surface.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">~/path/filename.png</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">envMapUnderTexture</td>	
+<td width="55%" bgcolor="#CCCCCC">As with envMapOverTexture, this represents an environmental reflection, but this is the texture you will see if looking up from beneath the water.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">~/path/filename.png</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FlowAngle</td>	
+<td width="55%" bgcolor="#CCCCCC">This parameter (in degrees) determines the direction of the translation.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , 360.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FlowRate</td>	
+<td width="55%" bgcolor="#CCCCCC">If this value is non-zero, water flow will be enabled.  The higher the value, the more quickly textures will translate.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">liquidType</td>	
+<td width="55%" bgcolor="#CCCCCC">These are leftover values from Tribes 2.  You may use them for your own purposes. </td>
+<td width="25%" align="center" bgcolor="#CCCCCC">Water, OceanWater, RiverWater, StagnantWater, Lava, HotLava, CrustyLava, Quicksand </td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MaxAlpha</td>	
+<td width="55%" bgcolor="#CCCCCC">As might be intuited, this parameter determine the maximum alpha to use while rendering shoreTexture.  This directly affects the multi-texturing equation involving the surfaceTexture and shoreTexture.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MinAlpha</td>	
+<td width="55%" bgcolor="#CCCCCC">As might be intuited, this parameter determine the minimum alpha to use while rendering shoreTexture.  This directly affects the multi-texturing equation involving the surfaceTexture and shoreTexture.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">position</td>	
+<td width="55%" bgcolor="#CCCCCC">The object's placement position, not neccesarily the current position.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"1.0 2.0 3.0"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">removeWetEdges</td>	
+<td width="55%" bgcolor="#CCCCCC">Setting this value true, tells the engine to (attempt to) clip the edges of water that produde from beneath terrain features.  Results will vary when using this feature.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">rotation</td>	
+<td width="55%" bgcolor="#CCCCCC">The object's placement rotation, not neccesarily the current rotation.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"1.0 2.0 3.0"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">scale</td>	
+<td width="55%" bgcolor="#CCCCCC">The object's placement scale, not neccesarily the current scale.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"1.0 2.0 3.0"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ShoreDepth</td>	
+<td width="55%" bgcolor="#CCCCCC">Shore rendering is determined by a ray-cast at distinct points across the surface of the water block.  The result of this ray-cast returns the distance between the top of the water and the terrain directly below that point on the surface.  If this value is greater than or equal to ShoreDepth, the engine is instructed to render the shoreTexture.  If you choose to set this value to zero, the shoreTexture will not render at all.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ShoreTexture</td>	
+<td width="55%" bgcolor="#CCCCCC">We’ll talk more about shorelines in a moment, but Torque has the ability to render shorelines differently.  When it renders the shoreline, it blends this texture with surfaceTexture, giving a nice visual effect.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">~/path/filename.png</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">specularColor</td>	
+<td width="55%" bgcolor="#CCCCCC">This can be used to change both the color of the resultant highlight and its intensity.  This parameter takes a 4-tuple floating-point vector “r g b a”.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">"1.0 0.5 0.5"</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">specularMaskTex</td>	
+<td width="55%" bgcolor="#CCCCCC">This texture is used to make the surface of the water look as if it is reflecting light.  Again, this should be some kind of caustic grayscale.  The engine does take into account the position and elevation of the sun when rendering the specular effect.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">~/path/filename.png</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">specularPower</td>	
+<td width="55%" bgcolor="#CCCCCC">This determines how large an area is shiny.  Lower values cause more of the specular map to be rendered, versus larger values that will tend to show just a spot of highlighting.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">
+<p>submergeTexture[0]<br />
+<br />
+submergeTexture[1]
+</p>
+</td>	
+<td width="55%" bgcolor="#CCCCCC">These two textures are only used when liquidType is one of the Lava types (Lava, HotLava, or CrustyLava).  These two textures are rendered perpendicular to the viewing plane.  Additionally they are animated.  A suggestion I was given, which I’ll pass along, is to use two high quality (say 512x512 instead of the normal 256x256) grayscale caustics for these.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">~/path/filename.png</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">surfaceOpacity</td>	
+<td width="55%" bgcolor="#CCCCCC">This affects how opaque the combination of surfaceTexture and shoreTexture is.  That is it.  A value of zero is not transparent, just very translucent.  A value of one is quite opaque.  You’ll have to adjust this meet your needs.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">SurfaceParallax</td>	
+<td width="55%" bgcolor="#CCCCCC">
+<p>When FlowRate is non-zero, the flow-rate of the oriented surfaceTexture is controlled by this value as follows:<br />
+<br />
+&gt; 1 - Non-oriented surfaceTexture flows more slowly than oriented surfaceTexture.<br />
+1 - Non-oriented surfaceTexture and oriented surfaceTexture flow at same rate.<br />
+&lt; 1 - Oriented surfaceTexture flows more slowly than non-oriented surfaceTexture. Oriented surfaceTexture counter-flows.<br />
+0 - Oriented surfaceTexture remains stationary.
+</p>
+</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">surfaceTexture</td>	
+<td width="55%" bgcolor="#CCCCCC">This texture is used to define the base water layer(s).  This texture is rendered in two layers, with one layer re-oriented at a 45-degree angle (about Z of course).  This makes the water more interesting.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">~/path/filename.png</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">TessShore</td>	
+<td width="55%" bgcolor="#CCCCCC">Controls shore 'detail level'.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">TessSurface</td>	
+<td width="55%" bgcolor="#CCCCCC">Controls surface 'detail level'</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">tile</td>	
+<td width="55%" bgcolor="#CCCCCC">Enable/disable tiling.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">UseDepthMask</td>	
+<td width="55%" bgcolor="#CCCCCC">If this value is false, only the envMapOverTexture will be rendered on the top of the water.  All other ‘surface’ textures will be disabled.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">viscosity</td>	
+<td width="55%" bgcolor="#CCCCCC">In addition to choosing whether a character will float or sink in water, we can indirectly adjust how quickly this occurs by changing the viscosity of the water.  A thicker fluid like, say honey, has a high viscosity, whereas plain water will have a low viscosity.  By increasing this value, you create an effect where the player will require more time to float or sink.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">waveMagnitude</td>	
+<td width="55%" bgcolor="#CCCCCC">If this value is set at 0, the water will appear flat, with no waves. 
+A value above 0 will produce a wave like effect across the entire waterblock.  </td>h
+<td width="25%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="WheeledVehicles" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink4"></a>WheeledVehicles</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">Class used to represent wheeled vehicles.<br />
+<br />
+</p>
+<a name="Console_Methods" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink5"></a>Console Methods</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getwheelCount</td>	
+<td width="33%" align="center" bgcolor="#009900">setWheelPowered</td>	
+<td width="33%" align="center" bgcolor="#009900">setWheelSpring</td>	
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">setWheelSteering</td>	
+<td width="33%" align="center" bgcolor="#009900">setWheelTire</td>	
+<td width="33%" align="center" bgcolor="#009900"></td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getWheelCount()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getWheelCount</b></i> method to determine how many wheels (hubs) this wheeledVehicle has in it's mesh.<br />
+<br />
+<b>Returns</b><br />
+Returns a value between 0 and 8, specifying the number of hubs the mesh has of the name: hub0, hub1, ... hub7.<br />
+<br />
+<b>Notes</b><br />
+When creating a wheeledVehicle mesh, always create hubs using the name hubX, where X is a value between 0 and 7.  Furthermore, always create these hubs in order and in pairs (opposite each other).  <br />
+<br />
+For example, If you are creating a four-wheeled vehicle, the hubs should be:<br />
+<br />
+hub0 – front left tire<br />
+hub1 – front right tire<br />
+hub2 – rear left tire<br />
+hub3 – rear right tire<br />
+<br />
+<b>See Also</b><br />
+setWheelPowered, setWheelSpring, setWheelSteering, setWheelTire<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setWheelPowered( <i>wheelNum</i> , <i>isPowered</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <b>setWheelPowered</b> method to set the powered state for the specified wheel (hub).<br />
+<br />
+<b>Syntax<br />
+<i>wheelNum</i></b> – A value between 0 and 7, specifying a specific wheel/hub.<br />
+<i><b>isPowered</b></i> – A boolean value.  If set to true, this wheel will contribute to the powered motion of the vehicle, otherwise it will only affect non-powered motion such as rolling and steering.<br />
+<br />
+<b>Returns</b><br />
+Returns true if <i><b>wheelNum</b></i> was successfully set to powered or un-powered.  Will return false if <i><b>wheelNum</b></i> does not specify a valid hub.<br />
+<br />
+<b>Notes</b><br />
+By default, all wheels/hubs are powered.<br />
+<br />
+<b>See Also</b><br />
+getWheelCount<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setWheelSpring( <i>wheelNum</i> , <i>springDB</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setWheelSpring</b></i> method to assign a WheeledVehicleSpring datablock to the specified hub.<br />
+<br />
+<b>Syntax<br />
+<i>wheelNum</i></b> – A value between 0 and 7, specifying a specific wheel/hub.<br />
+<i><b>springDB</b></i> – The name of ID of a previously specified  WheeledVehicleSpring datablock.<br />
+<br />
+<b>Returns</b><br />
+Returns true if <i><b>wheelNum</b></i> was successfully assigned a new spring datablock, otherwise returns false.<br />
+<br />
+<b>Notes</b><br />
+You may change the springs on a wheeled tire at any time, allowing you to enhance vehicles or make them subject to damage.<br />
+<br />
+Each tire can have its own customized spring datablock.<br />
+<br />
+<b>See Also</b><br />
+getWheelCount<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setWheelSteering( <i>wheelNum</i>, <i>steerAngle</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <b>setWheelSteering</b> method to set that maximum steering angle (away from center) as <i><b>steerAngle</b></i> (radians) for wheel <i><b>wheelNum</b></i>.  <br />
+<br />
+This limits the turning angle for the vehicle. <br />
+<br />
+<b>Syntax<br />
+<i>wheelNum</i></b> – A value between 0 and 7, specifying a specific wheel/hub.<br />
+<i><b>steerAngle</b></i> – An angular value between 0.0 and 1.57 radians specifying maximum turning angle this wheel can take.<br />
+<br />
+<b>Returns</b><br />
+Returns true if <i><b>wheelNum</b></i> was successfully set the requested <i><b>steerAngle</b></i>, otherwise returns false.<br />
+<br />
+<b>See Also</b><br />
+getwheelCount<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setWheelTire( wheelNum , tireDB )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <b>setWheelTire</b> method to assign a previously specified WheeledVehicleTire datablock to the requested hub.<br />
+<br />
+<b>Syntax<br />
+<i>wheelNum</i></b> – A value between 0 and 7, specifying a specific wheel/hub.<br />
+<b>tireDB</b> – The name of ID of a previously specified WheeledVehicleTire datablock.<br />
+<br />
+<b>Returns</b><br />
+Returns true if <i><b>wheelNum</b></i> was successfully assigned a new WheeledVehicleTire datablock.<br />
+<br />
+<b>Notes</b><br />
+Tires may be changed at any time during the game.<br />
+<br />
+<b>See Also</b><br />
+getWheelCount<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="WheeledVehicleData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink6"></a>WheeledVehicleData</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">Datablock associated with wheeledvehicle object class.<br />
+<br />
+</p>
+<a name="Fields_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink7"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">engineBrake</td>	
+<td width="55%" bgcolor="#CCCCCC">Floating-point value specifying how much the engine brakes when the engine is not engaged (i.e. when the forward key is pressed).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">engineSound</td>	
+<td width="55%" bgcolor="#CCCCCC">AudioProfile specifying sound to play when engine is engaged.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">engineTorque</td>	
+<td width="55%" bgcolor="#CCCCCC">Floating-point value specifying the power of the engine.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">jetSound</td>	
+<td width="55%" bgcolor="#CCCCCC">AudioProfile specifying sound to play when jets are engaged.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxWheelSpeed</td>	
+<td width="55%" bgcolor="#CCCCCC">Floating-point value specifying maximum rotational velocity for tires.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">squealSound</td>	
+<td width="55%" bgcolor="#CCCCCC">AudioProfile specifying sound to play when tires break friction.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">tireEmitter</td>	
+<td width="55%" bgcolor="#CCCCCC">ParticleEmitterData datablock for tire emitters.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">wheelImpactSound</td>	
+<td width="55%" bgcolor="#CCCCCC">AudioProfile specifying sound to play when tires impact 'ground'.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">brakeTorque</td>	
+<td width="55%" bgcolor="#CCCCCC">Floating-point value specifying the power of the brakes.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="WheeledVehicleSpring" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink8"></a>WheeledVehicleSpring</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">Datablock used to describe vehicle suspension(s).<br />
+<br />
+</p>
+<a name="Fields_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink9"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">antiSwayForce</td>	
+<td width="55%" bgcolor="#CCCCCC">Force which acts to dampen lateral sway introduced when wheels opposite eachother are extended at different lengths.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"> [ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">damping</td>	
+<td width="55%" bgcolor="#CCCCCC">Dampening force which counter-acts the spring's force.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"> [ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">force</td>	
+<td width="55%" bgcolor="#CCCCCC">The force of the spring. Spring forces act straight up and are applied at the spring's root position, which is defined in the vehicle's shape.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"> [ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">length</td>	
+<td width="55%" bgcolor="#CCCCCC">The length of suspension travel from the root position.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"> [ 0.0 , inf.0 )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="WheeledVehicleTire" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink10"></a>WheeledVehicleTire</h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">Summary of object.<br />
+<br />
+</p>
+<a name="Fields_4" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink11"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="55%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="25%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">kineticFriction</td>	
+<td width="55%" bgcolor="#CCCCCC">Used in the physical simulation to represent the tire's surface friction when it is slipping (has no traction).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"> [ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lateralDamping</td>	
+<td width="55%" bgcolor="#CCCCCC">Measures the dampening force applied against lateral forces generated by the tire. See the lateralForce field documentation for more information on vehicle physics as they relate to wheel forces.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lateralForce</td>	
+<td width="55%" bgcolor="#CCCCCC">Used in the physical simulation to represent the tire's lateral force. Lateral force can in simple terms be considered left/right steering force. WheeledVehicles are acted upon by forces generated by their tires and the lateralForce measures the magnitude of the force exerted on the vehicle when the tires are deformed along the x-axis. With real wheeled vehicles, tires are constantly being deformed and it is the interplay of deformation forces which determines how a vehicle moves. In Torque's simulation of vehicle physics, tire deformation obviously can't be handled with absolute realism, but the interplay of a vehicle's velocity, its engine's torque and braking forces, and its wheels' friction, lateral deformation, lateralDamping, lateralRelaxation, longitudinal deformation, longitudinalDamping, and longitudinalRelaxation forces, along with its wheels' angular velocity are combined to create a robust real-time physical simulation. For this field, the larger the value supplied for the lateralForce, the larger the effect steering moves can have. In Torque tire forces are applied at a vehicle's wheel hubs.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lateralRelaxation</td>	
+<td width="55%" bgcolor="#CCCCCC">Measures the relaxing force applied against lateral forces generated by the tire. The lateralRelaxation force measures how strongly the tire effectively un-deforms. See the lateralForce field documentation for more information on vehicle physics as they relate to wheel forces.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"> [ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">logitudinalRelaxation <br />(yes, an engine typo)</td>	
+<td width="55%" bgcolor="#CCCCCC">Measures the relaxing force applied against longitudinal forces generated by the tire. The longitudinalRelaxation force measures how strongly the tire effectively un-deforms. See the longitudinalForce field documentation for more information on longitudinal tire forces, and the laterForce field documentation for more information on general vehicle physics as they relate to wheel forces.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">longitudinalDamping</td>	
+<td width="55%" bgcolor="#CCCCCC">Measures the dampening force applied against longitudinal forces generated by the tire. See the longitudinalForce field documentation for more information on longitudinal tire forces, and the laterForce field documentation for more information on general vehicle physics as they relate to wheel forces.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"> [ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">longitudinalForce</td>	
+<td width="55%" bgcolor="#CCCCCC">Used in the physical simulation to represent the tire's longitudinal force. Longitudinal force can in simple terms be considered forward/backward movement force. WheeledVehicles are acted upon by forces generated by their tires and the longitudinalForce measures the magnitude of the force exerted on the vehicle when the tires are deformed along the y-axis. See the lateralForce field documentation for more information on wheeled vehicle physics. For this field, the larger the value supplied for the longitudinalForce, the larger the effect acceleration/deceleration moves can have.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">mass</td>	
+<td width="55%" bgcolor="#CCCCCC">The mass of the entire wheel. Used in the physics simulation, see the documentation for the WheeledVehicleData datablock for more information. The wheel's mass does not need to be specified in script.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"> [ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">radius</td>	
+<td width="55%" bgcolor="#CCCCCC">The tire's radius. The radius is determined from the boundix box of the shape provided in the shapefile field, and does not need to be specified in script. The tire should be built with it's hub axis along the object's Y-axis.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">restitution</td>	
+<td width="55%" bgcolor="#CCCCCC">Note: this field currently has no tangible effect in the engine's simulation.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">-</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">shapeFile</td>	
+<td width="55%" bgcolor="#CCCCCC">The path and file name of a shape file to be used for the wheel. Must adhere to the semantics associated with the Filename datatype, as defined in the engine.</td>
+<td width="25%" align="center" bgcolor="#CCCCCC">~/path/filename.dts</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">staticFriction</td>	
+<td width="55%" bgcolor="#CCCCCC">Used in the physical simulation to represent the tire's surface friction when it is not slipping (has traction).</td>
+<td width="25%" align="center" bgcolor="#CCCCCC"> [ 0.0 , inf.0 )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><a href="Console%20Objects.html" title="Torque Console Objects TOC"> Table of Contents</a> || <a href="Torque_Console_Objects_1.html" title="Torque Console Objects"> Part 1</a> || <a href="Torque_Console_Objects_2.html" title="Torque Console Objects 2"> Part 2</a> || <a href="Torque_Console_Objects_3.html" title="Torque Console Objects 3"> Part 3</a> || <a href="Torque_Console_Objects_4.html" title="Torque Console Objects 4"> Part 4</a> || <a href="Torque_Console_Objects_5.html" title="Torque Console Objects 5"> Part 5</a> || <a href="Torque_Console_Objects_6.html" title="Torque Console Objects 6"> Part 6</a> || <a href="Torque_Console_Objects_7.html" title="Torque Console Objects 7"> Part 7</a> || <a href="Torque_Console_Objects_8.html" title="Torque Console Objects 8"> Part 8</a> || <a href="Torque_Console_Objects_9.html" title="Torque Console Objects 9"> Part 9</a> || <a href="Torque_Console_Objects_10.html" title="Torque Console Objects 10"> Part 10</a> || <a href="Torque_Console_Objects_11.html" title="Torque Console Objects 11"> Part 11</a> || <a href="Torque_Console_Objects_12.html" title="Torque Console Objects 12"> Part 12</a> || <a href="Torque_Console_Objects_13.html" title="Torque Console Objects 13"> Part 13</a> || <a href="Torque_Console_Objects_14.html" title="Torque Console Objects 14"> Part 14</a>
+</p>
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_15.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:01 GMT -->
+</html>

@@ -1,0 +1,1050 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4238;
+   parent.leftFrame.expandToItem('tree2', 'doc4238');
+   var element = parent.leftFrame.document.getElementById('doc4238');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>Torque Console Objects 3 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+ <table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console_Objects_Fields_and_Methods_Quick_Reference_Part_3"><span class="tocnumber">1</span> <span class="toctext">Console Objects Fields and Methods Quick Reference Part 3</span></a>
+<ul>
+<li class="toclevel-2"><a href="#FileObject"><span class="tocnumber">1.1</span> <span class="toctext">FileObject</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Method_Summaries"><span class="tocnumber">1.1.1</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods"><span class="tocnumber">1.1.2</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#FlyingVehicle"><span class="tocnumber">1.2</span> <span class="toctext">FlyingVehicle</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields"><span class="tocnumber">1.2.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#FlyingVehicleData"><span class="tocnumber">1.3</span> <span class="toctext">FlyingVehicleData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_2"><span class="tocnumber">1.3.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#fxFoliageReplicator"><span class="tocnumber">1.4</span> <span class="toctext">fxFoliageReplicator</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_3"><span class="tocnumber">1.4.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Console_functions"><span class="tocnumber">1.4.2</span> <span class="toctext">Console functions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#fxLight"><span class="tocnumber">1.5</span> <span class="toctext">fxLight</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_4"><span class="tocnumber">1.5.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Console_Method_Summaries_2"><span class="tocnumber">1.5.2</span> <span class="toctext">Console Method Summaries</span></a></li>
+<li class="toclevel-3"><a href="#Console_Methods_2"><span class="tocnumber">1.5.3</span> <span class="toctext">Console Methods</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Console_Objects_Fields_and_Methods_Quick_Reference_Part_3"></a><h1><a name = "HeaderLink1"></a>Console Objects Fields and Methods Quick Reference Part 3</h1>
+<p><br />
+</p><p><br />
+This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br /><br />
+</p>
+<a name="FileObject"></a><h3><a name = "HeaderLink2"></a> FileObject </h3>
+<hr />
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<a name="Console_Method_Summaries" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink3"></a>Console Method Summaries</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" bgcolor="#009900"><div class="center">close</div></td>
+<td width="33%" bgcolor="#009900"><div class="center">isEOF</div></td>
+<td width="34%" bgcolor="#009900"><div class="center">openForAppend</div></td>
+</tr>
+
+<tr>
+<td width="33%" bgcolor="#009900"><div class="center">openForRead</div></td>
+<td width="33%" bgcolor="#009900"><div class="center">openForWrite</div></td>
+<td width="34%" bgcolor="#009900"><div class="center">readLine</div></td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<a name="Console_Methods" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink4"></a>Console Methods </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>close()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>close</b></i> method to close the current file handle. If the file was opened for writing, this flushes the contents of the last write to disk.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+openForAppend, openForRead, openForWrite<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isEOF()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isEOF</b></i> method to check to see if the end of the current file (opened for read) has been reaached.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the end of file has been reached, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+openForRead <br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>openForAppend( filename )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>openForAppend</b></i> method to open a previously created file for appending.  If the file specified by filename does not exist, the file is created first.<br />
+<br />
+<b>Syntax<br />
+<i>filename</i></b> – The path and filename of the file to open for appending.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the file was succesfully opened for appending, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+close, openForRead, openForWrite<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>openForRead( filename )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>openForRead</b></i> method to open a previously created file for reading.<br />
+<br />
+<b>Syntax<br />
+<i>filename</i></b> – The path and filename of the file to open for reading.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the file was succesfully opened for reading, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+close, OpenForAppend, OpenForWrite<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>openForWrite( filename )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>openForWrite</b></i> method to previously created or a new file for writing.  In either case, the file will be overwritten.<br />
+<br />
+<b>Syntax<br />
+<i>filename</i></b> – The path and filename of the file to open for writing.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the file was succesfully opened for writing, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+close, OpenForAppend, openForRead<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>readLine()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>readLine</b></i> method to read a single line from a file previously opened for reading. <br />
+<br />
+<b>Returns</b><br />
+Returns the next line in the file, or a NULL string if the end-of-file has been reached.<br />
+<br />
+<b>Notes</b><br />
+Use <i>isEOF</i> to check for end of file while reading.<br />
+<br />
+<b>See Also</b><br />
+isEOF, openForRead<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>writeLine( text )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>writeLine</b></i> method to write a value ( <i><b>text</b></i> ) into a file that was previously opened for appending or over-writing.<br />
+<br />
+<b>Syntax<br />
+<i>text</i></b> – The value to write to the file.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+See Also<br />
+openForAppend, openForWrite<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="FlyingVehicle" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink5"></a> FlyingVehicle </h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This class is used represent the flying variety of vehicles. It can be used to represent any variety of flying vehicle, including jets, biplanes, or rocket ships. If you do not actually need a flying vehicle, it is suggested that you use the hover vehicle instead which will closely approximate many similar needs.<br />
+<br />
+</p>
+<a name="Fields" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink6"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">disableMove</td>	
+<td width="60%" bgcolor="#CCCCCC">If set to true, this vehicle will not be allowed to move.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="FlyingVehicleData" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink7"></a> FlyingVehicleData </h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Fields_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink8"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">autoAngularForce</td>	
+<td width="60%" bgcolor="#CCCCCC">Angular stabilizer force. This force levels you out when autostabilizer kicks in.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">autoInputDamping</td>	
+<td width="60%" bgcolor="#CCCCCC">Amount by which input is damped to reduce occilations caused by too much input.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">autoLinearForce</td>	
+<td width="60%" bgcolor="#CCCCCC">Linear stabilzer force. This slows you down when autostabilizer kicks in.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">backwardJetEmitter</td>	
+<td width="60%" bgcolor="#CCCCCC">ParticleEmitterData datablock used for the thrust backward jet emitter.  Emitter will be attached at node: JetNozzleX.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">createHoverHeight</td>	
+<td width="60%" bgcolor="#CCCCCC">If set to true, uses hoverHeight to specify height to hover after creation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">downJetEmitter</td>	
+<td width="60%" bgcolor="#CCCCCC">ParticleEmitterData datablock used for the downward thrust jet emitter(s).  Emitters will be attached at nodes: JetNozzle2 , and JetNozzle3.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">engineSound</td>	
+<td width="60%" bgcolor="#CCCCCC">AudioProfile for engine ambient sound.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">forwardJetEmitter</td>	
+<td width="60%" bgcolor="#CCCCCC">ParticleEmitterData datablock used for the forward thrust jet emitter(s).  Emitters will be attached at nodes: JetNozzle0 , and JetNozzle1.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">horizontalSurfaceForce</td>	
+<td width="60%" bgcolor="#CCCCCC">Wing thrust used in climbing and diving.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">hoverHeight</td>	
+<td width="60%" bgcolor="#CCCCCC">Height to hover at after creation if createHoverHeight is set to true.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">jetSound</td>	
+<td width="60%" bgcolor="#CCCCCC">AudioProfile for engine thrust sound.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maneuveringForce</td>	
+<td width="60%" bgcolor="#CCCCCC">Horizontal thrust force.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxAutoSpeed</td>	
+<td width="60%" bgcolor="#CCCCCC">Autostabilizer/AutoLinearForce are enabled when the vehicle's velocity magnitude drops below this value.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minTrailSpeed</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum speed at which contrails turn on.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">rollForce</td>	
+<td width="60%" bgcolor="#CCCCCC">Automatically applied rolling force used to 'right' a tilted vehicle.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">rotationalDrag</td>	
+<td width="60%" bgcolor="#CCCCCC">Amount of drag applied to rotation about the vehicles up axis.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">steeringForce</td>	
+<td width="60%" bgcolor="#CCCCCC">Strength of turning thrust.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">steeringRollForce</td>	
+<td width="60%" bgcolor="#CCCCCC">How much you roll when turning.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">trailEmitter</td>	
+<td width="60%" bgcolor="#CCCCCC">
+ParticleEmitterData datablock used for the contrail emitter(s).  Emitters will be attached at nodes: contrail0 , contrail1, contrail2, and contrail3.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">verticalSurfaceForce</td>	
+<td width="60%" bgcolor="#CCCCCC">Wing thrust used in 'sliding' side to side during turns.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">vertThrustMultiple</td>	
+<td width="60%" bgcolor="#CCCCCC">TypeF32</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="fxFoliageReplicator" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink9"></a> fxFoliageReplicator </h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This class was originally intended to represent foliage in the scene. In fact, it can be used to represent anything that is displayed using a billboard. The value of this class is that all of the objects represented by a single foliage replicator are tied to a single instance of the class. Thus, regardless of the number of objects which may be displayed by any single foliage replicator the same network bandwidth is used. The billboards may be given a variety of behaviors and attributes.  They may be stretched, self lighted, they may sway, and they may be are restricted to specific areas.<br />
+<br />
+</p>
+<a name="Fields_3" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink10"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC"><b>Transform</b></td>	
+<td width="60%" bgcolor="#CCCCCC"></td>
+<td width="20%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">position</td>	
+<td width="60%" bgcolor="#CCCCCC">XYZ position of fx object.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“10.0 20. 0.0”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">rotation</td>	
+<td width="60%" bgcolor="#CCCCCC">Values have no effect.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">scale</td>	
+<td width="60%" bgcolor="#CCCCCC">Values have no effect.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC"><b>Debugging</b></td>	
+<td width="60%" bgcolor="#CCCCCC"></td>
+<td width="20%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">useDebugInfo</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable debug feedback.  Some features must be uncommented in code to turn them on.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">debugBoxHeight</td>	
+<td width="60%" bgcolor="#CCCCCC">Quad-tree box heights.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">HideFoliage</td>	
+<td width="60%" bgcolor="#CCCCCC">Stop displaying foliage.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">showPlacementArea</td>	
+<td width="60%" bgcolor="#CCCCCC">Show the placement feedback device.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">placementAreaHeight</td>	
+<td width="60%" bgcolor="#CCCCCC">Changes height of feedback device.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">placementColour</td>	
+<td width="60%" bgcolor="#CCCCCC">Changes color of feedback device.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“1.0 1.0 1.0 1.0”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC"><b>Media/Replications</b></td>	
+<td width="60%" bgcolor="#CCCCCC"></td>
+<td width="20%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">seed</td>	
+<td width="60%" bgcolor="#CCCCCC">Value used to deterministically generate random object positions and parameters.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">foliageFile</td>	
+<td width="60%" bgcolor="#CCCCCC">Texture file to use for foliage.  Must be suitable for use as billboard.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">~/path/filename</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">foliageCount</td>	
+<td width="60%" bgcolor="#CCCCCC">Number of billboards to replicate.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">foliageRetries</td>	
+<td width="60%" bgcolor="#CCCCCC">Determines how many times to attempt to place a billboard.  Retries are sometimes required in order to meet placement criteria.  Failed placement attempts result fewer objects placed.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC"><b>Area/Placement Radius</b></td>	
+<td width="60%" bgcolor="#CCCCCC"></td>
+<td width="20%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">innerRadiusX</td>	
+<td width="60%" bgcolor="#CCCCCC">X dimension of inner do-not-place ellipse. Objects are not allowed in ellipse described by this and the InnerRadiusY dimension.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">innerRadiusY</td>	
+<td width="60%" bgcolor="#CCCCCC">Y dimension of inner do-not-place ellipse. Objects are not allowed in ellipse described by this and the InnerRadiusX dimension.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">outerRadiusX</td>	
+<td width="60%" bgcolor="#CCCCCC">X dimension of outer do-not-place ellipse. Objects are not allowed outside ellipse described by this and the OuterRadiusY dimension.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">outerRadiuxY</td>	
+<td width="60%" bgcolor="#CCCCCC">Y dimension of outer do-not-place ellipse. Objects are not allowed outside ellipse described by this and the OuterRadiusX dimension.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC"><b>Dimension</b></td>	
+<td width="60%" bgcolor="#CCCCCC"></td>
+<td width="20%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minWidth</td>	
+<td width="60%" bgcolor="#CCCCCC">If scaling enabled (FixSizeToMax == false), this defines the billboard’s minimum width.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxWidth</td>	
+<td width="60%" bgcolor="#CCCCCC">If scaling enabled (FixSizeToMax == false), this defines the billboard’s maximum width.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minHeight</td>	
+<td width="60%" bgcolor="#CCCCCC">If scaling enabled (FixSizeToMax == false), this defines the billboard’s minimum height.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxHeight</td>	
+<td width="60%" bgcolor="#CCCCCC">If scaling enabled (FixSizeToMax == false), this defines the billboard’s maximum height.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">fixAspectRatio</td>	
+<td width="60%" bgcolor="#CCCCCC">Prevents texture stretching.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">fixSizeToMax</td>	
+<td width="60%" bgcolor="#CCCCCC">Forces all billboards to use MaxWidth and MaxHeight as their respective width and height.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">offsetZ</td>	
+<td width="60%" bgcolor="#CCCCCC">This allows you to assist placement by lowering or raising the billboard by a fixed amount.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -0.inf , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">randomFlip</td>	
+<td width="60%" bgcolor="#CCCCCC">Allows random horizontal flipping of billboards, increasing variation for non-symmetric bilboards.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC"><b>Culling</b></td>	
+<td width="60%" bgcolor="#CCCCCC"></td>
+<td width="20%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">&lt;useCulling&gt;</td>	
+<td width="60%" bgcolor="#CCCCCC">Enables culling algorithms.  i.e. test whether a billboard is within view before rendering it. Warning: Computing overhead offsets value for small placements.  Only use for large placements if at all.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">cullResolution</td>	
+<td width="60%" bgcolor="#CCCCCC">Determines size of culling quads.  Lower values of CullResolution take longer to cull but more effetively removes non-visible billboards. Higher values of CullResolution take less time, but end up rendering more non-visible billboards. Tradeoff: Culling Time vs. Fill Rate.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 8 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">viewDistance</td>	
+<td width="60%" bgcolor="#CCCCCC">When a billboards is at distane ViewDistance from the camera, it will be completely visible.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">viewClosest</td>	
+<td width="60%" bgcolor="#CCCCCC">Controls closest point at which billboards will begin to fade out.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">fadeInRegion<br /><br />
+fadeOutRegion</td>	
+<td width="60%" bgcolor="#CCCCCC">Together, these determine width of region between fade-in and fade-out.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">alphaCutoff</td>	
+<td width="60%" bgcolor="#CCCCCC">Controls general alpha level for rendering billboards.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">groundAlpha</td>	
+<td width="60%" bgcolor="#CCCCCC">Controls alpha in region near ground.  For fixing artifacts between billboard and ground.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC"><b>Animation</b></td>	
+<td width="60%" bgcolor="#CCCCCC"></td>
+<td width="20%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">swayOn</td>	
+<td width="60%" bgcolor="#CCCCCC">Enables sway animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">swaySync</td>	
+<td width="60%" bgcolor="#CCCCCC">All bilboards sway in sync for this fx Object.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">swayMagSide</td>	
+<td width="60%" bgcolor="#CCCCCC">Side-to-side swaying magnitude.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">swayMagFront</td>	
+<td width="60%" bgcolor="#CCCCCC">Back-and-forth swaying magnitude.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minSwayTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum sway time. Sway times are randomly chosen between a min and max on a per swing basis.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxSwayTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum sway time. Sway times are randomly chosen between a min and max on a per swing basis.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC"><b>Lighting</b></td>	
+<td width="60%" bgcolor="#CCCCCC"></td>
+<td width="20%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightOn</td>	
+<td width="60%" bgcolor="#CCCCCC">Turns on luminance (self lighting).</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false ,true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightSync</td>	
+<td width="60%" bgcolor="#CCCCCC">Light billboards in sync.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">minLuminance</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum light value.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , maxLuminance ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">maxLuminance</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum light value.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ minLuminance , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">lightTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Time required to transition from Min to Max and Max to Min. i.e. each duration is equal to lightTime.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC"><b>Restrictions/Restraints</b></td>	
+<td width="60%" bgcolor="#CCCCCC"></td>
+<td width="20%" align="center" bgcolor="#CCCCCC"></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">allowOnTerrain</td>	
+<td width="60%" bgcolor="#CCCCCC">Allows objects to be placed on terrain.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">allowOnInteriors</td>	
+<td width="60%" bgcolor="#CCCCCC">Allows objects to be placed on interiors.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">allowOnStatics</td>	
+<td width="60%" bgcolor="#CCCCCC">Allows objects to be placed on static shapes.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">allowOnWater</td>	
+<td width="60%" bgcolor="#CCCCCC">Allows objects to be placed in area covered by water.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">allowWaterSurface</td>	
+<td width="60%" bgcolor="#CCCCCC">Place on surface of water.  Otherwise will be placed on terrain below water.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">allowedTerrainSlope</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum slope to place on.  Slopes beyond this value will be devoid of objects.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_functions" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink11"></a>Console functions </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="100%" bgcolor="#009900"><div class="center">startFoliageReplication()</div></td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>startFoliageReplication()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>startFoliageReplication</b></i> function to start the foliage replication system.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+This can be called before be called after replication objects have been placed, but it should only be called once, and if it is not called, replicators will not work.<br />
+<br />
+<b>See Also</b><br />
+startClientReplication<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="fxLight" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink12"></a> fxLight </h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">The fxLight object is used to represent in-game lights with and respective flares.  This object casts (dynamic) light in the scene.  It renders both a representation of the light source flare, and casts light on terrain and other objects.<br />
+<br />
+</p>
+<a name="Fields_4" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink13"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">enable</td>	
+<td width="60%" bgcolor="#CCCCCC">Boolean value enabling this light.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">iconSize</td>	
+<td width="60%" bgcolor="#CCCCCC">Floating-point value specifying render size of flare.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">( -inf.0 , inf.0 )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Method_Summaries_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink14"></a>Console Method Summaries </h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" bgcolor="#009900"><div class="center">attachToObject</div></td>
+<td width="33%" bgcolor="#009900"><div class="center">detachFromObject</div></td>
+<td width="34%" bgcolor="#009900"><div class="center">reset</div></td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Methods_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink15"></a>Console Methods</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>attachToObject( obj )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>attachToObject</b></i> method to attach this fxLight object to GameBase object.<br />
+<br />
+<b>Syntax<br />
+<i>obj</i></b> – A GameBase derived object to attach to<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+This method name is bit of a misnomer.  When an fxLight object is attached to another object, it doesn't mean the fxLight will move with the object, but rather that if the object the fxLight is attached to is deleted, this object will be deleted.  Also, the fxLight will always be processed (for rendering) after the object it is attached to.<br />
+<br />
+<b>See Also</b><br />
+detachFromObject<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>detachFromObject()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>detachFromObject</b></i> method to detach this fxLight from the last object it was attached to.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+attachToObject<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>reset()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>reset</b></i> method to lighting, animation, and texture of the current fxLight.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setEnable( enabled )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setEnable</b></i> method to enable or disable an fxLight.<br />
+<br />
+<b>Syntax<br />
+<i>enabled</i></b> – A boolean value.  If set to true, this fxLight will cast light and be rendered.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><a href="Console%20Objects.html" title="Torque Console Objects TOC"> Table of Contents</a> || <a href="Torque_Console_Objects_1.html" title="Torque Console Objects"> Part 1</a> || <a href="Torque_Console_Objects_2.html" title="Torque Console Objects 2"> Part 2</a> || <a href="Torque_Console_Objects_4.html" title="Torque Console Objects 4"> Part 4</a> || <a href="Torque_Console_Objects_5.html" title="Torque Console Objects 5"> Part 5</a> || <a href="Torque_Console_Objects_6.html" title="Torque Console Objects 6"> Part 6</a> || <a href="Torque_Console_Objects_7.html" title="Torque Console Objects 7"> Part 7</a> || <a href="Torque_Console_Objects_8.html" title="Torque Console Objects 8"> Part 8</a> || <a href="Torque_Console_Objects_9.html" title="Torque Console Objects 9"> Part 9</a> || <a href="Torque_Console_Objects_10.html" title="Torque Console Objects 10"> Part 10</a> || <a href="Torque_Console_Objects_11.html" title="Torque Console Objects 11"> Part 11</a> || <a href="Torque_Console_Objects_12.html" title="Torque Console Objects 12"> Part 12</a> || <a href="Torque_Console_Objects_13.html" title="Torque Console Objects 13"> Part 13</a> || <a href="Torque_Console_Objects_14.html" title="Torque Console Objects 14"> Part 14</a> || <a href="Torque_Console_Objects_15.html" title="Torque Console Objects 15"> Part 15</a>
+</p>
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:02 GMT -->
+</html>

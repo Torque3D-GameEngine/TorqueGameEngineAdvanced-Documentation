@@ -1,0 +1,1227 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_21.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4234;
+   parent.leftFrame.expandToItem('tree2', 'doc4234');
+   var element = parent.leftFrame.document.getElementById('doc4234');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueScript Console Functions 21 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <p xmlns="http://www.w3.org/1999/xhtml"><big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <strong> Math</strong><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table id="toc" class="toc" xmlns="http://www.w3.org/1999/xhtml"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Math"><span class="tocnumber">1</span> <span class="toctext">Math</span></a>
+<ul>
+<li class="toclevel-2"><a href="#getBoxCenter.28_box_.29"><span class="tocnumber">1.1</span> <span class="toctext">getBoxCenter( box )</span></a></li>
+<li class="toclevel-2"><a href="#getRandomSeed.28.29"><span class="tocnumber">1.2</span> <span class="toctext">getRandomSeed()</span></a></li>
+<li class="toclevel-2"><a href="#mAbs.28_val_.29"><span class="tocnumber">1.3</span> <span class="toctext">mAbs( val )</span></a></li>
+<li class="toclevel-2"><a href="#mAcos.28_val_.29"><span class="tocnumber">1.4</span> <span class="toctext">mAcos( val )</span></a></li>
+<li class="toclevel-2"><a href="#mAsin.28_val_.29"><span class="tocnumber">1.5</span> <span class="toctext">mAsin( val )</span></a></li>
+<li class="toclevel-2"><a href="#mAtan.28_val_.29"><span class="tocnumber">1.6</span> <span class="toctext">mAtan( val )</span></a></li>
+<li class="toclevel-2"><a href="#mathInit.28_extention_.29"><span class="tocnumber">1.7</span> <span class="toctext">mathInit( extention )</span></a></li>
+<li class="toclevel-2"><a href="#matrixCreate.28_posVec_.2C_rotVec_.29"><span class="tocnumber">1.8</span> <span class="toctext">matrixCreate( posVec , rotVec )</span></a></li>
+<li class="toclevel-2"><a href="#MatrixCreateFromEuler_.28_rotVec_.29"><span class="tocnumber">1.9</span> <span class="toctext">MatrixCreateFromEuler ( rotVec )</span></a></li>
+<li class="toclevel-2"><a href="#MatrixMulPoint.28_transform_.2C_point_.29"><span class="tocnumber">1.10</span> <span class="toctext">MatrixMulPoint( transform , point )</span></a></li>
+<li class="toclevel-2"><a href="#MatrixMultiply.28_transformA_.2C_transformB_.29"><span class="tocnumber">1.11</span> <span class="toctext">MatrixMultiply( transformA , transformB )</span></a></li>
+<li class="toclevel-2"><a href="#MatrixMulVector.28_vector.2C_transfrom.29"><span class="tocnumber">1.12</span> <span class="toctext">MatrixMulVector( vector, transfrom)</span></a></li>
+<li class="toclevel-2"><a href="#mCeil.28_val_.29"><span class="tocnumber">1.13</span> <span class="toctext">mCeil( val )</span></a></li>
+<li class="toclevel-2"><a href="#mCos.28_val_.29"><span class="tocnumber">1.14</span> <span class="toctext">mCos( val )</span></a></li>
+<li class="toclevel-2"><a href="#mDegToRad.28_val_.29"><span class="tocnumber">1.15</span> <span class="toctext">mDegToRad( val )</span></a></li>
+<li class="toclevel-2"><a href="#mFloatLength.28_val_.2C_numDecimals_.29"><span class="tocnumber">1.16</span> <span class="toctext">mFloatLength( val , numDecimals )</span></a></li>
+<li class="toclevel-2"><a href="#mFloor.28_val_.29"><span class="tocnumber">1.17</span> <span class="toctext">mFloor( val )</span></a></li>
+<li class="toclevel-2"><a href="#mLog.28_val_.29"><span class="tocnumber">1.18</span> <span class="toctext">mLog( val )</span></a></li>
+<li class="toclevel-2"><a href="#mPow.28_val_.2C_power_.29"><span class="tocnumber">1.19</span> <span class="toctext">mPow( val , power )</span></a></li>
+<li class="toclevel-2"><a href="#mRadToDeg.28_val_.29"><span class="tocnumber">1.20</span> <span class="toctext">mRadToDeg( val )</span></a></li>
+<li class="toclevel-2"><a href="#mSin.28_val_.29"><span class="tocnumber">1.21</span> <span class="toctext">mSin( val )</span></a></li>
+<li class="toclevel-2"><a href="#mSolveCubic.28_a_.2C_b_.2C_c_.2C_d_.29"><span class="tocnumber">1.22</span> <span class="toctext">mSolveCubic( a , b , c , d )</span></a></li>
+<li class="toclevel-2"><a href="#mSolveQuadratic.28_a_.2C_b_.2C_c_.29"><span class="tocnumber">1.23</span> <span class="toctext">mSolveQuadratic( a , b , c )</span></a></li>
+<li class="toclevel-2"><a href="#mSolveQuartic.28a.2Cb.2Cc.2Cd.2Ce.29"><span class="tocnumber">1.24</span> <span class="toctext">mSolveQuartic(a,b,c,d,e)</span></a></li>
+<li class="toclevel-2"><a href="#mSqrt.28_val_.29"><span class="tocnumber">1.25</span> <span class="toctext">mSqrt( val )</span></a></li>
+<li class="toclevel-2"><a href="#mTan.28_val_.29"><span class="tocnumber">1.26</span> <span class="toctext">mTan( val )</span></a></li>
+<li class="toclevel-2"><a href="#setRandomSeed.28_startSeed_.29"><span class="tocnumber">1.27</span> <span class="toctext">setRandomSeed( startSeed )</span></a></li>
+<li class="toclevel-2"><a href="#VectorAdd.28_vecA_.2C_vecB_.29"><span class="tocnumber">1.28</span> <span class="toctext">VectorAdd( vecA , vecB )</span></a></li>
+<li class="toclevel-2"><a href="#VectorCross.28_vecA_.2C_vecB_.29"><span class="tocnumber">1.29</span> <span class="toctext">VectorCross( vecA , vecB )</span></a></li>
+<li class="toclevel-2"><a href="#VectorDist.28_vecA_.2C_vecB_.29"><span class="tocnumber">1.30</span> <span class="toctext">VectorDist( vecA , vecB )</span></a></li>
+<li class="toclevel-2"><a href="#VectorDot.28_vecA_.2C_vecB_.29"><span class="tocnumber">1.31</span> <span class="toctext">VectorDot( vecA , vecB )</span></a></li>
+<li class="toclevel-2"><a href="#VectorLen.28_vec_.29"><span class="tocnumber">1.32</span> <span class="toctext">VectorLen( vec )</span></a></li>
+<li class="toclevel-2"><a href="#VectorNormalize.28_vec_.29"><span class="tocnumber">1.33</span> <span class="toctext">VectorNormalize( vec )</span></a></li>
+<li class="toclevel-2"><a href="#VectorOrthoBasis.28_vec_.29"><span class="tocnumber">1.34</span> <span class="toctext">VectorOrthoBasis( vec )</span></a></li>
+<li class="toclevel-2"><a href="#VectorScale.28_vec_.2C_scale_.29"><span class="tocnumber">1.35</span> <span class="toctext">VectorScale( vec , scale )</span></a></li>
+<li class="toclevel-2"><a href="#VectorSub.28_vecA_.2C_vecB_.29"><span class="tocnumber">1.36</span> <span class="toctext">VectorSub( vecA , vecB )</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p xmlns="http://www.w3.org/1999/xhtml"></p>
+<a name="Math" xmlns="http://www.w3.org/1999/xhtml"></a><h2 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink1"></a>Math</h2>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getBoxCenter.28_box_.29"></a><h3><a name = "HeaderLink2"></a>getBoxCenter( box )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getBoxCenter</b></i> function to find the centroid of a cube (box).<br />
+<br />
+<i><b>Syntax<br />
+box</b></i> – A vector containing two three-element floating-point position vectors: "X1 Y1 Z1 X2 Y2 Z2".<br />
+<br />
+<b>Returns</b><br />
+Returns a vector containg a three-element floating-point position vector equal to the centroid of the area defined by <i><b>box</b></i>.<br />
+<br />
+</p>
+<pre>
+%pos = getBoxCenter( %this.getWorldBox() );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b> 
+<p>getRandom(  )<br />
+getRandom( max )<br />
+getRandom( min , max )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getRandom</b></i> function to get a random floating-point <u>or</u> integer value.  This function comes in three forms. <br />
+<br />
+The first <i>getRandom()</i> takes no arguments and will return a random <u>floating-point</u> value in the range of 0.0 to 1.0.<br />
+<br />
+The second <i>getRandom( max )</i> takes one argument representing the max integer value this will return.  It will return an <u>integer</u> value between 0 and <i><b>max</b></i>.<br />
+<br />
+The third <i>getRandom( min , max )</i> takes two arguments representing the min and max integer values this will return.  It will return an <u>integer</u> value between <i><b>min</b></i> and <i><b>max</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+min</b></i> – Minimum inclusive integer value to return.<br />
+<i><b>max</b></i> - Maximum inclusive integer value to return.<br />
+<br />
+<b>Returns</b><br />
+If no arguments are passed, will return a floating-point value between 0.0 and 1.0. If one argument is passed, will return an integer value between 0 and <i><b>max</b></i> inclusive.  If two arguments are passed, will return an integer value between <i><b>min</b></i> and <i><b>max</b></i> inclusive.<br />
+<br />
+<i><b>Notes</b></i><br />
+Be sure to recognize the difference between the three variants of <i>getRandom</i>.  Only the no-args version will return a floating point.<br />
+<br />
+<b>See Also</b><br />
+getRandomSeed<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getRandomSeed.28.29"></a><h3><a name = "HeaderLink3"></a>getRandomSeed()</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getRandomSeed</b></i> function to get the current seed for the random generator.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer value representing the current seed of the random generator.<br />
+<br />
+<i><b>Notes</b></i><br />
+You can re-seed the generator with this value to allow you to recreate a random sequence.  Merely save the seed and execute your random sequence. Later, to reproduce this sequence re-seed the generator with <i>setRandomSeed</i> and your saved value.  Then, the generator will produce the same random sequence that followed the call to <i>getRandomSeed</i>.<br />
+<br />
+<b>See Also</b><br />
+getRandom, setRandomSeed<br />
+<br />
+</p>
+<pre>
+%seed = getRandomSeed();
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mAbs.28_val_.29"></a><h3><a name = "HeaderLink4"></a>mAbs( val )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mAbs</b></i> function to get the magnitude of <i><b>val</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – An integer or a floating-point value.<br />
+<br />
+<b>Returns</b><br />
+Returns the magnitude of <i><b>val</b></i>.<br />
+<br />
+</p>
+<pre>
+%abs = mAbs(76.3);
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mAcos.28_val_.29"></a><h3><a name = "HeaderLink5"></a>mAcos( val )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mAcos</b></i> function to get the inverse cosine of <i><b>val</b></i> in radians.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – A value between -1.0 and 1.0 equal to the cosine of some angle theta.<br />
+<br />
+<b>Returns</b><br />
+Returns the inverse cosine of <i><b>val</b></i> in radians. This value will be in the range [ 0 , 3.14159 ].<br />
+<br />
+<b>See Also</b><br />
+mCos<br />
+<br />
+</p>
+<pre>
+%acos = mAcos(-8,3);
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mAsin.28_val_.29"></a><h3><a name = "HeaderLink6"></a>mAsin( val )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mAsin</b></i> function to get the inverse sine of <i><b>val</b></i> in radians.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – A value between -1.0 and 1.0 equal to the sine of some angle theta.<br />
+<br />
+<b>Returns</b><br />
+Returns the inverse sine of <i><b>val</b></i> in radians. This value will be in the range <br />
+[ - 3.14159/2  , 3.14159/2 ].<br />
+<br />
+<b>See Also</b><br />
+mSin<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mAtan.28_val_.29"></a><h3><a name = "HeaderLink7"></a>mAtan( val )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mAtan</b></i> function to get the inverse tangent of <i><b>val</b></i> in radians.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – A value between -inf.0 and inf.0 equal to the tangent of some angle theta.<br />
+<br />
+<b>Returns</b><br />
+Returns the inverse tangent of <i><b>val</b></i> in radians. This value will be in the range <br />
+[ - 3.14159/2  , 3.14159/2 ].<br />
+<br />
+<b>See Also</b><br />
+mTan<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mathInit.28_extention_.29"></a><h3><a name = "HeaderLink8"></a>mathInit( extention )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>MathInit</b></i> function to install a specified math extentsion, or to detect and enable all extensions.<br />
+<br />
+<i><b>Syntax<br />
+extension</b></i> – Can be any of these:<br />
+     detect – Detect all supported extentions and enable.<br />
+     C      - Enable standard C extensions.<br />
+     FPU    - Enable floating-point-unit extensions.<br />
+     MMX    - Enable Intel MMX extensions.<br />
+     3DNOW  - Enable AMD 3DNOW extentions.<br />
+     SSE    - Enable Intel SSE extensions. <br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<i><b>Notes</b></i><br />
+Generally speaking, the best <i><b>extension</b></i> choice is to used detect.  This will automatically detected and enable all extensions supported by the current processor.  It will also print out a list of the extension that were enabled to the console.<br />
+<br />
+</p>
+<pre>
+mathInit( detect );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="matrixCreate.28_posVec_.2C_rotVec_.29"></a><h3><a name = "HeaderLink9"></a>matrixCreate( posVec , rotVec )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>matrixCreate</b></i> function to create a transform matrix from a three-element floating-point translation vector and a four-element floating-point rotation vector.<br />
+<br />
+<i><b>Syntax<br />
+posVec</b></i> - A three-element floating-point translation vector: "PosX PosY PosZ".<br />
+<i><b>rotVec</b></i> - A four-element floating-point rotation vector: "RotX RotY RotZ". These are rotations about the specified axes.<br />
+<br />
+<b>Returns</b><br />
+Returns a transform matrix of the form "PosX PosY PosZ RotX RotY RotZ theta".<br />
+<br />
+<b>See Also</b><br />
+MatrixCreateFromEuler<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="MatrixCreateFromEuler_.28_rotVec_.29"></a><h3><a name = "HeaderLink10"></a>MatrixCreateFromEuler ( rotVec )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>MatrixCreateFromEuler</b></i> function to calculate a transform matrix from a three-element floating-point rotation vector.<br />
+<br />
+<i><b>Syntax<br />
+rotVec</b></i> - A three-element floating-point rotation vector: "RotX RotY RotZ". These are rotations about the specified axes.<br />
+<br />
+<br />
+<b>Returns</b><br />
+Returns a transform matrix of the form "0 0 0 X Y Z theta".<br />
+<br />
+<b>See Also</b><br />
+MatrixCreate<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="MatrixMulPoint.28_transform_.2C_point_.29"></a><h3><a name = "HeaderLink11"></a>MatrixMulPoint( transform , point )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>MatrixMulPoint</b></i> function to multiply a seven element <i><b>transform</b></i> matrix by a three element <i><b>point</b></i> vector, producing a three element position vector.<br />
+<br />
+<i><b>Syntax<br />
+transform</b></i> – A seven-element transform matrix.<br />
+<i><b>point</b></i> – A three-element point/position vector.<br />
+<br />
+<b>Returns</b><br />
+Returns a three-element position vector.<br />
+<br />
+<b>See Also</b><br />
+MatrixMultiply, MatrixMulVector<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="MatrixMultiply.28_transformA_.2C_transformB_.29"></a><h3><a name = "HeaderLink12"></a>MatrixMultiply( transformA , transformB )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>MatrixMultiply</b></i> function to multiply two seven-element transform matricies to produce a new seven element matrix.<br />
+<br />
+<i><b>Syntax<br />
+transformA</b></i> – A seven-element transform matrix of the form "PosX PosY PosZ RotX RotY RotZ theta".<br />
+<i><b>transformB</b></i> – A seven-element transform matrix of the form "PosX PosY PosZ RotX RotY RotZ theta".<br />
+<br />
+<b>Returns</b><br />
+Returns a seven-element matrix resulting from <b>transiformA</b> x <i><b>transformB</b></i>.<br />
+<br />
+<b>See Also</b><br />
+MatrixMulPoint, MatrixMulVector<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="MatrixMulVector.28_vector.2C_transfrom.29"></a><h3><a name = "HeaderLink13"></a>MatrixMulVector( vector, transfrom)</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>MatrixMulVector</b></i> function to multiply a seven-element transform matrix with a  three-element matrix.<br />
+<br />
+<i><b>Syntax<br />
+transform</b></i> – A seven-element transform matrix of the form "PosX PosY PosZ RotX RotY RotZ theta".<br />
+<i><b>vector</b></i> – A three-element vector.<br />
+<br />
+<br />
+<b>Returns</b><br />
+Returns three-element resulting from <b>vectior</b> * <i><b>transform</b></i>.<br />
+<br />
+<b>See Also</b><br />
+MatrixMulPoint, MatrixMultiply<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mCeil.28_val_.29"></a><h3><a name = "HeaderLink14"></a>mCeil( val )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mCeil</b></i> function to calculate the next higest integer value from <i><b>val</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – A floating-point value.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer representing the next highest integer from <i><b>val</b></i>.<br />
+<br />
+<b>See Also</b><br />
+mFloor<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mCos.28_val_.29"></a><h3><a name = "HeaderLink15"></a>mCos( val )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mCos</b></i> function to get the cosine of the radian angle <i><b>val</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – A value between -3.14159 and 3.14159.<br />
+<br />
+<b>Returns</b><br />
+Returns the cosine of <i><b>val</b></i>. This value will be in the range [ -1.0 , 1.0 ].<br />
+<br />
+<b>See Also</b><br />
+mAcos
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mDegToRad.28_val_.29"></a><h3><a name = "HeaderLink16"></a>mDegToRad( val )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mDegToRad</b></i> function to convert degrees to radians.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – A floating-point number representing some number of degrees.<br />
+<br />
+<b>Returns</b><br />
+Returns the equivalent of the degree value <i><b>val</b></i> in radians.<br />
+<br />
+<b>See Also</b><br />
+mRadToDeg<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mFloatLength.28_val_.2C_numDecimals_.29"></a><h3><a name = "HeaderLink17"></a>mFloatLength( val , numDecimals )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mFloatLength</b></i> function to limit the number of decimal places in <i><b>val</b></i> to <i><b>numDecimals</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – A floating-point value.<br />
+<i><b>numDecimals</b></i> – An integer between 0 and inf representing the number of decimal places to allow val to have.<br />
+<br />
+<b>Returns</b><br />
+Returns a floating-point value equivalent to a truncated version of <i><b>val</b></i>, where the new version has <i><b>numDecimals</b></i> decimal places.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mFloor.28_val_.29"></a><h3><a name = "HeaderLink18"></a>mFloor( val )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mFloor</b></i> function to calculate the next lowest integer value from <i><b>val</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – A floating-point value.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer representing the next lowest integer from <i><b>val</b></i>.<br />
+<br />
+<b>See Also</b><br />
+mCeil<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mLog.28_val_.29"></a><h3><a name = "HeaderLink19"></a>mLog( val )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mLog</b></i> function to calculate the natural logarithm of <i><b>val</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – A numeric value.<br />
+<br />
+<b>Returns</b><br />
+Returns the natural logarithm of <i><b>val</b></i>.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mPow.28_val_.2C_power_.29"></a><h3><a name = "HeaderLink20"></a>mPow( val , power )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mPow</b></i> function to calculated <i><b>val</b></i> raised to the power of <i><b>power</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – A numeric (integer or floating-point) value to be raised to a power.<br />
+<b><i>power</i></b> <i>-</i> A numeric (integer or floating-point) power to raise <i><b>val</b></i> to.<br />
+<br />
+<b>Returns</b><br />
+Returns val^power.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mRadToDeg.28_val_.29"></a><h3><a name = "HeaderLink21"></a>mRadToDeg( val )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mRadToDeg</b></i> function to convert radians to degrees.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – A floating-point number representing some number of radians.<br />
+<br />
+<b>Returns</b><br />
+Returns the equivalent of the radian value <i><b>val</b></i> in degrees.<br />
+<br />
+<b>See Also</b><br />
+mDegToRad<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mSin.28_val_.29"></a><h3><a name = "HeaderLink22"></a>mSin( val )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mSin</b></i> function to get the sine of the radian angle <i><b>val</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – A value between -3.14159 and 3.14159.<br />
+<br />
+<b>Returns</b><br />
+Returns the sine of <i><b>val</b></i>. This value will be in the range [ -1.0 , 1.0 ].<br />
+<br />
+<b>See Also</b><br />
+mAsin<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mSolveCubic.28_a_.2C_b_.2C_c_.2C_d_.29"></a><h3><a name = "HeaderLink23"></a>mSolveCubic( a , b , c , d )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mSolveCubic</b></i> function to solve for x0, x1, x2 in third-order polynomial equation with factors a, b, c, d:<br />
+<br />
+</p>
+<pre>
+aX^3 + bX^2 + cX + d = 0
+</pre>
+<p><br />
+<i><b>Syntax<br />
+a, b , c, d</b></i> – Polynomial factors (see above).<br />
+<br />
+<b>Returns</b><br />
+Returns x0, x1, x2: ( X + x0 ) ( X + x1 ) ( X + x2 )<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mSolveQuadratic.28_a_.2C_b_.2C_c_.29"></a><h3><a name = "HeaderLink24"></a>mSolveQuadratic( a , b , c )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mSolveCubic</b></i> function to solve for x0, x1 in second-order polynomial equation with factors a, b, c:<br />
+<br />
+</p>
+<pre>
+aX^2 + bX + c = 0
+</pre>
+<p><br />
+<i><b>Syntax<br />
+a, b , c</b></i> – Polynomial factors (see above).<br />
+<br />
+<b>Returns</b><br />
+Returns x0, x1: ( X + x0 ) ( X + x1 )<br />
+<br />
+<b>Notes</b> <br />
+Warning, x0 and x1 are inverted.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mSolveQuartic.28a.2Cb.2Cc.2Cd.2Ce.29"></a><h3><a name = "HeaderLink25"></a>mSolveQuartic(a,b,c,d,e)</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mSolveCubic</b></i> function to solve for x0, x1, x2, x3 in fourth-order polynomial equation with factors a, b, c, d, e:<br />
+<br />
+</p>
+<pre>
+aX^4 + bX^3 + cX^2 + dX + e = 0
+</pre>
+<p><br />
+<i><b>Syntax<br />
+a, b , c, d, e</b></i>– Polynomial factors (see above).<br />
+<br />
+<b>Returns</b><br />
+Returns x0, x1, x2, x3: ( X + x0 ) ( X + x1 ) ( X + x2 ) ( X + x3 )<br />
+<br />
+<b>Notes</b><br />
+Broken.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mSqrt.28_val_.29"></a><h3><a name = "HeaderLink26"></a>mSqrt( val )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mSqrt</b></i> function to calculated the squareroot of <i><b>val</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – A numeric value.<br />
+<br />
+<b>Returns</b><br />
+Returns the the squareroot of <i><b>val</b></i>.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="mTan.28_val_.29"></a><h3><a name = "HeaderLink27"></a>mTan( val )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mTan</b></i> function to get the tangent of the radian angle <i><b>val</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+val</b></i> – A value between -3.14159/2 and 3.14159/2.<br />
+<br />
+<b>Returns</b><br />
+Returns the tangent of <i><b>val</b></i>. This value will be in the range [ -inf.0 , inf.0 ].<br />
+<br />
+<b>See Also</b><br />
+mAtan<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="setRandomSeed.28_startSeed_.29"></a><h3><a name = "HeaderLink28"></a>setRandomSeed( startSeed )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setRandomSeed</b></i> function to initialize the random number generator with the initial seed of <i><b>startSeed</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+startSeed</b></i> – The new starting seed value for the random generator.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+getRandom, getRandomSeed<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="VectorAdd.28_vecA_.2C_vecB_.29"></a><h3><a name = "HeaderLink29"></a>VectorAdd( vecA , vecB )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>VectorAdd</b></i> function to add two vectors of up to three elements each to each other<br />
+<br />
+<i><b>Syntax<br />
+vecA</b></i> – A vector of up to three elements.<br />
+<i><b>vecB</b></i> – A vector of up to three elements.<br />
+<br />
+<b>Returns</b><br />
+Returns the result of <i><b>vecA</b></i> + <i><b>vecB</b></i>.<br />
+<br />
+<b>See Also</b><br />
+vectorSub<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="VectorCross.28_vecA_.2C_vecB_.29"></a><h3><a name = "HeaderLink30"></a>VectorCross( vecA , vecB )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>VectorCross</b></i> function to calculate the cross product of two vectors of up to three elements each.<br />
+<br />
+<i><b>Syntax<br />
+vecA</b></i> – A vector of up to three elements.<br />
+<i><b>vecB</b></i> – A vector of up to three elements.<br />
+<br />
+<b>Returns</b><br />
+Returns the result of <i><b>vecA</b></i> x <i><b>vecB</b></i>.<br />
+<br />
+<i><b>Notes</b></i><br />
+Remember, the resultant vector will always be an right angles to both intput vectors.<br />
+<br />
+<b>See Also</b><br />
+VectorDot<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="VectorDist.28_vecA_.2C_vecB_.29"></a><h3><a name = "HeaderLink31"></a>VectorDist( vecA , vecB )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>VectorDist</b></i> function to calculate distance beteen two vectors of up to three elements each.<br />
+<br />
+<i><b>Syntax<br />
+vecA</b></i> – A vector of up to three elements.<br />
+<i><b>vecB</b></i> – A vector of up to three elements.<br />
+<br />
+<b>Returns</b><br />
+</p>
+Returns the result of <pre> |Xa – Xb| |Ya – Yb| |Za – Zb| </pre><br />
+<p><br />
+<b>See Also</b><br />
+VectorLen<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="VectorDot.28_vecA_.2C_vecB_.29"></a><h3><a name = "HeaderLink32"></a>VectorDot( vecA , vecB )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>VectorDot</b></i> function to calculate the dot product of two unit vectors of up to three elements each.<br />
+<br />
+<b>Warning!</b> Be sure to always normalize both vecA and vecB before attempting to find the dot product.  Calculating a dot product using un-normalized vectors (non- unit vectors) will result in meaningless results.<br />
+<br />
+<i><b>Syntax<br />
+vecA</b></i> – A unit-vector of up to three elements.<br />
+<i><b>vecB</b></i> – A unit-vector of up to three elements.<br />
+<br />
+<b>Returns</b><br />
+Returns a scalar value equal to the result of <i><b>vecA</b></i> . <i><b>vecB.</b></i>  This value which will always be a single floating-point value in the range [ -1 , +1 ].<br />
+<br />
+<i><b>Notes</b></i><br />
+If the return value is &lt; 0, the inner-angle between the vectors is &gt; 90 degrees.<br />
+If the return value is equal to 0, the inner-angle between the vectors is equal to 90 degrees.<br />
+If the return value is &gt; 0, the inner-angle between the vectors is &lt; 90 degrees.<br />
+<br />
+<b>See Also</b><br />
+VectorCross<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="VectorLen.28_vec_.29"></a><h3><a name = "HeaderLink33"></a>VectorLen( vec )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>VectorLen</b></i> function to calculate the length of vector <i><b>vec</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+vec</b></i> - A vector of up to three elements.<br />
+<br />
+<b>Returns</b><br />
+Returns a scalar representing the length of the vector vec.<br />
+<br />
+<b>See Also</b><br />
+VectorDist<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="VectorNormalize.28_vec_.29"></a><h3><a name = "HeaderLink34"></a>VectorNormalize( vec )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>VectorNormalize</b></i> function to calculated the unit vector equivalent of the vector <i><b>vec</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+vec</b></i> - A vector of up to three elements.<br />
+<br />
+<b>Returns</b><br />
+Returns the unit vector equivalent of the vector <i><b>vec</b></i>.<br />
+<br />
+<b>See Also</b><br />
+VectorScale<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="VectorOrthoBasis.28_vec_.29"></a><h3><a name = "HeaderLink35"></a>VectorOrthoBasis( vec )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>VectorOrthoBasis</b></i> function to calculate a 3x3 Row-Major formated matrix representing the orthogonal basis for the vector <i><b>vec</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+vec</b></i> - A four element vector of the form "AxisX AxisY AxisZ theta", where theta is the angle of rotation about the vector formed by the prior three values.<br />
+<br />
+<b>Returns</b><br />
+Returns a 3x3 Row-Major formated matrix.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="VectorScale.28_vec_.2C_scale_.29"></a><h3><a name = "HeaderLink36"></a>VectorScale( vec , scale )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>VectorScale</b></i> function to scale the vector <i><b>vec</b></i> by the scalar <i><b>scale</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+vec</b></i> - A vector of up to three elements.<br />
+<i><b>scale</b></i> – A numeric value (integer or floating-point) representing the scaling factor.<br />
+<br />
+<b>Returns</b><br />
+Returns a scaled version of the vector <b>vec</b>, equivalent to: <br />
+" ( scale * X ) ( scale * Y ) ( scale * Z ) "<br />
+<br />
+<b>See Also</b><br />
+VectorNormalize<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="VectorSub.28_vecA_.2C_vecB_.29"></a><h3><a name = "HeaderLink37"></a>VectorSub( vecA , vecB )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>VectorSub</b></i> function to subtract <i><b>vecB</b></i> from <i><b>vecA</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+vecA</b></i> – Left side vector in subtraction equation.<br />
+<i><b>vecB</b></i> - Right side vector in subtraction equation.<br />
+<br />
+<b>Returns</b><br />
+Returns a new vector equivalent to: "<i><b>vecA</b></i> - <i><b>vecB</b></i>"<br />
+<br />
+<b>See Also</b><br />
+vectorAdd<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+<big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <a href="TorqueScript_Console_Functions_7.html" title="TorqueScript Console Functions 7"> File I/O</a><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <strong> Math</strong><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_21.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:14 GMT -->
+</html>

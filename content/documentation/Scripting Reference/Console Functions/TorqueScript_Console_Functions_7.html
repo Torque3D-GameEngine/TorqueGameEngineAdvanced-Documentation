@@ -1,0 +1,489 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_7.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4220;
+   parent.leftFrame.expandToItem('tree2', 'doc4220');
+   var element = parent.leftFrame.document.getElementById('doc4220');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueScript Console Functions 7 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <p xmlns="http://www.w3.org/1999/xhtml"><big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <strong> File I/O</strong><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+<p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#File_I.2FO"><span class="tocnumber">1</span> <span class="toctext">File I/O</span></a>
+<ul>
+<li class="toclevel-2"><a href="#expandFilename.28_filename_.29"><span class="tocnumber">1.1</span> <span class="toctext">expandFilename( filename )</span></a></li>
+<li class="toclevel-2"><a href="#fileBase.28_filename_.29"><span class="tocnumber">1.2</span> <span class="toctext">fileBase( filename )</span></a></li>
+<li class="toclevel-2"><a href="#fileExt.28_filename_.29"><span class="tocnumber">1.3</span> <span class="toctext">fileExt( filename )</span></a></li>
+<li class="toclevel-2"><a href="#fileName.28_filename_.29"><span class="tocnumber">1.4</span> <span class="toctext">fileName( filename )</span></a></li>
+<li class="toclevel-2"><a href="#filePath.28_filename_.29"><span class="tocnumber">1.5</span> <span class="toctext">filePath( filename )</span></a></li>
+<li class="toclevel-2"><a href="#findFirstFile_.28_pattern_.29"><span class="tocnumber">1.6</span> <span class="toctext">findFirstFile ( pattern )</span></a></li>
+<li class="toclevel-2"><a href="#findNextFile_.28_pattern_.29"><span class="tocnumber">1.7</span> <span class="toctext">findNextFile ( pattern )</span></a></li>
+<li class="toclevel-2"><a href="#getFileCount_.28_pattern_.29"><span class="tocnumber">1.8</span> <span class="toctext">getFileCount ( pattern )</span></a></li>
+<li class="toclevel-2"><a href="#getFileCRC.28_filename_.29"><span class="tocnumber">1.9</span> <span class="toctext">getFileCRC( filename )</span></a></li>
+<li class="toclevel-2"><a href="#isFile.28_filename_.29"><span class="tocnumber">1.10</span> <span class="toctext">isFile( filename )</span></a></li>
+<li class="toclevel-2"><a href="#isWriteableFileName.28_filename_.29"><span class="tocnumber">1.11</span> <span class="toctext">isWriteableFileName( filename )</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="File_I.2FO"></a><h2><a name = "HeaderLink1"></a>File I/O</h2>
+<p>TGE provides a file manager maintains a list of all files in the game directory and all sub-directories.  The followings functions are used to access this list.  In order manipulate (read/write) the contents of a file, see the console object 'fileObject', listed in the 'ConObjects Quick Reference' or refer to the 'TGE I/O' chapter of EGTGE.<br />
+</p>
+<b><hr /></b>
+<p>When a Torque game starts up a call, or calls are made to setModPaths().  This function is passed a game directories, separated by semi-colons (;).  The file manager will examine each of these game paths and their sub-directories, building up a list of known files.  This information is used later for relative pathing and file searching.<br />
+</p>
+<b><hr /></b>
+<p>Torque supports both direct pathing and relative pathing.  <br />
+Direct paths start with a slash (/).  For example, "/starter.fps/main.cs" points to the file "main.cs" under the game directory "starter.fps", where "starter.fps" is in the root directory (the directory where the executable is started from.<br />
+Relative pathing can be accomplished in three basic ways.  <br />
+In the first method, if an unadorned name is used as the first part of a directory ("starter.fps/test.cs"), the engine will assume that this first name is the name game directory, but then if  the unadorned name does not match the game directory, the file match/search will fail.  In general, you should not use unadorned names.<br />
+In the second method, if a tilde (~) is used as the first part of a directory ("~/test.cs"), the engine will assume that the tilde should be replaced by the root-child this file lives in.  For example, the root child of "starter.fps/client/doit.cs" is "starter.fps".  Therefore, if we use this path "~/somefile.cs" in a command within the file "doit.cs", the path will be expanded to be "starter.fps/somefile.cs".<br />
+In the third and final relative pathing method, if a dot (.) is used as the first part of a directory ("./test.cs"), then the dot is expanded to be the root- path that the current file resides in.  For example, the root-path of "starter.fps/client/doit.cs" is "starter.fps/client".  Therefore, if we use this path "./somefile.cs" in a command within the file "doit.cs", the path will be expanded to be "starter.fps/client/somefile.cs".<br />
+</p>
+<b><hr /></b>
+<p>Torque supports a single wildcard, the asterisk (*).  This wild card can be interpreted to mean "zero or more instances of any chracter(s)".<br />
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="expandFilename.28_filename_.29"></a><h3><i></i><a name = "HeaderLink2"></a>expandFilename( filename )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>expandFilename</b></i> function to convert a relative path name to a full path name.<br />
+<br />
+<i><b>Syntax<br />
+filename</b></i> – A string containing the relative or full path and file name of an existing or new file.<br />
+<br />
+<b>Returns</b><br />
+Returns a string containing the expanded path to the specified file.<br />
+<br />
+</p>
+<pre>
+expandFilename("~/data/sound/testing.wav");
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="fileBase.28_filename_.29"></a><h3><i></i><a name = "HeaderLink3"></a>fileBase( filename )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>fileBase</b></i> function to get the name of a file from a relative or full path, not including the file extension.<br />
+<br />
+<i><b>Syntax<br />
+filename</b></i> – A string containing the relative or full path and file name of an existing or new file.<br />
+<br />
+<b>Returns</b><br />
+Returns an unadorned file name without a path or file extension.<br />
+<br />
+<b>See Also</b><br />
+fileExt, fileName, filePath<br />
+<br />
+</p>
+<pre>
+fileBase(“egt/main.cs”); // will return “main”
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="fileExt.28_filename_.29"></a><h3><i></i><a name = "HeaderLink4"></a>fileExt( filename )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>fileExt</b></i> function to get the extension of a file from a relative or full path, not including the file extension.<br />
+<br />
+<i><b>Syntax<br />
+filename</b></i> – A string containing the relative or full path and file name of an existing or new file.<br />
+<br />
+<b>Returns</b><br />
+Returns a file extension, including the dot (.).<br />
+<br />
+<i><b>Notes</b></i><br />
+If asterisks are present in an extension, as passed in <i><b>filename</b></i>, they will not be expanded in the return value.<br />
+<br />
+<b>See Also</b><br />
+fileBase, fileName, filePath<br />
+Returns the file extension (suffix) for the file specified by <i><b>filename</b></i>.<br />
+<br />
+</p>
+<pre>
+fileExt(“script.cs”); // will return “.cs” 
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="fileName.28_filename_.29"></a><h3><i></i><a name = "HeaderLink5"></a>fileName( filename )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>fileName</b></i> function to get the filename and extension of a file from a relative or full path, not including the file extension.<br />
+<br />
+<i><b>Syntax<br />
+filename</b></i> – A string containing the relative or full path and file name of an existing or new file.<br />
+<br />
+<b>Returns</b><br />
+Returns a string containing the full name of a file less any path before the name.<br />
+<br />
+<i><b>Notes</b></i><br />
+If asterisks are present in an file name, as passed in <i><b>filename</b></i>, they will not be expanded in the return value.<br />
+<br />
+<b>See Also</b><br />
+fileBase, fileExt, filePath<br />
+<br />
+</p>
+<pre>
+fileName(“egt/main.cs”); // will return “main.cs”
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="filePath.28_filename_.29"></a><h3><i></i><a name = "HeaderLink6"></a>filePath( filename )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>fileBase</b></i> function to get all parts of a path up to, but not including the last slash (/).<br />
+<br />
+<i><b>Syntax<br />
+filename</b></i> – A string containing the relative or full path and file name of an existing or new file.<br />
+<br />
+<b>Returns</b><br />
+Returns a string containing the relative or full path portion of <i><b>filename</b></i>.<br />
+<br />
+<i><b>Notes</b></i><br />
+If asterisks are present in any part of the path, as passed in <i><b>filename</b></i>, they will not be expanded in the return value.<br />
+<br />
+<b>See Also</b><br />
+fileBase, fileExt, fileName<br />
+<br />
+</p>
+<pre>
+filePath(“common/ui/defaultProfiles.cs”); // Will return “common/ui” 
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="findFirstFile_.28_pattern_.29"></a><h3><i></i><a name = "HeaderLink7"></a>findFirstFile ( pattern )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>findFirstFile</b></i> function to find the first file matching <i><b>pattern</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+pattern</b></i> – A full or partial path, followed by a full or partial filename, or any combination of these two elements.<br />
+<br />
+<b>Returns</b><br />
+Returns a full path to the first file name matching <i><b>pattern</b></i>. Returns a NULL string, when no matches are found.<br />
+<br />
+<b>Notes</b><br />
+This function will search all directories in the modpath, as created by <i>setModPaths</i>. Each time this function is called it will reset an internal variable tracking the current position in the file list.  So, multiple routines calling this in an overlapping fashion will clobber each other.<br />
+<br />
+<b>See Also</b><br />
+findNextFile, getFileCount, getModPaths, setModPaths<br />
+<br />
+</p>
+<pre>
+findFirstFile(“*.cs”);
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="findNextFile_.28_pattern_.29"></a><h3><i></i><a name = "HeaderLink8"></a>findNextFile ( pattern )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>findNextFile</b></i> function to find the next file matching <i><b>pattern</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+pattern</b></i> – A full or partial path, followed by a full or partial filename, or any combination of these two elements.<br />
+<br />
+<b>Returns</b><br />
+Returns a full path to the next file name matching <i><b>pattern</b></i>. Returns a NULL string, when no matches are found.<br />
+<br />
+<b>Notes</b><br />
+This function will search all directories in the modpath, as created by a call to <i>setModPaths</i>. Also, this function requires that <i><b>findNextFile</b></i> be called at least with the same pattern, some time prior to calling this function.<br />
+<br />
+<b>See Also</b><br />
+findFirstFile, getFileCount, getModPaths, setModPaths<br />
+<br />
+</p>
+<pre>
+findNextFile( “*.cs” );
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getFileCount_.28_pattern_.29"></a><h3><i></i><a name = "HeaderLink9"></a>getFileCount ( pattern )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getFileCount</b></i> function to determine how many files exist in modpaths that match the specified <i><b>pattern</b></i>.<br />
+<br />
+<i><b>Syntax<br />
+pattern</b></i> – A full or partial path, followed by a full or partial filename, or any combination of these two elements.<br />
+<br />
+<b>Returns</b><br />
+Returns a zero if no matches are found, or a positive integer value specifying how many matches there were.<br />
+<br />
+<b>See Also</b><br />
+findFirstFile, findNextFile<br />
+<br />
+</p>
+<pre>
+getFileCount(“*.cs”);
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="getFileCRC.28_filename_.29"></a><h3><i></i><a name = "HeaderLink10"></a>getFileCRC( filename )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getFileCRC</b></i> function to calculate the Cyclic-Redundancy-Check (CRC) value for a file as specified by the partial or full path in <i><b>filename</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>filename</i></b> – A string containing the relative or full path and file name of an existing or new file.<br />
+<br />
+<b>Returns</b><br />
+Returns a non-zero positive integer value corresponding to this file's CRC.<br />
+<br />
+<i><b>Notes</b></i><br />
+CRC values are useful for checking to see if two same named files are actually the same.  If a client file of the same path and name as a file on the server has a differnt CRC from the server version, then the files are NOT the same, otherwise they highly likely to be the same.  Although it is theoretically possible for two non-matching files to have matching CRCs, the odds are very much against it.<br />
+<br />
+</p>
+<pre>
+getFileCRC(“/fps/client/scripts/script/cs”);
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="isFile.28_filename_.29"></a><h3><i></i><a name = "HeaderLink11"></a>isFile( filename )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isFile</b></i> function to determine whether the value in <i><b>filename</b></i> is in fact an existing file.<br />
+<br />
+<b>Syntax<br />
+<i>filename</i></b> – A string containing the relative or full path and file name of an existing file.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the file exists, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+isWriteableFileName<br />
+<br />
+</p>
+<pre>
+isFile(“/fps/client/scripts/script.cs”);
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="740" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<a name="isWriteableFileName.28_filename_.29"></a><h3><i></i><a name = "HeaderLink12"></a>isWriteableFileName( filename )</h3>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isWriteableFileName</b></i> function to determine whether the value in <i><b>filename</b></i> is in fact an existing file and it can be written to.<br />
+<br />
+<b>Syntax<br />
+<i>filename</i></b> – A string containing the relative or full path and file name of an existing file.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the file exists and can be written to, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+isFile<br />
+<br />
+</p>
+<pre>
+isWriteableFileName(“/fps/client/scripts/script.cs”);
+</pre>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+<big><b>Section Index</b></big>
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+<p xmlns="http://www.w3.org/1999/xhtml">1. <a href="TorqueScript_Console_Functions_1.html" title="TorqueScript Console Functions"> OpenAL</a> || 2. <a href="TorqueScript_Console_Functions_2.html" title="TorqueScript Console Functions 2"> Debugging</a> || 3. <a href="TorqueScript_Console_Functions_3.html" title="TorqueScript Console Functions 3"> String Manipulation</a> || 4. <a href="TorqueScript_Console_Functions_4.html" title="TorqueScript Console Functions 4"> Networking</a> || 5. <a href="TorqueScript_Console_Functions_5.html" title="TorqueScript Console Functions 5"> Console</a> || 6. <a href="TorqueScript_Console_Functions_6.html" title="TorqueScript Console Functions 6"> Device I/O</a> || 7. <strong> File I/O</strong><br />
+8. <a href="TorqueScript_Console_Functions_8.html" title="TorqueScript Console Functions 8"> Packages</a> || 9. <a href="TorqueScript_Console_Functions_9.html" title="TorqueScript Console Functions 9"> Objects</a> || 10. <a href="TorqueScript_Console_Functions_10.html" title="TorqueScript Console Functions 10"> Event Scheduling</a> || 11. <a href="TorqueScript_Console_Functions_11.html" title="TorqueScript Console Functions 11"> Datablocks</a> || 12. <a href="TorqueScript_Console_Functions_12.html" title="TorqueScript Console Functions 12"> Video / Texturing</a> || 13. <a href="TorqueScript_Console_Functions_13.html" title="TorqueScript Console Functions 13"> Special</a> || 14. <a href="TorqueScript_Console_Functions_14.html" title="TorqueScript Console Functions 14"> Resource Management</a><br />
+15. <a href="TorqueScript_Console_Functions_15.html" title="TorqueScript Console Functions 15"> Scene</a> || 16. <a href="TorqueScript_Console_Functions_16.html" title="TorqueScript Console Functions 16"> Containers and Raycasts</a> || 17. <a href="TorqueScript_Console_Functions_17.html" title="TorqueScript Console Functions 17"> Editors</a> || 18. <a href="TorqueScript_Console_Functions_18.html" title="TorqueScript Console Functions 18"> Build</a> || 19. <a href="TorqueScript_Console_Functions_19.html" title="TorqueScript Console Functions 19"> Time</a> || 20. <a href="TorqueScript_Console_Functions_20.html" title="TorqueScript Console Functions 20"> GUIs</a> || 21. <a href="TorqueScript_Console_Functions_21.html" title="TorqueScript Console Functions 21"> Math</a><br />
+</p>
+<i xmlns="http://www.w3.org/1999/xhtml"><b><hr /></b></i>
+
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Functions/TorqueScript_Console_Functions_7.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:09 GMT -->
+</html>

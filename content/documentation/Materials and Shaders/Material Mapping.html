@@ -1,0 +1,135 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Materials and Shaders/Material Mapping.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4203;
+   parent.leftFrame.expandToItem('tree2', 'doc4203');
+   var element = parent.leftFrame.document.getElementById('doc4203');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Materials and Shaders - Material Mapping</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+</head>
+
+<BODY id = "BODYID" onLoad = "initComponent()"  id="body-with-lockmark">
+
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+<td>
+<a name="Title"></a>
+<h2><a name = "HeaderLink0"></a>Material Mapping</h2>
+   <p></p>
+   
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink1"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#mapTo"><span class="tocnumber">1</span> <span class="toctext">mapTo</span></a></li>
+<li class='toclevel-1'><a href="#Automatic_mapping"><span class="tocnumber">2</span> <span class="toctext">Automatic mapping</span></a></li>
+<li class='toclevel-1'><a href="#Mapping_with_Maya"><span class="tocnumber">3</span> <span class="toctext">Mapping with Maya</span></a></li>
+<li class='toclevel-1'><a href="#Mapping_a_single_Material_to_multiple_texture_tags"><span class="tocnumber">4</span> <span class="toctext">Mapping a single Material to multiple texture tags</span></a></li>
+<li class='toclevel-1'><a href="#Mapping_Materials_to_.ifl_animations"><span class="tocnumber">5</span> <span class="toctext">Mapping Materials to .ifl animations</span></a></li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="mapTo"></a><h2><a name = "HeaderLink2"></a> mapTo </h2>
+<p>In TSE it is necessary to "map" a Material to each texture that is used in the art tools.  Think of the textures used in the arts tools as "tags" that TSE uses to apply something more complex than just a texture.
+</p><p>The process of mapping a Material to a texture tag is done inside the Material itself by using the "mapTo" parameter.  MapTo simply names the texture tag to apply the Material
+to.  Like so:
+</p>
+<pre>
+new Material( Foo )
+{
+   mapTo = &quot;bar&quot;;
+   baseTex[0] = &quot;~/data/textures/fubar&quot;;
+};
+</pre>
+<p>In this case, TSE will apply the Material "Foo" to the texture "bar" that was used in a modeling app.
+</p>
+<a name="Automatic_mapping"></a><h2><a name = "HeaderLink3"></a>Automatic mapping</h2>
+<p>Materials do not require a mapTo parameter if the base texture name in the Material is the same as the texture tag.
+</p><p>So this:
+</p>
+<pre>
+new Material( Foo )
+{
+   mapTo = &quot;bar&quot;;
+   baseTex[0] = &quot;~/data/textures/bar&quot;;
+};
+</pre>
+<p>could be reduced to:
+</p>
+<pre>
+new Material( Foo )
+{
+   baseTex[0] = &quot;~/data/textures/bar&quot;;
+};
+</pre>
+<p>This is not true for CustomMaterials, <b><i>every CustomMaterial needs a "mapTo" parameter</i></b>.
+It is also not true for models that have been exported using Maya.
+</p>
+<a name="Mapping_with_Maya"></a><h2><a name = "HeaderLink4"></a>Mapping with Maya</h2>
+<p>Maya exports texture tags with the full filename including the extension.  If a model has been exported using Maya, any Materials mapping to it will need a mapTo parameter that includes the full texture filename.  
+Example:
+</p>
+<pre>
+new Material( MayaMat )
+{
+   mapTo = &quot;bar.png&quot;
+   baseTex[0] = &quot;~/data/textures/bar&quot;;
+};
+</pre>
+<p>Note that it is <b>not</b> necessary to do this if you use Milo Cooper's build of the plug-in, which makes this optional.  (See <a href="http://www.garagegames.com/mg/forums/result.thread.php?qt=68073#492106" class='external text' title="http://www.garagegames.com/mg/forums/result.thread.php?qt=68073#492106" rel="nofollow">this forum post</a> for more information.)
+</p>
+<a name="Mapping_a_single_Material_to_multiple_texture_tags"></a><h2><a name = "HeaderLink5"></a>Mapping a single Material to multiple texture tags</h2>
+<p>You cannot map multiple materials to the same texture tag.  You can, however, map the same Material to multiple texture tags.  To do so, use the addMaterialMapping script call as follows:
+</p>
+<pre>
+addMaterialMapping(&quot;grate&quot;, &quot;material: Grate&quot;);
+addMaterialMapping(&quot;grate2&quot;, &quot;material: Grate&quot;);
+</pre>
+<p>(You only actually need the second statement if the material is already mapped to "grate")
+</p>
+<a name="Mapping_Materials_to_.ifl_animations"></a><h2><a name = "HeaderLink6"></a> Mapping Materials to .ifl animations </h2>
+<p>Mapping a Material to an .ifl animation is a fairly simple process; just name the .ifl filename in the mapTo parameter:
+</p>
+<pre>
+new Material(TestIFL)
+{
+   mapTo = &quot;explosion.ifl&quot;;
+   baseTex[0] = &quot;~/data/shapes/explosion/glauncher_exp0010&quot;;
+   translucent = true;
+   emissive = true;
+};
+</pre>
+<p>The baseTex texture is replaced by the animating .ifl texture as it plays through.  Even though the baseTex is replaced, the parameter must still point to a valid texture for this to work.  In this case, the baseTex just points to the first frame of animation in the .ifl.
+</p>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Materials and Shaders/Material Mapping.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:36 GMT -->
+</html>

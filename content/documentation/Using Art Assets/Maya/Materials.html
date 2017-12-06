@@ -1,0 +1,159 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Maya/Materials.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4284;
+   parent.leftFrame.expandToItem('tree2', 'doc4284');
+   var element = parent.leftFrame.document.getElementById('doc4284');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Using Art Assets - Maya - Materials</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+<link rel="STYLESHEET" type="text/css" href="torque.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+<td>
+   
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#General_Information"><span class="tocnumber">1</span> <span class="toctext">General Information</span></a></li>
+<li class='toclevel-1'><a href="#simpleShape_with_Transparency"><span class="tocnumber">2</span> <span class="toctext">simpleShape with Transparency</span></a>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+
+<a name="General_Information"></a><h2><a name = "HeaderLink1"></a>General Information</h2><br />
+<p>Creating textures for Torque shapes is fairly straightforward.
+  You can use any paint/image editing program to create texture maps and then
+  apply them to shapes in Maya. All shapes must have actual image files connected
+  to the material's <strong class="red_text">Color</strong> attribute. Procedural textures are not supported. </p>
+<p><strong>Specifications</strong></p>
+<p>Torque supports JPG, TGA, and PNG file formats. <em>Note:
+    PNG support in Maya 5.x for Windows is provided by the <strong>IMFPng plugin</strong> included
+    in the <strong>File
+  Pack</strong>.</em> </p>
+<p>Image file
+    dimensions must be powers of two (e.g. 256x256, 64x64, etc). Textures do
+  not have to be square (e.g. 64x128 is acceptable).</p>
+<p><strong>Tranparency</strong></p>
+<p>To make an object transparent, the texture on the
+    object must have an alpha channel. The amount of transparency is controlled
+    by the image's alpha channel. Applying an image file with an alpha channel
+    to the Color attribute of a material will automatically apply the image's
+alpha channel to the same material's <strong class="red_text">Transparency</strong> attribute.
+Both PNG and TGA files support alpha channels; JPG files do not support alpha
+channels. </p>
+<p><strong>Two-Sided Materials</strong></p>
+<p>Two-sided materials are supported by adding a custom
+  attribute named <strong class="red_text">twoSided</strong> to the object.
+  The <strong class="red_text">twoSided</strong> attribute is a boolean
+  value that determines whether or not the shape will export with double-sided
+  materials. This attribute can be added from <em>DTS &gt; Rendering Options &gt; Enable
+Two-Sided Materials</em> in the dtsUtility window. Maya's double-sided attribute
+is ignored. </p>
+<p><strong>Visibility Animation</strong></p>
+<p>Visibility animation is supported by adding a custom attribute
+  named <strong class="red_text">vis</strong> to the object. The <strong class="red_text">vis</strong> attribute
+  is a float value with a <strong class="red_text">minimum value</strong> of <strong class="red_text">0</strong> and
+  a <strong class="red_text">maximum value</strong> of <strong class="red_text">1</strong>.
+  This attribute can be added from <em>DTS &gt; Rendering Options &gt; Enable
+Visibility Animation</em> in the dtsUtility window. Maya's visibility attribute
+is ignored. </p>
+
+<a name="simpleShape_with_Transparency"></a><h2><a name = "HeaderLink2"></a>simpleShape with Transparency</h2><br />
+<p>To make an object transparent, the texture on the object
+  must have an alpha channel. The amount of transparency is controlled by the
+image's alpha channel. </p>
+<p>1. Open <strong class="red_text">simpleShapeAlphaBase.mb</strong> from the <strong>File
+Pack</strong>.</p>
+<p>The
+    object is already setup for export. All that is needed is the material.</p>
+<blockquote>
+  <p><img src="06_01_simpleshape.jpg" alt="simpleShape base" width="462" height="412" /></p>
+</blockquote>
+<p>2. Open HyperShade. Double-click <strong class="red_text">simpleTexture</strong> to open its
+  attribute editor.</p>
+<blockquote>
+  <p><img src="06_02_hypershade.jpg" alt="hypershade" width="684" height="471" /></p>
+</blockquote>
+<p>3. Click on the checkered button next to the <strong class="red_text">Color</strong> attribute
+  and assign a <strong class="red_text">File</strong> texture.</p>
+<p>4. In the File Attribute Editor, locate <strong class="red_text">simpleTexture2.png</strong>.</p>
+<blockquote>
+  <p><img src="06_03a_fileeditor.jpg" alt="file texture" width="428" height="488" /></p>
+</blockquote>
+<p>5. Close the File Attribute Editor.</p>
+<p>You will see <strong class="red_text">simpleTexture</strong> with transparency on it. When
+  an image with an alpha channel is applied to a material, the alpha channel
+  is automatically connected to the material's <strong class="red_text">Transparency</strong>  attribute. </p>
+<p>6. Open simpleTexture's Attribute Editor to see that there
+  is a connection on its <strong class="red_text">Transparency</strong> attribute. </p>
+<blockquote>
+  <p><img src="06_03b_materialeditor.jpg" alt="attributes" width="428" height="488" /></p>
+</blockquote>
+<p>You can also graph the material in the main HyperShade window
+  to see the input connections.</p>
+<p>7. In HyperShade, select <strong class="red_text">simpleTexture</strong>.</p>
+<p>8. Click the <strong>Input Connections</strong> button
+  in the HyperShade toolbar.</p>
+<blockquote>
+  <p><img src="06_04a_graph.jpg" alt="input connections button" width="352" height="119" /></p>
+</blockquote>
+<p>9. Rollover the connection arrows in the <strong>Work
+    Area</strong> to see
+  the attributes that are connected to each other.</p>
+<blockquote>
+  <p><img src="06_04b_color.jpg" alt="color connections" width="453" height="150" /></p>
+  <p><img src="06_04c_transparency.jpg" alt="transparency connections" width="453" height="150" /></p>
+</blockquote>
+<p>Transparent materials can be viewed in Maya's viewpanel. </p>
+<p>10. Assign <strong class="red_text">simpleTexture</strong> to <strong class="red_text">simpleShape</strong>.
+  Be sure to press 6 to switch to Hardware Texture mode. </p>
+<p>You will now see <strong class="red_text">simpleShape</strong> with a transparent texture.</p>
+<blockquote>
+  <p><img src="06_05_shaded.jpg" alt="simpleShape with texture" width="462" height="412" /></p>
+</blockquote>
+<p>11. Save the scene as <strong class="red_text">simpleShapeAlpha.mb</strong>.</p>
+<p>12. Export the shape
+    and load it into the ShowTool.</p>
+<blockquote>
+  <p><img src="06_06_show.jpg" alt="simpleShape in Show" width="447" height="447" /></p>
+</blockquote>
+<p>You will see that the shape has a transparent material,
+  but it is only rendering the outer surface of the shape. This is normal behavior,
+  because Torque only renders the normal side of a face by default.</p>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Maya/Materials.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:49 GMT -->
+</html>

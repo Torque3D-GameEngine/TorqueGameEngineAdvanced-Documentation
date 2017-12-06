@@ -1,0 +1,355 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/GFX/Stateblocks.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4195;
+   parent.leftFrame.expandToItem('tree2', 'doc4195');
+   var element = parent.leftFrame.document.getElementById('doc4195');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueGameEngineAdvanced/1 8 Beta/GFXStateblocks - TDN</title>
+<link rel="stylesheet" type="text/css" href="container.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  bgcolor="#FFFFFF" id="body-with-lockmark">
+
+<table width="700" cellspacing="0" cellpadding="15" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+        <table width="700" border="0" cellpadding="15" cellspacing="0" xmlns="http://www.w3.org/1999/xhtml">
+          <tbody>
+            <tr>
+              <td width="700"><table id="toc">
+                  <tbody>
+                    <tr>
+                      <td><div id="toctitle">
+                          <h2><a name = "HeaderLink0"></a>Contents</h2>
+                          <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+                        <ul>
+                          <li class="toclevel-1"><a href="#Concept"><span class="tocnumber">1</span> <span class="toctext">Concept</span></a></li>
+                          <li class="toclevel-1"><a href="#Technical_Description"><span class="tocnumber">2</span> <span class="toctext">Technical Description</span></a></li>
+                          <li class="toclevel-1"><a href="#Source_Code"><span class="tocnumber">3</span> <span class="toctext">Source Code</span></a></li>
+                          <li class="toclevel-1"><a href="#GFXSamplerStateDesc"><span class="tocnumber">4</span> <span class="toctext">GFXSamplerStateDesc</span></a></li>
+                          <li class="toclevel-1"><a href="#GFXStateBlockDesc"><span class="tocnumber">5</span> <span class="toctext">GFXStateBlockDesc</span></a></li>
+                          <li class="toclevel-1"><a href="#GFXStateBlock"><span class="tocnumber">6</span> <span class="toctext">GFXStateBlock</span></a></li>
+                          <li class="toclevel-1"><a href="#GFXStateBlockData"><span class="tocnumber">7</span> <span class="toctext">GFXStateBlockData</span></a></li>
+                          <li class="toclevel-1"><a href="#Engine_Example"><span class="tocnumber">8</span> <span class="toctext">Engine Example</span></a></li>
+                          <li class="toclevel-1"><a href="#Script_Example"><span class="tocnumber">9</span> <span class="toctext">Script Example</span></a></li>
+                          <li class="toclevel-1"><a href="#Conclusion"><span class="tocnumber">10</span> <span class="toctext">Conclusion</span></a></li>
+                        </ul></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>
+                  </p>
+                <a name="Concept" id="Concept"></a>
+                <h2><a name = "HeaderLink1"></a>Concept</h2>
+                <p>A new concept introduced to TGEA by GFX2 is Stateblocks. The purpose
+                  of GFXStateblocks is quite simple: an entire rendering state is
+                  contained in one object, and you are able to set the rendering state
+                  with one call. If you've written rendering code before, you may have
+                  written code similar to this before: </p>
+                <pre>GFX-&gt;setBlendEnable(true);
+GFX-&gt;setBlendDest(GFXInvSrcAlpha);
+GFX-&gt;setBlendSrc(GFXSrcAlpha);
+</pre>
+                <p><br />
+                  What if you need to setup that kind of rendering state more than
+                  just once? GFXStateblocks allow you to wrap that up into the following: </p>
+                <pre>GFX-&gt;setStateBlock(myState);
+</pre>
+                <p><br />
+                  There's a little more tech and setup involved, but the above
+                  example should be enough to encourage you to read on and use this new
+                  concept in your own project. </p>
+                <a name="Technical_Description" id="Technical_Description"></a>
+                <h2><a name = "HeaderLink2"></a>Technical Description</h2>
+                <p>Using GFXStateblocks allows you to pre-generate your rendering
+                  states, which is going to save you time, clean up your code, apply
+                  modern rendering techniques, and give you more control over your game's
+                  rendering from the engine <b>as well as script</b>. When combined with CustomMaterials, the material definitions in script need less custom engine support. </p>
+                <p><br />
+                  Stateblocks are created by filling out a GFXStateBlockDesc structure
+                  and calling GFX-&gt;createStateBlock on it. This returns a
+                  GFXStateBlockRef, which is a reference-counted GFXStateBlock. This is
+                  essentially a GFXResource, just like a texture. Then you use a state
+                  block by calling GFX-&gt;setStateBlock and passing the state block in. </p>
+                <p><br />
+                  Stateblock creation should be done during initialization of
+                  your object, as the process is somewhat expensive. Each renderable
+                  object has a setupStateBlocks() function, which is then called during
+                  an objet's ::onAdd() class method. It is recommended you follow
+                  suit with this practice. </p>
+                <p><br />
+                  Previous versions of GFX and other Torque rendering systems
+                  worked under the concept of a canonical render state. Using a
+                  stateblock fully defines a render state, which completely does away
+                  with all concepts canonical. This is actually a good thing as this will
+                  reduce bugs introduced because a state was not properly cleaned up
+                  before exiting. </p>
+                <a name="Source_Code" id="Source_Code"></a>
+                <h2><a name = "HeaderLink3"></a>Source Code</h2>
+                <p>It might help if we tour the engine code, so you can get some concrete code samples in front of your eyes. Start by opening <b>gfxStateBlock.h</b> and <b>gfxStateBlock.cpp</b>, both of which are found in <i>engine/source/GFX</i>. Let's browse the header (.h) first. All four major declarations are important here: </p>
+                <pre>struct GFXSamplerStateDesc {...};
+
+struct GFXStateBlockDesc {...};
+
+class GFXStateBlock {...};
+
+typedef StrongRefPtr&lt;GFXStateBlock&gt; GFXStateBlockRef;
+</pre>
+                <a name="GFXSamplerStateDesc" id="GFXSamplerStateDesc"></a>
+                <h2><a name = "HeaderLink4"></a>GFXSamplerStateDesc</h2>
+                <p>The <b>GFXSamplerStateDesc</b> struct contains variables and methods
+                  to identify the texture object used for each texture lookup. You'll
+                  find texture arguments for color, alpha, min/mag/mip filter, and
+                  address modes. A solid example of how this structure is used can be
+                  found in the GFXGLStateBlock::activate(...) function. </p>
+                <p><br />
+                  Inside this method, a GFXSamplerStateDesc variable (ssd) is
+                  set to one of the stateblocks internal samplers. The function performs
+                  a check to see how OpenGL handles the GL_TEXTURE_2D variable: </p>
+                <p><br />
+                  Abbreviated code from GFXGLStateBlock::activate(...), found in engine/source/gfx/gl/gfxGLStateBlock.cpp </p>
+                <pre>const GFXSamplerStateDesc ssd = mDesc.samplers[i];
+
+switch (ssd.textureColorOp)
+{
+case GFXTOPDisable :
+   if(!tex)
+      break;
+   glDisable(GL_TEXTURE_2D);
+   updateTexParam = false;
+   break;
+}
+</pre>
+                <a name="GFXStateBlockDesc" id="GFXStateBlockDesc"></a>
+                <h2><a name = "HeaderLink5"></a>GFXStateBlockDesc</h2>
+                <p><b>GFXStateBlockDesc</b> defines a render state, which is then used
+                  to create a GFXStateBlock instance. If you look through the structure,
+                  you will read through some common render state ops and references:
+                  blending (source/destination/operation), depth buffer (z buffer
+                  enable/bias/deinition), color writes (write red/blue/green/alpha), and
+                  so on. </p>
+                <p><br />
+                  A nifty concept applied through GFXStateBlockDescr is the
+                  combining state block descriptions. This is done so through
+                  the ::addDesc(...) function: </p>
+                <p><br />
+                  <b>/// Adds data from desc to this description, uses *defined
+                  parameters in desc to figure out what blocks of state to actually copy
+                  from desc.</b> </p>
+                <pre>   void addDesc(const GFXStateBlockDesc&amp; desc);
+</pre>
+                <a name="GFXStateBlock" id="GFXStateBlock"></a>
+                <h2><a name = "HeaderLink6"></a>GFXStateBlock</h2>
+                <p>The base GFXStateBlock class looks very bare. It is derived from
+                  StrongRefBase and GFXResource. Being a StrongRefBase object, the
+                  stateblock will exist as long as the reference exists. When all of the
+                  strong references to the stateblock go away, it is permanently deleted.
+                  It is treated as a GFXResource since our GFX system needs to track its
+                  resources owned by a particular device. </p>
+                <p><br />
+                  There are only 4 functions in this base class, and they are
+                  all virtual. This is due to the fact that we have multiple graphical
+                  APIs to support, which means we are going to have GFXStateBlocks for
+                  DirectX and OpenGL: </p>
+                <ul>
+                  <li>GFXD3D8StateBlock </li>
+                  <li>GFXD3D9StateBlock </li>
+                  <li>GFXGLStateBlock </li>
+                </ul>
+                <p><br />
+                  Of course, we have our null device stateblock
+                  (GFXNullStateBlock), but you will not actually need to use that for any
+                  rendering. The other GFX devices will have their own implementation of
+                  stateblocks. In fact, let's take a look at the GL implementation. Open <i>engine/source/gfx/gl/gfxGLStateBlock.h</i>. The class we are looking at is <b>GFXGLStateBlock</b>. </p>
+                <p><br />
+                  Within this function we have a working interface (constructor and
+                  destructor), a function called by OpenGL to activate the stateblock
+                  (::activate), and a tangible GFXStateBlockDesc member variable (mDesc).
+                  The activate function definition can be found in <b>gfxGLStateBlock.cpp</b> </p>
+                <pre>GFXGLStateBlock::activate(const GFXGLStateBlock* oldState)
+{
+   // Internal code not shown
+}
+</pre>
+                <p><br />
+                  It is heavily commented and has a very important warning at the
+                  beginning. It is highly recommended you read through the comments and
+                  code to get a better understanding of how the stateblock is set up. </p>
+                <a name="GFXStateBlockData" id="GFXStateBlockData"></a>
+                <h2><a name = "HeaderLink7"></a>GFXStateBlockData</h2>
+                <p>Two very important classes we need to take a look at is the GFXStateBlockData class, found in <i>engine/source/gfx/sim/gfxStateBlockData.h/.cpp</i>.  The class definitions and their comments are quite descriptive: </p>
+                <pre>/// Allows definition of render state via script, basically wraps a GFXStateBlockDesc
+class GFXStateBlockData : public SimObject
+
+/// Allows definition of sampler state via script, basically wraps a GFXSamplerStateDesc
+class GFXSamplerStateData : public SimObject
+</pre>
+                <p><br />
+                  As you read, these classes allow us to create GFXStateBlock and
+                  GFXSamplerState descriptions in TorqueScript. This means you are able
+                  to a lot more custom shader and rendering work without being as reliant
+                  on custom engine code. You should definitely look through
+                  the ::initPersistFields() functions for each class. You will
+                  notice the various references and ops that make up a render state are
+                  exposed. </p>
+                <a name="Engine_Example" id="Engine_Example"></a>
+                <h2><a name = "HeaderLink8"></a>Engine Example</h2>
+                <p>We are going to use a very simple engine example for showing how GFXStateBlocks are created and used. Start by opening <i>engine/source/interior/interior.h/.cpp</i>.
+                  When we use debug rendering, we are able to see certain aspects of an
+                  interior that are normally invisible to a player. One such aspect would
+                  be the rendering of portals. </p>
+                <p><br />
+                  In the Interior class, we have defined multiple stateblock references. Let's look at one that affects our portal rendering: </p>
+                <pre>GFXStateBlockRef mInteriorDebugPortalSB;
+</pre>
+                <p><br />
+                  Ok! We have our stateblock reference, but it still needs some
+                  information. Go into Interior.cpp, and scroll down to the
+                  prepForRendering function around line 428: </p>
+                <pre>bool Interior::prepForRendering(const char* path)
+{
+     // Previous and remaining code not shown
+
+     mInteriorDebugPortalSB = GFX-&gt;createStateBlock(sh);
+
+}
+</pre>
+                <p><br />
+                  This line of code shows we have initialized our stateblock
+                  reference, but wait a minute...what device does so? We haven't seen any
+                  OpenGL or DirectX code anywhere, so how can we know if we are using a
+                  GFXGLStateBlock or not? This is where GFX2 takes control. <b>GFX-&gt;createStateBlock(...)</b> takes in a fully initialized GFXStateBlockDesc reference. </p>
+                <p><br />
+                  GFX then proceeds to set up the hash value and search for existing
+                  stateblocks. If the stateblock we need does not exist, it calls <b>createStateBlockInternal</b>.
+                  This function drills into our platform's device, so we have a
+                  GFXGLDevice::createStateBlockInternal, a
+                  GFXD3D8Device::createStateBlockInternal, and a
+                  GFXD3D9Device::createStateBlockInternal. </p>
+                <p><br />
+                  When creating a GFXStateBlock in script, quite a few things
+                  happen for you automatically. However, when you are in the engine there
+                  are a few "Gotchas" you have to remember. <b>When you create a GFXStateBlock in the engine, you must call setStateBlock before you use it!</b> </p>
+                <p><br />
+                  <b>Called in Interior::debugRenderPortals():</b> </p>
+                <pre>GFX-&gt;setStateBlock(mInteriorDebugPortalSB);
+</pre>
+                <p><br />
+                  A simple, more generic engine example would be this: </p>
+                <p><br />
+                  <b>Instead of:</b> </p>
+                <pre>  GFX-&gt;setBlendEnable(true);
+  GFX-&gt;setBlendDest(GFXInvSrcAlpha);
+  GFX-&gt;setBlendSrc(GFXSrcAlpha);
+</pre>
+                <p><br />
+                  <b>Use this:</b> </p>
+                <pre>  // Setup code, done once
+  GFXStateBlockDesc desc;
+  desc.setBlend(true, GFXSrcAlpha, GFXInvSrcAlpha);
+  GFXStateBlockRef myState = GFX-&gt;createStateBlock(desc);
+
+  // Render time code
+  GFX-&gt;setStateBlock(myState);
+
+</pre>
+                <a name="Script_Example" id="Script_Example"></a>
+                <h2><a name = "HeaderLink9"></a>Script Example</h2>
+                <p>Earlier, I mentioned using CustomMaterials and GFXStateBlocks
+                  together in script. We have provided you with a couple of examples.
+                  Open gameExamples/T3D/game/scriptsAndAssets/data/terrains/materials.cs.
+                  This file contains quite a few stateblocks and custom materials. Let's
+                  focus on one: </p>
+                <pre>new GFXStateBlockData(TerrainLightingState)
+{   
+   blendDefined = true;
+   blendEnable = true;
+   blendSrc = GFXBlendOne;
+   blendDest = GFXBlendOne;
+ 
+   samplersDefined = true;
+   samplerStates[0] = SamplerWrapLinear;
+   samplerStates[1] = SamplerBlendTextureAlpha;   
+   samplerStates[2] = SamplerClampLinear;   
+};
+</pre>
+                <p><br />
+                  The above code demonstrates how to declare a GFXStateBlock in Torque Script using the exposed Console Object, <b>GFXStateBlocKData</b>. In this example, we set a render state to enable bledning with a source being BlendOne, and our destination being BlendOne. </p>
+                <p><br />
+                  We also define our samplers as WrapLinear,
+                  BlendTextureAlpha, and ClampLinear. We can then use this stateblock in
+                  one of our CustomMaterial definitions: </p>
+                <pre>new CustomMaterial(TerrainMaterialDynamicLightingMask)
+{
+   texture[1] = "$blackfog";
+   texture[2] = "$dynamiclight";
+   texture[3] = "$dynamiclightmask";
+   
+   shader = TerrDynamicLightingMaskShader;
+   version = 1.1;
+   preload = true;
+   stateBlock = TerrainLightingState;
+   fallback = TerrainMaterialDynamicLightingFF;
+};
+</pre>
+                <p><br />
+                  Not only that, but we can use the same GFXStateBlock for other CustomMaterials: </p>
+                <pre>new CustomMaterial(TerrainMaterialDynamicLighting)
+{
+   texture[1] = "$blackfog";
+   texture[2] = "$dynamiclight";
+
+   shader = TerrDynamicLightingShader;
+   version = 1.1;
+   preload = true;
+   stateBlock = TerrainLightingState;
+   fallback = TerrainMaterialDynamicLightingFF;
+};
+</pre>
+                <p><br />
+                  Essentially, we wanted the exact same rendering state for our
+                  two custom materials. Instead of having to modify our engine code
+                  (twice), we can define our stateblock in script (once) and use it
+                  multiple times. </p>
+                <a name="Conclusion" id="Conclusion"></a>
+                <h2><a name = "HeaderLink10"></a>Conclusion</h2>
+                <p>There is a lot to learn about GFXStateBlocks. The intent of this doc
+                  was to give you a strong introduction on the purpose, engine structure,
+                  and examples of how to use this new system. As you develop new shaders
+                  and CustomMaterials, look for ways you can save yourself time and
+                  headaches by using GFXStateBlocks. </p></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        
+    
+  
+  
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/GFX/Stateblocks.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:14 GMT -->
+</html>

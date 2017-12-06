@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Engine Overview/Atlas.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 0;
+   parent.leftFrame.expandToItem('tree2', 'doc0');
+   var element = parent.leftFrame.document.getElementById('doc0');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Torque Atlas</title>
+<link href="torque.css" rel="stylesheet" type="text/css">
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  bgcolor="#ffffff" text="#000000" link="#333399" alink="#9999ff" vlink="#000066">
+<div align="center">
+
+<table width=700 cellspacing=0 cellpadding=10 border=0 bgcolor="#ffffff" summary="">
+<tr><td>
+<h1><a name = "HeaderLink0"></a><a name = "HeaderLink0"></a>Atlas</h1>
+<p>Atlas is a departure from the legacy Torque terrain system. It is not a heightfield renderer; rather it uses a chunked LOD scheme that can work directly with very large (&gt; 10 million triangle) meshes. This means it can natively support overhangs, tunnels, caves, and so forth.<br />
+</p><p><i>You can see <a href="http://tulrich.com/geekstuff/chunklod.html" class='external free' title="http://tulrich.com/geekstuff/chunklod.html" rel="nofollow">http://tulrich.com/geekstuff/chunklod.html</a> for the initial implementation of ChunkLOD by Thatcher Ulrich upon which the first Atlas release was based.<br /> The current incarnation of Atlas is significantly removed from Mr. Ulrich's excellent work, but it's still a good read.</i>
+</p>
+<a name="A_Conceptual_Overview"></a><h2><a name = "HeaderLink1"></a><a name = "HeaderLink1"></a>A Conceptual Overview</h2>
+<p>The latest incarnation of Atlas represents a significant evolution in the state of the art of Torque terrain rendering.
+</p><p>We've taken the lessons learned in the previous version and applied them throughout the codebase. This has resulted in significantly
+cleaner, more robust, and more extensible code.
+</p><p>The following sections outline the important architectural divisions in Atlas.
+</p>
+<a name="Resource_vs._Instance"></a><h3><a name = "HeaderLink2"></a><a name = "HeaderLink2"></a>Resource vs. Instance</h3>
+<p>In addition to supporting large paged datasets, Atlas supports multiple views on the same data. This is
+done using a resource/instance paradigm that can be found throughout Torque. For instance, a 3space
+shape is loaded into a shared TSShape class instance, and specific instances of that shape in the world
+are tracked using TSShapeInstance class instances. This allows the bulk of the data (vertex/index
+buffers, material definitions, transform hierarchies, etc.) to be shared, with only unique data stored per-
+instance.
+</p><p>Atlas supports the same behavior, so multiple instances of the same terrain share the same paged
+resource set, but unique information like current render/morph status is tracked per instance. This
+means that for certain important divisions there are peered class - for instance, there are
+AtlasInstanceTOC classes as well as AtlasResourceTOC classes. There are also helper functions for
+getting from one to the other in O(1) time, when applicable.
+</p><p>Just the TOC and Stub elements are actually split by the Resource/Instance division. Chunks and Files
+only live on the Resource side (though they are accessed by both sides).
+</p>
+<a name="File.2C_TOCs.2C_Stubs.2C_and_Chunks"></a><h3><a name = "HeaderLink3"></a><a name = "HeaderLink3"></a>File, TOCs, Stubs, and Chunks</h3>
+<p>There is a straightforward hierarchy for data stored in Atlas. In order from grossest to finest:
+</p><p><dl>
+<b>AtlasFile</b>
+<dd>An AtlasFile holds one or more TOCs (Tables of Contents, see next paragraph). It is
+responsible for coordinating reads and writes to the stream mapped to a given file. It manages the
+background disk IO and deserialization threads, as well as prioritizing reads across all TOCs.</dd> 
+</p><p><b>Table Of Contents or TOC</b> 
+<dd>A TOC contains a set of stubs and chunks, and typically maps to a single
+set of data. For instance, a typical Atlas file will contain a Geometry TOC and a Texture TOC, one
+containing all the different geometry chunks and LODs, and the other containing the same for texture
+data. The TOC is also responsible for tracking the load status of all of its stubs/chunks. A TOC can either
+be a quadtree (for geometry or texture data) or a simple list (for config data). </dd>
+</p><p><b>Stubs</b>
+<dd>A stub contains a small amount of data describing a chunk. The distinction here is that between
+a header and actual data. For instance, the bounding box of a chunk might be stored in the stub so it's
+always accessible, even if the chunk is currently not loaded. The stubs also contain book-keeping
+information about where chunks are located in the Atlas File.</dd>
+</p><p><b>Chunks</b>
+<dd>This is where actual data is stored. All the previous elements are always present in memory
+when working with an Atlas file. However, chunks are paged in and out on demand (as requested
+through the TOCs and coordinated by the AtlasFile). In a geometry TOC the geometry chunks contain
+vertex and index data, as well as collision lookup tables (if generated for that chunk). </dd>
+</dl>
+</p><p>This hierarchy is sufficient to page almost any kind of data imaginable. The main limitations here are in
+the size of the stubs and TOC - for extremely large data sets (with &gt; 1 million stubs), this might exceed
+the available core memory. Further paging could be implemented - for instance, segmenting the stub
+data - but in practice the working dataset would then be in the hundreds or thousands of gigabytes, so
+a little custom engineering is probably in order anyway!
+</p><p>In the Atlas codebase, this hierarchy is implemented using a small family of templated base classes,
+which are then specialized for the appropriate data at hand, so we find an AtlasBaseTOC&lt;T&gt; class
+which is then derived contextually for the various TOC types we need, the class hierarchy terminating
+in, e.g. AtlasResourceTexTOC, which is a resource TOC for texture data. By templating we avoid having
+to support many complex abstract interfaces, or having to do a lot of costly casting or branching
+behavior. This approach also enforces type safety throughout the Atlas codebase and client code which
+makes use of it - we let the compiler validate what we're doing at compile time, rather than hoping to
+catch all issues at runtime.
+</p>
+<a name="Core.2C_Resource.2C_Editor.2C_and_Runtime"></a><h3><a name = "HeaderLink4"></a><a name = "HeaderLink4"></a>Core, Resource, Editor, and Runtime</h3>
+<p>In addition to the core distinctions involved in support instanced, paged data, the Atlas codebase is
+grouped into four logical sections. These are:
+</p><p><dl>
+</p><p><b>Core</b> 
+<dd>This represents core data structures, including the basic threaded loader implementation, as well
+as most of the base implementation for Files, TOCs, Stubs, and Chunks. </dd>
+</p><p><b>Resource</b> 
+<dd>The various data types supported by Atlas are implemented in this group - geometry,
+config, and texture data. Saving and loading are the primary concerns here, as well as general
+operations on the data (like collision queries).</dd>
+</p><p><b>Editor</b> 
+<dd>The code here is responsible for generating new Atlas datasets, combining Atlas data, or
+modifying it. The various Atlas importers live here, as well as support code for regenerating LOD
+hierarchies.</dd>
+</p><p><b>Runtime</b> 
+<dd>This is where the Torque-Atlas interface lives (atlasInstance2.cpp), as well as the rendering
+infrastructure and the instance side of the Resource/Instance division. The clipmap implementation is
+here as well.</dd>
+</p><p></dl>
+</p>
+<a name="Providing_a_Smooth_Visual_Experience"></a><h3><a name = "HeaderLink5"></a><a name = "HeaderLink5"></a>Providing a Smooth Visual Experience</h3>
+<p>One of the worst things a renderer, especially a terrain renderer, can do is present visually jarring
+results. Spatial or temporal artifacting breaks the suspension of disbelief and ruins the user experience. 
+In order to provide a "smooth" experience for the user, Atlas employs two techniques to prevent
+noticeable discontinuities:
+</p><p><dl>
+<b>Geometry Morphing</b> 
+<dd>Geometry is always morphed in, in order to prevent visible pops. This occurs
+both as part of normal LOD transitions and also when data is paged in late and needs to be displayed
+right away - it will always morph over a few frames. This gives a smooth "growing" appearance to LOD
+failure cases (such as when the player manages to "outrun" the background loader by moving faster
+than data can be paged in) instead of a series of harsh jumps in geometry. The only exception is that
+when detail is dropped it is done without morphing - in this situation we assume there is an excess of
+detail beyond what the player can observe, so it doesn't matter that there is minor popping. It'll be lost
+in subpixel accuracy constraints.</dd>
+</p><p><b>Texture Transition Blending</b> 
+<dd>The clipmap texturing scheme used by Atlas smoothly blends
+border areas between high and low texture detail. As the user moves through the world, they're
+prevented from seeing abrupt popping in detail as most texture tiling schemes require. Instead, they
+see detail smoothly transition in. This is a side effect of how the clipmap operates and has no additional
+rendering cost. In the case of outrunning available paged detail, the user may see some popping, but in
+general it is significantly reduced.</dd>
+</p><p></dl>
+</p><p>These techniques, in combination, give a very smooth and discontinuity free appearance to Atlas
+terrain, allowing the user to focus on what's important - what's on top of it.
+</p>
+<a name="On_Coordinate_Systems"></a><h2><a name = "HeaderLink6"></a><a name = "HeaderLink6"></a>On Coordinate Systems</h2>
+<p>Due to the many different conventions involved in Atlas - D3D vs. OpenGL texture addressing, different
+notions of what X+ and Y+ mean in images and heightfields, and so forth - having to do various
+coordinate transforms in the course of bringing data from various sources is an unfortunate fact of life.<br />
+</p><p>These are Atlas' standards:
+</p><p><br />
+</p>
+
+<ul>
+<li>For texture tiles: if you cut and paste tile images, starting with x=0, y=0, with y+ being to the
+right and x+ being down, into paintbrush, you'll get the whole image, correctly arranged.</li>
+<li>Left to right (rows) in the heightfield maps to y+, top to bottom maps to x+. Overlaying
+heightfield on texture (say, in Photoshop) will have a 1:1 correspondence (taking into account
+relative scale of the two images).</li>
+<li>D3D flips UV/XY relationships between texels and texcoords.</dd>
+<li>This implies that for a linear texgen, these are the relationships between position and texture
+coords:</li>
+<li>TC.x = pos.y;</li>
+<li>TC.y = 1 - pos.x;</li>
+</ul>
+
+<a name="Importing.2C_Editing.2C_and_Atlas"></a><h2><a name = "HeaderLink7"></a><a name = "HeaderLink7"></a>Importing, Editing, and Atlas</h2>
+<a name="How_To_Write_Importers"></a><h3><a name = "HeaderLink8"></a><a name = "HeaderLink8"></a>How To Write Importers</h3>
+<p>An important part of any terrain system is getting data into it. In the previous incarnation of Atlas, this
+wasn't always easy, as serialization and structure management logic was spread all over the place. This
+version of Atlas, however, has been designed to be very easy to import data into. In general, all you
+have to do to create an importer for Atlas is:
+</p><p><ol>
+</p>
+<li>Create a new AtlasFile instance.
+
+<li>Instantiate a new TOC in it (probably either an AtlasResourceGeomTOC or
+AtlasResourceTexTOC) to store the data you will be importing. In general, each importer tries to
+create just one kind of data - this way more general purpose tools can be used to combine data
+into datasets that are ready to use in-engine.
+
+<li>Call createNew on the AtlasFile so it can serialize the TOC to disk and prepare for IO.
+
+<li>Call startLoaderThreads() to kick off the threaded serialization engine.
+
+<li>Now, you can iterate over the TOC and start instating new chunks into it:
+
+<ol>
+<li>Call getStub() on the TOC to get the stub you want to associate a new chunk with.
+<li>Generate a new AtlasChunk subclass - probably either AtlasGeomChunk or AtlasTexChunk, and stuff the data you've imported for that chunk into it.
+<li>Using AtlasResourceTOC::instateNewChunk - make sure to pass true for blocking and call
+purge() on the stub afterwards so that your importer runs in a fixed memory footprint
+<li>Associate the new chunk with the TOC!
+</ol>
+
+<li>Once you've filled in all the leaf chunks, you can call generate() on the TOC to generate all the
+intermediate LODs. For geometry data, you may want to generate intermediate LOD yourself;
+for texture data this is less of an issue since downsampling and combining is more
+straightforward in that case.
+
+<li>Don't forget to call waitForPendingWrites() on the AtlasFile before you finish your importing
+routine. Otherwise you may find that data isn't making it out to the file by the time the import process is done.
+</ol>
+
+There are several importers that ship with Atlas, which you can model off of. Check out the atlas/editor
+subdirectory. It is important to note that Atlas does not currently support real time editing. Due to the massive amounts of pre-processing required, Atlas terrains should be edited in the terrain generation program, and then re-processed for Torque.
+
+<a name="Working_With_Massive_Datasets"></a><h3><a name = "HeaderLink9"></a><a name = "HeaderLink9"></a>Working With Massive Datasets</h3>
+<p>Atlas often processes very large datasets. It's very important when developing tools - especially ones involved in bulk processing - to keep in mind that they may have to process many tens of thousands of chunks, each representing multiple megabytes of data. All tools should be able to operate on arbitrary sized datasets with a fixed maximum (typically based on the maximum number of chunks needed simultaneously, which should not exceed around 5 - a chunk and its children). 
+</p><p>It's also good practice to have your tools spit out status messages every so often - there's nothing more unsettling to an end user than having a tool that doesn't give copious and clear feedback, especially when a single run may last several hours!  instateNewChunk unloads (ie, frees the memory for) the old chunk you're replacing, if it's currently loaded, but unless you purge it, the new chunk you've instated will remain loaded indefinitely. The best practice, especially when working with editing tools that may need to operate on extremely large datasets, is to purge or free all the data used in each chunk's processing immediately, so that when operating on files with potentially tens of thousands of chunks, available memory is not exceeded.
+</p>
+
+
+  </td>
+</tr>
+</table>
+
+</div>
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Engine Overview/Atlas.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:11 GMT -->
+</html>

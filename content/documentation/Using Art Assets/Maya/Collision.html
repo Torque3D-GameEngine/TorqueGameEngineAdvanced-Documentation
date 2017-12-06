@@ -1,0 +1,108 @@
+<html>
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Maya/Collision.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4283;
+   parent.leftFrame.expandToItem('tree2', 'doc4283');
+   var element = parent.leftFrame.document.getElementById('doc4283');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TGEA - Using Art Assets - Maya - Collision</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css"/>
+<link rel="STYLESHEET" type="text/css" href="content.css"/>
+<link rel="STYLESHEET" type="text/css" href="torque.css"/>
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  >
+
+<table cellspacing="0" cellpadding="15" border="0" style="text-align: justify;">
+<tr>
+<td>
+   
+<table id='toc' class='toc'><tr><td><div id='toctitle'><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="#General_Information"><span class="tocnumber">1</span> <span class="toctext">General Information</span></a></li>
+<li class='toclevel-1'><a href="#Create_Collision_Details_for_simpleShape"><span class="tocnumber">2</span> <span class="toctext">Create Collision Details for simpleShape</span></a></li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+
+<a name="General_Information"></a><h2><a name = "HeaderLink1"></a>General Information</h2><br />
+<p>There is no correct way to make collision objects for the Torque engine. It
+  all depends on how your programmer wants to implement collision detection.
+  Several games used this engine and they all used different collision schemes.
+  Different collision schemes can be different for different shapes as well.
+  Some shapes use simple sphere collision that is derived from the bounding box,
+  some have custom-built collision shapes. Vehicles tend to have custom collision
+  shapes.</p>
+<p>Custom collision shapes can be created by assigning
+    a negative detail number to the shape and creating a corresponding detail
+    marker. Shapes with negative numbers will export but not draw. Because Maya
+    does not allow <strong>dashes</strong> (&quot;-&quot;)
+  in object names, <strong>underscores</strong> (&quot;_&quot;) must be used.</p>
+<p>The Torque Game Engine presently uses detail markers
+    named <strong class="red_text">Collision_#</strong> with
+  the mesh shapes named <strong class="red_text">Col_#</strong>. The shapes must be <strong>convex
+  hulls</strong> (no
+  concave surfaces).</p>
+<p>Here are some of the naming conventions:</p>
+<blockquote>
+  <p> <strong class="red_text">Collision_1</strong> through <strong class="red_text">Collision_9</strong>: These are collision markers.<br />
+    <strong class="red_text">Col_1</strong> through <strong class="red_text">Col_9</strong>: These are the actual collision meshes.<br />
+    <strong class="red_text">LOS_9</strong> through <strong class="red_text">LOS_15</strong>: Markers for line of sight, or &quot;bullet&quot;, collision
+    shapes.<br />
+  <strong class="red_text">LOScol_9</strong> through <strong class="red_text">LOScol_15</strong>: Geometry for line of sight collision.</p>
+</blockquote>
+<p>Keep the detail
+    meshes as low in polygon count as possible, because collision can be processor
+    intensive. Vehicles are limited to ONE collision mesh for the collision shape.</p>
+
+<a name="Create_Collision_Details_for_simpleShape"></a><h2><a name = "HeaderLink2"></a>Create Collision Details for simpleShape</h2><br />
+<p>1. Open <strong class="red_text">simpleShapeBase.mb</strong>.</p>
+<p>2. Duplicate <strong class="red_text">simpleShape128</strong> with
+  the input graph. Rename the new shape <strong class="red_text">Col_1</strong> and
+  set its <strong class="red_text">subdivisionsAxis</strong> and <strong class="red_text">subdivisionsHeight</strong> to <strong class="red_text">6</strong>.</p>
+<p>3. Open Outliner (<em>Window &gt; Outliner</em>).</p>
+<p>4. Expand <strong class="red_text">base01</strong>.
+  Select <strong class="red_text">detail2</strong> and duplicate it. Rename
+  the new detail marker <strong class="red_text">Collision_1</strong>.</p>
+<blockquote>
+  <p> <img src="05_01_outliner.jpg" alt="outliner" width="283" height="563" border="0" /></p>
+</blockquote>
+<p>5. Save the scene file as <strong class="red_text">simpleShapeCollision.mb</strong>.</p>
+<p>6. Export this shape. It will now have a collision mesh.</p>
+<p>The
+    easiest way to test the collision is to replace an existing shape in the
+  game. For example, you can export a shape called <strong class="red_text">bush1.dts</strong> and
+      replace the one that exists in the demo (make sure you rename the old <strong class="red_text">bush1.dts</strong> and
+      have your texture in the same directory). Drop in the demo, and you can
+      crash into and bounce off of the shape you just made.</p>
+
+</td>
+</tr>
+</table>
+
+<div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Using Art Assets/Maya/Collision.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:49 GMT -->
+</html>

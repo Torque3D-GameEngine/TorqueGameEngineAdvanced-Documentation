@@ -1,0 +1,1081 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_11.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4246;
+   parent.leftFrame.expandToItem('tree2', 'doc4246');
+   var element = parent.leftFrame.document.getElementById('doc4246');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>Torque Console Objects 11 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+ <table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console_Objects_Fields_and_Methods_Quick_Reference_Part_11"><span class="tocnumber">1</span> <span class="toctext">Console Objects Fields and Methods Quick Reference Part 11</span></a>
+<ul>
+<li class="toclevel-2"><a href="#ScriptBase_Cntd."><span class="tocnumber">1.1</span> <span class="toctext">ScriptBase Cntd.</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Methods_Cntd."><span class="tocnumber">1.1.1</span> <span class="toctext">Console Methods Cntd.</span></a>
+<ul>
+<li class="toclevel-4"><a href="#Velocity"><span class="tocnumber">1.1.1.1</span> <span class="toctext">Velocity</span></a></li>
+<li class="toclevel-4"><a href="#Impulses"><span class="tocnumber">1.1.1.2</span> <span class="toctext">Impulses</span></a></li>
+<li class="toclevel-4"><a href="#Camera_Settings"><span class="tocnumber">1.1.1.3</span> <span class="toctext">Camera Settings</span></a></li>
+<li class="toclevel-4"><a href="#Animations"><span class="tocnumber">1.1.1.4</span> <span class="toctext">Animations</span></a></li>
+<li class="toclevel-4"><a href="#Sound"><span class="tocnumber">1.1.1.5</span> <span class="toctext">Sound</span></a></li>
+<li class="toclevel-4"><a href="#Mounting"><span class="tocnumber">1.1.1.6</span> <span class="toctext">Mounting</span></a></li>
+<li class="toclevel-4"><a href="#The_Control_Object"><span class="tocnumber">1.1.1.7</span> <span class="toctext">The Control Object</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Console_Objects_Fields_and_Methods_Quick_Reference_Part_11"></a><h1><a name = "HeaderLink1"></a>Console Objects Fields and Methods Quick Reference Part 11</h1>
+<p><br />
+</p><p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br /><br />
+</p>
+<a name="ScriptBase_Cntd."></a><h3><a name = "HeaderLink2"></a>ScriptBase Cntd.</h3>
+<hr />
+<p><br />
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<a name="Console_Methods_Cntd." xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink3"></a>Console Methods Cntd.</h4>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Velocity" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink4"></a>Velocity</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getVelocity()</td>	
+<td width="33%" align="center" bgcolor="#009900">setVelocity()</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getVelocity()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getVelocity</b></i> method to get the current velocity of this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns an XYZ vector equivalent to the magnitude and direction of this shape's movement.<br />
+<br />
+<b>See Also</b><br />
+applyImpulse, setVelocity<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setVelocity( <i>velocity</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setVelocity</b></i> method to set this shape's current velocity.<br />
+<br />
+<b>Syntax<br />
+<i>veclocity</i></b> – An XYZ vector equivalent to the new magnitude and direction of this shape's movement.<br />
+<br />
+<b>Returns</b><br />
+Returns true on success, false on failure.<br />
+<br />
+<b>Notes</b><br />
+It is sometimes nicer to use this method than <i>applyImpluse</i> because with this we can ignore a shape's mass while with <i>applyImpluse</i> mass directly affects the end velocity of the shape.<br />
+<br />
+<b>See Also</b><br />
+appyImpulse, getVelocity<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Impulses" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink5"></a>Impulses</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">applyImpulse</td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>applyImpulse( <i>position</i> , <i>impulseVector</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>applyImpulse</b></i> method to apply an instantaneous acceleration to a shape at world <i><b>position</b></i>.<br />
+<br />
+<br />
+<b>Syntax<br />
+<i>position</i></b> – An XYZ vector specifying the position at which to apply the impulse.<br />
+<i><b>impulseVector</b></i> –  An XYZ vector encoding the magnitude and direction of the impulse.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+To apply an impulse, the shape must have a non-zero positive mass, or applying an impulse will crash the engine.  Also, applying an impulse whose magnitude is greater than or equal to about 40 times the mass of a shape may cause the engine to lock up temporarily.<br />
+<br />
+<b>See Also</b><br />
+setVelocity<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Camera_Settings" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink6"></a>Camera Settings</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getCameraFOV</td>	
+<td width="33%" align="center" bgcolor="#009900">setCameraFOV</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getCamerFOV( )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getCamerFOV</b></i> method to get the current field-of-view FOV.<br />
+<br />
+<b>Returns</b><br />
+Returns the current FOV setting, a value between 0.0 and 180.0<br />
+<br />
+<b>See Also</b><br />
+setCameraFOV<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setCamerFOV( <i>FOV</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setCamerFOV</b></i> method to set the current field-of-view (FOV) if this is a camera shape, or if a camera shape is using this shape to get it's FOV setting.<br />
+<br />
+<b>Syntax<br />
+<i>FOV</i></b> – Field-of-view.  A flaoting-point value between 0.0 and 180.0. <br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Changing the FOV will make the view zoom in and out, depending on the setting.  i.e. If we start at an default FOV of 90.0 and increase it to 270.0, the scene will zooom out.  If we change it to 35.0 it will zoom in.<br />
+<br />
+<b>See Also</b><br />
+getCameraFOV<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Animations" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink7"></a>Animations</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="25%" align="center" bgcolor="#009900">pauseThread</td>	
+<td width="25%" align="center" bgcolor="#009900">playThread</td>
+<td width="25%" align="center" bgcolor="#009900">setThreadDir</td>	
+<td width="25%" align="center" bgcolor="#009900">stopThread</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>pauseThread( <i>thread</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>pauseThread</b></i> method to pause a currently playing animation.<br />
+<br />
+<b>Syntax<br />
+<i>thread</i></b> – An integer value between 0 and 3 specifying a previously started animation sequence.<br />
+<br />
+<b>Returns</b><br />
+Returns true if there was a previous thread playing, false otherwise.<br />
+<br />
+<b>See Also</b><br />
+playThread, stopThread<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>playThread( <i>thread</i> , <i>sequenceName</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>playThread</b></i> method to play a new sequence specified by <i><b>sequenceName</b></i> in the animation <i><b>thread</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>thread</i></b> – An integer value between 0 and 3 specifying a thread/slot to start this animation in.<br />
+<i><b>sequenceName</b></i> – A valid animation name for the mesh this shape is using.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the thread was successfully started, otherwise returns false.<br />
+<br />
+<b>Notes</b><br />
+Playing an new animation in a <i><b>thread</b></i> that already has an active animation will stop the active animation and reset affected nodes to their pre-animation positions.<br />
+<br />
+<b>See Also</b><br />
+pauseThread, setThreadDir, stopThread<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setThreadDir( <i>thread</i> , <i>forward</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setThreadDir</b></i> method to set the direction a specific <i><b>thread</b></i> should be played in.<br />
+<br />
+<b>Syntax<br />
+<i>thread</i></b> – An integer value between 0 and 3 specifying a previously started animation sequence.<br />
+<i><b>forward</b></i> – A boolean value.  If set to true, the animation will play forward, otherwise it will play in reverse.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the direction could be set for the specified <i><b>thread</b></i>, otherwise returns false.<br />
+<br />
+<b>Notes</b><br />
+A thread needs to have already been started for this to work, but after that this will work on any sequence whether it be already completed, or a cyclic animation that never ends.<br />
+<br />
+<b>See Also</b><br />
+pauseThread, playThread, stopThread<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>stopThread( <i>thread</i>  )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>stopThread</b></i> method to stop a previousl started sequence from playing.<br />
+<br />
+<b>Syntax<br />
+<i>thread</i></b> – An integer value between 0 and 3 specifying a previously started animation sequence.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the thread was successfully stopped, otherwise returns false.<br />
+<br />
+<b>See Also</b><br />
+pauseThread, playThread, setThreadDir<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Sound" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink8"></a>Sound</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">playAudio</td>	
+<td width="33%" align="center" bgcolor="#009900">stopAudio</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>playAudio( <i>thread</i>  , <i>audioProfile</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>playAudio</b></i> method to play a sound specified by <i><b>audioProfile</b></i> in the slot specified by <i><b>thread</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>thread</i></b> – An integer value between 0 and 3 specifying a slot to play the sound in.<br />
+<i><b>audioProfile</b></i> – An audioprofile datablock previously created using the datablocks keyword, not the new keyword.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the sound was successfully started, otherwise returns false.<br />
+<br />
+<b>Notes</b><br />
+Be sure to only use audioProfiles made using the datablock keyword or the sounds will not play on remote clients.<br />
+<br />
+<b>See Also</b><br />
+stopAudio<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>stopAudio( <i>thread</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>stopAudio</b></i> method to stop a previously started audio <i><b>thread</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>thread</i></b> – An integer value between 0 and 3 specifying a slot in which a sound was previously started.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the sound was successfully stopped, otherwise returns false.<br />
+<br />
+<b>See Also</b><br />
+playAudio<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Mounting" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink9"></a>Mounting</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getMountedImage</td>	
+<td width="33%" align="center" bgcolor="#009900">getMountedObjectCount</td>
+<td width="33%" align="center" bgcolor="#009900">getMountedObjectNode</td>	
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getMountNodeObject</td>	
+<td width="33%" align="center" bgcolor="#009900">getMountSlot</td>
+<td width="33%" align="center" bgcolor="#009900">getMountedObject</td>	
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getObjectMount</td>	
+<td width="33%" align="center" bgcolor="#009900">getPendingImage</td>
+<td width="33%" align="center" bgcolor="#009900">getSlotTransform</td>	
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">isImageMounted</td>	
+<td width="33%" align="center" bgcolor="#009900">isMounted</td>
+<td width="33%" align="center" bgcolor="#009900">mountImage</td>	
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">mountObject</td>	
+<td width="33%" align="center" bgcolor="#009900">unmount</td>
+<td width="33%" align="center" bgcolor="#009900">unmountImage</td>	
+</tr>
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">unmountObject</td>	
+<td width="33%" align="center" bgcolor="#009900"></td>
+<td width="33%" align="center" bgcolor="#009900"></td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getMountedImage( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getMountedImage</b></i> method to get the datablock ID of the image mounted in <i><b>slot</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns the datablock ID of the image mounted in <i><b>slot</b></i>, or zero if no image is mounted.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+See Also<br />
+isImageMounted, mountImage, unmountImage<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getMountedObjectCount()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <b>getMountedObjectCount</b> method to determine how many objects are currently mounted to this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer between 0 and 8 representing the number of objects that are mounted to this shape.<br />
+<br />
+<b>Notes</b><br />
+A shape may have at most eight objects mounted to it at any one time.<br />
+<br />
+This method does not count images that are mounted to the shape.<br />
+<br />
+<b>See Also</b><br />
+mountObject, unmountObject<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getMountedObjectNode( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getMountedObjectNode</b></i> method to determine the mount node index of an object mounted in <b>slot</b>.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns a numberic value between 0 and 31 if an object is mounted is slot, otherwise returns -1.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+<b>See Also<br />
+getMountNodeObject</b><br />
+<br />
+Return the mount node used by the object/image mounted at <i><b>slot</b></i>.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getMountNodeObject( <i>node</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getMountNodeObject</b></i> method to get the ID of the object mountd at mount <i><b>node</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>node</i></b> – A node value between 0 and 31 representing a mount node in the mesh used by this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer value equal to the ID of the object mounted on <i><b>node</b></i>.  If not object is mounted at node, this method returns -1.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+<b>See Also</b><br />
+getMountedObjectNode<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getMountSlot( <i>imageHandle</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getMountSlot</b></i> method to determine what slot the image datablock specified by <i><b>imageHandle</b></i> is mounted in.<br />
+<br />
+<b>Syntax<br />
+<i>imageHandle</i></b> – The name of ID of a ShapeBaseImageData datablock.  <br />
+<br />
+<b>Returns</b><br />
+Returns a value between 0 and 7 if <i><b>imageHandle</b></i> is mounted to this shape, or -1 if it is not.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getMountedObject( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getMountedObject</b></i> method to get the ID of the object mountd at mount <i><b>slot</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer value equal to the ID of object mounted is <i><b>slot</b></i>.  If not object is mounted in this slot, the method returns -1.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+<b>See Also</b><br />
+getMountedObjectNode<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getObjectMount()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getObjectMount</b></i> method to get the ID of the object this object is mounted to.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer value representing the ID of an object that this shape is mounted to, or 0 if this object is not mounted to another object.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getPendingImage( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getPendingImage</b></i> method to get the ID of an image that is pending for <i><b>slot</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer value representing the ID of a shapeBaseImageData object that is pending for <i><b>slot</b></i>.  If no image is pending, returns 0.<br />
+<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getSlotTransform( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getSlotTransform</b></i> method to get the transform the specified <i><b>slot</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns a seven-element floating-point vector representing the transform of the node that an object tracked in <i><b>slot</b></i> is mounted to.  i.e. Once we have a shape mounted to another shape, we can determine what slot the shape is tracked in and then get the tranform for the node that is being used for the mount.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isImageMounted( <i>imageHandle</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isImageMounted</b></i> method to determine if the shapeBaseImageData specified by <i><b>imageHandle</b></i> is mounted on this shape.<br />
+<br />
+<b>Syntax<br />
+<i>imageHandle</i></b> – The datablock ID of a shapeBaseImageData object to check for.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the specified image is mounted to this shape, otherwise returns false.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isMounted()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isMounted</b></i> method to see if this object is mounted to another shape.<br />
+<br />
+<b>Returns</b><br />
+Returns true if this shape is mounted to another shape, otherwise returns false.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>mountImage( <i>imageHandle</i>, <i>slot</i> [ , <i>loaded</i> [ , <i>skinName</i> ] ] )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mountImage</b></i> method to mount the image specified by <i><b>imageHandle</b></i> to this image, using <i><b>slot</b></i>.  Optinally, this image can be set to the '<i><b>loaded</b></i>' state and given an alternate <i><b>skinName</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>imageHandle</i></b> – The ID or name of a valid shapeBaseImageData datablock.<br />
+<i><b>slot</b></i> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<i><b>loaded</b></i> – A boolean value.  If set to true, the image the image's loaded state will be true.<br />
+<i><b>skinName</b></i> – A optional skin tag used to specify a specialized 'team' skin for the image.<br />
+<br />
+<b>Returns</b><br />
+Returns true on success, false otherwise.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+Don't forget.  Images specify the node that the mount to in their 'mountPoint' field.<br />
+<br />
+<b>See Also</b><br />
+mountObject<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>mountObject( <i>objectHandle</i> , <i>node</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>mountObject</b></i> method to mount the shape specified by <i><b>objectHandle</b></i> to this shape at mount <i><b>node</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>objectHandle</i></b> – The ID or name of the shape to mount to this shape.<br />
+<i><b>node</b></i> – The mount node on this shape's mesh upon which to mount the shape.<br />
+<br />
+<b>Returns</b><br />
+Returns true on a successful mount, otherwise returns false. <br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+<b>See Also</b><br />
+mountImage<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>unmount()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>unmount</b></i> method to force this object to be unmounted from a shape it is mounted to.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+unmountImage, unMountObject<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>unmountImage( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>unmountImage</b></i> method to unmount an image mounted to this shape in <i><b>slot</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns true if the image was unmounted successfully, otherwise returns false if no image was present in that <i><b>slot</b></i>.  Images cannot 'resist' unmounting.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+<b>See Also</b><br />
+unmountObject<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>unmountObject( <i>objectHandle</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>unmountObject</b></i> method to cause the object specified by objectHandle to unmount from this shape.<br />
+<br />
+<b>Syntax<br />
+<i>objectHandle</i></b> – The ID or name of an object mounted to this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns true if <i><b>objectHandle</b></i> is in fact mounted to this shape and is then unmounted by this method.  Returns false if <i><b>objectHandle</b></i> is not mounted to this shape.<br />
+<br />
+<b>See Also</b><br />
+unmountImage<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="The_Control_Object" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink10"></a>The Control Object</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getControllingClient()</td>	
+<td width="33%" align="center" bgcolor="#009900">getControllingObject()</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getControllingClient()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <b>getControllingClient</b> method to get the ID of the client controlling this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns the ID of the GameConnection (client) controlling this shape, or 0 if no client is controlling this shape.<br />
+<br />
+<b>See Also</b><br />
+getControllingObject<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getControllingObject()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <b>getControllingObject</b> method to get the ID of the object controlling this object.  Shapes may controlled by other shapes by having the controlling shape pass commands sent to it from the client to a surrogate object instead. i.e. Object A can be controlled by the client and send movement inputs to object B, in effect controlling object B.<br />
+<br />
+<b>Returns</b><br />
+Returns the ID of the shape controlling this object, otherwise if no object is controlling this shape returns 0.<br />
+<br />
+The playe class has methods for setting up control of other shapes.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><a href="Console%20Objects.html" title="Torque Console Objects TOC"> Table of Contents</a> || <a href="Torque_Console_Objects_1.html" title="Torque Console Objects"> Part 1</a> || <a href="Torque_Console_Objects_2.html" title="Torque Console Objects 2"> Part 2</a> || <a href="Torque_Console_Objects_3.html" title="Torque Console Objects 3"> Part 3</a> || <a href="Torque_Console_Objects_4.html" title="Torque Console Objects 4"> Part 4</a> || <a href="Torque_Console_Objects_5.html" title="Torque Console Objects 5"> Part 5</a> || <a href="Torque_Console_Objects_6.html" title="Torque Console Objects 6"> Part 6</a> || <a href="Torque_Console_Objects_7.html" title="Torque Console Objects 7"> Part 7</a> || <a href="Torque_Console_Objects_8.html" title="Torque Console Objects 8"> Part 8</a> || <a href="Torque_Console_Objects_9.html" title="Torque Console Objects 9"> Part 9</a> || <a href="Torque_Console_Objects_10.html" title="Torque Console Objects 10"> Part 10</a> || <a href="Torque_Console_Objects_12.html" title="Torque Console Objects 12"> Part 12</a> || <a href="Torque_Console_Objects_13.html" title="Torque Console Objects 13"> Part 13</a> || <a href="Torque_Console_Objects_14.html" title="Torque Console Objects 14"> Part 14</a> || <a href="Torque_Console_Objects_15.html" title="Torque Console Objects 15"> Part 15</a>
+</p>
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_11.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:00 GMT -->
+</html>

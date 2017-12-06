@@ -1,0 +1,1396 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_10.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4245;
+   parent.leftFrame.expandToItem('tree2', 'doc4245');
+   var element = parent.leftFrame.document.getElementById('doc4245');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>Torque Console Objects 10 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+ <table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console_Objects_Fields_and_Methods_Quick_Reference_Part_10"><span class="tocnumber">1</span> <span class="toctext">Console Objects Fields and Methods Quick Reference Part 10</span></a>
+<ul>
+<li class="toclevel-2"><a href="#ScriptBase_Cntd."><span class="tocnumber">1.1</span> <span class="toctext">ScriptBase Cntd.</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Console_Methods_Cntd."><span class="tocnumber">1.1.1</span> <span class="toctext">Console Methods Cntd.</span></a>
+<ul>
+<li class="toclevel-4"><a href="#Re-Skinning"><span class="tocnumber">1.1.1.1</span> <span class="toctext">Re-Skinning</span></a></li>
+<li class="toclevel-4"><a href="#Damage"><span class="tocnumber">1.1.1.2</span> <span class="toctext">Damage</span></a></li>
+<li class="toclevel-4"><a href="#Damage_Flashes_.26_Whiteouts"><span class="tocnumber">1.1.1.3</span> <span class="toctext">Damage Flashes &amp; Whiteouts</span></a></li>
+<li class="toclevel-4"><a href="#Energy"><span class="tocnumber">1.1.1.4</span> <span class="toctext">Energy</span></a></li>
+<li class="toclevel-4"><a href="#Eye_Transform_and_Vectors"><span class="tocnumber">1.1.1.5</span> <span class="toctext">Eye Transform and Vectors</span></a></li>
+<li class="toclevel-4"><a href="#Image.2FWeapons_Specifics"><span class="tocnumber">1.1.1.6</span> <span class="toctext">Image/Weapons Specifics</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Console_Objects_Fields_and_Methods_Quick_Reference_Part_10"></a><h1><a name = "HeaderLink1"></a>Console Objects Fields and Methods Quick Reference Part 10</h1>
+<p><br />
+</p><p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br /><br />
+</p>
+<a name="ScriptBase_Cntd."></a><h3><a name = "HeaderLink2"></a>ScriptBase Cntd.</h3>
+<hr />
+<p><br />
+</p><p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<a name="Console_Methods_Cntd." xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink3"></a>Console Methods Cntd.</h4>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Re-Skinning" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink4"></a>Re-Skinning</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getSkinName</td>	
+<td width="33%" align="center" bgcolor="#009900">setSkinName</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getSkinName()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <b>getSkinName</b> method to determine which skin this shape is currently using.<br />
+<br />
+<b>Returns</b><br />
+Returns a string containing the name of the skin this shape is using, or if this shape is not set up to use multiple skins, it returns the NULL string.<br />
+<br />
+<b>Notes</b><br />
+Shapes must be skinned with specially named set of textures in order to enable re-skinning.  Please see GPGT volume 1 for more details.<br />
+<br />
+<b>See Also</b><br />
+setSkinName<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setSkinName( <i>skinName</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setSkinName</b></i> method to change the current skin for this shape.<br />
+<br />
+<b>Syntax<br />
+<i>skinName</i></b> – A string containing a valid skin name, as set up in the shapes set of skins.  If this skin name does not match any of the textures used by this object, the object will not change skins.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Shapes must be skinned with specially named set of textures in order to enable re-skinning.  Please see GPGT volume 1 for more details.<br />
+<br />
+<b>See Also</b><br />
+getSkinName<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Damage" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink5"></a>Damage</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="25%" align="center" bgcolor="#009900">applyDamage</td>	
+<td width="25%" align="center" bgcolor="#009900">applyRepair</td>	
+<td width="25%" align="center" bgcolor="#009900">getAIRepairPoint</td>	
+<td width="25%" align="center" bgcolor="#009900">getDamageLevel</td>	
+</tr>
+
+<tr>
+<td width="25%" align="center" bgcolor="#009900">getDamagePercent</td>	
+<td width="25%" align="center" bgcolor="#009900">getDamageState</td>	
+<td width="25%" align="center" bgcolor="#009900">isEnabled</td>	
+<td width="25%" align="center" bgcolor="#009900">isDisabled</td>	
+</tr>
+
+<tr>
+<td width="25%" align="center" bgcolor="#009900">isDestroyed</td>	
+<td width="25%" align="center" bgcolor="#009900">setDamageLevel</td>	
+<td width="25%" align="center" bgcolor="#009900">setDamageState</td>	
+<td width="25%" align="center" bgcolor="#009900">setDamageVector</td>	
+</tr>
+
+<tr>
+<td width="25%" align="center" bgcolor="#009900">setInvincibleMode</td>	
+<td width="25%" align="center" bgcolor="#009900">setRepairRate</td>	
+<td width="25%" align="center" bgcolor="#009900"></td>	
+<td width="25%" align="center" bgcolor="#009900"></td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>applyDamage( <i>damage</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>applyDamage</b></i> method to apply the specified amount of <i><b>damage</b></i> to this shape.<br />
+<br />
+<b>Syntax<br />
+<i>damage</i></b> – A floating-point value specifying a positive amount of damage to apply to this shape.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>See Also</b><br />
+applyRepair, getDamageLevel<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>applyRepair( <i>repair</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>applyRepair</b></i> method to apply <i><b>repair</b></i> ammount or repair to shape.<br />
+<br />
+<b>Syntax<br />
+<i>repair</i></b> – A positive number of repair points to apply to this shape.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Before this will work, the self-repair must at least temporarily be disabled, by calling <i>setRepairRate</i> with an argument of 0.<br />
+<br />
+<b>See Also</b><br />
+applyDamage, getDamageLevel, setRepairRate<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getAIRepairPoint()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getAIRepairPoint</b></i> method to get the the position of a specially named mesh node: "AIRepairNode".  It is used as a helper when deciding where an AI should 'stand' to repair this shape. <br />
+<br />
+<b>Returns</b><br />
+Returns a three-element floating-point vector containing the position of a specially named mesh node: "AIRepairNode".  It is used as a helper when deciding where an AI should 'stand' to repair this shape.  <br />
+<br />
+<b>Notes</b><br />
+If this node is not present in the shape, the position of the shape's centroid will be returned instead.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getDamageLevel()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getDamageLevel</b></i> method to determine the current level of damage this shape has sustained.<br />
+<br />
+<b>Returns</b><br />
+Returns a floating point value between 0.0 and maxDamage (as specified in the shape's datablock). 0.0 is equal to 'no damage'.<br />
+<br />
+<b>See Also</b><br />
+applyDamage, applyRepair, getDamagePercent, getDamageState<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getDamagePercent()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getDamagePercent</b></i> method to get a relative percentage of damage for this shape, where the equation for this precent is currentDamage / maxDamage.<br />
+<br />
+<b>Returns</b><br />
+Returns a floating point value between 0.0 (0%) and 1.0 (100%).<br />
+<br />
+<b>See Also</b><br />
+applyDamage, applyRepair, getDamageLevel, getDamageState<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getDamageState()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getDamageState</b></i> method to determine this shape's current damage state.<br />
+<br />
+<b>Returns</b><br />
+Returns a string specifying the current damage state for this shape:<br />
+<br />
+<i><b>Enabled</b></i>   – Damage &lt; Disabled Level<br />
+<i><b>Disabled</b></i>  – Disabled Level less than or equal to Damage &lt; Destroyed Level<br />
+<i><b>Destroyed</b> – DestroyedLevel less than or equal to Damage</i><br />
+<br />
+<b>See Also</b><br />
+applyDamage, applyRepair, getDamageLevel, getDamagePercent<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isEnabled()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isEnabled</b></i> method to determine if this shape's damage is less than its disabled level.<br />
+<br />
+<b>Returns</b><br />
+Returns true as long as this shape's damage level is less than its disabled level.<br />
+<br />
+<b>See Also</b><br />
+getDamageLevel, getDamagePercent, getDamageState, isDisabled<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isDisabled()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isDisabled</b></i> method to determine if this shape's damage is greater than or equal to its disabled level.<br />
+<br />
+<b>Returns</b><br />
+Returns true as long as this shape's damage level is greather than or equal to its disabled level.<br />
+<br />
+<b>See Also</b><br />
+getDamageLevel, getDamagePercent, getDamageState, isEnabled<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isDestroyed()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isDestroyed</b></i> method to determine if this shape's damage is greater than or equal to its destroyed level.<br />
+<br />
+<b>Returns</b><br />
+Returns true as long as this shape's damage level is greather than or equal to its destoyed level.<br />
+<br />
+<b>See Also</b><br />
+getDamageLevel, getDamagePercent, getDamageState, isEnabled, isDisabled<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setDamageLevel( <i>level</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setDamageLevel</b></i> method to set the shape's damage to a new <i><b>level</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>level</i></b> – A floating-point value between 0.0 and inf.0, representing this shape's new damage level.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+If <i><b>level</b></i> is greater than this shape's maxDamage, the damage level will be capped at maxDamage.  Setting this value will also update the shape's damage state.<br />
+<br />
+<b>See Also</b><br />
+getDamageLevel, getDamagePercent, getDamageState<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setDamageState( <i>state</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setDamageState</b></i> method to change this shape's damage <i><b>state</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>state</i></b> – A string containing one of the allowed damage states: enabled, disabled, or destroyed.<br />
+<br />
+<b>Returns</b><br />
+Returns true on success, false otherwise.<br />
+<br />
+<b>Notes</b><br />
+Setting this value will <u>NOT</u> affect the shape's damage level, furthermore the next time this shape's damage level is updated, the shape's damage state will change to match it.<br />
+<br />
+<b>See Also</b><br />
+setDamageLevel<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setDamageVector( <i>damageOrigin</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setDamageVector</b></i> method to establish the direction from which to be applied damage will be coming.  This will subsequently be used to correctly setup any explosion or debris scatter that occcurs as a result of the damage.<br />
+<br />
+<b>Syntax<br />
+<i>damageOrigin</i></b> – An XYZ vector specifying the direcion from which some to be applied damage originated.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Generally, this should be done before applying damage, but it can be done afterward.  However results may vary.<br />
+<br />
+<b>See Also</b><br />
+applyDamage<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setInvincibleMode( <i>time</i> , <i>speed</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setInvincibleMode</b></i> method to temporarily make this shape invincible. i.e. Not able to take damage.  While the player is invincible, the screen will flicker blue with a varying rate and a varying intensity.<br />
+<br />
+<b>Syntax<br />
+<i>time</i></b> – A floating-point value specifying the time in seconds for this shape to remain invincible.<br />
+<i><b>speed</b></i> – A floating-point value between 0.0 and 1.0 controlling the rate at which the blue flickering effect occurs.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+The flickering effect is used to indicated to a player that his (or her) avatar is invincible.  Furthermore, this flicker rate will change and the flicker will become increasingly translucent as the time elapses. If <i><b>speed</b></i> set to 1.0, the flickering is a bit obscene.  Generally, lower values are nicer.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Damage_Flashes_.26_Whiteouts" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink6"></a>Damage Flashes &amp; Whiteouts</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="25%" align="center" bgcolor="#009900">getDamageFlash</td>	
+<td width="25%" align="center" bgcolor="#009900">getWhiteOut</td>
+<td width="25%" align="center" bgcolor="#009900">setDamageFlash</td>	
+<td width="25%" align="center" bgcolor="#009900">setWhiteOut</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getDamageFlash()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getDamageFlash</b></i> method to get the current level of damage flash occuring, if any.<br />
+<br />
+<b>Returns</b><br />
+Returns a floating-point value between 0.0 and 1.0 specifying the current level of damage flash occuring.<br />
+<br />
+<b>Notes</b><br />
+A damage flash is a translucent red overlay that can be used to inform the player that their avatar has taken damage.  When a damage flas is applied, it will fade slowly over time.  This method merely lets us know how far along that fade has progressed.<br />
+<br />
+<b>See Also</b><br />
+setDamageFlash<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getWhiteOut( )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getWhiteOut</b></i> method to get the current level of whiteout occuring, if any.<br />
+<br />
+<b>Returns</b><br />
+Returns a floating-point value between 0.0 and 1.0 specifying the current level of whiteout occuring.<br />
+<br />
+<b>Notes</b><br />
+A whiteout is a translucent white overlay that can be used to temporarily blind the player.  Usually this is done as a response to the player viewing a bright light of some sort, but it must be done manually if we want this effect.<br />
+<br />
+<b>See Also</b><br />
+setWhiteOut<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setDamageFlash( <i>level</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setDamageFlash</b></i> method to set the current damage flash <i><b>level</b></i>.  When this level is &gt; 0.0 the screen is rendered with an an additive red overlay, which is limited to 76% regardless of <i><b>level</b></i>.  The value of <i><b>level</b></i> is auto-decremented over a few seconds.<br />
+<br />
+<b>Syntax<br />
+<i>level</i></b> – A floating-point value specifying the level of damage flash to apply. This value can be between 0.0 (0%) and 1.0 (100%). <br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+A damage flash is a translucent red overlay that can be used to inform the player that their avatar has taken damage. <br />
+<br />
+<b>See Also</b><br />
+getDamageFlash<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setWhiteOut( <i>level</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setWhiteOut</b></i> method to set the current whiteout <i><b>level</b></i>.  When this level is &gt; 0.0 the screen is rendered with an additive  white overlay.  At 1.0, rendering is saturated and the screen is entirely white. i.e. it is whited out.  The value of <i><b>level</b></i> is auto-decremented over a few seconds.<br />
+<br />
+<b>Syntax<br />
+<i>level</i></b> – A floating-point value specifying the level of whiteout to apply. This value can be between 0.0 (0%) and 1.0 (100%). <br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+A whiteout is a translucent white overlay that can be used to temporarily blind the player.  <br />
+<br />
+<b>See Also</b><br />
+getWhiteOut<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Energy" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink7"></a>Energy</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="25%" align="center" bgcolor="#009900">getRechargeRate</td>	
+<td width="25%" align="center" bgcolor="#009900">getEnergyLevel</td>
+<td width="25%" align="center" bgcolor="#009900">getEnergyPercent</td>	
+<td width="25%" align="center" bgcolor="#009900">setRechargeRate</td>
+</tr>
+
+<tr>
+<td width="25%" align="center" bgcolor="#009900">setEnergyLevel</td>	
+<td width="25%" align="center" bgcolor="#009900"></td>
+<td width="25%" align="center" bgcolor="#009900"></td>	
+<td width="25%" align="center" bgcolor="#009900"></td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getRechargeRate()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getRechargeRate</b></i> method to get the current rechargeRate setting for this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns a floating-point value between 0.0 and inf.0, equivalent to the number of energy points this shape will auto-recharge every tick, where a tick is by default 1/32 of a second.<br />
+<br />
+<b>See Also</b><br />
+setRechargeRate<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getEnergyLevel()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getEnergyLevel</b></i> method to return the current energy level of this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns a floating-point value between 0.0 and maxEnergy.<br />
+<br />
+<b>See Also</b><br />
+getEnergyPercent, setEnergyPercent<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getEnergyPercent()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getEnergyPercent</b></i> method to return the current energy level as a percentage.<br />
+<br />
+<b>Returns</b><br />
+Returns a floating-point value between 0.0 (0%) and 1.0 (100%), where this percentage is calculated as: currentEnergy / maxEnergy.<br />
+<br />
+<b>See Also</b><br />
+getEnergyPercent, setEnergyLevel<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setRechargeRate( <i>rate</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setRechargeRate</b></i> method to enable auto-recharing at <b>rate</b> points per tick.<br />
+<br />
+<b>Syntax<br />
+<i>rate</i></b> – A floating-point value between 0.0 and inf.0 equivalent to the number of energy points to recharge this shape by each tick, where a tick is by default 1/32 of a second.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+Having auto-rechage enabled does not prevent manual application of recharge values, as is the case with auto-repair and manual repairs.<br />
+<br />
+<b>See Also</b><br />
+getRechargeRate<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setEnergyLevel( <i>level</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setEnergyLevel</b></i> method to set the shape's current energy level to a value between 0.0 and maxEnergy.<br />
+<br />
+<b>Syntax<br />
+<i>level</i></b> – A floating-point value between 0.0 and maxEnergy.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+If <i><b>level</b></i> is greater than maxEnergy, maxEnergy is used instead.<br />
+<br />
+<b>See Also</b><br />
+getEnergyLevel<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Eye_Transform_and_Vectors" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink8"></a>Eye Transform and Vectors</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="33%" align="center" bgcolor="#009900">getEyePoint</td>	
+<td width="33%" align="center" bgcolor="#009900">getEyeTransform</td>
+<td width="33%" align="center" bgcolor="#009900">getEyeVector</td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getEyePoint()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getEyePoint</b></i> method to get the positions of this shape's 'eye' node.<br />
+<br />
+<b>Returns</b><br />
+If this shape has a node in it's mesh named 'eye', the position of that node will be returned as a three-element floating-point vector.  If no 'eye' node is present in this shape's mesh, the position of the shape's centroid is returned instead.<br />
+<br />
+<b>See Also</b><br />
+getEyeTransform, getEyeVector<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getEyeTransform()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getEyeTransform</b></i> method to get the transform of this shape's 'eye' node.<br />
+<br />
+<b>Returns</b><br />
+Returns a transform, "posX posY posZ rotX rotY rotZ rotTheta", representative of a shape's eye postion, orientation vector, and the rotation about that vector in radians.  If not 'eye' node is present in this shape's mesh, the transform of the shape itself is returned.<br />
+<br />
+<b>See Also</b><br />
+getEyePoint, getEyeVector<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getEyeVector()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getEyeVector</b></i> method to retrieve a vector representing the direction the shape's 'eye' node is facing.<br />
+<br />
+<b>Returns</b><br />
+Returns a vector representing the direction a shape is <u>looking</u>.  If this shape's mesh contains no 'eye' node, the shape's forward vector will be returned instead.<br />
+<br />
+<b>Notes</b><br />
+Unless this shape is being observed through (i.e. the camera is hooked up to this shape and using its transforms for viewing), this will default to getForwardVector().<br />
+<br />
+<b>See Also</b><br />
+getEyePoint, getEyeTransform<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Image.2FWeapons_Specifics" xmlns="http://www.w3.org/1999/xhtml"></a><h5 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink9"></a>Image/Weapons Specifics</h5>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="25%" align="center" bgcolor="#009900">getImageAmmo</td>	
+<td width="25%" align="center" bgcolor="#009900">getImageLoaded</td>
+<td width="25%" align="center" bgcolor="#009900">getImageSkinTag</td>	
+<td width="25%" align="center" bgcolor="#009900">getImageState</td>	
+</tr>
+
+<tr>
+<td width="25%" align="center" bgcolor="#009900">getImageTrigger</td>	
+<td width="25%" align="center" bgcolor="#009900">getMuzzlePoint</td>
+<td width="25%" align="center" bgcolor="#009900">getMuzzleVector</td>	
+<td width="25%" align="center" bgcolor="#009900">getPendingImage</td>	
+</tr>
+
+<tr>
+<td width="25%" align="center" bgcolor="#009900">isImageFiring</td>	
+<td width="25%" align="center" bgcolor="#009900">setImageAmmo</td>
+<td width="25%" align="center" bgcolor="#009900">getImageLoaded</td>	
+<td width="25%" align="center" bgcolor="#009900">setImageTrigger</td>	
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getImageAmmo( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getImageAmmo</b></i> method to determine if the image mounted at <i><b>slot</b></i> has ammo.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns true if there is an image mounted at slot and it has ammo, false otherwise.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+<b>See Also</b><br />
+setImageAmmo<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getImageLoaded( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getImageLoaded</b></i> method to determine if the image mounted at <i><b>slot</b></i> is loaded.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+<b>Returns</b><br />
+Returns true if there is an image mounted at slot and it is loaded, false otherwise.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+<b>See Also</b><br />
+setImageLoaded<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getImageSkinTag( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getImageSkinTag</b></i> method to get the skin tag for the image mounted at slot on this shape.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns an integer representing the tag number for the texture the image mounted at slot is using.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+Skin tags are selected when mounting an image to a shape.<br />
+<br />
+<b>See Also</b><br />
+mountImage<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getImageState( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getImageState</b></i> method to determine state name that an image mounted in <i><b>slot</b></i> is at.  i.e. If an image is mounted in <i><b>slot</b></i>, what state is its state-machine currently in?<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns a string representing the state name that the image mounted at <i><b>slot</b></i> is currently at.  If there is not state machine defined for the image at <i><b>slot</b></i>, or if there no image at <i><b>slot</b></i>, or if <i><b>slot</b></i> is &gt; 7, this method returns “Error”.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getImageTrigger( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getImageTrigger</b></i> method to get the trigger value for the image mounted at slot. <br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns a boolean value specifying wether the trigger for the image at <i><b>slot</b></i> is active (true), or inactive (false).  If no image is mounted at <i><b>slot</b></i> or if <i><b>slot</b></i> is &gt; 7, this method returns 0.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+<b>See Also</b><br />
+setImageTrigger<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getMuzzlePoint( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getMuzzlePoint</b></i> method to get the position of the 'muzzlePoint' node for the image mounted at slot.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+<b>Returns</b><br />
+If an image is mounted at <i><b>slot</b></i>, and if it specifies the node 'muzzlePoint', this method will return the XYZ position of the node.  If there is an image mounted at <i><b>slot</b></i>, and that image does not contain a 'muzzlePoint' node, this method returns the position of the image's centroid.  In all other cases, this method returns “0 0 0”.<br />
+<br />
+<b>See Also</b><br />
+getMuzzleVector<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getMuzzleVector( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getMuzzleVector</b></i> method to get the direction the 'muzzlePoint' node for the image mounted at slot is pointing.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Returns</b><br />
+If an image is mounted at <i><b>slot</b></i>, and if it specifies the node 'muzzlePoint', this method will return the XYZ pointing vector of the node.  If there is an image mounted at <i><b>slot</b></i>, and that image does not contain a 'muzzlePoint' node, this method returns the equivalent of a forward vector for the weapon itself.  In all other cases, this method returns “0 0 0”.<br />
+<br />
+The returned vector can be modified by setting the <i>image.correctMuzzleVector</i> field.  If this value is set to true, the vector will point from its origin to the position the player's eye is looking, otherwise, it will point in the true direction the weapon or weapon's muzzlePoint is facing, which may not be exactly where the player is looking.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+<b>See Also</b><br />
+getMuzzlePoint<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>getPendingImage( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>getPendingImage</b></i> method to determine if any images are pending for the specified slot.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns 0 if no images are pending or an integer represending the image datablock ID if an image is pending.<br />
+<br />
+<b>Notes</b><br />
+A pending image is an image that is waiting to mount a slot but is prevented from doing so by the presence of another 'blocking' image.<br />
+<br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>isImageFiring( <i>slot</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>isImageFiring</b></i> method to determine if this image's state machine is currently in a state with the stateFire field set to true.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<br />
+<b>Returns</b><br />
+Returns true if this image's state machine is currently in a state with the stateFire field set to true, false otherwise.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+<b>See Also</b><br />
+getImageState<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setImageAmmo( <i>slot</i> , <i>hasAmmo</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setImageAmmo</b></i> method to give an image in <i><b>slot</b></i> ammo, or to remove ammo from an image in <i><b>slot</b></i>.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<i><b>hasAmmo</b></i> – A boolean value.  If set to true, this image is set has having ammo, otherwise it is set as not having ammo.<br />
+<br />
+<b>Returns</b><br />
+Returns true on success, and false on failure.<br />
+<br />
+<b>Notes</b><br />
+Weapons support both 'ammo' and 'loaded' as distinct concepts.<br />
+<br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+<b>See Also</b><br />
+setImageLoaded<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setImageLoaded( <i>slot</i> , <i>loaded</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setImageLoaded</b></i> method to set an image in <i><b>slot</b></i> as loaded or unloaded.<br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<i><b>hasAmmo</b></i> – A boolean value.  If set to true, this image is set has being loaded, otherwise it is set as not being loaded.<br />
+<br />
+<b>Returns</b><br />
+Returns true on success, and false on failure.<br />
+<br />
+<b>Notes</b><br />
+Weapons support both 'ammo' and 'loaded' as distinct concepts.<br />
+<br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+<br />
+<b>See Also</b><br />
+setImageAmmo<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br /><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>setImageTrigger( <i>slot</i> , <i>triggered</i> )
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>setImageTrigger</b></i> method to set the trigger state for an image in slot. <br />
+<br />
+<b>Syntax<br />
+<i>slot</i></b> – An integer value between 0 and 7 representing a mount slot on this shape.<br />
+<i><b>triggered</b></i> – A boolean value.  If set to true, this image is triggered (firing), otherwise it is un-triggered (not firing).<br />
+<br />
+<b>Returns</b><br />
+Returns true on success, and false on failure.<br />
+<br />
+<b>Notes</b><br />
+Do not confuse slots with mount nodes.  A shape can have up to 32 mount nodes, but only has eight mount slots.  Mount nodes are points on the mesh used by the shape while slots are used to track how many objects and images are mounted to a shape.<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><a href="Console%20Objects.html" title="Torque Console Objects TOC"> Table of Contents</a> || <a href="Torque_Console_Objects_1.html" title="Torque Console Objects"> Part 1</a> || <a href="Torque_Console_Objects_2.html" title="Torque Console Objects 2"> Part 2</a> || <a href="Torque_Console_Objects_3.html" title="Torque Console Objects 3"> Part 3</a> || <a href="Torque_Console_Objects_4.html" title="Torque Console Objects 4"> Part 4</a> || <a href="Torque_Console_Objects_5.html" title="Torque Console Objects 5"> Part 5</a> || <a href="Torque_Console_Objects_6.html" title="Torque Console Objects 6"> Part 6</a> || <a href="Torque_Console_Objects_7.html" title="Torque Console Objects 7"> Part 7</a> || <a href="Torque_Console_Objects_8.html" title="Torque Console Objects 8"> Part 8</a> || <a href="Torque_Console_Objects_9.html" title="Torque Console Objects 9"> Part 9</a> || <a href="Torque_Console_Objects_11.html" title="Torque Console Objects 11"> Part 11</a> || <a href="Torque_Console_Objects_12.html" title="Torque Console Objects 12"> Part 12</a> || <a href="Torque_Console_Objects_13.html" title="Torque Console Objects 13"> Part 13</a> || <a href="Torque_Console_Objects_14.html" title="Torque Console Objects 14"> Part 14</a> || <a href="Torque_Console_Objects_15.html" title="Torque Console Objects 15"> Part 15</a>
+</p>
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_10.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:59 GMT -->
+</html>

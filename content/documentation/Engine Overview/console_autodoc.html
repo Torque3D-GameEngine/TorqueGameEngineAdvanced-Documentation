@@ -1,0 +1,237 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Engine Overview/console_autodoc.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../index.html";</SCRIPT><link href="../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 2;
+   parent.leftFrame.expandToItem('tree2', 'doc2');
+   var element = parent.leftFrame.document.getElementById('doc2');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>TorqueGameEngineAdvanced/ConversionArea/ConsoleAutoDocumentation - TDN</title>
+<link rel="stylesheet" type="text/css" href="container.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()"  bgcolor="#FFFFFF">
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+        <table border="0" cellpadding="15" cellspacing="0" width="700" xmlns="http://www.w3.org/1999/xhtml">
+          <tbody>
+            <tr>
+              <td width="700"><p><br />
+                  <b>Note:</b> This document is for TGEA versions 1.0 and greater. </p>
+                <table id="toc">
+                  <tbody>
+                    <tr>
+                      <td><div id="toctitle">
+                          <h2><a name = "HeaderLink0"></a>Contents</h2>
+                          <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+                        <ul>
+                          <li class="toclevel-1"><a href="#Using_Console_Auto-Documentation"><span class="tocnumber">1</span> <span class="toctext">Using Console Auto-Documentation</span></a></li>
+                          <li class="toclevel-1"><a href="#For_the_Scripter..."><span class="tocnumber">2</span> <span class="toctext">For the Scripter...</span></a></li>
+                          <li class="toclevel-1"><a href="#For_the_C.2B.2B_Coder..."><span class="tocnumber">3</span> <span class="toctext">For the C++ Coder...</span></a></li>
+                          <li class="toclevel-1"><a href="#How_to_Generate_Console_Docs"><span class="tocnumber">4</span> <span class="toctext">How to Generate Console Docs</span></a></li>
+                          <li class="toclevel-1"><a href="#Console_Auto-Documentation_Internals"><span class="tocnumber">5</span> <span class="toctext">Console Auto-Documentation Internals</span></a></li>
+                          <li class="toclevel-1"><a href="#Summary"><span class="tocnumber">6</span> <span class="toctext">Summary</span></a></li>
+                        </ul></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>
+                  </p>
+                <a name="Using_Console_Auto-Documentation" id="Using_Console_Auto-Documentation"></a>
+                <h1><a name = "HeaderLink1"></a>Using Console Auto-Documentation</h1>
+                <p>There are on the order of three hundred functions exposed to the
+                  script language through the console. It is therefore extremely
+                  important that they be documented, but due to their number, it is
+                  difficult to maintain a seperate reference document. </p>
+                <p>Therefore, a simple documentation system has been built into
+                  the scripting engine. The scripting engine supports grouping functions
+                  and methods, to help organize the several hundred functions, as well as
+                  associating a "usage string" with functions and groups. </p>
+                <p>Note: <i>The results of a console doc dump will vary depending
+                  on when you run it. If you run it, for example, while in the game menu,
+                  it won't output any data for the script-defined classes which are
+                  defined for gameplay. To get comprehensive documentation, you may need
+                  to write a special script that will get all your classes loaded into
+                  the scripting engine.</i> </p>
+                <p><br />
+                  The console documentation system is designed to output a dump of the
+                  current state of the scripting engine in a format understandable by
+                  Doxygen. It does this by traversing the namespace/class hierarchy in
+                  memory at the time of the dump, and outputting psuedo-C++ code
+                  equivalent to this class hierarchy. </p>
+                <a name="For_the_Scripter..." id="For_the_Scripter..."></a>
+                <h1><a name = "HeaderLink2"></a>For the Scripter...</h1>
+                <p>Currently, there is no way to associate usage strings or other
+                  documentation with script code like you can with C++ code. You can get
+                  a list of all the methods and fields of an object from any object which
+                  inherits from SimObject (ie, every object), as well as the
+                  documentation on those objects by using the dump() method from the
+                  console: </p>
+                <pre> ==&gt;$foo = new SimObject();
+ ==&gt;$foo.dump();
+ Member Fields:
+ Tagged Fields:
+ Methods:
+   delete() - obj.delete()
+   dump() - obj.dump()
+   getClassName() - obj.getClassName()
+   getGroup() - obj.getGroup()
+   getId() - obj.getId()
+   getName() - obj.getName()
+   getType() - obj.getType()
+   save() - obj.save(fileName, &lt;selectedOnly&gt;)
+   schedule() - object.schedule(time, command, &lt;arg1...argN&gt;);
+   setName() - obj.setName(newName)
+</pre>
+                <p>In the Torque example app, there are two functions defined in
+                  common\client\scriptDoc.cs which automate the process of dumping the
+                  documentation. They make use of the ConsoleLogger object to output the
+                  documentation to a file, and look like this: </p>
+                <p>Note: <i>You may want to add this code, or code like it, to your project if you have rewritten the script code in common.</i> </p>
+                <pre> // Writes out all script functions to a file
+ function writeOutFunctions() {
+    new ConsoleLogger( logger, "scriptFunctions.txt", false );
+    dumpConsoleFunctions();
+    logger.delete();
+ }
+ 
+ // Writes out all script classes to a file
+ function writeOutClasses() {
+    new ConsoleLogger( logger, "scriptClasses.txt", false );
+    dumpConsoleClasses();
+    logger.delete();
+ }
+</pre>
+                <a name="For_the_C.2B.2B_Coder..." id="For_the_C.2B.2B_Coder..."></a>
+                <h1><a name = "HeaderLink3"></a>For the C++ Coder...</h1>
+                <p>Note: <i>It is of the utmost important that you keep your usage
+                  strings up to date! Usage strings are the only way that a scripter has
+                  to know how to use the methods, functions, and variables you expose.
+                  Misleading, missing, or out of date documentation will make their lives
+                  much harder - and yours, too, because you'll have to keep explaining
+                  things to them! So make everyone's lives easier - keep your usage
+                  strings clear, concise, and up to date.</i> </p>
+                <p>There are four types of items which can be documented using the autodocumentation system: </p>
+                <ul>
+                  <li>Fields, which are defined using the addField() calls. They are documented by passing a string to the usage parameter. </li>
+                  <li>Field groups, which are defined using the beginGroup() and
+                    endGroup() calls. They are documented by passing a descriptive string
+                    to the usage parameter. </li>
+                  <li>Method groups, which are defined using beginCommandGroup(),
+                    endCommandGroup(), ConsoleMethodGroupEnd(), ConsoleMethodGroupBegin(),
+                    ConsoleFunctionGroupEnd(), and ConsoleFunctionGroupBegin(). </li>
+                  <li>Methods and functions, which are defined using either
+                    SimObject::addCommand(), the ConsoleMethod() macro, or the
+                    ConsoleFunction() macro. Methods and functions are special in that the
+                    usage strings should be in a specific format, so that parameter
+                    information can be extracted from them and placed into the Doxygen
+                    output. </li>
+                </ul>
+                <p>You can use standard Doxygen commands in your comments, to make the
+                  documentation clearer. Of particular use are @returns, @param, @note,
+                  and @deprecated. </p>
+                <p>Examples using global definitions. </p>
+                <pre>// Example of using Doxygen commands.
+    ConsoleFunction(alxGetWaveLen, S32, 2, 2, "(string filename)"
+                    "Get length of a wave file\n\n"
+                    "@param filename File to determine length of.\n"
+                    "@returns Length in milliseconds.")
+
+    // A function group...
+    ConsoleFunctionGroupBegin(Example, "This is an example group! Notice that the name for the group"
+                                       "must be a valid identifier, due to limitations in the C preprocessor.");
+
+    // ConsoleFunction definitions go here.
+
+    ConsoleFunctionGroupEnd(Example);
+
+    // You can do similar things with methods...
+    ConsoleMethodGroupBegin(SimSet, UsefulFuncs, "Here are some useful functions involving a SimSet.");
+    ConsoleMethod(SimSet, listObjects, void, 2, 2, "set.listObjects();")
+    ConsoleMethodGroupEnd(SimSet, UsefulFuncs, "Here are some more useful functions involving a SimSet.");
+
+</pre>
+                <p>Examples using addField </p>
+                <p>Note: <i>Using addCommand is strongly deprecated.</i> </p>
+                <pre>   // Example of a field group.
+   addGroup( "Logging", "Things relating to logging." );
+   addField( "level",   TypeEnum,     Offset( mLevel,    ConsoleLogger ), 1, &amp;gLogLevelTable );
+   endGroup( "Logging" );
+</pre>
+                <br />
+                <a name="How_to_Generate_Console_Docs" id="How_to_Generate_Console_Docs"></a>
+                <h1><a name = "HeaderLink4"></a>How to Generate Console Docs</h1>
+                <p>Console docs can be generated by running the dumpConsoleFunctions()
+                  and dumpConsoleClasses(), then running the output through Doxygen.
+                  There is an example Doxygen configuration file to do this in HEAD, at
+                  doc\doxygen\html\script_doxygen.html.cfg. Doxygen will parse the
+                  psuedo-C++ generated by the console doc code and produce a class
+                  hierarchy and documentation of the global namespace. You may need to
+                  tweak the paths in the configuration file slightly to reflect your
+                  individual setup. </p>
+                <br />
+                <a name="Console_Auto-Documentation_Internals" id="Console_Auto-Documentation_Internals"></a>
+                <h1><a name = "HeaderLink5"></a>Console Auto-Documentation Internals</h1>
+                <p>The consoleDoc system works by inserting "hidden" entries in
+                  Namespace and AbstractClassRep; these hidden entries are assigned
+                  special type IDs so that they aren't touched by the standard name
+                  resolution code. At documentation creation time, the dumpConsole
+                  functions iterate through the Namespace hierarchy and the
+                  AbstractClassRep data and extract this "hidden" information, outputting
+                  it in a Doxygen-compatible format. </p>
+                <p>Note: <i>You can customize the output of the console documentation system by modifying these functions: printClassHeader()</i> </p>
+                <ul>
+                  <li><i>printClassMethod()</i> </li>
+                  <li><i>printGroupStart()</i> </li>
+                  <li><i>printClassMember()</i> </li>
+                  <li><i>printGroupEnd()</i> </li>
+                  <li><i>printClassFooter()</i> </li>
+                </ul>
+                <p><i>There was once support for 'overloaded' script functions; ie,
+                  script functions with multiple usage strings. Certain functions in the
+                  audio library used this. However, it was deemed too complex, and
+                  removed from the scripting engine. There are still some latent traces
+                  of it, however.</i> </p>
+                <br />
+                <a name="Summary" id="Summary"></a>
+                <h1><a name = "HeaderLink6"></a>Summary</h1>
+                <p>The internal documentation found in the actual engine code is still
+                  being developed, so not every object auto-doc will be complete. If you
+                  find critical sections that need the document tags, feel free to
+                  contact michaelp@garagegames.com with your suggestion. </p></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        
+    
+  
+  
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Engine Overview/console_autodoc.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:36:13 GMT -->
+</html>

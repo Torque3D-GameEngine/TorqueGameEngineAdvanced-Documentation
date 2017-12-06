@@ -1,0 +1,679 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_4.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD><SCRIPT SRC="../../../include/tutorial.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/prototype.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/scriptaculous.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/glossaryLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/referenceLookUp.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/component.js" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT SRC="../../../include/componentContainer.html" LANGUAGE="JavaScript"></SCRIPT>
+<SCRIPT>DocImagePath = "../../../index.html";</SCRIPT><link href="../../../include/tutorialStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/tutorial.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/globalMainPageStyles.css" rel="stylesheet" type="text/css" />
+<link href="../../../include/referenceThemeStyle.html" rel="stylesheet" type="text/css" />
+<link href="../../../include/docTheme/theme.css" rel="stylesheet" type="text/css" />
+<script>
+   // this script chunk is to update the ToC to the current doc and expand it
+   pageID = 4239;
+   parent.leftFrame.expandToItem('tree2', 'doc4239');
+   var element = parent.leftFrame.document.getElementById('doc4239');
+   if((element) && (element.className==parent.leftFrame.nodeClosedClass))
+{
+   element.className = parent.leftFrame.nodeOpenClass
+}
+;
+</script>
+<title>Torque Console Objects 4 - TDN</title>
+
+<link rel="STYLESHEET" type="text/css" href="container.css" />
+<link rel="STYLESHEET" type="text/css" href="content.css" />
+</head>
+<BODY id = "BODYID" onLoad = "initComponent()" >
+
+<table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="">
+<tr>
+<td width="700">
+
+
+
+
+
+                        <table width="700" cellspacing="0" cellpadding="0" border="0" style="text-align: justify;" xmlns="http://www.w3.org/1999/xhtml">
+<tr>
+
+<td width="700">
+ <table id="toc" class="toc"><tr><td><div id="toctitle"><h2><a name = "HeaderLink0"></a>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Console_Objects_Fields_and_Methods_Quick_Reference_Part_4"><span class="tocnumber">1</span> <span class="toctext">Console Objects Fields and Methods Quick Reference Part 4</span></a>
+<ul>
+<li class="toclevel-2"><a href="#fxLightData"><span class="tocnumber">1.1</span> <span class="toctext">fxLightData</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields"><span class="tocnumber">1.1.1</span> <span class="toctext">Fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#fxShapeReplicator"><span class="tocnumber">1.2</span> <span class="toctext">fxShapeReplicator</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fields_2"><span class="tocnumber">1.2.1</span> <span class="toctext">Fields</span></a></li>
+<li class="toclevel-3"><a href="#Console_Function"><span class="tocnumber">1.2.2</span> <span class="toctext">Console Function</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p></p>
+<a name="Console_Objects_Fields_and_Methods_Quick_Reference_Part_4"></a><h1><a name = "HeaderLink1"></a>Console Objects Fields and Methods Quick Reference Part 4</h1>
+<p><br />
+</p><p>This quick reference guide was taken directly out of <a href="87.html" class="external text" title="http://www.garagegames.com/products/87" rel="nofollow">The Game Programmer's Guide to Torque</a> by Edward Maurina. It's an outstanding resource -  a must for anyone wanting to get serious about programming in Torque.<br /><br />
+</p><p><br />
+</p>
+<a name="fxLightData"></a><h3><a name = "HeaderLink2"></a> fxLightData </h3>
+<hr />
+<p><br />
+</p>
+</td>
+
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml">The fxLight object is used to represent in-game lights with and respective flares.  This object casts (dynamic) light in the scene.  It renders both a representation of the light source flare, and casts light on terrain and other objects.<br />
+<br />
+</p>
+<a name="Fields" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink3"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AnimBrightness</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable brightness animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AnimColour</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable color animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AnimOffsets</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable offset animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AnimRadius</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable radius animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AnimRotation</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable rotation animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">BlendMode</td>	
+<td width="60%" bgcolor="#CCCCCC">
+<p>0 = GL_SRC_ALPHA, GL_ONE<br />
+1 = GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA<br />
+2 = GL_ONE, GL_ONE
+</p>
+</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0 , 2 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">BlueKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for blue channel animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Brightness</td>	
+<td width="60%" bgcolor="#CCCCCC">Starting brightness.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 1.0 ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">BrightnessKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for brightness animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">BrightnessTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Round-trip animation time for brightness.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Colour</td>	
+<td width="60%" bgcolor="#CCCCCC">Initial light color.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“0.5 0.5 0.7 1.0”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ColourTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Round-trip animation time for color.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ConstantSize</td>	
+<td width="60%" bgcolor="#CCCCCC">Screen size for flare if not animated.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ConstantSizeOn</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable screen size animation for flare bitmap.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">EndOffset</td>	
+<td width="60%" bgcolor="#CCCCCC">Ending offset for offset animations.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FadeTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Round-trip animation time for fade.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FarDistance</td>	
+<td width="60%" bgcolor="#CCCCCC">Distance from light when flare achieves screen size of FarSize.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FarSize</td>	
+<td width="60%" bgcolor="#CCCCCC">Screen size for flare at FarDistance and beyond.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FlareBitmap</td>	
+<td width="60%" bgcolor="#CCCCCC">Bitmap used represent the light source.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“~/data/flare.png”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FlareColour</td>	
+<td width="60%" bgcolor="#CCCCCC">Starting color for flare bitmap.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“0.5 0.5 0.7 1.0”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FlareOn</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable flare bitmap.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">FlareTP</td>	
+<td width="60%" bgcolor="#CCCCCC">Turns flare off in third person.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">GreenKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for green channel animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LerpBrightness</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable brightness interpolation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LerpColour</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable color interpolation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LerpOffset</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable offset interpolation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LerpRadius</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable radius interpolation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LerpRotation</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable rotation interpolation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LightOn</td>	
+<td width="60%" bgcolor="#CCCCCC">Enable light.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LinkFlare</td>	
+<td width="60%" bgcolor="#CCCCCC">Flag controlling whether the flare is linked to the light.  If on then the flare tracks the color &amp; brightness settings of the light to control its colorization.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">LinkFlareSize</td>	
+<td width="60%" bgcolor="#CCCCCC">Flag controlling whether the flare is linked to the light by size.  If on then the flare tracks the color &amp; brightness settings of the light to control its size.  The brighter the light, the larger the flare.  The flare is scaled according to it's current animation e.g. it never gets any bigger than it would with this setting off.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MaxBrightness</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum brightness when brightness animation is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MaxColour</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum color when color animation is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“0.5 0.5 0.7 1.0”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MaxRadius</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum radius when radius animation is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MaxRotation</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum rotation when rotation animation is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MinBrightness</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum brightness when brightness animation is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MinColour</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum color when color animation is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“0.5 0.5 0.7 1.0”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MinRadius</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum radius when radius animation is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">MinRotation</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum rotation when rotation animation is enabled.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">NearDistance</td>	
+<td width="60%" bgcolor="#CCCCCC">Distance from light when flare achieves screen size of NearSize.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">NearSize</td>	
+<td width="60%" bgcolor="#CCCCCC">Screen size for flare at NearDistance and closer.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">OffsetKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for offset animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">OffsetTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Round-trip animation time for offset.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Radius</td>	
+<td width="60%" bgcolor="#CCCCCC">Initial light sphere radius.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">RadiusKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for radius animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">RadiusTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Round-trip animation time for radius.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">RedKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for red channel animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">RotationKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Key frame values for rotation animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">RotationTime</td>	
+<td width="60%" bgcolor="#CCCCCC">Round-trip animation time for rotation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">SingleColourKeys</td>	
+<td width="60%" bgcolor="#CCCCCC">Use RedKeys to animate all colors at the same time.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ABCDABCD”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">StartOffset</td>	
+<td width="60%" bgcolor="#CCCCCC">Starting offset for offset animation.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0  , 0.inf )</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="fxShapeReplicator" xmlns="http://www.w3.org/1999/xhtml"></a><h3 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink4"></a> fxShapeReplicator </h3>
+<hr xmlns="http://www.w3.org/1999/xhtml" />
+<p xmlns="http://www.w3.org/1999/xhtml">This class is used to replicate any shape. It works in nearly the same way as the fxFoliageReplicator. Each of the individual shapes may enable or disable a collision box allowing them to be interacted with or ignore it in collision interactions.  <br />
+The fxLight object is used to represent in-game lights with and respective flares.  This object casts (dynamic) light in the scene.  It renders both a representation of the light source flare, and casts light on terrain and other objects.<br />
+<br />
+</p>
+<a name="Fields_2" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><a name = "HeaderLink5"></a>Fields</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="20%" align="center" bgcolor="#999999"><b>Field Name</b></td>	
+<td width="60%" align="center" bgcolor="#999999"><b>Description</b></td>
+<td width="20%" align="center" bgcolor="#999999"><b>Sample or Range</b></td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Transform</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">position</td>	
+<td width="60%" bgcolor="#CCCCCC">XYZ position of fx object.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“10.0 20. 0.0”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">rotation</td>	
+<td width="60%" bgcolor="#CCCCCC">Values have no effect.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">scale</td>	
+<td width="60%" bgcolor="#CCCCCC">Values have no effect.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">--</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Debugging</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">HideReplications</td>	
+<td width="60%" bgcolor="#CCCCCC">Stop displaying shapes.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ShowPlacementArea</td>	
+<td width="60%" bgcolor="#CCCCCC">Show the placement feedback device.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">PlacementAreaHeight</td>	
+<td width="60%" bgcolor="#CCCCCC">Changes height of feedback device.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , inf.0 )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">PlacementColour</td>	
+<td width="60%" bgcolor="#CCCCCC">Changes color of feedback device.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“1.0 0.5 0.5 1.0”</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Media/Replications</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Seed</td>	
+<td width="60%" bgcolor="#CCCCCC">Value used to deterministically generate random object positions and parameters.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">shapeFile</td>	
+<td width="60%" bgcolor="#CCCCCC">DTS file to replicate.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“~/data/myshape.dts”</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ShapeCount</td>	
+<td width="60%" bgcolor="#CCCCCC">Number of shapes to replicate.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ShapeRetries</td>	
+<td width="60%" bgcolor="#CCCCCC">Determines how many times to attempt to place a shape.  Retries are sometimes required in order to meet placement criteria.   Failed placement attempts result fewer objects placed.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0 , inf )</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Area/Placement Radius</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">InnerRadiusX</td>	
+<td width="60%" bgcolor="#CCCCCC">X dimension of inner do-not-place ellipse. Objects are not allowed in ellipse described by this and the InnerRadiusY dimension.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">InnerRadiusY</td>	
+<td width="60%" bgcolor="#CCCCCC">Y dimension of inner do-not-place ellipse. Objects are not allowed in ellipse described by this and the InnerRadiusX dimension.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">OuterRadiusX</td>	
+<td width="60%" bgcolor="#CCCCCC">X dimension of outer do-not-place ellipse. Objects are not allowed outside ellipse described by this and the OuterRadiusY dimension.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">OuterRadiusY</td>	
+<td width="60%" bgcolor="#CCCCCC">Y dimension of outer do-not-place ellipse. Objects are not allowed outside ellipse described by this and the OuterRadiusX dimension.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Restrictions/Restraints</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AllowOnTerrain</td>	
+<td width="60%" bgcolor="#CCCCCC">Allows objects to be placed on terrain.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AllowOnInteriors</td>	
+<td width="60%" bgcolor="#CCCCCC">Allows objects to be placed on interiors.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AllowOnStatics</td>	
+<td width="60%" bgcolor="#CCCCCC">Allows objects to be placed on static shapes.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AllowOnWater</td>	
+<td width="60%" bgcolor="#CCCCCC">Allows objects to be placed in area covered by water.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AllowWaterSurface</td>	
+<td width="60%" bgcolor="#CCCCCC">Place on surface of water.  Otherwise will be placed on terrain below water.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AllowedTerrainSlope</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum slope to place on.  Slopes beyond this value will be devoid of objects.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">AlignToTerrain</td>	
+<td width="60%" bgcolor="#CCCCCC">Causes DTS shapes to align to up vector of terrain if placed on terrain.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">Interactions</td>	
+<td width="60%" bgcolor="#CCCCCC">Enables collision boxes if DTS shape has one.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ false , true ]</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">TerrainAlignment</td>	
+<td width="60%" bgcolor="#CCCCCC">Vector to adjust how shape aligns to terrain when AlighnToTerrain is true.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“0.7 0.7 0.7”</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center" bgcolor="#CCCCCC"><b>Object Transforms</b></td>	
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ShapeScaleMin</td>	
+<td width="60%" bgcolor="#CCCCCC">Minimum randomly selected scale for DTS shape.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ShapeScaleMax</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum randomly selected scale for DTS shape.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ShapeRotationMin</td>	
+<td width="60%" bgcolor="#CCCCCC">Minium random rotation for DTS shape.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">ShapeRotationMax</td>	
+<td width="60%" bgcolor="#CCCCCC">Maximum random rotation for DTS shape.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">[ 0.0 , 0.inf )</td>
+</tr>
+
+<tr>
+<td width="20%" align="center" bgcolor="#CCCCCC">OffsetZ</td>	
+<td width="60%" bgcolor="#CCCCCC">This allows you to assist placement by lowering or raising the shape by a fixed amount.</td>
+<td width="20%" align="center" bgcolor="#CCCCCC">“ 0.0 1.2 0.0 “</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<a name="Console_Function" xmlns="http://www.w3.org/1999/xhtml"></a><h4 xmlns="http://www.w3.org/1999/xhtml"><i></i><a name = "HeaderLink6"></a>Console Function</h4>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="100%" align="center" bgcolor="#009900">StartClientReplication()</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p>
+<table width="700" cellspacing="0" cellpadding="0" border="1" xmlns="http://www.w3.org/1999/xhtml">
+
+<tr>
+<td width="226" bgcolor="#6699FF"><b>
+<p>StartClientReplication()
+</p>
+</b></td>
+</tr>
+
+<tr>
+<td width="226" align="left" valign="top" bgcolor="#CCCCCC">
+<p><b>Purpose</b><br />
+Use the <i><b>StartClientReplication</b></i> function to start the shape replication system.<br />
+<br />
+<b>Returns</b><br />
+No return value.<br />
+<br />
+<b>Notes</b><br />
+This can be called before be called after replication objects have been placed, but it should only be called once, and if it is not called, replicators will not work.<br />
+<br />
+<b>See Also</b><br />
+startFoliageReplication<br />
+</p>
+</td>
+</tr>
+
+</table>
+<p xmlns="http://www.w3.org/1999/xhtml"><br />
+</p><p xmlns="http://www.w3.org/1999/xhtml"><a href="Console%20Objects.html" title="Torque Console Objects TOC"> Table of Contents</a> || <a href="Torque_Console_Objects_1.html" title="Torque Console Objects"> Part 1</a> || <a href="Torque_Console_Objects_2.html" title="Torque Console Objects 2"> Part 2</a> || <a href="Torque_Console_Objects_3.html" title="Torque Console Objects 3"> Part 3</a> || <a href="Torque_Console_Objects_5.html" title="Torque Console Objects 5"> Part 5</a> || <a href="Torque_Console_Objects_6.html" title="Torque Console Objects 6"> Part 6</a> || <a href="Torque_Console_Objects_7.html" title="Torque Console Objects 7"> Part 7</a> || <a href="Torque_Console_Objects_8.html" title="Torque Console Objects 8"> Part 8</a> || <a href="Torque_Console_Objects_9.html" title="Torque Console Objects 9"> Part 9</a> || <a href="Torque_Console_Objects_10.html" title="Torque Console Objects 10"> Part 10</a> || <a href="Torque_Console_Objects_11.html" title="Torque Console Objects 11"> Part 11</a> || <a href="Torque_Console_Objects_12.html" title="Torque Console Objects 12"> Part 12</a> || <a href="Torque_Console_Objects_13.html" title="Torque Console Objects 13"> Part 13</a> || <a href="Torque_Console_Objects_14.html" title="Torque Console Objects 14"> Part 14</a> || <a href="Torque_Console_Objects_15.html" title="Torque Console Objects 15"> Part 15</a>
+</p>
+
+
+            
+
+
+
+
+
+
+</td></tr></table><div class="footer">   <span class="copy">&copy; <a href="http://www.garagegames.com/">GarageGames.com</a></span>   <a href="../../../content_welcome.html" target="">Home</a>   <a href="#">Back to Top</a></div></body>
+
+<!-- Mirrored from docs.garagegames.com/tgea/official/content/documentation/Scripting Reference/Console Objects/Torque_Console_Objects_4.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Dec 2017 21:37:02 GMT -->
+</html>
